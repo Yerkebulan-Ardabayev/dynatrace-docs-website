@@ -137,17 +137,17 @@ Quickstart
 
 Dynatrace Operator версии 0.8.0+
 
-Новые инструкции по установке и обновлению Helm используют наш чарт Helm, доступный из реестра OCI. Поэтому, если репозиторий Dynatrace сейчас добавлен в локальные репозитории Helm, его можно безопасно удалить.
+В новых инструкциях по установке и обновлению Helm используется chart из OCI-реестра. Поэтому, если репозиторий Dynatrace уже добавлен в локальные репозитории Helm, его можно безопасно удалить.
 
 ```
 helm repo remove dynatrace
 ```
 
-Процесс установки не зависит от того, используется ли Kubernetes или OpenShift. Платформа определяется автоматически во время установки.
+Процесс установки не зависит от того, используется Kubernetes или OpenShift. Платформа определяется автоматически в ходе установки.
 
-1. Установить Dynatrace Operator
+1. Установка Dynatrace Operator
 
-   Следующая команда работает как для установок по умолчанию, так и для установок с использованием реестра OCI.
+   Следующая команда работает как при стандартной установке, так и при установке через OCI-реестр.
 
    ```
    helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
@@ -165,9 +165,9 @@ helm repo remove dynatrace
    --atomic \
    ```
 
-   Установка с дополнительной настройкой чарта Helm
+   Установка с дополнительной конфигурацией chart Helm
 
-   Отредактировать образец [`values.yaml`﻿](https://dt-url.net/helm-values) из GitHub, а затем выполнить команду установки, передав файл YAML в качестве аргумента:
+   Отредактируй образец [`values.yaml`﻿](https://dt-url.net/helm-values) из GitHub, затем запусти команду установки, передав файл YAML в качестве аргумента:
 
    ```
    helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
@@ -189,32 +189,32 @@ helm repo remove dynatrace
    -f values.yaml
    ```
 
-   Для развёртываний cloud native, full stack, CSI driver обязателен. Если `installCRD` установлен в `false`, нужно вручную создать custom resource definition перед началом установки Helm:
+   Для cloud native и full stack развёртываний CSI-драйвер обязателен. Если `installCRD` установлен в `false`, нужно создать custom resource definition вручную до начала установки Helm:
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/dynatrace-operator-crd.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/dynatrace-operator-crd.yaml
    ```
 
-   VMware Tanzu Kubernetes (TKGI) и IBM Kubernetes Service (IKS) требуют [дополнительной настройки](/managed/ingest-from/setup-on-k8s/deployment/supported-technologies "Обзор различных конфигураций для всех основных дистрибутивов Kubernetes.").
-2. Создать secret для токенов доступа
+   VMware Tanzu Kubernetes (TKGI) и IBM Kubernetes Service (IKS) требуют [дополнительной конфигурации](/managed/ingest-from/setup-on-k8s/deployment/supported-technologies "Overview of different configurations for all major Kubernetes distributions.").
+2. Создание секрета для токенов доступа
 
-   Создать secret с именем `dynakube` для токена Dynatrace Operator и токена ingest данных, полученных в разделе [Требуемые токены и права доступа](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Настройка токенов и прав доступа для мониторинга кластера Kubernetes").
+   Создай секрет с именем `dynakube` для токена Dynatrace Operator и токена приёма данных, полученных в разделе [Tokens and permissions required](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
 
    ```
    kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=<OPERATOR_TOKEN>" --from-literal="dataIngestToken=<DATA_INGEST_TOKEN>"
    ```
-3. Применить custom resource DynaKube
+3. Применение DynaKube custom resource
 
-   Скачать [образец custom resource DynaKube для cloud-native full-stack из GitHub﻿](https://dt-url.net/9n636jg). Кроме того, можно ознакомиться с [доступными параметрами](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "Список доступных параметров для настройки Dynatrace Operator на Kubernetes.") или [пошаговыми руководствами](/managed/ingest-from/setup-on-k8s/guides "Подробное описание вариантов установки и настройки для конкретных сценариев использования") и адаптировать custom resource DynaKube в соответствии со своими требованиями.
+   Скачай [образец DynaKube custom resource для cloud-native full-stack из GitHub﻿](https://dt-url.net/9n636jg). Дополнительно можно ознакомиться с [доступными параметрами](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") или [руководствами](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases") и адаптировать DynaKube custom resource под свои требования.
 
-   Выполнить приведённую ниже команду, чтобы применить custom resource DynaKube, заменив `<your-DynaKube-CR>` на фактическое имя файла custom resource DynaKube. Webhook валидации выдаст полезные сообщения об ошибках, если возникнет проблема.
+   Выполни команду ниже, чтобы применить DynaKube custom resource, заменив `<your-DynaKube-CR>` на фактическое имя файла DynaKube custom resource. Если возникнет проблема, validation webhook выдаст полезные сообщения об ошибках.
 
    ```
    kubectl apply -f <your-DynaKube-CR>.yaml
    ```
-4. Необязательно Проверить развёртывание
+4. Необязательно: проверка развёртывания
 
-   Проверить, что DynaKube запущен и все поды в пространстве имён Dynatrace работают и готовы.
+   Убедись, что DynaKube запущен и все поды в пространстве имён Dynatrace находятся в состоянии Running и готовы к работе.
 
    ```
    > kubectl get dynakube -n dynatrace
@@ -228,7 +228,7 @@ helm repo remove dynatrace
    dynakube     https://<CLUSTER_DOMAIN>/e/<ENVIRONMENT_ID>/api  Running    45s
    ```
 
-   В конфигурации DynaKube по умолчанию должны отображаться следующие поды:
+   При стандартной конфигурации DynaKube должны отображаться следующие поды:
 
    ```
    > kubectl get pods -n dynatrace
@@ -278,9 +278,9 @@ helm repo remove dynatrace
    dynatrace-webhook-7bb6957fb5-rqnqk    1/1     Running   0               2m59s
    ```
 
-   Так как OneAgent и CSI-driver развёрнуты как DaemonSet, под OneAgent и CSI-driver должен быть на каждом узле.
+   Поскольку OneAgent и CSI-драйвер развёртываются как DaemonSet, на каждом узле должен быть под OneAgent и под CSI-драйвера.
 
-## Манифест
+## Manifest
 
 Kubernetes
 
@@ -294,35 +294,35 @@ OpenShift
 2. Установить Dynatrace Operator
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes-csi.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/kubernetes-csi.yaml
    ```
 
-   VMware Tanzu Kubernetes (TKGI) и IBM Kubernetes Service (IKS) требуют [дополнительной настройки](/managed/ingest-from/setup-on-k8s/deployment/supported-technologies "Обзор различных конфигураций для всех основных дистрибутивов Kubernetes.").
+   VMware Tanzu Kubernetes (TKGI) и IBM Kubernetes Service (IKS) требуют [дополнительной настройки](/managed/ingest-from/setup-on-k8s/deployment/supported-technologies "Overview of different configurations for all major Kubernetes distributions.").
 
-   Выполнить следующую команду, чтобы увидеть, когда компоненты Dynatrace Operator завершат инициализацию:
+   Следующая команда позволяет отследить завершение инициализации компонентов Dynatrace Operator:
 
    ```
    kubectl -n dynatrace wait pod --for=condition=ready --selector=app.kubernetes.io/name=dynatrace-operator,app.kubernetes.io/component=webhook --timeout=300s
    ```
-3. Создать секрет для токенов доступа
+3. Создать secret для токенов доступа
 
-   Создать секрет с именем `dynakube` для токена Dynatrace Operator и токена приёма данных, полученных в разделе [Требуемые токены и разрешения](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Настройка токенов и разрешений для мониторинга кластера Kubernetes.").
+   Создать secret с именем `dynakube` для токена Dynatrace Operator и токена приёма данных, полученных в разделе [Tokens and permissions required](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
 
    ```
    kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=<OPERATOR_TOKEN>" --from-literal="dataIngestToken=<DATA_INGEST_TOKEN>"
    ```
-4. Применить кастомный ресурс DynaKube
+4. Применить DynaKube custom resource
 
-   Скачать [образец кастомного ресурса DynaKube для cloud-native full-stack из GitHub﻿](https://dt-url.net/9n636jg). Кроме того, можно ознакомиться с [доступными параметрами](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "Список доступных параметров для настройки Dynatrace Operator на Kubernetes.") или [пошаговыми руководствами](/managed/ingest-from/setup-on-k8s/guides "Подробное описание вариантов установки и настройки для конкретных сценариев использования"), и адаптировать кастомный ресурс DynaKube в соответствии с требованиями.
+   Скачать [образец DynaKube custom resource для cloud-native full-stack из GitHub﻿](https://dt-url.net/9n636jg). Дополнительно можно ознакомиться с [доступными параметрами](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") или [руководствами](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases") и адаптировать DynaKube custom resource под свои требования.
 
-   Выполнить приведённую ниже команду для применения кастомного ресурса DynaKube, обязательно заменив `<your-DynaKube-CR>` на фактическое имя файла кастомного ресурса DynaKube. Webhook валидации предоставит полезные сообщения об ошибках, если возникнет проблема.
+   Выполнить команду ниже для применения DynaKube custom resource, заменив `<your-DynaKube-CR>` на фактическое имя файла DynaKube custom resource. Validation webhook выдаст информативные сообщения об ошибках при наличии проблем.
 
    ```
    kubectl apply -f <your-DynaKube-CR>.yaml
    ```
-5. Опционально Проверить развёртывание
+5. Необязательно Проверить развёртывание
 
-   Проверить, что DynaKube запущен и все поды в namespace Dynatrace запущены и готовы.
+   Убедиться, что DynaKube запущен, а все поды в namespace Dynatrace работают и готовы к работе.
 
    ```
    > kubectl get dynakube -n dynatrace
@@ -336,7 +336,7 @@ OpenShift
    dynakube     https://<CLUSTER_DOMAIN>/e/<ENVIRONMENT_ID>/api  Running    45s
    ```
 
-   В конфигурации DynaKube по умолчанию должны отображаться следующие поды:
+   В стандартной конфигурации DynaKube должны присутствовать следующие поды:
 
    ```
    > kubectl get pods -n dynatrace
@@ -386,7 +386,7 @@ OpenShift
    dynatrace-webhook-7bb6957fb5-rqnqk    1/1     Running   0               2m59s
    ```
 
-   Так как OneAgent и CSI-driver развёрнуты как DaemonSet, на каждом узле должен быть под OneAgent и под CSI-driver.
+   Поскольку OneAgent и CSI-driver развёртываются как DaemonSet, на каждом узле должен присутствовать под OneAgent и под CSI-driver.
 
 1. Добавить проект `dynatrace`
 
@@ -396,33 +396,33 @@ OpenShift
 2. Установить Dynatrace Operator
 
    ```
-   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift-csi.yaml
+   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/openshift-csi.yaml
    ```
 
-   Выполнить следующую команду, чтобы увидеть, когда компоненты Dynatrace Operator завершат инициализацию:
+   Следующая команда позволяет отследить завершение инициализации компонентов Dynatrace Operator:
 
    ```
    oc -n dynatrace wait pod --for=condition=ready --selector=app.kubernetes.io/name=dynatrace-operator,app.kubernetes.io/component=webhook --timeout=300s
    ```
-3. Создать секрет для токенов доступа
+3. Создать secret для токенов доступа
 
-   Создать секрет с именем `dynakube` для токена Dynatrace Operator и токена приёма данных, полученных в разделе [Требуемые токены и разрешения](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Настройка токенов и разрешений для мониторинга кластера Kubernetes.").
+   Создать secret с именем `dynakube` для токена Dynatrace Operator и токена приёма данных, полученных в разделе [Tokens and permissions required](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
 
    ```
    oc -n dynatrace create secret generic dynakube --from-literal="apiToken=<OPERATOR_TOKEN>" --from-literal="dataIngestToken=<DATA_INGEST_TOKEN>"
    ```
-4. Применить кастомный ресурс DynaKube
+4. Применить DynaKube custom resource
 
-   Скачать [образец кастомного ресурса DynaKube для cloud-native full-stack из GitHub﻿](https://dt-url.net/9n636jg). Кроме того, можно ознакомиться с [доступными параметрами](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "Список доступных параметров для настройки Dynatrace Operator на Kubernetes.") или [пошаговыми руководствами](/managed/ingest-from/setup-on-k8s/guides "Подробное описание вариантов установки и настройки для конкретных сценариев использования"), и адаптировать кастомный ресурс DynaKube в соответствии с требованиями.
+   Скачать [образец DynaKube custom resource для cloud-native full-stack из GitHub﻿](https://dt-url.net/9n636jg). Дополнительно можно ознакомиться с [доступными параметрами](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") или [руководствами](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases") и адаптировать DynaKube custom resource под свои требования.
 
-   Выполнить приведённую ниже команду для применения кастомного ресурса DynaKube, обязательно заменив `<your-DynaKube-CR>` на фактическое имя файла кастомного ресурса DynaKube. Webhook валидации предоставит полезные сообщения об ошибках, если возникнет проблема.
+   Выполнить команду ниже для применения DynaKube custom resource, заменив `<your-DynaKube-CR>` на фактическое имя файла DynaKube custom resource. Validation webhook выдаст информативные сообщения об ошибках при наличии проблем.
 
    ```
    oc apply -f <your-DynaKube-CR>.yaml
    ```
-5. Опционально Проверить развёртывание
+5. Необязательно Проверить развёртывание
 
-   Проверить, что DynaKube запущен и все поды в namespace Dynatrace запущены и готовы.
+   Убедиться, что DynaKube запущен, а все поды в namespace Dynatrace работают и готовы к работе.
 
    ```
    > oc get dynakube -n dynatrace
@@ -436,7 +436,7 @@ OpenShift
    dynakube     https://<CLUSTER_DOMAIN>/e/<ENVIRONMENT_ID>/api  Running    45s
    ```
 
-   В конфигурации DynaKube по умолчанию должны отображаться следующие поды:
+   В стандартной конфигурации DynaKube должны присутствовать следующие поды:
 
    ```
    > oc get pods -n dynatrace
@@ -486,44 +486,44 @@ OpenShift
    dynatrace-webhook-7bb6957fb5-rqnqk    1/1     Running   0               2m59s
    ```
 
-   Так как OneAgent и CSI-driver развёрнуты как DaemonSet, на каждом узле должен быть под OneAgent и под CSI-driver.
+   Поскольку OneAgent и CSI-driver развёртываются как DaemonSet, на каждом узле должен присутствовать под OneAgent и под CSI-driver.
 
-## Узнать больше
+## Learn more
 
-После успешной установки Dynatrace Operator следующие ресурсы могут быть полезны для дальнейшего изучения и устранения неполадок.
+После успешной установки Dynatrace Operator следующие ресурсы помогут в дальнейшем изучении и устранении неполадок.
 
-[#### Руководства
+[#### Guides
 
 Подробное описание вариантов установки и настройки для конкретных сценариев использования
 
-Руководства](/managed/ingest-from/setup-on-k8s/guides)[#### Устранение неполадок
+Guides](/managed/ingest-from/setup-on-k8s/guides)[#### Troubleshooting
 
-Эта страница поможет ориентироваться в любых сложностях, с которыми можно столкнуться при работе с Dynatrace Operator и его различными компонентами.
+Эта страница поможет справиться с любыми трудностями при работе с Dynatrace Operator и его компонентами.
 
-Устранение неполадок](/managed/ingest-from/setup-on-k8s/deployment/troubleshooting)
+Troubleshooting](/managed/ingest-from/setup-on-k8s/deployment/troubleshooting)
 
-[#### Как это работает
+[#### How it works
 
-Подробное описание того, как работает развёртывание на Kubernetes.
+Подробное описание принципов развёртывания на Kubernetes.
 
-Как это работает](/managed/ingest-from/setup-on-k8s/how-it-works)[#### Справочник
+How it works](/managed/ingest-from/setup-on-k8s/how-it-works)[#### Reference
 
-Содержит справочную страницу с параметрами настройки для каждого компонента Dynatrace
+Справочная страница с параметрами конфигурации для каждого компонента Dynatrace
 
-Справочник](/managed/ingest-from/setup-on-k8s/reference)[#### Примечания к выпуску Dynatrace Operator
+Reference](/managed/ingest-from/setup-on-k8s/reference)[#### Dynatrace Operator release notes
 
-Примечания к выпуску для Dynatrace Operator
+Примечания к выпускам Dynatrace Operator
 
-Примечания к выпуску Dynatrace Operator](/managed/whats-new/dynatrace-operator)[#### Обновление или удаление Dynatrace Operator
+Dynatrace Operator release notes](/managed/whats-new/dynatrace-operator)[#### Update or uninstall Dynatrace Operator
 
 Пути обновления, процедуры обновления и руководство по удалению Dynatrace Operator.
 
-Обновление или удаление Dynatrace Operator](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator)[#### Руководство по расчёту размера ActiveGateов Dynatrace для сценария мониторинга Kubernetes
+Update or uninstall Dynatrace Operator](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator)[#### Size Dynatrace ActiveGates in Kubernetes
 
-Настройка ограничений ресурсов для ActiveGateов Dynatrace
+Рекомендации по ресурсам CPU и памяти для Dynatrace ActiveGates, развёрнутых в Kubernetes, с учётом масштаба кластера и типа нагрузки.
 
-Руководство по расчёту размера ActiveGateов Dynatrace для сценария мониторинга Kubernetes](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits)
+Size Dynatrace ActiveGates in Kubernetes](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits)
 
-## Похожие темы
+## Related topics
 
-* [Гибкая, масштабируемая, самообслуживаемая нативная для Kubernetes observability теперь общедоступна﻿](https://www.dynatrace.com/news/blog/flexible-scalable-self-service-kubernetes-native-observability/)
+* [Flexible, scalable, self-service Kubernetes native observability now in General Availability﻿](https://www.dynatrace.com/news/blog/flexible-scalable-self-service-kubernetes-native-observability/)

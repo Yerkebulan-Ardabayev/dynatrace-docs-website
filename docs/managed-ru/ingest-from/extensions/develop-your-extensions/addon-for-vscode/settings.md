@@ -1,32 +1,31 @@
 ---
-title: Settings
+title: Настройки
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/settings
-scraped: 2026-05-12T12:16:06.470993
 ---
 
-# Settings
+# Настройки
 
-# Settings
+# Настройки
 
 * Справочник
-* Чтение: 4 мин
-* Обновлено 23 марта 2026 г.
+* 4 мин чтения
+* Обновлено 23 марта 2026
 
-Все настройки можно задать глобально или для каждого рабочего пространства.
+Все настройки можно задать глобально или для каждого workspace.
 
-Подробнее о доступе к этим настройкам см. в [официальной документации](https://code.visualstudio.com/docs/getstarted/settings) Visual Studio Code.
+Подробнее о доступе к этим настройкам можно узнать в [официальной документации﻿](https://code.visualstudio.com/docs/getstarted/settings) Visual Studio Code.
 
 ## Учётные данные
 
-**Dynatrace Extensions** может либо создать все учётные данные, необходимые для разработки Extension 2.0, либо позволить использовать собственные файлы учётных данных.
+![Dynatrace Extensions](https://dt-cdn.net/images/dynatrace-extensions-icon-1580-5032ebda6e.png "Dynatrace Extensions") **Dynatrace Extensions** может либо сгенерировать все учётные данные, необходимые для разработки Extension 2.0, либо позволить использовать собственные файлы учётных данных.
 
 ### При использовании собственных учётных данных
 
-Необходимо указать файлы с помощью следующих настроек:
+Нужно указать свои файлы с помощью следующих настроек:
 
 | Настройка | Описание |
 | --- | --- |
-| `dynatraceExtensions.developerCertkeyLocation` | Путь к файлу [разработческих учётных данных](/managed/ingest-from/extensions/develop-your-extensions/sign-extensions#cert "Узнайте, как подписать расширение, загрузить сертификаты и пользовательские расширения и настроить разрешения сертификатов с помощью платформы Dynatrace Extensions Framework."). |
+| `dynatraceExtensions.developerCertkeyLocation` | Путь к файлу [учётных данных разработчика](/managed/ingest-from/extensions/develop-your-extensions/sign-extensions#cert "Learn how to sign an extension, upload certificates and custom extensions, and configure certificate permissions using the Dynatrace Extensions Framework."). |
 | `dynatraceExtensions.rootOrCaCertificateLocation` | Путь к корневому сертификату (CA). |
 
 Пример использования:
@@ -47,55 +46,55 @@ scraped: 2026-05-12T12:16:06.470993
 }
 ```
 
-### При создании учётных данных
+### При генерации учётных данных
 
-Сведения, встраиваемые в создаваемые сертификаты, можно настроить с помощью следующих параметров:
+Детали, встраиваемые в генерируемые сертификаты, можно настроить с помощью следующих параметров:
 
 | Настройка | Значение по умолчанию | Описание |
 | --- | --- | --- |
-| `dynatraceExtensions.certificateCommonName` | Extension Developer | Атрибут общего имени (CN) сертификата. |
-| `dynatraceExtensions.certificateOrganization` |  | Атрибут организации (O) сертификата. |
-| `dynatraceExtensions.certificateOrganizationUnit` |  | Атрибут подразделения организации (OU) сертификата. |
-| `dynatraceExtensions.certificateStateOrProvince` |  | Атрибут штата или провинции (ST) сертификата. |
-| `dynatraceExtensions.certificateCountryCode` |  | Атрибут кода страны (C) сертификата. |
+| `dynatraceExtensions.certificateCommonName` | Extension Developer | Атрибут common name (CN) сертификата. |
+| `dynatraceExtensions.certificateOrganization` |  | Атрибут organization (O) сертификата. |
+| `dynatraceExtensions.certificateOrganizationUnit` |  | Атрибут organization unit (OU) сертификата. |
+| `dynatraceExtensions.certificateStateOrProvince` |  | Атрибут state or province (ST) сертификата. |
+| `dynatraceExtensions.certificateCountryCode` |  | Атрибут country code (C) сертификата. |
 
 ## Поведение
 
-Дополнение стремится предоставить пользователям максимальные возможности для настройки процесса разработки расширений. Следующие настройки позволяют включать или отключать различные функции по требованию.
+Add-on стремится предоставить пользователям максимально гибкую настройку процесса разработки расширений. Следующие параметры позволяют включать и отключать различные функции по требованию.
 
 ### Функции
 
 | Настройка | Значение по умолчанию | Описание |
 | --- | --- | --- |
-| `dynatraceExtensions.metricSelectorsCodeLens` | true | [Code lens для селектора метрик](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/development-assistance#metric-selectors "Обзор всех функций Dynatrace Extensions для разработки приложений") |
-| `dynatraceExtensions.entitySelectorsCodeLens` | true | [Code lens для селектора сущностей](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/development-assistance#entity-selectors "Обзор всех функций Dynatrace Extensions для разработки приложений") |
-| `dynatraceExtensions.fastDevelopmentMode` | false | [Режим быстрой разработки](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/development-assistance#fast-development-mode "Обзор всех функций Dynatrace Extensions для разработки приложений") |
-| `dynatraceExtensions.wmiCodeLens` | true | [Code lens для запросов WMI](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/development-assistance#windows-management-interface-wmi-queries "Обзор всех функций Dynatrace Extensions для разработки приложений") |
-| `dynatraceExtensions.screenCodeLens` | true | [Code lens для экранов унифицированного анализа](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/development-assistance#unified-analysis-screens "Обзор всех функций Dynatrace Extensions для разработки приложений") |
+| `dynatraceExtensions.metricSelectorsCodeLens` | true | [Metric selector code lens](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/development-assistance#metric-selectors "Overview of all Dynatrace Extensions features to help you develop apps") |
+| `dynatraceExtensions.entitySelectorsCodeLens` | true | [Entity selector code lens](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/development-assistance#entity-selectors "Overview of all Dynatrace Extensions features to help you develop apps") |
+| `dynatraceExtensions.fastDevelopmentMode` | false | [Fast development mode](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/development-assistance#fast-development-mode "Overview of all Dynatrace Extensions features to help you develop apps") |
+| `dynatraceExtensions.wmiCodeLens` | true | [WMI queries code lens](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/development-assistance#windows-management-interface-wmi-queries "Overview of all Dynatrace Extensions features to help you develop apps") |
+| `dynatraceExtensions.screenCodeLens` | true | [Unified analysis screen code lens](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/development-assistance#unified-analysis-screens "Overview of all Dynatrace Extensions features to help you develop apps") |
 
-### Журналирование
+### Логирование
 
 | Настройка | Значение по умолчанию | Описание |
 | --- | --- | --- |
-| `dynatraceExtensions.logging.level` | `INFO` | Минимальный уровень сообщений журнала |
-| `dynatraceExtensions.logging.maxFiles` | 10 | Максимальное количество файлов журнала (по возрасту), хранимых на диске. |
-| `dynatraceExtensions.logging.maxFileSize` | 10 | Максимальный размер одного файла журнала (в МБ). |
+| `dynatraceExtensions.logging.level` | `INFO` | Минимальный уровень сообщений лога |
+| `dynatraceExtensions.logging.maxFiles` | 10 | Максимальное количество файлов лога (по давности), хранящихся на диске. |
+| `dynatraceExtensions.logging.maxFileSize` | 10 | Максимальный размер одного файла лога (в МБ). |
 
 ### Настройки подключения к тенанту
 
-Дополнение всегда выполняет веб-запросы к среде Dynatrace по HTTPS. В некоторых сценариях, например в Dynatrace Managed, среда может быть доступна через выделенный эндпоинт, использующий SSL-сертификат с пользовательской подписью или самоподписанный сертификат. Хотя такие сертификаты обеспечивают шифрование, большинство фреймворков и браузеров не признают их доверенными, что приводит к сбою запросов.
+Add-on всегда выполняет веб-запросы к среде Dynatrace по HTTPS. В некоторых сценариях, например в Dynatrace Managed, среда может быть доступна через выделенный endpoint, использующий SSL-сертификат с нестандартной или самоподписанной подписью. Хотя такие сертификаты пригодны для шифрования, большинство фреймворков и браузеров не признают их доверенными, из-за чего запросы завершаются ошибкой.
 
-Параметр `dynatraceExtensions.tenantConnectivitySettings` доступен только из файла `settings.json` и представляет собой массив эндпоинтов среды, требующих специальных настроек для подключения по HTTPS. Каждый элемент массива является объектом со следующими полями:
+Настройка `dynatraceExtensions.tenantConnectivitySettings` доступна только в файле `settings.json` и представляет собой массив endpoint'ов среды, для которых требуются специальные параметры HTTPS-подключения. Каждый элемент массива является объектом со следующими полями:
 
 | Атрибут | Значение по умолчанию | Описание |
 | --- | --- | --- |
-| `tenantUrl` | "" | Базовый URL вашей среды Dynatrace. Дополнение использует этот URL для определения момента применения специальных настроек подключения к веб-запросам. |
-| `certificatePath` | "" | Путь на диске к файлу Root/CA в формате `.pem` или `.crt`. Дополнение загрузит этот файл и добавит его в список доверенных центров сертификации для указанного `tenantUrl`. |
-| `disableSSLVerification` | `false` | При включении дополнение игнорирует SSL-сертификаты для указанного `tenantUrl`. Включайте только при использовании самоподписанных сертификатов на эндпоинте Dynatrace. |
+| `tenantUrl` | "" | Базовый URL среды Dynatrace. Add-on использует этот URL для определения момента применения специальных параметров подключения к веб-запросам. |
+| `certificatePath` | "" | Путь на диске к файлу Root/CA в формате `.pem` или `.crt`. Add-on загружает этот файл и добавляет его в список доверенных CA для указанного `tenantUrl`. |
+| `disableSSLVerification` | `false` | При включении add-on игнорирует SSL-сертификаты для указанного `tenantUrl`. Включать только при использовании самоподписанных сертификатов на endpoint'е Dynatrace. |
 
 Пример:
 
-* Добавление пользовательского сертификата в список доверенных центров сертификации:
+* Добавление пользовательского сертификата в список доверенных CA:
 
   ```
   "dynatraceExtensions.tenantConnectivitySettings": [
@@ -120,7 +119,7 @@ scraped: 2026-05-12T12:16:06.470993
 
   ]
   ```
-* Использование самоподписанного сертификата на эндпоинте:
+* Использование самоподписанного сертификата на endpoint'е:
 
   ```
   "dynatraceExtensions.tenantConnectivitySettings": [
@@ -152,18 +151,18 @@ scraped: 2026-05-12T12:16:06.470993
 | --- | --- | --- |
 | `dynatraceExtensions.diagnostics.all` | true | Вся диагностика |
 | `dynatraceExtensions.diagnostics.extensionName` | true | Имя расширения |
-| `dynatraceExtensions.diagnostics.metricKeys` | true | Ключи, используемые для определений метрик |
+| `dynatraceExtensions.diagnostics.metricKeys` | true | Ключи, используемые в определениях метрик |
 | `dynatraceExtensions.diagnostics.cardKeys` | true | Ключи карточек, на которые ссылаются или которые определены в разделе screens |
-| `dynatraceExtensions.diagnostics.snmp` | true | Источник данных SNMP, в частности использование OID |
+| `dynatraceExtensions.diagnostics.snmp` | true | Источник данных SNMP, в особенности использование OID |
 
-Подробнее о [пользовательской диагностике](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/development-assistance#diagnostics "Обзор всех функций Dynatrace Extensions для разработки приложений") Dynatrace Extensions.
+Подробнее о [пользовательской диагностике](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/development-assistance#diagnostics "Overview of all Dynatrace Extensions features to help you develop apps") Dynatrace Extensions.
 
 ## Среда Python
 
-Параметры этого раздела позволяют настроить виртуальную среду при работе с расширениями Python.
+Настройки в этом разделе позволяют настроить параметры виртуальной среды при работе с расширениями на Python.
 
 | Настройка | Значение по умолчанию | Описание |
 | --- | --- | --- |
 | `dynatraceExtensions.pythonExtraPlatforms` | `[ "linux_x86_64", "win_amd64" ]` | Список платформ для сборки пакетов Python. |
 | `dynatraceExtensions.pythonExtraPlatformsOnly` | false | При включении команда `Dynatrace extensions: Build` выполняет сборку только для платформ, указанных выше. |
-| `dynatraceExtensions.pythonBuildVersion` | `3.10 + 3.14` | Возможные значения: `3.10 + 3.14`, `3.10` или `3.14`. Выберите `3.10` для отката к версиям EEC ранее `1.333.x`. |
+| `dynatraceExtensions.pythonBuildVersion` | `3.10 + 3.14` | Допустимые значения: `3.10 + 3.14`, `3.10` или `3.14`. Выбрать `3.10` для отката к версиям EEC ранее `1.333.x`. |

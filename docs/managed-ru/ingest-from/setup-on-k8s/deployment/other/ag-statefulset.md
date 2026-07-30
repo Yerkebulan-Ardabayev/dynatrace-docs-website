@@ -1,27 +1,26 @@
 ---
-title: Развёртывание ActiveGate как StatefulSet вручную
+title: Развернуть ActiveGate как StatefulSet вручную
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/other/ag-statefulset
-scraped: 2026-05-12T11:36:34.658080
 ---
 
-# Развёртывание ActiveGate как StatefulSet вручную
+# Развернуть ActiveGate как StatefulSet вручную
 
-# Развёртывание ActiveGate как StatefulSet вручную
+# Развернуть ActiveGate как StatefulSet вручную
 
-* Чтение: 5 мин
-* Обновлено 19 января 2025 г.
+* 5 минут чтения
+* Обновлено 19 янв. 2025
 
-Dynatrace Operator управляет жизненным циклом нескольких компонентов Dynatrace, включая ActiveGate. Если вы не можете использовать Dynatrace Operator, можно развернуть ActiveGate как StatefulSet в вашем кластере Kubernetes вручную. Инструкции приведены ниже.
+Dynatrace Operator управляет жизненным циклом нескольких компонентов Dynatrace, включая ActiveGate. Если использовать Dynatrace Operator невозможно, можно развернуть ActiveGate как StatefulSet в кластере Kubernetes вручную. Инструкции приведены ниже.
 
 ## Предварительные требования
 
-* [Создайте токен доступа с областью `PaaS Integration - InstallerDownload`](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Изучите понятие токена доступа и его областей.")
-* [Создайте токен аутентификации](/managed/ingest-from/dynatrace-activegate/activegate-security#generate-individual "Защищайте ActiveGate выделенными токенами.")
+* [Создайте токен доступа с областью действия `PaaS Integration - InstallerDownload`](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Узнайте о концепции токена доступа и его областях действия.")
+* [Создайте токен аутентификации](/managed/ingest-from/dynatrace-activegate/activegate-security#generate-individual "Защитите ActiveGate с помощью отдельных токенов.")
 * Получите UUID пространства имён kube-system
 
   Как извлечь UUID пространства имён kube-system
 
-  Выполните приведённую ниже команду и сохраните UUID из вывода для дальнейшего использования.
+  Выполните команду ниже и сохраните UUID из вывода для дальнейшего использования.
 
   Kubernetes
 
@@ -37,51 +36,69 @@ Dynatrace Operator управляет жизненным циклом неско
 
 ## Развёртывание ActiveGate
 
-Чтобы развернуть ActiveGate, выполните приведённые ниже шаги.
 
-1. Создайте выделенное пространство имён (Kubernetes)/проект (OpenShift).
+Чтобы развернуть ActiveGate, выполни шаги ниже.
 
-   В зависимости от вашей платформы выберите один из вариантов ниже.
+
+1. Создай выделенный namespace (Kubernetes) / project (OpenShift).
+
+
+   В зависимости от платформы выбери один из вариантов ниже.
+
 
    Kubernetes
 
+
    OpenShift
+
 
    ```
    kubectl create namespace dynatrace
    ```
 
+
    ```
    oc adm new-project --node-selector="" dynatrace
    ```
-2. Создайте два секрета:
+2. Создай два секрета:
 
-   * Секрет, содержащий URL-адрес окружения и учётные данные для входа в этот реестр
-   * Секрет для токена аутентификации ActiveGate
+
+   * Секрет с URL окружения и учётными данными для входа в этот реестр
+   * Секрет с токеном аутентификации ActiveGate
+
 
    Kubernetes
 
+
    OpenShift
+
 
    ```
    kubectl -n dynatrace create secret docker-registry dynatrace-docker-registry --docker-server=<YOUR_ENVIRONMENT_URL> --docker-username=<YOUR_ENVIRONMENT_ID> --docker-password=<YOUR_PAAS_TOKEN>
    ```
 
+
    ```
    oc -n dynatrace create secret docker-registry dynatrace-docker-registry --docker-server=<YOUR_ENVIRONMENT_URL> --docker-username=<YOUR_ENVIRONMENT_ID> --docker-password=<YOUR_PAAS_TOKEN>
    ```
 
-   где необходимо заменить
 
-   * `<YOUR_ENVIRONMENT_URL>` на URL-адрес вашего окружения (без `http`). Пример: `{your-environment}.live.dynatrace.com`
-   * `<YOUR_ENVIRONMENT_ID>` на имя пользователя учётной записи Docker (то же, что и идентификатор в вашем URL-адресе окружения выше).
-   * `<YOUR_PAAS_TOKEN>` на PaaS-токен, созданный вами в разделе [Предварительные требования](#prereq)
+   где нужно заменить
 
-   Создайте секрет, содержащий данные аутентификации для сервера Dynatrace, используемого ActiveGate.
+
+   * `<YOUR_ENVIRONMENT_URL>` на URL своего окружения (без `http`). Пример: `{your-environment}.live.dynatrace.com`
+   * `<YOUR_ENVIRONMENT_ID>` на имя пользователя учётной записи Docker (совпадает с ID в URL окружения выше).
+   * `<YOUR_PAAS_TOKEN>` на PaaS-токен, созданный в разделе [Prerequisites](#prereq)
+
+
+   Создай секрет с данными аутентификации для сервера Dynatrace, используемого ActiveGate.
+
 
    Kubernetes
 
+
    OpenShift
+
 
    ```
    kubectl -n dynatrace create secret generic dynatrace-tokens \
@@ -95,6 +112,7 @@ Dynatrace Operator управляет жизненным циклом неско
    --from-literal=auth-token=<YOUR_AUTH_TOKEN>
    ```
 
+
    ```
    oc -n dynatrace create secret generic dynatrace-tokens \
 
@@ -107,19 +125,25 @@ Dynatrace Operator управляет жизненным циклом неско
    --from-literal=auth-token=<YOUR_AUTH_TOKEN>
    ```
 
-   Необходимо заменить
 
-   * `<YOUR_TENANT_TOKEN>` на значение `tenantToken`, полученное в разделе [Предварительные требования](#prereq) из сведений о подключении.
-   * `<YOUR_AUTH_TOKEN>` на индивидуальный токен ActiveGate, полученный в разделе [Предварительные требования](#prereq).
+   Нужно заменить
 
-   Чтобы определить идентификатор вашего окружения, см. синтаксис ниже.
-   **SaaS:** `https://{your-environment-id}.live.dynatrace.com`
+
+   * `<YOUR_TENANT_TOKEN>` на значение `tenantToken`, полученное в разделе [Prerequisites](#prereq) из информации о подключении.
+   * `<YOUR_AUTH_TOKEN>` на индивидуальный токен ActiveGate, полученный в разделе [Prerequisites](#prereq).
+
+
+   Чтобы узнать ID окружения, используй синтаксис ниже.  
+   **SaaS:** `https://{your-environment-id}.live.dynatrace.com`  
    **Managed:** `https://{your-domain}/e/{your-environment-id}`
-3. Создайте служебную учётную запись и роль кластера.
+3. Создай сервисный аккаунт и роль кластера.
 
-   Создайте файл `kubernetes-monitoring-service-account.yaml` со следующим содержимым.
+
+   Создай файл `kubernetes-monitoring-service-account.yaml` со следующим содержимым.
+
 
    kubernetes-monitoring-service-account.yaml
+
 
    ```
    apiVersion: v1
@@ -320,25 +344,32 @@ Dynatrace Operator управляет жизненным циклом неско
 
    namespace: dynatrace
    ```
-4. Примените файл.
+4. Примени файл.
+
 
    Kubernetes
 
+
    OpenShift
+
 
    ```
    kubectl apply -f kubernetes-monitoring-service-account.yaml
    ```
 
+
    ```
    oc apply -f kubernetes-monitoring-service-account.yaml
    ```
-5. Создайте файл с именем `ag-monitoring-and-routing.yaml` со следующим содержимым, обязательно заменив
+5. Создай файл с именем `ag-monitoring-and-routing.yaml` со следующим содержимым, заменив
 
-   * `<YOUR_ENVIRONMENT_URL>` на ваше значение, как описано выше.
-   * `<YOUR_KUBE-SYSTEM_NAMESPACE_UUID>` на UUID пространства имён Kubernetes, полученный в разделе [Предварительные требования](#prereq).
+
+   * `<YOUR_ENVIRONMENT_URL>` на своё значение, как описано выше.
+   * `<YOUR_KUBE-SYSTEM_NAMESPACE_UUID>` на UUID namespace Kubernetes, полученный в разделе [Prerequisites](#prereq).
+
 
    kubernetes-monitoring-and-routing.yaml
+
 
    ```
    apiVersion: v1
@@ -936,45 +967,55 @@ Dynatrace Operator управляет жизненным циклом неско
    type: RollingUpdate
    ```
 
-   Подробнее о настройке контейнеризированного ActiveGate см. [Настройка контейнеризированного ActiveGate](/managed/ingest-from/dynatrace-activegate/activegate-in-container/configuration "Узнайте, как настроить контейнеризированный ActiveGate.").
 
-   Подсказки по выбору лимитов для ActiveGate
+   Подробнее о конфигурации контейнеризованного ActiveGate см. в разделе [Конфигурация контейнеризованного ActiveGate](/managed/ingest-from/dynatrace-activegate/activegate-in-container/configuration "Узнайте, как настроить контейнеризованный ActiveGate.").
 
-   Ниже приведён список предлагаемых размеров в зависимости от количества подов:
 
-   | Количество подов | CPU | Память |
+   Рекомендации по ограничению ресурсов ActiveGate
+
+
+   Ниже приведены предлагаемые размеры в зависимости от количества Pod:
+
+
+   | Количество Pod | CPU | Память |
    | --- | --- | --- |
-   | До 1 000 подов | 200 милликор (mCores) | 6 гибибайт (GiB) |
-   | До 5 000 подов | 1 000 милликор (mCores) | 10 гибибайт (GiB) |
-   | До 20 000 подов | 2 000 милликор (mCores) | 12 гибибайт (GiB) |
-   | Более 20 000 подов | более 2 000 милликор (mCores)[1](#fn-1-1-def) | более 12 гибибайт (GiB)[1](#fn-1-1-def) |
+   | До 1 000 Pod | 200 миллиядер (mCores) | 6 гибибайт (GiB) |
+   | До 5 000 Pod | 1 000 миллиядер (mCores) | 10 гибибайт (GiB) |
+   | До 20 000 Pod | 2 000 миллиядер (mCores) | 12 гибибайт (GiB) |
+   | Более 20 000 Pod | более 2 000 миллиядер (mCores)[1](#fn-1-1-def) | более 12 гибибайт (GiB)[1](#fn-1-1-def) |
+
 
    1
 
-   Фактические значения зависят от вашего окружения.
 
-   Эти лимиты следует воспринимать как ориентир. Они предназначены для предотвращения замедления процесса запуска ActiveGate и чрезмерного использования ресурсов узла. Значения по умолчанию охватывают широкий диапазон различных размеров кластеров; можно изменить их в соответствии с вашими потребностями на основе [метрик самомониторинга](/managed/analyze-explore-automate/metrics-classic/self-monitoring-metrics#activegate-insights "Изучите полный список метрик самомониторинга Dynatrace.") ActiveGate.
-   Дополнительные сведения о рекомендациях по выбору размера см. в [Руководстве по выбору размера для компонентов Dynatrace ActiveGate](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Задайте лимиты ресурсов для Dynatrace ActiveGate")
+   Фактические значения зависят от окружения.
 
-   Для архитектуры PPC64le требуется дополнительная настройка. Подробнее см. [Образ контейнера ActiveGate](/managed/ingest-from/dynatrace-activegate/activegate-in-container#additional-configuration "Разверните контейнеризированный ActiveGate.").
-6. Разверните ActiveGate.
+
+   Эти ограничения носят рекомендательный характер. Они призваны предотвратить замедление процесса запуска ActiveGate и избыточное потребление ресурсов узла. Значения по умолчанию покрывают широкий диапазон размеров кластеров; их можно изменить под свои нужды, опираясь на [метрики самомониторинга](/managed/analyze-explore-automate/metrics-classic/self-monitoring-metrics#activegate-insights "Просмотрите полный список метрик самомониторинга Dynatrace.") ActiveGate.
+   Подробнее о рекомендациях по размерам см. в разделе [Руководство по размерам компонентов Dynatrace ActiveGate](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Рекомендации по ресурсам CPU и памяти для Dynatrace ActiveGate, развёрнутых в Kubernetes, с учётом масштаба кластера и типа нагрузки.")
+
+   Для архитектуры PPC64le требуется дополнительная настройка. Подробности см. в разделе [Образ контейнера ActiveGate](/managed/ingest-from/dynatrace-activegate/activegate-in-container#additional-configuration "Развёртывание контейнеризованного ActiveGate.").
+6. Разверни ActiveGate.
+
 
    Kubernetes
 
+
    OpenShift
+
 
    ```
    kubectl apply -f ag-monitoring-and-routing.yaml
    ```
 
+
    ```
    oc apply -f ag-monitoring-and-routing.yaml
    ```
-
 ## Подключение ActiveGate к Kubernetes API
 
-Продолжите с шага 3 из [руководства по включению мониторинга Kubernetes API](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring#connect-ag-k8s-api "Мониторинг Kubernetes API с помощью Dynatrace")
+Перейди к шагу 3 из [руководства по включению мониторинга Kubernetes API](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring#connect-ag-k8s-api "Мониторинг Kubernetes API с помощью Dynatrace")
 
 ## Поведение ActiveGate при обновлении
 
-ActiveGate обновляется автоматически при перезапуске пода всякий раз, когда доступна новая версия, если в образе уже не указана определённая версия.
+ActiveGate обновляется автоматически при перезапуске пода, если доступна новая версия, при условии что в образе не указана конкретная версия.

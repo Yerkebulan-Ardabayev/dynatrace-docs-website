@@ -1,7 +1,6 @@
 ---
 title: Трассировка Azure Functions на Node.js
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs
-scraped: 2026-05-12T12:07:43.833171
 ---
 
 # Трассировка Azure Functions на Node.js
@@ -9,48 +8,48 @@ scraped: 2026-05-12T12:07:43.833171
 # Трассировка Azure Functions на Node.js
 
 * Практическое руководство
-* Чтение: 6 мин
-* Обновлено 4 ноября 2025 г.
+* 6 мин чтения
+* Обновлено 04 ноя 2025
 
-Модуль [`@dynatrace/opentelemetry-azure-functions`](https://dt-url.net/9603x96) предоставляет API для трассировки Node.js на Azure Functions.
+Модуль [`@dynatrace/opentelemetry-azure-functions`﻿](https://dt-url.net/9603x96) предоставляет API для трассировки Node.js в Azure Functions.
 
 ## Предварительные требования
 
-Перед использованием приведённых ниже пакетов убедитесь, что выполнены шаги **начальной настройки**, описанные в разделе [Настройка мониторинга OpenTelemetry для Azure Functions на плане Consumption](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions "Мониторинг плана Consumption для Azure Functions с OpenTelemetry и Dynatrace.").
+Нужно выполнить шаги **начальной настройки**, описанные в [Настройка мониторинга OpenTelemetry для Azure Functions на Consumption Plan](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace."), прежде чем использовать пакеты ниже.
 
 * @dynatrace/opentelemetry-azure-functions версии 1.243+
 
 ## Установка
 
-Чтобы настроить интеграцию OpenTelemetry для Node.js на Azure Functions, выполните следующую команду.
+Чтобы настроить интеграцию OpenTelemetry Node.js в Azure Functions, выполните следующую команду.
 
 ```
 npm install --save @dynatrace/opentelemetry-azure-functions
 ```
 
-## Экспорт трассировки
+## Экспорт трасс
 
-Azure Functions можно разрабатывать с использованием одной из двух [моделей программирования](https://dt-url.net/9p03lmb): v3 и v4. Для учёта различий между ними Dynatrace предоставляет два способа экспорта трассировки:
+Azure Functions можно разрабатывать с использованием одной из двух различных [моделей программирования﻿](https://dt-url.net/9p03lmb): v3 и v4. Чтобы учесть различия между двумя моделями, Dynatrace предоставляет два способа экспорта трасс:
 
-* Для модели программирования v3 обработчик Azure Functions оборачивается (с помощью API `wrapHandler`) для генерации и экспорта трассировок.
-* Для модели программирования v4 для той же цели используются [Azure Functions Hooks](https://dt-url.net/v323l3e). Обратите внимание, что хуки доступны только для модели программирования v4.
+* Для модели программирования v3 обработчик Azure Functions оборачивается (с помощью API `wrapHandler`) для генерации и экспорта трасс.
+* Для модели программирования v4 для этой же цели используются [Azure Functions Hooks﻿](https://dt-url.net/v323l3e). Обратите внимание: hooks доступны только для модели программирования v4.
 
-Подробнее см. ниже.
+Подробности см. ниже.
 
 ### Модель программирования v3
 
-Для экспорта трассировок в Dynatrace из Azure Functions, разработанных с использованием [модели программирования v3](https://dt-url.net/n443lxw):
+Чтобы экспортировать трассы в Dynatrace из Azure Functions, разработанных с [моделью программирования v3﻿](https://dt-url.net/n443lxw):
 
 1. Выберите один из двух способов инициализации трассировки.
 
-   * `NodeTracerProvider`: более лёгкий вариант по сравнению с `NodeSDK`
-   * `NodeSDK`: как правило, используется при необходимости работы с дополнительными сигналами OpenTelemetry, например с метриками
+   * `NodeTracerProvider`, более лёгкий вариант по сравнению с `NodeSDK`
+   * `NodeSDK`, как правило используется, если нужны дополнительные сигналы OpenTelemetry, например метрики
 
-   Несколько Azure Functions можно объединить в одно приложение Azure Function app. Поэтому важно инициализировать трассировку один раз на уровне приложения, а не отдельно для каждой функции. Проще всего поместить код настройки трассировки в общий файл, как описано в [руководстве разработчика Azure Functions для JavaScript](https://dt-url.net/t223xf2), и подключить его в начале всех функций.
+   Несколько Azure Functions можно объединить в одно Azure Function app. Поэтому важно инициализировать трассировку только один раз на Azure Function app, а не один раз на функцию. Проще всего поместить код настройки трассировки в общий файл, как описано в [руководстве для JavaScript-разработчиков Azure Functions﻿](https://dt-url.net/t223xf2), и подключить его в начале всех функций.
 
-   Код настройки трассировки должен выполняться ровно один раз до подключения любых сторонних модулей.
+   Код настройки трассировки должен инициализировать трассировку только один раз, до подключения любых других сторонних модулей.
 
-   Пример с NodeTracerProvider (рекомендуется)
+   Пример NodeTracerProvider (рекомендуется)
 
    ```
    import { Resource } from "@opentelemetry/resources";
@@ -128,7 +127,7 @@ Azure Functions можно разрабатывать с использован�
    });
    ```
 
-   Пример с NodeSDK
+   Пример NodeSDK
 
    ```
    import { Resource } from "@opentelemetry/resources";
@@ -259,14 +258,14 @@ Azure Functions можно разрабатывать с использован�
    export default wrapHandler(httpTrigger);
    ```
 
-### Модель программирования v4
+### Programming model v4
 
-Существует два способа экспорта трассировок в Dynatrace из Azure Functions, разработанных с использованием [модели программирования v4](https://dt-url.net/7t03lem).
+Есть два способа экспортировать трассы в Dynatrace из Azure Functions, разработанных с использованием [programming model v4﻿](https://dt-url.net/7t03lem).
 
-* Использование API `initDynatrace`.
-* Инициализация трассировки путём регистрации хуков Azure Function вручную.
+* Использовать API `initDynatrace`.
+* Инициализировать трассировку, зарегистрировав хуки Azure Function вручную.
 
-Независимо от выбранного подхода к инструментированию, код настройки трассировки всегда должен выполняться ровно один раз до подключения любых сторонних модулей.
+Независимо от выбранного подхода к инструментированию, код настройки трассировки нужно реализовывать таким образом, чтобы трассировка инициализировалась только один раз, до подключения любых сторонних модулей.
 
 #### Использование API `initDynatrace`
 
@@ -276,7 +275,7 @@ API `initDynatrace` регистрирует хуки Azure Function, необх
 
 * initDynatrace с настройкой OpenTelemetry (рекомендуется)
 
-  Передайте `true` в качестве первого аргумента `initDynatrace`, чтобы настроить трассировку и получить зарегистрированный NodeTracerProvider. Атрибуты ресурса для provider можно передать в качестве второго необязательного аргумента.
+  Передайте `true` первым аргументом в `initDynatrace`, чтобы настроить трассировку и получить зарегистрированный NodeTracerProvider. Атрибуты ресурса для провайдера можно передать вторым необязательным аргументом.
 
   ```
   import { initDynatrace } from "@dynatrace/opentelemetry-azure-functions";
@@ -303,7 +302,7 @@ API `initDynatrace` регистрирует хуки Azure Function, необх
   ```
 * initDynatrace без настройки OpenTelemetry
 
-  Вызовите `initDynatrace` без параметров, чтобы зарегистрировать только необходимые хуки Azure Function и настроить трассировку вручную. Это удобно, если для настройки трассировки требуются дополнительные параметры.
+  Вызовите `initDynatrace` без параметров, чтобы зарегистрировать только необходимые хуки Azure Function и настроить трассировку вручную. Это удобно, когда в настройке трассировки нужны дополнительные кастомизации.
 
   ```
   import { initDynatrace } from "@dynatrace/opentelemetry-azure-functions";
@@ -397,7 +396,7 @@ API `initDynatrace` регистрирует хуки Azure Function, необх
   // azure functions registration goes here
   ```
 
-  Обратите внимание, что код настройки трассировки аналогичен коду для модели программирования v3, и пример с NodeSDK (из раздела v3 выше) также применим здесь. Для удобства предусмотрен API `configureDynatrace`, выполняющий те же действия.
+  Обратите внимание, что код настройки трассировки совпадает с кодом для programming model v3, и пример с NodeSDK (из model v3 выше) также будет работать здесь. Для удобства предусмотрен API `configureDynatrace`, который делает то же самое, что и код выше.
 
   ```
   import { configureDynatrace, initDynatrace } from "@dynatrace/opentelemetry-azure-functions";
@@ -431,20 +430,20 @@ API `initDynatrace` регистрирует хуки Azure Function, необх
   // azure functions registration goes here
   ```
 
-#### Инициализация трассировки путём регистрации хуков Azure Function вручную
+#### Инициализация трассировки через ручную регистрацию хуков Azure Function
 
-В случаях, когда требуется зарегистрировать дополнительные хуки Azure Functions, API `initDynatrace` может не подойти.
+В случаях, когда нужно зарегистрировать дополнительные хуки Azure Functions, API `initDynatrace` может не подойти.
 
-Поскольку хуки Azure Function выполняются в том порядке, в котором они были зарегистрированы, важно:
+Поскольку хуки Azure Function выполняются в том порядке, в котором они зарегистрированы, важно соблюдать следующее:
 
-* Зарегистрировать хук Dynatrace Trace Start первым среди хуков предварительного вызова
-* Зарегистрировать хук Dynatrace Trace End последним среди хуков завершения вызова
+* Регистрировать хук Dynatrace Trace Start как первый pre-invocation хук
+* Регистрировать хук Dynatrace Trace End как последний post-invocation хук
 
-Время выполнения хуков включается в общее время выполнения функции. Если порядок зарегистрированных хуков нарушен, сообщаемое инструментированием время выполнения функции также будет неточным.
+Время выполнения хуков включается в общее время выполнения функции. Если порядок зарегистрированных хуков нарушен, время выполнения функции, которое сообщает наша инструментация, также будет неточным.
 
-Подробнее о хуках Azure Function см. в [руководстве разработчика Azure Functions для Node.js](https://dt-url.net/uo23lv1).
+Подробнее о хуках Azure Function см. в [руководстве разработчика Azure Functions Node.js﻿](https://dt-url.net/uo23lv1).
 
-Для управления порядком хуков используйте API `registerTraceStartHook` и `registerTraceEndHook`, как показано ниже.
+Чтобы упорядочить хуки нужным образом, можно использовать APIs `registerTraceStartHook` и `registerTraceEndHook`, как показано ниже.
 
 ```
 import { app, PreInvocationContext, PostInvocationContext } from "@azure/functions";
@@ -514,7 +513,7 @@ registerTraceEndHook();
 // azure functions registration goes here
 ```
 
-## Совместимость
+## Compatibility
 
 | Версия OneAgent | OpenTelemetry API | OpenTelemetry SDK |
 | --- | --- | --- |
@@ -536,11 +535,13 @@ registerTraceEndHook();
 | 1.327+ | 1.x.y | 1.0.x - 2.0.x |
 | 1.331+ | 1.x.y | 1.0.x - 2.2.x |
 | 1.335+ | 1.x.y | 1.0.x - 2.5.x |
+| 1.337+ | 1.x.y | 1.0.x - 2.6.x |
+| 1.343+ | 1.x.y | 1.0.x - 2.7.x |
 
-Dynatrace версии 1.327+ Модуль `@dynatrace/opentelemetry-azure-functions` поддерживает OpenTelemetry SDK V2. Чтобы использовать V2 вместо V1, переопределите версию модуля `@dynatrace/opentelemetry-core` (требуется для `@dynatrace/opentelemetry-azure-functions`), указав версию с поддержкой OpenTelemetry SDK V2.
+Dynatrace версии 1.327+ Модуль `@dynatrace/opentelemetry-azure-functions` поддерживает OpenTelemetry SDK V2. Чтобы использовать V2 (вместо V1), нужно переопределить версию модуля `@dynatrace/opentelemetry-core` (требуемого `@dynatrace/opentelemetry-azure-functions`) на версию, поддерживающую OpenTelemetry SDK V2.
 
-1. Выберите из таблицы выше версию с поддержкой OpenTelemetry SDK V2.
-2. В файле `package.json` добавьте раздел `overrides` и укажите одну из версий модуля `@dynatrace/opentelemetry-core` для принудительного использования.
+1. В таблице выше выберите версию с поддержкой OpenTelemetry SDK V2.
+2. В файле `package.json` добавьте секцию `overrides` и укажите одну из версий модуля `@dynatrace/opentelemetry-core` для принудительного применения.
 3. Выполните `npm install`, чтобы применить изменения.
 
 Пример:
@@ -577,27 +578,27 @@ Dynatrace версии 1.327+ Модуль `@dynatrace/opentelemetry-azure-funct
 }
 ```
 
-Как только `@dynatrace/opentelemetry-azure-functions` будет переведён на использование OpenTelemetry SDK V2 по умолчанию, это переопределение больше не потребуется.
+После того как `@dynatrace/opentelemetry-azure-functions` по умолчанию перейдёт на использование OpenTelemetry SDK V2, это переопределение больше не потребуется.
 
-Поддерживаемые версии [Azure Functions runtime](https://learn.microsoft.com/en-us/azure/azure-functions/functions-versions?tabs=v4&pivots=programming-language-javascript):
+Поддерживаемые версии [среды выполнения Azure Functions﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-versions?tabs=v4&pivots=programming-language-javascript):
 
 * 4.x
 
-Поддерживаемые [модели программирования Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-reference-node?source=recommendations&tabs=javascript%2Cwindows%2Cazure-cli&pivots=nodejs-model-v4#supported-versions):
+Поддерживаемые версии [модели программирования Azure Functions﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-reference-node?source=recommendations&tabs=javascript%2Cwindows%2Cazure-cli&pivots=nodejs-model-v4#supported-versions):
 
 * 3.x
 * 4.x @dynatrace/opentelemetry-azure-functions версии 1.289+
 
-## Ограничения
+## Limitations
 
-* Поддерживаются только обработчики функций типа `async`.
+* Поддерживаются только обработчики функций с типом `async`.
 
-  + Это соответствует рекомендации Azure использовать [`async` и `await`](https://dt-url.net/be03x31).
-  + `wrapHandler` возвращает любую функцию без `async` в необёрнутом виде: функция будет работать, но спан создан не будет.
-  + Обратите внимание, что асинхронные функции появились в ECMAScript 2017. Если используется более ранняя версия ECMAScript, спаны создаваться не будут. При использовании TypeScript убедитесь, что [цель компиляции](https://dt-url.net/df02zbc) установлена на ECMAScript 2017 или выше.
-* Пакет поддерживает только [план Consumption](https://dt-url.net/ck022yx). На других планах он может работать, однако совместимость и производительность не гарантируются.
-* Сигнализация о завершении функции с помощью устаревших вызовов [`context.done()`](https://dt-url.net/0l23xfy) или [`context.res.send()`](https://dt-url.net/dj43xgq) не поддерживается. Используйте привязку `$return` и возвращайте результат из обработчика функции, либо используйте именованную привязку `out` и задавайте `context.binding.<name>`. Для HTTP-триггеров также поддерживается установка `context.res`.
+  + Это следует рекомендации Azure использовать [`async` и `await`﻿](https://dt-url.net/be03x31).
+  + `wrapHandler` возвращает любую не-`async` функцию без обёртки, поэтому функция продолжит работать, но спан создан не будет.
+  + Обратите внимание, что async-функции появились в ECMAScript 2017. Если используется более ранняя версия ECMAScript, спан создан не будет. При использовании TypeScript убедитесь, что [цель компиляции﻿](https://dt-url.net/df02zbc) установлена на ECMAScript 2017 или выше.
+* Пакет поддерживает только [план Consumption﻿](https://dt-url.net/ck022yx). На других планах он может работать, однако совместимость и производительность не гарантируются.
+* Сигнализирование о завершении функции через устаревшие вызовы [`context.done()`﻿](https://dt-url.net/0l23xfy) или [`context.res.send()`﻿](https://dt-url.net/dj43xgq) не поддерживается. Нужно либо использовать привязку `$return` и возвращать результат из обработчика функции, либо использовать именованную привязку `out` и задавать `context.binding.<name>`. Для HTTP-триггеров также поддерживается установка `context.res`.
 
-## Связанные темы
+## Related topics
 
-* [Настройка Dynatrace в Microsoft Azure](/managed/ingest-from/microsoft-azure-services "Настройка и конфигурирование мониторинга для Microsoft Azure.")
+* [Настройка Dynatrace на Microsoft Azure](/managed/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")

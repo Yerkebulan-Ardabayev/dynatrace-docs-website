@@ -1,57 +1,56 @@
 ---
-title: Интеграция OpenTelemetry на Google Cloud Functions Node.js
+title: Интеграция в Google Cloud Functions Node.js
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs
-scraped: 2026-05-12T11:52:01.511048
 ---
 
-# Интеграция OpenTelemetry на Google Cloud Functions Node.js
+# Интеграция в Google Cloud Functions Node.js
 
-# Интеграция OpenTelemetry на Google Cloud Functions Node.js
+# Интеграция в Google Cloud Functions Node.js
 
 * Практическое руководство
 * Чтение: 4 мин
 * Обновлено 26 сентября 2025 г.
 
-Модуль [`@dynatrace/opentelemetry-gcf`](https://dt-url.net/zm03ye8) предоставляет API для трассировки Node.js на Google Cloud Functions (GCF).
+Модуль [`@dynatrace/opentelemetry-gcf`﻿](https://dt-url.net/zm03ye8) предоставляет API для трассировки Node.js на Google Cloud Functions (GCF).
 
 ## Предварительные требования
 
-Убедитесь, что вы выполнили инструкции по [интеграции OpenTelemetry на Google Cloud Functions](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf "Мониторинг Google Cloud Functions с помощью OpenTelemetry и Dynatrace.").
+Нужно выполнить инструкции по [интеграции OpenTelemetry на Google Cloud Functions](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.").
 
-* На данный момент поддерживаются только [триггеры HTTP](https://dt-url.net/os23yfz).
-* Версия продукта Cloud Function: 1-го поколения, 2-го поколения
+* На данный момент поддерживаются только [HTTP-триггеры﻿](https://dt-url.net/os23yfz).
+* Версия продукта Cloud Function: 1st gen, 2nd gen
 
 ## Установка
 
-Чтобы настроить интеграцию OpenTelemetry Node.js на Google Cloud Functions, выполните следующую команду в корневом каталоге вашего проекта Google Cloud Function.
+Чтобы настроить интеграцию OpenTelemetry Node.js на Google Cloud Functions, выполните следующую команду в корневом каталоге проекта Google Cloud Function.
 
 ```
 npm install --save @dynatrace/opentelemetry-gcf
 ```
 
-Будет установлена последняя версия модуля [`@dynatrace/opentelemetry-gcf`](https://dt-url.net/zm03ye8) из NPM. Обратите внимание: одной этой библиотеки недостаточно для начала трассировки Google Cloud Functions.
-Оставшиеся необходимые шаги см. в разделе [Использование](#usage) ниже.
+Это установит последнюю версию модуля [`@dynatrace/opentelemetry-gcf`﻿](https://dt-url.net/zm03ye8) из NPM. Обратите внимание, что одной этой библиотеки недостаточно для начала трассировки Google Cloud Functions.
+Остальные необходимые шаги описаны в разделе [Usage](#usage) ниже.
 
-## Использование
+## Usage
 
-Чтобы экспортировать трассировки в Dynatrace
+Чтобы экспортировать трассы в Dynatrace:
 
-1. Выберите один из двух способов инициализации трассировки.
+1. Выберите один из двух способов инициализации трассировки ниже.
 
-   * `NodeTracerProvider` для инициализации трассировки легче, чем `NodeSDK`.
-   * `NodeSDK` обычно используется, если требуются дополнительные сигналы OpenTelemetry, например метрики.
+   * `NodeTracerProvider`, используемый для инициализации трассировки, более легковесен, чем `NodeSDK`.
+   * `NodeSDK` обычно применяется, если нужны дополнительные сигналы OpenTelemetry, такие как метрики.
 
-   Использование NodeTracerProvider (рекомендуется)
+   Using NodeTracerProvider (recommended)
 
-   Использование NodeSDK
+   Using NodeSDK
 
-   Установите необходимые пакеты OpenTelemetry следующей командой.
+   Установите необходимые пакеты OpenTelemetry с помощью команды ниже.
 
    ```
    npm install --save @opentelemetry/sdk-trace-node @opentelemetry/semantic-conventions
    ```
 
-   После установки пакетов инициализируйте трассировку с помощью следующего примера кода.
+   После установки пакетов инициализируйте трассировку, используя следующий фрагмент в качестве примера.
 
    ```
    const { Resource } = require('@opentelemetry/resources');
@@ -125,13 +124,13 @@ npm install --save @dynatrace/opentelemetry-gcf
    });
    ```
 
-   Установите необходимые пакеты OpenTelemetry следующей командой.
+   Установите необходимые пакеты OpenTelemetry с помощью команды ниже.
 
    ```
    npm install --save @opentelemetry/sdk-node @opentelemetry/semantic-conventions
    ```
 
-   После установки пакетов инициализируйте трассировку с помощью следующего примера кода.
+   После установки пакетов инициализируйте трассировку, используя следующий фрагмент в качестве примера.
 
    ```
    const { Resource } = require('@opentelemetry/resources');
@@ -196,13 +195,13 @@ npm install --save @dynatrace/opentelemetry-gcf
 
    });
    ```
-2. Запустите корневой серверный спан Google Cloud Function, используя один из двух шаблонов OpenTelemetry.
+2. Запустите корневой span сервера Google Cloud Function, используя один из двух общих паттернов OpenTelemetry ниже.
 
-   Запуск активного спана (рекомендуется)
+   Start an active span (recommended)
 
-   Запуск спана с последующей активацией
+   Start the span and activate it later
 
-   Пример запуска и немедленной активации спана внутри Google Cloud Function:
+   Пример запуска с немедленной активацией span внутри Google Cloud Function:
 
    ```
    const { startActiveHttpSpan, endHttpSpanAndFlush } = require('@dynatrace/opentelemetry-gcf');
@@ -288,7 +287,7 @@ npm install --save @dynatrace/opentelemetry-gcf
    }
    ```
 
-   Пример запуска спана внутри Google Cloud Function с последующей активацией в той же функции.
+   Пример запуска span внутри Google Cloud Function с последующей активацией в рамках той же функции.
 
    ```
    const { context, trace, ROOT_CONTEXT } = require('@opentelemetry/api');
@@ -404,11 +403,13 @@ npm install --save @dynatrace/opentelemetry-gcf
 | 1.327+ | 1.x.y | 1.0.x - 2.0.x |
 | 1.331+ | 1.x.y | 1.0.x - 2.2.x |
 | 1.335+ | 1.x.y | 1.0.x - 2.5.x |
+| 1.337+ | 1.x.y | 1.0.x - 2.6.x |
+| 1.343+ | 1.x.y | 1.0.x - 2.7.x |
 
-Dynatrace версии 1.327+ Модуль `@dynatrace/opentelemetry-gcf` поддерживает OpenTelemetry SDK V2. Чтобы использовать V2 (вместо V1), переопределите версию модуля `@dynatrace/opentelemetry-core` (требуемого `@dynatrace/opentelemetry-gcf`) на версию с поддержкой OpenTelemetry SDK V2.
+Dynatrace версии 1.327+ Модуль `@dynatrace/opentelemetry-gcf` поддерживает OpenTelemetry SDK V2. Чтобы использовать V2 вместо V1, нужно переопределить версию модуля `@dynatrace/opentelemetry-core` (который требуется `@dynatrace/opentelemetry-gcf`) на версию с поддержкой OpenTelemetry SDK V2.
 
-1. Из таблицы выше выберите версию с поддержкой OpenTelemetry SDK V2.
-2. В файле `package.json` добавьте раздел `overrides` и укажите одну из версий модуля `@dynatrace/opentelemetry-core` для принудительного использования.
+1. Выберите из таблицы выше версию с поддержкой OpenTelemetry SDK V2.
+2. В файле `package.json` добавьте раздел `overrides` и укажите нужную версию модуля `@dynatrace/opentelemetry-core` для принудительного использования.
 3. Выполните `npm install` для применения изменений.
 
 Пример:
@@ -445,44 +446,44 @@ Dynatrace версии 1.327+ Модуль `@dynatrace/opentelemetry-gcf` под
 }
 ```
 
-После того как `@dynatrace/opentelemetry-gcf` будет по умолчанию переключён на OpenTelemetry SDK V2, это переопределение больше не потребуется.
+После того как `@dynatrace/opentelemetry-gcf` по умолчанию перейдёт на OpenTelemetry SDK V2, это переопределение больше не потребуется.
 
-## Холодный старт
+## Cold start
 
-Запуск спана Google Cloud Function при [холодных стартах](https://dt-url.net/j543yr9) генерирует дополнительные HTTP-запросы для получения метаданных из [среды Google Cloud](https://dt-url.net/jc83y1m) и установки атрибутов, необходимых Dynatrace для обработки спанов.
+Запуск span Google Cloud Function во время [cold starts﻿](https://dt-url.net/j543yr9) порождает дополнительные HTTP-запросы для получения метаданных из [среды Google Cloud﻿](https://dt-url.net/jc83y1m) и установки атрибутов, необходимых Dynatrace для обработки span.
 
-## Сброс спанов
+## Сброс span
 
-Чтобы спаны экспортировались корректно, необходимо выполнить их сброс до отправки ответа функции клиенту. Подробнее об этом ограничении см. [Сигнализация завершения функции](https://dt-url.net/5ta3ywp).
+Чтобы span корректно экспортировались, их нужно сбросить до отправки ответа функцией клиенту. Подробнее об этом ограничении см. в [Signalling function termination﻿](https://dt-url.net/5ta3ywp).
 
-При необходимости можно использовать `endHttpSpan()` и `flushSpans()` раздельно вместо `endHttpSpanAndFlush()`.
+При необходимости можно вызывать `endHttpSpan()` и `flushSpans()` раздельно вместо `endHttpSpanAndFlush()`.
 
-Сброс спанов в коде функции увеличивает время выполнения, поскольку эта операция становится частью логики выполнения функции. Чтобы избежать этого, можно пропустить операцию сброса: спаны всё равно будут периодически экспортироваться в фоновом режиме.
+Сброс span в коде функции увеличивает время её выполнения, поскольку эта операция становится частью логики выполнения функции. Чтобы этого избежать, операцию сброса можно пропустить. Span всё равно будут периодически экспортироваться в фоновом режиме.
 
-Поскольку код, выполняющийся за пределами выполнения функции, может быть завершён в любой момент, Google Cloud Functions не рекомендует такой подход.
+Поскольку код, выполняющийся за пределами функции, может быть прерван в любой момент, Google Cloud Functions не рекомендует этот подход.
 
-* Google Cloud Functions 1-го поколения
+* Google Cloud Functions 1st gen
 
-  Выполнение фоновых задач после вызова функции без сброса спанов не гарантировано и может привести к потере спанов. На практике примеры показали, что отсутствие явного сброса спанов, как правило, всё равно приводит к их корректному экспорту.
-* Google Cloud Functions 2-го поколения
+  Выполнение фоновых задач после вызова функции не гарантируется без сброса span, что может привести к потере span. На практике опыт показывает, что отсутствие явного сброса span обычно всё же приводит к корректному экспорту span.
+* Google Cloud Functions 2nd gen
 
-  Google Cloud Functions 2-го поколения может обрабатывать несколько одновременных запросов в одном экземпляре функции. Операция сброса одного вызова может увеличить время выполнения другого вызова функции.
-  Поскольку экземпляры функций обычно должны некоторое время оставаться в режиме ожидания для обработки нескольких одновременных запросов, можно отключить сброс спанов для повышения производительности. Подробнее см. [Жизненный цикл экземпляра](https://cloud.google.com/run/docs/container-contract#lifecycle-services).
-  Обратите внимание: простаивающим экземплярам функций не гарантировано выделение CPU, если их режим [выделения CPU](https://cloud.google.com/run/docs/configuring/cpu-allocation) не установлен в `CPU always allocated`.
+  Google Cloud Functions 2nd gen может обрабатывать несколько одновременных запросов в одном экземпляре функции. Операция сброса одного вызова может увеличить время выполнения другого вызова функции.
+  Поскольку экземпляры функций обычно некоторое время остаются в режиме ожидания для обработки нескольких одновременных запросов, можно отключить сброс span для повышения производительности. Подробнее см. в [Instance lifecycle﻿](https://cloud.google.com/run/docs/container-contract#lifecycle-services).
+  Обратите внимание, что простаивающим экземплярам функций не гарантируется выделение CPU, если режим [CPU allocation﻿](https://cloud.google.com/run/docs/configuring/cpu-allocation) не установлен в `CPU always allocated`.
 
-  Подробнее см. [Временная шкала выполнения функции](https://cloud.google.com/functions/docs/concepts/execution-environment#execution-timeline).
+  Подробнее см. в [Function execution timeline﻿](https://cloud.google.com/functions/docs/concepts/execution-environment#execution-timeline).
 
-## Особые замечания
+## Предостережения
 
-Необходимо уделять особое внимание случаям необработанных исключений или тайм-аутов функции. При ненадлежащей обработке они могут привести к незавершённому и, следовательно, неэкспортированному спану.
+Нужно уделять особое внимание случаям вроде необработанных исключений или таймаутов функций. Если не обработать их должным образом, span может остаться незавершённым и, следовательно, не будет экспортирован.
 
 ## Накладные расходы Dynatrace
 
-* Поскольку экспорт спанов и получение метаданных занимают некоторое время при холодных стартах, они увеличивают продолжительность выполнения функции и, следовательно, повышают затраты.
-* Обратите внимание на редко вызываемые функции (как правило, с холодными стартами): им может потребоваться больше времени для TCP-рукопожатия при экспорте спанов.
-* Любые сетевые проблемы между экспортером и бэкендом Dynatrace могут также привести к неожиданно высоким накладным расходам.
+* Поскольку экспорт span'ов и получение метаданных занимают некоторое время при холодном запуске, это увеличивает длительность выполнения функции и, соответственно, затраты.
+* Нужно обращать внимание на редко вызываемые функции (как правило, с холодным запуском): им может потребоваться больше времени на TCP-рукопожатие при экспорте span'ов.
+* Любая сетевая проблема между экспортером и бэкендом Dynatrace также может привести к неожиданно высоким накладным расходам.
 
 ## Связанные темы
 
-* [Настройка Dynatrace на Google Cloud](/managed/ingest-from/google-cloud-platform "Мониторинг Google Cloud с помощью Dynatrace.")
-* [Мониторинг Google Cloud](https://www.dynatrace.com/technologies/google-cloud-monitoring/)
+* [Set up Dynatrace on Google Cloud](/managed/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
+* [Google Cloud monitoring﻿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)
