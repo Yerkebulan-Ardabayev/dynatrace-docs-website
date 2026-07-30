@@ -1,52 +1,52 @@
 ---
-title: Миграция с классического режима мониторинга полного стека на режим мониторинга приложений
+title: Переход с classic full-stack на режим application monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/migration/classic-to-app-monitoring
 ---
 
-# Миграция с классического режима мониторинга полного стека на режим мониторинга приложений
+# Переход с classic full-stack на режим application monitoring
 
-# Миграция с классического режима мониторинга полного стека на режим мониторинга приложений
+# Переход с classic full-stack на режим application monitoring
 
-* 3 мин чтения
-* Обновлено 03 июня 2026
+* Чтение: 3 мин
+* Обновлено 03 июн 2026
 
 Dynatrace Operator версии 1.0.0+
 
-В этом руководстве описаны шаги, необходимые для миграции развёртывания Dynatrace с классического мониторинга полного стека на [режим мониторинга приложений](/managed/ingest-from/setup-on-k8s/how-it-works#auto "Подробное описание того, как работает развёртывание на Kubernetes.").
+В этом руководстве описаны шаги, необходимые для перехода развёртывания Dynatrace с classic full-stack monitoring на [application monitoring mode](/managed/ingest-from/setup-on-k8s/how-it-works#auto "Подробное описание принципов развёртывания на Kubernetes.").
 
 ## Преимущества
 
-Для мониторинга только выбранных приложений на Kubernetes мониторинг приложений предлагает гибкий подход со следующими преимуществами:
+Для мониторинга только выбранных приложений на Kubernetes application monitoring предлагает гибкий подход со следующими преимуществами:
 
-* Режим мониторинга приложений, аналогично режиму cloud native full stack, предотвращает состояния гонки, которые могут возникать при одновременном запуске подов DaemonSet OneAgent и подов отслеживаемых приложений.
-* За счёт использования концепций Kubernetes, таких как admission webhooks и CSI-драйвер для внедрения Code Module, режим мониторинга приложений снижает требуемый уровень привилегий для OneAgent.
+* Режим application monitoring, аналогично cloud native full stack mode, предотвращает гонки состояний, которые могут возникать при одновременном запуске подов DaemonSet OneAgent и подов наблюдаемых приложений.
+* Используя концепции Kubernetes, такие как admission webhooks и CSI driver для инжекции Code Module, режим application monitoring снижает необходимые привилегии для OneAgent.
 
-### Соображения и последствия
+### Рекомендации и последствия
 
-* При переключении на мониторинг приложений ранее развёрнутые OneAgent будут деактивированы, а глубокий мониторинг приложений остановится. Соответственно, обязательным становится перезапуск всех подов приложений, которым требуется глубокий мониторинг. Перезапуск этих подов гарантирует повторное внедрение в приложения, что позволяет возобновить глубокий мониторинг.
-* В режиме мониторинга приложений правила мониторинга контейнеров игнорируются. Вместо этого для точного управления внедрением OneAgent следует использовать [селекторы меток](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Настройка мониторинга для пространств имён и подов").
+* При переключении на application monitoring ранее развёрнутые OneAgent будут деактивированы, и глубокий мониторинг приложений остановится. Поэтому перезапуск всех подов приложений, требующих глубокого мониторинга, становится обязательным. Перезапуск этих подов гарантирует повторную инжекцию в приложения и позволяет возобновить глубокий мониторинг.
+* В режиме application monitoring правила мониторинга контейнеров игнорируются. Вместо этого для точного управления инжекцией OneAgent следует использовать [label selectors](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Настройка мониторинга для пространств имён и подов").
 * Для потоковой передачи логов можно:
 
-  + [Недоступно в Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Ваш выбор недоступен в Dynatrace Managed.").
-  + [Недоступно в Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Ваш выбор недоступен в Dynatrace Managed.").
+  + [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+  + [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 
-## Миграция на режим мониторинга приложений
+## Переход на режим application monitoring
 
-В этом разделе приведена вся информация, необходимая для миграции с классического режима на режим мониторинга приложений.
+В этом разделе собрана вся необходимая информация для перехода с classic на application monitoring mode.
 
-Использование container runtime CRI-O
+Использование среды выполнения контейнеров CRI-O
 
-Описанная ниже стандартная процедура миграции требует версии OneAgent 1.281 или выше для кластеров Kubernetes, использующих CRI-O в качестве container runtime, поэтому перед выполнением приведённых ниже шагов нужно соответствующим образом обновить OneAgent.
+Стандартная процедура перехода, описанная ниже, требует OneAgent версии 1.281 или выше для кластеров Kubernetes, использующих CRI-O в качестве среды выполнения контейнеров, поэтому перед продолжением необходимо соответствующим образом обновить OneAgent.
 
-Если это обновление выполнить нельзя, следует выполнить процедуру [Работа с CRI-O при версиях OneAgent 1.279 или более ранних](#running-crio) для альтернативного сценария миграции, а затем вернуться к шагу 1 этой процедуры.
+Если такое обновление невозможно, выполните процедуру [Запуск CRI-O с OneAgent версий 1.279 и ниже](#running-crio) для альтернативного сценария перехода, а затем вернитесь к шагу 1 данной процедуры.
 
-1. Рекомендуется
+1. Recommended
 
-   Обновить установку с включённым CSI-драйвером:
+   Обновить установку с включённым CSI driver:
 
    Helm
 
-   Манифест
+   Manifest
 
    ```
    helm upgrade dynatrace-operator oci://docker.io/dynatrace/dynatrace-operator \
@@ -71,21 +71,21 @@ Dynatrace Operator версии 1.0.0+
    **Kubernetes**
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes-csi.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/kubernetes-csi.yaml
    ```
 
    **OpenShift**
 
    ```
-   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift-csi.yaml
+   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/openshift-csi.yaml
    ```
-2. Перенастроить (существующий) DynaKube для режима мониторинга приложений:
+2. Перенастроить (существующий) DynaKube для режима application monitoring:
 
-   Следующее сравнение бок о бок показывает, как перенастроить DynaKube CR с классического full-stack на мониторинг приложений:
+   Следующее сравнение «до и после» показывает, как перенастроить DynaKube CR с classic full-stack на application monitoring:
 
-   Классический мониторинг полного стека
+   Classic full-stack monitoring
 
-   Мониторинг приложений
+   Application monitoring
 
    ```
    apiVersion: dynatrace.com/v1beta5
@@ -219,54 +219,54 @@ Dynatrace Operator версии 1.0.0+
    - dynatrace-api
    ```
 
-   Дополнительную информацию о настройке DynaKube для режима мониторинга приложений можно найти в [руководстве по развёртыванию](/managed/ingest-from/setup-on-k8s/deployment "Развёртывание Dynatrace Operator на Kubernetes") или в разделе [параметры DynaKube](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters#spec-oneagent-applicationmonitoring "Список доступных параметров для настройки Dynatrace Operator на Kubernetes."). Также можно скачать [пример пользовательского ресурса DynaKube​](https://dt-url.net/0w036dz) для мониторинга приложений из GitHub и адаптировать пользовательский ресурс DynaKube под свои требования.
-3. Применить пользовательский ресурс DynaKube:
+   Подробнее о настройке DynaKube для режима application monitoring см. в [deployment guide](/managed/ingest-from/setup-on-k8s/deployment "Развёртывание Dynatrace Operator на Kubernetes") или [DynaKube parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters#spec-oneagent-applicationmonitoring "Список доступных параметров для настройки Dynatrace Operator на Kubernetes."). Кроме того, можно скачать [образец DynaKube custom resource﻿](https://dt-url.net/0w036dz) для application monitoring из GitHub и адаптировать DynaKube custom resource под свои требования.
+3. Применить DynaKube custom resource:
 
-   Выполнить приведённую ниже команду, чтобы применить пользовательский ресурс DynaKube. Webhook валидации выдаст полезные сообщения об ошибках, если возникнет проблема.
+   Выполните приведённую ниже команду для применения DynaKube custom resource. При наличии проблем validation webhook выдаст полезные сообщения об ошибках.
 
    ```
    kubectl apply -f dynakube.yaml
    ```
 
-   Это действие приведёт к удалению OneAgent в классическом режиме full-stack и вскоре после этого к прекращению глубокого мониторинга подов приложений.
+   Это действие приведёт к удалению OneAgent в режиме classic full-stack и, как следствие, к прекращению глубокого мониторинга подов приложений вскоре после этого.
 4. Дождаться готовности code modules:
 
-   Dynatrace Operator подхватывает изменения в пользовательском ресурсе DynaKube и обеспечивает доступность code modules на каждом узле.
+   Dynatrace Operator получает изменения в DynaKube custom resource и обеспечивает доступность code modules на каждом узле.
 
-   CSI-драйвер генерирует события Kubernetes, привязанные к пользовательскому ресурсу DynaKube, когда code modules готовы и доступны на каждом узле. Перед переходом к следующему шагу нужно дождаться, пока событие будет зафиксировано для каждого узла.
+   CSI driver генерирует события Kubernetes, прикреплённые к DynaKube custom resource, когда code modules готовы и доступны на каждом узле. Дождитесь появления события для каждого узла перед переходом к следующему шагу.
 5. Перезапустить рабочие нагрузки приложений:
 
-   Незамедлительно перезапустить все рабочие нагрузки приложений, чтобы инициировать внедрение code module и включить глубокий мониторинг, минимизируя простои мониторинга.
+   Незамедлительно перезапустите все рабочие нагрузки приложений, чтобы инициировать инжекцию code module, включить глубокий мониторинг и минимизировать перерывы в мониторинге.
 
-#### Работа с CRI-O при версиях OneAgent 1.279 или более ранних
+#### Запуск CRI-O с OneAgent версий 1.279 и ниже
 
-В этом разделе описана процедура миграции для кластеров Kubernetes, использующих container runtime CRI-O и версию OneAgent 279 или более раннюю.
+В этом разделе описана процедура перехода для кластеров Kubernetes, использующих среду выполнения контейнеров CRI-O и работающих с OneAgent версии 279 или более ранней.
 
-Необходимо удалить хуки CRI-O, установленные и используемые для внедрения OneAgent в классическом режиме full-stack. Дополнительные сведения о хуках CRI-O приведены в этой [статье блога Red Hat​](https://dt-url.net/fq039v2).
+Необходимо удалить CRI-O hooks, установленные и используемые для инжекции OneAgent в режиме classic full-stack. Дополнительные сведения о CRI-O hooks см. в этой [публикации блога Red Hat﻿](https://dt-url.net/fq039v2).
 
 Показать пошаговые инструкции
 
-Чтобы успешно перейти с классического режима full-stack, нужно выполнить следующие инструкции:
+Следуйте этим инструкциям для успешного перехода с режима classic full-stack:
 
-1. Удалить пользовательский ресурс DynaKube:
+1. Удалить DynaKube custom resource:
 
-   Удалить DynaKube, настроенный в классическом режиме full-stack, выполнив следующую команду:
+   Удалите DynaKube, настроенный в режиме classic full-stack, выполнив следующую команду:
 
    ```
    kubectl delete dynakube -n dynatrace <dynakube-name>
    ```
 
-   Это действие приведёт к удалению OneAgent в классическом режиме full-stack и вскоре после этого к прекращению глубокого мониторинга подов приложений. Кроме того, если мониторинг Kubernetes настроен в пользовательском ресурсе DynaKube, мониторинг Kubernetes немедленно прекратится с удалением ActiveGate.
+   Это действие приведёт к удалению OneAgent в режиме classic full-stack и, как следствие, к прекращению глубокого мониторинга подов приложений вскоре после этого. Кроме того, если в DynaKube custom resource настроен мониторинг Kubernetes, мониторинг Kubernetes остановится незамедлительно после удаления ActiveGate.
 2. Дождаться завершения работы подов OneAgent.
-3. Выполнить инструкции из раздела [Очистка узлов](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator#cleanup-nodes "Пути обновления, процедуры обновления и руководство по удалению Dynatrace Operator."), чтобы удалить хуки CRI-O Dynatrace со всех узлов Linux.
-4. Продолжить с шага 1 [стандартной процедуры миграции](#migrate).
+3. Следуйте инструкциям в разделе [Cleanup nodes](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator#cleanup-nodes "Пути обновления, процедуры обновления и руководство по удалению Dynatrace Operator."), чтобы удалить CRI-O hooks Dynatrace со всех Linux-узлов.
+4. Перейдите к шагу 1 [стандартной процедуры перехода](#migrate).
 
 ## Изменения в ресурсах Kubernetes
 
-Миграция затрагивает несколько ресурсов Kubernetes, изменяя их функции или вводя новые компоненты для поддержки режима мониторинга приложений. Основные изменения включают:
+Переход затрагивает несколько ресурсов Kubernetes, изменяя их функции или вводя новые компоненты для поддержки режима application monitoring. Ключевые изменения:
 
-| Компонент | классический full-stack | Мониторинг приложений |
+| Компонент | classic full-stack | Application monitoring |
 | --- | --- | --- |
-| Dynatrace Oneagent | * Развёрнут как DaemonSet * Собирает метрики хоста на узлах * Внедряет code modules в поды приложений | * Отсутствует |
-| Dynatrace Webhook Server | * Проверяет определения DynaKube | * Проверяет определения DynaKube * Внедряет code modules в поды приложений путём изменения определений подов |
-| [CSI-драйвер Dynatrace Operator](/managed/ingest-from/setup-on-k8s/how-it-works#csi-driver "Подробное описание того, как работает развёртывание на Kubernetes.")  Опционально | * Отсутствует | * Развёрнут как DaemonSet * Оптимизирует загрузку code modules для ускорения внедрения в поды и снижения расхода хранилища |
+| Dynatrace Oneagent | * Развёрнут как DaemonSet * Сбор метрик хоста на узлах * Инжекция code modules в поды приложений | * Отсутствует |
+| Dynatrace Webhook Server | * Валидация определений DynaKube | * Валидация определений DynaKube * Инжекция code modules в поды приложений путём изменения определений подов |
+| [Dynatrace Operator CSI driver](/managed/ingest-from/setup-on-k8s/how-it-works#csi-driver "Подробное описание принципов развёртывания на Kubernetes.")  Optional | * Отсутствует | * Развёрнут как DaemonSet * Оптимизирует загрузку code modules для ускорения инжекции подов и снижения потребления хранилища |

@@ -330,27 +330,29 @@ cloudNativeFullStack classicFullStack applicationMonitoring hostMonitoring
 
 Classic full-stack поддерживается только на узлах Kubernetes, использующих Red Hat Enterprise Linux (RHEL) в качестве операционной системы.
 
-Для OpenShift нужно [настроить Security Context Constraints (SCC)](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/openshift-configuration "Configure Dynatrace Operator in OpenShift environments.") для всех развёртываний, использующих CSI-драйвер Dynatrace Operator (`cloudNativeFullStack`, `applicationMonitoring`/`hostMonitoring` с CSI). Кроме того, начиная с Openshift 4.13, нужно [настроить плагин CSI Inline Ephemeral Volume Admissing](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/openshift-configuration "Configure Dynatrace Operator in OpenShift environments.").
+Для OpenShift нужно [настроить Security Context Constraints (SCC)](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/openshift-configuration "Configure Dynatrace Operator in OpenShift environments.") для всех развёртываний с CSI-драйвером Dynatrace Operator (`cloudNativeFullStack`, `applicationMonitoring`/`hostMonitoring` с CSI). Кроме того, начиная с Openshift 4.13, нужно [настроить CSI Inline Ephemeral Volume Admissing plugin](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/openshift-configuration "Configure Dynatrace Operator in OpenShift environments.").
 
-Для управляемых реализаций OpenShift, таких как AWS ROSA и Azure Red Hat OpenShift (ARO), Dynatrace поддерживает те же функции, что и для выделенного OpenShift.
+Для управляемых реализаций OpenShift, таких как AWS ROSA и Azure Red Hat OpenShift (ARO), Dynatrace поддерживает те же возможности, что и для выделенного OpenShift.
 
-Для OpenShift Dedicated нужна [роль cluster-admin﻿](https://dt-url.net/a2038v8).
+Для OpenShift Dedicated требуется [роль cluster-admin﻿](https://dt-url.net/a2038v8).
 
 ## Rancher Kubernetes Engine 2 (RKE2)
 
-applicationMonitoring
+cloudNativeFullStack classicFullStack applicationMonitoring hostMonitoring
 
-Для RKE2 при использовании режима `applicationMonitoring` специальная настройка не требуется. Из-за политик SELinux в производных Red Hat Enterprise Linux режимы `hostMonitoring`, `cloudNativeFullStack` и `classicFullStack` не поддерживаются.
+Все режимы развёртывания поддерживаются на RKE2.
+
+На узлах с производным от Red Hat Enterprise Linux дистрибутивом при включённом SELinux режимы `hostMonitoring`, `cloudNativeFullStack` и `classicFullStack` не поддерживаются: контейнер OneAgent не может применить требуемые политики SELinux на хосте.
 
 ## VMware Tanzu Kubernetes Grid Integrated Edition (TKGI)
 
 cloudNativeFullStack classicFullStack applicationMonitoring hostMonitoring
 
-Для TKGI дополнительная настройка окружения требуется для всех режимов развёртывания, кроме `applicationMonitoring` без CSI-драйвера Dynatrace Operator.
+Для TKGI во всех режимах развёртывания, кроме `applicationMonitoring` без CSI-драйвера Dynatrace Operator, требуется дополнительная настройка окружения.
 
 ### `cloudNativeFullStack`, `applicationMonitoring` (с CSI-драйвером) и `hostMonitoring`
 
-В `values.yaml` для этих режимов требуется дополнительная настройка для конфигурации CSI-драйвера:
+В `values.yaml` для этих режимов нужна дополнительная конфигурация CSI-драйвера:
 
 ```
 csidriver:
@@ -366,7 +368,7 @@ kubeletPath: "/var/vcap/data/kubelet"
 
 ### `classicFullStack`
 
-Требуются образы из встроенного реестра Dynatrace, а не из публичного реестра. Используй следующую конфигурацию:
+Требуются образы из встроенного реестра Dynatrace, а не из публичного. Используйте следующую конфигурацию:
 
 ```
 oneAgent:
@@ -400,11 +402,11 @@ value: /var/vcap/store
 
 cloudNativeFullStack classicFullStack applicationMonitoring hostMonitoring
 
-Для IKS дополнительная настройка окружения требуется для всех режимов развёртывания, кроме `applicationMonitoring` без CSI-драйвера.
+Для IKS во всех режимах развёртывания, кроме `applicationMonitoring` без CSI-драйвера, требуется дополнительная настройка окружения.
 
 ### `cloudNativeFullStack`, `applicationMonitoring` (с CSI-драйвером) и `hostMonitoring`
 
-Для этих режимов требуется дополнительная настройка для конфигурации CSI-драйвера:
+Для этих режимов нужна дополнительная конфигурация CSI-драйвера:
 
 ```
 csidriver:
@@ -420,7 +422,7 @@ kubeletPath: "/var/data/kubelet"
 
 ### `classicFullStack`
 
-Требуются образы из встроенного реестра Dynatrace, а не из публичного реестра. Используй следующую конфигурацию:
+Требуются образы из встроенного реестра Dynatrace, а не из публичного. Используйте следующую конфигурацию:
 
 ```
 oneAgent:
@@ -454,7 +456,7 @@ value: /opt
 
 cloudNativeFullStack classicFullStack applicationMonitoring hostMonitoring
 
-При развёртывании Dynatrace в режиме `classicFullStack` или `hostMonitoring` без CSI-драйвера обязательно настрой хранилище томов для OneAgent:
+При развёртывании Dynatrace в режиме `classicFullStack` или `hostMonitoring` без CSI-драйвера обязательно настройте хранилище томов для OneAgent:
 
 ```
 apiVersion: dynatrace.com/v1beta5
