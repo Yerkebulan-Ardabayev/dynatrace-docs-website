@@ -1,46 +1,46 @@
 ---
-title: Безопасность Dynatrace Operator
+title: Dynatrace Безопасность Operator
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/reference/security
 ---
 
-# Безопасность Dynatrace Operator
+# Dynatrace Безопасность Operator
 
-# Безопасность Dynatrace Operator
+# Dynatrace Безопасность Operator
 
-* Справка
-* Чтение: 16 мин
-* Обновлено 20 мая 2026 г.
+* Справочник
+* 16 мин чтения
+* Обновлено 20 мая 2026
 
-Наблюдаемость Kubernetes опирается на компоненты с разными назначениями, конфигурациями по умолчанию и правами доступа. Этим компонентам нужны права для выполнения и поддержания рабочих функций Dynatrace в кластере.
+Kubernetes наблюдаемость основана на компонентах с разными назначениями, конфигурациями по умолчанию и правами. Этим компонентам нужны права для выполнения и поддержания рабочих функций Dynatrace в кластере.
 
-Хотя права Dynatrace соответствуют принципу минимально необходимых привилегий, нужно защитить пространство имён `dynatrace` и ограничить доступ к нему закрытой группой администраторов и операторов.
+Хотя права Dynatrace следуют принципу минимальных привилегий, нужно защитить namespace `dynatrace` и ограничить доступ закрытой группой администраторов и операторов.
 
-## Права на развёртывание
+## Права развёртывания
 
-Установка и обновление Dynatrace Operator требуют административных привилегий. Если не используется кластерная роль `cluster-admin`, нужно убедиться, что у субъекта, выполняющего развёртывание, есть права, перечисленные в этом разделе. Требуемые права также включают `patch` для поддержки `helm upgrade` и права на управление пользовательскими ресурсами `DynaKube` и `EdgeConnect`.
+Установка и обновление Dynatrace Operator требуют административных привилегий. Если `cluster-admin` cluster role не используется, нужно убедиться, что субъект развёртывания имеет права, перечисленные в этом разделе. Обязательные права также включают `patch` для поддержки `helm upgrade` и права на управление custom resources `DynaKube` и `EdgeConnect`.
 
-Эти права требуются только для развёртывания (установки) Operator. Права, необходимые во время выполнения, см. в разделе [Список прав](#permission-list).
+Эти права нужны только при развёртывании (установке) Operator. Права, необходимые во время выполнения, описаны в разделе [Permission list](#permission-list).
 
 ### Ресурсы уровня кластера
 
-Пользователь или сервисный аккаунт, выполняющий развёртывание, должен иметь возможность **создавать, обновлять, применять патчи и удалять** следующие типы ресурсов уровня кластера:
+Пользователь или service account, выполняющий развёртывание, должен иметь возможность **create, update, patch и delete** следующих resource types уровня кластера:
 
-| Тип ресурса | Группа API | Глаголы | Имена ресурсов | Примечания |
+| Тип ресурса | API group | Действия | Имена ресурсов | Примечания |
 | --- | --- | --- | --- | --- |
-| `CustomResourceDefinition` | `apiextensions.k8s.io` | `create`, `update`, `patch`, `delete` | `dynakubes.dynatrace.com`, `edgeconnects.dynatrace.com` | Требуется для установки CRD Dynatrace |
-| `ClusterRole` | `rbac.authorization.k8s.io` | `create`, `update`, `patch`, `delete`, `escalate`, `bind` |  | **Важно:** требуются права `escalate` или эквивалентные. См. [Глаголы RBAC для развёртывания](#deployment-rbac-verbs). |
+| `CustomResourceDefinition` | `apiextensions.k8s.io` | `create`, `update`, `patch`, `delete` | `dynakubes.dynatrace.com`, `edgeconnects.dynatrace.com` | Требуется для установки CRDs Dynatrace |
+| `ClusterRole` | `rbac.authorization.k8s.io` | `create`, `update`, `patch`, `delete`, `escalate`, `bind` |  | **Важно:** требуются `escalate` или эквивалентные права. См. [Deployer RBAC verbs](#deployment-rbac-verbs). |
 | `ClusterRoleBinding` | `rbac.authorization.k8s.io` | `create`, `update`, `patch`, `delete` |  |  |
 | `MutatingWebhookConfiguration` | `admissionregistration.k8s.io` | `create`, `update`, `patch`, `delete` | `dynatrace-webhook` |  |
 | `ValidatingWebhookConfiguration` | `admissionregistration.k8s.io` | `create`, `update`, `patch`, `delete` | `dynatrace-webhook` |  |
-| `CSIDriver` | `storage.k8s.io` | `create`, `update`, `patch`, `delete` |  | Требуется для CSI-драйвера |
-| `PriorityClass` | `scheduling.k8s.io` | `create`, `update`, `patch`, `delete` |  | Требуется для CSI-драйвера |
+| `CSIDriver` | `storage.k8s.io` | `create`, `update`, `patch`, `delete` |  | Требуется для CSI driver |
+| `PriorityClass` | `scheduling.k8s.io` | `create`, `update`, `patch`, `delete` |  | Требуется для CSI driver |
 | `Namespace` | `""` | `create` |  | Требуется для `helm install --create-namespace` |
 
-### Ресурсы уровня пространства имён
+### Ресурсы уровня namespace
 
-Пользователь или сервисный аккаунт, выполняющий развёртывание, должен иметь возможность **создавать, обновлять, применять патчи и удалять** следующие типы ресурсов в пространстве имён оператора:
+Пользователь или service account, выполняющий развёртывание, должен иметь возможность **create, update, patch и delete** следующих типов ресурсов в namespace оператора:
 
-| Тип ресурса | Группа API | Глаголы |
+| Тип ресурса | API group | Действия |
 | --- | --- | --- |
 | `ServiceAccount` | `""` | `create`, `update`, `patch`, `delete` |
 | `Role` | `rbac.authorization.k8s.io` | `create`, `update`, `patch`, `delete` |
@@ -55,62 +55,62 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/reference/se
 | `EdgeConnect` | `dynatrace.com` | `create`, `update`, `patch`, `delete` |
 | `Job` | `batch` | `create`, `update`, `patch`, `delete` |
 
-Ссылки на манифесты ClusterRole для развёртывания Dynatrace Operator см. в разделе [Глаголы RBAC для развёртывания](#deployment-rbac-verbs).
+Ссылки на ClusterRole manifests для развёртывания Dynatrace Operator приведены в разделе [Deployer RBAC verbs](#deployment-rbac-verbs).
 
-### Специфичные для платформы ресурсы
+### Ресурсы для конкретных платформ
 
-В зависимости от целевой платформы, чарт Helm создаёт дополнительные ресурсы, для которых требуются дополнительные права у пользователя, выполняющего развёртывание.
+В зависимости от целевой платформы Helm chart создаёт дополнительные ресурсы, для которых нужны дополнительные права развёртывателя.
 
 #### GKE Autopilot
 
-В кластерах GKE Autopilot чарт Helm автоматически обнаруживает группу API `auto.gke.io/v1/AllowlistSynchronizer` и создаёт ресурс `AllowlistSynchronizer` в качестве pre-install хука Helm. Это добавляет в allowlist CSI-драйвер, мониторинг логов и рабочие нагрузки CSI-задач, необходимые оператору.
+На кластерах GKE Autopilot Helm chart автоматически обнаруживает API `auto.gke.io/v1/AllowlistSynchronizer` и создаёт ресурс `AllowlistSynchronizer` как pre-install hook Helm. Это добавляет в allowlist CSI driver, log monitoring и CSI job workloads, необходимые Operator.
 
-Пользователю или сервисному аккаунту, выполняющему развёртывание, требуется следующее дополнительное право:
+Пользователю или service account развёртывания нужно следующее дополнительное право:
 
-| Группа API | Ресурс | Глаголы |
+| API group | Ресурс | Действия |
 | --- | --- | --- |
 | `auto.gke.io` | `allowlistsynchronizers` | `create`, `get`, `update`, `patch`, `delete`, `list` |
 
 #### OpenShift
 
-В кластерах OpenShift (обнаруживаются по группе API `security.openshift.io/v1` или по параметру `--set platform=openshift`) чарт Helm создаёт дополнительные ClusterRole, предоставляющие доступ `use` к SecurityContextConstraints (`privileged`, `nonroot`, `nonroot-v2`). Если используется рекомендуемый подход `escalate`, описанный в разделе [Глаголы RBAC для развёртывания](#deployment-rbac-verbs), дополнительные права у пользователя, выполняющего развёртывание, не требуются.
+На кластерах OpenShift (обнаруживаются через API `security.openshift.io/v1` или `--set platform=openshift`) Helm chart создаёт дополнительные ClusterRoles, предоставляющие доступ `use` к SecurityContextConstraints (`privileged`, `nonroot`, `nonroot-v2`). Дополнительные права развёртывателя не нужны, если используется рекомендованный подход `escalate`, описанный в [Deployer RBAC verbs](#deployment-rbac-verbs).
 
-### Глаголы RBAC для развёртывания: `bind` и `escalate`
+### Глаголы RBAC развёртывателя: `bind` и `escalate`
 
-Kubernetes применяет [предотвращение эскалации привилегий﻿](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#privilege-escalation-prevention-and-bootstrapping): нельзя создать ClusterRole, предоставляющую права, которых у пользователя ещё нет, и нельзя создать ClusterRoleBinding, ссылающийся на ClusterRole с правами, которых у пользователя нет.
+Kubernetes применяет [защиту от эскалации привилегий﻿](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#privilege-escalation-prevention-and-bootstrapping): нельзя создать ClusterRole, предоставляющий права, которых у вас нет, и нельзя создать ClusterRoleBinding, ссылающийся на ClusterRole с правами, которых у вас нет.
 
-Чарт Helm Dynatrace Operator создаёт несколько ClusterRole (например, для чтения узлов, подов и метрик). Аккаунту, выполняющему развёртывание, нужна возможность создавать эти ClusterRole и их привязки. Есть два подхода:
+Helm chart Dynatrace Operator создаёт несколько ClusterRoles (например, для чтения nodes, pods и metrics). Аккаунт развёртывателя должен иметь возможность создавать эти ClusterRoles и их bindings. Есть два подхода:
 
-Приведённые ниже примеры манифестов ClusterRole для аккаунта развёртывания включают права на управление пользовательскими ресурсами `DynaKube` и `EdgeConnect`. Предполагается, что тот же сервисный аккаунт, который используется для развёртывания Operator, используется и для развёртывания пользовательских ресурсов, настраивающих его. В примеры также включены специфичные для платформы ресурсы для GKE Autopilot и OpenShift.
+Примеры манифестов ClusterRole развёртывателя ниже включают права на управление custom resources `DynaKube` и `EdgeConnect`. Предполагается, что тот же service account, который используется для развёртывания Operator, применяется и для развёртывания custom resources, его настраивающих. Примеры также включают ресурсы для платформ GKE Autopilot и OpenShift.
 
-Эти примеры манифестов соответствуют правам для **текущей** версии Operator. При обновлении до новой версии Operator нужно использовать манифесты из соответствующего [тега релиза﻿](https://github.com/Dynatrace/dynatrace-operator/tags).
+Эти примеры манифестов соответствуют правам для **текущей** версии Operator. При обновлении до новой версии Operator используйте манифесты из соответствующего [release tag﻿](https://github.com/Dynatrace/dynatrace-operator/tags).
 
 #### Вариант A: использование `escalate` и `bind`
 
-Предоставить аккаунту развёртывания глаголы `escalate` и `bind` на ресурсах RBAC. Это подход с низкими затратами на обслуживание, так как права аккаунта развёртывания не нужно обновлять при изменении ClusterRole Operator между версиями.
+Выдать развёртывателю глаголы `escalate` и `bind` на RBAC ресурсы. Это подход с низкими затратами на обслуживание: права развёртывателя не нужно обновлять при изменении ClusterRoles Operator между версиями.
 
-* **`escalate`** для `clusterroles` разрешает создавать или обновлять объекты ClusterRole, содержащие права, которых нет у аккаунта развёртывания. Это **не** предоставляет эти права самому аккаунту развёртывания, а лишь разрешает управлять ресурсами ClusterRole.
-* **`bind`** для `clusterroles` и `clusterrolebindings` разрешает создавать ClusterRoleBinding, ссылающиеся на ClusterRole с правами, которых нет у аккаунта развёртывания.
+* **`escalate`** на `clusterroles` позволяет создавать или обновлять объекты ClusterRole, содержащие права, которых у развёртывателя нет. Это **не** выдаёт те права самому развёртывателю, а только позволяет управлять ресурсами ClusterRole.
+* **`bind`** на `clusterroles` и `clusterrolebindings` позволяет создавать ClusterRoleBindings, ссылающиеся на ClusterRoles с правами, которых у развёртывателя нет.
 
-Предоставление `escalate` и `bind` отключает для аккаунта развёртывания предотвращение эскалации привилегий Kubernetes, то есть он сможет создавать ClusterRole с любыми правами и привязывать их к любому субъекту. Эти риски можно снизить, используя политики допуска (admission control), ограничивающие, какие ClusterRole и ClusterRoleBinding может создавать аккаунт развёртывания.
+Выдача `escalate` и `bind` отключает защиту Kubernetes от эскалации привилегий для развёртывателя: он сможет создавать ClusterRoles с любыми правами и привязывать их к любому субъекту. Эти риски можно снизить с помощью политик admission control, ограничивающих, какие ClusterRoles и ClusterRoleBindings может создавать развёртыватель.
 
-Пример манифеста ClusterRole для аккаунта развёртывания (включает права для CSI-драйвера, GKE Autopilot и OpenShift):
+Пример манифеста ClusterRole развёртывателя (включает права для CSI driver, GKE Autopilot и OpenShift):
 
-[С CSI-драйвером﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/assets/samples/deployer/deployer-clusterrole-with-csi.yaml)
+[С CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.1/assets/samples/deployer/deployer-clusterrole-with-csi.yaml)
 
-Если CSI-драйвер не развёртывается, нужно использовать вариант [Без CSI-драйвера﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/assets/samples/deployer/deployer-clusterrole-no-csi.yaml), он не содержит прав `CSIDriver` и `PriorityClass`.
+Если CSI driver не развёртывается, используйте вместо него [Без CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.1/assets/samples/deployer/deployer-clusterrole-no-csi.yaml), в котором нет прав на `CSIDriver` и `PriorityClass`.
 
-#### Вариант B: расширенные права, если `escalate` или `bind` запрещены
+#### Вариант B: расширенные права при запрете `escalate` или `bind`
 
-Если политики безопасности запрещают глаголы `escalate` или `bind`, аккаунт развёртывания должен уже обладать всеми правами, которые предоставляют ClusterRole Operator во время выполнения. Это означает перечисление всех прав Dynatrace Operator в ClusterRole аккаунта развёртывания, чтобы предотвращение эскалации Kubernetes никогда не срабатывало.
+Если политики безопасности запрещают глаголы `escalate` или `bind`, развёртыватель должен уже иметь все права, которые предоставляют runtime ClusterRoles Operator. Это означает перечисление всех прав Dynatrace Operator в ClusterRole развёртывателя, чтобы защита Kubernetes от эскалации не срабатывала.
 
-ClusterRole без escalate напрямую предоставляет все права времени выполнения: чтение и запись секретов, pods/exec, изменение webhook, управление DaemonSet и другие. Из-за этого сам аккаунт развёртывания становится субъектом с высокими привилегиями и широким доступом к кластеру. Всё равно рекомендуется использовать политики допуска, ограничивающие, какие ресурсы RBAC может создавать аккаунт развёртывания.
+ClusterRole без escalate напрямую предоставляет все runtime права: чтение/запись secrets, pods/exec, webhook mutation, управление DaemonSet и прочее. Это делает самого развёртывателя высокопривилегированным субъектом с широким доступом к кластеру. Admission control по-прежнему рекомендуется для ограничения RBAC ресурсов, которые может создавать развёртыватель.
 
-Пример манифеста ClusterRole для аккаунта развёртывания (без escalate, включает права для CSI-драйвера, GKE Autopilot и OpenShift):
+Пример манифеста ClusterRole развёртывателя (без escalate, включает права для CSI driver, GKE Autopilot и OpenShift):
 
-[С CSI-драйвером﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/assets/samples/deployer/deployer-clusterrole-no-escalate-with-csi.yaml)
+[С CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.1/assets/samples/deployer/deployer-clusterrole-no-escalate-with-csi.yaml)
 
-Если CSI-драйвер не развёртывается, нужно использовать вариант [Без CSI-драйвера﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/assets/samples/deployer/deployer-clusterrole-no-escalate-no-csi.yaml), он не содержит прав `CSIDriver` и `PriorityClass`.
+Если CSI driver не развёртывается, используйте вместо него [Без CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.1/assets/samples/deployer/deployer-clusterrole-no-escalate-no-csi.yaml), в котором нет прав на `CSIDriver` и `PriorityClass`.
 
 ## Список прав
 
