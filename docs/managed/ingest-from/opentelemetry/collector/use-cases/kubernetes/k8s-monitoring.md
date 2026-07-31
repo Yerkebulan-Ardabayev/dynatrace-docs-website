@@ -613,7 +613,7 @@ processors:
 
 
 
-cumulativetodelta:
+cumulative_to_delta:
 
 
 
@@ -1005,7 +1005,7 @@ processors:
 
 
 
-- cumulativetodelta
+- cumulative_to_delta
 
 
 
@@ -1041,7 +1041,7 @@ processors:
 
 
 
-- cumulativetodelta
+- cumulative_to_delta
 
 
 
@@ -1118,7 +1118,7 @@ Configuration validation
 
 Cumulativetodelta processor recommendation
 
-It is recommended to set the `max_staleness` parameter of the [cumulativetodelta processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/cumulativetodeltaprocessor) to a value higher than how often the Collector receives metrics (e.g., how often metrics via OTLP are received, or how long the Prometheus scrape interval is). This ensures that no references to abandoned metric streams accumulate in memory over time.
+It is recommended to set the `max_staleness` parameter of the [cumulative\_to\_delta processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/cumulativetodeltaprocessor) to a value higher than how often the Collector receives metrics (e.g., how often metrics via OTLP are received, or how long the Prometheus scrape interval is). This ensures that no references to abandoned metric streams accumulate in memory over time.
 
 ## Components
 
@@ -1144,7 +1144,7 @@ Under `processors`, we specify the following processors:
 * [`filter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/filterprocessor): To filter Kubernetes attributes.
 * [`k8sattributes`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/k8sattributesprocessor): To extract and provide pod data.
 * [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/transformprocessor): To transform Kubernetes metrics. This requires the environment variable `CLUSTER_NAME` to be set with the name of the cluster. Set the variable value to an arbitrary name that you want your cluster to show up with inside Dynatrace.
-* [`cumulativetodelta`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/cumulativetodeltaprocessor): To enable conversion of cumulative metrics.
+* [`cumulative_to_delta`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/cumulativetodeltaprocessor): To enable conversion of cumulative metrics.
 
 #### Exporters
 

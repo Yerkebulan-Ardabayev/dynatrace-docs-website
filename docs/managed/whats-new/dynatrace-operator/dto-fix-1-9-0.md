@@ -71,7 +71,7 @@ On this page, you’ll find an overview of what’s new and improved in Dynatrac
 
 ## Known issues
 
-* If Dynatrace Operator injects a seccomp profile into an application pod in OpenShift, [SecurityContextConstraints (SCCs)﻿](https://docs.redhat.com/en/documentation/openshift_container_platform/4.22/html/authentication_and_authorization/managing-pod-security-policies) that prevent seccomp profile usage — such as `anyuid`, `restricted`, or `nonroot` — will no longer apply. The system will instead fall back to another SCC (for example `restricted-v2`), which may render pods unschedulable or cause workload degradation.
+* Since Dynatrace Operator 1.9.0, a `RuntimeDefault` seccomp profile is applied to the Dynatrace init container by default. On OpenShift, this can interfere with [SecurityContextConstraints (SCCs)﻿](https://docs.redhat.com/en/documentation/openshift_container_platform/4.22/html/authentication_and_authorization/managing-pod-security-policies) — such as `anyuid`, `restricted`, or `nonroot` — that prevent seccomp profile usage, causing the system to fall back to a different SCC (for example `restricted-v2`). This may render application pods unschedulable or cause workload degradation.
 
   [Disable seccomp profile for Dynatrace init containers](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/seccomp#init-container "Overview of seccomp profile configuration for Dynatrace components.") if you are affected.
 

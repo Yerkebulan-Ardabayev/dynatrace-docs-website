@@ -39,7 +39,7 @@ You don't need to install everything below up front. The [Deploy the tiered arch
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OTel Collector Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + A [custom-built OTel Collector](/managed/ingest-from/opentelemetry/collector#collector-builder "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
-* One of the following Collector distributions for the gateway tier, with the [`metric_start_time`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/metricstarttimeprocessor), [`cumulativetodelta`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/cumulativetodeltaprocessor), [`k8sattributes`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/k8sattributesprocessor), and [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/transformprocessor) processors and the [`otlphttp` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter):
+* One of the following Collector distributions for the gateway tier, with the [`metric_start_time`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/metricstarttimeprocessor), [`cumulative_to_delta`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/cumulativetodeltaprocessor), [`k8sattributes`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/k8sattributesprocessor), and [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/transformprocessor) processors and the [`otlphttp` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter):
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OTel Collector Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -65,9 +65,9 @@ This setup has the following components:
 * Scrapers: Deployment of Collectors. Each scraper polls the TA, scrapes its assigned Prometheus targets, and forwards data to the gateway pool through the `loadbalancing` exporter.
 
   The `loadbalancing` exporter routes by resource hash, so all data from a given source pod consistently lands on the same gateway, which keeps per-series state consistent.
-* Gateways: StatefulSet of Collectors. Receives OTLP from the scrapers, runs the stateful `metric_start_time` and `cumulativetodelta` processors, applies Kubernetes enrichment via `k8sattributes` and `transform`, and exports to Dynatrace.
+* Gateways: StatefulSet of Collectors. Receives OTLP from the scrapers, runs the stateful `metric_start_time` and `cumulative_to_delta` processors, applies Kubernetes enrichment via `k8sattributes` and `transform`, and exports to Dynatrace.
 
-  The `metric_start_time` and `cumulativetodelta` processors are stateful and must see every consecutive sample of a series in one place to compute deltas correctly. They run on the gateway tier rather than the scrapers because the `loadbalancing` exporter consistently routes all data from a given source to the same gateway, so each series' full sample stream converges there even as the scraper pool autoscales.
+  The `metric_start_time` and `cumulative_to_delta` processors are stateful and must see every consecutive sample of a series in one place to compute deltas correctly. They run on the gateway tier rather than the scrapers because the `loadbalancing` exporter consistently routes all data from a given source to the same gateway, so each series' full sample stream converges there even as the scraper pool autoscales.
   Running gateways as a StatefulSet gives each replica a stable identity and ordered rollout, which keeps the gateway pool's endpoint set predictable during scale events.
 
 ## Reference configuration
@@ -290,7 +290,7 @@ The following example shows how to convert a single static job into an equivalen
   path: /metrics
   ```
 
-The `metric_start_time`, `cumulativetodelta`, and `otlp_http` configuration from your single Collector moves to the gateway pool unchanged. Only target discovery changes form.
+The `metric_start_time`, `cumulative_to_delta`, and `otlp_http` configuration from your single Collector moves to the gateway pool unchanged. Only target discovery changes form.
 
 ### ServiceMonitor
 
@@ -602,11 +602,11 @@ When memory becomes a bottleneck, you can:
 
 The reference configuration is a starting point. Adjust the following settings to match your workload.
 
-### `cumulativetodelta` staleness
+### `cumulative_to_delta` staleness
 
-The `cumulativetodelta` processor converts Prometheus counters to delta metrics by tracking the previous value of each series in memory. `max_staleness` controls how long the processor keeps per-series state after the last observed data point. Once that window expires without an update, the processor drops the series from the cache. The next sample for that series is treated as a fresh starting point, so one delta is lost.
+The `cumulative_to_delta` processor converts Prometheus counters to delta metrics by tracking the previous value of each series in memory. `max_staleness` controls how long the processor keeps per-series state after the last observed data point. Once that window expires without an update, the processor drops the series from the cache. The next sample for that series is treated as a fresh starting point, so one delta is lost.
 
-Set `cumulativetodelta.max_staleness` on the gateway to roughly 10 times the Prometheus receiver `scrape_interval`. The factor of 10 covers occasional missed scrapes (target restarts, network blips, slow endpoints) without keeping state for series that are genuinely gone.
+Set `cumulative_to_delta.max_staleness` on the gateway to roughly 10 times the Prometheus receiver `scrape_interval`. The factor of 10 covers occasional missed scrapes (target restarts, network blips, slow endpoints) without keeping state for series that are genuinely gone.
 
 Higher values keep state for inactive series longer, so gateway memory can grow without bound as series churn over time (pod restarts, autoscaled workloads, label changes). Lower values evict still-active series between scrapes, which creates visible gaps and resets the running delta for each affected series.
 
@@ -617,7 +617,7 @@ The scraper Deployment and the gateway StatefulSet support Kubernetes [Horizonta
 * [`tier1-scraper.values.yaml`﻿](https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/prometheus-large-scale/tier1-scraper.values.yaml)
 * [`tier2-gateway.values.yaml`﻿](https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/prometheus-large-scale/tier2-gateway.values.yaml)
 
-Both tiers use the same target utilization percentages: when either 50% memory or 70% CPU are reached, the HPA will scale out, and start to add pods automatically. Adjust `minReplicas` and `maxReplicas` based on your expected load range. Memory is typically the dominant constraint for scrapers because the Prometheus receiver buffers scraped data in memory. Gateways consume both CPU and memory, and the stateful `cumulativetodelta` processor memory usage grows proportionally with the number of tracked series.
+Both tiers use the same target utilization percentages: when either 50% memory or 70% CPU are reached, the HPA will scale out, and start to add pods automatically. Adjust `minReplicas` and `maxReplicas` based on your expected load range. Memory is typically the dominant constraint for scrapers because the Prometheus receiver buffers scraped data in memory. Gateways consume both CPU and memory, and the stateful `cumulative_to_delta` processor memory usage grows proportionally with the number of tracked series.
 
 #### Target Allocator behavior during scaling
 
@@ -663,7 +663,7 @@ The reference configuration uses the following resource limits per pod.
 * Scraper: 1 CPU, 6 GiB memory
 * Gateway: 2 CPUs, 8 GiB memory
 
-These limits include headroom above typical steady-state usage. The Prometheus receiver buffers entire scrape responses in memory before processing, which causes sharp spikes at each scrape cycle. Scrapers are memory-bound because of this buffering behavior, so the scraper resource limit absorbs those periodic spikes without out-of-memory (OOM) kills. Gateways need headroom for the `cumulativetodelta` processor, which grows memory proportionally to the number of tracked series, and CPU usage scales with the volume of incoming data. The gateway resource limit accounts for both steady-state tracking and burst processing when multiple scrapers flush data simultaneously.
+These limits include headroom above typical steady-state usage. The Prometheus receiver buffers entire scrape responses in memory before processing, which causes sharp spikes at each scrape cycle. Scrapers are memory-bound because of this buffering behavior, so the scraper resource limit absorbs those periodic spikes without out-of-memory (OOM) kills. Gateways need headroom for the `cumulative_to_delta` processor, which grows memory proportionally to the number of tracked series, and CPU usage scales with the volume of incoming data. The gateway resource limit accounts for both steady-state tracking and burst processing when multiple scrapers flush data simultaneously.
 
 | Load | Scrape targets | Scraper replicas | Gateway replicas |
 | --- | --- | --- | --- |
@@ -817,14 +817,14 @@ To mitigate hotspots, scale vertically by increasing per-pod resource limits for
 If scraper or gateway pods are killed with `OOMKilled` status, the pod's memory limit is too low for the workload.
 
 * **Scraper OOM kills**: The Prometheus receiver buffers the entire scrape response in memory. A single target that exposes a large number of series can cause a memory spike that exceeds the pod's limit. Increase the scraper pod's memory limit, or reduce the number of series per target by splitting heavy targets.
-* **Gateway OOM kills**: The `cumulativetodelta` processor tracks per-series state in memory. High series cardinality or a long `max_staleness` value grows memory usage over time. Reduce `max_staleness` to evict stale series sooner, or increase the gateway pod's memory limit.
+* **Gateway OOM kills**: The `cumulative_to_delta` processor tracks per-series state in memory. High series cardinality or a long `max_staleness` value grows memory usage over time. Reduce `max_staleness` to evict stale series sooner, or increase the gateway pod's memory limit.
 * **`memory_limiter` processor**: If configured, the `memory_limiter` processor drops data before the pod reaches its memory limit. Compare `otelcol_processor_incoming_items` and `otelcol_processor_outgoing_items` on the affected tier. A gap between them means the `memory_limiter` is dropping data. If it triggers frequently, the pod is under-provisioned for the workload.
 
 ### Load-balancing exporter routing issues
 
 The `loadbalancing` exporter on the scraper tier routes data to gateways by hashing a key derived from the OTLP data.
 
-* **`routing_key: resource` vs. `routing_key: streamID`**: The `resource` routing key (the default) hashes all resource attributes, so all metrics from a given source pod land on the same gateway. This is efficient because the exporter computes one hash per resource, but it can create hotspots when a single source pod emits many series. The `streamID` routing key hashes the full stream identity (resource, scope, metric name, and datapoint attributes), which distributes individual metric streams across gateways for a more even load. The `cumulativetodelta` processor still works correctly with `streamID` because each unique stream is consistently routed to the same gateway. However, `streamID` computes a hash for every individual datapoint stream rather than once per resource, which significantly increases CPU usage on the scraper tier. The `cumulativetodelta` processor on the gateway tier tracks state by stream identity regardless of the routing key, so the total memory usage across all gateways stays the same. Only the distribution of that state across gateways changes.
+* **`routing_key: resource` vs. `routing_key: streamID`**: The `resource` routing key (the default) hashes all resource attributes, so all metrics from a given source pod land on the same gateway. This is efficient because the exporter computes one hash per resource, but it can create hotspots when a single source pod emits many series. The `streamID` routing key hashes the full stream identity (resource, scope, metric name, and datapoint attributes), which distributes individual metric streams across gateways for a more even load. The `cumulative_to_delta` processor still works correctly with `streamID` because each unique stream is consistently routed to the same gateway. However, `streamID` computes a hash for every individual datapoint stream rather than once per resource, which significantly increases CPU usage on the scraper tier. The `cumulative_to_delta` processor on the gateway tier tracks state by stream identity regardless of the routing key, so the total memory usage across all gateways stays the same. Only the distribution of that state across gateways changes.
 * **Resolver cache freshness during pod churn**: The `loadbalancing` exporter uses the `k8s` resolver to discover gateway pod IPs by watching Kubernetes `EndpointSlice` objects. The watch API reacts faster than DNS polling, but there is still a brief window during gateway pod restarts or scaling events where the resolver's view does not match the actual topology. During this window, the exporter may route data to a pod that is terminating or miss a newly started pod, which causes send failures. Monitor `otelcol_loadbalancer_num_resolutions` and `otelcol_exporter_send_failed_metric_points` during scaling events. The `k8s` resolver requires the Collector's ServiceAccount to have `get`, `list`, and `watch` permissions on `discovery.k8s.io/v1` `EndpointSlice` objects in the gateway namespace; without these permissions, the resolver cache stays empty and the exporter cannot route to any backend.
 
 ## Related topics

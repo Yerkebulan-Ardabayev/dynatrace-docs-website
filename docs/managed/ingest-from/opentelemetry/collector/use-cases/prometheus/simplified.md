@@ -62,12 +62,12 @@ For Collectors deployed as pods in Kubernetes, we recommend the following resour
 * CPU: 2 cores
 * Memory: 8 GiB
 
-These values assume the Collector is configured according to the [demo configuration](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus/simplified#demo-configuration "Configure a single OpenTelemetry Collector to scrape Prometheus endpoints for small and medium-scale workloads."), which includes the `prometheus` receiver, `metric_start_time` and `cumulativetodelta` processors, and `otlp_http` exporter.
+These values assume the Collector is configured according to the [demo configuration](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus/simplified#demo-configuration "Configure a single OpenTelemetry Collector to scrape Prometheus endpoints for small and medium-scale workloads."), which includes the `prometheus` receiver, `metric_start_time` and `cumulative_to_delta` processors, and `otlp_http` exporter.
 Additional processors will increase these requirements.
 
 ## Demo configuration
 
-This configuration requires Dynatrace Collector v0.41.0 or later. The example pipeline below uses the [`metric_start_time` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/metricstarttimeprocessor), which adds start timestamps to metrics, and the [`cumulativetodelta` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/cumulativetodeltaprocessor), which converts the metrics to delta temporality.
+This configuration requires Dynatrace Collector v0.41.0 or later. The example pipeline below uses the [`metric_start_time` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/metricstarttimeprocessor), which adds start timestamps to metrics, and the [`cumulative_to_delta` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/cumulativetodeltaprocessor), which converts the metrics to delta temporality.
 
 ```
 receivers:
@@ -130,7 +130,7 @@ metric_start_time:
 
 
 
-cumulativetodelta:
+cumulative_to_delta:
 
 
 
@@ -174,7 +174,7 @@ receivers: [prometheus]
 
 
 
-processors: [metric_start_time, cumulativetodelta]
+processors: [metric_start_time, cumulative_to_delta]
 
 
 
@@ -187,7 +187,7 @@ Configuration validation
 
 Cumulativetodelta processor recommendation
 
-It is recommended to set the `max_staleness` parameter of the [cumulativetodelta processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/cumulativetodeltaprocessor) to a value higher than how often the Collector receives metrics (e.g., how often metrics via OTLP are received, or how long the Prometheus scrape interval is). This ensures that no references to abandoned metric streams accumulate in memory over time.
+It is recommended to set the `max_staleness` parameter of the [cumulative\_to\_delta processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/cumulativetodeltaprocessor) to a value higher than how often the Collector receives metrics (e.g., how often metrics via OTLP are received, or how long the Prometheus scrape interval is). This ensures that no references to abandoned metric streams accumulate in memory over time.
 
 ## Components
 
@@ -201,7 +201,7 @@ For a full list of configuration parameters, see the [Prometheus documentation�
 
 ### Processors
 
-Under `processors`, we specify the [`cumulativetodelta` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/cumulativetodeltaprocessor) to convert the metrics emitted by the Prometheus receiver to their [delta aggregation format](/managed/ingest-from/opentelemetry/collector/configuration#delta-metrics "How to configure the OpenTelemetry Collector.").
+Under `processors`, we specify the [`cumulative_to_delta` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/cumulativetodeltaprocessor) to convert the metrics emitted by the Prometheus receiver to their [delta aggregation format](/managed/ingest-from/opentelemetry/collector/configuration#delta-metrics "How to configure the OpenTelemetry Collector.").
 
 In Dynatrace Collector v0.41.0+, we specify the
 [`metric_start_time`

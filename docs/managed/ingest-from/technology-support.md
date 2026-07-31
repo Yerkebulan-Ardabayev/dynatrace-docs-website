@@ -1291,7 +1291,7 @@ Async calls supported since version 1.331
 
 | Logging libraries | Versions |
 | --- | --- |
-| [Python standard library: logging﻿](https://docs.python.org/3/library/logging.html) | All versions supported[1](#fn-logging-libraries-1-def) |
+| [Python standard library: logging﻿](https://docs.python.org/3/library/logging.html) | All versions supported |
 | [Structlog﻿](https://github.com/hynek/structlog) | 19.0+[1](#fn-logging-libraries-1-def) |
 
 1

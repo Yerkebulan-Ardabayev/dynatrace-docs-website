@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/secure/faq
 # Application Security FAQ
 
 * Troubleshooting
-* Updated on Jun 18, 2026
+* Updated on Jul 28, 2026
 
 See below for answers to some of the most frequently asked questions about Dynatrace Application Security, grouped by topics.
 
@@ -377,6 +377,10 @@ For the **Vulnerability details** section on the vulnerability details page, cur
 ### Why does my vulnerability have a different risk assessment and Davis Security Score than its affected entities?
 
 A vulnerability is an aggregation of all its affected entities in your environment; therefore, it can have different values (risk assessment and Davis Security Score) than its affected entities. For example, the risk score of an affected entity might be `8.0`, while the score of the aggregated vulnerability is `9.0`. At the same time, if at least one affected entity is exposed to the internet, the aggregated vulnerability is also exposed to the internet.
+
+### Why does my vulnerability have a different risk assessment and Davis Security Score in different management zones?
+
+A vulnerability is an aggregation of all its affected entities in the respective management zone; therefore, it can have different values (risk assessment and Davis Security Score) in different management zones. For example, the risk score of a vulnerability in one management zone might be `8.0`, while the score of the same vulnerability in another management zone is `9.0`. At the same time, if at least one affected entity is exposed to the internet, the aggregated vulnerability is also exposed to the internet.
 
 ### Why am I seeing different vulnerabilities in production vs non-production environment?
 
