@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/inst
 # Install an Environment ActiveGate on Linux
 
 * 3-min read
-* Updated on May 09, 2025
+* Updated on Jul 29, 2026
 
 Follow these steps to install an Environment ActiveGate on Linux.
 

@@ -752,6 +752,10 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | [Logback (QOS)﻿](https://logback.qos.ch/) | 1.x |
 | java.util.logging | All versions supported |
 
+| Feature flagging frameworks | Versions |
+| --- | --- |
+| [OpenFeature SDK﻿](https://github.com/open-feature/java-sdk) | 1.0.1+ |
+
 See also [OneAgent SDK for Java](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing capabilities.
 
 ### [Java Native Image](/managed/ingest-from/technology-support/application-software/java/graalvm-native-image "Install, configure, and manage Dynatrace GraalVM Native Image module.")
