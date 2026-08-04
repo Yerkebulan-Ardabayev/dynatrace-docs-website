@@ -25,7 +25,7 @@ To configure an existing HTTP monitor
 2. Select the HTTP monitor you want to configure (this takes you to the [details page](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic "Learn about the Synthetic details page for HTTP monitors.")).
 3. Select **Edit** from the quick links in the upper-left corner to go to monitor settings.
 
-   Alternatively, you can go to **Synthetic Classic** in list view, select the check box next the monitor you want to edit > **Edit** in the lower-left corner.
+   Alternatively, you can go to **Synthetic Classic** in list view, select the checkbox next the monitor you want to edit > **Edit** in the lower-left corner.
 4. Browse through the **Monitor settings** tabs on the left to configure settings (detailed explanations below—a subset of these settings are available when you first create an HTTP monitor).
 
    * [General](#setup)

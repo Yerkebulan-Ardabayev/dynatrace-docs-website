@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 # OpenTelemetry Host Monitoring extension
 
 * Extension
-* Updated on Jun 15, 2026
+* Updated on Jul 29, 2026
 
 Monitor OpenTelemetry-instrumented hosts with auto-generated entity topology, metric visualizations, and alerts for faster infrastructure analysis.
 

@@ -7,7 +7,8 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/f
 
 # Get started with Full Kubernetes observability (cloud-native full-stack deployment)
 
-* Updated on Nov 06, 2023
+* Getting started guide
+* Updated on Jul 24, 2026
 
 This page provides instructions on installing Dynatrace Operator with cloud-native full-stack configuration to a Kubernetes cluster.
 
@@ -33,6 +34,25 @@ See supported Kubernetes/OpenShift [platform versions](/managed/ingest-from/tech
 By default, Dynatrace Operator injects OneAgent in all namespaces, but you can configure it to monitor only specific namespaces and exclude others. For details, see [Configure monitoring for namespaces and pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate#monitor-only-specific-namespaces "Configure monitoring for namespaces and pods").
 
 [Configuring SCC](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/openshift-configuration "Configure Dynatrace Operator in OpenShift environments.") is required for OpenShift for `cloudNativeFullStack` and `applicationMonitoring` with CSI driver deployments.
+
+## OneAgent image packages on the Managed cluster
+
+When Dynatrace Operator deploys cloud-native full-stack monitoring, it pulls the OneAgent image (for example, `<your-environment-domain>/linux/oneagent:<version>-raw`) that your Managed cluster builds on demand from two separate installation packages:
+
+* **OneAgent** installation package
+* **Docker OneAgent** installation package (`DOCKER_AGENT` in the Cluster API), which provides the base image that the cluster combines with the OneAgent into the final image
+
+Both packages must be present on the cluster, and their minor versions must be compatible.
+
+| Minor version relationship | Support |
+| --- | --- |
+| OneAgent and Docker OneAgent have the same minor version | Recommended |
+| OneAgent minor version is higher than Docker OneAgent minor version | Supported |
+| Docker OneAgent minor version is higher than OneAgent minor version | Not supported |
+
+The Docker OneAgent package isn't counted as a standard or target OneAgent version. You pull by the OneAgent version, and the Docker OneAgent package only provides the matching base image.
+
+Do not exclude or delete the Docker OneAgent installation package for a OneAgent version that's still in use, including through automated cleanup. If the matching Docker OneAgent package is absent, the cluster cannot build the OneAgent image and your pods fail to pull it (for example, `ErrImagePull ... not found`). Manage these packages in **Cluster Management Console** > **Settings** > **Automatic update** > **Installation packages**.
 
 ## Installation options
 

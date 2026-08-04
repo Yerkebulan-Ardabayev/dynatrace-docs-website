@@ -210,7 +210,7 @@ If that upgrade cannot be performed, follow the [Running CRI-O with OneAgent ver
    - dynatrace-api
    ```
 
-   For further information on how to configure DynaKube for cloud-native full-stack mode, see the comparison below, visit the [deployment guide](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes") or [DynaKube parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters#spec-oneagent-cloudnativefullstack "List the available parameters for setting up Dynatrace Operator on Kubernetes."). Alternatively, download the [DynaKube custom resource sample﻿](https://dt-url.net/9n636jg) for cloud-native full-stack from GitHub and adapt the DynaKube custom resource according to your requirements.
+   For further information on how to configure DynaKube for cloud-native full-stack mode, see the comparison below, visit the [deployment guide](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes or OpenShift. Covers installation options, package requirements, and prerequisites.") or [DynaKube parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters#spec-oneagent-cloudnativefullstack "List the available parameters for setting up Dynatrace Operator on Kubernetes."). Alternatively, download the [DynaKube custom resource sample﻿](https://dt-url.net/9n636jg) for cloud-native full-stack from GitHub and adapt the DynaKube custom resource according to your requirements.
 3. Apply the DynaKube custom resource:
 
    Run the command below to apply the DynaKube custom resource. A validation webhook will provide helpful error messages if there's a problem.

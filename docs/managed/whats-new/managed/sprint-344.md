@@ -9,18 +9,14 @@ source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-344
 
 * Release notes
 * 8-min read
-* Published Jul 27, 2026
-* Rollout start on Aug 03, 2026 (planned)
-
-Pre-release information
-
-This is an ongoing summary of changes in this planned release. Check back here at GA for the final version.
+* Updated on Aug 03, 2026
+* Rollout start on Aug 03, 2026
 
 This page showcases new features, changes, and bug fixes in Dynatrace Managed version 1.344. It contains:
 
 * [Feature updates](#updates): 14
 * [Breaking changes](#breaking): 2
-* [Fixes and maintenance](#fixes): 6
+* [Fixes and maintenance](#fixes): 22
 
 Software Delivery
 
@@ -44,12 +40,6 @@ Account Management | Cost Management
 
 Most values will experience no significant changes; deviations are possible, though rare, and are based on your actual DPS consumption data. If a deviation occurs, you'll receive a notification email. After the adjustment, forecasts are stable and consistent.
 
-Application Security
-
-### Upgrade Nginx to version 1.30.4
-
-Upgrade Nginx to version 1.30.4
-
 Application Security | Vulnerabilities
 
 ### Catch malicious packages running in your environment with Runtime Vulnerability Analytics
@@ -70,7 +60,17 @@ Infrastructure Observability
 
 We’re excited to announce a redesigned **AWS** page, bringing broader visibility, smoother navigation, and a more intuitive monitoring experience to your infrastructure performance workflows.
 
-Infrastructure Observability | Infrastructure & Operations
+Infrastructure Observability
+
+### Modernized generic Process page for quicker insights
+
+The generic **Process** page for processes without a specific technology reference has been redesigned with improved visibility, navigation, and monitoring experience for your infrastructure performance workflows.
+
+![Process page](https://dt-cdn.net/images/screenshot-2026-07-10-at-11-19-45-1811-f0288557b8.webp)
+
+Process page
+
+Infrastructure Observability | Extensions
 
 ### New REST API serving public URIs for Dynatrace images
 
@@ -84,9 +84,9 @@ Dynatrace will automatically disable stale Kubernetes connection settings if no 
 
 Platform
 
-### Manage FIPS module version support for NGINX and OpenSSL
+### Managed FIPS module version support for NGINX and OpenSSL
 
-The Manage FIPS module component now supports NGINX 1.30.2 and OpenSSL 3.5.7.
+The Managed FIPS module component now supports NGINX 1.30.2 and OpenSSL 3.5.7.
 
 Platform
 
@@ -108,6 +108,12 @@ Now, the log level for a common log message during cluster upgrades is `INFO` in
 
 Platform
 
+### NGINX updated to version 1.30.4
+
+The Dynatrace Managed installer now includes NGINX version 1.30.4.
+
+Platform
+
 ### Avoid deleting monitoring data by mistake
 
 Avoid accidental data truncation when setting transaction storage, Session Replay, or mobile symbol files to `0`. A hint and a pop-up window now inform you of the consequences of this operation and prevent the change from being made by mistake.
@@ -121,21 +127,6 @@ We've introduced a new configuration option, `BinaryDetectionMode` that lets you
 To configure this setting, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Log Monitoring** > **Advanced Settings** and set the **BinaryDetectionMode** property.
 
 By default, the entire log source is marked as binary and stops being processed. There is no change in behavior for existing deployments.
-
-Platform | OneAgent
-
-### zDC log stream subtasks can be restarted during runtime
-
-We’ve introduced two new commands to detach and attach log stream subtasks. These are useful if the subtask unexpectedly terminated, but you don’t want to restart the entire zDC.
-
-* To detach both log stream subtasks: `Modify ZDCJOB,LOG DETACH`.
-* To attach both log stream subtasks: `Modify ZDCJOB,LOG ATTACH`.
-
-Software Delivery
-
-### NGINX, OpenSSL, and OpenSSL FIPS versions are updated
-
-NGINX is now updated to 1.30.3, OpenSSL to 3.5.7, and OpenSSL FIPS to 3.1.x.
 
 ## Breaking changes
 
@@ -164,13 +155,15 @@ Resolved closed problems remain closed even after related events are detected. I
 
 ### Resolved issues in this release
 
+* Fixed an issue where **Trace ingest control** settings on the process level, and **Adaptive capture control** settings via process group override, were not sent to the OneAgent. (PS-48670)
 * Fixed an issue where all of an environment's management zones were unintentionally deleted, when only an unsaved configuration should have been discarded. (PS-47784)
-* The **Deploy Dynatrace ActiveGate** screen now adapts the file name and installation commands according to ActiveGate target version. (MGD-13588)
+* Fixed an issue where users were missing from audit logs related to user removal from User Groups and Alert Notifications. (MGD-13761)
+* Fixed an issue so that now the **Deploy Dynatrace ActiveGate** page also adapts the file name and installation commands according to the ActiveGate target version. (MGD-13588)
+* The installer’s `host` parameter now has no default value. The previous value is used instead. (MGD-13238)
 * We’ve improved access control enforcement for ActiveGate downloads: ActiveGate download links now require a token with the `UnattendedInstall` or `ServiceApiProvider` scope. Existing UI workflows are not affected. If you use custom scripts, automation, or direct API access to download ActiveGates, verify that the token being used contains one of the required scopes. (MGD-12913)
 * We’ve changed the error message when cluster upgrades cannot be started because not all nodes are up. (MGD-12678)
 * Fixed an issue where the **Explorer** table records for services displayed incorrect stats. The service’s entity details displayed the correct stats. (ICP-6867)
-
-* Fixed an issue with Session Replay playback where page fonts were not loaded if the response was late. (DEM-29408)
+* Fixed an issue where duplicate endpoints in a sufficiently big monitoring configuration of an extension sometimes broke parts of the configuration, until the extension was disabled and re-enabled. (DAQ-24689)
 
 ## Operating systems support
 

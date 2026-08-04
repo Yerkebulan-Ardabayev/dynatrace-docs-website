@@ -60,7 +60,7 @@ The Dynatrace Operator is available on the following architectures:
 
 1
 
-Only the [cloud native full stack deployment](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes"), [application monitoring](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"), and [host monitoring](/managed/ingest-from/setup-on-k8s/deployment/other/host-monitoring "Deploy Dynatrace Operator in host monitoring mode to Kubernetes") are supported.
+Only the [cloud native full stack deployment](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes or OpenShift. Covers installation options, package requirements, and prerequisites."), [application monitoring](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"), and [host monitoring](/managed/ingest-from/setup-on-k8s/deployment/other/host-monitoring "Deploy Dynatrace Operator in host monitoring mode to Kubernetes") are supported.
 
 In cases where issues related to the Dynatrace Operator cannot be replicated by Dynatrace on x86 or ARM architectures and are identified as specific to ppc64le, you need to reach out to `dt-operator@ibm.com` for further support. Additional information can be found in the associated open-source pull request for the Dynatrace Operator on [GitHub﻿](https://dt-url.net/ev034k3).
 

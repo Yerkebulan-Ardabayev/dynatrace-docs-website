@@ -539,7 +539,7 @@ Only TIBCO workflows that are triggered by an incoming web service request, HTTP
 | [Apache HttpClient﻿](https://hc.apache.org/httpcomponents-client-ga/) | 3.1[4](#fn-web-framework-4-def), 4[4](#fn-web-framework-4-def), 5.0[4](#fn-web-framework-4-def), 5.1[4](#fn-web-framework-4-def), 5.2[4](#fn-web-framework-4-def) |
 | [Apache HttpCore﻿](https://hc.apache.org/httpcomponents-core-ga/) | 4[3](#fn-web-framework-3-def), 5[4](#fn-web-framework-4-def) |
 | [Apache Pekko HTTP client﻿](https://pekko.apache.org/docs/pekko-http/current/client-side/index.html) | 1.0.0 - 1.2.0[10](#fn-web-framework-10-def) |
-| [Apache Pekko HTTP server﻿](https://pekko.apache.org/docs/pekko-http/current/server-side/index.html) | 1.0.0 - 1.2.0[10](#fn-web-framework-10-def) |
+| [Apache Pekko HTTP server﻿](https://pekko.apache.org/docs/pekko-http/current/server-side/index.html) | 1.0.0 - 1.6.0[10](#fn-web-framework-10-def) |
 | Elasticsearch | 1.7[5](#fn-web-framework-5-def), 2.0[5](#fn-web-framework-5-def), 2.1[5](#fn-web-framework-5-def), 2.2[5](#fn-web-framework-5-def) |
 | Grails | 3[6](#fn-web-framework-6-def) |
 | Jakarta Servlet | 2.5, 3.0, 3.1, 4, 5, 6 |
@@ -1111,8 +1111,8 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | [PostgreSQL﻿](https://www.npmjs.com/package/pg) | 5[2](#fn-database-frameworks-2-def), 6[2](#fn-database-frameworks-2-def), 7[2](#fn-database-frameworks-2-def), 8[2](#fn-database-frameworks-2-def) |
 | [Redis﻿](https://www.npmjs.com/package/redis) | 0.10[2](#fn-database-frameworks-2-def), 0.12[2](#fn-database-frameworks-2-def), 1.0[2](#fn-database-frameworks-2-def), 2.5[2](#fn-database-frameworks-2-def), 3[2](#fn-database-frameworks-2-def), 4[2](#fn-database-frameworks-2-def), 5[2](#fn-database-frameworks-2-def), 4[2](#fn-database-frameworks-2-def) |
 | [SQLite3 (context passing only)﻿](https://www.npmjs.com/package/sqlite3) | <5, 5.1+[3](#fn-database-frameworks-3-def) |
-| [mssql﻿](https://www.npmjs.com/package/mssql) | >=5[1](#fn-database-frameworks-1-def) |
-| [oracledb﻿](https://www.npmjs.com/package/oracledb) | 5[2](#fn-database-frameworks-2-def) |
+| [mssql﻿](https://www.npmjs.com/package/mssql) | 5+[1](#fn-database-frameworks-1-def) |
+| [oracledb﻿](https://www.npmjs.com/package/oracledb) | 5+[2](#fn-database-frameworks-2-def) |
 
 1
 

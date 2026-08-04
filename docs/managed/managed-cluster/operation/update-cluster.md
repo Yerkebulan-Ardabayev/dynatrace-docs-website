@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/operation/update-clus
 
 * How-to guide
 * 5-min read
-* Updated on Mar 02, 2026
+* Updated on Jul 24, 2026
 
 Dynatrace Managed versions are released sequentially, but you can skip certain versions in the rollout process to update to a newer version faster. For installed Managed versions that allow for faster updates, we recommend waiting until the target version is released if you cannot complete the update process within one month. The following table illustrates the version logic.
 
@@ -67,6 +67,8 @@ There are three different approaches to updating a Managed cluster. Select the a
 ### Automatic update (recommended)
 
 By default, installation packages are downloaded automatically from [Mission Control](/managed/managed-cluster/basics/mission-control-proactive-support "Mission Control proactively monitors your Managed Cluster, provides software updates, and keeps your installation secure and reliable.") as soon as they are available to your cluster.
+
+For container deployments (for example, Kubernetes), keep the Docker OneAgent installation package for every OneAgent version that's still in use. If you remove it, the cluster cannot build the OneAgent image and your pods fail to pull it. For details, see [Get started with Full Kubernetes observability (cloud-native full-stack deployment)](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed#oneagent-image-packages "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes or OpenShift. Covers installation options, package requirements, and prerequisites.").
 
 After an installation package is downloaded, a 24-hour waiting period is required before an automatic update can run. This means that an automatic update is attempted during the first scheduled maintenance window that occurs 24 hours after the download completes. For example, if you download an installation package today and the maintenance window is scheduled for 1:00 AM tomorrow, your update will be executed in the following week, not tomorrow, because the 24-hour waiting period will not be finished by 1:00 AM tomorrow.
 

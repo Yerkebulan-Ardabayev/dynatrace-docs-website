@@ -12,7 +12,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/o
 
 This page provides instructions for deploying the Dynatrace Operator in host monitoring configuration to a Kubernetes cluster.
 
-If you're interested in gaining a more comprehensive view of your environment that includes aspects such as Application observability and user experience, you should consider a full Kubernetes observability approach, such as [cloud-native full-stack](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes") or [classic full-stack](/managed/ingest-from/setup-on-k8s/deployment/other/classic-full-stack "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes").
+If you're interested in gaining a more comprehensive view of your environment that includes aspects such as Application observability and user experience, you should consider a full Kubernetes observability approach, such as [cloud-native full-stack](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes or OpenShift. Covers installation options, package requirements, and prerequisites.") or [classic full-stack](/managed/ingest-from/setup-on-k8s/deployment/other/classic-full-stack "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes").
 
 Prerequisites
 

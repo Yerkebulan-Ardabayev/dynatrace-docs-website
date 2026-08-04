@@ -27,7 +27,7 @@ To ensure a clean migration:
    ```
 2. [Uninstall Dynatrace Operator via manifests](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator#manifest-uninstall "Upgrade paths, update procedures, and uninstallation guide for Dynatrace Operator.").
 
-1. Install Dynatrace Operator via Helm. For more information about install instructions, see [Get started with full observability](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed#helm "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes").
+1. Install Dynatrace Operator via Helm. For more information about install instructions, see [Get started with full observability](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed#helm "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes or OpenShift. Covers installation options, package requirements, and prerequisites.").
 
    If you are using Helm version 4.0+, you must use `--rollback-on-failure` instead of the `--atomic` flag.
 

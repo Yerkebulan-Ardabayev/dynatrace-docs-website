@@ -21,7 +21,7 @@ Get immediate insights into your Kubernetes health and out-of-the-box distribute
 
 #### Deployment options
 
-* Recommended [Deploy Dynatrace Operator in cloud-native full-stack mode](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes")
+* Recommended [Deploy Dynatrace Operator in cloud-native full-stack mode](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes or OpenShift. Covers installation options, package requirements, and prerequisites.")
 * [Deploy Dynatrace Operator in classic full-stack mode](/managed/ingest-from/setup-on-k8s/deployment/other/classic-full-stack "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes")  
   Limitations: There’s a startup dependency between the container in which OneAgent is deployed and application containers to be instrumented (for example, containers that have deep process monitoring enabled). The OneAgent container must be started and the oneagenthelper process must be running before the application container is launched so that the application can be properly instrumented.
 
