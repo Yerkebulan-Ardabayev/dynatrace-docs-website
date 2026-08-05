@@ -2013,7 +2013,7 @@
   "ingest-from/setup-on-k8s/quickstart.md": "b7d41ef2725a6406",
   "ingest-from/setup-on-k8s/reference/code-modules-delivery-modes.md": "01b315d9dd2aa547",
   "ingest-from/setup-on-k8s/reference/dynakube-feature-flags.md": "f9fe8ab3130271a6",
-  "ingest-from/setup-on-k8s/reference/dynakube-parameters.md": "69f1aa14f9757d99",
+  "ingest-from/setup-on-k8s/reference/dynakube-parameters.md": "fa78fe2010624fca",
   "ingest-from/setup-on-k8s/reference/network.md": "7de41ddaac0243e2",
   "ingest-from/setup-on-k8s/reference/security.md": "d389720efede4854",
   "ingest-from/setup-on-k8s/reference/storage.md": "f18c4d4341bc3bc4",

@@ -1,20 +1,20 @@
 ---
-title: Параметры DynaKube для оператора Dynatrace
+title: Параметры DynaKube для Dynatrace Operator
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters
 ---
 
-# Параметры DynaKube для оператора Dynatrace
+# Параметры DynaKube для Dynatrace Operator
 
-# Параметры DynaKube для оператора Dynatrace
+# Параметры DynaKube для Dynatrace Operator
 
-* 57 минут на чтение
-* Обновлено 10 июля 2026
+* Чтение: 57 мин
+* Обновлено 10 июля 2026 г.
 
-Эта страница поможет разобраться и настроить пользовательский ресурс DynaKube [Kubernetes Custom Resource﻿](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/), что позволяет оптимизировать настройку оператора Dynatrace под конкретные требования.
+Эта страница поможет разобраться в настройке [Kubernetes Custom Resource﻿](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) DynaKube и оптимизировать установку Dynatrace Operator под конкретные требования.
 
-В таблице ниже указаны требуемые версии оператора Dynatrace, соответствующие каждой версии DynaKube API.
+В таблице ниже указаны требуемые версии Dynatrace Operator, соответствующие каждой версии API DynaKube.
 
-| Версия DynaKube API | Минимальная версия оператора Dynatrace | Максимальная версия оператора Dynatrace [1](#fn-1-1-def) |
+| Версия API DynaKube | Минимальная версия Dynatrace Operator | Максимальная версия Dynatrace Operator [1](#fn-1-1-def) |
 | --- | --- | --- |
 | `v1beta6` | 1.8 |  |
 | `v1beta5` | 1.6 |  |
@@ -25,9 +25,9 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/reference/dy
 
 1
 
-Соответствующие версии DynaKube API будут удалены из оператора Dynatrace в следующем минорном или мажорном релизе.
+Соответствующие версии API DynaKube будут удалены из Dynatrace Operator в следующем минорном или мажорном релизе.
 
-Примеры YAML DynaKube смотри на [GitHub﻿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.10.0/assets/samples/dynakube).
+Примеры YAML DynaKube см. на [GitHub﻿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.10.1/assets/samples/dynakube).
 
 v1beta6
 
@@ -41,61 +41,61 @@ v1beta2
 
 v1beta1
 
-Версия оператора Dynatrace 1.8.0+
+Dynatrace Operator версии 1.8.0+
 
 ## `.spec`
 
-* Параметр `apiUrl` обязателен и неизменяем. После установки его нельзя изменить в существующей DynaKube.
-* Все остальные параметры необязательны.
+* Параметр `apiUrl` является обязательным и неизменяемым. После установки его нельзя изменить в существующем DynaKube.
+* Все остальные параметры являются необязательными.
 
 | **Параметр** | **Описание** | **Значение по умолчанию** | **Тип данных** |
 | --- | --- | --- | --- |
-| `apiUrl` | `apiUrl` Dynatrace, включая путь `/api` в конце.- Для SaaS укажи в `YOUR_ENVIRONMENT_ID` идентификатор своей среды.- Для Managed измени адрес `apiUrl`.Инструкции по определению идентификатора среды и настройке адреса apiUrl смотри в разделе [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") | Нет значения по умолчанию (обязателен) | string |
-| `customPullSecret` | Определяет пользовательский pull secret для приватного реестра. Он аутентифицирует только компоненты, управляемые оператором, в пространстве имён `dynatrace`, и не распространяется на инжектируемые поды приложений. Подробности см. в разделах [Create a pull secret](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#create-pull-secret "Use a private registry") и [Provide pull secrets for injected workloads](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#injected-workloads "Use a private registry"). | Нет значения по умолчанию (необязателен) | string |
-| `dynatraceApiRequestThreshold` | Минимальное количество минут между запросами API Dynatrace. | 15 | integer |
-| `enableIstio` | При включении, если в среде Kubernetes установлен Istio, оператор Dynatrace создаст соответствующие объекты VirtualService и ServiceEntry, чтобы разрешить доступ к Dynatrace Cluster из OneAgent или ActiveGate.По умолчанию отключено. | Нет значения по умолчанию (необязателен) | boolean |
-| `networkZone` | Задаёт сетевую зону для подов OneAgent и ActiveGate. | Нет значения по умолчанию (необязателен) | string |
-| `proxy` | Задай пользовательские настройки прокси напрямую либо из secret с полем `proxy`.Применяется к оператору Dynatrace, ActiveGate и OneAgent.| Нет значения по умолчанию (необязателен) | DynaKubeProxy |
-| `publicRegistryOverride` | Переопределяет реестр по умолчанию, используемый для разрешения образов компонентов мониторинга. Оператор Dynatrace передаёт указанный хост реестра в среду Dynatrace. Поддерживаемые значения: `public.ecr.aws` (Amazon ECR Public) или `registry-1.docker.io` (Docker Hub). Подробнее см. в разделе [Resolve public registry images automatically](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#automatic-public-registry "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment."). | Нет значения по умолчанию (необязателен) | string |
-| `resourceAttributes` | Атрибуты ресурса, которые оператор Dynatrace применяет ко всем сигналам телеметрии. Доступно начиная с версии оператора Dynatrace 1.10.0. | Нет значения по умолчанию (необязателен) | map[string]string |
-| `skipCertCheck` | Отключает проверку сертификата для соединения между оператором Dynatrace и Dynatrace Cluster.Установи `true`, если нужно пропустить проверки валидации сертификата. | Нет значения по умолчанию (необязателен) | boolean |
-| `tokens` | Имя secret, содержащего токены, используемые для подключения к Dynatrace. | Нет значения по умолчанию (необязателен) | string |
-| `trustedCAs` | Добавляет пользовательские RootCA из configmap.Ключ данных должен называться `certs`.Применяется к оператору Dynatrace, OneAgent и ActiveGate. | Нет значения по умолчанию (необязателен) | string |
+| `apiUrl` | `apiUrl` Dynatrace, включая путь `/api` в конце.- Для SaaS: установите `YOUR_ENVIRONMENT_ID` равным идентификатору среды.- Для Managed: измените адрес `apiUrl`.Инструкции по определению идентификатора среды и настройке адреса apiUrl см. в разделе [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Узнайте, что такое среда мониторинга Dynatrace, как найти идентификатор среды и как настроить несколько сред.") | Нет (обязательный) | string |
+| `customPullSecret` | Определяет пользовательский pull-секрет для приватного реестра. Выполняет аутентификацию только для компонентов, управляемых оператором, в пространстве имён `dynatrace`, и не распространяется на инжектируемые поды приложений. Подробнее: [Create a pull secret](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#create-pull-secret "Использование приватного реестра") и [Provide pull secrets for injected workloads](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#injected-workloads "Использование приватного реестра"). | Нет (необязательный) | string |
+| `dynatraceApiRequestThreshold` | Минимальный интервал в минутах между запросами API Dynatrace. | 15 | integer |
+| `enableIstio` | При включении, если Istio установлен в среде Kubernetes, Dynatrace Operator создаёт соответствующие объекты VirtualService и ServiceEntry для обеспечения доступа к кластеру Dynatrace из OneAgent или ActiveGate. По умолчанию отключено. | Нет (необязательный) | boolean |
+| `networkZone` | Задаёт сетевую зону для подов OneAgent и ActiveGate. | Нет (необязательный) | string |
+| `proxy` | Настройка пользовательского прокси: напрямую или через секрет с полем `proxy`. Применяется к Dynatrace Operator, ActiveGate и OneAgent. | Нет (необязательный) | DynaKubeProxy |
+| `publicRegistryOverride` | Переопределяет хост публичного реестра по умолчанию, используемый для получения образов компонентов мониторинга. Dynatrace Operator передаёт указанный хост реестра в среду Dynatrace. Допустимые значения: `public.ecr.aws` (Amazon ECR Public) или `registry-1.docker.io` (Docker Hub). Подробнее: [Resolve public registry images automatically](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#automatic-public-registry "Настройте Dynatrace Operator для использования образов публичного реестра. Это можно сделать вручную или через автоматическое разрешение из среды Dynatrace."). | Нет (необязательный) | string |
+| `resourceAttributes` | Атрибуты ресурса, которые Dynatrace Operator применяет ко всем сигналам телеметрии. Доступно начиная с Dynatrace Operator версии 1.10.0. | Нет (необязательный) | map[string]string |
+| `skipCertCheck` | Отключает проверку сертификата для соединения между Dynatrace Operator и кластером Dynatrace. Установите в `true`, чтобы пропустить проверку сертификата. | Нет (необязательный) | boolean |
+| `tokens` | Имя секрета, содержащего токены для подключения к Dynatrace. | Нет (необязательный) | string |
+| `trustedCAs` | Добавляет пользовательские корневые сертификаты (RootCAs) из configmap. Ключ данных должен быть `certs`. Применяется к Dynatrace Operator, OneAgent и ActiveGate. | Нет (необязательный) | string |
 
 ## `.spec.oneAgent`
 
 | **Параметр** | **Описание** | **Значение по умолчанию** | **Тип данных** |
 | --- | --- | --- | --- |
-| `hostGroup` | Укажи имя группы, к которой нужно отнести хост. Этот способ предпочтительнее устаревшего аргумента `--set-host-group`. Если используются оба варианта, это поле имеет приоритет над аргументом `--set-host-group`. | Нет значения по умолчанию (необязателен) | string |
+| `hostGroup` | Укажите имя группы, в которую нужно включить хост. Этот метод предпочтительнее устаревшего аргумента `--set-host-group`. Если используются оба параметра, это поле имеет приоритет над аргументом `--set-host-group`. | Нет (необязательный) | string |
 
 ## `.spec.oneAgent.cloudNativeFullStack`
 
-* Все параметры необязательны.
+* Все параметры являются необязательными.
 
 Рекомендуется
 
 | **Параметр** | **Описание** | **Значение по умолчанию** | **Тип данных** |
 | --- | --- | --- | --- |
-| `additionalResourceAttributes` | Дополнительные атрибуты ресурса для телеметрии OneAgent, объединяются с `.spec.resourceAttributes`. Доступно начиная с оператора Dynatrace 1.10.0. | Нет значения по умолчанию (необязателен) | map[string]string |
-| `annotations` | Добавь пользовательские аннотации OneAgent. | Нет значения по умолчанию (необязателен) | map[string]string |
-| `args` | Задай дополнительные аргументы для установщика OneAgent.Доступные варианты см. в разделе [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").Список ограничений см. в разделе [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Нет значения по умолчанию (необязателен) | []string |
-| `codeModulesImage` | Ссылка на образ контейнера для code modules. Избегай изменяемых тегов вроде `latest`, используй digest или неизменяемый тег для воспроизводимых развёртываний. | Нет значения по умолчанию (необязателен) | string |
-| `codeModulesImagePullPolicy` | Определяет политику pull для образа CodeModules. Если пусто, применяется значение по умолчанию Kubernetes. | Нет значения по умолчанию (необязателен) | string |
-| `dnsPolicy` | Задай политику DNS для подов OneAgent.Подробности см. в разделе [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
-| `env` | Задай дополнительные переменные окружения для подов OneAgent. | Нет значения по умолчанию (необязателен) | []EnvVar |
-| `image` | Используй пользовательский образ Docker для OneAgent. Если задано, переопределяет образ, автоматически разрешаемый через [public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#automatic-public-registry "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment."). | Образ из кластера Dynatrace. | string |
-| `imagePullPolicy` | Определяет политику pull для образа. Если пусто, применяется значение по умолчанию Kubernetes. | Нет значения по умолчанию (необязателен) | string |
-| `initResources` | Задай запросы и лимиты ресурсов для initContainer. Подробности см. в разделе [Managing resources for containers﻿](https://dt-url.net/atc371q). | Нет значения по умолчанию (необязателен) | ResourceRequirements |
-| `labels` | Заданные метки для подов OneAgent, чтобы структурировать нагрузки нужным образом. | Нет значения по умолчанию (необязателен) | map[string]string |
-| `namespaceSelector` | Пространства имён, в которые нужно инжектировать оператору Dynatrace.Подробнее см. в разделе [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | Нет значения по умолчанию (необязателен) | LabelSelector |
-| `nodeSelector` | Укажи селектор узлов, определяющий, на каких узлах будет развёрнут OneAgent. | Нет значения по умолчанию (необязателен) | map[string]string |
-| `oneAgentResources` | Настройки ресурсов для контейнера OneAgent. Потребление OneAgent сильно зависит от отслеживаемой нагрузки. Можно использовать настройки по умолчанию в [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` показывает значения, нужные для запуска; `resource.limits` показывает максимальные лимиты для пода. | Нет значения по умолчанию (необязателен) | ResourceRequirements |
-| `priorityClassName` | Присвой класс приоритета подам OneAgent. По умолчанию класс не задан.Подробности см. в разделе [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | Нет значения по умолчанию (необязателен) | string |
-| `rollingUpdate` | Задай настройки rollingUpdate для UpdateStrategy DaemonSet OneAgent.Подробности см. в разделе [DaemonSet specification﻿](https://dt-url.net/v0038c5). | Нет значения по умолчанию (необязателен) | RollingUpdateDaemonSet |
-| `secCompProfile` | Профиль SecComp, который будет настроен для работы в режиме безопасных вычислений. | Нет значения по умолчанию (необязателен) | string |
-| `storageHostPath` | Доступная для записи директория в файловой системе хоста, где будут храниться конфигурации OneAgent. | Нет значения по умолчанию (необязателен) | string |
-| `tolerations` | Toleration'ы, включаемые в DaemonSet OneAgent.Подробности см. в разделе [Taints and Tolerations﻿](https://dt-url.net/od03765). | Нет значения по умолчанию (необязателен) | []Toleration |
-| `version` | Версия OneAgent, используемая для OneAgent мониторинга хостов, работающих в выделенном поде. Эта настройка не влияет на версию OneAgent, используемую для мониторинга приложений. | По умолчанию используется последняя версия. | string |
+| `additionalResourceAttributes` | Дополнительные атрибуты ресурса для телеметрии OneAgent, объединяются с `.spec.resourceAttributes`. Доступно начиная с Dynatrace Operator 1.10.0. | Нет (необязательный) | map[string]string |
+| `annotations` | Добавляет пользовательские аннотации для подов OneAgent. | Нет (необязательный) | map[string]string |
+| `args` | Задаёт дополнительные аргументы для установщика OneAgent. Доступные параметры: [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Узнайте, как использовать установщик Linux с параметрами командной строки."). Список ограничений: [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Установка и обновление Dynatrace OneAgent как контейнера Docker."). | Нет (необязательный) | []string |
+| `codeModulesImage` | Ссылка на образ контейнера для code modules. Следует избегать изменяемых тегов, например `latest`, и использовать digest или неизменяемый тег для воспроизводимых развёртываний. | Нет (необязательный) | string |
+| `codeModulesImagePullPolicy` | Определяет политику извлечения образа для CodeModules. При пустом значении применяется политика Kubernetes по умолчанию. | Нет (необязательный) | string |
+| `dnsPolicy` | Задаёт политику DNS для подов OneAgent. Подробнее: [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `env` | Задаёт дополнительные переменные среды для подов OneAgent. | Нет (необязательный) | []EnvVar |
+| `image` | Использует пользовательский образ Docker для OneAgent. При указании переопределяет образ, автоматически разрешаемый через [public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#automatic-public-registry "Настройте Dynatrace Operator для использования образов публичного реестра. Это можно сделать вручную или через автоматическое разрешение из среды Dynatrace."). | Образ из кластера Dynatrace. | string |
+| `imagePullPolicy` | Определяет политику извлечения образа. При пустом значении применяется политика Kubernetes по умолчанию. | Нет (необязательный) | string |
+| `initResources` | Определяет запросы ресурсов и лимиты для initContainer. Подробнее: [Managing resources for containers﻿](https://dt-url.net/atc371q). | Нет (необязательный) | ResourceRequirements |
+| `labels` | Пользовательские метки для подов OneAgent для структурирования рабочих нагрузок. | Нет (необязательный) | map[string]string |
+| `namespaceSelector` | Пространства имён, в которые Dynatrace Operator должен выполнять инжекцию. Подробнее: [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Настройка мониторинга для пространств имён и подов"). | Нет (необязательный) | LabelSelector |
+| `nodeSelector` | Задаёт node selector, управляющий тем, на каких узлах будет развёрнут OneAgent. | Нет (необязательный) | map[string]string |
+| `oneAgentResources` | Настройки ресурсов для контейнера OneAgent. Потребление ресурсов OneAgent существенно зависит от отслеживаемой нагрузки. Можно использовать значения по умолчанию из [CR﻿](https://dt-url.net/dynakube-samples). `resource.requests` показывает значения, необходимые для запуска; `resource.limits` показывает максимальные лимиты для пода. | Нет (необязательный) | ResourceRequirements |
+| `priorityClassName` | Назначает класс приоритета подам OneAgent. По умолчанию класс не задан. Подробнее: [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | Нет (необязательный) | string |
+| `rollingUpdate` | Определяет параметры rollingUpdate для UpdateStrategy DaemonSet OneAgent. Подробнее: [DaemonSet specification﻿](https://dt-url.net/v0038c5). | Нет (необязательный) | RollingUpdateDaemonSet |
+| `secCompProfile` | Профиль SecComp, настраиваемый для запуска в режиме защищённых вычислений. | Нет (необязательный) | string |
+| `storageHostPath` | Доступный для записи каталог в файловой системе хоста, где хранятся конфигурации OneAgent. | Нет (необязательный) | string |
+| `tolerations` | Tolerations для DaemonSet OneAgent. Подробнее: [Taints and Tolerations﻿](https://dt-url.net/od03765). | Нет (необязательный) | []Toleration |
+| `version` | Версия OneAgent для хостового мониторинга OneAgent в выделенном поде. Эта настройка не влияет на версию OneAgent, используемую для мониторинга приложений. | По умолчанию используется последняя версия. | string |
 
 ## `.spec.oneAgent.classicFullStack`
 
@@ -1037,18 +1037,18 @@ Dynatrace Operator версии 1.6.0+
 
 Dynatrace Operator версии 1.6.0+
 
-* Все параметры не обязательны.
+* Все параметры необязательны.
 
 | Параметр | Описание | Значение по умолчанию | Тип данных |
 | --- | --- | --- | --- |
-| `imageRef` | Образ, который используется для Dynatrace Collector. | Нет значения по умолчанию (не обязательно) | [imageRef](#extensions-collector-image-ref) |
+| `imageRef` | Образ, используемый для Dynatrace Collector. | Нет (необязателен) | [imageRef](#extensions-collector-image-ref) |
 | `replicas` | Количество реплик Dynatrace Collector. | 1 | int32 |
-| `labels` | Метки, применяемые к поду Dynatrace Collector. | Нет значения по умолчанию (не обязательно) | map[string]string |
-| `annotations` | Аннотации, применяемые к поду Dynatrace Collector. | Нет значения по умолчанию (не обязательно) | map[string]string |
-| `tlsRefName` | Secret, содержащий TLS-сертификат, который Dynatrace Collector использует для проверки подключений к конечным точкам других компонентов. | Нет значения по умолчанию (не обязательно) | string |
-| `resources` | Настройки ресурсов для пода Dynatrace Collector. | Нет значения по умолчанию (не обязательно) | ResourceRequirements |
-| `tolerations` | Tolerations для пода Dynatrace Collector. Подробнее см. [Taints and Tolerations﻿](https://dt-url.net/od03765). | Нет значения по умолчанию (не обязательно) | []Toleration |
-| `topologySpreadConstraints` | Topology spread constraints для пода Dynatrace Collector. | Нет значения по умолчанию (не обязательно) | []TopologySpreadConstraint |
+| `labels` | Labels, применяемые к поду Dynatrace Collector. | Нет (необязателен) | map[string]string |
+| `annotations` | Annotations, применяемые к поду Dynatrace Collector. | Нет (необязателен) | map[string]string |
+| `tlsRefName` | Secret с TLS-сертификатом, используемым Dynatrace Collector для проверки подключений к эндпоинтам других компонентов. | Нет (необязателен) | string |
+| `resources` | Настройки ресурсов для пода Dynatrace Collector. | Нет (необязателен) | ResourceRequirements |
+| `tolerations` | Tolerations для пода Dynatrace Collector. Подробнее см. [Taints and Tolerations﻿](https://dt-url.net/od03765). | Нет (необязателен) | []Toleration |
+| `topologySpreadConstraints` | Ограничения распределения топологии для пода Dynatrace Collector. | Нет (необязателен) | []TopologySpreadConstraint |
 
 ## `.spec.templates.otelCollector.imageRef`
 
@@ -1064,51 +1064,51 @@ Dynatrace Operator версии 1.5.0+
 ## `.spec`
 
 * Параметр `apiUrl` обязателен и неизменяем. После установки его нельзя изменить в существующем DynaKube.
-* Все остальные параметры не обязательны.
+* Все остальные параметры необязательны.
 
 | **Параметр** | **Описание** | **Значение по умолчанию** | **Тип данных** |
 | --- | --- | --- | --- |
-| `apiUrl` | `apiUrl` Dynatrace, включая путь `/api` в конце.- Для SaaS укажите в `YOUR_ENVIRONMENT_ID` идентификатор среды.- Для Managed измените адрес `apiUrl`.Инструкции по определению идентификатора среды и настройке адреса apiUrl см. в [ID Environment](/managed/discover-dynatrace/get-started/monitoring-environment "Узнайте, что такое среда мониторинга Dynatrace, как найти идентификатор своей среды и как настроить и подключить несколько сред.") | Нет значения по умолчанию (обязательно) | string |
-| `customPullSecret` | Определяет пользовательский pull secret на случай, если для образов, заданных в DynaKube, используется приватный реестр. Примечание: для [загрузки образа узла через эфемерный том](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#ephemeral-node-image-pull "Справочник о том, как Dynatrace Operator доставляет модули кода OneAgent в поды приложений, включая эфемерные тома, загрузку образа через CSI-драйвер и ZIP-загрузку.") нужно убедиться, что pull secret доступны в инжектированном поде. Подробнее см. [предварительные требования](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#prerequisites "Справочник о том, как Dynatrace Operator доставляет модули кода OneAgent в поды приложений, включая эфемерные тома, загрузку образа через CSI-драйвер и ZIP-загрузку."). Чтобы задать пользовательский pull secret и узнать об ожидаемом поведении, см. [Настройка `customPullSecret`](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#create-pull-secret "Использование приватного реестра"). | Нет значения по умолчанию (не обязательно) | string |
-| `dynatraceApiRequestThreshold` | Минимальный интервал в минутах между запросами API Dynatrace. | 15 | integer |
-| `enableIstio` | При включении, если в среде Kubernetes установлен Istio, Dynatrace Operator создаст соответствующие объекты VirtualService и ServiceEntry, чтобы разрешить доступ к Dynatrace Cluster из OneAgent или ActiveGate. По умолчанию отключено. | Нет значения по умолчанию (не обязательно) | boolean |
-| `networkZone` | Задаёт зону сети для подов OneAgent и ActiveGate. | Нет значения по умолчанию (не обязательно) | string |
-| `proxy` | Задаёт пользовательские настройки прокси либо напрямую, либо из secret с полем `proxy`. Применяется к Dynatrace Operator, ActiveGate и OneAgent'ам. | Нет значения по умолчанию (не обязательно) | DynaKubeProxy |
-| `skipCertCheck` | Отключает проверку сертификата для соединения между Dynatrace Operator и Dynatrace Cluster. Установите значение `true`, если нужно пропустить проверки валидации сертификата. | Нет значения по умолчанию (не обязательно) | boolean |
-| `tokens` | Имя secret, хранящего токены, используемые для подключения к Dynatrace. | Нет значения по умолчанию (не обязательно) | string |
-| `trustedCAs` | Добавляет пользовательские RootCA из configmap. Ключ данных должен называться `certs`. Применяется к Dynatrace Operator, OneAgent и ActiveGate. | Нет значения по умолчанию (не обязательно) | string |
+| `apiUrl` | Dynatrace `apiUrl`, включая путь `/api` в конце.- Для SaaS задайте `YOUR_ENVIRONMENT_ID` равным идентификатору своего окружения.- Для Managed измените адрес `apiUrl`. Инструкции по определению идентификатора окружения и настройке адреса apiUrl см. в [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") | Нет (обязателен) | string |
+| `customPullSecret` | Задаёт пользовательский pull secret, если для образов, определённых в DynaKube, используется приватный реестр. Примечание: при [node image pull via ephemeral volume](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#ephemeral-node-image-pull "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.") нужно убедиться, что pull secrets доступны на инжектируемом поде. Подробнее см. [prerequisites](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#prerequisites "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download."). Чтобы задать пользовательский pull secret и узнать об ожидаемом поведении, см. [Configure `customPullSecret`](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#create-pull-secret "Use a private registry"). | Нет (необязателен) | string |
+| `dynatraceApiRequestThreshold` | Минимальный интервал в минутах между запросами Dynatrace API. | 15 | integer |
+| `enableIstio` | При включении, если в окружении Kubernetes установлен Istio, Dynatrace Operator создаёт соответствующие объекты VirtualService и ServiceEntry, открывающие доступ к кластеру Dynatrace из OneAgent или ActiveGate. Отключено по умолчанию. | Нет (необязателен) | boolean |
+| `networkZone` | Задаёт сетевую зону для подов OneAgent и ActiveGate. | Нет (необязателен) | string |
+| `proxy` | Задаёт пользовательские настройки прокси напрямую или из secret с полем `proxy`. Применяется к Dynatrace Operator, ActiveGate и OneAgent. | Нет (необязателен) | DynaKubeProxy |
+| `skipCertCheck` | Отключает проверку сертификата для подключения между Dynatrace Operator и кластером Dynatrace. Установите `true`, чтобы пропустить проверку сертификата. | Нет (необязателен) | boolean |
+| `tokens` | Имя secret, содержащего токены для подключения к Dynatrace. | Нет (необязателен) | string |
+| `trustedCAs` | Добавляет пользовательские корневые CA из configmap. Ключ данных должен быть `certs`. Применяется к Dynatrace Operator, OneAgent и ActiveGate. | Нет (необязателен) | string |
 
 ## `.spec.oneAgent`
 
 | **Параметр** | **Описание** | **Значение по умолчанию** | **Тип данных** |
 | --- | --- | --- | --- |
-| `hostGroup` | Укажите имя группы, к которой нужно отнести хост. Этот способ предпочтительнее теперь устаревшего аргумента `--set-host-group`. Если используются оба параметра, это поле имеет приоритет над аргументом `--set-host-group`. | Нет значения по умолчанию (не обязательно) | string |
+| `hostGroup` | Указывает имя группы, к которой нужно привязать хост. Этот способ предпочтительнее устаревшего аргумента `--set-host-group`. Если используются оба параметра, данное поле имеет приоритет над аргументом `--set-host-group`. | Нет (необязателен) | string |
 
 ## `.spec.oneAgent.cloudNativeFullStack`
 
-* Все параметры не обязательны.
+* Все параметры необязательны.
 
 Рекомендуется
 
 | **Параметр** | **Описание** | **Значение по умолчанию** | **Тип данных** |
 | --- | --- | --- | --- |
-| `annotations` | Добавляет пользовательские аннотации OneAgent. | Нет значения по умолчанию (не обязательно) | map[string]string |
-| `args` | Задаёт дополнительные аргументы для установщика OneAgent. Доступные параметры см. в [Пользовательская установка для Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Узнайте, как использовать установщик для Linux с параметрами командной строки."). Список ограничений см. в [Ограничения](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Установка и обновление Dynatrace OneAgent в качестве контейнера Docker."). | Нет значения по умолчанию (не обязательно) | []string |
-| `autoUpdate` (**устарело**) | Устаревшее поле, будет удалено в одном из следующих релизов. [Закрепите версию OneAgent в своём тенанте, чтобы настроить автообновление](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Настройка автообновлений для всех компонентов, управляемых Dynatrace Operator"). Автообновление отключается, если заданы поля `version` или `image`. | `true` | boolean |
-| `codeModulesImage` | Ссылка на образ контейнера для модулей кода. Избегайте изменяемых тегов, например `latest`, и используйте digest или неизменяемый тег для воспроизводимых развёртываний. | Нет значения по умолчанию (не обязательно) | string |
+| `annotations` | Добавляет пользовательские annotations для OneAgent. | Нет (необязателен) | map[string]string |
+| `args` | Задаёт дополнительные аргументы установщику OneAgent. Доступные параметры см. в [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters."). Список ограничений см. в [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Нет (необязателен) | []string |
+| `autoUpdate` (**deprecated**) | Устаревшее поле, которое будет удалено в одном из будущих релизов. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for all components managed by Dynatrace Operator"). Автообновление отключается, если заданы поля `version` или `image`. | `true` | boolean |
+| `codeModulesImage` | Ссылка на образ контейнера с code modules. Избегайте изменяемых тегов вроде `latest`: используйте digest или неизменяемый тег для воспроизводимых развёртываний. | Нет (необязателен) | string |
 | `dnsPolicy` | Задаёт DNS Policy для подов OneAgent. Подробнее см. [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
-| `env` | Задаёт дополнительные переменные окружения для подов OneAgent. | Нет значения по умолчанию (не обязательно) | []EnvVar |
-| `image` | Использовать пользовательский образ Docker для OneAgent. Если задан, переопределяет образ, автоматически определяемый через [публичный реестр](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#automatic-public-registry "Настройте Dynatrace Operator на использование образов из публичного реестра для себя и управляемых им компонентов. Это можно сделать вручную или через автоматическое определение из среды Dynatrace."). | Образ из кластера Dynatrace. | string |
-| `initResources` | Задаёт запросы и лимиты ресурсов для initContainer. Подробнее см. [Managing resources for containers﻿](https://dt-url.net/atc371q). | Нет значения по умолчанию (не обязательно) | ResourceRequirements |
-| `labels` | Заданные вами метки для подов OneAgent, чтобы структурировать нагрузки нужным образом. | Нет значения по умолчанию (не обязательно) | map[string]string |
-| `namespaceSelector` | Пространства имён, в которые Dynatrace Operator должен выполнять инжектирование. Подробнее см. [Настройка мониторинга для namespace и подов](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Настройка мониторинга для namespace и подов"). | Нет значения по умолчанию (не обязательно) | LabelSelector |
-| `nodeSelector` | Укажите node selector, определяющий, на каких узлах будет развёрнут OneAgent. | Нет значения по умолчанию (не обязательно) | map[string]string |
-| `oneAgentResources` | Настройки ресурсов для контейнера OneAgent. Потребление OneAgent сильно зависит от нагрузки, за которой нужно наблюдать. Можно использовать настройки по умолчанию из примеров DynaKube на [GitHub﻿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.10.0/assets/samples/dynakube). `resource.requests` показывает значения, необходимые для запуска; `resource.limits` показывает максимальные лимиты для пода. | Нет значения по умолчанию (не обязательно) | ResourceRequirements |
-| `priorityClassName` | Назначает класс приоритета подам OneAgent. По умолчанию класс не задан. Подробнее см. [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | Нет значения по умолчанию (не обязательно) | string |
-| `secCompProfile` | SecComp Profile, который будет настроен для работы в режиме secure computing. | Нет значения по умолчанию (не обязательно) | string |
-| `storageHostPath` | Доступный для записи каталог в файловой системе узла, где будут храниться конфигурации OneAgent. | Нет значения по умолчанию (не обязательно) | string |
-| `tolerations` | Tolerations, включаемые в DaemonSet OneAgent. Подробнее см. [Taints and Tolerations﻿](https://dt-url.net/od03765). | Нет значения по умолчанию (не обязательно) | []Toleration |
-| `version` | Версия OneAgent, используемая для OneAgent'ов мониторинга хоста, работающих в выделенном поде. Эта настройка не влияет на версию OneAgent, используемую для мониторинга приложений. | По умолчанию используется последняя версия. | string |
+| `env` | Задаёт дополнительные переменные окружения для подов OneAgent. | Нет (необязателен) | []EnvVar |
+| `image` | Использует пользовательский образ OneAgent Docker. Если задано, переопределяет образ, автоматически определяемый через [public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#automatic-public-registry "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment."). | Образ из кластера Dynatrace. | string |
+| `initResources` | Задаёт запросы и лимиты ресурсов для initContainer. Подробнее см. [Managing resources for containers﻿](https://dt-url.net/atc371q). | Нет (необязателен) | ResourceRequirements |
+| `labels` | Пользовательские labels для подов OneAgent, позволяющие структурировать нагрузки по своему усмотрению. | Нет (необязателен) | map[string]string |
+| `namespaceSelector` | Пространства имён, в которые Dynatrace Operator должен выполнять инжекцию. Подробнее см. [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | Нет (необязателен) | LabelSelector |
+| `nodeSelector` | Указывает node selector, определяющий узлы, на которых будет развёрнут OneAgent. | Нет (необязателен) | map[string]string |
+| `oneAgentResources` | Настройки ресурсов для контейнера OneAgent. Потребление ресурсов OneAgent существенно зависит от отслеживаемой нагрузки. Значения по умолчанию можно взять из примеров DynaKube на [GitHub﻿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.10.1/assets/samples/dynakube). `resource.requests` показывает значения, необходимые для запуска; `resource.limits` показывает максимальные лимиты для пода. | Нет (необязателен) | ResourceRequirements |
+| `priorityClassName` | Назначает priority class подам OneAgent. По умолчанию класс не задан. Подробнее см. [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | Нет (необязателен) | string |
+| `secCompProfile` | SecComp Profile, настраиваемый для работы в режиме безопасных вычислений. | Нет (необязателен) | string |
+| `storageHostPath` | Доступный для записи каталог на файловой системе хоста, в котором будут храниться конфигурации OneAgent. | Нет (необязателен) | string |
+| `tolerations` | Tolerations для DaemonSet OneAgent. Подробнее см. [Taints and Tolerations﻿](https://dt-url.net/od03765). | Нет (необязателен) | []Toleration |
+| `version` | Версия OneAgent, используемая для хостового мониторинга OneAgent, запущенных в выделенном поде. Этот параметр не влияет на версию OneAgent, используемую для мониторинга приложений. | По умолчанию используется последняя версия. | string |
 
 ## `.spec.oneAgent.classicFullStack`
 
