@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneage
 # OneAgent health overview
 
 * 4-min read
-* Updated on Jan 15, 2026
+* Updated on Aug 04, 2026
 
 The OneAgent health overview empowers you to discover all your deployed [OneAgent modules](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") at scale and detect anomalies before they become problems. With the OneAgent health overview, for example, you can discover:
 
@@ -22,7 +22,7 @@ The OneAgent health overview empowers you to discover all your deployed [OneAgen
 
 To get started with the OneAgent health overview, go to **OneAgent Health**.
 
-![OneAgent Health](https://dt-cdn.net/images/oneagent-health-1744-afe02d9e3b.png)
+![OneAgent Health](https://dt-cdn.net/images/dva18020-dev-apps-dynatracelabs-com-ui-apps-dynatrace-classic-one-agent-health-ui-diagnostictools-healthstate-gtf-2h-gf-all-randon-name-7410-0904cbea9f.png)
 
 OneAgent Health
 
@@ -33,7 +33,10 @@ The **OneAgent health overview** comprises
   The area chart includes data on OneAgent modules during the selected timeframe. You can split the area chart by health state, monitoring state, module type, module version, process type, and operating system type.
 * A data table presenting a variety of attributes of the contributing OneAgent modules.
 
-  The data table contains real-time data of the OneAgent modules seen in your environment in the last 5 minutes. You can filter it by specific attributes. To display additional attributes, select **Configure columns**.
+  The data table contains real-time data of the OneAgent modules seen in your environment in the last 5 minutes. You can filter it by specific attributes.
+
+  + To display additional attributes, select **Configure columns**.
+  + To export the table data, select **Export** and choose **Only displayed data** or **All available data**.
 
   Above the data table, the lowest and highest compatible OneAgent versions for this Dynatrace cluster are displayed.
 

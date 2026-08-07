@@ -23,7 +23,7 @@ Learn how to integrate Dynatrace for full-stack monitoring of your Azure service
 
 Set up full-stack monitoring of Azure services by instrumenting them with our OneAgent technology.](/managed/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")[### Monitor Azure Functions
 
-Monitor serverless Azure Function applications.](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions "Monitor Azure Functions")
+Monitor serverless Azure Function applications.](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Monitor Azure Functions")
 
 ## Infrastructure Monitoring
 

@@ -80,9 +80,9 @@ Dynatrace offers two approaches for obtaining Micrometer metrics from Prometheus
 
 Use the Dynatrace API to ingest metrics obtained from the `quarkus-micrometer-registry-prometheus` library.
 
-To learn more about the ingestion procedure, see [Send Micrometer metrics to Dynatrace](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer "Learn how to send Micrometer metrics to Dynatrace.").
+To learn more about the ingestion procedure, see [Send Micrometer metrics to Dynatrace](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer "Learn how to send Micrometer metrics to Dynatrace using the Dynatrace registry or the OpenTelemetry (OTLP) registry.").
 
-For natively built applications, be sure to follow the [Directly in Micrometer](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer#properties-direct "Learn how to send Micrometer metrics to Dynatrace.") approach.
+For natively built applications, be sure to follow the [Directly in Micrometer](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer/dynatrace-registry#properties-direct "Learn how to send Micrometer metrics to Dynatrace using the Dynatrace Micrometer registry.") approach.
 
 ### Ingest Micrometer metrics via an extension
 
@@ -759,7 +759,7 @@ For the procedure below, we assume your application writes logs to the `/var/log
 
 ## Related topics
 
-* [Send Micrometer metrics to Dynatrace](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer "Learn how to send Micrometer metrics to Dynatrace.")
+* [Send Micrometer metrics to Dynatrace](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer "Learn how to send Micrometer metrics to Dynatrace using the Dynatrace registry or the OpenTelemetry (OTLP) registry.")
 * [Manage Prometheus extensions](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")
 * [Prometheus data source](/managed/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Learn how to create a Prometheus extension using the Extensions framework.")
 * [Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")

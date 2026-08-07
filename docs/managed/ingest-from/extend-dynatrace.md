@@ -30,7 +30,7 @@ Send OpenTelemetry metrics to Dynatrace](/managed/ingest-from/opentelemetry "Lea
 
 ### Micrometer
 
-Collect Micrometer metrics from JVM applications](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer "Learn how to send Micrometer metrics to Dynatrace.")[![Prometheus](https://dt-cdn.net/images/prometheus-b1fab729ac.svg "Prometheus")
+Collect Micrometer metrics from JVM applications](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer "Learn how to send Micrometer metrics to Dynatrace using the Dynatrace registry or the OpenTelemetry (OTLP) registry.")[![Prometheus](https://dt-cdn.net/images/prometheus-b1fab729ac.svg "Prometheus")
 
 ### Prometheus
 

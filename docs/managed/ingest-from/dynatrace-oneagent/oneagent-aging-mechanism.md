@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneage
 # OneAgent file aging mechanism
 
 * 6-min read
-* Updated on Feb 25, 2026
+* Updated on Aug 06, 2026
 
 OneAgent in the installer-based deployment uses a built-in aging mechanism that makes sure the OneAgent files are kept within a reasonable size.
 
@@ -107,14 +107,16 @@ The OneAgent file aging mechanism checks the subdirectories starting with `0x`. 
 
 ### Installation bin directory
 
-* Linux/AIX `/opt/dynatrace/oneagent/bin`
-* Windows `%PROGRAMFILES%\dynatrace\oneagent\bin`
-* `{install-dir}/bin`  
+* Linux/AIX `/opt/dynatrace/oneagent/agent/bin`
+* Windows `%PROGRAMFILES%\dynatrace\oneagent\agent\bin`
+* `{install-dir}/agent/bin`  
   OneAgent deploys a number of file artifacts during the update process, specifically in cases of injectable technology modules. All injectable module files are stored in versioned folders. When OneAgent is active, it performs file cleanup according to the following criteria:
 
   + The currently used version is always preserved.
   + OneAgent scans all the monitored processes and determines which libraries are used.
   + The library list is compared to the contents of the bin directory. Unused binaries from the 32-bit and 64-bit directories are removed, regardless of whether Host monitoring is enabled or disabled. For binaries in the `any` directory, cleanup occurs only if Host monitoring is enabled. The OneAgent aging mechanism retains the current version and the 10 most recent previous versions, keeping a total of 11 versions.
+
+Starting with OneAgent version 1.347 file aging for the installation `bin` directory doesn't work when both autoupdate and automatic injection are disabled at the same time.
 
 ## Aging mechanism for OneAgent in application-only monitoring mode
 

@@ -28,9 +28,9 @@ For example, if you monitor 1 function and that function is invoked 1 million ti
 
 ## Azure Function tracing
 
-Azure Functions provide many different hosting options, with different tracing integration possibilities. [Tracing Azure Functions on the App Service (Dedicated) plan](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.") consumes host units.
+Azure Functions provide many different hosting options, with different tracing integration possibilities. [Tracing Azure Functions on the App Service (Dedicated) plan](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions/integrate-oneagent-on-azure-functions "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.") consumes host units.
 
-For [Tracing Azure Functions on consumption plan](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions on serverless hosting plans"), monitoring consumption is based on Davis data units. Dynatrace counts the total number of invocations (for example, requests) of the monitored functions. For each invocation, .002 DDUs are deducted from your available quota.
+For [Tracing Azure Functions on consumption plan](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions-classic/func-dynamic-plans "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions on serverless hosting plans"), monitoring consumption is based on Davis data units. Dynatrace counts the total number of invocations (for example, requests) of the monitored functions. For each invocation, .002 DDUs are deducted from your available quota.
 
 For example, if you monitor 1 function and that function is invoked 1 million times, DDU consumption will be calculated as follows: `1 function × 1 million invocations × 0.002 DDU weight = 2,000 DDUs per month per function`.
 

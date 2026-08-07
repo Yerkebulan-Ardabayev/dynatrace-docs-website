@@ -615,7 +615,7 @@ Rollout starts Jul 19, 2022, for OneAgent
 * IBM Virtual I/O Server (AIX) 3.1 (OS module). [Get started](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix#vios-installation "Learn how to download and install Dynatrace OneAgent on AIX.")
 * Kong API Gateway (NGINX module). [Get started](/managed/ingest-from/technology-support/application-software/nginx/manual-runtime-instrumentation#howto "Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.")
 * OpenTelemetry 0.0.10, 0.0.11 (PHP module)
-* Python consumption plan (Azure integration). [Get started](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-python "Monitor Azure Functions with OpenTelemetry for Python and Dynatrace.")
+* Python consumption plan (Azure integration). [Get started](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions-classic/func-dynamic-plans/opentelemetry-on-azure-functions-python "Monitor Azure Functions with OpenTelemetry for Python and Dynatrace.")
 * [RabbitMQ﻿](https://www.npmjs.com/package/amqplib) client 0.9 (Node.js module). [Get started﻿](https://www.dynatrace.com/hub/detail/net-rabbitmq/#get-started)
 
 ## 1.244 SaaS/Managed
@@ -631,7 +631,7 @@ Rollout starts Jun 29, 2022, for OneAgent
 * Apache Log4j2 2.17.2 - 2.18 (Java module)
 * JDBC 3, 4 (z/OS Java module). [Get started](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java#jdbc "Set up Java monitoring on z/OS using the Java module.")
 * Node.js 18 (Node.js module)
-* Node.js consumption plan (Azure integration). [Get started](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs "Monitor Azure Functions with OpenTelemetry for Node.js and Dynatrace.")
+* Node.js consumption plan (Azure integration). [Get started](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions-classic/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs "Monitor Azure Functions with OpenTelemetry for Node.js and Dynatrace.")
 * Microsoft OpenJDK 11 LTS, 17 LTS (Java module)
 * [oracledb﻿](https://www.npmjs.com/package/oracledb) 5 (Node.js module). [Get started﻿](https://www.dynatrace.com/hub/detail/oracle-database/)
 * Red Hat Enterprise Linux 9 (OS module). [Get started](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.")
@@ -642,7 +642,7 @@ Rollout starts Jun 29, 2022, for OneAgent
 Rollout starts Jun 8, 2022, for OneAgent
 
 * .NET / .NET Core (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration "Trace AWS Lambda functions using a .NET runtime")
-* .NET / .NET Core consumption plan (Azure integration). [Get started](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet "Monitor Azure Functions with OpenTelemetry for .NET and Dynatrace.")
+* .NET / .NET Core consumption plan (Azure integration). [Get started](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions-classic/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet "Monitor Azure Functions with OpenTelemetry for .NET and Dynatrace.")
 * Apache HttpClient 5.x (Java module)
 * Azul Platform Core (Zulu) 18 (Java module)
 * Bellsoft Liberica 18 (Java module)

@@ -37,21 +37,21 @@ Key to columns and cells
 | Not planned | **Not planned** | A feature or technology support that Dynatrace does not currently plan to pursue. |
 | n/a |  | Not applicable |
 
-### AWS Lambda
+## AWS Lambda
 
-#### Classic deployment
+### Classic deployment
 
 Both 64-bit ARM (AWS Graviton2 processors) and 64-bit x86 architectures are supported
 
 | Language | [Cloud platform metrics and metadata](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.") | [Logs](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lm-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.") | Distributed tracing | Automatic tracing | OpenTelemetry Extend tracing | Custom metrics | Automatic RUM | Agentless RUM |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Python | GA | GA | GA | GA[1](#fn-1-1-def) | GA | GA | GA[1](#fn-1-1-def) | n/a |
-| Java | GA | GA | GA | GA[1](#fn-1-1-def) | GA | GA | GA[1](#fn-1-1-def) | n/a |
+| Java | GA | GA | GA | GA[2](#fn-1-2-def) | GA | GA | GA[1](#fn-1-1-def) | n/a |
 | Node.js | GA | GA | GA | GA[1](#fn-1-1-def) | GA | GA | GA[1](#fn-1-1-def) | n/a |
 | .NET Core | GA | GA | GA[3](#fn-1-3-def) | Future | GA[3](#fn-1-3-def) | GA | Future | GA |
 | GoLang | GA | GA | GA | Future | GA | GA | Future | GA |
 
-#### Container images
+### Container images
 
 Both 64-bit ARM (AWS Graviton2 processors) and 64-bit x86 architectures are supported
 
@@ -65,7 +65,7 @@ Both 64-bit ARM (AWS Graviton2 processors) and 64-bit x86 architectures are supp
 
 1
 
-[Requires integration of Dynatrace extension via Dynatrace Lambda Layer](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java."). To learn which runtimes are supported, see [Support lifecycle](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration#support-lifecycle "AWS Lambda capabilities and integration options").
+[Requires integration of Dynatrace extension via Dynatrace Lambda Layer](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java."). To learn which runtimes are supported, see [Support lifecycle](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration#supported-versions "AWS Lambda capabilities and integration options").
 
 2
 
@@ -75,98 +75,57 @@ Both 64-bit ARM (AWS Graviton2 processors) and 64-bit x86 architectures are supp
 
 [Trace AWS Lambda .Net Core](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration/lambda-otel-native "Learn how to use OpenTelemetry to trace AWS Lambda .NET Core functions.")
 
-### Azure Functions
+## Azure Functions
 
-#### Windows-based AppService plan or App Service Environment
+Durable Functions aren't supported.
 
-| Language | [Cloud platform metrics and metadata](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Set up and configure Azure monitoring in Dynatrace.") | [Logs](/managed/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.") | Distributed tracing | Automatic tracing | OpenTelemetry extend tracing | Custom metrics | Automatic RUM | Agentless RUM |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| .NET Core | GA | GA | GA | GA[1](#fn-2-1-def) | GA | GA | Future | GA |
-| Java | GA | GA | GA | Future | GA | GA | Future | GA |
-| Node.js | GA | GA | GA | Future | GA | GA | Future | GA |
-| Python | GA | GA | GA | Future | GA | GA | Future | GA |
+### Windows-based
 
-1
+| Language | [Cloud platform metrics and metadata](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Set up and configure Azure monitoring in Dynatrace.") | [Logs](/managed/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.") | Distributed tracing | [Automatic tracing](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions/integrate-oneagent-on-azure-functions "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.") | OpenTelemetry extend tracing | Infrastructure monitoring | Custom metrics | Automatic RUM | Agentless RUM |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| .NET Core | GA | GA | GA | GA[1](#fn-2-1-def) | GA | n/a | GA | Future | GA |
+| Java | GA | GA | GA | OneAgent version 1.343+ | GA | OneAgent version 1.343+[7](#fn-2-7-def) | GA | Future | GA |
+| Node.js | GA | GA | GA | OneAgent version 1.343+ | GA | OneAgent version 1.343+[7](#fn-2-7-def) | GA | Future | GA |
+| Python | GA | GA | GA | n/a | GA | n/a | GA | Future | GA |
 
-Requires integration of OneAgent via [Dynatrace Site-Extension for Azure App Services](/managed/observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring "Monitor Azure with Dynatrace")
+### Linux-based
 
-#### Linux-based App Service plan or App Service Environment
+| Language | [Cloud platform metrics and metadata](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Set up and configure Azure monitoring in Dynatrace.") | [Logs](/managed/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.") | Distributed tracing | Automatic tracing | OpenTelemetry extend tracing | Infrastructure monitoring | Custom metrics | Automatic RUM | Agentless RUM |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| .NET Core | GA | GA | GA | GA[5](#fn-2-5-def) | GA | n/a | GA | Future | GA |
+| Java | GA | GA | GA | Future | GA | Future[7](#fn-2-7-def) | GA | Future | GA |
+| Node.js | GA | GA | GA | Future | GA | Future[7](#fn-2-7-def) | GA | Future | GA |
+| Python | GA | GA | GA | OneAgent version 1.343+[6](#fn-2-6-def) | GA | Future[7](#fn-2-7-def) | GA | Future | GA |
 
-| Language | [Cloud platform metrics and metadata](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Set up and configure Azure monitoring in Dynatrace.") | [Logs](/managed/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.") | Distributed tracing | Automatic tracing | OpenTelemetry extend tracing | Custom metrics | Automatic RUM | Agentless RUM |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| .NET Core | GA | GA | GA | GA[1](#fn-3-1-def) | GA | GA | Future | GA |
-| Java | GA | GA | GA | Future | GA | GA | Future | GA |
-| Node.js | GA | GA | GA | Future | GA | GA | Future | GA |
-| Python | GA | GA | GA | Future | GA | GA | Future | GA |
+5
 
-1
+Requires integration of [OneAgent on AppServices for Linux and Containers](/managed/ingest-from/microsoft-azure-services/integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.")
 
-Requires integration of [OneAgent on AppServices for Linux and Containers](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.")
+6
 
-#### Consumption or Premium plan
+For Flex Consumption only.
 
-| Language | [Cloud platform metrics and metadata](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Set up and configure Azure monitoring in Dynatrace.") | [Logs](/managed/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.") | Distributed tracing | Automatic tracing | OpenTelemetry extend tracing | Custom metrics | Automatic RUM | Agentless RUM |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| .NET Core | GA | GA | GA[1](#fn-4-1-def) | Future | GA | GA | Future | GA |
-| Java | GA | GA | GA | Future | GA | GA | Future | GA |
-| Node.js | GA | GA | GA | Future | GA | GA | Future | GA |
-| Python | GA | GA | GA | Future | GA | GA | Future | GA |
+7
 
-1
+For Dedicated plan only.
 
-[Trace Azure Functions on Azure Consumption Plan](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions on serverless hosting plans")
+### Trigger support
 
-### Runtime v1
+For Azure Functions runtime v4, only the following triggers are supported.
 
-| Language | Distributed tracing | Automatic tracing |
-| --- | --- | --- |
-| All languages | GA | Not planned |
+Output bindings are only supported for HTTP triggers.
 
-### Runtime v2
+| Trigger | Java | Node.js | Python |
+| --- | --- | --- | --- |
+| [HTTP and webhooks﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook) | GA | GA | GA |
+| [Service Bus﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-service-bus) | GA | GA | GA |
+| [Event Hubs﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-hubs) | GA | GA | GA |
+| [Timer﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-timer) | GA | GA | GA |
+| [Blob Storage﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-blob-trigger?tabs=python-v2%2Cisolated-process%2Cnodejs-v4%2Cextensionv5&pivots=programming-language-python) | Future | Future | GA |
+| [Event Grid﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-grid-trigger?tabs=python-v2%2Cisolated-process%2Cnodejs-v4%2Cextensionv3&pivots=programming-language-python) | Future | Future | GA |
+| [Azure SQL﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-azure-sql-trigger?tabs=isolated-process%2Cpython-v2%2Cportal&pivots=programming-language-python) | Future | Future | GA |
 
-| Language | Distributed tracing | Automatic tracing |
-| --- | --- | --- |
-| .NET Core[1](#fn-5-1-def) | GA | GA[2](#fn-5-2-def) |
-| Other languages | GA | Future |
-
-1
-
-Functions written in [C# (class libaries), C# script (.csx) and F# (.fsx)﻿](https://docs.microsoft.com/en-us/azure/azure-functions/supported-languages#language-support-details) which are executed in the [in-process model﻿](https://docs.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide#differences-with-net-class-library-functions)
-
-2
-
-Limited to functions deployed on on AppService-Plan / Appservice-Environment or Kubernetes
-
-### Runtime v3-v4
-
-| Language | Distributed tracing | Automatic tracing |
-| --- | --- | --- |
-| .NET Core[1](#fn-6-1-def) | GA | GA[2](#fn-6-2-def) |
-| [.Net Core, Isolated-Process﻿](https://docs.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide) | GA | Future |
-| Other languages | GA | Future |
-
-1
-
-Functions written in [C# (class libaries), C# script (.csx) and F# (.fsx)﻿](https://docs.microsoft.com/en-us/azure/azure-functions/supported-languages#language-support-details) which are executed in the [in-process model﻿](https://docs.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide#differences-with-net-class-library-functions)
-
-2
-
-Limited to functions deployed on on AppService-Plan / Appservice-Environment or Kubernetes
-
-### Frameworks
-
-#### Durable Functions
-
-| Language | Distributed tracing | Automatic tracing |
-| --- | --- | --- |
-| .NET Core | [1](#fn-7-1-def) | Future |
-| Other languages | n/a[1](#fn-7-1-def) | Future |
-
-1
-
-Durable Functions SDK has [preview support for distributed tracing﻿](https://dt-url.net/qj03vf2) for .NET Core using Application-Insights.
-
-### Google Cloud Functions
+## Google Cloud Functions
 
 | Language | [Cloud platform metrics and metadata](/managed/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.") | [Logs](/managed/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.") | [Distributed tracing](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions "Set up monitoring for Google Cloud Functions.") | Automatic tracing | OpenTelemetry Extend tracing | Custom metrics | Automatic RUM | Agentless RUM |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -174,7 +133,7 @@ Durable Functions SDK has [preview support for distributed tracing﻿](https://d
 | GoLang | GA | GA | GA | Future | GA | GA | Future | GA |
 | .NET Core | GA | GA | GA | Future | GA | GA | Future | GA |
 | Java | GA | GA | GA | Future | GA | GA | Future | GA |
-| Node.js | GA | GA | GA[1](#fn-8-1-def) | Future | GA | GA | Future | GA |
+| Node.js | GA | GA | GA[1](#fn-3-1-def) | Future | GA | GA | Future | GA |
 
 1
 

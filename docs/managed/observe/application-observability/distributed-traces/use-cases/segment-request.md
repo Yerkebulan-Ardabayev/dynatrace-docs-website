@@ -50,7 +50,7 @@ The service `easyTravel Customer Frontend` received 249,000 requests during the 
    3. Select **greater than or equal to ≥**, type `80` in the input field, and select **Apply**.
    4. Select **Apply**.
 
-   ![Filter distributed traces](https://dt-cdn.net/images/filter-distributd-traces-1621-2d6b34444e.png)
+   ![Filter distributed traces](https://dt-cdn.net/images/eva38390-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-classic-distributed-traces-ui-services-service-7d92e46f58b335e4-purepaths-servicefilter-0-1e7-11service-7d92e46f58b335e4-151-15-15service-5d0bfa4c3-1-7437-7e66c1da9a.png)
 
    Filter distributed traces
 

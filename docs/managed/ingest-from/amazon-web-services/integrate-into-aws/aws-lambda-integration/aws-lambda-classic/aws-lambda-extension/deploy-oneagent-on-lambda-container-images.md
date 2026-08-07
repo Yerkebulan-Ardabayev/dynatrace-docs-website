@@ -225,7 +225,7 @@ CMD [ "index.handler" ]
 
 ## Limitations
 
-Monitoring via Dynatrace AWS Lambda extension on container images is supported only for images [created from an AWS base image for Lambda﻿](https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-create-1) and only for [the runtimes that we support for non-containerized functions](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration#support-lifecycle "AWS Lambda capabilities and integration options").
+Monitoring via Dynatrace AWS Lambda extension on container images is supported only for images [created from an AWS base image for Lambda﻿](https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-create-1) and only for [the runtimes that we support for non-containerized functions](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration#supported-versions "AWS Lambda capabilities and integration options").
 
 ## Additional resources
 

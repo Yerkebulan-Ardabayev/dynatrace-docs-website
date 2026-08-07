@@ -7,6 +7,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/quickstart
 
 # Quickstart
 
+* Getting started guide
 * 2-min read
 * Updated on Dec 18, 2024
 

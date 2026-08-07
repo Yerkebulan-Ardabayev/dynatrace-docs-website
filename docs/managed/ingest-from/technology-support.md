@@ -292,14 +292,14 @@ Dynatrace detects the hypervisor, but no dedicated logic is applied.
 
 | Compute service | Extension for deploying OneAgent | Integration of Dynatrace with Azure Monitor |
 | --- | --- | --- |
-| [Virtual Machines](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-vm "Learn how to install and configure OneAgent for monitoring Azure Virtual Machines using a VM extension.") | VM-Extension[1](#fn-4-1-def) | yes |
-| [Virtual Machine Scale Set](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-vmss "Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure VM Scale Set using a VM extension.") | VM-Extension[1](#fn-4-1-def) | yes |
-| [Service Fabric](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-servicefabric "Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure Service Fabric using a VM extension.") | VM-Extension[1](#fn-4-1-def) | yes |
-| [Azure Kubernetes Service (AKS)](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-aks "Learn how to deploy, operate, and maintain OneAgent on Azure Kubernetes Service.") | Operator-rollout[2](#fn-4-2-def) | no |
+| [Virtual Machines](/managed/ingest-from/microsoft-azure-services/integrations/azure-vm "Learn how to install and configure OneAgent for monitoring Azure Virtual Machines using a VM extension.") | VM-Extension[1](#fn-4-1-def) | yes |
+| [Virtual Machine Scale Set](/managed/ingest-from/microsoft-azure-services/integrations/azure-vmss "Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure VM Scale Set using a VM extension.") | VM-Extension[1](#fn-4-1-def) | yes |
+| [Service Fabric](/managed/ingest-from/microsoft-azure-services/integrations/azure-servicefabric "Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure Service Fabric using a VM extension.") | VM-Extension[1](#fn-4-1-def) | yes |
+| [Azure Kubernetes Service (AKS)](/managed/ingest-from/microsoft-azure-services/integrations/azure-aks "Learn how to deploy, operate, and maintain OneAgent on Azure Kubernetes Service.") | Operator-rollout[2](#fn-4-2-def) | no |
 | Cloud-Services (Classic) | [Startup script﻿](https://github.com/dtPaTh/Dynatrace-Azure-CloudServices) | no |
 | [HDInsight﻿](https://github.com/safia-habib/Azure/blob/master/HDInsights/Readme.md) | Startup-Script | yes |
-| [App Service](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-azure-app-service "Install, configure, update, uninstall, and troubleshoot OneAgent for monitoring Azure App Service on Windows using an Azure site extension.") (Windows based) | SiteExtension | yes |
-| [Azure Functions](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.") | SiteExtension (Early Access release) | yes |
+| [App Service](/managed/ingest-from/microsoft-azure-services/integrations/azure-appservice/integrate-oneagent-on-azure-app-service "Install, configure, update, uninstall, and troubleshoot OneAgent for monitoring Azure App Service on Windows using an Azure site extension.") (Windows based) | SiteExtension | yes |
+| [Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions/integrate-oneagent-on-azure-functions "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.") | SiteExtension (Early Access release) | yes |
 
 1
 

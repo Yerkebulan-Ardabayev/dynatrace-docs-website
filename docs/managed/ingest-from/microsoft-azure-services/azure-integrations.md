@@ -15,21 +15,21 @@ Dynatrace provides comprehensive monitoring support for Azure services, by integ
 
 ## Integrate on Azure compute- and serverless services
 
-[Monitor Azure App Service](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice "Monitor Azure App Service")
+[Monitor Azure App Service](/managed/ingest-from/microsoft-azure-services/integrations/azure-appservice "Monitor Azure App Service")
 
-[Microsoft Azure Arc-enabled servers](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-arc-enabled-servers "Azure integration with ARC servers")
+[Microsoft Azure Arc-enabled servers](/managed/ingest-from/microsoft-azure-services/integrations/azure-arc-enabled-servers "Azure integration with ARC servers")
 
-[Monitor Azure Functions using Azure App Service (built-in)](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions "Monitor Azure Functions")
+[Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Monitor Azure Functions")
 
-[Monitor Azure Spring Apps](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-spring "Learn how to configure OneAgent for monitoring Azure Spring Apps.")
+[Monitor Azure Spring Apps](/managed/ingest-from/microsoft-azure-services/integrations/azure-spring "Learn how to configure OneAgent for monitoring Azure Spring Apps.")
 
-[Azure Kubernetes Service (AKS)](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-aks "Learn how to deploy, operate, and maintain OneAgent on Azure Kubernetes Service.")
+[Azure Kubernetes Service (AKS)](/managed/ingest-from/microsoft-azure-services/integrations/azure-aks "Learn how to deploy, operate, and maintain OneAgent on Azure Kubernetes Service.")
 
-[Monitor Azure Service Fabric](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-servicefabric "Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure Service Fabric using a VM extension.")
+[Monitor Azure Service Fabric](/managed/ingest-from/microsoft-azure-services/integrations/azure-servicefabric "Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure Service Fabric using a VM extension.")
 
-[Monitor Azure Virtual Machines](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-vm "Learn how to install and configure OneAgent for monitoring Azure Virtual Machines using a VM extension.")
+[Monitor Azure Virtual Machines](/managed/ingest-from/microsoft-azure-services/integrations/azure-vm "Learn how to install and configure OneAgent for monitoring Azure Virtual Machines using a VM extension.")
 
-[Monitor Azure Virtual Machine Scale Set (VMSS)](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-vmss "Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure VM Scale Set using a VM extension.")
+[Monitor Azure Virtual Machine Scale Set (VMSS)](/managed/ingest-from/microsoft-azure-services/integrations/azure-vmss "Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure VM Scale Set using a VM extension.")
 
 ## Azure Monitor integration
 

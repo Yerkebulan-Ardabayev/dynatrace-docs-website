@@ -23,4 +23,4 @@ Note that we don't have an OOTB instrumentation for the Azure Service Fabric Pro
 
 ## Installation
 
-To deploy OneAgent on Azure Service Fabric, follow the same procedure as for [Azure Virtual Machines Scale Set](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-vmss "Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure VM Scale Set using a VM extension.").
+To deploy OneAgent on Azure Service Fabric, follow the same procedure as for [Azure Virtual Machines Scale Set](/managed/ingest-from/microsoft-azure-services/integrations/azure-vmss "Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure VM Scale Set using a VM extension.").

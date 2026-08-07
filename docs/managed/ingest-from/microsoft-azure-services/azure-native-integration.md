@@ -25,7 +25,7 @@ Capabilities:
 * **Single sign-on:** Enable SSO through Azure Active Directory instead of configuring separate authentication to the Dynatrace portal.
 * **Ingest Azure Metrics and Logs**: Set up automatic monitoring for Azure Monitor metrics, Azure subscription activity, and resource logs.
 
-* **OneAgent deployment:** Install and uninstall Dynatrace OneAgent as an extension on Azure Virtual Machines, Azure App Services, [Arc-enabled servers](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-arc-enabled-servers "Azure integration with ARC servers"), and Azure Kubernetes Service.
+* **OneAgent deployment:** Install and uninstall Dynatrace OneAgent as an extension on Azure Virtual Machines, Azure App Services, [Arc-enabled servers](/managed/ingest-from/microsoft-azure-services/integrations/azure-arc-enabled-servers "Azure integration with ARC servers"), and Azure Kubernetes Service.
 * **Manage Dynatrace**: Verify which resources are sending Azure metrics and logs to Dynatrace and make instant changes as needed.
 * **Scale automation**: Manage Dynatrace resources from the Azure CLI, Terraform, and Pulimi (IaC) tools to further extend resources deployment.
 

@@ -15,7 +15,7 @@ Dynatrace uses [OpenTelemetry﻿](https://dt-url.net/y903u4j) to monitor AWS Lam
 
 ## Prerequisites
 
-Ensure that you use a [supported AWS Lambda runtime](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration#support-lifecycle "AWS Lambda capabilities and integration options") and that you have followed the **initial configuration** steps described in [Monitor AWS Lambda with OpenTelemetry](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration/aws-lambda-otel-setup "Prerequisites for monitoring AWS Lambda with OpenTelemetry") before using the packages below.
+Ensure that you use a [supported AWS Lambda runtime](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration#supported-versions "AWS Lambda capabilities and integration options") and that you have followed the **initial configuration** steps described in [Monitor AWS Lambda with OpenTelemetry](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration/aws-lambda-otel-setup "Prerequisites for monitoring AWS Lambda with OpenTelemetry") before using the packages below.
 
 The following NuGet packages can be used to cover different aspects of AWS Lambda tracing:
 

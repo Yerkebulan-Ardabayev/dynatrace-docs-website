@@ -29,7 +29,7 @@ For other invocation types, OneAgent can't capture any specific information or c
 
 ## Prerequisites
 
-* A supported AWS Lambda [runtime](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration#support-lifecycle "AWS Lambda capabilities and integration options"). The Dynatrace extension supports AWS Lambda functions written in **Node.js**, **Python**, or **Java**.
+* A supported AWS Lambda [runtime](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration#supported-versions "AWS Lambda capabilities and integration options"). The Dynatrace extension supports AWS Lambda functions written in **Node.js**, **Python**, or **Java**.
   Both **64-bit ARM** ([AWS Graviton2 processors﻿](https://aws.amazon.com/ec2/graviton/)) and **64-bit x86** architectures are supported.
 * Java The following RAM requirements need to be met:
 

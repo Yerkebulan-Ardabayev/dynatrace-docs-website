@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/application-observability/mul
 
 * How-to guide
 * 4-min read
-* Updated on Sep 13, 2022
+* Updated on Aug 05, 2026
 
 The **Top database statements** view enables you to understand the overall database activity rather than just the activity of a single database. This view can also be used to better analyze end-to-end database activities during specific timeframes.
 
@@ -22,7 +22,7 @@ To access the **Top database statements** page
 
 The **Top database statements** page displays a chart indicating the top SQL and NoSQL statements in your environment over time. The chart also highlights a few top statements based on execution count. The table following the chart lists the 100 **top dimensions**.
 
-![Top database statements page](https://dt-cdn.net/images/top-database-statements-3564-3bd08ea1b1.png)
+![Top database statements page](https://dt-cdn.net/images/dva18020-dev-apps-dynatracelabs-com-ui-apps-dynatrace-classic-mda-ui-diagnostictools-mda-gtf-2h-gf-all-mdaid-topdb-metric-request-count-dimension-7brequest-3aname-7d-mergeservices-false-aggregation-count-pe-7409-d6c9e715c1.png)
 
 Top database statements page
 
@@ -47,17 +47,12 @@ Fetch count in top database statements analysis
 
 * You can export the table data in a comma-separated values (CSV) file.
 
-  1. In the lower-right corner of the page, select **Show export menu** ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More").
-
-     ![Show export menu](https://dt-cdn.net/images/show-export-menu-107-2a8a76c9a2.png)
-
-     Show export menu
-  2. Select **Export visible data** or **Export table data**.
+  1. Select **Export** and choose one of the following options.
 
      | Option | Exported data | Fields | Number of entries |
      | --- | --- | --- | --- |
-     | **Export visible data** | The currently displayed area of the table, taking into account applied filters | Only visible data | Up to 100 top dimensions |
-     | **Export table data** | All table data | All the available data related to top dimensions | Up to 100 top dimensions |
+     | **Only displayed data** | The currently displayed area of the table, taking into account applied filters | Only visible data | Up to 100 top dimensions |
+     | **All available data** | All table data | All the available data related to top dimensions | Up to 100 top dimensions |
 * The chart uses [trace and request data](/managed/observe/application-observability/multidimensional-analysis#data-source "Configure a multidimensional analysis view and save it as a calculated metric."), which has different data retention periods. For timeframes containing data older than 10 days, you can turn on the **Show data retention** toggle to better understand which data is available for which period directly from the chart.
 
 ## Analyze individual SQL statements
@@ -68,7 +63,7 @@ To access several statement-specific analysis views, including **Service backtra
 
 You can directly access analysis for individual statements by selecting **Filter**. Alternatively, select **More** (**…**) > **Statement details**.
 
-![Distributed traces of individual database statement](https://dt-cdn.net/images/distributed-traces-top-database-statements-1593-b6fb81c79e.png)
+![Distributed traces of individual database statement](https://dt-cdn.net/images/dva18020-dev-apps-dynatracelabs-com-ui-apps-dynatrace-classic-distributed-traces-ui-services-service-eb5a9d3fcf78ed9d-purepaths-gtf-2h-gf-all-randon-name-7401-c1a0015640.png)
 
 Distributed traces of individual database statement
 
@@ -121,7 +116,7 @@ You can perform several types of analysis:
 1. To see the database statements that were executed by the selected flow within the analysis timeframe, select **View database statements**. This can be tremendously valuable because it shows you why a database contributes a specified amount of time.
 2. To reveal which statements have the highest overall response time, sort the **Top dimensions** list by **Count/min**.
 
-![Example of SQL service multidimensional analysis](https://dt-cdn.net/images/example-of-sql-service-multidimensional-analysis-3574-7c039d0068.png)
+![Example of SQL service multidimensional analysis](https://dt-cdn.net/images/dva18020-dev-apps-dynatracelabs-com-ui-apps-dynatrace-classic-mda-ui-services-service-555319c684eeaea6-mda-mdaid-topdb-servicefilter-0-1e7-11service-45098bafc83595db-150-15-15service-c071200fe535cadb-150-15-1-7371-215115d84b.png)
 
 Example of SQL service multidimensional analysis
 

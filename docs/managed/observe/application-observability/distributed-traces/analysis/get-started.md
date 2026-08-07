@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/application-observability/dis
 
 * How-to guide
 * 6-min read
-* Updated on Aug 13, 2024
+* Updated on Aug 04, 2026
 
 Distributed Traces Classic provides you with a combination of analysis tools to gain insight into your environment's transactions. It combines code-level visibility, topology information, and metadata with the highest level of data granularity and fidelity. In this article, you'll explore the Distributed Traces Classic functionalities and how to leverage them to analyze requests in your environment.
 
@@ -32,7 +32,7 @@ To configure a view of the distributed traces in your environment
 
 1. Go to **Distributed Traces**.
 
-   ![Distributed traces overview](https://dt-cdn.net/images/distributed-traces-overview-3552-8da636c2c1.png)
+   ![Distributed traces overview](https://dt-cdn.net/images/dva18020-dev-apps-dynatracelabs-com-ui-apps-dynatrace-classic-distributed-traces-ui-diagnostictools-purepaths-gtf-2h-gf-all-randon-name-7406-d865d40f7a.png)
 
    Distributed traces overview
 2. Configure a view by setting filters. To filter the distributed traces by
@@ -44,6 +44,7 @@ To configure a view of the distributed traces in your environment
    * Service
 
      Go to **Filter requests** > **Service name** and enter the service name. Note that you can access this view also by going to **Services** > **More** (**…**) > **Distributed traces** for the service.
+3. Optional To navigate to the exception analysis, select **View exceptions**.
 
 ## Export overview data
 
@@ -62,17 +63,12 @@ You can export the distributed traces overview table data in a comma-separated v
    2. Filter the table by the trace ID.
    3. Select the trace name.
    4. In the **Trace** view, find the desired node.
-3. In the lower-right corner of the page, select the **Show export** menu.
-
-   ![Show export menu](https://dt-cdn.net/images/show-export-menu-107-2a8a76c9a2.png)
-
-   Show export menu
-4. Select one of the following options.
+3. Select **Export** and choose one of the following options.
 
    | Option | Exported data | Fields | Number of entries |
    | --- | --- | --- | --- |
-   | **Export visible data** | The currently displayed area of the table, taking into account applied filters | Only visible fields | Up to 50 traces |
-   | **Export table data** | All table data, including traces that are not displayed on the current table page | All the available fields related to distributed traces | All 3,000 most recent traces |
+   | **Only displayed data** | The currently displayed area of the table, taking into account applied filters | Only visible fields | Up to 50 traces |
+   | **All available data** | All table data, including traces that are not displayed on the current table page | All the available fields related to distributed traces | All 3,000 most recent traces |
 
 ## Analyze a single trace
 

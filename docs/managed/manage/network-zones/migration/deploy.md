@@ -59,7 +59,7 @@ To proceed with the procedure below, you need:
 
       #### Azure
 
-      [Deploy OneAgent on Azure Virtual Machines](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-vm "Learn how to install and configure OneAgent for monitoring Azure Virtual Machines using a VM extension.")
+      [Deploy OneAgent on Azure Virtual Machines](/managed/ingest-from/microsoft-azure-services/integrations/azure-vm "Learn how to install and configure OneAgent for monitoring Azure Virtual Machines using a VM extension.")
 
       [Deploy OneAgent on Azure Kubernetes Service](/managed/ingest-from/setup-on-container-platforms/kubernetes/legacy/deploy-oneagent-operator-k8s-legacy "Install and uninstall OneAgent on Kubernetes using kubectl or Helm.")
 

@@ -174,20 +174,16 @@ The tables below contain information about the supported OneAgent capabilities f
 
 ### Code modules
 
-| Code module | AWS Lambda | [Azure Functions](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.") | [Azure Spring Apps](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-spring "Learn how to configure OneAgent for monitoring Azure Spring Apps.") | [Azure App services](/managed/observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring "Monitor Azure with Dynatrace") | [Heroku](/managed/ingest-from/setup-on-container-platforms/heroku "Install OneAgent to monitor applications running on Heroku.") | [Google App Engine](/managed/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine "Install OneAgent on Google App Engine clusters for application-only monitoring.") | [AWS Fargate](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate "Install OneAgent on AWS Fargate.") | [Google Cloud Run Managed](/managed/ingest-from/google-cloud-platform/gcp-integrations/cloudrun "Monitor Java application deployed on Google Cloud Run managed.") |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [Java](/managed/ingest-from/technology-support/application-software/java "Learn about all aspects of Dynatrace support for Java application monitoring.") | [1](#fn-7-1-def) |  |  |  |  |  |  | [2](#fn-7-2-def) |
-| [.NET and .NET Core](/managed/ingest-from/technology-support/application-software/dotnet "Learn about all aspects of Dynatrace support for .NET application monitoring.") |  |  |  |  |  | [3](#fn-7-3-def) | [3](#fn-7-3-def) |  |
-| [.NET Framework](/managed/ingest-from/technology-support/application-software/dotnet "Learn about all aspects of Dynatrace support for .NET application monitoring.") | n/a |  |  |  | n/a | n/a | n/a |  |
-| [Node.js](/managed/ingest-from/technology-support/application-software/nodejs "Read about Dynatrace support for Node.js applications.") | [1](#fn-7-1-def) |  |  |  |  |  |  | [2](#fn-7-2-def) |
-| Python | [1](#fn-7-1-def) |  |  |  |  |  |  |  |
-| PHP |  |  |  |  |  |  |  |  |
-| [Go](/managed/ingest-from/technology-support/application-software/go "Read an overview of Dynatrace support for Go applications.") |  | n/a |  | n/a | [3](#fn-7-3-def) | [3](#fn-7-3-def) | [3](#fn-7-3-def) |  |
-| Microsoft IIS | n/a | n/a |  |  |  |  |  |  |
-
-1
-
-Both 64-bit ARM ([AWS Graviton2 processors﻿](https://aws.amazon.com/ec2/graviton/)) and 64-bit x86 architectures are supported.
+| Code module | [Azure Spring Apps](/managed/ingest-from/microsoft-azure-services/integrations/azure-spring "Learn how to configure OneAgent for monitoring Azure Spring Apps.") | [Azure App services](/managed/observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring "Monitor Azure with Dynatrace") | [Heroku](/managed/ingest-from/setup-on-container-platforms/heroku "Install OneAgent to monitor applications running on Heroku.") | [Google App Engine](/managed/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine "Install OneAgent on Google App Engine clusters for application-only monitoring.") | [AWS Fargate](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate "Install OneAgent on AWS Fargate.") | [Google Cloud Run Managed](/managed/ingest-from/google-cloud-platform/gcp-integrations/cloudrun "Monitor Java application deployed on Google Cloud Run managed.") |
+| --- | --- | --- | --- | --- | --- | --- |
+| [Java](/managed/ingest-from/technology-support/application-software/java "Learn about all aspects of Dynatrace support for Java application monitoring.") |  |  |  |  |  | [2](#fn-7-2-def) |
+| [.NET and .NET Core](/managed/ingest-from/technology-support/application-software/dotnet "Learn about all aspects of Dynatrace support for .NET application monitoring.") |  |  |  | [3](#fn-7-3-def) | [3](#fn-7-3-def) |  |
+| [.NET Framework](/managed/ingest-from/technology-support/application-software/dotnet "Learn about all aspects of Dynatrace support for .NET application monitoring.") |  |  | n/a | n/a | n/a |  |
+| [Node.js](/managed/ingest-from/technology-support/application-software/nodejs "Read about Dynatrace support for Node.js applications.") |  |  |  |  |  | [2](#fn-7-2-def) |
+| Python |  |  |  |  |  |  |
+| PHP |  |  |  |  |  |  |
+| [Go](/managed/ingest-from/technology-support/application-software/go "Read an overview of Dynatrace support for Go applications.") |  | n/a | [3](#fn-7-3-def) | [3](#fn-7-3-def) | [3](#fn-7-3-def) |  |
+| Microsoft IIS |  |  |  |  |  |  |
 
 2
 
@@ -199,9 +195,9 @@ Both Google Cloud Run execution environments are supported, with some restrictio
 
 ### Features
 
-| Feature | AWS Lambda | [Azure Functions](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.") | [Azure Spring Apps](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-spring "Learn how to configure OneAgent for monitoring Azure Spring Apps.") | [Azure App services](/managed/observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring "Monitor Azure with Dynatrace") | [Heroku](/managed/ingest-from/setup-on-container-platforms/heroku "Install OneAgent to monitor applications running on Heroku.") | [Google App Engine](/managed/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine "Install OneAgent on Google App Engine clusters for application-only monitoring.") | [AWS Fargate](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate "Install OneAgent on AWS Fargate.") |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| [Universal injection](#universal-injection) of code modules | n/a |  | n/a |  |  |  |  |
+| Feature | [Azure Spring Apps](/managed/ingest-from/microsoft-azure-services/integrations/azure-spring "Learn how to configure OneAgent for monitoring Azure Spring Apps.") | [Azure App services](/managed/observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring "Monitor Azure with Dynatrace") | [Heroku](/managed/ingest-from/setup-on-container-platforms/heroku "Install OneAgent to monitor applications running on Heroku.") | [Google App Engine](/managed/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine "Install OneAgent on Google App Engine clusters for application-only monitoring.") | [AWS Fargate](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate "Install OneAgent on AWS Fargate.") |
+| --- | --- | --- | --- | --- | --- |
+| [Universal injection](#universal-injection) of code modules | n/a |  |  |  |  |
 
 ## AI technology
 

@@ -1,0 +1,39 @@
+---
+title: Monitor Azure Functions on Consumption Plans
+source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions-classic/func-dynamic-plans
+---
+
+# Monitor Azure Functions on Consumption Plans
+
+# Monitor Azure Functions on Consumption Plans
+
+* Overview
+* 1-min read
+* Published Apr 20, 2022
+
+The following integrations are designed for the classic version of Azure Functions. For the newest versions of Azure Functions, see [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Monitor Azure Functions").
+
+Azure Functions let you run code without provisioning or managing servers.
+This deployment model is sometimes referred to as "serverless" or "Function as a Service" (FaaS).
+
+* An Azure Function runs in an application on a container managed by Azure. This lets you focus on writing code without worrying about the underlying application or infrastructure.
+* Azure Functions are ephemeral. This means that the underlying container can be suspended or recycled when there’s no request pending.
+
+## Integration
+
+[Trace Azure Functions written in .NET](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions-classic/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet "Monitor Azure Functions with OpenTelemetry for .NET and Dynatrace.")
+
+[Trace Azure Functions written in Node.js](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions-classic/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs "Monitor Azure Functions with OpenTelemetry for Node.js and Dynatrace.")
+
+[Trace Azure Functions written in Python](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions-classic/func-dynamic-plans/opentelemetry-on-azure-functions-python "Monitor Azure Functions with OpenTelemetry for Python and Dynatrace.")
+
+## Monitoring Consumption
+
+For Azure Functions, monitoring consumption is based on Davis data units. See [Serverless monitoring](/managed/license/classic-licensing/davis-data-units/serverless-monitoring "Understand how serverless monitoring consumption is calculated.") for details.
+
+## Related topics
+
+* [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Monitor Azure Functions")
+* [Set up Dynatrace on Microsoft Azure](/managed/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
+* [OneAgent platform and capability support matrix](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions-classic/func-dynamic-plans/opentelemetry-on-azure-functions "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.")

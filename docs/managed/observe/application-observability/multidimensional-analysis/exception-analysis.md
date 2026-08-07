@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/application-observability/mul
 
 * Explanation
 * 4-min read
-* Updated on Sep 13, 2022
+* Updated on Aug 05, 2026
 
 The **Exceptions overview** view is a diagnostics feature that enables you to see which exceptions occurred in your environment during the selected timeframe and within the selected management zone.
 
@@ -18,7 +18,7 @@ To access the **Exceptions overview** analysis page
 1. Go to **Multidimensional Analysis**.
 2. Select the **Exception analysis** tile.
 
-![Exception analysis page](https://dt-cdn.net/images/exception-analysis-3562-8213d4c4bc.png)
+![Exception analysis page](https://dt-cdn.net/images/dva18020-dev-apps-dynatracelabs-com-ui-apps-dynatrace-classic-mda-ui-diagnostictools-mda-gtf-c-1785934720520-1785941920520-gf-all-mdaid-exceptions-metric-exception-count-dimension-7bexception-3aclass-7d-merg-7325-af2866de6f.png)
 
 Exception analysis page
 
@@ -40,17 +40,12 @@ You can also save the configuration as a calculated service metric and use it as
 
 You can export the table data in a comma-separated values (CSV) file.
 
-1. In the lower-right corner of the page, select **Show export menu** ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More").
-
-   ![Show export menu](https://dt-cdn.net/images/show-export-menu-107-2a8a76c9a2.png)
-
-   Show export menu
-2. Select **Export visible data** or **Export table data**.
+1. Select **Export** and choose one of the following options.
 
    | Option | Exported data | Fields | Number of entries |
    | --- | --- | --- | --- |
-   | **Export visible data** | The currently displayed area of the table, taking into account applied filters | Only visible data | Up to 100 top dimensions |
-   | **Export table data** | All table data | All the available data related to top dimensions | Up to 100 top dimensions |
+   | **Only displayed data** | The currently displayed area of the table, taking into account applied filters | Only visible data | Up to 100 top dimensions |
+   | **All available data** | All table data | All the available data related to top dimensions | Up to 100 top dimensions |
 
 ## View
 

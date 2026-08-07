@@ -23,4 +23,4 @@ The following walk-throughs are guided, step-by-step tutorials for the different
 
 * [OpenTelemetry interoperability](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability "Enable and use OpenTelemetry interoperability in AWS Lambda.")
 * [Google Cloud Functions monitoring](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions "Set up monitoring for Google Cloud Functions.")
-* [Monitor Azure Functions on Consumption Plans](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions on serverless hosting plans")
+* [Monitor Azure Functions on Consumption Plans](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions-classic/func-dynamic-plans "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions on serverless hosting plans")
