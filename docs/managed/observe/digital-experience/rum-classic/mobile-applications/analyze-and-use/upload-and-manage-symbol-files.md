@@ -9,13 +9,13 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 * How-to guide
 * 8-min read
-* Updated on Nov 12, 2025
+* Updated on Jul 16, 2026
 
-Android iOS tvOS
+Android iOS tvOS React Native
 
 For details on source maps for web applications, see [Source map support for JavaScript error analysis in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/source-map-support-for-javascript-error-analysis "Learn how source maps make it easy to analyze, reproduce, and fix JavaScript errors.").
 
-Deobfuscation (Android) or symbolication (iOS and tvOS) is the process of making classes and methods human-readable in a crash report stack trace.
+Deobfuscation (Android) or symbolication (iOS, tvOS, and React Native) is the process of making classes and methods human-readable in a crash report stack trace.
 
 The following example is an Android stack trace, before and after deobfuscation:
 
@@ -23,9 +23,9 @@ The following example is an Android stack trace, before and after deobfuscation:
 
 Android stack trace before and after deobfuscation
 
-Dynatrace enables you to manage Android mapping files and iOS or tvOS symbol extract files required to interpret mobile stack traces that Dynatrace receives.
+The Dynatrace platform lets you manage Android mapping files, iOS or tvOS symbol extract files and React Native source maps required to interpret mobile stack traces that Dynatrace receives.
 
-Dynatrace supports three different ways of uploading these files:
+The Dynatrace platform supports four different ways of uploading Android mapping files and iOS or tvOS symbol extract files:
 
 * Through a symbolication service known as "Deobfuscation and Symbolication Service" (DSS)
 * Via the Dynatrace REST API
@@ -55,9 +55,9 @@ The DSSClient enables you to deobfuscate mobile application crash reports or han
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Get the DSSClient**](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files#get-dssclient "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Get the DSSClient**](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files#get-dssclient "Learn about deobfuscation (Android) and symbolication (iOS, tvOS, and React Native) and your options for uploading and managing symbol files in Dynatrace.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Upload mapping files via DSSClient**](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files#upload-mapping-files "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.")
+**Upload mapping files via DSSClient**](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files#upload-mapping-files "Learn about deobfuscation (Android) and symbolication (iOS, tvOS, and React Native) and your options for uploading and managing symbol files in Dynatrace.")
 
 You can use the DSSClient only on machines running macOS.
 
@@ -417,9 +417,51 @@ Application settings
 8. Select **Select the file you want to upload** and open your symbol file.
 9. Select **Upload**.
 
+## Upload symbol files for React Native
+
+To learn how to generate symbol files for your React Native release builds, visit the [official React Native documentation﻿](https://reactnative.dev/docs/debugging-release-builds).
+
+In Dynatrace Classic, you can only upload a React Native symbol file. To use it further after uploading, go to Latest Dynatrace, where the latest RUM capabilities are available.
+
+Upload source maps via Dynatrace web UI
+
+You can use the Dynatrace web UI to upload your application's source maps either via environment settings or application settings.
+
+Environment settings
+
+Application settings
+
+1. In Dynatrace, go to **Settings** > **Web and mobile monitoring** > **Source maps and symbol files**.
+2. Under **React Native**, select **Upload files**.
+3. Select your application from the dropdown list.
+4. Select the **Platform** for which you want to upload a symbol file.
+5. Enter the **File name** of the JavaScript bundle.
+
+   * For Android, the default is `index.android.bundle`.
+   * For iOS, the default is `main.jsbundle`.
+6. Enter the **Bundle name** and **Bundle version** of the JavaScript bundle.
+   These values can be defined in the [Dynatrace React Native Plugin﻿](https://www.npmjs.com/package/@dynatrace/react-native-plugin#react-block). If not configured, Dynatrace uses the `name` and `version` from your `package.json`.
+7. Select **Select the file you want to upload** and choose your source map file (for example, `index.android.bundle.map` or `main.jsbundle.map`).
+8. Select **Upload**.
+
+1. Go to **Mobile**.
+2. Select the mobile application that you want to configure.
+3. Select **More** (**…**) > **Edit** in the upper-right corner of the tile with your application name.
+4. From the application settings, select **Symbol files**.
+5. Under **React Native**, select **Upload files**.
+6. Select the **Platform** for which you want to upload a symbol file.
+7. Enter the **File name** of the JavaScript bundle.
+
+   * For Android, the default is `index.android.bundle`.
+   * For iOS, the default is `main.jsbundle`.
+8. Enter the **Bundle name** and **Bundle version** of the JavaScript bundle.
+   These values can be defined in the [Dynatrace React Native Plugin﻿](https://www.npmjs.com/package/@dynatrace/react-native-plugin#react-block). If not configured, Dynatrace uses the `name` and `version` from your `package.json`.
+9. Select **Select the file you want to upload** and choose your source map file (for example, `index.android.bundle.map` or `main.jsbundle.map`).
+10. Select **Upload**.
+
 ## Manage uploaded symbol files
 
-You can use the Dynatrace web UI to manage the previously uploaded Android mapping files and iOS or tvOS symbol extract files.
+You can use the Dynatrace web UI to manage the previously uploaded Android mapping files and iOS, tvOS, or React Native symbol extract files.
 
 To list the uploaded symbol files for a particular application
 

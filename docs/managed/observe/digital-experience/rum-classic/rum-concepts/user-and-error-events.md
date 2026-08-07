@@ -62,7 +62,7 @@ Error events include errors and crashes.
 
 Source maps and symbol files
 
-To help you identify the origin of detected JavaScript errors and mobile crashes in your code, Dynatrace uses source maps and symbol files. See [Source map support for JavaScript error analysis in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/source-map-support-for-javascript-error-analysis "Learn how source maps make it easy to analyze, reproduce, and fix JavaScript errors.") for web applications and [Upload and manage symbol files for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.").
+To help you identify the origin of detected JavaScript errors and mobile crashes in your code, Dynatrace uses source maps and symbol files. See [Source map support for JavaScript error analysis in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/source-map-support-for-javascript-error-analysis "Learn how source maps make it easy to analyze, reproduce, and fix JavaScript errors.") for web applications and [Upload and manage symbol files for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS, tvOS, and React Native) and your options for uploading and managing symbol files in Dynatrace.").
 
 ### Error
 

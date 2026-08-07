@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 
 * How-to guide
 * 4-min read
-* Published Mar 08, 2018
+* Updated on Aug 03, 2026
 
 Within dynamic or large environments, manual host tagging can be impractical. For dynamic deployments that include frequently changing host instances and names (for example, AWS or MS Azure), you should automate adding tags and metadata to your hosts.
 
@@ -61,6 +61,8 @@ They are prefixed with the `[Environment]` string and can't be removed manually 
   `.\oneagentctl.exe --remove-host-tag=TestHost`
 
 For more information, see [OneAgent configuration via command-line interface](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#host-tags "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+
+Tags configured with `--set-host-tag` are reported to Dynatrace as part of the active monitoring data stream. If host monitoring is disabled, OneAgent stops sending entity data and `[Environment]` tags eventually disappear from the **Properties and tags** section. OneAgent preserves the tag configuration locally and automatically restores tags in Dynatrace when monitoring is re-enabled.
 
 ### Other options for automated tagging
 

@@ -12,7 +12,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/mobil
 
 Uploads a symbol file (Android mapping file and iOS/tvOS symbol extract file) for the specified version of a mobile app.
 
-* For iOS apps, you must preprocess the dSYM files via the DSSClient before transferring them to Dynatrace. For more details, see [Upload symbol files via REST API](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files#ios-api "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.").
+* For iOS apps, you must preprocess the dSYM files via the DSSClient before transferring them to Dynatrace. For more details, see [Upload symbol files via REST API](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files#ios-api "Learn about deobfuscation (Android) and symbolication (iOS, tvOS, and React Native) and your options for uploading and managing symbol files in Dynatrace.").
 * You can upload a symbol file in any supported format (compressed or uncompressed). Note the following limits:
 
   + Uploaded file—must not exceed 100 MiB.
@@ -151,4 +151,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [Upload and manage symbol files for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.")
+* [Upload and manage symbol files for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS, tvOS, and React Native) and your options for uploading and managing symbol files in Dynatrace.")

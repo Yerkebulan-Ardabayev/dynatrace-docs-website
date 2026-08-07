@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 * 4-min read
 * Updated on Nov 15, 2023
 
-For details on mapping files for Android and symbol files for iOS or tvOS, see [Upload and manage symbol files for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.").
+For details on mapping files for Android and symbol files for iOS or tvOS, see [Upload and manage symbol files for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS, tvOS, and React Native) and your options for uploading and managing symbol files in Dynatrace.").
 
 For performance improvement, JavaScript code is often transformed when it's deployed into production. A common transformation is called *minification*, which removes unnecessary and repetitive code without affecting how the JavaScript code is processed by the browser. The following image depicts a minified JavaScript file:
 

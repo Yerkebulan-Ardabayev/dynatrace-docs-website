@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthrough
 
 * How-to guide
 * 5-min read
-* Updated on May 11, 2026
+* Updated on Aug 03, 2026
 
 This walkthrough shows how to add observability to your C++ application using the OpenTelemetry C++ libraries and tools.
 
@@ -928,10 +928,14 @@ To use OpenTelemetry, you first need to complete these two steps:
 
 1. Add the necessary header files to your code.
 
-   To add the header files, include `otel.h` wherever you want to make use of OpenTelemetry.
+   To add the header files, include `otel.h` wherever you want to make use of OpenTelemetry. If you need to make outbound HTTP calls with context propagation, also include the curl HTTP client factory header.
 
    ```
    #include "otel.h"
+
+
+
+   #include "opentelemetry/ext/http/client/curl/http_client_factory_curl.h"
    ```
 2. Initialize OpenTelemetry.
 
@@ -1160,7 +1164,7 @@ span->End();
 For injecting current context information into an outbound request, we call the `Inject` method of the global propagator singleton and pass it the `HttpTextMapCarrier` instance, as well as the current context. This adds the applicable headers to the `carrier` instance, which we then use in the text step with our HTTP request.
 
 ```
-auto http_client = http_client::HttpClientFactory::CreateSync();
+auto http_client = http_client::curl::HttpCurlClientFactory{}.CreateSync();
 
 
 

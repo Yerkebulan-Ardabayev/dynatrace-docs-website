@@ -51,7 +51,7 @@ To activate the opt-in mode for mobile applications
 3. Select **More** (**…**) > **Edit** in the upper-right corner of the tile with your application name.
 4. From the application settings, select **General** > **Data privacy**.
 5. Turn on **Enable user opt-in mode**.
-6. Update your application's configuration file (build file for Android, [`Info.plist`](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.") for iOS, and `dynatrace.config.<extension>` for cross-platform frameworks) by adding a special flag or key that enables opt-in mode.
+6. Update your application's configuration file (build file for Android, `Info.plist` for iOS, and `dynatrace.config.<extension>` for cross-platform frameworks) by adding a special flag or key that enables opt-in mode.
 
    Check the instrumentation wizard for the updated configuration code snippet.
 7. Rebuild your application so that the new configuration takes effect.

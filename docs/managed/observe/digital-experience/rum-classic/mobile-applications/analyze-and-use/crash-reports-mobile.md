@@ -70,7 +70,7 @@ Device information
 
 Session information
 
-On the **Stack trace** tab, examine the stack trace, check if there's a [mapping file](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.") available, or download the stack trace to share it with your team.
+On the **Stack trace** tab, examine the stack trace, check if there's a [mapping file](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS, tvOS, and React Native) and your options for uploading and managing symbol files in Dynatrace.") available, or download the stack trace to share it with your team.
 
 ![Stack trace for a crash occurrence](https://dt-cdn.net/images/crash-occurence-stack-trace-tab-2520-f9c5b285f0.png)
 
@@ -95,7 +95,7 @@ Session information for a crash occurrence
 
 Symbolication or deobfuscation converts hex codes and stack traces captured by Dynatrace into human-readable formats. By uploading symbol files, you can see clear-text method names in the stack trace instead of hex codes or cryptic names provided by the obfuscator.
 
-For detailed instructions, see [Upload and manage symbol files for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.").
+For detailed instructions, see [Upload and manage symbol files for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS, tvOS, and React Native) and your options for uploading and managing symbol files in Dynatrace.").
 
 ## Related topics
 

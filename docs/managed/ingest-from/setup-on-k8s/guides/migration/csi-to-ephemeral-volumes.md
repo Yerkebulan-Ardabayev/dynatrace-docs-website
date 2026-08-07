@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/migra
 
 * How-to guide
 * 5-min read
-* Updated on Jun 25, 2026
+* Updated on Aug 04, 2026
 
 This guide describes the steps required to migrate your Dynatrace Operator deployment from CSI volumes to ephemeral volumes. Using the `csidriver.migrationMode` Helm value, you can complete this migration with a single pod-restart cycle instead of two, reducing disruption to your workloads.
 
@@ -29,8 +29,6 @@ When migration mode is active:
 * You have `kubectl` CLI access to the cluster.
 
 ## Migrate to ephemeral volumes
-
-If you use `codeModulesImage` in your DynaKube, the Operator automatically switches to [node image pull via ephemeral volume](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#ephemeral-node-image-pull "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.")—no migration steps required. For the best update experience, enable [public registry auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Configure auto-updates for all components managed by Dynatrace Operator") to let Dynatrace Operator resolve images automatically.
 
 1. Enable migration mode
 
