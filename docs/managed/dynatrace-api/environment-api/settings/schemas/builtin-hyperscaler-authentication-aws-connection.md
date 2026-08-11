@@ -9,9 +9,9 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 
 * Published Oct 14, 2024
 
-### AWS Connections (`builtin:hyperscaler-authentication.aws.connection)`
+### AWS Connections (deprecated) (`builtin:hyperscaler-authentication.aws.connection)`
 
-Available connections for [AWS for Workflows﻿](https://dt-url.net/s803q9r). A connection is used to authenticate against your AWS account. The retrieved, temporary AWS credentials are used to execute the AWS workflow actions.
+This schema has been replaced by `builtin:hyperscaler-authentication.connections.aws`.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/opentel
 # OpenTelemetry Protocol (OTLP) ingest API
 
 * Reference
-* Published Nov 14, 2023
+* Updated on Dec 30, 2025
 
 Dynatrace supports OTLP natively, coming in handy when automatic ingestion is not possible for your use case (for example, when using unsupported languages).
 

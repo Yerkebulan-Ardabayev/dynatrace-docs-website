@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/application-observability/ser
 
 * How-to guide
 * 5-min read
-* Published Mar 30, 2021
+* Updated on Feb 09, 2026
 
 Dynatrace automatically captures important metrics for services with no configuration required. You might need additional business or technical metrics that are specific to your application. These metrics can be calculated and derived based on a wide variety of available data within the captured distributed trace. You can also split these metrics by multiple dimensions, for example, a requests attribute or an HTTP method.
 

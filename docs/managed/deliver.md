@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/deliver
 
 * Overview
 * 2-min read
-* Published Apr 27, 2021
+* Updated on Apr 14, 2026
 
 Empower DevOps platform engineers, SREs, and development teams to deliver higher quality software, faster, and more securely.
 

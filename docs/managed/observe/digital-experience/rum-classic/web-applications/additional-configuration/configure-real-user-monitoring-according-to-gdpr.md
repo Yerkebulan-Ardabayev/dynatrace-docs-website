@@ -138,7 +138,7 @@ The **Comply with "Do Not Track" browser settings** — **Capture anonymous user
 
 To access this option, select **General settings** > **Data privacy** > **General** > **IP masking** from the application settings.
 
-To determine the region from which end users access web and mobile frontends, Dynatrace captures their IP addresses. GPS coordinates are captured only for mobile frontends.
+To determine the region from which end users access web and mobile applications, Dynatrace captures their IP addresses. GPS coordinates are captured only for mobile applications.
 
 When the **Mask end-user IP addresses and GPS coordinates** option is turned on, IP addresses are masked on the [beacon endpoint](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server."). The last octet of monitored IPv4 addresses and the last 80 bits of IPv6 addresses are replaced with zeros. [Geolocation lookups](/managed/observe/digital-experience/rum-classic/rum-concepts/detection-of-ip-addresses-locations-and-user-agents#geolocations "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.") are performed using masked IP addresses.
 

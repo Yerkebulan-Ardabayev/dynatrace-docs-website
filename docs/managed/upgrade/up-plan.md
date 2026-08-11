@@ -291,7 +291,7 @@ Adjust existing processes and workflows, including any integrations with ITOM/IT
 
 #### Firewall constraints for RUM
 
-The configuration of your firewalls, proxies, and web servers will require adjustment since cookie names have environment specific suffixes. For details, see [Infrastructure pass-through requirements for RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/infrastructure-pass-through-requirements-classic#cookies-web "Learn which requests, headers, and cookies must pass through your infrastructure for RUM to work as expected.").
+The configuration of your firewalls, proxies, and web servers will require adjustment since cookie names have environment specific suffixes. For details, see [Infrastructure pass-through requirements for RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/infrastructure-pass-through-requirements-classic#cookies-web "Learn which requests, headers, and cookies must pass through your infrastructure for RUM Classic to work as expected.").
 
 ## Step 3 - Design
 

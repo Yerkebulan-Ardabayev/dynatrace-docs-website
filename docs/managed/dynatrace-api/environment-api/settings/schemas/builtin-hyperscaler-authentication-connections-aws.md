@@ -43,7 +43,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | AWS IAM Role ARN `roleArn` | text | The ARN of the AWS role that should be assumed | Required |
-| Consumers `consumers` | [ConsumersOfAwsRoleBasedAuthentication](#ConsumersOfAwsRoleBasedAuthentication)[] | Dynatrace integrations that can use this connection The element has these enums * `DA` * `SVC:com.dynatrace.da` * `SVC:com.dynatrace.bo` * `SVC:com.dynatrace.openpipeline` * `SVC:com.dynatrace.grail` * `NONE` | Required |
+| Consumers `consumers` | [ConsumersOfAwsRoleBasedAuthentication](#ConsumersOfAwsRoleBasedAuthentication)[] | Dynatrace integrations that can use this connection The element has these enums * `SVC:com.dynatrace.da` * `SVC:com.dynatrace.bo` * `SVC:com.dynatrace.openpipeline` * `SVC:com.dynatrace.grail` | Required |
 
 ##### The `AwsWebIdentity` object
 

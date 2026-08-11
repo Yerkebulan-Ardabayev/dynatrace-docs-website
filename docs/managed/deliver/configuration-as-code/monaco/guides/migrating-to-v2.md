@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/monaco/
 
 * How-to guide
 * 9-min read
-* Updated on May 08, 2023
+* Updated on Nov 25, 2025
 
 The last Monaco version to support the `convert` command is Monaco version `2.19.0`.  
 If you want to convert your project using the steps outlined on this page, download and use that version.

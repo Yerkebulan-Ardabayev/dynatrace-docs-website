@@ -150,7 +150,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Monitoring Mode](/managed/dynatrace-api/environment-api/settings/schemas/builtin-host-monitoring-mode) | `builtin:host.monitoring.mode` | `HOST` - Host |
 | [Process group monitoring](/managed/dynatrace-api/environment-api/settings/schemas/builtin-host-process-groups-monitoring-state) | `builtin:host.process-groups.monitoring-state` | `HOST` - Host |
 | [Hub subscriptions](/managed/dynatrace-api/environment-api/settings/schemas/builtin-hub-channel-subscriptions) | `builtin:hub-channel.subscriptions` | `environment` |
-| [AWS Connections](/managed/dynatrace-api/environment-api/settings/schemas/builtin-hyperscaler-authentication-aws-connection) | `builtin:hyperscaler-authentication.aws.connection` | `environment` |
+| [AWS Connections (deprecated)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-hyperscaler-authentication-aws-connection) | `builtin:hyperscaler-authentication.aws.connection` | `environment` |
 | [Connections to AWS environments](/managed/dynatrace-api/environment-api/settings/schemas/builtin-hyperscaler-authentication-connections-aws) | `builtin:hyperscaler-authentication.connections.aws` | `environment` |
 | [Connections to Azure environments](/managed/dynatrace-api/environment-api/settings/schemas/builtin-hyperscaler-authentication-connections-azure) | `builtin:hyperscaler-authentication.connections.azure` | `environment` |
 | [Connections to GCP environments](/managed/dynatrace-api/environment-api/settings/schemas/builtin-hyperscaler-authentication-connections-gcp) | `builtin:hyperscaler-authentication.connections.gcp` | `environment` |

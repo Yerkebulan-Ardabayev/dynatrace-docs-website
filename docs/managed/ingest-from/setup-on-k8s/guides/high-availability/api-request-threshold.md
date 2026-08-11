@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/high-
 # Configure minimum time between requests
 
 * 1-min read
-* Published Jul 28, 2023
+* Updated on Nov 25, 2025
 
 Dynatrace Operator version 1.2.0+
 

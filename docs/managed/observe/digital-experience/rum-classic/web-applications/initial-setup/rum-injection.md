@@ -81,7 +81,7 @@ To disable injection for one or more pages within your application
 7. Under **Rule**, select **Do not inject**.
 8. Select **Save changes** to create the custom injection rule.
 
-This rule only disables injection and [cache control header optimizations](#cache-header-optimization); it does not fully disable RUM functionality. For instance, cookies may still be set. If you're looking for a way to selectively enable RUM, please refer to the instructions in [Roll out RUM Classic selectively for your applications](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/selective-rum-rollout "Roll out RUM selectively after installing OneAgent in full-stack monitoring mode on your hosts").
+This rule only disables injection and [cache control header optimizations](#cache-header-optimization); it does not fully disable RUM functionality. For instance, cookies may still be set. If you're looking for a way to selectively enable RUM, please refer to the instructions in [Roll out RUM Classic selectively for your applications](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/selective-rum-rollout "Roll out RUM Classic selectively after installing OneAgent in full-stack monitoring mode on your hosts").
 
 ## Configure the snippet format
 

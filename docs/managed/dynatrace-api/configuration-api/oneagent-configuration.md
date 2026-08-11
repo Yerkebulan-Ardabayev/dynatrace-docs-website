@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneag
 # OneAgent configuration API
 
 * Reference
-* Published Mar 03, 2021
+* Updated on Apr 24, 2026
 
 [### On a host
 

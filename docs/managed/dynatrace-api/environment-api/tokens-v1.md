@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-
 # Tokens API v1
 
 * Reference
-* Updated on May 17, 2022
+* Updated on May 25, 2026
 
 This API is deprecated. Use the [Access tokens API](/managed/dynatrace-api/environment-api/tokens-v2/api-tokens "Manage Dynatrace API authentication tokens.") instead.
 

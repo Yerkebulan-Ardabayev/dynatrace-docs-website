@@ -1,17 +1,17 @@
 ---
-title: Configure RUM Classic cookie attributes
+title: Configure cookie attributes in RUM Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-cookie-attributes
 ---
 
-# Configure RUM Classic cookie attributes
+# Configure cookie attributes in RUM Classic
 
-# Configure RUM Classic cookie attributes
+# Configure cookie attributes in RUM Classic
 
 * How-to guide
 * 4-min read
 * Updated on Apr 22, 2026
 
-Dynatrace Real User Monitoring Classic uses a set of HTTP cookies; see [Cookies and client-side storage for RUM and Session Replay](/managed/manage/data-privacy-and-security/data-privacy/rum-cookies-and-web-storage "Learn how Dynatrace RUM and Session Replay use cookies, web storage, and IndexedDB."). You can customize some of the cookie attributes.
+RUM Classic uses a set of HTTP cookies; see [Cookies and client-side storage for RUM and Session Replay](/managed/manage/data-privacy-and-security/data-privacy/rum-cookies-and-web-storage "Learn how Dynatrace RUM and Session Replay use cookies, web storage, and IndexedDB."). You can customize some of the cookie attributes.
 
 To access these options
 
@@ -58,7 +58,7 @@ By default, Dynatrace determines the cookie domain automatically by choosing the
 The cookie domain is determined either server-side by OneAgent or client-side by the RUM JavaScript.
 
 * If the RUM JavaScript is [injected automatically](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications"), OneAgent usually determines the cookie domain, using the result of host name determination as a starting point. If an uninstrumented component rewrites the host portion of the URL, ensure that [host name determination is configured correctly](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/define-your-applications-via-the-my-web-application-placeholder#rum-appdetection-uninstrumentedcomponent "Learn how to define your applications following the suggested, manual, or application detection rules approach.").
-* If you use [agentless RUM](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications."), the RUM JavaScript determines the cookie domain.
+* If you use [agentless monitoring](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications."), the RUM JavaScript determines the cookie domain.
 
 ### Manually configure the cookie domain
 

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp
 
 * How-to guide
 * 1-min read
-* Published Oct 03, 2018
+* Updated on Feb 09, 2026
 
 ## Deploy OneAgent
 

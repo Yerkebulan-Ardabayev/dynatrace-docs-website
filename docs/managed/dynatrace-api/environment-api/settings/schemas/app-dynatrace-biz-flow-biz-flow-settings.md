@@ -57,6 +57,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Monitoring timeframe in hours `monitoringTimeframeInHours` | integer | - | Optional |
 | Monitoring frequency in hours `monitoringFrequencyInHours` | integer | - | Optional |
 | Is default query limit ignored `isDefaultQueryLimitIgnored` | boolean | - | Required |
+| Bizevent Buckets `bizeventBuckets` | set | Bizevent buckets to scope queries to. Empty means all buckets (no scoping). | Required |
 
 ##### The `TStepType` object
 

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/credential-vault
 
 * Tutorial
 * 21-min read
-* Updated on Sep 27, 2024
+* Updated on Apr 22, 2026
 
 The credential vault is a centralized repository where you securely store and manage credentials (username-password pairs, certificates, or tokens) used by synthetic monitors ([browser](/managed/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors "Learn about Dynatrace synthetic monitor types.") and [HTTP](/managed/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors#http-monitor "Learn about Dynatrace synthetic monitor types.")), [Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions."), and AppEngine apps.
 

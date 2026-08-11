@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/extensi
 # Extensions 2.0 API
 
 * Reference
-* Published Jan 22, 2021
+* Updated on May 25, 2026
 
 [### View all extensions
 

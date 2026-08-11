@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support
 # Technology support
 
 * 17-min read
-* Updated on Jul 21, 2026
+* Updated on Aug 06, 2026
 
 Dynatrace supports monitoring of the technologies and versions listed on this page. For serverless monitoring, see [Serverless compute support matrix](/managed/ingest-from/technology-support/serverless-compute-services "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS)."). For mainframe, see [Mainframe technology support](/managed/ingest-from/technology-support/mainframe-technology-support "Learn which technologies Dynatrace supports for Mainframe monitoring.").
 
@@ -1211,6 +1211,8 @@ See also [OneAgent SDK for Node.js](/managed/ingest-from/extend-dynatrace/extend
 
 | Web frameworks | Versions |
 | --- | --- |
+| [Azure Functions﻿](https://pypi.org/project/azure-functions/) | 1.21+ |
+| [Bottle﻿](https://github.com/bottlepy/bottle) | 0.11+ |
 | [Django﻿](https://github.com/django/django) | 1.8+[1](#fn-web-frameworks-1-def) |
 | [Falcon﻿](https://falconframework.org/) | 4.0+ |
 | [FastAPI﻿](https://github.com/tiangolo/fastapi) | 0.44+ |
@@ -1304,9 +1306,33 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Generative AI Application frameworks | Versions |
 | --- | --- |
-| [Amazon Bedrock Runtime﻿](https://github.com/boto/boto3) | 1.14+ |
+| [Amazon Bedrock Runtime﻿](https://github.com/boto/boto3) | 1.14+[1](#fn-generative-ai-application-frameworks-1-def) |
+| [Anthropic﻿](https://github.com/anthropics/anthropic-sdk-python) | 0.43.0+[2](#fn-generative-ai-application-frameworks-2-def) |
+| [Cohere﻿](https://github.com/cohere-ai/cohere-python) | 5.0.0+[3](#fn-generative-ai-application-frameworks-3-def) |
+| [CrewAI﻿](https://github.com/crewAIInc/crewAI) | 1.9.0+[3](#fn-generative-ai-application-frameworks-3-def) |
+| [Google Agent Development Kit﻿](https://github.com/google/adk-python) | 1.10.0+[3](#fn-generative-ai-application-frameworks-3-def) |
+| [Google GenAI﻿](https://github.com/googleapis/python-genai) | 1.10.0+[3](#fn-generative-ai-application-frameworks-3-def) |
+| [Groq﻿](https://github.com/groq/groq-python) | 0.9.0+[3](#fn-generative-ai-application-frameworks-3-def) |
+| [Haystack﻿](https://github.com/deepset-ai/haystack) | 2.0.0+[3](#fn-generative-ai-application-frameworks-3-def) |
 | [LangChain﻿](https://github.com/langchain-ai/langchain) | 1.0+ |
-| [OpenAI﻿](https://github.com/openai/openai-python) | 1.54.0+ |
+| [LangGraph﻿](https://github.com/langchain-ai/langgraph) | 1.0.0+[3](#fn-generative-ai-application-frameworks-3-def) |
+| [Mistral AI﻿](https://github.com/mistralai/client-python) | 2.0.0+[3](#fn-generative-ai-application-frameworks-3-def) |
+| [Ollama﻿](https://github.com/ollama/ollama-python) | 0.1.0+[3](#fn-generative-ai-application-frameworks-3-def) |
+| [OpenAI﻿](https://github.com/openai/openai-python) | 1.54.0+[1](#fn-generative-ai-application-frameworks-1-def) |
+| [OpenAI Agents﻿](https://github.com/openai/openai-agents-python) | 0.10.0+[3](#fn-generative-ai-application-frameworks-3-def) |
+| [Pydantic AI﻿](https://github.com/pydantic/pydantic-ai) | 1.1.0+[3](#fn-generative-ai-application-frameworks-3-def) |
+
+1
+
+Prompt capturing supported since OneAgent 1.335.
+
+2
+
+Experimental. Prompt capturing supported since OneAgent 1.345.
+
+3
+
+Experimental
 
 * See [OneAgent SDK for Python](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing capabilities.
 * See [Instrument your Python application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/python "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.") for OpenTelemetry support.
@@ -1474,7 +1500,7 @@ Only Apache versions 2.2 and 2.4 are supported.
 
 1
 
-As of version 1.29, Envoy exports data using [OpenTelemetry](/managed/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace."). See [Configure OpenTelemetry tracing with Envoy](/managed/ingest-from/opentelemetry/integrations/envoy "Learn how to configure Envoy to send OpenTelemetry traces to Dynatrace.") for details.
+As of version 1.29, Envoy exports data using [OpenTelemetry](/managed/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace."). See [Configure OpenTelemetry tracing with Envoy](/managed/ingest-from/opentelemetry/integrations/envoy "Configure Envoy to export OpenTelemetry traces to Dynatrace using the Envoy OpenTelemetry tracer, including resource detection and adaptive sampling.") for details.
 
 ### NGINX
 
@@ -1559,7 +1585,7 @@ We stopped offering special support for certain JavaScript frameworks starting w
 
 #### Web servers and applications
 
-On the following web servers and applications, Dynatrace supports [RUM auto-injection](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications"), [RUM JavaScript delivery](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source "Configure the Real User Monitoring Classic code source for your specific requirements."), [RUM beacon forwarding](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server."), and [user action to distributed trace correlation](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/link-cross-origin-xhrs "Enable the correlation between cross-origin XHR actions and distributed traces.").
+On the following web servers and applications, Dynatrace supports [RUM auto-injection](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications"), [RUM JavaScript delivery](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source "Configure the monitoring code source in RUM Classic to meet your specific requirements."), [RUM beacon forwarding](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server."), and [user action to distributed trace correlation](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/link-cross-origin-xhrs "Enable the correlation between cross-origin XHR actions and distributed traces.").
 
 | Web servers and applications |
 | --- |

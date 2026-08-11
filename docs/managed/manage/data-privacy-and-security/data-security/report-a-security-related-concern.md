@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/manage/data-privacy-and-security/data
 # Report a security-related concern
 
 * 2-min read
-* Updated on Feb 17, 2023
+* Updated on Nov 25, 2025
 
 We take your security very seriously and investigate all vulnerabilities that you report to us. This page summarizes how we address potential vulnerabilities reported to Dynatrace.
 

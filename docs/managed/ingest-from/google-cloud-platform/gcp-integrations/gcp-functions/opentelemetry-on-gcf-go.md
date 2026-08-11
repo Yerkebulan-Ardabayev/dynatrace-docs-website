@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp
 
 * How-to guide
 * 8-min read
-* Updated on Jun 16, 2023
+* Updated on Feb 09, 2026
 
 The [`dynatrace-oss/opentelemetry-exporter-go`﻿](https://dt-url.net/jq034sr) package provides an API for tracing Go code on Google Cloud Functions. This package provides a way to instrument your code with Dynatrace-enhanced OpenTelemetry traces.
 

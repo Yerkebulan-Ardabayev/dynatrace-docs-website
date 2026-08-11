@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/whats-new/dynatrace-api/sprint-303
 # Dynatrace API changelog version 1.303
 
 * Release notes
-* Published Oct 24, 2024
+* Updated on Mar 24, 2026
 
 Rollout start: Oct 21, 2024
 

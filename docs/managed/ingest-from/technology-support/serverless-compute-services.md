@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/server
 # Serverless compute support matrix
 
 * 13-min read
-* Published Jan 27, 2022
+* Updated on Jan 12, 2026
 
 This page describes which features and capabilities are available across the various flavors of serverless compute services for functions (FaaS).
 

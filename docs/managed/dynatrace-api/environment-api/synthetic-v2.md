@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 # Synthetic API v2
 
 * Reference
-* Published Aug 12, 2020
+* Updated on May 25, 2026
 
 ### Synthetic locations
 

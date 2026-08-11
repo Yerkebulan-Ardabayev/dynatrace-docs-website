@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 # OpenTelemetry Host Monitoring extension
 
 * Extension
-* Updated on Jul 29, 2026
+* Updated on Aug 10, 2026
 
 Monitor OpenTelemetry-instrumented hosts with auto-generated entity topology, metric visualizations, and alerts for faster infrastructure analysis.
 
@@ -50,6 +50,7 @@ For information on how to use the extension within Dynatrace, see [Monitor hosts
 
 * The metric `system.processes.created` is currently available only on Linux and BSD operating systems.
 * The metric `process.disk.io` requires running the Collector with privileged access. Not doing so will prevent the metric from being captured.
+* The `dt.openpipeline.source` can't be used for entity extraction from spans.
 
 ### Licensing and costs
 

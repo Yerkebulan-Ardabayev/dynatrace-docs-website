@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/
 
 * How-to guide
 * 1-min read
-* Published Sep 22, 2020
+* Updated on Feb 09, 2026
 
 Dynatrace ingests metrics from Azure Metrics API for Face. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
 

@@ -133,11 +133,11 @@ For our configuration, we configure the following components.
 
 ### Receivers
 
-Under `receivers`, we specify the gRPC [`otlp` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.157.0/receiver/otlpreceiver) as active receiver component for our Collector instance.
+Under `receivers`, we specify the gRPC [`otlp` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.158.0/receiver/otlpreceiver) as active receiver component for our Collector instance.
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.157.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.158.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

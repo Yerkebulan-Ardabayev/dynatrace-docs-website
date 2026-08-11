@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activeg
 # ActiveGate API
 
 * Reference
-* Published Jul 02, 2020
+* Updated on May 25, 2026
 
 [### ActiveGate information
 

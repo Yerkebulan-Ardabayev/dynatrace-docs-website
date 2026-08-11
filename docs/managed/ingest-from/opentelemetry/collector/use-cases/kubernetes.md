@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/u
 
 * How-to guide
 * 1-min read
-* Published Mar 12, 2024
+* Updated on Apr 23, 2026
 
 [### Enrich
 

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/netwo
 # Security configurations
 
 * 1-min read
-* Published Jul 28, 2023
+* Updated on Apr 13, 2026
 
 This page provides a comprehensive guide to security in your environment.
 

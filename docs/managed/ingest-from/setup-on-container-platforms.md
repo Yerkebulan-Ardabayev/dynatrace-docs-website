@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platfo
 # Set up Dynatrace on container and PaaS platforms
 
 * 3-min read
-* Updated on Mar 02, 2023
+* Updated on Mar 31, 2026
 
 [![Cloud Foundry](https://dt-cdn.net/images/cloud-foundry-512-d7620ed0ba.png "Cloud Foundry")
 

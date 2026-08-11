@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/conta
 # Store Dynatrace images in private registries
 
 * 7-min read
-* Published Feb 29, 2024
+* Updated on Apr 28, 2026
 
 For users seeking greater control over their image hosting environment, Dynatrace offers the option to replicate images and signatures to private registries.
 

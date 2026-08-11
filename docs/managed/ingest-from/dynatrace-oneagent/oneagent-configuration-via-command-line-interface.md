@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneage
 
 * Reference
 * 20-min read
-* Updated on Jul 13, 2026
+* Updated on Aug 03, 2026
 
 Use the `oneagentctl` command-line interface to perform some post-installation OneAgent configuration at the individual host level.
 
@@ -543,6 +543,8 @@ To **remove tags**, run the following command:
   `.\oneagentctl.exe --remove-host-tag=role=fallback --remove-host-tag=Gdansk`
 
 You can remove more than one tag with the same command. If a tag passed in the command doesn't exist, a non-zero exit code is returned, but all the existing tags passed in the command are removed. After you remove tags, they remain visible in Dynatrace for up to 6 hours.
+
+Tags configured with `--set-host-tag` are reported to Dynatrace as part of the active monitoring data stream. If host monitoring is disabled, OneAgent stops sending entity data and configured tags eventually disappear from the **Properties and tags** section. OneAgent preserves the tag configuration locally and automatically restores tags in Dynatrace when monitoring is re-enabled.
 
 To **show all tags** configured for the host, run the following command:
 

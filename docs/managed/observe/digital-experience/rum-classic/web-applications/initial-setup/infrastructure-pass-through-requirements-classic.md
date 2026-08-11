@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 * 9-min read
 * Updated on Jun 01, 2026
 
-Real User Monitoring Classic (RUM Classic) operates within an HTTP ecosystem and relies on a set of requests, headers, and cookies to capture and report real user data, and to link it with backend distributed traces. For RUM to work as expected, your infrastructure—including firewalls, proxies, load balancers, content delivery networks, web servers, and any other components in the request path—must allow these requests, headers, and cookies to pass through unaltered. In addition, OneAgent uses the headers described in [Span and trace context propagation in Distributed Traces Classic](/managed/observe/application-observability/distributed-traces/context-propagation "Understand span and trace context propagation in Dynatrace and how to set them up.") for distributed tracing, which also need to pass through your infrastructure.
+Real User Monitoring Classic (RUM Classic) operates within an HTTP ecosystem and relies on a set of requests, headers, and cookies to capture and report real user data, and to link it with backend distributed traces. For RUM Classic to work as expected, your infrastructure—including firewalls, proxies, load balancers, content delivery networks, web servers, and any other components in the request path—must allow these requests, headers, and cookies to pass through unaltered. In addition, OneAgent uses the headers described in [Span and trace context propagation in Distributed Traces Classic](/managed/observe/application-observability/distributed-traces/context-propagation "Understand span and trace context propagation in Dynatrace and how to set them up.") for distributed tracing, which also need to pass through your infrastructure.
 
 ## Web applications
 
@@ -19,14 +19,14 @@ Real User Monitoring Classic (RUM Classic) operates within an HTTP ecosystem and
 
 On web applications, the RUM JavaScript is either [injected automatically](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications") or [inserted manually](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.") into webpages. The RUM monitoring code is loaded as an external file unless you use the [snippet format inline code](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case")—and even then, the Session Replay monitoring code is loaded as a separate file. Once active, the RUM JavaScript starts sending beacon requests to report the captured RUM data.
 
-For RUM to function fully, both requests for the RUM monitoring code and RUM beacons must pass through your infrastructure.
+For RUM Classic to function fully, both requests for the RUM monitoring code and RUM beacons must pass through your infrastructure.
 
 #### Requests for the RUM monitoring code
 
-* For agentless monitoring, requests are sent to the CDN or the Cluster ActiveGate that you set up according to [Set up agentless Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.").
+* For agentless monitoring, requests are sent to the CDN or the Cluster ActiveGate that you set up according to [Set up agentless monitoring in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.").
 * For auto-injection, requests are, by default, sent to the web or app server that hosts the application, and the URL path contains the string `ruxitagentjs_`.
 
-For details on the default URL and the available configuration options, see [Configure the Real User Monitoring Classic code source](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source "Configure the Real User Monitoring Classic code source for your specific requirements.").
+For details on the default URL and the available configuration options, see [Configure the monitoring code source in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source "Configure the monitoring code source in RUM Classic to meet your specific requirements.").
 
 #### RUM beacons
 
@@ -42,7 +42,7 @@ For the available beacon endpoint configuration options, see [Configure beacon e
 
 ### Headers
 
-RUM uses the following HTTP headers, all of which must be allowed to pass through your infrastructure.
+RUM Classic uses the following HTTP headers, all of which must be allowed to pass through your infrastructure.
 
 #### Custom request headers
 
@@ -60,7 +60,7 @@ RUM uses the following HTTP headers, all of which must be allowed to pass throug
 | Header | Purpose |
 | --- | --- |
 | [`Accept-Encoding`﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Accept-Encoding) | Read by OneAgent to determine whether to compress the RUM JavaScript before delivery. |
-| [`Cookie`﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cookie) | Set or modified by OneAgent on the first instrumented server-side tier (the one closest to the browser) when no `dtCookie` is present yet, to propagate the cookie value to downstream OneAgents. Once RUM is active in the browser, the browser also adds cookies set by the RUM JavaScript to this header. See [Cookies](#cookies-web) for details on all RUM cookies. |
+| [`Cookie`﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cookie) | Set or modified by OneAgent on the first instrumented server-side tier (the one closest to the browser) when no `dtCookie` is present yet, to propagate the cookie value to downstream OneAgents. Once RUM Classic is active in the browser, the browser also adds cookies set by the RUM JavaScript to this header. See [Cookies](#cookies-web) for details on all RUM cookies. |
 | [`If-Match`﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/If-Match) [`If-Modified-Since`﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/If-Modified-Since) [`If-None-Match`﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/If-None-Match) [`If-Unmodified-Since`﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/If-Unmodified-Since) | Modified by OneAgent when [cache control header optimizations](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection#cache-header-optimization "Configure automatic injection of the RUM JavaScript into the pages of your applications") are active. |
 | [`Referer`﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referer) | Set by the browser. Captured by OneAgent and by the [beacon endpoint](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server.") on the Cluster ActiveGate for RUM correlation. |
 | [`User-Agent`﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/User-Agent) | Set by the browser. Read by OneAgent to evaluate [browser exclusion rules](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/exclude-browsers-robots-and-spiders-from-monitoring#exclude-browsers "Disable Real User Monitoring Classic for certain IP addresses, browsers, bots, and spiders."), and captured by [beacon endpoints](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server.") for [browser and OS detection](/managed/observe/digital-experience/rum-classic/rum-concepts/detection-of-ip-addresses-locations-and-user-agents "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems."). Setting it to `dtHealthCheck` triggers [OneAgent's RUM health check﻿](https://dt-url.net/qg037fw). |
@@ -95,7 +95,7 @@ RUM uses the following HTTP headers, all of which must be allowed to pass throug
 
 ### Cookies
 
-RUM uses the following cookies. All of these must be able to reach Dynatrace. For more details on how Dynatrace uses cookies, and for an explanation of the `<suffix>` used in the table, see [Cookies and client-side storage for RUM and Session Replay](/managed/manage/data-privacy-and-security/data-privacy/rum-cookies-and-web-storage "Learn how Dynatrace RUM and Session Replay use cookies, web storage, and IndexedDB.").
+RUM Classic uses the following cookies. All of these must be able to reach Dynatrace. For more details on how Dynatrace uses cookies, and for an explanation of the `<suffix>` used in the table, see [Cookies and client-side storage for RUM and Session Replay](/managed/manage/data-privacy-and-security/data-privacy/rum-cookies-and-web-storage "Learn how Dynatrace RUM and Session Replay use cookies, web storage, and IndexedDB.").
 
 | Cookie | Max size | Purpose |
 | --- | --- | --- |

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/crede
 # Credential vault API
 
 * Reference
-* Updated on Oct 04, 2022
+* Updated on Apr 24, 2025
 
 This API is deprecated. Use the [Credential vault API](/managed/dynatrace-api/environment-api/credential-vault "Learn what the Dynatrace API for credentials offers.") from the Environment API instead.
 

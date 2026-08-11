@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp
 
 * How-to guide
 * 12-min read
-* Updated on Oct 08, 2024
+* Updated on Feb 09, 2026
 
 Dynatrace version 1.230+
 

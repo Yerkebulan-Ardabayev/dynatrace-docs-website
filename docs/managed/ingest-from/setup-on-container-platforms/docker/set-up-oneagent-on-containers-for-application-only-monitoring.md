@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platfo
 # Set up OneAgent on containers for application-only monitoring
 
 * 2-min read
-* Published Jun 25, 2021
+* Updated on Mar 12, 2026
 
 If you don't have access to underlying hosts, you can deploy OneAgent on containers for application-only monitoring. Follow the steps below to integrate OneAgent into the application image.
 

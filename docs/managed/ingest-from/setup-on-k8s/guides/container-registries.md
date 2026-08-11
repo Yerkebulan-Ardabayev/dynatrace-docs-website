@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/conta
 # Container registries
 
 * 2-min read
-* Published Jul 28, 2023
+* Updated on Aug 03, 2026
 
 To prioritize seamless integration with your tooling and adaptability to your needs, we offer our container images in various ways to maximize flexibility:
 
@@ -23,6 +23,11 @@ default
 As the default behavior, Dynatrace Operator retrieves images from the built-in Dynatrace registry, prioritizing convenience and minimizing configuration complexities for cloud-native monitoring setup.
 
 Nevertheless, the concurrent retrieval of multiple images from the Dynatrace built-in registry raises the potential for rate limiting. We therefore recommend using our endorsed public registries or, ideally, establishing your private registry. Leveraging public and private registries enhances operational efficiency and performance, particularly under high-demand conditions.
+
+The built-in cluster container registry will be shut down on January 1, 2028, and will no longer function. Migrate to Amazon ECR or Docker Hub.
+
+* For the full schedule, see [End-of-life announcements](/managed/whats-new/technology/end-of-life-announcements#built-in-cluster-container-registry "Information about technologies, features, or integrations scheduled for end of life (EOL) in Dynatrace, including upcoming and recently retired items.").
+* For the image paths to use after you migrate, see [Use a public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.").
 
 ## Public registries
 

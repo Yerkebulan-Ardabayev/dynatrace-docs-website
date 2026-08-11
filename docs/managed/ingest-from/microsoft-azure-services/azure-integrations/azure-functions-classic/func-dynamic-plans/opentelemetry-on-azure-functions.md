@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/
 
 * How-to guide
 * 3-min read
-* Updated on Mar 31, 2025
+* Updated on Feb 09, 2026
 
 The following integrations are designed for the classic version of Azure Functions. For the newest versions of Azure Functions, see [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Monitor Azure Functions").
 

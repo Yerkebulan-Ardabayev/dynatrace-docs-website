@@ -15,7 +15,7 @@ The RUM JavaScript—whether [automatically injected](/managed/observe/digital-e
 * **Monitoring code**: The JavaScript code that provides RUM capabilities such as capturing user actions.
 * **Configuration**: The application configuration that is initially used by the monitoring code. It is updated later via the RUM beacon response in case of configuration changes.
 
-Dynatrace RUM provides several snippet formats that integrate these components into your pages in different ways, each tailored to meet specific requirements.
+RUM Classic provides several snippet formats that integrate these components into your pages in different ways, each tailored to meet specific requirements.
 
 This page [offers guidance](#snippet-format-recommendations) to help you choose the snippet format that best meets your requirements, followed by a [detailed description of each format](#snippet-format-details).
 
@@ -115,7 +115,7 @@ In case of automatic injection, OneAgent always injects the OneAgent JavaScript 
 
 ##### Monitoring code source
 
-In case of agentless monitoring, the monitoring code is delivered by your CDN. In case of automatic injection or [manual insertion for pages of an auto-injected application](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications"), the file is, by default, delivered by the OneAgent that instruments your application. Alternatively, it is also possible to load it from your CDN, see [Request the monitoring code from your CDN](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source#request-rum-monitoring-code-from-cdn "Configure the Real User Monitoring Classic code source for your specific requirements.").
+In case of agentless monitoring, the monitoring code is delivered by your CDN. In case of automatic injection or [manual insertion for pages of an auto-injected application](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications"), the file is, by default, delivered by the OneAgent that instruments your application. Alternatively, it is also possible to load it from your CDN, see [Request the monitoring code from your CDN](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source#request-rum-monitoring-code-from-cdn "Configure the monitoring code source in RUM Classic to meet your specific requirements.").
 
 ##### Cache duration
 
@@ -150,7 +150,7 @@ To configure script execution for manual insertion
 
 When fetching the OneAgent JavaScript tag via the API, you can control script execution by passing a parameter. For details, see [GET OneAgent JavaScript tag](/managed/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag "Retrieve the most recent OneAgent JavaScript tag for manual insertion.").
 
-**OneAgent JavaScript tag with SRI** lets you take advantage of the subresource integrity (SRI) browser feature to ensure that the monitoring code hasn't been altered, see [Use Subresource Integrity (SRI) for Real User Monitoring Classic code](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/subresource-integrity "Use the Subresource Integrity (SRI) browser feature to ensure the integrity of Real User Monitoring Classic code."). It includes configuration, a reference to an external file containing the monitoring code, and an integrity hash for this monitoring code. It is supported for both automatic injection and manual insertion.
+**OneAgent JavaScript tag with SRI** lets you take advantage of the subresource integrity (SRI) browser feature to ensure that the monitoring code hasn't been altered, see [Use Subresource Integrity (SRI) in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/subresource-integrity "Use the Subresource Integrity (SRI) browser feature to ensure the integrity of the RUM monitoring code."). It includes configuration, a reference to an external file containing the monitoring code, and an integrity hash for this monitoring code. It is supported for both automatic injection and manual insertion.
 
 [Get OneAgent JavaScript tag with SRI via API](/managed/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri)
 
@@ -209,7 +209,7 @@ In case of automatic injection, OneAgent always injects the inline code using th
 
 ##### Monitoring code source
 
-In case of agentless monitoring, the Session Replay monitoring code is delivered by your CDN. In case of automatic injection or [manual insertion for pages of an auto-injected application](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications"), the Session Replay monitoring code is, by default, delivered by the OneAgent that instruments your application. Alternatively, it is also possible to load it from your CDN, see [Request the monitoring code from your CDN](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source#request-rum-monitoring-code-from-cdn "Configure the Real User Monitoring Classic code source for your specific requirements.").
+In case of agentless monitoring, the Session Replay monitoring code is delivered by your CDN. In case of automatic injection or [manual insertion for pages of an auto-injected application](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications"), the Session Replay monitoring code is, by default, delivered by the OneAgent that instruments your application. Alternatively, it is also possible to load it from your CDN, see [Request the monitoring code from your CDN](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source#request-rum-monitoring-code-from-cdn "Configure the monitoring code source in RUM Classic to meet your specific requirements.").
 
 ##### Cache duration
 
@@ -238,7 +238,7 @@ In case of automatic injection, OneAgent always injects code snippet using the c
 
 ##### Monitoring code source
 
-In case of agentless monitoring, the external file containing the full functionality of the monitoring code is delivered by your CDN. In case of automatic injection or [manual insertion for pages of an auto-injected application](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications"), it is, by default, delivered by the OneAgent that instruments your application. Alternatively, it is also possible to load it from your CDN, see [Request the monitoring code from your CDN](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source#request-rum-monitoring-code-from-cdn "Configure the Real User Monitoring Classic code source for your specific requirements.").
+In case of agentless monitoring, the external file containing the full functionality of the monitoring code is delivered by your CDN. In case of automatic injection or [manual insertion for pages of an auto-injected application](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications"), it is, by default, delivered by the OneAgent that instruments your application. Alternatively, it is also possible to load it from your CDN, see [Request the monitoring code from your CDN](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source#request-rum-monitoring-code-from-cdn "Configure the monitoring code source in RUM Classic to meet your specific requirements.").
 
 ##### Cache duration
 

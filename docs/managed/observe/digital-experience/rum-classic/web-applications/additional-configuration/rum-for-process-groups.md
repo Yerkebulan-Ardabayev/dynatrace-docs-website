@@ -1,11 +1,11 @@
 ---
-title: Real User Monitoring Classic for process groups
+title: Control RUM Classic at the process group level
 source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/rum-for-process-groups
 ---
 
-# Real User Monitoring Classic for process groups
+# Control RUM Classic at the process group level
 
-# Real User Monitoring Classic for process groups
+# Control RUM Classic at the process group level
 
 * How-to guide
 * 2-min read
@@ -37,6 +37,6 @@ To manually disable RUM for a process group
 ## Important considerations
 
 * If you prefer to insert the RUM JavaScript manually, do not suppress the injection by disabling Real User Monitoring for your process groups. This suppresses not only the injection but also the linking of user actions and distributed traces. Instead, use a custom injection rule as described in [Configure automatic injection in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications").
-* If you want to roll out RUM in a selective manner after deploying OneAgent on your hosts, we recommend using the approach described in [Roll out RUM Classic selectively for your applications](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/selective-rum-rollout "Roll out RUM selectively after installing OneAgent in full-stack monitoring mode on your hosts"). In principle, the RUM enablement setting at the process-group level also allows for a selective rollout, but this tends to be complex and error-prone.
+* If you want to roll out RUM in a selective manner after deploying OneAgent on your hosts, we recommend using the approach described in [Roll out RUM Classic selectively for your applications](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/selective-rum-rollout "Roll out RUM Classic selectively after installing OneAgent in full-stack monitoring mode on your hosts"). In principle, the RUM enablement setting at the process-group level also allows for a selective rollout, but this tends to be complex and error-prone.
 * If your application consists of multiple tiers, enable RUM at least on OneAgent that instruments the first tier (that is the tier nearest to the browser), which captures the root of the distributed trace.  
   For example, consider an Apache HTTP server as a proxy and a Java app server as a backend. Even though Dynatrace injects the RUM JavaScript on the process group of the Java backend, disabling RUM for the process group of the Apache HTTP server would cause issues. In particular, it would be impossible to link user actions and distributed traces.

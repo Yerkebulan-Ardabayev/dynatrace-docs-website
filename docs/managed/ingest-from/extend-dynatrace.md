@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace
 # Extend Dynatrace
 
 * 3-min read
-* Published Mar 05, 2018
+* Updated on Nov 25, 2025
 
 Dynatrace is an open and extensible platform. You can extend the observability data collected out of the box with data provided by observability standards and frameworks such as OpenTelemetry and Prometheus. And you can also extend Dynatrace analytics capabilities by [extending its Smartscape topology](/managed/ingest-from/extend-dynatrace/extend-topology "Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to.") and its [domain workflows and entity screens](/managed/ingest-from/extend-dynatrace/extend-ui "Extend the Dynatrace web UI using entity-tailored unified analysis pages.") via [extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions."). You can also export data to third-party systems via the [APIs](/managed/dynatrace-api "Find out what you need to use the Dynatrace API.") and [integrations with problem notification systems](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.").
 

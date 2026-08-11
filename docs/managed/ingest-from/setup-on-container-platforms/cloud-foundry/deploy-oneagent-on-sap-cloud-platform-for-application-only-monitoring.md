@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platfo
 # Deploy OneAgent on SAP Business Technology Platform for application-only monitoring
 
 * 3-min read
-* Published Jul 19, 2017
+* Updated on May 13, 2026
 
 Applications deployed on Cloud Foundry are usually run through technology-specific buildpacks that provide framework and runtime support for applications running on the Cloud Foundry platform. For complete details, see [how buildpacks work﻿](https://docs.cloudfoundry.org/buildpacks/understand-buildpacks.html).
 

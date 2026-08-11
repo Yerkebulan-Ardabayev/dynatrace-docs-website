@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/capa
 # Route OneAgent traffic to Dynatrace, monitor cloud environments and remote technologies using extensions
 
 * 6-min read
-* Published Nov 09, 2018
+* Updated on Jan 07, 2026
 
 The functionality offered by these types of ActiveGates depends on the functional [modules](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#modules "Learn which ActiveGate properties you can configure based on your needs and requirements.") that are currently installed or configured.
 

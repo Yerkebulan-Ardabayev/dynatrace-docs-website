@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/monaco/
 
 * How-to guide
 * 1-min read
-* Published Sep 25, 2024
+* Updated on Nov 25, 2025
 
 Monaco doesn't support [Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."), but you can configure [Synthetic monitors API v2](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-network-availability-monitors "Create, read, update and delete Synthetic monitors. Currently browser and network availability monitors only.") via the [Settings API](/managed/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.").
 

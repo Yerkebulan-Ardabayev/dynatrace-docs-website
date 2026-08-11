@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/data-privacy-and-security
 
 * Explanation
 * 2-min read
-* Updated on Jan 20, 2023
+* Updated on Jun 02, 2026
 
 Privacy laws around the globe are improving the protection of personal data in response to an evolving technology landscape, increased globalization, and complex international data flows. Companies are held accountable for transparency, fairness, and accuracy in how they collect, store, use, and protect personal data.
 
@@ -67,7 +67,7 @@ At Dynatrace, we take our responsibility to safeguard your data seriously. Have 
 
 [Detection of IP addresses, geolocations, and user agents in RUM Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/detection-of-ip-addresses-locations-and-user-agents "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")
 
-[Infrastructure pass-through requirements for RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/infrastructure-pass-through-requirements-classic#cookies-web "Learn which requests, headers, and cookies must pass through your infrastructure for RUM to work as expected.")
+[Infrastructure pass-through requirements for RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/infrastructure-pass-through-requirements-classic#cookies-web "Learn which requests, headers, and cookies must pass through your infrastructure for RUM Classic to work as expected.")
 
 [User privacy for iOS](/managed/manage/data-privacy-and-security/data-privacy/user-privacy-for-ios "Learn about what kind of data OneAgent collects when you need to report your app privacy to Apple.")
 

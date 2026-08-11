@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/o
 # Manually deploy ActiveGate as a StatefulSet
 
 * 5-min read
-* Updated on Jan 19, 2025
+* Updated on Jan 19, 2026
 
 Dynatrace Operator manages the lifecycle of several Dynatrace components, including ActiveGate. If you can't use Dynatrace Operator, you can manually deploy ActiveGate as a StatefulSet in your Kubernetes cluster. See below for instructions.
 

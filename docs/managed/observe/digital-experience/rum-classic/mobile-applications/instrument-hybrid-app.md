@@ -176,7 +176,7 @@ It is important to add the required domains to your top-level build file (Androi
 
 ## Step 3 Insert the RUM JavaScript into HTML sources
 
-To capture user actions in the web-based part of your hybrid application, use the RUM JavaScript. You'll need to manually insert the JavaScript code or tag into your HTML sources. See [Set up agentless Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.") for more information. Note that the RUM JavaScript is available in [several formats](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats "Select a format for the RUM JavaScript snippet that best fits your specific use case").
+To capture user actions in the web-based part of your hybrid application, use the RUM JavaScript. You'll need to manually insert the JavaScript code or tag into your HTML sources. See [Set up agentless monitoring in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.") for more information. Note that the RUM JavaScript is available in [several formats](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats "Select a format for the RUM JavaScript snippet that best fits your specific use case").
 
 After you add the RUM JavaScript to the HTML files, user actions from your hybrid app's web views are reported to the web application that you've created in step 1.
 

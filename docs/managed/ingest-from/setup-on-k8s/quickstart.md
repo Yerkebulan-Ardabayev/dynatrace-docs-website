@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/quickstart
 
 * Getting started guide
 * 2-min read
-* Updated on Dec 18, 2024
+* Updated on Aug 04, 2026
 
 This page guides you to install Dynatrace components within a minute on your Kubernetes cluster in order to quickly benefit from the Dynatrace observability & analytics platform.
 
@@ -40,7 +40,7 @@ You will get insights and actionable answers into your Kubernetes platform as we
 2. Select **Connect automatically via Dynatrace Operator**.
 3. Follow the on-screen instructions.
 
-![quickstart](https://dt-cdn.net/images/quickstart-2nd-gen-2976-cd3bfad512.png)
+![quickstart](https://dt-cdn.net/images/quickstart-k8s-new-2902-88300e3cd7.png)
 
 quickstart
 

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/log-mon
 # Log Monitoring API v2
 
 * Reference
-* Updated on Nov 20, 2025
+* Updated on Feb 02, 2026
 
 [### Search
 

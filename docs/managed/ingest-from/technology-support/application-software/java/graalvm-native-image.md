@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/applic
 # GraalVM Native Image
 
 * 8-min read
-* Published Jul 02, 2024
+* Updated on Nov 25, 2025
 
 OneAgent version 1.295+ Dynatrace version 1.295+
 

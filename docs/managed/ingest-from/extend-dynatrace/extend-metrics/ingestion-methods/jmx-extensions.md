@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-m
 # JMX extensions
 
 * 7-min read
-* Published Jul 19, 2017
+* Updated on Jun 12, 2026
 
 JMX ([Java Management Extensions﻿](https://www.oracle.com/technetwork/java/javase/tech/javamanagement-140525.html)) is ideal for monitoring applications built using Java. With Dynatrace, you can monitor any metric in your JVM that is exposed via an MBean.
 

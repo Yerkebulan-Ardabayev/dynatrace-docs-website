@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/f
 # Get started with Full Kubernetes observability (cloud-native full-stack deployment)
 
 * Getting started guide
-* Updated on Jul 24, 2026
+* Updated on Aug 03, 2026
 
 This page provides instructions on installing Dynatrace Operator with cloud-native full-stack configuration to a Kubernetes cluster.
 
@@ -71,23 +71,47 @@ Dynatrace version 1.290+
 1. Go to **Kubernetes**.
 2. Select **Connect automatically via Dynatrace Operator** in the header of the Kubernetes cluster page.
 
-![Quickstart](https://dt-cdn.net/images/quickstart-3574-833bd4c27b.png)
+   ![Quickstart](https://dt-cdn.net/images/quickstart-k8s-new-2902-88300e3cd7.png)
 
-Quickstart
-
-1. Enter the following details.
+   Quickstart
+3. Enter the following details.
 
    * **Name**: Defines the display name of your Kubernetes cluster within Dynatrace. Additionally, this name will be used as a prefix for naming Dynatrace-specific resources inside your Kubernetes cluster, such as DynaKube (custom resource), ActiveGate (pod), OneAgents (pods), and as a name for the secret holding your tokens.
    * Recommended **Group**: Defines a group used by various Dynatrace settings, including network zone, ActiveGate group, and host group. If not set, defaults or empty values are used.
    * **Dynatrace Operator token**: Select **Create token** or enter the **API token** you previously created. For more information, see [Access tokens and permissions](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
    * Optional**Data ingest token**: Select **Create token** or enter the **API token** you previously created. For more information, see [Access tokens and permissions](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
-2. Optional Decide whether you want the Dynatrace Operator to disable the verification of the Dynatrace SSL certificate.
+4. Optional Decide whether you want the Dynatrace Operator to disable the verification of the Dynatrace SSL certificate.
 
    This is relevant if you are using Dynatrace Managed with self-signed certificates.
-3. Select **Download dynakube.yaml**. Copy the code block created by Dynatrace created and **run it in your terminal**. Ensure you execute the commands in the same directory where you downloaded the YAML or adapt the command to link to the location of the YAML manifest.
+5. Select the **Container registry** that your cluster pulls Dynatrace images from. The registry you pick determines the `image` and `codeModulesImage` fields written to the generated dynakube.yaml and the Helm install command the wizard shows. Amazon ECR is the default and recommended.
+
+   Amazon ECR
+
+   Docker Hub
+
+   Built-in Registry
+
+   Private Container Registry
+
+   The wizard fills in the dynakube.yaml `image` and `codeModulesImage` fields automatically with the latest resolved images, and the Helm command pulls Dynatrace Operator from `oci://public.ecr.aws/dynatrace/dynatrace-operator`. You do not need to edit dynakube.yaml manually.
+
+   The wizard fills in the dynakube.yaml `image` and `codeModulesImage` fields automatically with the latest resolved images, and the Helm command pulls Dynatrace Operator from `oci://registry-1.docker.io/dynatrace/dynatrace-operator`. You do not need to edit dynakube.yaml manually.
+
+   No image fields are written, and Dynatrace Operator falls back to the built-in cluster container registry.
+
+   The built-in cluster container registry provides only x86-64 (Linux) images. ARM-based Kubernetes clusters (for example, AWS Graviton or Azure ARM64) cannot be instrumented with the Built-in Registry. Because the cluster manages this registry rather than you, its architecture coverage is not visible from your side. For ARM support, select Amazon ECR or Docker Hub instead.
+
+   The built-in cluster container registry will be shut down on January 1, 2028, and will no longer function. Migrate to Amazon ECR or Docker Hub. See [End-of-life announcements](/managed/whats-new/technology/end-of-life-announcements#built-in-cluster-container-registry "Information about technologies, features, or integrations scheduled for end of life (EOL) in Dynatrace, including upcoming and recently retired items.").
+
+   No image fields are written, and the Helm command adds the `imageRef.repository`, `imageRef.tag`, and `customPullSecret` `--set` flags for your registry.
+
+   This option requires a manual step: after you download dynakube.yaml, add the `image` and `codeModulesImage` fields pointing to your private registry, as described in [Use a private registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#configure-dynakube "Use a private registry").
+
+   For the registry taxonomy and per-registry image paths, see [Container registries](/managed/ingest-from/setup-on-k8s/guides/container-registries "Manage container registries with Dynatrace"), [Use a public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment."), and [Use a private registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Use a private registry").
+6. Select **Download dynakube.yaml**. Copy the code block created by Dynatrace created and **run it in your terminal**. Ensure you execute the commands in the same directory where you downloaded the YAML or adapt the command to link to the location of the YAML manifest.
 
    The downloaded YAML file is a basic version of the DynaKube custom resource definition. To adjust values to your specific needs, refer to the [DynaKube custom resource samples for cloud-native full-stack from GitHub﻿](https://dt-url.net/9n636jg). For more information about all configuration options, see [DynaKube parameters for Dynatrace Operator](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
-4. Optional Verify that your DynaKube is running and all pods in your Dynatrace namespace are running and ready.
+7. Optional Verify that your DynaKube is running and all pods in your Dynatrace namespace are running and ready.
 
    ```
    > kubectl get dynakube -n dynatrace

@@ -17,7 +17,7 @@ The following configuration example shows how to configure an OTel Collector ins
 
 To set up this configuration, ensure you have the following:
 
-* One of the following Collector distributions with the [kafka\_metrics receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.157.0/receiver/kafkametricsreceiver) and [cumulative\_to\_delta processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.157.0/processor/cumulativetodeltaprocessor)
+* One of the following Collector distributions with the [kafka\_metrics receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/receiver/kafkametricsreceiver) and [cumulative\_to\_delta processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/processor/cumulativetodeltaprocessor)
 
   + [Dynatrace Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -127,7 +127,7 @@ The `cumulative_to_delta` processor is required to convert cumulative metrics (a
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.157.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.158.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

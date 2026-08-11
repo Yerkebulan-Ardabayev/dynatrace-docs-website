@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/identity-access-management/per
 
 * Reference
 * 4-min read
-* Published Jul 22, 2022
+* Updated on Nov 25, 2025
 
 Global conditions (with the `global:` prefix) are conditions that can be applied to any policy statement because they are not service-specific. Service-specific conditions supported by each service are documented in [IAM policy reference](/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 

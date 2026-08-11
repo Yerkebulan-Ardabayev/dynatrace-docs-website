@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/metad
 # Configure build label propagation
 
 * 2-min read
-* Published Jul 28, 2023
+* Updated on Dec 03, 2025
 
 Build label propagation enables you to provide build and version metadata information to the injected OneAgent about the newly deployed pods. This information is then visible on the **Properties and tags** section of your entities pages.
 

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/
 
 * How-to guide
 * 1-min read
-* Updated on Nov 15, 2023
+* Updated on Feb 09, 2026
 
 For information about differences between classic services and other services, see [Migrate from Azure classic (formerly 'built-in') services to cloud services](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-migration-guide "Migrate Azure classic services to their new versions.").
 

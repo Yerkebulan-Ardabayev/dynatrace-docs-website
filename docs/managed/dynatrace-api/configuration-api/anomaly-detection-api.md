@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anoma
 # Anomaly detection API
 
 * Reference
-* Published Aug 27, 2019
+* Updated on Apr 24, 2026
 
 ### Application
 

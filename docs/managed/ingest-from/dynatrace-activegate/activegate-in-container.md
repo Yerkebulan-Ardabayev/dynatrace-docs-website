@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/acti
 # ActiveGate container image
 
 * 2-min read
-* Updated on May 09, 2025
+* Updated on Nov 25, 2025
 
 Dynatrace supports running ActiveGate in a container. As an example of a container-based deployment, this page describes how to deploy container-based ActiveGate using a StatefulSet on Kubernetes/OpenShift.
 

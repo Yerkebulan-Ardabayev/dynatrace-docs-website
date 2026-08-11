@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-
 
 * How-to guide
 * 9-min read
-* Updated on Mar 30, 2026
+* Updated on Aug 05, 2026
 
 Dynatrace Synthetic Monitoring Classic offers various methods for monitoring web applications or API endpoints that require authentication. Read on for an overview of the most common scenarios and the appropriate methods to use.
 
@@ -104,7 +104,13 @@ Supported username formats
 
 ### Client certificate authentication for web applications
 
-Certificate authentication is available for browser monitors executed from any [public location](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring Classic locations.") and on Linux-based [private locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring."). Once you set up your browser monitor, you need to specify client certificate details in the **Advanced setup** tab of monitor settings in edit mode.
+Client certificate authentication is supported for browser monitors executed from:
+
+* Any [public location](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring Classic locations.")
+* Linux-based [private locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")
+* Linux-based [containerized private locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations "Deploy and manage containerized, auto-scalable private Synthetic locations on Kubernetes/RedHat OpenShift.")
+
+Once you set up your browser monitor, you need to specify client certificate details in the **Advanced setup** tab of monitor settings in edit mode.
 
 Monitor a single page
 

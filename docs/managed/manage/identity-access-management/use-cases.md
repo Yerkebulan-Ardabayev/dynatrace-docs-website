@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/identity-access-management/use
 
 * Reference
 * 1-min read
-* Published Jul 01, 2024
+* Updated on Nov 25, 2025
 
 Learn how to use the Dynatrace identity and access management to create a flexible and fine-tuned access control system tailored to your organization's needs.
 

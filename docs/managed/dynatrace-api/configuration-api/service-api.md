@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/servi
 # Services configuration API
 
 * Reference
-* Published Jun 19, 2019
+* Updated on May 25, 2026
 
 ### Calculated service metrics
 

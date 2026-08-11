@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-l
 # Extend log observability
 
 * 1-min read
-* Published Feb 04, 2022
+* Updated on Nov 25, 2025
 
 [### Log Analytics
 

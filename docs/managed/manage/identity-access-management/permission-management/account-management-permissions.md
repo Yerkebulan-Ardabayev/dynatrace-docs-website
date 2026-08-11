@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/identity-access-management/per
 
 * Reference
 * 5-min read
-* Published Feb 01, 2022
+* Updated on Feb 03, 2026
 
 Users need specific permissions to access Account Management. Capabilities are guarded in Account Management by the permissions shown in the following table.
 

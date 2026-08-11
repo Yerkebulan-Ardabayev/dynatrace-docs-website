@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/platform/oneagent/supported-monitorin
 # OneAgent monitoring capabilities
 
 * 3-min read
-* Published Oct 12, 2018
+* Updated on Jan 29, 2026
 
 OneAgent offers a rich set of monitoring capabilities.
 

@@ -471,4 +471,4 @@ If not, check if `enableIstio` is set to `true` in the DynaKube.
 
 ## Related topics
 
-* [Configure OpenTelemetry tracing with Istio](/managed/ingest-from/opentelemetry/integrations/istio "Learn how to configure Istio on Kubernetes to deploy pre-configured proxy services for OpenTelemetry tracing.")
+* [Configure OpenTelemetry tracing with Istio](/managed/ingest-from/opentelemetry/integrations/istio "Configure Istio to export OpenTelemetry traces to Dynatrace using the Istio OpenTelemetry extension provider, in a standalone deployment or with Dynatrace Operator.")

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp
 
 * How-to guide
 * 3-min read
-* Published Jul 25, 2023
+* Updated on Feb 09, 2026
 
 The `Dynatrace.OpenTelemetry.Instrumentation.GoogleCloudFunctions` NuGet package provides APIs for tracing server-side .NET Google Cloud Function (GCF) invocations.
 

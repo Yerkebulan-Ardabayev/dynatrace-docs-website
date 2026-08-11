@@ -21,7 +21,7 @@ Digital Experience | RUM Web
 
 You can now specify a custom prefix for the RUM monitoring code filename, which helps prevent it from being blocked by ad blockers.
 
-For more information, see [Configure the Real User Monitoring Classic code source](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source#configure-custom-monitoring-code-filename-prefix "Configure the Real User Monitoring Classic code source for your specific requirements.").
+For more information, see [Configure the monitoring code source in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source#configure-custom-monitoring-code-filename-prefix "Configure the monitoring code source in RUM Classic to meet your specific requirements.").
 
 Dynatrace Cluster
 

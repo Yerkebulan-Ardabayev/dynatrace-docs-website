@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-
 # Metrics API v2
 
 * Reference
-* Updated on Jan 22, 2026
+* Updated on Apr 24, 2026
 
 [### Get all
 

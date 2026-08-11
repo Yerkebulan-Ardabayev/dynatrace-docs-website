@@ -45,7 +45,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Directory (tenant) ID `directoryId` | text | Directory (tenant) ID of Microsoft Entra ID | Required |
 | Application (client) ID `applicationId` | text | Application (client) ID of your app registered in Microsoft Azure App registrations | Required |
 | Client secret `clientSecret` | secret | Client secret of your app registered in Microsoft Azure App registrations | Required |
-| Consumers `consumers` | [ConsumersOfClientSecret](#ConsumersOfClientSecret)[] | Dynatrace integrations that can use this connection The element has these enums * `DA` * `SVC:com.dynatrace.da` * `NONE` | Required |
+| Consumers `consumers` | [ConsumersOfClientSecret](#ConsumersOfClientSecret)[] | Dynatrace integrations that can use this connection The element has these enums * `SVC:com.dynatrace.da` | Required |
 
 ##### The `FederatedIdentityCredential` object
 
@@ -53,4 +53,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Directory (tenant) ID `directoryId` | text | Directory (tenant) ID of Microsoft Entra ID | Optional |
 | Application (client) ID `applicationId` | text | Application (client) ID of your app registered in Microsoft Azure App registrations | Optional |
-| Consumers `consumers` | [ConsumersOfFederatedIdentityCredential](#ConsumersOfFederatedIdentityCredential)[] | Consumers that can use the connection The element has these enums * `DA` * `SVC:com.dynatrace.da` * `APP:dynatrace.microsoft.azure.connector` * `SVC:com.dynatrace.openpipeline` * `SVC:com.dynatrace.grail` * `SVC:com.dynatrace.bo` * `NONE` | Required |
+| Consumers `consumers` | [ConsumersOfFederatedIdentityCredential](#ConsumersOfFederatedIdentityCredential)[] | Consumers that can use the connection The element has these enums * `SVC:com.dynatrace.da` * `APP:dynatrace.microsoft.azure.connector` * `SVC:com.dynatrace.openpipeline` * `SVC:com.dynatrace.grail` * `SVC:com.dynatrace.bo` | Required |

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 # OneAgent non-privileged mode on Linux
 
 * 7-min read
-* Updated on May 20, 2026
+* Updated on Aug 06, 2026
 
 By default, OneAgent is installed in the non-privileged mode, in which superuser privileges are used once to initiate the installation process.
 
@@ -58,6 +58,7 @@ Dynatrace OneAgent Watchdog starts and runs all other processes under an unprivi
 | oneagentdmidecode | `cap_dac_override` - for filesystem access |
 | oneagentmntconstat | `cap_dac_read_search` - for retrieving disk occupation stats with ``` statvfs64()``cap_sys_chroot ``` - for `setns()` syscall`cap_sys_admin` - for `setns()` syscall`cap_sys_ptrace` - for accessing `/proc/1/ns` |
 | oneagentebpfdiscovery | `cap_bpf` (kernel >=5.8)[7](#fn-1-7-def)`cap_perfmon` (kernel >=5.8)[7](#fn-1-7-def)`cap_sys_admin` (kernel <5.8, or when `cap_bpf` is explicitly blocked)[7](#fn-1-7-def)`cap_dac_override` - for write access to /sys/kernel/debug/tracing`cap_sys_resource` - for removing memory usage limitation of the bpf program |
+| oneagenthealthcheck | `cap_sys_chroot` - for mounted host root introspection in containerized-deployment`cap_dac_read_search` - to check selinux, apparmor denials in system journal and to verify selinux file contexts of OneAgent installation |
 
 1
 

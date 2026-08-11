@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/whats-new/technology
 # New technology support
 
 * Reference
-* Published Jul 13, 2022
+* Updated on Apr 09, 2026
 
 Discover new technologies that can be monitored with Dynatrace, and how to get started. Included are OneAgent operating systems and code modules, mainframe, serverless integrations, and platform extensions.
 

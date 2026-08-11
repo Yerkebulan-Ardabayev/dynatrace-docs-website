@@ -72,7 +72,7 @@ Digital Experience | RUM Web
 
 You can now leverage the subresource integrity browser feature to ensure the integrity of the RUM monitoring code that is automatically injected or manually inserted into your web application.
 
-For more information, see [Use Subresource Integrity (SRI) for Real User Monitoring Classic code](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/subresource-integrity "Use the Subresource Integrity (SRI) browser feature to ensure the integrity of Real User Monitoring Classic code.").
+For more information, see [Use Subresource Integrity (SRI) in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/subresource-integrity "Use the Subresource Integrity (SRI) browser feature to ensure the integrity of the RUM monitoring code.").
 
 Digital Experience | Synthetic
 

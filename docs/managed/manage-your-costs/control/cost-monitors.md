@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage-your-costs/control/cost-monito
 
 * Explanation
 * 5-min read
-* Updated on Jun 01, 2026
+* Updated on Jun 11, 2026
 
 Cost monitors help you manage your Dynatrace Platform Subscription budget and identify unexpected cost increases.
 They monitor your overall forecasted usage and warn you when costs increase significantly, or forecasts exceed user-defined threshold amounts.

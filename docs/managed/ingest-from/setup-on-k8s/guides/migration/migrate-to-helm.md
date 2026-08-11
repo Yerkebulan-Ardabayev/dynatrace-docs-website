@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/migra
 # Migrate from manifests to Helm for Dynatrace Operator installation
 
 * 1-min read
-* Published Jul 22, 2024
+* Updated on Feb 19, 2026
 
 This guide describes the steps required to migrate from using manifests to Helm. This approach simplifies the deployment process and configuration of Dynatrace Operator.
 

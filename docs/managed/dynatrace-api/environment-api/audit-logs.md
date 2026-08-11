@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/audit-l
 # Audit logs API
 
 * Reference
-* Published Dec 10, 2019
+* Updated on Mar 03, 2025
 
 [### Fetch the list
 

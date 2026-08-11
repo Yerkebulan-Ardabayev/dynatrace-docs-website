@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/acti
 # Containerized ActiveGate configuration
 
 * 6-min read
-* Published Sep 01, 2023
+* Updated on Dec 03, 2025
 
 An ActiveGate container can be configured to some degree using container-specific methods via variables or secrets. More advanced settings require providing an ActiveGate `custom.properties` file. See [Advanced configuration](#advanced-configuration) to learn how to use Kubernetes mechanisms such as `ConfigMap` to map it into the `custom.properties`.
 
@@ -123,8 +123,8 @@ The proxy password needs to meet the following requirements.
 
 | Requirements | Corresponding characters |
 | --- | --- |
-| Characters allowed | [A-Za-z0-9] ! " # $ ( ) \* - . / : ; < > ? @ [ ] ^ \_ { | } |
-| Characters not allowed | blank space ' ` , & = + % \ |
+| Characters allowed | [A-Za-z0-9]! " # $ ( ) \* - . / : ; < > ? @ [ ] ^ \_ { | } |
+| Characters not allowed | blank space' ` , & = + % \ |
 
 ### Load balancer between ActiveGate and OneAgents
 

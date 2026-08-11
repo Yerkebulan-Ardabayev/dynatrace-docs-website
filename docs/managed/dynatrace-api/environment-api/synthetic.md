@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 # Synthetic API v1
 
 * Reference
-* Published Sep 25, 2018
+* Updated on Oct 09, 2024
 
 The **Synthetic** API enables you manage your synthetic monitors and push external synthetic data to Dynatrace.
 

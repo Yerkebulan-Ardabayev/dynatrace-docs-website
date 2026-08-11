@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api
 # Environment API
 
 * Reference
-* Published Apr 01, 2019
+* Updated on Apr 08, 2026
 
 ## Basics
 

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-
 # Tokens API v2
 
 * Reference
-* Published Feb 23, 2021
+* Updated on Apr 24, 2026
 
 [### Access tokens
 

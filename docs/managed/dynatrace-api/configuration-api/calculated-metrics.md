@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calcu
 # Calculated metrics API
 
 * Reference
-* Published Apr 16, 2020
+* Updated on May 25, 2026
 
 ### Mobile apps
 

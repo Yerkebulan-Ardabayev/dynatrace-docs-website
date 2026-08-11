@@ -65,6 +65,6 @@ To link cross-origin XHR user actions and their distributed traces using the `x-
 5. From the application settings, select **Capturing** > **Advanced setup**.
 6. Under **Enable Real User Monitoring for cross-origin XHR calls**, specify a regular expression that matches the XHR calls.
 
-If the `x-dtc` header is not added to the request after following the directions above, check your regular expression and ensure that [RUM is configured to capture XHR actions](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/configure-dynatrace-real-user-monitoring-to-capture-xhr-actions "Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring Classic for XHR actions.").
+If the `x-dtc` header is not added to the request after following the directions above, check your regular expression and ensure that [RUM Classic is configured to capture XHR actions](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/configure-dynatrace-real-user-monitoring-to-capture-xhr-actions "Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring Classic for XHR actions.").
 
 Only the actual request can be linked not the preflight request.

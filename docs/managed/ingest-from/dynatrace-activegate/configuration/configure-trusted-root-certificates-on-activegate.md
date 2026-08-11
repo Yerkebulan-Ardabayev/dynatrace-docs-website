@@ -34,7 +34,7 @@ Adding a certificate is a potential security concern. Consult your organization'
 
 ### Determine the required CA certificates and prepare them as a file
 
-If you want to configure truststore certificates for extensions, see [Oracle Database monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring#ssl "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.").  
+The ActiveGate truststore described on this page does not apply to Extensions. To configure truststore certificates for an extension, see the documentation for that specific extension.  
 To upload the certificate for custom Extensions verification, see [Upload your root certificate](/managed/ingest-from/extensions/develop-your-extensions/sign-extensions#upload "Learn how to sign an extension, upload certificates and custom extensions, and configure certificate permissions using the Dynatrace Extensions Framework.").
 
 Before you add a certificate to the ActiveGate, you need to obtain it and place it in the `ca.crt` file.

@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/manage/data-privacy-and-security/data
 * Reference
 * Updated on May 04, 2026
 
-Dynatrace Real User Monitoring (RUM) relies on HTTP headers, cookies, web storage, and IndexedDB. The headers used are listed in [Infrastructure pass-through requirements for RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/infrastructure-pass-through-requirements-classic "Learn which requests, headers, and cookies must pass through your infrastructure for RUM to work as expected."). This page describes the cookies, web storage, and IndexedDB entries used.
+Dynatrace Real User Monitoring (RUM) relies on HTTP headers, cookies, web storage, and IndexedDB. The headers used are listed in [Infrastructure pass-through requirements for RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/infrastructure-pass-through-requirements-classic "Learn which requests, headers, and cookies must pass through your infrastructure for RUM Classic to work as expected."). This page describes the cookies, web storage, and IndexedDB entries used.
 
 Cookies, web storage, and IndexedDB are used for the following purposes:
 
@@ -25,7 +25,7 @@ The data stored in cookies, web storage, and IndexedDB contains no personal or s
 
 ## Cookies
 
-The following table provides an overview of the cookies used in RUM and Session Replay. These are all first-party cookies.
+The following table provides an overview of the cookies used in RUM, RUM Classic, and Session Replay. These are all first-party cookies.
 
 The `<suffix>` used in the table is explained in [Suffix for cookie names and web storage keys](#cookie-and-web-storage-suffix).
 
@@ -52,11 +52,11 @@ The optional `dtSR` cookie is available from RUM JavaScript version 1.335+.
 
 Dynatrace RUM does not support the `HttpOnly` attribute. Since `HttpOnly` cookies are inaccessible to JavaScript, the RUM JavaScript cannot read or modify them. Ensure that your infrastructure doesn't add the `HttpOnly` attribute, because this will break monitoring.
 
-If your company's security policy requires the `Secure` and `SameSite` cookie attributes, you need to configure RUM to set them, since they aren't set by default; see [Configure RUM Classic cookie attributes](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-cookie-attributes#data-privacy-relevant-attributes "Learn which RUM cookie attributes you can configure and how.").
+If your company's security policy requires the `Secure` and `SameSite` cookie attributes, you need to configure RUM to set them, since they aren't set by default; see [Configure cookie attributes in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-cookie-attributes#data-privacy-relevant-attributes "Learn which RUM cookie attributes you can configure and how.").
 
 ## Web storage
 
-RUM and Session Replay use both `sessionStorage` and `localStorage`. The following table lists the possible entries. Some of them back up RUM and Session Replay cookies, because browsers may evict cookies when a large number of them are set.
+RUM, RUM Classic, and Session Replay use both `sessionStorage` and `localStorage`. The following table lists the possible entries. Some of them back up RUM, RUM Classic, and Session Replay cookies, because browsers may evict cookies when a large number of them are set.
 
 | Key | Storage | Purpose |
 | --- | --- | --- |
@@ -97,8 +97,8 @@ If you need the full cookie names to configure your firewalls and other infrastr
 
 Dynatrace cookies, web storage, and IndexedDB are required for Real User Monitoring to work. By default, Dynatrace creates them automatically. To protect your end users' privacy, you can give them the option to accept or decline cookies, web storage, and monitoring in general. This is done through [opt-in mode](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr#user-opt-in-mode-gdpr "Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.").
 
-When opt-in mode is enabled, RUM is disabled by default. As a result, Dynatrace sets no cookies, does not use web storage, and does not write to IndexedDB. After an end user accepts your data privacy policy, your application must call `dtrum.enable()` through the JavaScript API to start capturing data. Dynatrace creates cookies and writes to web storage and IndexedDB only after this method is called.
+When opt-in mode is enabled, monitoring is disabled by default. As a result, Dynatrace sets no cookies, does not use web storage, and does not write to IndexedDB. After an end user accepts your data privacy policy, your application must call `dtrum.enable()` through the JavaScript API to start capturing data. Dynatrace creates cookies and writes to web storage and IndexedDB only after this method is called.
 
 For details on enabling opt-in mode, see [Configure data privacy settings for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr#user-opt-in-mode-gdpr "Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.").
 
-If users do not opt in, Real User Monitoring remains disabled.
+If users do not opt in, monitoring remains disabled.

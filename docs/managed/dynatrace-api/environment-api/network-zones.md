@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/network
 # Network zones API
 
 * Reference
-* Published Mar 05, 2020
+* Updated on May 25, 2026
 
 [### List all network zones
 

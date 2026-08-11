@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-
 # Timeseries API v1
 
 * Reference
-* Published Jul 19, 2017
+* Updated on Dec 05, 2024
 
 This API is deprecated. It will be removed in the future. Use [Metrics API v2](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.") instead.
 

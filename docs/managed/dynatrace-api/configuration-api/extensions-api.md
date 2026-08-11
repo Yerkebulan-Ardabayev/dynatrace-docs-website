@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/exten
 # Extensions API
 
 * Reference
-* Published Mar 06, 2020
+* Updated on May 07, 2026
 
 [### List all extensions
 

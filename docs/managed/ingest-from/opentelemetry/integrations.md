@@ -13,4 +13,4 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/integration
 
 This page provides information on how to configure Istio and Envoy to export OpenTelemetry data to Dynatrace.
 
-[### Istio](/managed/ingest-from/opentelemetry/integrations/istio "Learn how to configure Istio on Kubernetes to deploy pre-configured proxy services for OpenTelemetry tracing.")[### Envoy](/managed/ingest-from/opentelemetry/integrations/envoy "Learn how to configure Envoy to send OpenTelemetry traces to Dynatrace.")
+[### Istio](/managed/ingest-from/opentelemetry/integrations/istio "Configure Istio to export OpenTelemetry traces to Dynatrace using the Istio OpenTelemetry extension provider, in a standalone deployment or with Dynatrace Operator.")[### Envoy](/managed/ingest-from/opentelemetry/integrations/envoy "Configure Envoy to export OpenTelemetry traces to Dynatrace using the Envoy OpenTelemetry tracer, including resource detection and adaptive sampling.")

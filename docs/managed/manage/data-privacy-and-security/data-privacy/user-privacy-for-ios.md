@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/manage/data-privacy-and-security/data
 # User privacy for iOS
 
 * 3-min read
-* Updated on Nov 21, 2024
+* Updated on Dec 11, 2025
 
 Starting December 8, 2020, Apple requires you to provide information about your app's privacy practices, including the practices of third-party partners like Dynatrace.
 

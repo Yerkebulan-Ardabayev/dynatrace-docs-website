@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/known-
 # Known solutions and workarounds
 
 * 14-min read
-* Updated on Feb 26, 2024
+* Updated on Nov 25, 2025
 
 This page details a number of resolved issues and solutions to issues that have been reported to the Dynatrace Support team.
 

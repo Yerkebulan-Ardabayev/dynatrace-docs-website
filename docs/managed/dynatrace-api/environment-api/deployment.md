@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deploym
 # Deployment API
 
 * Reference
-* Published Aug 27, 2019
+* Updated on May 07, 2026
 
 ### OneAgent
 

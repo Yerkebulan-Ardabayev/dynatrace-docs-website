@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/identity-access-management/acc
 
 * Overview
 * 1-min read
-* Published Jul 01, 2024
+* Updated on Nov 25, 2025
 
 [## OAuth clients
 

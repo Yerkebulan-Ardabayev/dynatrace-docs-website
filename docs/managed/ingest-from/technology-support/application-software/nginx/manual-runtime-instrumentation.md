@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/applic
 # Runtime instrumentation
 
 * 2-min read
-* Updated on Oct 26, 2022
+* Updated on Nov 25, 2025
 
 The NGINX code module relies on ahead-of-time assumptions about the internal NGINX data structure declarations and their layout in the memory during its automatic instrumentation. If the underlying data structure declarations are patched (meaning the source code defining these structures has been modified) and hence the ahead-of-time assumptions are invalid, the automatic instrumentation done by the code module may cause problems on NGINX due to reading from, or writing to, wrong parts of the memory.
 

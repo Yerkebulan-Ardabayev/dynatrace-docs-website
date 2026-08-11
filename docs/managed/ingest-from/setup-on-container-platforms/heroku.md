@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platfo
 # Set up Dynatrace on Heroku
 
 * 6-min read
-* Updated on Jun 23, 2023
+* Updated on Jun 09, 2026
 
 Heroku is a cloud Platform as a Service (PaaS) that enables you to build and run applications in the cloud. Applications deployed to Heroku are usually run through one or more buildpacks that provide framework and runtime support.
 

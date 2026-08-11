@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-m
 # Send StatsD metrics to Dynatrace
 
 * 5-min read
-* Updated on Jun 18, 2025
+* Updated on Nov 25, 2025
 
 StatsD is an industry standard for communicating arbitrary statistics and other metrics in a vendor-independent way via UDP. We recommend that you use Dynatrace OneAgent to ingest your metrics, as OneAgent comes with a StatsD daemon out of the box. This means that any application or library that supports StatsD can send metrics to Dynatrace. You only need to install OneAgent and make sure that your StatsD client uses the right port (`18125` by default).
 

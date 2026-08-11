@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp
 
 * How-to guide
 * 2-min read
-* Updated on Mar 31, 2025
+* Updated on Feb 09, 2026
 
 Dynatrace uses [OpenTelemetry﻿](https://dt-url.net/y903u4j) to monitor Google Cloud Functions invocations.
 

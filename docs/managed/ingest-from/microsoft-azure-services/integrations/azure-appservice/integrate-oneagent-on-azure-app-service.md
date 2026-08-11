@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/
 
 * How-to guide
 * 9-min read
-* Published Oct 16, 2018
+* Updated on Feb 18, 2026
 
 Azure App Service provides many different hosting options for Windows, Linux, and containers with shared infrastructure ([App Service plan﻿](https://dt-url.net/f4031wl)), or fully isolated and dedicated infrastructure ([Azure App Service Environment﻿](https://dt-url.net/u0231c3)).
 

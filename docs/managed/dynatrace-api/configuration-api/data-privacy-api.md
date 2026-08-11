@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/data-
 # Data privacy API
 
 * Reference
-* Published Nov 15, 2018
+* Updated on Apr 24, 2026
 
 The **Data privacy** API enables you to manage global data privacy settings.
 

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/whats-new/technology/end-of-life-anno
 
 * Reference
 * 1-min read
-* Updated on Jul 14, 2026
+* Updated on Aug 03, 2026
 
 ## General policy
 
@@ -126,3 +126,20 @@ This action is superseded by Environment ActiveGate auto-update, which now suppo
 ### Recommended actions
 
 * Configure a target version, update mode, and update windows for your Environment ActiveGates in [Update ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.").
+
+## Built-in cluster container registry
+
+The built-in cluster container registry is the registry the Dynatrace Operator pulls Dynatrace images from by default when you deploy OneAgent to Kubernetes or OpenShift from a Dynatrace Managed cluster. This registry is reaching end of life. Migrate to a public registry (Amazon ECR or Docker Hub) to keep pulling Dynatrace images.
+
+### Key dates
+
+* **End of Life (EoL)**: January 1, 2028. On this date, the built-in cluster container registry is shut down and no longer functions.
+
+### What's changing?
+
+After the EoL date, `dynakube.yaml` configurations that rely on the built-in cluster container registry (those without explicit `image` and `codeModulesImage` fields) can no longer pull Dynatrace images.
+
+### Recommended actions
+
+* When you deploy OneAgent to Kubernetes or OpenShift, select **Amazon ECR** or **Docker Hub** as the container registry. See [Full Kubernetes observability](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes or OpenShift. Covers installation options, package requirements, and prerequisites.").
+* For existing deployments, set the `image` and `codeModulesImage` fields to a public registry. See [Use a public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.").

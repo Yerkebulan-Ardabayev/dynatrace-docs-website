@@ -1,11 +1,11 @@
 ---
-title: Use Subresource Integrity (SRI) for Real User Monitoring Classic code
+title: Use Subresource Integrity (SRI) in RUM Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/subresource-integrity
 ---
 
-# Use Subresource Integrity (SRI) for Real User Monitoring Classic code
+# Use Subresource Integrity (SRI) in RUM Classic
 
-# Use Subresource Integrity (SRI) for Real User Monitoring Classic code
+# Use Subresource Integrity (SRI) in RUM Classic
 
 * How-to guide
 * 2-min read
@@ -13,7 +13,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 Integrating third-party resources into web pages, such as those from a Content Delivery Network (CDN), poses the risk that an attacker could potentially gain control of the third-party host and manipulate these resources. The [Subresource Integrity (SRI)﻿](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) browser feature mitigates this risk by ensuring that only unaltered resources are used. It does this by including a cryptographic hash that the fetched resource must match.
 
-Dynatrace RUM supports SRI through a dedicated snippet format [OneAgent JavaScript tag with SRI](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#oneagent-js-tag-sri "Select a format for the RUM JavaScript snippet that best fits your specific use case"). It contains a hash for the RUM monitoring code. If the hash doesn't match the monitoring code received by the browser, the code won't be executed.
+RUM Classic supports SRI through a dedicated snippet format [OneAgent JavaScript tag with SRI](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#oneagent-js-tag-sri "Select a format for the RUM JavaScript snippet that best fits your specific use case"). It contains a hash for the RUM monitoring code. If the hash doesn't match the monitoring code received by the browser, the code won't be executed.
 
 When Session Replay is enabled, the Session Replay monitoring code is injected into your page by the RUM JavaScript as an external resource, resulting in a separate request. Starting with RUM JavaScript version 1.309, if you use the OneAgent JavaScript tag with SRI, the RUM JavaScript will inject both the Session Replay monitoring code and a cryptographic hash to ensure its integrity.
 
@@ -23,8 +23,8 @@ SRI is not supported for the snippet formats JavaScript tag and code snippet due
 
 Note that all connected ActiveGates must be on ActiveGate version 1.310+ for at least 30 days before this feature becomes available.
 
-For auto-injected applications, the Real User monitoring code is, by default, delivered by OneAgent. To use SRI, you need to configure your application to request the monitoring code from your CDN or Cluster ActiveGate as described in
-[Configure the Real User Monitoring Classic code source](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source#request-rum-monitoring-code-from-cdn "Configure the Real User Monitoring Classic code source for your specific requirements."). This will allow you to select the necessary snippet format.
+For auto-injected applications, the monitoring code is, by default, delivered by OneAgent. To use SRI, you need to configure your application to request the monitoring code from your CDN or Cluster ActiveGate as described in
+[Configure the monitoring code source in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source#request-rum-monitoring-code-from-cdn "Configure the monitoring code source in RUM Classic to meet your specific requirements."). This will allow you to select the necessary snippet format.
 
 1. Go to **Web**.
 2. Select the application that you want to configure.

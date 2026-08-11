@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/o
 # Set up Kubernetes platform monitoring with DaemonSet
 
 * 4-min read
-* Published Jan 21, 2020
+* Updated on Nov 25, 2025
 
 Deprecated
 

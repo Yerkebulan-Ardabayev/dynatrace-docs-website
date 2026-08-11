@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/problem
 # Problems API v1
 
 * Reference
-* Updated on Jun 13, 2022
+* Updated on Apr 08, 2026
 * Deprecated
 
 This API is deprecated. Use the [Problems API v2](/managed/dynatrace-api/environment-api/problems-v2 "Find out what the Dynatrace Problems v2 API offers.") instead.

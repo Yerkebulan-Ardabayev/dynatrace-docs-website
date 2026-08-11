@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/
 
 * How-to guide
 * 1-min read
-* Published Mar 07, 2024
+* Updated on Feb 09, 2026
 
 Dynatrace version 1.281+ Environment ActiveGate version 1.195+
 

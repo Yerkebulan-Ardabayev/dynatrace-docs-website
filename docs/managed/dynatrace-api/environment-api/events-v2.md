@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/events-
 # Events API v2
 
 * Reference
-* Published Aug 06, 2021
+* Updated on Apr 08, 2026
 
 [### List events
 

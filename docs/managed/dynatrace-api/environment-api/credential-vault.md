@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/credent
 # Credential vault API
 
 * Reference
-* Published Oct 14, 2019
+* Updated on Apr 08, 2026
 
 The **Credential vault API** empowers you to manage credentials for synthetic [browser](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.") and [HTTP](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.") monitors.
 

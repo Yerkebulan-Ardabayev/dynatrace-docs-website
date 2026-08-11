@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/netwo
 # Network configurations
 
 * 4-min read
-* Published Mar 25, 2024
+* Updated on Mar 02, 2026
 
 Configure Dynatrace in network-restricted environments with network configurations, proxy settings, and URL exclusions.
 
@@ -89,8 +89,8 @@ For proxies requiring credentials.
 
    | Requirements | Corresponding characters |
    | --- | --- |
-   | Characters allowed | [A-Za-z0-9] ! " # $ ( ) \* - . / : ; < > ? @ [ ] ^ \_ { | } |
-   | Characters not allowed | blank space ' ` , & = + % \ |
+   | Characters allowed | [A-Za-z0-9]! " # $ ( ) \* - . / : ; < > ? @ [ ] ^ \_ { | } |
+   | Characters not allowed | blank space' ` , & = + % \ |
 
    The password in the custom resource or proxy secret must be URL-encoded. For example, `password!"#$()*-./:;<>?@[]^_{|}~` becomes `password!%22%23%24()*-.%2F%3A%3B%3C%3E%3F%40%5B%5D%5E_%7B%7C%7D~`.
 2. Provide the name of the secret in the `valueFrom` section.

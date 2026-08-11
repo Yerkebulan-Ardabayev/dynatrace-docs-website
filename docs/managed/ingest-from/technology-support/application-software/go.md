@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/applic
 
 * Reference
 * 1-min read
-* Published Mar 19, 2018
+* Updated on Mar 31, 2026
 
 Go is a programming language created by Robert Griesemer, Rob Pike, and Ken Thompson. Go is the cloud-native programming language of choice for many organizations.
 

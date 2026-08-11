@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/conta
 # Use a private registry
 
 * 5-min read
-* Updated on Jul 10, 2026
+* Updated on Aug 03, 2026
 
 For users seeking greater control over their image hosting environment, Dynatrace offers the option to replicate images and signatures to private registries.
 
@@ -142,6 +142,8 @@ To avoid tedious and error-prone editing of large YAML files, we recommend using
 If you prefer to make your modifications directly, however, be sure to adjust the `image` and `imagePullSecrets` fields on all containers and pods where the `dynatrace-operator` image occurs.
 
 ## Configure DynaKube to use images from private registry
+
+If you selected **Private Container Registry** in the guided Kubernetes deployment ([Full Kubernetes observability](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes or OpenShift. Covers installation options, package requirements, and prerequisites.")), add the image fields described in this section to your `dynakube.yaml` after you download it.
 
 To instruct Dynatrace Operator to use container images from a private registry, configure the respective `image` fields in the DynaKube custom resource. The configured images will be deployed to your Kubernetes cluster to set up monitoring components.
 

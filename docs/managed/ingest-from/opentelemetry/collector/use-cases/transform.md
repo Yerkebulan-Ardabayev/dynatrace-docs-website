@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/u
 
 * How-to guide
 * 4-min read
-* Published Aug 19, 2024
+* Updated on Jun 15, 2026
 
 The following configuration example shows how to configure a Collector instance to transform and manipulate OTLP requests, before forwarding them to Dynatrace.
 
@@ -17,7 +17,7 @@ Using the processors shown in this example (`filter` and `transform`), it is pos
 
 ## Prerequisites
 
-* One of the following Collector distributions with the [transform﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.157.0/processor/transformprocessor) and [filter﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.157.0/processor/filterprocessor) processors
+* One of the following Collector distributions with the [transform﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/processor/transformprocessor) and [filter﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/processor/filterprocessor) processors
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + OpenTelemetry [Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -307,34 +307,34 @@ This is for demonstration purposes. You can specify any other valid receiver her
 
 #### Transform
 
-Under `processors`, we specify the [`transform` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.157.0/processor/transformprocessor) with a set of different attribute modification statements. `context` indicates the scope to which the statements should apply (here, `resource` for resource attributes, `span` for span attributes, and `metric` for metrics).
+Under `processors`, we specify the [`transform` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/processor/transformprocessor) with a set of different attribute modification statements. `context` indicates the scope to which the statements should apply (here, `resource` for resource attributes, `span` for span attributes, and `metric` for metrics).
 
-See the [OpenTelemetry documentation of the transform processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.157.0/processor/transformprocessor/README.md) for more details on the individual configuration options.
+See the [OpenTelemetry documentation of the transform processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.158.0/processor/transformprocessor/README.md) for more details on the individual configuration options.
 
 The sample configuration above uses the following statements:
 
 | Statement | Description |
 | --- | --- |
-| [`keep_matching_keys`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.157.0/pkg/ottl/ottlfuncs/README.md#keep_matching_keys) | Evaluates the attribute key names and only keeps those, whose names match the given regular expressions of `^(aaa|bbb|ccc).*` for resource attributes and `(^xyz.pqr$)|(^(aaa|bbb|ccc).*)` for span attributes. |
-| [`set`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.157.0/pkg/ottl/ottlfuncs/README.md#set) | Adds/changes the following two span attributes:  * `svc.marker`, with the static value `purchasing` * `purchase.id`, coverting its value to uppercase, using [`ConvertCase`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.157.0/pkg/ottl/ottlfuncs/README.md#convertcase) |
-| [`delete_key`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.157.0/pkg/ottl/ottlfuncs/README.md#delete_key) | Deletes attributes named `message`. |
-| [`replace_pattern`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.157.0/pkg/ottl/ottlfuncs/README.md#replace_pattern) | Matches a string against a given regular expression and perform a string substitution on all matching entries.  In our example, we first use it for traces to match the name against the regular expression `^.*(DataSubmission-\d+).*$` and replace its content with the first capture group (`$$1`) of our expression. This essentially means, we search strings for `DataSubmission` suffixed by a number and — if found — only keep the value of the found match.  We also use the function for metrics with the regular expression `(.*)_bad$`, to change the `_bad` suffix to `_invalid`. |
+| [`keep_matching_keys`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.158.0/pkg/ottl/ottlfuncs/README.md#keep_matching_keys) | Evaluates the attribute key names and only keeps those, whose names match the given regular expressions of `^(aaa|bbb|ccc).*` for resource attributes and `(^xyz.pqr$)|(^(aaa|bbb|ccc).*)` for span attributes. |
+| [`set`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.158.0/pkg/ottl/ottlfuncs/README.md#set) | Adds/changes the following two span attributes:  * `svc.marker`, with the static value `purchasing` * `purchase.id`, coverting its value to uppercase, using [`ConvertCase`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.158.0/pkg/ottl/ottlfuncs/README.md#convertcase) |
+| [`delete_key`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.158.0/pkg/ottl/ottlfuncs/README.md#delete_key) | Deletes attributes named `message`. |
+| [`replace_pattern`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.158.0/pkg/ottl/ottlfuncs/README.md#replace_pattern) | Matches a string against a given regular expression and perform a string substitution on all matching entries.  In our example, we first use it for traces to match the name against the regular expression `^.*(DataSubmission-\d+).*$` and replace its content with the first capture group (`$$1`) of our expression. This essentially means, we search strings for `DataSubmission` suffixed by a number and — if found — only keep the value of the found match.  We also use the function for metrics with the regular expression `(.*)_bad$`, to change the `_bad` suffix to `_invalid`. |
 
 #### Filter
 
-In addition, we also configure an instance of the [`filter` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.157.0/processor/filterprocessor), to filter signal based on the following criteria:
+In addition, we also configure an instance of the [`filter` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/processor/filterprocessor), to filter signal based on the following criteria:
 
 | Signal | Description |
 | --- | --- |
-| Traces | Uses [`IsMatch`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.157.0/pkg/ottl/ottlfuncs/README.md#ismatch) to match the name of resource attributes against the regular expression `^my-pod-name.*`, dropping spans with attributes whose names start with `my-pod-name`. |
-| Metrics | Uses [`HasAttrKeyOnDatapoint`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.157.0/processor/filterprocessor/README.md#HasAttrKeyOnDatapoint) to evalute if datapoints have attributes with the name `bad.metric`. |
+| Traces | Uses [`IsMatch`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.158.0/pkg/ottl/ottlfuncs/README.md#ismatch) to match the name of resource attributes against the regular expression `^my-pod-name.*`, dropping spans with attributes whose names start with `my-pod-name`. |
+| Metrics | Uses [`HasAttrKeyOnDatapoint`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.158.0/processor/filterprocessor/README.md#HasAttrKeyOnDatapoint) to evalute if datapoints have attributes with the name `bad.metric`. |
 | Logs | Uses a strict string match of the resource attribute `service.name` against the strings `service1` and `service2`. |
 
-See the [OpenTelemetry documentation of the filter processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.157.0/processor/filterprocessor/README.md) for more details on the individual configuration options.
+See the [OpenTelemetry documentation of the filter processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.158.0/processor/filterprocessor/README.md) for more details on the individual configuration options.
 
 ### Exporter
 
-Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.157.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.158.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

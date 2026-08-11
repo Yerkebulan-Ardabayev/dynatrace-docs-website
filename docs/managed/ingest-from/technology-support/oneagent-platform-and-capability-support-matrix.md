@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/oneage
 # OneAgent platform and capability support matrix
 
 * 13-min read
-* Updated on May 29, 2026
+* Updated on Aug 06, 2026
 
 This page describes which capabilities are supported by OneAgent on different operating systems and platforms.
 
@@ -232,11 +232,15 @@ The following AI providers are available as experimental Python sensors.
 * Anthropic
 * Cohere
 * CrewAI
+* Google Agent Development Kit
 * Groq
 * Haystack
+* LangGraph
 * Mistral AI
 * Ollama
+* OpenAI Agents
 * Google GenAI
+* Pydantic AI
 
 ## Auto-injection of code modules
 

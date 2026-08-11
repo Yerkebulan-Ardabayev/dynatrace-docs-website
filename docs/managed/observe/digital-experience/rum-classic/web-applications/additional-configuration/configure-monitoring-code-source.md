@@ -1,11 +1,11 @@
 ---
-title: Configure the Real User Monitoring Classic code source
+title: Configure the monitoring code source in RUM Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source
 ---
 
-# Configure the Real User Monitoring Classic code source
+# Configure the monitoring code source in RUM Classic
 
-# Configure the Real User Monitoring Classic code source
+# Configure the monitoring code source in RUM Classic
 
 * How-to guide
 * 4-min read
@@ -61,7 +61,7 @@ This configuration is not only effective for automatic injection, but also for [
 
 Note that all connected ActiveGates must be on ActiveGate version 1.310+ for at least 30 days before this feature becomes available.
 
-If you want the monitoring code for an auto-injected application to be requested from the CDN or Cluster ActiveGate that you set up as described in [Set up agentless Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.") instead of OneAgent, follow the steps below.
+If you want the monitoring code for an auto-injected application to be requested from the CDN or Cluster ActiveGate that you set up as described in [Set up agentless monitoring in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.") instead of OneAgent, follow the steps below.
 
 1. Go to **Web**.
 2. Select the application that you want to configure.

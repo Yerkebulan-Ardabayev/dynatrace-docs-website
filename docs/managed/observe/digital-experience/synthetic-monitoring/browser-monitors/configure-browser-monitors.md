@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-
 
 * How-to guide
 * 15-min read
-* Updated on Mar 30, 2026
+* Updated on Aug 05, 2026
 
 Configure your browser monitors easily when first setting them up and at any time after that.
 
@@ -437,7 +437,13 @@ Dynatrace version 1.272+
 
 ActiveGate version 1.271+
 
-You can set up certificate authentication for browser monitors running on any [public location](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring Classic locations.") and [private locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.") with Linux-based ActiveGates ([containerized](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations "Deploy and manage containerized, auto-scalable private Synthetic locations on Kubernetes/RedHat OpenShift.") as well as non-containerized). This control is available in edit mode for single-URL browser monitors and browser clickpaths.
+Client certificate authentication is supported for browser monitors executed from:
+
+* Any [public location](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring Classic locations.")
+* Linux-based [private locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")
+* Linux-based [containerized private locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations "Deploy and manage containerized, auto-scalable private Synthetic locations on Kubernetes/RedHat OpenShift.")
+
+This control is available in edit mode for single-URL browser monitors and browser clickpaths.
 
 Before first recording a clickpath on a website that requires certificate authentication, ensure that you have installed the required certificate in the browser. Then, when you navigate to the website in the recording window, the native browser dialog simply selects the correct certificate.
 

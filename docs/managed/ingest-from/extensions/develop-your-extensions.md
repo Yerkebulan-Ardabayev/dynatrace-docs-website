@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-e
 
 * How-to guide
 * 2-min read
-* Published Jun 16, 2025
+* Updated on Nov 17, 2025
 
 Dynatrace can ingest data from [hundreds of tools﻿](https://www.dynatrace.com/hub/), which means you get:
 
