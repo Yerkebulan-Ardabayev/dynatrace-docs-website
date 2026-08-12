@@ -62,8 +62,8 @@ Cluster Management Console
     - Cluster overload prevention settings
     - Assign environment permissions to user groups
   + To go to the selected Dynatrace environment, select  **Go to environment** in the upper-right corner.
-  + To disable the selected Dynatrace environment, select ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") > **Disable environment** in the upper-right corner.
-  + To export the configuration of the selected Dynatrace environment, select ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") > **Export configuration** in the upper-right corner.
+  + To disable the selected Dynatrace environment, select  > **Disable environment** in the upper-right corner.
+  + To export the configuration of the selected Dynatrace environment, select  > **Export configuration** in the upper-right corner.
 
 ## Events
 
@@ -110,7 +110,7 @@ Cluster Management Console
 
 **Licensing** displays account and licensing information.
 
-To verify your connection to [Mission Control](/managed/managed-cluster/basics/mission-control-proactive-support "Mission Control proactively monitors your Managed Cluster, provides software updates, and keeps your installation secure and reliable."), select ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") > **Check Mission Control connection** in the upper-right corner.
+To verify your connection to [Mission Control](/managed/managed-cluster/basics/mission-control-proactive-support "Mission Control proactively monitors your Managed Cluster, provides software updates, and keeps your installation secure and reliable."), select  > **Check Mission Control connection** in the upper-right corner.
 
 ## Audit log
 

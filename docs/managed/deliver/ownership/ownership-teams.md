@@ -114,7 +114,7 @@ You can **Delete** a team from this view and expand **Details** to view and edit
 
 ### Revision history
 
-Select ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") in the upper-right corner of the **Ownership teams** page and then select **Revision history** for details of changes, including team creation, modification and deletion. Revisions are listed with **Timestamp**, the **Source** of the change (**Web UI** or **API**), and the **User** making the change.
+Select  in the upper-right corner of the **Ownership teams** page and then select **Revision history** for details of changes, including team creation, modification and deletion. Revisions are listed with **Timestamp**, the **Source** of the change (**Web UI** or **API**), and the **User** making the change.
 
 ![History of ownership teams](https://dt-cdn.net/images/ownership-teams-revisions-1462-e55719add4.png)
 
@@ -139,7 +139,7 @@ You can also filter revision history for a specific team—paste any setting ID 
 There are additional conveniences for team-specific management within each team.
 
 1. Expand team details on the **Ownership teams** page.
-2. Select ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") in the upper-right corner of team details to access team-specific [**Revision history**](#revision-history), helpful **API** snippets for team management, and the ability to **Duplicate** team details as the basis for creating a new team.
+2. Select  in the upper-right corner of team details to access team-specific [**Revision history**](#revision-history), helpful **API** snippets for team management, and the ability to **Duplicate** team details as the basis for creating a new team.
 
    ![Team-management links](https://dt-cdn.net/images/ownership-team-specific-links-1462-4d8ea5d2df.png)
 

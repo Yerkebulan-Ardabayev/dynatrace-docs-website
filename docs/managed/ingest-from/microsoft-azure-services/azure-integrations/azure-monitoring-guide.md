@@ -911,8 +911,8 @@ To add a new Azure connection
    1. Go to **Settings** > **Cloud and virtualization** > **Azure**. The page lists existing connections.
    2. Edit connections as needed.
 
-      * To edit an existing connection or the monitored services within, select **Edit** ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") in that row.
-      * To delete an existing connection, select **Delete** ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") in that row.
+      * To edit an existing connection or the monitored services within, select **Edit**  in that row.
+      * To delete an existing connection, select **Delete**  in that row.
 2. Select **Connect new instance** and complete the configuration fields.
 
    * **Connection ID**—type a descriptive name for the connection.
@@ -929,7 +929,7 @@ To add a new Azure connection
      To monitor resources based on tags
 
      1. Go to **Settings** > **Cloud and virtualization** > **Azure**.
-     2. On the Azure overview page, select the **Edit** ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") icon for the Azure instance.
+     2. On the Azure overview page, select the **Edit**  icon for the Azure instance.
      3. Set **Resources to be monitored** to **Monitor resources selected by tags**.
      4. Enter key/value pairs to identify resources to exclude from monitoring or include in monitoring.
         You can enter multiple key/value pairs: each time you enter a pair, another empty row is displayed for you to edit as needed.
@@ -950,7 +950,7 @@ You can choose to monitor resources based on existing Azure tags, as Dynatrace a
 To monitor resources based on tags
 
 1. Go to **Settings** > **Cloud and virtualization** > **Azure**.
-2. On the Azure overview page, select the **Edit** ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") icon for the Azure instance.
+2. On the Azure overview page, select the **Edit**  icon for the Azure instance.
 3. Set **Resources to be monitored** to **Monitor resources selected by tags**.
 4. Enter key/value pairs to identify resources to exclude from monitoring or include in monitoring.
    You can enter multiple key/value pairs: each time you enter a pair, another empty row is displayed for you to edit as needed.
@@ -969,7 +969,7 @@ In addition to Azure cloud services that are monitored by default, it is also po
 To add a service to monitoring
 
 1. Go to **Settings** > **Cloud and virtualization** > **Azure**.
-2. On the Azure overview page, find the connection that you want to change and select **Edit** ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") in that row.
+2. On the Azure overview page, find the connection that you want to change and select **Edit**  in that row.
 3. Under **Services**, select **Manage services**.
 4. Select **Add service**.
 5. Select the service from the list and then select **Add service**.
@@ -999,12 +999,12 @@ You can check the list of supported Azure services in [Dynatrace Hub﻿](https:/
 To add and configure metrics
 
 1. Go to **Settings** > **Cloud and virtualization** > **Azure**.
-2. On the Azure overview page, find the connection that you want to change and select **Edit** ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") in that row.
+2. On the Azure overview page, find the connection that you want to change and select **Edit**  in that row.
 3. Under **Services**, select **Manage services**.
 4. Select the service for which you want to add metrics. The service details page lists metrics you are monitoring for that service.
 5. Select **Add metric**.
 6. From the **Add new metric** list, select the metric and then select **Add metric**.
-7. Select ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") to expand the metric details and configure the metric.
+7. Select  to expand the metric details and configure the metric.
 8. Select **Apply** to save your configuration.
 
 After you select the cloud services and save your changes, monitoring of the newly added services starts automatically.

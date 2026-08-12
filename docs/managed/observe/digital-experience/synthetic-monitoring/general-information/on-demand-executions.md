@@ -132,8 +132,8 @@ On-demand execution list
 * **Execution stage** identifies the different stages of the on-demand execution. The initial value is `Triggered` (or `Not triggered`). When execution is complete, the value changes to `Executed`. Basic results such as duration and HTTP status code are available at this stage. The progress spinner continues to be displayed at the `Executed` stage until detailed results are available and the value changes to `Data retrieved`. If multiple sequential executions are triggered per location, the first execution is marked `Triggered`; the remaining executions are marked `Waiting`.
 
 * The **Result** column displays whether the execution was a `Success` or `Failure` (with an accompanying **Failure reason**).
-* You can **Rerun** ![Refresh](https://dt-cdn.net/images/refresh-turquoise-500-64f72fec6c.svg "Refresh") an execution with the exact configuration defined, for example, with metadata defined via the API. Besides metadata, other execution parameters replicated are the [processing mode](#trigger-ui), failure for violating a performance threshold, failure due to an SSL certificate issue, and screenshot capture upon success.
-* Select the expand button ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") in the **Details** column to view execution duration, batch metadata like key-value pairs (available via [API](#api) only), and a link to results.
+* You can **Rerun**  an execution with the exact configuration defined, for example, with metadata defined via the API. Besides metadata, other execution parameters replicated are the [processing mode](#trigger-ui), failure for violating a performance threshold, failure due to an SSL certificate issue, and screenshot capture upon success.
+* Select the expand button  in the **Details** column to view execution duration, batch metadata like key-value pairs (available via [API](#api) only), and a link to results.
 
 ### Results
 

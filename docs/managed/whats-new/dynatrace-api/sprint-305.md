@@ -148,7 +148,7 @@ Rollout start: Dec 3, 2024
 
 ### /timeseries
 
-![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+Breaking change
 
 * Deleted `PUT /timeseries`. Use [Metrics API v2](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.") instead.
 

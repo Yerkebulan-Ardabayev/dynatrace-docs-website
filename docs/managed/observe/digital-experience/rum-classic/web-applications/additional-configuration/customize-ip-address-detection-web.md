@@ -24,9 +24,9 @@ You can update header names, delete headers you don't need, and change the order
 1. Go to **Settings** > **Web and mobile monitoring** > **IP determination**.
 2. Manage the headers:
 
-   * To rename a header, select **Expand row** ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row"), and then enter a new header name.
-   * To delete a header, select **Delete row** ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove").
-   * To change a header's priority, select and hold **Drag row** ![Drag handle](https://dt-cdn.net/images/drag-handle-turquoise-600-1aa0e5ea00.svg "Drag handle") next to the header name, and move the header up or down.
+   * To rename a header, select **Expand row** , and then enter a new header name.
+   * To delete a header, select **Delete row** .
+   * To change a header's priority, select and hold **Drag row**  next to the header name, and move the header up or down.
 
 ## Add your custom client IP headers
 

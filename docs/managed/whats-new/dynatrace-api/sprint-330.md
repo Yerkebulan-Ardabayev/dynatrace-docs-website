@@ -23,7 +23,7 @@ source: https://docs.dynatrace.com/managed/whats-new/dynatrace-api/sprint-330
 
       * Changed **ApiTokenList** schema (application/json; charset=utf-8)
 
-        + ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+        + Breaking change
 
           - Changed property **apiTokens**
           - Changed property **scopes**
@@ -37,7 +37,7 @@ source: https://docs.dynatrace.com/managed/whats-new/dynatrace-api/sprint-330
 
     - Changed **ApiTokenCreate** schema (application/json; charset=utf-8)
 
-      * ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+      * Breaking change
 
         + Changed property **scopes**
 
@@ -52,7 +52,7 @@ source: https://docs.dynatrace.com/managed/whats-new/dynatrace-api/sprint-330
 
       * Changed **ApiToken** schema (application/json; charset=utf-8)
 
-        + ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+        + Breaking change
 
           - Changed property **scopes**
           - Removed enum values:
@@ -66,7 +66,7 @@ source: https://docs.dynatrace.com/managed/whats-new/dynatrace-api/sprint-330
 
       * Changed **ApiToken** schema (application/json; charset=utf-8)
 
-        + ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+        + Breaking change
 
           - Changed property **scopes**
 
@@ -79,7 +79,7 @@ source: https://docs.dynatrace.com/managed/whats-new/dynatrace-api/sprint-330
 
     - Changed **ApiTokenUpdate** schema (application/json; charset=utf-8)
 
-      * ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+      * Breaking change
 
         + Changed property **scopes**
 
@@ -167,7 +167,7 @@ This is a non-breaking change hiding the `tagKey` from the schema. The POST requ
 
     - Changed **ExportLogsServiceRequest** schema (application/x-protobuf)
 
-      * ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+      * Breaking change
 
         + Type changed from array to object
   + Return Type:
@@ -222,7 +222,7 @@ Added new endpoints for Early Accesss:
 
         + Changed property **nodes**
 
-          - ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+          - Breaking change
 
             * Added required property **capabilities**
 * `GET /synthetic/nodes/{nodeId}`
@@ -233,7 +233,7 @@ Added new endpoints for Early Accesss:
 
       * Changed **Node** schema (application/json; charset=utf-8)
 
-        + ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+        + Breaking change
 
           - Added required property **capabilities**
 
@@ -254,7 +254,7 @@ Added new endpoints for Early Accesss:
 
     - Changed **CreateToken** schema (application/json; charset=utf-8)
 
-      * ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+      * Breaking change
 
         + Changed property **scopes**
 
@@ -269,7 +269,7 @@ Added new endpoints for Early Accesss:
 
       * Changed **TokenMetadata** schema (application/json; charset=utf-8)
 
-        + ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+        + Breaking change
 
           - Changed property **scopes**
 
@@ -283,7 +283,7 @@ Added new endpoints for Early Accesss:
     - Changed 200 OK
 
       * Changed **TokenMetadata** schema (application/json; charset=utf-8)
-      * ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+      * Breaking change
 
         + Changed property **scopes**
 
@@ -296,7 +296,7 @@ Added new endpoints for Early Accesss:
 
     - Changed **UpdateToken** schema (application/json; charset=utf-8)
 
-      * ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+      * Breaking change
 
         + Changed property **scopes**
 
@@ -346,7 +346,7 @@ Added new endpoints for Early Accesss:
 
       * Changed **CalculatedServiceMetric** schema (application/json; charset=utf-8)
 
-        + ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+        + Breaking change
 
           - Changed property **dimensionDefinition**
 
@@ -512,7 +512,7 @@ Added a new endpoint for Early Access:
 
       * Changed **RequestNaming** schema (application/json; charset=utf-8)
 
-        + ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+        + Breaking change
 
           - Changed property **placeholders**
 

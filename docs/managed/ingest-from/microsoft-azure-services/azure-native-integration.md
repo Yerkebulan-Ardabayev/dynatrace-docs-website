@@ -194,7 +194,7 @@ All cloud services are monitored by default, but you can quickly disable them fr
 To add services to monitoring
 
 1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Cloud and virtualization** > **Azure**.
-2. On the Azure overview page, find the connection that you want to change and select **Edit** ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") in that row.
+2. On the Azure overview page, find the connection that you want to change and select **Edit**  in that row.
 3. Under **Services**, select **Manage services**.
 4. For each service that you want to add: select **Add service**, select the service from the list, and then select **Add service**.
 5. Select **Save changes** to save your configuration.
@@ -219,12 +219,12 @@ Alternatively, you can check the list of supported Azure services within the in-
 To add and configure metrics
 
 1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Cloud and virtualization** > **Azure**.
-2. On the Azure overview page, find the connection that you want to change and select **Edit** ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") in that row.
+2. On the Azure overview page, find the connection that you want to change and select **Edit**  in that row.
 3. Under **Services**, select **Manage services**.
 4. Select the service for which you want to add metrics. The service details page lists the metrics you are already monitoring for that service.
 5. Select **Add metric**.
 6. From the **Add new metric** list, select the metric and then select **Add metric**.
-7. Select ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") to expand the metric details and configure the metric.
+7. Select  to expand the metric details and configure the metric.
 8. Select **Apply** to save your configuration.
 
 After you select the cloud services and save your changes, monitoring of the newly added services starts automatically.

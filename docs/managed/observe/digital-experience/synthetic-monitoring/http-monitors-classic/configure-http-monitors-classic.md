@@ -83,7 +83,7 @@ In **Visual mode**:
 * Select **Add HTTP request** to add another HTTP request to the HTTP monitor.
 * Select an existing HTTP request to display and edit configuration options for that request.
 * If necessary, you can delete requests from your monitor by selecting **x** under **Delete** for the respective request.
-* Use the **Move up/down** arrows ![Move up](https://dt-cdn.net/images/sorter-move-up-6275b6459e.svg "Move up") ![Move down](https://dt-cdn.net/images/sorter-move-down-710c5d6229.svg "Move down") to reorder requests.
+* Use the **Move up/down** arrows   to reorder requests.
 
 You aren't limited to just one mode to view and edit your HTTP requests—you can switch back and forth between the UI and script modes by selecting **Visual mode** or **Script mode**. For details on editing your HTTP monitor in JSON format, see [Script mode for HTTP monitor configuration](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/script-mode-for-http-monitor-configuration-classic "Create or edit your HTTP monitors in JSON format.").
 

@@ -33,7 +33,7 @@ Early Access Added new endpoints:
 
       * Changed **ExportedLogRecordList** schema (application/json; charset=utf-8)
 
-        + ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+        + Breaking change
 
           - Changed property **results**
 
@@ -51,7 +51,7 @@ Early Access Added new endpoints:
 
       * Changed **LogRecordsList** schema (application/json; charset=utf-8)
 
-        + ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+        + Breaking change
 
           - Changed property **results**
 
@@ -127,7 +127,7 @@ Early Access Added new endpoints:
 
       * Changed `PolicyBindingsWithDetails` schema (application/json)
 
-        + ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+        + Breaking change
 
           - Changed property **bindingsDetails**
 

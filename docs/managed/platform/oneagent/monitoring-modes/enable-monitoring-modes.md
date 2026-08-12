@@ -107,7 +107,7 @@ You can disable the collection on JMX/PMI and runtime metrics, which will result
 
 1. Go to **Settings** > **Monitoring** > **Monitored technologies**.
 2. In the list of supported technologies, search for the **Java/.NET/Node.js/Golang/PHP runtime metrics + WebServer metrics in Infrastructure Mode** entry.
-3. Select the pencil icon ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") to edit it and then disable it.
+3. Select the pencil icon  to edit it and then disable it.
 4. Restart all processes on your infrastructure-monitored hosts.
 
 Disable selected extensions
@@ -120,7 +120,7 @@ You can also turn off selected extensions collecting the metrics at the environm
    Custom extensions
 
    1. In the list of supported technologies, search for technologies marked as **JMX monitoring** in the **Type** column.
-   2. Select the pencil icon ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") to edit an extension of your choice.
+   2. Select the pencil icon  to edit an extension of your choice.
    3. Turn off **Monitor the environment for hosts in infrastructure-only monitoring mode**.
 
    1. In the list of custom extensions, search for extensions marked as **JMX** or **PMI** in the **Extension type** column.

@@ -89,7 +89,7 @@ Change the performance profile at the host level
 Change the performance profile of an ActiveGate
 
 1. Go to **Deployment Status** and select **ActiveGates**.
-2. Expand ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") the **Details** of the ActiveGate you want to configure and select **Settings**.
+2. Expand  the **Details** of the ActiveGate you want to configure and select **Settings**.
 3. On the **Settings** page, go to **Extension Execution Controller**.
 4. Set **Performance profile** to `Default`, `High limits`, or `Dedicated limits`.
 

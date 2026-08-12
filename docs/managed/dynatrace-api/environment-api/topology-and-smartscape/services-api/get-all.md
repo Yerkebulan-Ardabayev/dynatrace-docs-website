@@ -48,7 +48,7 @@ The timeframe is restricted to a **maximum period of 3 days**.
 | entity | string[] | Filters result to the specified services only.  To specify several services use the following format: `entity=ID1&entity=ID2`. | query | Optional |
 | managementZone | integer | Only return services that are part of the specified management zone. | query | Optional |
 | includeDetails | boolean | Includes (`true`) or excludes (`false`) details which are queried from related entities.  Excluding details may make queries faster.  If not set, then `true` is used. | query | Optional |
-| pageSize | integer | The number of services per result page.  If not set, pagination is not used and the result contains all services fitting the specified filtering criteria. | query | Optional |
+| pageSize | integer | The number of services per result page.  If not set, **400** is used.  If there are more results than the page size, the response contains a **Next-Page-Key** header. Use it as the **nextPageKey** query parameter to get the next page.services | query | Optional |
 | nextPageKey | string | The cursor for the next page of results. You can find it in the **Next-Page-Key** header of the previous response.  If you're using pagination, the first page is always returned without this cursor.  You must keep all other query parameters as they were in the first request to obtain subsequent pages. | query | Optional |
 
 ## Response headers

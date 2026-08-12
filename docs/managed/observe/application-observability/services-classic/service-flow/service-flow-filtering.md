@@ -24,7 +24,7 @@ The general **Service flow** filtration procedure looks like this:
 5. To create a filter for the selected service sequence, do one of the following:
 
    * Select **Filter service flow** in the top tile.
-   * Select **Filter** ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") above the selected service.
+   * Select **Filter**  above the selected service.
 6. Add more criteria to the filter:
 
    1. In the filter, select the service where you want to apply additional filtration.
@@ -54,7 +54,7 @@ To focus **Service Flow** on these calls
 5. To create a filter for the selected service sequence, do one of the following:
 
    * Select **Filter service flow** in the top tile.
-   * Select **Filter** ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") above the selected service.
+   * Select **Filter**  above the selected service.
 
 Let's go back to our example. A filter has been created to focus analysis only on those requests from the `easyTravel Customer Frontend` service that call the `JourneyService` service and subsequently call the `easyTravel-Business` database.
 

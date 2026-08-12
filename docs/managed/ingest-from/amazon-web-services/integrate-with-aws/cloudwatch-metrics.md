@@ -920,8 +920,8 @@ To add a new AWS connection
    1. Go to **Settings** > **Cloud and virtualization** > **AWS**. The page lists existing connections.
    2. Edit connections as needed.
 
-      * To edit an existing connection or the monitored services within, select **Edit** ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") in that row.
-      * To delete an existing connection, select **Delete** ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") in that row.
+      * To edit an existing connection or the monitored services within, select **Edit**  in that row.
+      * To delete an existing connection, select **Delete**  in that row.
 2. Select **Connect new instance** and complete the following fields.
 
    * **Enabled** toggle—make sure it's selected if you want to monitor this configuration.
@@ -950,7 +950,7 @@ In addition to AWS services, it's also possible to monitor all other AWS cloud s
 To add a service to monitoring:
 
 1. Go to **Settings** > **Cloud and virtualization** > **AWS**.
-2. On the AWS overview page, find the connection that you want to change and select **Edit** ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") in that row.
+2. On the AWS overview page, find the connection that you want to change and select **Edit**  in that row.
 3. Under **Services**, select **Manage services**.
 4. Select **Add service**.
 5. Select the service from the list and then select **Add service**.

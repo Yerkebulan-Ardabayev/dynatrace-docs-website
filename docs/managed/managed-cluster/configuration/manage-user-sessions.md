@@ -38,7 +38,7 @@ Sign-in types:
 
 ## Step 2 Terminate a user session
 
-To terminate a session, select ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") and confirm the action.
+To terminate a session, select  and confirm the action.
 
 The session immediately terminates and signs out the user.
 

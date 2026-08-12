@@ -64,7 +64,7 @@ To change the order of manually added providers
 
 1. Go to **Settings** > **Web and mobile monitoring** > **Provider breakdown**.
 2. Find the list of manually added providers under the **Add custom provider item** button.
-3. Use **Drag handle** ![Drag handle](https://dt-cdn.net/images/drag-handle-turquoise-600-1aa0e5ea00.svg "Drag handle") to change a provider's priority.
+3. Use **Drag handle**  to change a provider's priority.
 
 ## Related topics
 

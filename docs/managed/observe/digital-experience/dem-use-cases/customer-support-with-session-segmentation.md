@@ -83,7 +83,7 @@ Session details - overview
   ![Session details - filter by different parameters](https://dt-cdn.net/images/session-details-filter-by-2572-c48481918a.png)
 
   Session details - filter by different parameters
-* **Expand** ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") the required action or event to view more details.
+* **Expand**  the required action or event to view more details.
 
   In our example, you can see that a request error happened during the `loading of page /cart/checkout` [load action](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions#load-action "Learn what user actions are and how they help you understand what users do with your application."), and the Apdex rating for this action is **Frustrating**.
 
@@ -98,7 +98,7 @@ A [Session Replay](/managed/observe/digital-experience/session-replay "Learn how
 To watch a session recording
 
 1. On the session details page, in the **Analysis** section, go to the **Session Replay** tab.
-2. Select **Play** ![Replay](https://dt-cdn.net/images/replay-button-optimized-41ad05863e.svg "Replay"), and watch the recording of the user session.
+2. Select **Play** , and watch the recording of the user session.
 3. Use the Session Replay controls to carefully examine the actions that the user performed in your application. Note that the errors are represented by red dots in the timeline.
 
 ![Session details - session replay](https://dt-cdn.net/images/session-details-session-replay-3468-f6b7e8e699.png)

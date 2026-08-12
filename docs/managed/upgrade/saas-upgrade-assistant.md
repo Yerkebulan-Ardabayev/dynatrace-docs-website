@@ -29,7 +29,7 @@ Currently, with ![SaaS Upgrade Assistant](https://dt-cdn.net/images/saas-upgrade
 1. Sign in the Dynatrace Managed **Cluster Management Console**.
 2. Go to **Environments**.
 3. Select an environment that you want to migrate from.
-4. Select ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") > **Export configuration**.
+4. Select  > **Export configuration**.
 5. Confirm the operation and navigate to your target local directory to store the archive.
 
 For more information, see [Update configuration in SaaS Upgrade Assistant](/managed/upgrade/saas-upgrade-assistant/sua-update-config "Learn how to update configuration in SaaS Upgrade Assistant.").

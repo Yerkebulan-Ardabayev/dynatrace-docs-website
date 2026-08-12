@@ -33,7 +33,7 @@ Go to **Metrics** to open the **Metrics** browser, which is a cool tool for brow
 
     If you combine filters, they are ANDed together. For example, if you set `Dimension` to `Host` and set `Text` to `usage`, the metrics browser lists all metrics with the `Host` dimension that also include the string `usage` in the **Metric name**, **Metric key**, or **Description** field.
 * Select column header **Favorite**, **Name**, or **Key** to sort by the selected column.
-* Select ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") in the **Details** column to display metric details.
+* Select  in the **Details** column to display metric details.
 
 ## Review metric details
 
@@ -86,7 +86,7 @@ For details, see [Order-of-magnitude notation](/managed/discover-dynatrace/get-s
 
 To add a metric to a classic dashboard
 
-1. Select ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") in the **Details** column to display metric details.
+1. Select  in the **Details** column to display metric details.
 2. Select **Create chart** to open the metric in [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
 3. Adjust the query and visualization settings as needed. For details, see [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") or [Data Explorer quick start](/managed/analyze-explore-automate/explorer/explorer-quick-start "Using Data Explorer, create your first query, select a visualization, and pin the results to a dashboard.").
 4. Select **Pin to dashboard**.
@@ -111,7 +111,7 @@ Metric metadata is fully configurable via API. For details, see [Custom metric m
 To configure metric metadata for custom metrics via the web UI
 
 1. Go to **Metrics**.
-2. Select ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") in the **Details** column to display metric details.
+2. Select  in the **Details** column to display metric details.
 3. Select **Edit metadata**.  
    If you don't see an **Edit metadata** button in the expanded row, you haven't selected a custom metric.
 4. On the **Metric metadata** page, edit the metadata for the selected metric.  

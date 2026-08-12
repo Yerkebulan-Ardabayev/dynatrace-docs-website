@@ -756,6 +756,14 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | --- | --- |
 | [OpenFeature SDK﻿](https://github.com/open-feature/java-sdk) | 1.0.1+ |
 
+| Application framework | Versions |
+| --- | --- |
+| [Spring Cloud Function﻿](https://spring.io/projects/spring-cloud-function) | 3[1](#fn-application-framework-1-def), 4[1](#fn-application-framework-1-def), 5[1](#fn-application-framework-1-def) |
+
+1
+
+Monitoring of Spring Cloud Function invocations is supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+
 See also [OneAgent SDK for Java](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing capabilities.
 
 ### [Java Native Image](/managed/ingest-from/technology-support/application-software/java/graalvm-native-image "Install, configure, and manage Dynatrace GraalVM Native Image module.")

@@ -15,7 +15,7 @@ Each dashboard must have an owner, and dashboard owners are configured in Manage
 
 * Checks which dashboard owners don’t exist in the SaaS account and marks those dashboards, and then visualizes the results on a bar chart and creates warnings to track occurrences.
 * Automatically updates dashboard owners by changing user IDs to email addresses set in the Managed cluster. If some users miss an email address, you can define an email domain to append to the user ID.
-* Gives you the possibility to opt out of unwanted functionalities in the **Dashboard ownership** section in ![Edit](https://dt-cdn.net/images/share-settings-1859c5a34c.svg "Edit") **Settings**.
+* Gives you the possibility to opt out of unwanted functionalities in the **Dashboard ownership** section in  **Settings**.
 
 ## Deployment
 
@@ -27,7 +27,7 @@ On the  **Home** page, select an environment to go to the **Upgrade overview** p
   + Dashboard owners are missing from the SaaS account.
   + Dashboards are affected by the issue of missing owners.
 
-  This section is hidden if creating warnings in ![Edit](https://dt-cdn.net/images/share-settings-1859c5a34c.svg "Edit") **Settings** is turned off.
+  This section is hidden if creating warnings in  **Settings** is turned off.
 * **Automatic adjustments** tells you what changes will be applied during the deployment automatically and where you can
 
   + Check the number of changes to be applied.
@@ -83,7 +83,7 @@ To apply suggestions, select **Use value** in either
 
 ## Dashboard ownership settings
 
-You can also configure the automatic update of dashboard owner in the ![Edit](https://dt-cdn.net/images/share-settings-1859c5a34c.svg "Edit") **Settings** > **Dashboard ownership** section, which provides the following.
+You can also configure the automatic update of dashboard owner in the  **Settings** > **Dashboard ownership** section, which provides the following.
 
 * **Automatically update dashboard owners** toggle—turned on by default. When turned off, dashboard owners won’t be updated during the deployment.
 * **Create a warning if dashboard ownership is set to a user that doesn’t exist in your SaaS account** toggle—turned on by default. When turned off, ![SaaS Upgrade Assistant](https://dt-cdn.net/images/saas-upgrade-assistant-61dc5b83c0.svg "SaaS Upgrade Assistant") **SaaS Upgrade Assistant** won't check whether an owner exists. It won’t show any warnings or the chart of affected dashboards.

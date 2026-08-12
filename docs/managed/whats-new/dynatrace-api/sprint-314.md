@@ -31,7 +31,7 @@ Rollout start: May 6, 2025
             * Added enum value:  
               `PROCESS_GROUPING_RULES`
 
-![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+Breaking change
 
 * `GET /extensions/{extensionName}/{extensionVersion}/schema`
 
@@ -100,7 +100,7 @@ Rollout start: May 6, 2025
 
       * Changed **ClusterNodesConfigDto** schema
 
-        + ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+        + Breaking change
 
           - Changed property **clusterNodes**
 

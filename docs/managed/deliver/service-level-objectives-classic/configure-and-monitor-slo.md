@@ -205,7 +205,7 @@ After you define your objectives, you can add the SLOs to your dashboard to visu
 
 ## SLO dashboard tile
 
-By default, an SLO tile evaluates and filters ![Variable](https://dt-cdn.net/images/dashboards-app-dashboard-add-variable-821b40325c.svg "Variable") the SLO timeframe instead of the selected global timeframe. You can override the timeframe used in the tile configuration to compare the global and the SLO timeframe. For details, see [View and add SLO dashboard tiles based on permission levels](/managed/deliver/service-level-objectives-classic/slo-mz-permissions#dash "Permissions required at the environment and management-zone level to manage service-level objectives.").
+By default, an SLO tile evaluates and filters  the SLO timeframe instead of the selected global timeframe. You can override the timeframe used in the tile configuration to compare the global and the SLO timeframe. For details, see [View and add SLO dashboard tiles based on permission levels](/managed/deliver/service-level-objectives-classic/slo-mz-permissions#dash "Permissions required at the environment and management-zone level to manage service-level objectives.").
 
 An SLO dashboard tile displays the **Status**, the **Error budget**, and the **Target**.
 

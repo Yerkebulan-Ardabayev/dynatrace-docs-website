@@ -16,7 +16,7 @@ This page showcases new features, changes, and bug fixes in Dynatrace Managed ve
 
 ## Across platform
 
-Breaking change ![Dot](https://dt-cdn.net/images/dot-a32314f261.svg "Dot") Platform | Settings
+Breaking change  Platform | Settings
 
 ### Settings audit log changes
 
@@ -28,7 +28,7 @@ We adjusted settings audit log generation to improve readability and reduce spam
 
 * The classic web UI is not affected by this for most existing schemas. If a user persists the existing value again (typically changing a value, changing it back, and saving), `NO_CHANGE` entries might still occur.
 
-Feature update ![Dot](https://dt-cdn.net/images/dot-a32314f261.svg "Dot") Cluster
+Feature update  Cluster
 
 ### Cassandra upgrade to version 4.1
 
@@ -36,19 +36,19 @@ As part of this release, the Cassandra nodes are upgraded to version 4.1.
 
 No manual user-invention or downtime is necessary; the upgrade occurs via rolling updates as part of regular version updates.
 
-Feature update ![Dot](https://dt-cdn.net/images/dot-a32314f261.svg "Dot") Infrastructure Observability | Hosts
+Feature update  Infrastructure Observability | Hosts
 
 ### Stability check for OneAgent Automatic Updates
 
 The defaults for automatic updates / stable check have been reduced to 45 minutes for EC2 and non-EC2 hosts. This change improves the Automatic Updates process if maintenance windows are used.
 
-Feature update ![Dot](https://dt-cdn.net/images/dot-a32314f261.svg "Dot") Infrastructure Observability | Hosts
+Feature update  Infrastructure Observability | Hosts
 
 ### Remote configuration management (RCM): automatic restart for host tags and properties change
 
 OneAgent will be restarted automatically when host tags and properties are changed via RCM.
 
-Feature update ![Dot](https://dt-cdn.net/images/dot-a32314f261.svg "Dot") Platform
+Feature update  Platform
 
 ### Upgrade of Jetty to version 10
 
@@ -58,13 +58,13 @@ No manual user invention or downtime is necessary; the upgrade should happen via
 
 In certain high-load scenarios, we have observed a slight increase in CPU and memory usage caused by implementation changes in Jetty 10. If ActiveGate instances are already at their resource limit, we recommend increasing them to avoid possible overload.
 
-Feature update ![Dot](https://dt-cdn.net/images/dot-a32314f261.svg "Dot") Delivery | Cluster
+Feature update  Delivery | Cluster
 
 ### Updated Dynatrace Managed installer to use Adoptium JRE version 11.0.25 / 17.0.13
 
 The Dynatrace Managed installer has been updated to use Adoptium JRE version 11.0.25 (for Cassandra) and 17.0.13 (all other components).
 
-Feature update ![Dot](https://dt-cdn.net/images/dot-a32314f261.svg "Dot") Platform
+Feature update  Platform
 
 ### Minor changes in network metrics descriptions
 

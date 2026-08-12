@@ -43,11 +43,11 @@ The request doesn't provide any configurable parameters.
 
 #### The `ActiveGateGlobalAutoUpdateConfig` object
 
-Global configuration of ActiveGates auto-update.
+Global auto-update configuration for environment ActiveGates. Applies to all environment ActiveGates that have the `INHERITED` auto-update setting.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| globalSetting | string | The state of auto-updates for all ActiveGates connected to the environment or Managed cluster.  This setting is inherited by all ActiveGates that have the `INHERITED` setting. The element can hold these values * `ENABLED` * `DISABLED` |
+| globalSetting | string | The state of auto-updates for all environment ActiveGates.  This setting is inherited by all environment ActiveGates that have the `INHERITED` setting. The element can hold these values * `ENABLED` * `DISABLED` |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging |
 | targetVersion | string | Version to update a ActiveGate to when automatic updates are enabled.  Supports relative versions `latest`, `previous` and `older` as well as specific version in `<major>.<minor>` format (for example `1.261`).  Only applicable when the **setting** parameter is set to `ENABLED`. |
 | updateWindows | [UpdateWindowsConfig](#openapi-definition-UpdateWindowsConfig) | Basic information about all configured update windows |

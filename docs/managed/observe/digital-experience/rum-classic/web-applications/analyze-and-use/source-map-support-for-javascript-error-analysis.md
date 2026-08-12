@@ -32,7 +32,7 @@ Mapping minified javascript
 3. Go to the **JavaScript** tab, and select **Analyze errors**.
 4. Under **Detail analysis for selected timeframe**, select the JavaScript error that you want to analyze.  
    Under **Error details**, you can view the corresponding stack trace of the error. Error details are grouped by browser type.
-5. Select **Expand** ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") to open a stack frame for analysis.
+5. Select **Expand**  to open a stack frame for analysis.
 
 When a source map is found for your error, the origin of the detected source map and error location in the original JavaScript file are highlighted. If the source map isn't detected, you can select **Upload source map** and manually upload the corresponding source map.
 
@@ -76,7 +76,7 @@ To upload a source map from a JavaScript error details page
 1. Go to **Web** and select the application that you want to configure.
 2. Select the **Errors** tile, and scroll down to the **Top errors** section.
 3. Go to the **JavaScript** tab, and select the required error.
-4. Scroll down to **Stack trace**, and select **Expand** ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") to open a stack frame.
+4. Scroll down to **Stack trace**, and select **Expand**  to open a stack frame.
 5. Select **Upload source map**.
 
    Note that you can upload a symbol file of up to 100 MiB compressed; the uncompressed file must not exceed 500 MiB.
@@ -98,6 +98,6 @@ The page displays the amount of storage that is currently used and the storage l
 
 For Dynatrace Managed, the default storage size for symbol and mapping files is 1 GiB. You can modify the storage size according to your requirements.
 
-To free up space, you can manually delete files that you no longer need. Select **Delete** ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") in the row of the file you want to delete.
+To free up space, you can manually delete files that you no longer need. Select **Delete**  in the row of the file you want to delete.
 
 To prevent files from being automatically deleted when the storage limit is reached, turn on **Pinned** for the source maps and symbol files that you want to keep.

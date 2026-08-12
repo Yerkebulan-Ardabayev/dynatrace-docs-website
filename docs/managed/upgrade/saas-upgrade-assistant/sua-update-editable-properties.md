@@ -51,7 +51,7 @@ You can run your Dynatrace synthetic monitors from a [private Synthetic location
 1. Select **Configuration** tab.
 2. In **Config type** select `Synthetic location`.
 3. Select a private Synthetic location's configuration object from the left panel.
-4. Select **Edit** ![Edit](https://dt-cdn.net/images/dashboards-app-dashboard-rename-a2875a87a2.svg "Edit") button.
+4. Select **Edit**  button.
 5. Paste the new ActiveGate ID.
 6. Select **Preview changes** button.
 7. Review the change and confirm by selecting **Save** button.

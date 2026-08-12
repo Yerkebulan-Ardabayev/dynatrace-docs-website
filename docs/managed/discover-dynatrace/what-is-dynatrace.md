@@ -51,16 +51,10 @@ Dynatrace Managed is an all-in-one platform that's purpose-built for a wide rang
 
 Core technologies power analytics and automation for unified observability and security across an extensible platform.
 
-[![Davis AI](https://cdn.bfldr.com/B686QPH3/at/cb79gtrc58xbf7gt95965b/Davis_AI.svg?auto=webp&width=72&height=72 "Davis AI")
+[### Davis AI
 
-### Davis AI
+Dynatrace Davis® uniquely combines predictive AI and causal AI for observability, security, and business use cases.](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")[### OneAgent
 
-Dynatrace Davis® uniquely combines predictive AI and causal AI for observability, security, and business use cases.](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")[![OneAgent](https://cdn.bfldr.com/B686QPH3/at/g8mmkkpfmgwbxcjz54pvfsx/OneAgent.svg?auto=webp&width=72&height=72 "OneAgent")
-
-### OneAgent
-
-OneAgent® services automatically discover, activate, and instrument applications, microservices, infrastructure, and any dependencies in modern cloud environments.](/managed/platform/oneagent "Learn the monitoring capabilities of OneAgent.")[![Smartscape](https://dt-cdn.net/images/smartscape-d5c4104cad.svg "Smartscape")
-
-### Smartscape
+OneAgent® services automatically discover, activate, and instrument applications, microservices, infrastructure, and any dependencies in modern cloud environments.](/managed/platform/oneagent "Learn the monitoring capabilities of OneAgent.")[### Smartscape
 
 Smartscape® dynamic environment-topology mapping visualizes the dynamic relationships among all application components across every tier.](/managed/analyze-explore-automate/smartscape-classic "Learn how Smartscape visualizes all the entities and dependencies in your environment.")

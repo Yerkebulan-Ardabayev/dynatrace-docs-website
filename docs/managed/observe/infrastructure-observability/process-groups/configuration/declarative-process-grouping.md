@@ -120,5 +120,5 @@ To manage declarative process groups
 2. The declarative process groups you have defined are displayed in a table under the **Add monitored technology** button.
 
    * To stop monitoring a listed process group, turn off **Enabled**.
-   * To delete a process group from the table, select ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") in the **Delete** column.
-   * To view and edit process group details, select ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") in the **Details** column.
+   * To delete a process group from the table, select  in the **Delete** column.
+   * To view and edit process group details, select  in the **Details** column.

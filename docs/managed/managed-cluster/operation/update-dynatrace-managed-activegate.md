@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/operation/update-dyna
 
 To see a list of installed ActiveGates, go to **Deployment Status** > **ActiveGates**. For each ActiveGate, the list gives the current **Version** of the ActiveGate and the **Update status** (up to date, pending, or in progress).
 
-![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") The yellow warning icon indicates that your ActiveGate is behind by more than five versions. You should update these ActiveGates as soon as possible.
+The yellow warning icon indicates that your ActiveGate is behind by more than five versions. You should update these ActiveGates as soon as possible.
 
 ActiveGates in containers are deployed and uploaded using cloud-specific tooling. For example, Kubernetes uses [custom resource definitions](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring "Monitor the Kubernetes API using Dynatrace").
 

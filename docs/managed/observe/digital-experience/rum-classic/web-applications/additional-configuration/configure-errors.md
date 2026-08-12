@@ -50,7 +50,7 @@ To add a request error rule
 
    If you opt for including the error in Davis AI analysis, Davis may report this error as a new open problem.
 
-The request error rules are executed in the order of their appearance in the error list. Select and hold **Drag row** ![Drag handle](https://dt-cdn.net/images/drag-handle-turquoise-600-1aa0e5ea00.svg "Drag handle") next to the rule name, and move the rule up or down in the list to change its priority.
+The request error rules are executed in the order of their appearance in the error list. Select and hold **Drag row**  next to the rule name, and move the rule up or down in the list to change its priority.
 
 You can also turn on **Ignore request errors in Apdex calculations** to override Apdex settings for individual request error rules.
 
@@ -87,7 +87,7 @@ To delete or disable the **HTTP 970-979** request error rule
 4. From the application settings, select **Errors** > **Request errors**.
 5. Find the **HTTP 970-979** error rule, and do one of the following:
 
-   * Select **Delete row** ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") to completely delete this request error rule.
+   * Select **Delete row**  to completely delete this request error rule.
    * Expand the rule, and turn off **Capture this error**.
 
 #### Applications created before Dynatrace version 1.238
@@ -126,7 +126,7 @@ To add a custom error rule
 
    If you opt for including the error in Davis AI analysis, Davis may report this error as a new open problem.
 
-The custom error rules are executed in the order of their appearance in the error list. Select and hold **Drag row** ![Drag handle](https://dt-cdn.net/images/drag-handle-turquoise-600-1aa0e5ea00.svg "Drag handle") next to the rule name, and move the rule up or down in the list to change its priority.
+The custom error rules are executed in the order of their appearance in the error list. Select and hold **Drag row**  next to the rule name, and move the rule up or down in the list to change its priority.
 
 You can also turn on **Ignore custom errors in Apdex calculations** to override Apdex settings for individual custom error rules.
 

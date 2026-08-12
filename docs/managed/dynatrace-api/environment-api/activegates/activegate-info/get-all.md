@@ -79,7 +79,7 @@ Parameters of the ActiveGate.
 | Element | Type | Description |
 | --- | --- | --- |
 | activeGateTokens | [ActiveGateTokenInfoDto](#openapi-definition-ActiveGateTokenInfoDto)[] | A list of the ActiveGate tokens. |
-| autoUpdateSettings | [ActiveGateAutoUpdateConfig](#openapi-definition-ActiveGateAutoUpdateConfig) | Configuration of the ActiveGate auto-updates. |
+| autoUpdateSettings | [ActiveGateAutoUpdateConfig](#openapi-definition-ActiveGateAutoUpdateConfig) | Auto-update configuration for an individual environment ActiveGate. |
 | autoUpdateStatus | string | The current status of auto-updates of the ActiveGate. The element can hold these values * `INCOMPATIBLE` * `OUTDATED` * `SCHEDULED` * `SUPPRESSED` * `UNKNOWN` * `UP2DATE` * `UPDATE_IN_PROGRESS` * `UPDATE_PENDING` * `UPDATE_PROBLEM` |
 | connectedHosts | [ActiveGateConnectedHosts](#openapi-definition-ActiveGateConnectedHosts) | Information about hosts currently connected to the ActiveGate |
 | containerized | boolean | ActiveGate is deployed in container (`true`) or not (`false`). |
@@ -112,12 +112,12 @@ Information about ActiveGate token.
 
 #### The `ActiveGateAutoUpdateConfig` object
 
-Configuration of the ActiveGate auto-updates.
+Auto-update configuration for an individual environment ActiveGate.
 
 | Element | Type | Description |
 | --- | --- | --- |
 | effectiveSetting | string | The actual state of the ActiveGate auto-update.  Applicable only if the **setting** parameter is set to `INHERITED`. In that case, the value is taken from the parent setting. Otherwise, it's just a duplicate of the **setting** value. The element can hold these values * `ENABLED` * `DISABLED` |
-| setting | string | The state of the ActiveGate auto-update: enabled, disabled, or inherited.  If set to `INHERITED`, the setting is inherited from the global configuration set on the environment or Managed cluster level. The element can hold these values * `DISABLED` * `ENABLED` * `INHERITED` |
+| setting | string | The state of the environment ActiveGate auto-update: enabled, disabled, or inherited.  If set to `INHERITED`, the setting is inherited from the global environment ActiveGate auto-update configuration. The element can hold these values * `DISABLED` * `ENABLED` * `INHERITED` |
 | targetVersion | string | The target version of the ActiveGate.  Specify the version in the `<major>.<minor>` format (for example `1.342`) or `latest`, `previous`, or `older`. |
 | updateWindows | [UpdateWindowsConfig](#openapi-definition-UpdateWindowsConfig) | Basic information about all configured update windows |
 

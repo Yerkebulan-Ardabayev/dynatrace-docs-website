@@ -148,7 +148,7 @@ When you select a method on the **Survivor hotspots** tab or **Flame graph** tab
 To focus the analysis on your code, we recommend that you define third-party library APIs. To do this, you need to mark a [user-defined API](/managed/observe/application-observability/services/customize-api-definitions "Set detection rules to customize APIs in your environment.") as a third-party library.
 
 1. Go to **Settings** > **Server-side service monitoring** > **API detection rules**.
-2. Select **Expand** ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") to edit the required API.
+2. Select **Expand**  to edit the required API.
 3. Turn on **This API defines a third party library**.
 4. Save your changes.
 

@@ -57,7 +57,7 @@ If this web UI-guided installation fails, or you prefer to prepare the host for 
 
 1. For Environment ActiveGate, in Dynatrace Hub, select **ActiveGate** > **Set up**.
 
-   For Cluster ActiveGate, go to the Dynatrace Cluster Management Console and select **More** ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") > **Add new Cluster ActiveGate**.
+   For Cluster ActiveGate, go to the Dynatrace Cluster Management Console and select **More**  > **Add new Cluster ActiveGate**.
 2. Select the operating system to view instructions.
 3. Create a [**PaaS Token**](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") or enter an existing token. This token has the **Download OneAgent and ActiveGate installers** `InstallerDownload` token scope, which allows you to download the ActiveGate installer. Once provided, the token is automatically appended to download and installation commands, which are then displayed in the UI.
 

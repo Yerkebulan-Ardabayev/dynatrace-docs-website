@@ -480,7 +480,7 @@ Ownership information is only available for [unified analysis pages](/managed/in
 
 For hosts and all Kubernetes entities, select **Owners** on the entity details page to view ownership information.
 
-This example shows a Kubernetes workload mapping to the `CLOUD_APPLICATION` entity. Expand a team name to view its details. Select ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") in the **Ownership** card to [edit team details](/managed/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") in **Settings**.
+This example shows a Kubernetes workload mapping to the `CLOUD_APPLICATION` entity. Expand a team name to view its details. Select  in the **Ownership** card to [edit team details](/managed/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") in **Settings**.
 
 ![Owner of a Kubernetes workload](https://dt-cdn.net/images/ownership-k8s-workload-2213-2217e57297.png)
 
@@ -506,7 +506,7 @@ Select **Properties and tags** to view all tags applied to the host.
 
 Owners of a host
 
-Select ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") next to the unknown team and then select **Add team** to define team information in **Settings**. The entity is then automatically updated with the team definition.
+Select  next to the unknown team and then select **Add team** to define team information in **Settings**. The entity is then automatically updated with the team definition.
 
 ![Unknown team](https://dt-cdn.net/images/ownership-unknown-team-909-590ed7fbc0.png)
 

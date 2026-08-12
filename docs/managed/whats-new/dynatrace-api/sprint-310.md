@@ -144,7 +144,7 @@ Rollout start: Mar 11, 2025
 
       * Changed **AccessorPermissionsList** schema
 
-        + ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+        + Breaking change
 
           - Type changed from array to object
 

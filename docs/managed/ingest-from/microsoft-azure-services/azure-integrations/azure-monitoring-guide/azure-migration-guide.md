@@ -33,7 +33,7 @@ Even though classic and cloud services monitor the same Azure resources on Dynat
 
 * They have different entity IDs and metric keys.
 * Data for each Dynatrace entity type is collected and stored separately.
-* ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change You need to adapt the configuration of dashboards, alerts, and management zones based on entity ID or [metric keys with the monitored service type](#metrics).
+* Breaking change You need to adapt the configuration of dashboards, alerts, and management zones based on entity ID or [metric keys with the monitored service type](#metrics).
 
 You do have the option to choose from a classic or cloud service to preserve historical data, for now. But be aware of the following:
 
@@ -222,7 +222,7 @@ Below you can find tables with classic services metrics and their corresponding 
 | Classic service metric name | Classic service metric key | Cloud service metric name | Cloud service metric |
 | --- | --- | --- | --- |
 | Blocked by firewall | builtin:cloud.azure.sqlDatabase.connections.blockedByFirewall | Blocked by firewall | ext:cloud.azure.microsoft\_sql.servers.databases.blocked\_by\_firewall |
-| Failed connections | builtin:cloud.azure.sqlDatabase.connections.failed | Failed connections - system errors Failed connections - user errors | ext:cloud.azure.microsoft\_sql.servers.databases.connection\_failed ext:cloud.azure.microsoft\_sql.servers.databases.connection\_failed\_user\_error |
+| Failed connections | builtin:cloud.azure.sqlDatabase.connections.failed | Failed connections - system errors Failed connections - user errors | ext:cloud.azure.microsoft\_sql.servers.databases.connection\_failedext:cloud.azure.microsoft\_sql.servers.databases.connection\_failed\_user\_error |
 | Successful connections | builtin:cloud.azure.sqlDatabase.connections.successful | Successful connections | ext:cloud.azure.microsoft\_sql.servers.databases.connection\_successful |
 | DTU limit | builtin:cloud.azure.sqlDatabase.dtu.limit.count | DTU limit | ext:cloud.azure.microsoft\_sql.servers.databases.dtu\_limit |
 | DTU used | builtin:cloud.azure.sqlDatabase.dtu.limit.used | DTU used | ext:cloud.azure.microsoft\_sql.servers.databases.dtu\_used |

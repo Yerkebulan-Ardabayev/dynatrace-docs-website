@@ -53,7 +53,7 @@ You can export the table data in a comma-separated values (CSV) file.
 
   In the **Actions** column of the table, you can select:
 
-  + **Filter** ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") to filter the view for the specified dimension.
+  + **Filter**  to filter the view for the specified dimension.
   + **More** (**…**) to access further analysis options from the [**Analyze** menu](/managed/observe/application-observability/services-classic/context-specific-drill-down#analyze-menu "Learn about easy navigation and filtering for services analysis.").
 * The chart uses [trace and request data](/managed/observe/application-observability/multidimensional-analysis#data-source "Configure a multidimensional analysis view and save it as a calculated metric."), which has different data retention periods. For timeframes containing data older than 10 days, you can turn on the **Show data retention** toggle to better understand which data is available for which period directly from the chart.
 
@@ -67,7 +67,7 @@ Exception details
 
 The page provides an overview of exception messages; a code-level stacktrace, where you can dig into your code up to the method that had thrown the exception; and requests that are affected by the exception. Select the exception message to filter the stacktrace and affected requests to the selected exception message.
 
-You can further narrow down the scope of analysis by applying filters. Place your cursor in the **Filtered by** field to see the available options. The quick way to filter by a specific request is to open the **Affected request** tab and select the filter button ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") of the required request.
+You can further narrow down the scope of analysis by applying filters. Place your cursor in the **Filtered by** field to see the available options. The quick way to filter by a specific request is to open the **Affected request** tab and select the filter button  of the required request.
 
 ## Example use cases
 
@@ -75,7 +75,7 @@ Here you can find some use cases for the **Exception analysis** view.
 
 ### Look for a specific exception
 
-With **Exception analysis** view you can focus your analysis on a specific class of exception. Just find the exception you need in the table and select the filter button ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter").
+With **Exception analysis** view you can focus your analysis on a specific class of exception. Just find the exception you need in the table and select the filter button .
 
 If you're interested in a rare exception that is unavailable in the table, you can still find it by the exception class.
 

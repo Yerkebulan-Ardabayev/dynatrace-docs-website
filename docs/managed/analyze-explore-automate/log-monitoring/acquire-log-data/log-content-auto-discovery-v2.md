@@ -118,7 +118,7 @@ Log files in OneAgent:
 * must be opened in write mode.
 * must not be smaller than the configured size threshold (default: 500 bytes) to be checked for binary content.
 
-The default maximum number of log sources per process group instance is 200. This value is configurable via the **Maximum number of log sources per process group instance** option in ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Log Monitoring** > **Advanced log settings**.
+The default maximum number of log sources per process group instance is 200. This value is configurable via the **Maximum number of log sources per process group instance** option in  **Settings** > **Log Monitoring** > **Advanced log settings**.
 
 In standard environments, OneAgent log module supports up to 10,000 files in one directory with logs and 200 MB of new log content per minute. If you have more data, especially a higher level of magnitude, there's a high chance that the OneAgent log module supports it. Contact the Dynatrace support team to review your setup beforehand.
 

@@ -96,7 +96,7 @@ The time when the attack happened.
 
 #### Details
 
-Expand ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") attack rows for details, or to perform the following actions:
+Expand  attack rows for details, or to perform the following actions:
 
 * Select **Add to allowlist** if you want to add and configure a new exception rule for the attack. For details, see [Define exception rules](/managed/secure/application-security/application-protection/application-protection-rules#exception-rules "Create, modify, and delete rules for specific attacks.").
 * Select **Block attack** if you want to add and define a new rule to block the attack. For details, see [Define specific attack control rules](/managed/secure/application-security/application-protection/application-protection-rules#handling-rules "Create, modify, and delete rules for specific attacks.").

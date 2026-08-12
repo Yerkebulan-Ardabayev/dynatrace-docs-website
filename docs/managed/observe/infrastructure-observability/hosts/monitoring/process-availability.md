@@ -116,7 +116,7 @@ After you save your changes:
 
 Monitoring rules are listed on the **Process availability** page. Each monitoring rule in turn contains a list of one or more detection rules.
 
-* To view or edit the details of any listed monitoring or detection rule, select ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") in the **Details** column for that rule.
-* To change rule order, drag ![Drag handle](https://dt-cdn.net/images/drag-handle-turquoise-600-1aa0e5ea00.svg "Drag handle") any rule to a different place in the list.
-* To delete a rule, select ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") in the **Delete** column and then confirm your action.
+* To view or edit the details of any listed monitoring or detection rule, select  in the **Details** column for that rule.
+* To change rule order, drag  any rule to a different place in the list.
+* To delete a rule, select  in the **Delete** column and then confirm your action.
 * To enable or disable a rule (monitoring rules only), use the toggle in the **Enabled** column.

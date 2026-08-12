@@ -47,7 +47,7 @@ Account Management License view for Dynatrace classic license model, with Usage 
 You can filter this information according to **Cluster**, **Product**, **Resolution**, and **Timeframe**.
 
 You can export this data in CSV format.
-To do this, select ![Export](https://dt-cdn.net/images/dashboards-app-dashboard-export-5ed2168e10.svg "Export") **Export data**.
+To do this, select  **Export data**.
 
 Use **Resolution** to choose the granularity:
 

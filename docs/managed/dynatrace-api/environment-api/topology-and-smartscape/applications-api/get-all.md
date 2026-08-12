@@ -46,7 +46,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | entity | string[] | Filters result to the specified applications only.  To specify several applications use the following format: `entity=ID1&entity=ID2`. | query | Optional |
 | managementZone | integer | Only return applications that are part of the specified management zone. | query | Optional |
 | includeDetails | boolean | Includes (`true`) or excludes (`false`) details which are queried from related entities.  Excluding details may make queries faster.  If not set, then `true` is used. | query | Optional |
-| pageSize | integer | The number of applications per result page.  If not set, pagination is not used and the result contains all applications fitting the specified filtering criteria. | query | Optional |
+| pageSize | integer | The number of applications per result page.  If not set, **400** is used.  If there are more results than the page size, the response contains a **Next-Page-Key** header. Use it as the **nextPageKey** query parameter to get the next page.applications | query | Optional |
 | nextPageKey | string | The cursor for the next page of results. You can find it in the **Next-Page-Key** header of the previous response.  If you're using pagination, the first page is always returned without this cursor.  You must keep all other query parameters as they were in the first request to obtain subsequent pages. | query | Optional |
 
 ## Response headers

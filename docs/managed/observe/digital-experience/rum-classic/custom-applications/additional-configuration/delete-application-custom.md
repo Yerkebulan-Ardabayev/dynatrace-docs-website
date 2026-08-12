@@ -19,7 +19,7 @@ To delete an application via Dynatrace web UI
 
 1. Go to **Settings** > **Monitoring** > **Monitoring overview**.
 2. Switch to the **Applications** tab and find the application that you want to delete.
-3. Next to the application name, select **Expand** ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row"), and then select **Remove** > **Yes**.
+3. Next to the application name, select **Expand** , and then select **Remove** > **Yes**.
 
 ## Delete an application via API
 

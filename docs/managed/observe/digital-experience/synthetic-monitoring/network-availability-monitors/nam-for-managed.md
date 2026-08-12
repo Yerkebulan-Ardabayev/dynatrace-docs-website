@@ -51,7 +51,7 @@ In the **Metrics** section, you can see
 * a line chart showing the average monitor execution time.
 * a line chart showing the average monitor availability.
 
-For each of the above, you can select ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") to **Show in data explorer**, **Create metric event**, **Pin to dashboard**.
+For each of the above, you can select  to **Show in data explorer**, **Create metric event**, **Pin to dashboard**.
 
 ### Request metrics
 
@@ -60,7 +60,7 @@ In the **Request metrics** section, you can see
 * a bar chart showing the average number of requests executions.
 * a line chart showing the average requests availability.
 
-For each of the above, you can select ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") to **Show in data explorer**, **Create metric event**, **Pin to dashboard**.
+For each of the above, you can select  to **Show in data explorer**, **Create metric event**, **Pin to dashboard**.
 
 ### TCP, ICMP and DNS metrics
 
@@ -70,7 +70,7 @@ In this section, you can see a chart showing one of the following metrics depend
 * ICMP - showing charts for success rate by request, packets sent by request, packets received by request and Round trip time by request.
 * DNS - showing a chart for the resolution time.
 
-For each of the above, you can select ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") to **Show in data explorer**, **Create metric event**, **Pin to dashboard**.
+For each of the above, you can select  to **Show in data explorer**, **Create metric event**, **Pin to dashboard**.
 
 ### Monitored hosts
 
@@ -78,7 +78,7 @@ This section shows a list of your monitored hosts. You can sort them by name. Se
 
 ### Events
 
-This section shows a bar chart of events. If an outage is listed you need to select ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row"), to see its details.
+This section shows a bar chart of events. If an outage is listed you need to select , to see its details.
 
 ## Problems
 

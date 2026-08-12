@@ -36,12 +36,12 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 #### The `ActiveGateAutoUpdateConfig` object
 
-Configuration of the ActiveGate auto-updates.
+Auto-update configuration for an individual environment ActiveGate.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | effectiveSetting | string | The actual state of the ActiveGate auto-update.  Applicable only if the **setting** parameter is set to `INHERITED`. In that case, the value is taken from the parent setting. Otherwise, it's just a duplicate of the **setting** value. The element can hold these values * `ENABLED` * `DISABLED` | Optional |
-| setting | string | The state of the ActiveGate auto-update: enabled, disabled, or inherited.  If set to `INHERITED`, the setting is inherited from the global configuration set on the environment or Managed cluster level. The element can hold these values * `DISABLED` * `ENABLED` * `INHERITED` | Required |
+| setting | string | The state of the environment ActiveGate auto-update: enabled, disabled, or inherited.  If set to `INHERITED`, the setting is inherited from the global environment ActiveGate auto-update configuration. The element can hold these values * `DISABLED` * `ENABLED` * `INHERITED` | Required |
 | targetVersion | string | The target version of the ActiveGate.  Specify the version in the `<major>.<minor>` format (for example `1.342`) or `latest`, `previous`, or `older`. | Optional |
 | updateWindows | [UpdateWindowsConfig](#openapi-definition-UpdateWindowsConfig) | Basic information about all configured update windows | Optional |
 

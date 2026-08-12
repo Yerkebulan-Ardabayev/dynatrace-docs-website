@@ -576,15 +576,15 @@ The **Standard** column references these abbreviations.
 ### Dynatrace Operator components
 
 ![Green background check mark](https://dt-cdn.net/images/check-16-c4e463bb22.png "Green background check mark") Satisfied  
-![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Exception (see expand below)  
-![Configurable](https://dt-cdn.net/images/configurable-490-8b015913d4.svg "Configurable") Planned improvement (see expand below)
+ Exception (see expand below)  
+ Planned improvement (see expand below)
 
 | Security control | Standard | Operator | Webhook | CSI driver |
 | --- | --- | --- | --- | --- |
 | Disallow privileged containers[1](#fn-1-1-def) | CIS 5.2.2 / PSS Baseline | Satisfied | Satisfied | Exception |
 | Disallow privilege escalation[1](#fn-1-1-def) | CIS 5.2.6 / PSS Restricted | Satisfied | Satisfied | Exception |
 | Disallow containers running as root[2](#fn-1-2-def) | CIS 5.2.7 / PSS Restricted | Satisfied | Satisfied | Exception |
-| Limit access to secrets (RBAC) | CIS 5.1.4 | Planned improvement | Planned improvement | Planned improvement |
+| Limit access to secrets (RBAC) | CIS 5.1.4 |  |  |  |
 | Disallow use of HostPath volumes[3](#fn-1-3-def) | CIS 5.2.12 / PSS Baseline | Satisfied | Satisfied | Exception |
 | Restrict automounting of service account token[4](#fn-1-4-def) | CIS 5.1.6 | Exception | Exception | Exception |
 | Disallow use of too many or insecure capabilities | CIS 5.2.8 / 5.2.9 / 5.2.10 / PSS Restricted | Satisfied | Satisfied | Satisfied |
@@ -631,8 +631,8 @@ Namespace-scoped Roles for the Operator, Webhook, and CSI driver currently allow
 ### Managed components
 
 ![Green background check mark](https://dt-cdn.net/images/check-16-c4e463bb22.png "Green background check mark") Satisfied  
-![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Exception (see expand below)  
-![Configurable](https://dt-cdn.net/images/configurable-490-8b015913d4.svg "Configurable") Planned improvement (see expand below)
+ Exception (see expand below)  
+ Planned improvement (see expand below)
 
 | Security control | Standard | OneAgent | Extensions controller | Dynatrace Collector | ActiveGate | EdgeConnect | KSPM | OneAgent Log Module |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -647,9 +647,9 @@ Namespace-scoped Roles for the Operator, Webhook, and CSI driver currently allow
 | Disallow use of host PID[7](#fn-2-7-def) | CIS 5.2.3 / PSSB | Exception | Satisfied | Satisfied | Satisfied | Satisfied | Exception | Satisfied |
 | Disallow use of host IPC | CIS 5.2.4 / PSSB | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
 | Require readOnlyRootFilesystem | Best practice | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
-| Require Resource limits[10](#fn-2-10-def) | Best practice | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Planned improvement |
+| Require Resource limits[10](#fn-2-10-def) | Best practice | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |  |
 | Demand seccomp to be used (at least default/runtime)[8](#fn-2-8-def) | CIS 5.7.2 / PSSR | Exception | Satisfied | Satisfied | Exception | Exception | Exception | Exception |
-| Disallow Secrets mounted as env variable | CIS 5.4.1 | Satisfied | Satisfied | Planned improvement | Satisfied | Satisfied | Satisfied | Satisfied |
+| Disallow Secrets mounted as env variable | CIS 5.4.1 | Satisfied | Satisfied |  | Satisfied | Satisfied | Satisfied | Satisfied |
 | Restrict sysctls | PSSB | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
 | Restrict AppArmor | PSSB | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
 | Disallow SELinux | PSSB | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |

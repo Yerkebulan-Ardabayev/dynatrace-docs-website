@@ -55,7 +55,7 @@ By default, Data Explorer tables are sorted by the first metric in the table que
 To sort a Data Explorer table by a different column, you need to change the column order.
 
 1. Locate the metric by which you want to sort the table.
-2. Drag ![Drag handle](https://dt-cdn.net/images/drag-handle-turquoise-600-1aa0e5ea00.svg "Drag handle") that metric to the top position in the query definition.
+2. Drag  that metric to the top position in the query definition.
 3. Run the query.
 
    The table will be sorted by the metric you dragged to the first place in the query definition.

@@ -171,7 +171,7 @@ The assessment accuracy details.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| reducedReasons | string[] | The reason for a reduced accuracy of the assessment. The element can hold these values * `LIMITED_AGENT_SUPPORT` * `LIMITED_BY_CONFIGURATION` |
+| reducedReasons | string[] | The reason for a reduced accuracy of the assessment. The element can hold these values * `LIMITED_AGENT_SUPPORT` * `LIMITED_BY_CONFIGURATION` * `LIMITED_BY_SERVICE_DETECTION_V2` |
 
 #### The `ErrorEnvelope` object
 

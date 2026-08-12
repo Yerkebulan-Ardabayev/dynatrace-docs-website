@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitori
 # Log Monitoring configuration (Logs Classic)
 
 * 5-min read
-* Updated on Jan 18, 2023
+* Updated on Aug 05, 2026
 
 Log Monitoring Classic
 
@@ -17,7 +17,7 @@ By default, Log Monitoring is activated in your Dynatrace environment. To start 
 * [Log ingest rules (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/log-storage "Configure storage of log files that are already known to OneAgent.")
 * [Log ingestion API (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
 
-You can confirm that Log Monitoring is enabled or you can enable it globally or on a host level, but checking the status and enabling or disabling Log Monitoring is optional in most cases. If you plan to use Log Monitoring, you can focus on OneAgent settings that directly affect how Log Monitoring is operating.
+You can confirm that Log Monitoring is enabled or you can enable it globally or on a host level, but checking the status and enabling or disabling Log Monitoring is optional in most cases. If you plan to use Log Monitoring, you can focus on OneAgent settings that directly affect how Log Monitoring operates.
 
 * [OneAgent settings](#lm-oneagent-settings).
 
@@ -33,7 +33,7 @@ You can check if Log Monitoring is enabled in your Dynatrace environment globall
   2. Find **Log Monitoring** in the list of supported technologies, and select **Edit** (pencil icon).
   3. Check if **Monitor Log Monitoring on every host** option is enabled.
 * To check if Dynatrace Log Monitoring is enabled on a host level:  
-  Use OneAgent CLI and execute the `oneagentctl` command with the `--get-app-log-content-access` parameter to check whether Log Monitoring is enabled:
+  Use OneAgent CLI and run the `oneagentctl` command with the `--get-app-log-content-access` parameter to check whether Log Monitoring is enabled:
 
   + Linux: `./oneagentctl --get-app-log-content-access`
   + Windows: `.\oneagentctl.exe --get-app-log-content-access`
@@ -50,7 +50,7 @@ Similarly to checking Log Monitoring status, you can enable or disable Log Monit
   2. Find **Log Monitoring** in the list of supported technologies, and select **Edit** (pencil icon).
   3. Turn on **Monitor Log Monitoring on every host**.
 * To enable or disable Dynatrace Log Monitoring on a host level:  
-  Use OneAgent CLI and execute the `oneagentctl` command-line interface to execute the following command at the individual host level.  
+  Use OneAgent CLI and run the `oneagentctl` command-line interface to run the following command at the individual host level.  
   Set the `--set-app-log-content-access` parameter to `true` or `false` to disable or enable Log Monitoring:
 
   + Linux: `./oneagentctl --set-app-log-content-access=true`
@@ -74,14 +74,26 @@ You can adjust:
 
 ### Global OneAgent settings for Log Monitoring
 
-1. Go to **Settings** > **Log Monitoring** > **OneAgent settings**.
+1. Go to **Settings** > **Log Monitoring** > **Advanced log settings**.
+2. Adjust settings and **Save changes**.
+
+### Global OneAgent feature flags for Log Monitoring
+
+1. Go to **Settings** > **Log Monitoring** > **Log Module Feature Flags**.
 2. Adjust settings and **Save changes**.
 
 ### Host-specific OneAgent settings for Log Monitoring
 
-1. Go to **Hosts** and select your Linux host.
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts** > **Classic** and select your host.
 2. On the host overview page, select **More** (**…**) > **Settings** in the upper-right corner of the page.
 3. On the **Host settings** page, select **Log Monitoring** and **Advanced log settings**.
+4. Adjust settings and **Save changes**.
+
+### Host-specific OneAgent feature flags for Log Monitoring
+
+1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts** > **Classic** and select your host.
+2. On the host overview page, select **More** (**…**) > **Settings** in the upper-right corner of the page.
+3. On the **Host settings** page, select **Log Monitoring** and **Log Module Feature Flags**.
 4. Adjust settings and **Save changes**.
 
 ## Default OneAgent settings
@@ -89,16 +101,33 @@ You can adjust:
 | Setting | Description | Default |
 | --- | --- | --- |
 | **Detect open log files** | This option automatically detects logs written by important processes. | enabled |
-| **Detect IIS logs** | This option allows the detection of logs and event logs written by the Microsoft IIS server. | enabled |
-| **Detect system logs** | Linux: Detects syslogs, and message logs. Windows: Detects system, application, and security event logs. | enabled |
-| **Detect logs on network file systems** | This option detects logs stored on the Network File System server. This applies for Linux only | disabled |
-| **Allow OneAgent to monitor OneAgent logs** | This option allows OneAgent to monitor own logs. | disabled |
-| **Detect logs of containerized applications** | This option allows the detection of log messages written to the containerized application's stdout/stderr streams. It also detects Kubernetes pod logs. | enabled |
-| **Set UTC as default timezone in containers** | This sets the default timezone of the containers as UTC. | enabled |
-| **Timestamp search limit** | Set the timestamp search. | `64` bytes |
-| **Severity search chars limit** | Set the severity search characters limit. | `100` bytes |
-| **Severity search lines limit** | Set the severity search lines limit. | `2` |
-| **Maximum of log group instances per entity limit - count** | Set the upper limit for log group instances per entry. | `200` |
+| **Detect system logs** | This option detects:  * Linux: Syslogs and message logs. * Windows: System, application, and security event logs. | enabled |
+| **Detect logs of containerized applications** | This option detects log messages written to the containerized application's stdout/stderr streams, including Kubernetes pod logs. | enabled |
+| **Detect IIS logs** | This option detects logs and event logs written by the Microsoft IIS server. | enabled |
+| **Detect logs on network file systems** | This option detects logs stored on the Network File System server. Applies for Linux only. | disabled |
+| **Allow OneAgent to monitor OneAgent logs** | This option allows OneAgent to monitor its own logs. | disabled |
+| **Detect container time zones** | This option enables automatic detection of the timezone in container logs when it's not defined in the log content or set manually. | enabled |
+| **Default timezone for agents** | This option sets the default timezone for an agent when no more specific timezone configuration is set. | Local time zone |
+| **Timestamp search limit** | This option sets the timestamp search limit. | `64` bytes |
+| **Severity search chars limit** | This option sets the severity search characters limit. | `100` bytes |
+| **Severity search lines limit** | This option sets the severity search lines limit. | `2` |
+| **Maximum number of log sources per process group instance** | This option defines the maximum number of automatic log sources per entity; new automatic log sources won't be added once this limit is reached. | `200` |
+| **Windows Event log query timeout** | This option defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs. | `5` seconds |
+| **Minimal log file size to perform binary detection** | This option defines the minimum number of bytes in a log file required for binary detection. | `512` bytes |
+| **Binary detection mode** | This option specifies the granularity at which binary log files are detected. **Per log source** applies binary detection at the log source level; **Per log file** evaluates each log file individually. | Per log source |
+
+## Feature flags for Log Monitoring
+
+| Setting | Description | Default |
+| --- | --- | --- |
+| **Collect all container logs** | Enables OneAgent to collect all container logs in Kubernetes environments.[1](#fn-1-1-def) | enabled |
+| **Collect Journald logs** | Enables OneAgent to collect logs from Journald on Linux systems. Enables detection of Journald logs and ensures logs that match an ingest rule are ingested. | enabled |
+| **Support for structured data in Windows Event Logs** | Enables OneAgent to collect data from Event Logs in the User Data and Event Data sections. | disabled |
+| **Add IIS Application Pool context to Logs** | Enables OneAgent to assign logs to the appropriate IIS application pools when an unambiguous IIS configuration is detected. | disabled |
+
+1
+
+The matcher "Deployment name" in the log sources configuration will be ignored and needs to be replaced with "Workload name". Requires Dynatrace Operator 1.4.2 or later.
 
 ## Configuration file Optional
 
@@ -107,7 +136,7 @@ The configuration file located on each OneAgent is used to set three options. Fo
 * Linux: `/var/lib/dynatrace/oneagent/agent/config/`
 * Windows: `%PROGRAMDATA%\dynatrace\oneagent\agent\config\`
 
-The configuration file name must have the `json` extension; the file name is otherwise unrestricted.
+The configuration filename must have the `json` extension; the filename is otherwise unrestricted.
 
 By default, these options are set for the OneAgent log module to operate properly and to auto-detect log files on the specific host. Modifying this configuration file is not required.
 

@@ -52,7 +52,7 @@ The timeframe is restricted to a **maximum period of 3 days**.
 | expectedMonitoringState | string | Filters processes by the expected monitoring state of the process. The element can hold these values * `OFF` * `ON` | query | Optional |
 | managementZone | integer | Only return processes that are part of the specified management zone. | query | Optional |
 | includeDetails | boolean | Includes (`true`) or excludes (`false`) details which are queried from related entities.  Excluding details may make queries faster.  If not set, then `true` is used. | query | Optional |
-| pageSize | integer | The number of processes per result page.  If not set, pagination is not used and the result contains all processes fitting the specified filtering criteria. | query | Optional |
+| pageSize | integer | The number of processes per result page.  If not set, **400** is used.  If there are more results than the page size, the response contains a **Next-Page-Key** header. Use it as the **nextPageKey** query parameter to get the next page.processes | query | Optional |
 | nextPageKey | string | The cursor for the next page of results. You can find it in the **Next-Page-Key** header of the previous response.  If you're using pagination, the first page is always returned without this cursor.  You must keep all other query parameters as they were in the first request to obtain subsequent pages. | query | Optional |
 
 ## Response

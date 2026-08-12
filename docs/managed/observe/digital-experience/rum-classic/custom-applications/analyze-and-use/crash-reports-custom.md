@@ -46,7 +46,7 @@ The **Latest app versions** section provides crash information for four latest a
 
 ### Crash statistics
 
-In the **Crash statistics** section, you can check the total crash count, number of crash groups, and number of affected versions for the currently selected timeframe. In the **Latest app versions** section, select **Filter** ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") next to the version you're interested in to get this information for a particular version.
+In the **Crash statistics** section, you can check the total crash count, number of crash groups, and number of affected versions for the currently selected timeframe. In the **Latest app versions** section, select **Filter**  next to the version you're interested in to get this information for a particular version.
 
 You can also use other filters, such as **Connection type**, **Country**, or **Manufacturer**.
 

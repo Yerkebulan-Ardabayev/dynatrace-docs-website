@@ -50,7 +50,7 @@ Use the **Usage details** charting to explore the historical consumption of your
 
 Changing chart options updates the **Cluster usage breakdown** table in the chart below. The table represents total consumption by cluster, based on cluster, product, and timeframe selections.
 
-Select ![Export](https://dt-cdn.net/images/dashboards-app-dashboard-export-5ed2168e10.svg "Export") **Export data** to download charted data as a CSV format file, which can be helpful for additional tabular reports and aggregation.
+Select  **Export data** to download charted data as a CSV format file, which can be helpful for additional tabular reports and aggregation.
 
 ## FAQ
 

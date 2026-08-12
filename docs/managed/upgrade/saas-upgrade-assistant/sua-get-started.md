@@ -20,5 +20,5 @@ Latest Dynatrace
 5. **Choose configurations to include in the deployment**—confirm the number of included configurations and go to the **Configurations** tab to include more.
    Note: This step is only visible for the selective deployment.
 6. [Update dashboard owners](/managed/upgrade/saas-upgrade-assistant/sua-update-dashboard-owners "Update dashboard owners automatically with SaaS Upgrade Assistant.").
-7. **Prepare authorization token**—create a temporary token, delete the old one, or go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** to manage tokens.
+7. **Prepare authorization token**—create a temporary token, delete the old one, or go to  **Settings** to manage tokens.
 8. **Run deployment**—check the final summary and run the deployment.

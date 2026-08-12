@@ -63,8 +63,6 @@ Monitor availability and performance of the key processes on your hosts.](/manag
 
 ## Diagnostics
 
-[![OneAgent](https://cdn.bfldr.com/B686QPH3/at/g8mmkkpfmgwbxcjz54pvfsx/OneAgent.svg?auto=webp&width=72&height=72 "OneAgent")
-
-### OneAgent diagnostics
+[### OneAgent diagnostics
 
 Learn how to run OneAgent diagnostics.](/managed/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Learn how to run OneAgent diagnostics")

@@ -46,7 +46,7 @@ To change the Apdex thresholds for a key user action
 5. In the upper-right corner of the user action detail page, do one of the following:
 
    * For web applications, select **More** (**…**) > **Edit** > **Key performance metric**.
-   * For mobile and custom applications, select ![Expand](https://dt-cdn.net/images/expandbutton-40-e1f11ff81d.png "Expand") (**Expand**) > **Edit** > **Key performance metric**.
+   * For mobile and custom applications, select  (**Expand**) > **Edit** > **Key performance metric**.
 6. Use the slider to adjust the Apdex thresholds.
 
 ## Related topics

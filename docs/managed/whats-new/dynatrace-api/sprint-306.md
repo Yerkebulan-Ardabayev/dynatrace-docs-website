@@ -37,7 +37,7 @@ Rollout start: Jan 13, 2025
 
 ### /settings/effective-permissions
 
-![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+Breaking change
 
 * `POST /settings/effective-permissions:resolve`
 

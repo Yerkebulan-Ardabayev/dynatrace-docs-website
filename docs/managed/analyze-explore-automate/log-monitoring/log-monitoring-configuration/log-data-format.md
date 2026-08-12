@@ -58,7 +58,7 @@ You can explicitly disable JSON parsing by creating a timestamp configuration ru
 
 To disable JSON parsing for a log file:
 
-1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Log Monitoring** > **Timestamp/Splitting patterns**.
-2. On the record of your configured timestamp rule, select ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") **Edit**.
+1. Go to  **Settings** > **Log Monitoring** > **Timestamp/Splitting patterns**.
+2. On the record of your configured timestamp rule, select  **Edit**.
 3. Disable the **JSON format detector** option.
 4. Select **Save and close**.

@@ -479,7 +479,7 @@ The page displays the amount of storage that is currently used and the storage l
 
 For Dynatrace Managed, the default storage size for symbol and mapping files is 1 GiB. You can modify the storage size according to your requirements.
 
-To free up space, you can manually delete files that you no longer need. Select **Delete** ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") in the row of the file you want to delete.
+To free up space, you can manually delete files that you no longer need. Select **Delete**  in the row of the file you want to delete.
 
 To prevent files from being automatically deleted when the storage limit is reached, turn on **Pinned** for the source maps and symbol files that you want to keep.
 

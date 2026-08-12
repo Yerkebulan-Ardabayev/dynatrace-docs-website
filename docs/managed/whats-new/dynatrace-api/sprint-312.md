@@ -213,7 +213,7 @@ Rollout start: Apr 8, 2025
 
     - Changed **CalculatedServiceMetric** schema
 
-      * ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+      * Breaking change
 
         + Changed property **metricDefinition**
 
@@ -227,7 +227,7 @@ Rollout start: Apr 8, 2025
 
     - Changed **CalculatedServiceMetric** schema
 
-      * ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+      * Breaking change
 
         + Changed property **metricDefinition**
 
@@ -243,7 +243,7 @@ Rollout start: Apr 8, 2025
 
       * Changed **CalculatedServiceMetric** schema
 
-        + ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+        + Breaking change
 
           - Changed property **metricDefinition**
 
@@ -257,7 +257,7 @@ Rollout start: Apr 8, 2025
 
     - Changed **CalculatedServiceMetric** schema
 
-      * ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+      * Breaking change
 
         + Changed property **metricDefinition**
 
@@ -271,7 +271,7 @@ Rollout start: Apr 8, 2025
 
     - Changed **CalculatedServiceMetric** schema
 
-      * ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+      * Breaking change
 
         + Changed property **metricDefinition**
 

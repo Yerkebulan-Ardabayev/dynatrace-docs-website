@@ -51,7 +51,7 @@ The timeframe is restricted to a **maximum period of 3 days**.
 | hostGroupId | string | Filters the resulting set of hosts by the specified host group.  Specify the Dynatrace IDs of the host group you're interested in. | query | Optional |
 | hostGroupName | string | Filters the resulting set of hosts by the specified host group.  Specify the name of the host group you're interested in. | query | Optional |
 | includeDetails | boolean | Includes (`true`) or excludes (`false`) details which are queried from related entities.  Excluding details may make queries faster.  If not set, then `true` is used. | query | Optional |
-| pageSize | integer | The number of hosts per result page.  If not set, pagination is not used and the result contains all hosts fitting the specified filtering criteria. | query | Optional |
+| pageSize | integer | The number of hosts per result page.  If not set, **400** is used.  If there are more results than the page size, the response contains a **Next-Page-Key** header. Use it as the **nextPageKey** query parameter to get the next page.hosts | query | Optional |
 | nextPageKey | string | The cursor for the next page of results. You can find it in the **Next-Page-Key** header of the previous response.  If you're using pagination, the first page is always returned without this cursor.  You must keep all other query parameters as they were in the first request to obtain subsequent pages. | query | Optional |
 
 ## Response

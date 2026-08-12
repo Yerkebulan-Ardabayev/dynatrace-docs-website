@@ -39,9 +39,9 @@ Some notifications have a direct link to another page in the Dynatrace web UI. S
 
 ## Clear notifications
 
-Some notifications expire and are removed from the list when the system recovers to a healthy state. There is no global expiration for all notifications, so if the system doesn't recover to a healthy state, the notification will not be removed from the list until you select ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") in the **Clear** column.
+Some notifications expire and are removed from the list when the system recovers to a healthy state. There is no global expiration for all notifications, so if the system doesn't recover to a healthy state, the notification will not be removed from the list until you select  in the **Clear** column.
 
-* To clear a single notification, select ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") in the **Clear** column.
+* To clear a single notification, select  in the **Clear** column.
 * To clear multiple notifications, select their checkboxes and then select **Clear selected**.
 
 ### Notes

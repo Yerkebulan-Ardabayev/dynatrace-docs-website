@@ -252,7 +252,7 @@ When a user session ends in a [crash](/managed/observe/digital-experience/rum-cl
    * **Crashes:** `Yes` to show sessions ended with a crash
    * Mobile applications **Session Replay Classic:** `Yes` to display sessions recorded with Session Replay Classic on crashes for [Android](/managed/observe/digital-experience/session-replay/session-replay-android "Set up Session Replay Classic for your Android apps to learn which actions your users perform.") or [iOS](/managed/observe/digital-experience/session-replay/session-replay-ios "Prerequisites and the procedure for enabling Session Replay Classic for your iOS apps.") applications
 3. Select the user session you're interested in to open its session details page.
-4. Mobile applications To watch the Session Replay Classic recording, go to the **Session Replay** tab, and select **Play** ![Replay](https://dt-cdn.net/images/replay-button-optimized-41ad05863e.svg "Replay").  
+4. Mobile applications To watch the Session Replay Classic recording, go to the **Session Replay** tab, and select **Play** .  
    The last event of the session is the crash, which is represented by a red dot in the timeline. Use the Session Replay Classic controls to analyze the crash in detail.
 
    ![Mobile user session with Session Replay Classic](https://dt-cdn.net/images/mobile-user-session-with-session-replay-2134-d486b7d1b9.png)

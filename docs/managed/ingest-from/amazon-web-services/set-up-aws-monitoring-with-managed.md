@@ -817,7 +817,7 @@ If your AWS account is on a different partition than the default `aws` partition
 To change your AWS partition
 
 1. Go to **Settings** > **Cloud and virtualization** > **AWS**.
-2. Find the instance where you want to change the partition and select ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") to edit the instance.
+2. Find the instance where you want to change the partition and select  to edit the instance.
 3. In the **AWS partition** list, select your partition.
 4. Select **Save**.
 
@@ -839,7 +839,7 @@ Once your credentials are saved, you can decide which services will be monitored
 To select your preferred services
 
 1. Go to **Settings** > **Cloud and virtualization** > **AWS**.
-2. Find the instance where you want to perform your monitoring and select ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") to edit the instance.
+2. Find the instance where you want to perform your monitoring and select  to edit the instance.
 3. In the **Services** section, select **Manage services**.
 4. The following services are added by default: Amazon EC2, AWS Lambda, Amazon RDS, Amazon DynamoDB, Amazon ALB, Amazon ELB, Amazon S3, and Amazon EBS. You can extend this list by choosing services from the dropdown menu. The full list of services is also available at [All AWS cloud services](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.").
 5. Select **Add service**

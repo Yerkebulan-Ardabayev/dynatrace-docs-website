@@ -63,7 +63,7 @@ To edit an existing rule via the Dynatrace web UI
 
 1. Go to **Settings**.
 2. Expand **Service Detection** and select a request type (**Full web request rules** or **Full web service rules**, or **External web request rules** or **External web service rules**).
-3. Expand ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") the row of the rule.
+3. Expand  the row of the rule.
 4. Edit the rule settings.
 5. Select **Save changes**.
 
@@ -75,7 +75,7 @@ To delete a service detection rule via the Dynatrace web UI
 
 1. Go to **Settings**.
 2. Expand **Service Detection** and select a request type (**Full web request rules** or **Full web service rules**, or **External web request rules** or **External web service rules**).
-3. In the **Delete** column for the corresponding rule row, select **Delete row** ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove")
+3. In the **Delete** column for the corresponding rule row, select **Delete row**
 
 ## Configure service detection rules via Settings API
 

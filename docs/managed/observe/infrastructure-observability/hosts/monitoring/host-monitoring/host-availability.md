@@ -57,7 +57,7 @@ To check or change the monitoring settings per host:
 1. Go to **Settings** > **Monitoring** > **Monitoring overview**.
 2. Select the **Hosts** tab.
 3. Find the host and check the **Summary** column to see if it's being monitored.
-4. Select the edit button ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") and check the settings in the **Monitoring** tab.
+4. Select the edit button  and check the settings in the **Monitoring** tab.
 
 ## Host availability events
 

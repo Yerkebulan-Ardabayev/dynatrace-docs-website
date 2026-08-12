@@ -28,7 +28,7 @@ Dynatrace version 1.161 and earlier
 4. Add the metrics source.
 
 * Select one of the available technologies.
-* Based on your selection, the editor will suggest the Java process as a source for your metrics. This narrows the list of available MBeans or PMI modules you will use in the next step. The technology behind the process determines whether you'll browse JMX MBeans or PMI modules. Select **Add metrics source** to use a suggested source. Click ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") to select a different process. When selecting it, you can narrow the list of available processes by choosing a particular host or Management Zone.
+* Based on your selection, the editor will suggest the Java process as a source for your metrics. This narrows the list of available MBeans or PMI modules you will use in the next step. The technology behind the process determines whether you'll browse JMX MBeans or PMI modules. Select **Add metrics source** to use a suggested source. Click  to select a different process. When selecting it, you can narrow the list of available processes by choosing a particular host or Management Zone.
 
 Selecting the process, host, or Management Zone doesn't limit the extension monitoring scope. JMX/PMI extensions monitor all Java processes accessible to OneAgent. The metric defined for the same MBean and attribute will be also available in other Java processes across your application, which can quickly exhaust your custom metric limit.
 

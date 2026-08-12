@@ -15,11 +15,11 @@ Context-specific drill-down menus simplify navigation and filtering of results p
 
 ## Table-based layouts
 
-Table-based layouts have this set of buttons on the right-hand side of each table row: ![Chart](https://dt-cdn.net/images/blue-chart-icon-4c5e910a12.svg "Chart") ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More")
+Table-based layouts have this set of buttons on the right-hand side of each table row: ![Chart](https://dt-cdn.net/images/blue-chart-icon-4c5e910a12.svg "Chart")
 
 ### Context-sensitive filters
 
-![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") Context-specific filters are available on nearly all service analysis pages that feature table-based layouts.
+Context-specific filters are available on nearly all service analysis pages that feature table-based layouts.
 
 Selecting the filter button of a specific service instance in the service instance table filters the entire page to show only the results of that specific service instance. Have a look at the example service **Details** page below. Selecting the filter button of a specific **service instance** in the service instance table will filter the entire page to show only the results of that specific service instance.
 
@@ -47,7 +47,7 @@ Response time in context specific charts
 
 ### Context-sensitive drill-down menus
 
-![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") The **Analyze** menus, available for results on all table-based service analysis pages, reveal all possible drill-downs and analysis options based on the current context.
+The **Analyze** menus, available for results on all table-based service analysis pages, reveal all possible drill-downs and analysis options based on the current context.
 
 Take a look to the expanded **Analyze** menu below. In this example we see options for context-sensitive analysis based on **Method hotspots**, **Outliers**, **Distributed traces**, **Response time hotspots**, **Service backtrace**, **Comparison**, **Service flow**, and **Top web requests**.
 
@@ -63,7 +63,7 @@ The context-specific menu for [multi-dimensional analysis](/managed/observe/appl
 
 ## Service flow
 
-While **Service flow** doesn't include tables, you can still access context-sensitive drill-down menus from this view: ![Distributed traces](https://dt-cdn.net/images/purepaths-icon-790bea38ba.svg "Distributed traces") ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") or ![Database statements](https://dt-cdn.net/images/database-statements-icon-62baf10731.svg "Database statements") ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More")
+While **Service flow** doesn't include tables, you can still access context-sensitive drill-down menus from this view: ![Distributed traces](https://dt-cdn.net/images/purepaths-icon-790bea38ba.svg "Distributed traces")   or ![Database statements](https://dt-cdn.net/images/database-statements-icon-62baf10731.svg "Database statements")
 
 Select any service in the service flow and you'll now see a hovering drill-down menu.
 
@@ -93,13 +93,13 @@ Access top database statatement from service flow
 
 ### Context-sensitive filters
 
-![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") Context-specific filters are available for all services.
+Context-specific filters are available for all services.
 
 They filter service flow to calls originating in the service that triggered the service flow and subsequently called the selected service—just like the **Filter service flow** button in the top tile of the [side pane](/managed/observe/application-observability/services-classic/service-flow/service-flow-metrics#side-pane "Learn about the service flow metrics that measure the performance of the service calls that are triggered by each service request in your environment.").
 
 ### Context-sensitive drill-down menus
 
-![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") The **Analyze** menus, available for all services, reveal all possible drill-downs and analysis options based on the currently selected service.
+The **Analyze** menus, available for all services, reveal all possible drill-downs and analysis options based on the currently selected service.
 
 ## Related topics
 

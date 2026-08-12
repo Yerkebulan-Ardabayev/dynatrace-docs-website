@@ -16,7 +16,7 @@ This page showcases new features, changes, and bug fixes in Dynatrace Managed ve
 
 ## Breaking changes
 
-Breaking change ![Dot](https://dt-cdn.net/images/dot-a32314f261.svg "Dot") Infrastructure Observability | OS services monitoring
+Breaking change  Infrastructure Observability | OS services monitoring
 
 ### OS services monitoring policy now requires detection rule
 
@@ -24,7 +24,7 @@ New or modified OS services monitoring policies require defining at least one de
 
 In addition, detection rules support the `$match()` operator.
 
-Breaking change ![Dot](https://dt-cdn.net/images/dot-a32314f261.svg "Dot") Platform | Settings
+Breaking change  Platform | Settings
 
 ### Settings audit log changes
 
@@ -36,7 +36,7 @@ Changes to the rank of objects due to reordering them in a ranked list will now 
 
 ## New features and enhancements
 
-Feature update ![Dot](https://dt-cdn.net/images/dot-a32314f261.svg "Dot") Infrastructure Observability | Application Observability | Vulnerability Analytics
+Feature update  Infrastructure Observability | Application Observability | Vulnerability Analytics
 
 ### Observe and protect your Python stacks
 
@@ -82,7 +82,7 @@ To get started
 2. Go to **Settings** > **Preferences** > **OneAgent features**, find and enable Python software component reporting, and then restart your processes.
 3. Go to **Settings** > **Application Security** > **Vulnerability Analytics** > **General settings**, and then enable Python.
 
-Feature update ![Dot](https://dt-cdn.net/images/dot-a32314f261.svg "Dot") Platform | Davis
+Feature update  Platform | Davis
 
 ### Problem merging: `is same as` generic relationship now taken into account
 
@@ -94,13 +94,13 @@ Two events on different entities will merge into the same problem if:
 * The two events do not explicitly disable merging
 * The start times of the two events are close to each other
 
-Feature update ![Dot](https://dt-cdn.net/images/dot-a32314f261.svg "Dot") Platform | Platform Services
+Feature update  Platform | Platform Services
 
 ### Network zone environment limit
 
 There is now a network zone environment limit of `10,000` by default.
 
-Feature update ![Dot](https://dt-cdn.net/images/dot-a32314f261.svg "Dot") Infrastructure Observability
+Feature update  Infrastructure Observability
 
 ### Resilient updates for Environment ActiveGates
 

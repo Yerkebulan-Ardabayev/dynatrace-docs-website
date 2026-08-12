@@ -89,7 +89,7 @@ Alternatively, use our API to modify [global request naming rules](#global-rules
 Service
 
 1. Go to **Services**, and select the service for which you want to update the settings.
-2. In the upper-right corner of the service details pane, select ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") (**More**) > **Settings**.
+2. In the upper-right corner of the service details pane, select  (**More**) > **Settings**.
 3. Go to **Web request naming**, and scroll down to the **Resource requests** section.
 4. Turn off **Use global resource request detection settings**.
 5. Enter the required filename extensions for image and binary resources.

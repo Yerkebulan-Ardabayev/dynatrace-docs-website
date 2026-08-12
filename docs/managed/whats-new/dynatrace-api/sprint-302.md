@@ -55,7 +55,7 @@ Rollout start: Oct 7, 2024
 
       * Changed **SyntheticLocation** schema
 
-        + ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+        + Breaking change
 
           - Removed required property:  
             `entityId`
@@ -207,7 +207,7 @@ Rollout start: Oct 7, 2024
 
       * Changed **SyntheticLocation** schema
 
-        + ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+        + Breaking change
 
           - Removed required property:  
             **entityId**

@@ -51,7 +51,6 @@ Network availability monitor.
 | name | string | The name of the monitor. | Required |
 | performanceThresholds | [SyntheticMonitorPerformanceThresholdsDto](#openapi-definition-SyntheticMonitorPerformanceThresholdsDto) | Performance thresholds configuration. | Optional |
 | primaryGrailTags | [SyntheticMonitorPrimaryGrailTagDto](#openapi-definition-SyntheticMonitorPrimaryGrailTagDto)[] | Primary Grail tags as a list of key-value pairs. Up to 10 tags. Those fields are only available for SaaS and not for Managed. | Optional |
-| securityContext | string[] | [FEATURE DISABLED] Security context as a list of strings. Up to 10 values, max 200 characters per value. Those fields are only available for SaaS and not for Managed. | Optional |
 | steps | [SyntheticMultiProtocolMonitorStepDto](#openapi-definition-SyntheticMultiProtocolMonitorStepDto)[] | The steps of the monitor. | Required |
 | syntheticMonitorOutageHandlingSettings | [SyntheticMonitorOutageHandlingSettingsDto](#openapi-definition-SyntheticMonitorOutageHandlingSettingsDto) | Outage handling configuration. | Optional |
 | tags | [SyntheticTagWithSourceDto](#openapi-definition-SyntheticTagWithSourceDto)[] | A set of tags assigned to the monitor.  You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically. But preferred option is usage of SyntheticTagWithSourceDto model. | Optional |
@@ -161,7 +160,6 @@ Browser monitor update.
 | name | string | The name of the monitor. | Required |
 | performanceThresholds | [SyntheticMonitorPerformanceThresholdsDto](#openapi-definition-SyntheticMonitorPerformanceThresholdsDto) | Performance thresholds configuration. | Optional |
 | primaryGrailTags | [SyntheticMonitorPrimaryGrailTagDto](#openapi-definition-SyntheticMonitorPrimaryGrailTagDto)[] | Primary Grail tags as a list of key-value pairs. Up to 10 tags. Those fields are only available for SaaS and not for Managed. | Optional |
-| securityContext | string[] | [FEATURE DISABLED] Security context as a list of strings. Up to 10 values, max 200 characters per value. Those fields are only available for SaaS and not for Managed. | Optional |
 | steps | [SyntheticBrowserMonitorStepDto](#openapi-definition-SyntheticBrowserMonitorStepDto)[] | The steps of the monitor. | Required |
 | syntheticMonitorOutageHandlingSettings | [SyntheticMonitorOutageHandlingSettingsDto](#openapi-definition-SyntheticMonitorOutageHandlingSettingsDto) | Outage handling configuration. | Optional |
 | tags | [SyntheticTagWithSourceDto](#openapi-definition-SyntheticTagWithSourceDto)[] | A set of tags assigned to the monitor.  You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically. But preferred option is usage of SyntheticTagWithSourceDto model. | Optional |
@@ -420,7 +418,6 @@ Http monitor's settings.
 | name | string | The name of the monitor. | Required |
 | performanceThresholds | [SyntheticMonitorPerformanceThresholdsDto](#openapi-definition-SyntheticMonitorPerformanceThresholdsDto) | Performance thresholds configuration. | Optional |
 | primaryGrailTags | [SyntheticMonitorPrimaryGrailTagDto](#openapi-definition-SyntheticMonitorPrimaryGrailTagDto)[] | Primary Grail tags as a list of key-value pairs. Up to 10 tags. Those fields are only available for SaaS and not for Managed. | Optional |
-| securityContext | string[] | [FEATURE DISABLED] Security context as a list of strings. Up to 10 values, max 200 characters per value. Those fields are only available for SaaS and not for Managed. | Optional |
 | steps | [SyntheticHttpMonitorStepDto](#openapi-definition-SyntheticHttpMonitorStepDto)[] | The steps of the monitor. | Required |
 | syntheticMonitorOutageHandlingSettings | [SyntheticMonitorOutageHandlingSettingsDto](#openapi-definition-SyntheticMonitorOutageHandlingSettingsDto) | Outage handling configuration. | Optional |
 | tags | [SyntheticTagWithSourceDto](#openapi-definition-SyntheticTagWithSourceDto)[] | A set of tags assigned to the monitor.  You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically. But preferred option is usage of SyntheticTagWithSourceDto model. | Optional |
@@ -607,22 +604,6 @@ This is a model of the request body, showing the possible elements. It has to be
 
 
 }
-
-
-
-],
-
-
-
-"securityContext": [
-
-
-
-"sample security context",
-
-
-
-"another security context"
 
 
 

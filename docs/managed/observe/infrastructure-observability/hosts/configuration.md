@@ -132,13 +132,13 @@ OneAgent automatically detects and monitors all of your network traffic, but you
    * **Exclude NIC**—This section lists all network interfaces excluded from network traffic monitoring on a particular interface.
 
      + To add an entry, select **Add item**
-     + To delete an entry, select ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") **Delete row**
-     + To edit an entry, expand ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") **Details**
+     + To delete an entry, select  **Delete row**
+     + To edit an entry, expand  **Details**
    * **Exclude IP**—This section lists all host IP addresses to exclude when calculating connectivity (other metrics will still be calculated).
 
      + To add an entry, select **Add item**
-     + To delete an entry, select ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") **Delete row**
-     + To edit an entry, expand ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") **Details**
+     + To delete an entry, select  **Delete row**
+     + To edit an entry, expand  **Details**
 2. Select **Save changes**.
 
 For details, see [Exclude disks and network traffic from host monitoring](/managed/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic#exclude-network-traffic "Learn how to exclude selected disks and network traffic from host monitoring.").
@@ -161,8 +161,8 @@ To enable or disable deep monitoring for a certain process group on a host
    The table lists process groups that have host-specific monitoring settings.
 
    * To add an entry, select **Add process group**, select a **Process group**, and set **Monitoring state** for the selected processing group.
-   * To delete an entry, select ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") **Delete row**
-   * To edit an entry, expand ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") **Details** and change the settings.
+   * To delete an entry, select  **Delete row**
+   * To edit an entry, expand  **Details** and change the settings.
 2. Select **Save changes**.
 
 For details, see [Process deep monitoring](/managed/observe/infrastructure-observability/process-groups/configuration/pg-monitoring "Ways to customize process-group monitoring").

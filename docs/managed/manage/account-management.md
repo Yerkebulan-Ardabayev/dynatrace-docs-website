@@ -81,7 +81,7 @@ To return to the **My platform tokens** tab later, open  in the upper-right corn
 
 After you select an account on the **My accounts** tab, **Account Management** shows a menu bar on a large display.
 
-* On a small display, the menu bar collapses to a smaller ![Menu](https://dt-cdn.net/images/account-management-icon-hamburger-c275e8015b.svg "Menu") menu with the same options.
+* On a small display, the menu bar collapses to a smaller  menu with the same options.
 * The menu options available to you depend on your deployment type, user permissions, and license model.
 
 ![Account Management menu bar example: License](https://dt-cdn.net/images/account-management-header-license-736-374ccfea23.png)
@@ -208,7 +208,7 @@ Select **Back to Account Settings** to purchase or extend a Dynatrace account.
 
 ## Notifications
 
-Select ![Notifications](https://dt-cdn.net/images/account-management-icon-notifications-8f074dc2ad.svg "Notifications") **Notifications** to view the notification history for your budgets and cost monitors.
+Select  **Notifications** to view the notification history for your budgets and cost monitors.
 
 For more information, see [Notification center](/managed/manage/account-management/notifications "Learn about Account Management notifications, for example budget alerts and cost monitor events.").
 

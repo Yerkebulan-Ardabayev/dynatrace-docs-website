@@ -28,7 +28,7 @@ Use the Dynatrace API to send log data to Dynatrace and quickly search, aggregat
 
 #### Configuration
 
-[Tweak your setup](/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration "Learn how to configure Dynatrace Log Monitoring.")
+[Tweak your setup](/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration "Configure Dynatrace Log Monitoring by adjusting OneAgent settings and feature flags that control log detection, timezone handling, and collection behavior.")
 
 [Default limits](/managed/analyze-explore-automate/log-monitoring/log-monitoring-limits "Default limits for the latest version of Dynatrace Log Monitoring.")
 

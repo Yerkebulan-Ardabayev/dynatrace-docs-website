@@ -30,7 +30,7 @@ The service `easyTravel Customer Frontend` received 249,000 requests during the 
       We are interested specifically in the requests from `easyTravel Customer Frontend` that call first `AuthenticationService` and then `easyTravel-Business`. **94%** of the `easyTravel Customer Frontend` requests calling `AuthenticationService` also call `VerificationService`.
    2. To focus on a subset of requests
 
-      1. Select a called service > **Apply filter** ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter").
+      1. Select a called service > **Apply filter** .
 
          ![Segmentation of transactions via service flow](https://dt-cdn.net/images/transactions-manual-segmentation-1225-210c1e1ad2.png)
 

@@ -22,7 +22,7 @@ Learn about Dynatrace Managed and explore resources to enhance your observabilit
 
 ---
 
-[Managed Cluster](/managed/managed-cluster) [![ActiveGate](https://cdn.bfldr.com/B686QPH3/at/czwjrqjnkmvxx9xgwfgwncpb/ActiveGate.svg?auto=webp&width=72&height=72 "ActiveGate")ActiveGate](/managed/ingest-from/dynatrace-activegate) [![OneAgent](https://cdn.bfldr.com/B686QPH3/at/g8mmkkpfmgwbxcjz54pvfsx/OneAgent.svg?auto=webp&width=72&height=72 "OneAgent")OneAgent](/managed/ingest-from/dynatrace-oneagent) 
+[Managed Cluster](/managed/managed-cluster) [ActiveGate](/managed/ingest-from/dynatrace-activegate) [OneAgent](/managed/ingest-from/dynatrace-oneagent) 
 
 ### Deploy on
 
@@ -46,13 +46,13 @@ Other container platforms
 
 ---
 
-[![Davis AI](https://cdn.bfldr.com/B686QPH3/at/cb79gtrc58xbf7gt95965b/Davis_AI.svg?auto=webp&width=72&height=72 "Davis AI")Davis AI](/managed/dynatrace-intelligence) [![OneAgent](https://cdn.bfldr.com/B686QPH3/at/g8mmkkpfmgwbxcjz54pvfsx/OneAgent.svg?auto=webp&width=72&height=72 "OneAgent")OneAgent](/managed/platform/oneagent) [![Smartscape](https://dt-cdn.net/images/smartscape-d5c4104cad.svg "Smartscape")Smartscape](/managed/analyze-explore-automate/smartscape-classic) 
+[Davis AI](/managed/dynatrace-intelligence) [OneAgent](/managed/platform/oneagent) [Smartscape](/managed/analyze-explore-automate/smartscape-classic) 
 
 ## Solutions
 
 ---
 
-[![Infrastructure Monitoring](https://cdn.bfldr.com/B686QPH3/at/jftqtgccnb2wt3h4ngf6z/Infrastructure_Observability.svg?auto=webp&width=72&height=72 "Infrastructure Monitoring")Infrastructure Observability](/managed/observe/infrastructure-observability) [![Apps and Microservices](https://cdn.bfldr.com/B686QPH3/at/4cw6r9pgntrs3vvxmw5p9jgw/Application_Observability.svg?auto=webp&width=72&height=72 "Apps and Microservices")Application Observability](/managed/observe/application-observability) [![Digital Experience](https://cdn.bfldr.com/B686QPH3/at/24vb99tkw5wm7xrvxpshcbvr/Digital_Experience.svg?auto=webp&width=72&height=72 "Digital Experience")Digital Experience](/managed/observe/digital-experience) [![Application Security](https://cdn.bfldr.com/B686QPH3/at/8rwt7tnw33rj44pw5thfj9n6/Application_Security.svg?auto=webp&width=72&height=72 "Application Security")Application Security](/managed/secure/application-security) [Automations](/managed/deliver) 
+[Infrastructure Observability](/managed/observe/infrastructure-observability) [Application Observability](/managed/observe/application-observability) [Digital Experience](/managed/observe/digital-experience) [Application Security](/managed/secure/application-security) [Automations](/managed/deliver) 
 
 ## Observe and explore
 

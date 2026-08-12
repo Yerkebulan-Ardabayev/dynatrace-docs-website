@@ -55,7 +55,7 @@ See [Create a private Synthetic location](/managed/observe/digital-experience/sy
 
 The [HTTP monitor details page](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic "Learn about the Synthetic details page for HTTP monitors.") is displayed and starts showing results data as it's acquired.
 
-Select the expand button ![Expand](https://dt-cdn.net/images/expandbutton-40-e1f11ff81d.png "Expand") from the quick links in the upper-left corner to access monitor settings. (Or, if you're viewing the older version of the details page, select the **Browse** button (**…**) > **Edit** to make changes.)
+Select the expand button  from the quick links in the upper-left corner to access monitor settings. (Or, if you're viewing the older version of the details page, select the **Browse** button (**…**) > **Edit** to make changes.)
 
 You can configure several additional settings such as outage handling and performance thresholds that are available only after monitor creation. For more on monitor settings, see [Configure HTTP monitors](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.").
 
@@ -96,7 +96,7 @@ You can also disable or delete a monitor from the [details page](/managed/observ
 
 1. Go to **Synthetic Classic**.
 2. Select the monitor you're interested in.
-3. Select the expand button ![Expand](https://dt-cdn.net/images/expandbutton-40-e1f11ff81d.png "Expand") from the quick links in the upper-left corner.
+3. Select the expand button  from the quick links in the upper-left corner.
 
    Or, if you're viewing the older version of the details page, select the **Browse** (**…**) button in the upper-right corner.
 4. Select either **Disable** or **Delete**.
@@ -104,7 +104,7 @@ You can also disable or delete a monitor from the [details page](/managed/observ
 Similarly, you can enable a previously disabled monitor.
 
 * In **Synthetic Classic**, opt to view your monitors in list format. Check the box next to your disabled monitor and select **Enable** in the lower-left corner.
-* On the [HTTP monitor details page](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic "Learn about the Synthetic details page for HTTP monitors."), select the expand button ![Expand](https://dt-cdn.net/images/expandbutton-40-e1f11ff81d.png "Expand") in the upper-left corner > **Enable**.
+* On the [HTTP monitor details page](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic "Learn about the Synthetic details page for HTTP monitors."), select the expand button  in the upper-left corner > **Enable**.
 
   If you're viewing the older version of the details page, select the **Browse** (**…**) button in the upper-right corner > **Enable**.
 
@@ -119,7 +119,7 @@ Similarly, you can enable a previously disabled monitor.
 5. Select **Duplicate** in the lower-left corner.
 
    The duplicate monitor page is displayed with a number appended to the original name.
-6. To edit the default name and make other configuration changes, select the expand button ![Expand](https://dt-cdn.net/images/expandbutton-40-e1f11ff81d.png "Expand") > **Edit**.
+6. To edit the default name and make other configuration changes, select the expand button  > **Edit**.
 
    If you're viewing the older version of the details page, select the **Browse** (**…**) button > **Edit**.
 

@@ -22,7 +22,7 @@ Rollout start: Mar 25, 2025
 
     - Changed **SyntheticMonitorUpdate** schema
 
-      ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+      Breaking change
 
       * Changed property **anomalyDetection**
 
@@ -62,7 +62,7 @@ Rollout start: Mar 25, 2025
 
     - Changed **SyntheticMonitorUpdate** schema
 
-      ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+      Breaking change
 
       * Changed property **anomalyDetection**
 

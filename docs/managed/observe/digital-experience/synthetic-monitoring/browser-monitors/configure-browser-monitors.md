@@ -168,7 +168,7 @@ If necessary, you can delete events from your clickpath by selecting **x** under
 
 Add synthetic event
 
-Use the **Move up/down** arrows ![Move up](https://dt-cdn.net/images/sorter-move-up-6275b6459e.svg "Move up") ![Move down](https://dt-cdn.net/images/sorter-move-down-710c5d6229.svg "Move down") to reorder events. Note that the first [Navigate event](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events#navigate "Learn about the event types created when recording a browser clickpath.") of a clickpath can be preceded only by [JavaScript events](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events#javascript "Learn about the event types created when recording a browser clickpath.").
+Use the **Move up/down** arrows   to reorder events. Note that the first [Navigate event](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events#navigate "Learn about the event types created when recording a browser clickpath.") of a clickpath can be preceded only by [JavaScript events](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events#javascript "Learn about the event types created when recording a browser clickpath.").
 
 Although we do our best to name events intuitively, you can edit event names as required—simply click in the field provided for the event name.
 

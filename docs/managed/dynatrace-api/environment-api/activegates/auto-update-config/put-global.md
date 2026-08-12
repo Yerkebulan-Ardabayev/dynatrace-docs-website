@@ -35,11 +35,11 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 #### The `ActiveGateGlobalAutoUpdateConfig` object
 
-Global configuration of ActiveGates auto-update.
+Global auto-update configuration for environment ActiveGates. Applies to all environment ActiveGates that have the `INHERITED` auto-update setting.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| globalSetting | string | The state of auto-updates for all ActiveGates connected to the environment or Managed cluster.  This setting is inherited by all ActiveGates that have the `INHERITED` setting. The element can hold these values * `ENABLED` * `DISABLED` | Required |
+| globalSetting | string | The state of auto-updates for all environment ActiveGates.  This setting is inherited by all environment ActiveGates that have the `INHERITED` setting. The element can hold these values * `ENABLED` * `DISABLED` | Required |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging | Optional |
 | targetVersion | string | Version to update a ActiveGate to when automatic updates are enabled.  Supports relative versions `latest`, `previous` and `older` as well as specific version in `<major>.<minor>` format (for example `1.261`).  Only applicable when the **setting** parameter is set to `ENABLED`. | Optional |
 | updateWindows | [UpdateWindowsConfig](#openapi-definition-UpdateWindowsConfig) | Basic information about all configured update windows | Optional |

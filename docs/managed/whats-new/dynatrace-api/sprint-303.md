@@ -128,7 +128,7 @@ Rollout start: Oct 21, 2024
 
   + Request:
 
-    - Changed **Credentials** schema ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+    - Changed **Credentials** schema  Breaking change
 
       * Changed property **type**
 
@@ -142,7 +142,7 @@ Rollout start: Oct 21, 2024
 
   + Request:
 
-    - Changed **Credentials** schema ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+    - Changed **Credentials** schema  Breaking change
 
       * Changed property **type**
 

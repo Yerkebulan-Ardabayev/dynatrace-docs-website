@@ -41,7 +41,7 @@ Rollout start: Apr 22, 2025
 
     - Changed **Credentials** schema
 
-      * ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+      * Breaking change
 
         + Added required property:  
           `type`
@@ -51,7 +51,7 @@ Rollout start: Apr 22, 2025
 
     - Changed **Credentials** schema
 
-      * ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+      * Breaking change
 
         + Added required property:  
           `type`
@@ -194,7 +194,7 @@ Rollout start: Apr 22, 2025
 
     - Changed **Credentials** schema
 
-      * ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+      * Breaking change
 
         + Added required property: **type**
 * `PUT /credentials/{id}`
@@ -203,6 +203,6 @@ Rollout start: Apr 22, 2025
 
     - Changed **Credentials** schema
 
-      * ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Breaking change
+      * Breaking change
 
         + Added required property: **type**

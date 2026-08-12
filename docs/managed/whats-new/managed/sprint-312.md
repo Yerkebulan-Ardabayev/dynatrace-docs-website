@@ -16,7 +16,7 @@ This page showcases new features, changes, and bug fixes in Dynatrace Managed ve
 
 ## New features and enhancements
 
-Feature update ![Dot](https://dt-cdn.net/images/dot-a32314f261.svg "Dot") Infrastructure Observability | Log monitoring
+Feature update  Infrastructure Observability | Log monitoring
 
 ### Updated log ingestion limits
 
@@ -58,7 +58,7 @@ Action required
 
 With this release, preview customers for Go technology need to upgrade to OneAgent version 1.311 to reactivate this functionality. After that, no further configuration is necessary.
 
-Feature update ![Dot](https://dt-cdn.net/images/dot-a32314f261.svg "Dot") Logs
+Feature update  Logs
 
 ### Log ingestion warnings update
 

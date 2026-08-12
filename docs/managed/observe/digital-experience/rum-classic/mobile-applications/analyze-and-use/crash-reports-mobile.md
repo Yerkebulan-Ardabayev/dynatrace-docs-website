@@ -46,7 +46,7 @@ The **Latest app versions** section provides crash information for four latest a
 
 ### Crash statistics
 
-In the **Crash statistics** section, you can check the total crash count, number of crash groups, and number of affected versions for the currently selected timeframe. In the **Latest app versions** section, select **Filter** ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") next to the version you're interested in to get this information for a particular version.
+In the **Crash statistics** section, you can check the total crash count, number of crash groups, and number of affected versions for the currently selected timeframe. In the **Latest app versions** section, select **Filter**  next to the version you're interested in to get this information for a particular version.
 
 You can also use other filters, such as **Connection type**, **Country**, or **Manufacturer**.
 
@@ -84,7 +84,7 @@ Device information for a crash occurrence
 
 On the **Session information** tab, view the session recording or jump to the session details.
 
-* If the user session was recorded with Session Replay for [Android](/managed/observe/digital-experience/session-replay/session-replay-android "Set up Session Replay Classic for your Android apps to learn which actions your users perform.") or [iOS](/managed/observe/digital-experience/session-replay/session-replay-ios "Prerequisites and the procedure for enabling Session Replay Classic for your iOS apps."), select **Play** ![Replay](https://dt-cdn.net/images/replay-button-optimized-41ad05863e.svg "Replay") to watch what happened on the user's screen immediately before your application crashed. The last event of the session is the crash, which is represented by a red dot in the timeline. Use the Session Replay controls to analyze the crash in detail.
+* If the user session was recorded with Session Replay for [Android](/managed/observe/digital-experience/session-replay/session-replay-android "Set up Session Replay Classic for your Android apps to learn which actions your users perform.") or [iOS](/managed/observe/digital-experience/session-replay/session-replay-ios "Prerequisites and the procedure for enabling Session Replay Classic for your iOS apps."), select **Play**  to watch what happened on the user's screen immediately before your application crashed. The last event of the session is the crash, which is represented by a red dot in the timeline. Use the Session Replay controls to analyze the crash in detail.
 * Select **View full session** to jump to the user session details page, where you can get more information on the crashed session, examine the list of all user actions and events that occurred before the crash, or select a crash instance. For more details, see [User session analysis in RUM Classic](/managed/observe/digital-experience/rum-classic/session-segmentation/user-sessions "Learn about user session segmentation and filtering attributes.").
 
 ![Session information for a crash occurrence](https://dt-cdn.net/images/crash-occurence-session-info-tab-2520-e40fca17fd.png)

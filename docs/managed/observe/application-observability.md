@@ -49,8 +49,6 @@ See the overview](/managed/observe/application-observability/services-classic)
 
 ### Logs Classic
 
-Manage, analyze, and monitor log data.](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")[![Digital Experience](https://cdn.bfldr.com/B686QPH3/at/24vb99tkw5wm7xrvxpshcbvr/Digital_Experience.svg?auto=webp&width=72&height=72 "Digital Experience")
-
-### Digital Experience
+Manage, analyze, and monitor log data.](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")[### Digital Experience
 
 Use RUM and Synthetic Monitoring for total Digital Experience Monitoring.](/managed/observe/digital-experience "Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.")

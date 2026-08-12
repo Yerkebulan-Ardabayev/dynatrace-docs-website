@@ -74,7 +74,7 @@ The chart shows the top 15 dimensions (all other dimensions are aggregated into 
 
 In the **Actions** column of the table, you can select:
 
-* **Filter** ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") to filter the view for the specified dimension.
+* **Filter**  to filter the view for the specified dimension.
 * **More** (**…**) to access further analysis options from the [**Analyze** menu](/managed/observe/application-observability/services-classic/context-specific-drill-down#analyze-menu "Learn about easy navigation and filtering for services analysis.").
 
 For timeframes containing data older than 10 days, you can turn on **Show data retention** to better understand which data is available for which period directly from the chart.

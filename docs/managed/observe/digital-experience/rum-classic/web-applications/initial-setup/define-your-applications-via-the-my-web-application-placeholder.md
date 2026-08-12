@@ -73,7 +73,7 @@ To add an application detection rule
    You can apply rules to new or existing applications as well as create rules based on your application URL or domain (host).
 4. Select **Save** to create an application detection rule.  
    The rule is placed at the very end of the application detection rules list.
-5. Optional Select and hold **Drag row** ![Drag handle](https://dt-cdn.net/images/drag-handle-turquoise-600-1aa0e5ea00.svg "Drag handle") next to the rule name, and move the rule up or down in the list to change its priority.
+5. Optional Select and hold **Drag row**  next to the rule name, and move the rule up or down in the list to change its priority.
 
 You can create up to 1,000 application detection rules per environment.
 

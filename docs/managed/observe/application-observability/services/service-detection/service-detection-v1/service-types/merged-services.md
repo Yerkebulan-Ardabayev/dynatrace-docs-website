@@ -36,8 +36,8 @@ When you split a service from a merged service ("unmerge" the service), the hist
 To split a service from a merged service
 
 1. Go to **Settings** > **Server-side service monitoring** > **Merged service monitoring**.
-2. Select **Edit** ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") in the row of the merged service you want to split.
-3. Select **Remove** ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") in the row of the service you want to remove.
+2. Select **Edit**  in the row of the merged service you want to split.
+3. Select **Remove**  in the row of the service you want to remove.
 4. Select **Update**.
 
 ## Delete merged service
@@ -47,7 +47,7 @@ If you delete a merged service, all individual merged services will be split and
 To delete a merged service:
 
 1. Go to **Settings** > **Server-side service monitoring** > **Merged service monitoring**.
-2. Select **Delete** ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") in the row of the merged service you want to delete.
+2. Select **Delete**  in the row of the merged service you want to delete.
 
 ## Create a rule to aggregate services
 

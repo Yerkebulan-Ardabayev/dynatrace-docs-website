@@ -92,13 +92,13 @@ Platform
 
 ### Block ingestion of metric dimensions you don't need
 
-You can now stop specific metric dimensions from being ingested using the new **Metric dimension block list** in ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Metrics**. Previously, unneeded metric dimensions were collected automatically with no way to exclude them. This gives you direct control over which metric dimensions enter your environment, so that you can cut out data you don't use and keep monitoring focused on what matters.
+You can now stop specific metric dimensions from being ingested using the new **Metric dimension block list** in  **Settings** > **Metrics**. Previously, unneeded metric dimensions were collected automatically with no way to exclude them. This gives you direct control over which metric dimensions enter your environment, so that you can cut out data you don't use and keep monitoring focused on what matters.
 
 Platform
 
 ### Simplified local self-monitoring environment
 
-Local self-monitoring environments now show only the relevant capabilities that are available in the environment. This affects the environment’s ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**, main menu, and preset dashboards.
+Local self-monitoring environments now show only the relevant capabilities that are available in the environment. This affects the environment’s  **Settings**, main menu, and preset dashboards.
 
 Platform
 
@@ -124,7 +124,7 @@ Platform | OneAgent
 
 We've introduced a new configuration option, `BinaryDetectionMode` that lets you control how the Log Agent handles binary or non-supported encoding files within a log source (LGI).
 
-To configure this setting, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Log Monitoring** > **Advanced Settings** and set the **BinaryDetectionMode** property.
+To configure this setting, go to  **Settings** > **Log Monitoring** > **Advanced Settings** and set the **BinaryDetectionMode** property.
 
 By default, the entire log source is marked as binary and stops being processed. There is no change in behavior for existing deployments.
 

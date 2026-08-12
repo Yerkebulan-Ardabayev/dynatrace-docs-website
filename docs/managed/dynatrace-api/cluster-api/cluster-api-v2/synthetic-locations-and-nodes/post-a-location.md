@@ -52,9 +52,12 @@ Some fields are inherited from the base *SyntheticLocation* object.
 | latitude | number | The latitude of the location in `DDD.dddd` format. | Required |
 | locationNodeOutageDelayInMinutes | integer | Alert if location or node outage lasts longer than *X* minutes. \n\n Only applicable when `availabilityLocationOutage` or `availabilityNodeOutage` is set to `true`. Supported only for private Synthetic locations. | Optional |
 | longitude | number | The longitude of the location in `DDD.dddd` format. | Required |
+| maxActiveGateCount | integer | Containerized location property. The maximum number of ActiveGates deployed for the location (required for a Kubernetes location). | Optional |
+| minActiveGateCount | integer | Containerized location property. The minimum number of ActiveGates deployed for the location (required for a Kubernetes location). | Optional |
 | namExecutionSupported | boolean | Containerized location property. Boolean value describes if icmp monitors will be executed on this location:  * `false`: Icmp monitor executions disabled. * `true`: Icmp monitor executions enabled. | Optional |
 | name | string | The name of the location. | Required |
 | nodeNames | object | A mapping id to name of the nodes belonging to the location. | Optional |
+| nodeSize | string | Containerized location property. The size of a containerized node deployed for the location (required for a Kubernetes location). Accepted values:  * `XS`: extra small * `S`: small * `M`: medium   The node size `L` is not supported in containerized locations. The element can hold these values * `M` * `S` * `UNSUPPORTED` * `XS` | Optional |
 | nodes | string[] | A list of synthetic nodes belonging to the location.  You can retrieve the list of available nodes with the [GET all nodes﻿](https://dt-url.net/miy3rpl?dt=m) call. | Required |
 | regionCode | string | The region code of the location.  To fetch the list of available region codes, use the [GET regions of the country﻿](https://dt-url.net/az230x0?dt=m) request. | Optional |
 | regionName | string | The region name of the location. | Optional |
