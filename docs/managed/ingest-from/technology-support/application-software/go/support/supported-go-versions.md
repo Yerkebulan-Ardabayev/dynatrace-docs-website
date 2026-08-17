@@ -23,7 +23,6 @@ to support each Go version at least half a year longer so that you have enough t
 | 1.26 | 2026-02-10 | 2027-02-10 | 1.335 | - | 2028-02-10 | Supported |
 | 1.25 | 2025-08-12 | 2026-08-12 | 1.325 | - | 2027-08-12 | Supported |
 | 1.24 | 2025-02-11 | 2026-02-11 | 1.311 | - | 2027-02-11 | Supported |
-| 1.23 | 2024-08-13 | 2025-08-13 | 1.301 | - | 2026-08-13 | Supported |
 
 ### Golang toolchain with FIPS ([openssl-fips﻿](https://dt-url.net/golang-fips)) modifications
 
@@ -35,16 +34,17 @@ Prerequisites
 
 | Go version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/managed/ingest-from/technology-support#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
+| 1.26.5 | 2026-02-10 | 2027-02-10 | 1.345 | - | 2028-02-10 | Supported |
+| 1.26.4 | 2026-02-10 | 2027-02-10 | 1.345 | - | 2028-02-10 | Supported |
 | 1.26.3 | 2026-02-10 | 2027-02-10 | 1.343 | - | 2028-02-10 | Supported |
 | 1.26.2 | 2026-02-10 | 2027-02-10 | 1.341 | - | 2028-02-10 | Supported |
+| 1.25.10 | 2025-08-12 | 2026-08-12 | 1.345 | - | 2027-08-12 | Supported |
 | 1.25.9 | 2025-08-12 | 2026-08-12 | 1.341 | - | 2027-08-12 | Supported |
 | 1.25.7 | 2025-08-12 | 2026-08-12 | 1.337 | - | 2027-08-12 | Supported |
 | 1.25.5 | 2025-08-12 | 2026-08-12 | 1.335 | - | 2027-08-12 | Supported |
 | 1.25.3 | 2025-08-12 | 2026-08-12 | 1.331 | - | 2027-08-12 | Supported |
 | 1.24.6 | 2025-02-11 | 2026-02-11 | 1.325 | - | 2027-02-11 | Supported |
 | 1.24.4 | 2025-02-11 | 2026-02-11 | 1.323 | - | 2027-02-11 | Supported |
-| 1.23.9 | 2024-08-13 | 2025-08-13 | 1.323 | - | 2026-08-13 | Supported |
-| 1.23.6 | 2024-08-13 | 2025-08-13 | 1.315 | - | 2026-08-13 | Supported |
 
 ## Version matrix
 

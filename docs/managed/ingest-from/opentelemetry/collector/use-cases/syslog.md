@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/u
 
 * How-to guide
 * 3-min read
-* Updated on Jun 15, 2026
+* Updated on Aug 12, 2026
 
 The following configuration example shows how to configure a Collector instance to receive data from syslog and send it to the Dynatrace backend.
 
@@ -356,7 +356,39 @@ action: delete
 
 
 
+- key: syslog.message
+
+
+
+from_attribute: message
+
+
+
+action: upsert
+
+
+
 - key: message
+
+
+
+action: delete
+
+
+
+- key: syslog.message_id
+
+
+
+from_attribute: msg_id
+
+
+
+action: upsert
+
+
+
+- key: msg_id
 
 
 

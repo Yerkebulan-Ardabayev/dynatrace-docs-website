@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support
 # Technology support
 
 * 17-min read
-* Updated on Aug 06, 2026
+* Updated on Aug 13, 2026
 
 Dynatrace supports monitoring of the technologies and versions listed on this page. For serverless monitoring, see [Serverless compute support matrix](/managed/ingest-from/technology-support/serverless-compute-services "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS)."). For mainframe, see [Mainframe technology support](/managed/ingest-from/technology-support/mainframe-technology-support "Learn which technologies Dynatrace supports for Mainframe monitoring.").
 
@@ -222,10 +222,10 @@ Starting with OneAgent version 1.331+. Only space statistics are supported. Opt-
 | --- | --- |
 | Auto-injection in [Docker﻿](https://www.docker.com/) container (Deep monitoring)[1](#fn-2-1-def) | 1.6+ (32 and 64 bit) glibc or musl-libc required |
 | Auto-injection in [containerd﻿](https://containerd.io/) container (Deep monitoring) | 1.1.2+ (32 and 64 bit) glibc or musl-libc required |
-| Auto-injection in [CRI-O﻿](https://cri-o.io/) container (Deep monitoring) | 1.12.5+ (32 and 64 bit) glibc or musl-libc required |
+| Auto-injection in [CRI-O﻿](https://cri-o.io/) container (Deep monitoring)[2](#fn-2-2-def) | 1.12.5+ (32 and 64 bit) glibc or musl-libc required |
 | Auto-injection in [Garden-RunC﻿](https://docs.cloudfoundry.org/concepts/architecture/garden.html#garden-runc) container (Deep monitoring) | 1.0.0+ (32 and 64 bit) glibc or musl-libc required |
 | Auto-injection in [BOSH bpm﻿](https://bosh.io/docs/bpm/bpm/) container (Deep monitoring) | 0.11.0+ |
-| Auto-injection in [Podman﻿](https://podman.io/) container (Deep monitoring)[2](#fn-2-2-def)[3](#fn-2-3-def) | 3.4.4–5.x.x |
+| Auto-injection in [Podman﻿](https://podman.io/) container (Deep monitoring)[3](#fn-2-3-def)[4](#fn-2-4-def) | 3.4.4–5.x.x |
 | Docker container metrics[1](#fn-2-1-def) | 1.8, 1.9, 1.10, 1.11, 1.12, 1.13 RC2, 1.13.1, 17.03+ CE and EE |
 
 1
@@ -234,9 +234,13 @@ Please see [known limitations of Docker container monitoring](/managed/observe/i
 
 2
 
-Supported for OneAgent 1.267+ installed on the Podman node using [crun﻿](https://github.com/containers/crun) container runtime, versions 0.17 - 1.15 Podman using the `runc` runtime isn't supported.
+Auto-injection in CRI-O containers (Deep monitoring) may not be supported in all configurations. Known factors include the container runtime (for example, `crun`) and filesystem settings (for example, read-only), though the full set of affected combinations has not yet been determined.
 
 3
+
+Supported for OneAgent 1.267+ installed on the Podman node using [crun﻿](https://github.com/containers/crun) container runtime, versions 0.17 - 1.15 Podman using the `runc` runtime isn't supported.
+
+4
 
 Podman containers started with `read-only=true` or a non-default user namespace remapping are not supported. Non-default user namespace remapping includes containers started with `--userns=keep-id`, `--userns=auto`, `--userns=nomap`, or custom `--uidmap`/`--gidmap` mappings.
 
@@ -986,8 +990,8 @@ The IAsyncResult pattern (APM) for .NET Framework 3.5 is supported in version 1.
 
 | Go toolchains | Versions | Platforms |
 | --- | --- | --- |
-| [Golang toolchain with FIPS (openssl-fips) modifications﻿](https://dt-url.net/golang-fips) | 1.23.6, 1.23.9, 1.24.4, 1.24.6, 1.25.3, 1.25.5, 1.25.7, 1.25.9, 1.26.2, 1.26.3 | Alpine Linux 64-bit (x86-64), Linux (x86-64) |
-| [Official Golang toolchain﻿](https://dt-url.net/go) | 1.23, 1.24, 1.25, 1.26 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
+| [Golang toolchain with FIPS (openssl-fips) modifications﻿](https://dt-url.net/golang-fips) | 1.24.4, 1.24.6, 1.25.3, 1.25.5, 1.25.7, 1.25.9, 1.25.10, 1.26.2, 1.26.3, 1.26.4, 1.26.5 | Alpine Linux 64-bit (x86-64), Linux (x86-64) |
+| [Official Golang toolchain﻿](https://dt-url.net/go) | 1.24, 1.25, 1.26 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
 
 | Web framework | Versions |
 | --- | --- |
@@ -999,7 +1003,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Database frameworks | Versions |
 | --- | --- |
-| [Amazon DynamoDB﻿](https://github.com/aws/aws-sdk-go-v2/tree/main/service/dynamodb) | 1.13.0-1.54.0[1](#fn-database-frameworks-1-def), 1.55.0 - 1.57.4[1](#fn-database-frameworks-1-def), 1.57.5 - 1.59.0[1](#fn-database-frameworks-1-def) |
+| [Amazon DynamoDB﻿](https://github.com/aws/aws-sdk-go-v2/tree/main/service/dynamodb) | 1.13.0-1.54.0[1](#fn-database-frameworks-1-def), 1.55.0 - 1.57.4[1](#fn-database-frameworks-1-def), 1.57.5 - 1.59.0[1](#fn-database-frameworks-1-def), 1.59.1 - 1.60.1[1](#fn-database-frameworks-1-def) |
 | [Cassandra client (cassandra-gocql-driver/v2)﻿](https://github.com/apache/cassandra-gocql-driver) | 2.0.0 - 2.1.0[1](#fn-database-frameworks-1-def), 2.1.1[1](#fn-database-frameworks-1-def), 2.1.2[1](#fn-database-frameworks-1-def) |
 | [Cassandra client (gocql/gocql)﻿](https://github.com/gocql/gocql) | 1.0 - 1.7[1](#fn-database-frameworks-1-def) |
 | [Microsoft SQL Server (denisenkom/go-mssqldb)﻿](https://github.com/denisenkom/go-mssqldb) | 0.11 - 0.12[1](#fn-database-frameworks-1-def) |
@@ -1016,11 +1020,12 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Messaging clients | Versions |
 | --- | --- |
-| [Amazon SNS﻿](https://github.com/aws/aws-sdk-go-v2/tree/main/service/sns) | 1.15.0 - 1.38.0[1](#fn-messaging-clients-1-def), 1.38.1 - 1.39.17[1](#fn-messaging-clients-1-def), 1.39.18 - 1.40.1[1](#fn-messaging-clients-1-def) |
-| [Amazon SQS﻿](https://github.com/aws/aws-sdk-go-v2/tree/main/service/sqs) | 1.16.0-1.42.27[1](#fn-messaging-clients-1-def), 1.42.28 - 1.44.0[1](#fn-messaging-clients-1-def) |
+| [Amazon EventBridge﻿](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/eventbridge) | 1.13.0 - 1.45.25[1](#fn-messaging-clients-1-def) |
+| [Amazon SNS﻿](https://github.com/aws/aws-sdk-go-v2/tree/main/service/sns) | 1.15.0 - 1.38.0[1](#fn-messaging-clients-1-def), 1.38.1 - 1.39.17[1](#fn-messaging-clients-1-def), 1.39.18 - 1.40.1[1](#fn-messaging-clients-1-def), 1.40.2 - 1.41.1[1](#fn-messaging-clients-1-def) |
+| [Amazon SQS﻿](https://github.com/aws/aws-sdk-go-v2/tree/main/service/sqs) | 1.16.0-1.42.27[1](#fn-messaging-clients-1-def), 1.42.28 - 1.44.0[1](#fn-messaging-clients-1-def), 1.44.1 - 1.45.1[1](#fn-messaging-clients-1-def) |
 | [Kafka (IBM/sarama)﻿](https://github.com/IBM/sarama) | 1.40+[1](#fn-messaging-clients-1-def) |
 | [Kafka (Shopify/sarama)﻿](https://github.com/Shopify/sarama) | 1.18 - 1.48[1](#fn-messaging-clients-1-def) |
-| [Kafka (confluentinc/confluent-kafka-go)﻿](https://github.com/confluentinc/confluent-kafka-go) | 1.9 - 2.8[1](#fn-messaging-clients-1-def), 2.10[1](#fn-messaging-clients-1-def), 2.11[1](#fn-messaging-clients-1-def), 2.12[1](#fn-messaging-clients-1-def), 2.13.0[1](#fn-messaging-clients-1-def), 2.14.0[1](#fn-messaging-clients-1-def), 2.14.1[1](#fn-messaging-clients-1-def), 2.14.2[1](#fn-messaging-clients-1-def) |
+| [Kafka (confluentinc/confluent-kafka-go)﻿](https://github.com/confluentinc/confluent-kafka-go) | 1.9 - 2.8[1](#fn-messaging-clients-1-def), 2.10[1](#fn-messaging-clients-1-def), 2.11[1](#fn-messaging-clients-1-def), 2.12[1](#fn-messaging-clients-1-def), 2.13.0[1](#fn-messaging-clients-1-def), 2.14.0[1](#fn-messaging-clients-1-def), 2.14.1[1](#fn-messaging-clients-1-def), 2.14.2[1](#fn-messaging-clients-1-def), 2.15.0[1](#fn-messaging-clients-1-def) |
 
 1
 
@@ -1029,7 +1034,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | Remoting frameworks | Versions |
 | --- | --- |
 | [Amazon AWS Lambda SDK﻿](https://github.com/aws/aws-lambda-go) | 1.18.0-1.54.0[1](#fn-remoting-frameworks-1-def) |
-| [Amazon AWS SDK﻿](https://github.com/aws/aws-sdk-go-v2) | 1.13.0 - 1.39.0[2](#fn-remoting-frameworks-2-def), 1.39.1 - 1.41.1[2](#fn-remoting-frameworks-2-def), 1.41.2 - 1.41.7[2](#fn-remoting-frameworks-2-def), 1.41.8 - 1.42.0[2](#fn-remoting-frameworks-2-def) |
+| [Amazon AWS SDK﻿](https://github.com/aws/aws-sdk-go-v2) | 1.13.0 - 1.39.0[2](#fn-remoting-frameworks-2-def), 1.39.1 - 1.41.1[2](#fn-remoting-frameworks-2-def), 1.41.2 - 1.41.7[2](#fn-remoting-frameworks-2-def), 1.41.8 - 1.42.0[2](#fn-remoting-frameworks-2-def), 1.42.1[2](#fn-remoting-frameworks-2-def) |
 | [gRPC﻿](https://godoc.org/google.golang.org/grpc) | 1.17 - 1.28[3](#fn-remoting-frameworks-3-def), 1.29[3](#fn-remoting-frameworks-3-def), 1.30 - 1.39[3](#fn-remoting-frameworks-3-def), 1.40 - 1.59[3](#fn-remoting-frameworks-3-def), 1.60 - 1.68[3](#fn-remoting-frameworks-3-def), 1.69 - 1.76[3](#fn-remoting-frameworks-3-def), 1.78 - 1.82[3](#fn-remoting-frameworks-3-def) |
 
 1
@@ -1250,6 +1255,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | Amazon DynamoDB | 1.11+[1](#fn-database-frameworks-1-def) |
 | [PyMongo﻿](https://pymongo.readthedocs.io/en/stable/) | 3.10+ |
 | [SQL Alchemy﻿](https://github.com/sqlalchemy/sqlalchemy) | 1.1+ |
+| [azure-cosmos﻿](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/cosmos/azure-cosmos) | 4.0.0+ |
 | [mysqlclient﻿](https://pypi.org/project/mysqlclient/) | 2.0+ |
 | [psycopg2﻿](https://github.com/psycopg/psycopg2) | 2.8.4+ |
 | [python-oracledb﻿](https://github.com/oracle/python-oracledb) | 1.0.1+ |
@@ -1514,8 +1520,8 @@ As of version 1.29, Envoy exports data using [OpenTelemetry](/managed/ingest-fro
 
 | Servers | Versions | Platforms |
 | --- | --- | --- |
-| [Kong Gateway](/managed/ingest-from/technology-support/application-software/nginx/kong-gateway "Learn how to monitor the Kong Gateway with Dynatrace.") | 2.8 - 3.6[3](#fn-servers-3-def), 3.7 - 3.9[4](#fn-servers-4-def), 3.10 - 3.14[4](#fn-servers-4-def) | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64) |
-| [NGINX](/managed/ingest-from/technology-support/application-software/nginx#nginx-versions "Learn the details of Dynatrace support for NGINX.") | 1.11.5 - 1.13.8[1](#fn-servers-1-def), 1.13.9 - 1.14.0[1](#fn-servers-1-def), 1.14.1 - 1.15.8[1](#fn-servers-1-def), 1.15.9 - 1.15.10[1](#fn-servers-1-def), 1.15.11 - 1.16.0[1](#fn-servers-1-def), 1.16.1 - 1.17.3[1](#fn-servers-1-def), 1.17.4 - 1.17.6[1](#fn-servers-1-def), 1.17.7[1](#fn-servers-1-def), 1.17.8[1](#fn-servers-1-def), 1.17.9[1](#fn-servers-1-def), 1.17.10 - 1.18.0, 1.19.0, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.19.5, 1.19.6, 1.19.7, 1.19.8, 1.19.9, 1.19.10, 1.20.0, 1.20.1, 1.20.2, 1.21.0, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.22.0, 1.22.1, 1.23.0, 1.23.1, 1.23.2, 1.23.3, 1.23.4, 1.24.0, 1.25.0, 1.25.1, 1.25.2, 1.25.3, 1.25.4, 1.25.5, 1.26.0, 1.26.1, 1.26.2, 1.26.3, 1.27.0, 1.27.1, 1.27.2, 1.27.3, 1.27.4, 1.27.5, 1.28.0, 1.28.1, 1.28.2, 1.28.3, 1.29.0, 1.29.1, 1.29.2, 1.29.3, 1.29.4, 1.29.5, 1.29.6[2](#fn-servers-2-def), 1.29.7[2](#fn-servers-2-def), 1.29.8[2](#fn-servers-2-def), 1.30.0[2](#fn-servers-2-def), 1.30.1[2](#fn-servers-2-def), 1.31.0[2](#fn-servers-2-def) | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64, PPCLE) |
+| [Kong Gateway](/managed/ingest-from/technology-support/application-software/nginx/kong-gateway "Learn how to monitor the Kong Gateway with Dynatrace.") | 2.8 - 3.6[3](#fn-servers-3-def), 3.7 - 3.9[4](#fn-servers-4-def), 3.10 - 3.14[4](#fn-servers-4-def), 3.15[4](#fn-servers-4-def) | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64) |
+| [NGINX](/managed/ingest-from/technology-support/application-software/nginx#nginx-versions "Learn the details of Dynatrace support for NGINX.") | 1.11.5 - 1.13.8[1](#fn-servers-1-def), 1.13.9 - 1.14.0[1](#fn-servers-1-def), 1.14.1 - 1.15.8[1](#fn-servers-1-def), 1.15.9 - 1.15.10[1](#fn-servers-1-def), 1.15.11 - 1.16.0[1](#fn-servers-1-def), 1.16.1 - 1.17.3[1](#fn-servers-1-def), 1.17.4 - 1.17.6[1](#fn-servers-1-def), 1.17.7[1](#fn-servers-1-def), 1.17.8[1](#fn-servers-1-def), 1.17.9[1](#fn-servers-1-def), 1.17.10 - 1.18.0, 1.19.0, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.19.5, 1.19.6, 1.19.7, 1.19.8, 1.19.9, 1.19.10, 1.20.0, 1.20.1, 1.20.2, 1.21.0, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.22.0, 1.22.1, 1.23.0, 1.23.1, 1.23.2, 1.23.3, 1.23.4, 1.24.0, 1.25.0, 1.25.1, 1.25.2, 1.25.3, 1.25.4, 1.25.5, 1.26.0, 1.26.1, 1.26.2, 1.26.3, 1.27.0, 1.27.1, 1.27.2, 1.27.3, 1.27.4, 1.27.5, 1.28.0, 1.28.1, 1.28.2, 1.28.3, 1.29.0, 1.29.1, 1.29.2, 1.29.3, 1.29.4, 1.29.5, 1.29.6[2](#fn-servers-2-def), 1.29.7[2](#fn-servers-2-def), 1.29.8[2](#fn-servers-2-def), 1.30.0[2](#fn-servers-2-def), 1.30.1[2](#fn-servers-2-def), 1.30.2[2](#fn-servers-2-def), 1.30.3[2](#fn-servers-2-def), 1.30.4, 1.31.0[2](#fn-servers-2-def), 1.31.1[2](#fn-servers-2-def), 1.31.2[2](#fn-servers-2-def), 1.31.3 | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64, PPCLE) |
 | [NGINX Plus](/managed/ingest-from/technology-support/application-software/nginx#nginx-plus-versions "Learn the details of Dynatrace support for NGINX.") | R11 - R14[2](#fn-servers-2-def), R15[2](#fn-servers-2-def), R16 - R17[2](#fn-servers-2-def), R18[2](#fn-servers-2-def), R19[2](#fn-servers-2-def), R20[2](#fn-servers-2-def), R21[2](#fn-servers-2-def), R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64), PPCLE) |
 | [OpenResty](/managed/ingest-from/technology-support/application-software/nginx#openresty-versions "Learn the details of Dynatrace support for NGINX.") | 1.13.6, 1.15.8, 1.17.8, 1.19.3, 1.19.9, 1.21.4.1, 1.21.4.2, 1.21.4.3, 1.25.3.1, 1.25.3.2, 1.27.1.1, 1.27.1.2, 1.29.2.1, 1.29.2.3 | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64) |
 | [Tengine](/managed/ingest-from/technology-support/application-software/nginx#tengineversions "Learn the details of Dynatrace support for NGINX.") | 1.4.2 - 2.2.3, 2.3.0 - 2.3.3, 2.3.4, 2.4.0, 2.4.1 | Alpine Linux 64-bit (x86-64), Linux (x86-64) |
