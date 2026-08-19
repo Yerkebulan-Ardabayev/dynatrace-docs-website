@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extensions/concepts
 
 * Explanation
 * 2-min read
-* Updated on Jan 28, 2026
+* Updated on Aug 05, 2026
 
 Concepts
 

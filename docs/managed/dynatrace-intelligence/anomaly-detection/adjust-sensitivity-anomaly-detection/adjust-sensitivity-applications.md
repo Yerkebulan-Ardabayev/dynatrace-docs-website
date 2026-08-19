@@ -15,7 +15,8 @@ Dynatrace detects four types of anomalies for applications: **key performance me
 
 To adjust global configuration of anomaly detection for applications
 
-1. Go to **Settings** > **Anomaly detection** and select **Web applications**, **Mobile apps**, or **Custom apps**.
+1. Go to **Settings** > **Anomaly detection**
+2. Select **Web applications**, **Mobile apps**, or **Custom apps**.
 
 ## Key performance metric degradation
 

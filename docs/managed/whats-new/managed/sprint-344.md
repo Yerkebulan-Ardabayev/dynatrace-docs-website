@@ -15,7 +15,7 @@ source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-344
 This page showcases new features, changes, and bug fixes in Dynatrace Managed version 1.344. It contains:
 
 * [Feature updates](#updates): 14
-* [Breaking changes](#breaking): 2
+* [Breaking changes](#breaking): 1
 * [Fixes and maintenance](#fixes): 22
 
 Software Delivery
@@ -129,21 +129,6 @@ To configure this setting, go to  **Settings** > **Log Monitoring** > **Advanced
 By default, the entire log source is marked as binary and stops being processed. There is no change in behavior for existing deployments.
 
 ## Breaking changes
-
-Infrastructure Observability
-
-### Latest Dynatrace functionality related to ActiveGate is not visible in Dynatrace Classic environments
-
-ActiveGate modules that exclusively support Dynatrace Classic monitoring pages and applications are disallowed for ActiveGates connected to Latest Dynatrace environments. This affects the following modules:
-
-* AWS monitoring
-* Azure monitoring
-* Cloud Foundry monitoring
-* VMware monitoring
-* Memory dumps
-* Database insights
-
-For a full and up-to-date overview of all available ActiveGate modules and their supported deployment types, see [ActiveGate purposes and functionality](/managed/ingest-from/dynatrace-activegate/capabilities "Learn the capabilities and uses of ActiveGate.").
 
 Platform | Problems
 

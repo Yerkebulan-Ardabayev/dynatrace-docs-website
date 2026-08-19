@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detect
 
 * How-to guide
 * 6-min read
-* Updated on Jan 28, 2026
+* Updated on Jul 21, 2025
 
 Dynatrace detects four types of anomalies for services: **response time degradations**, **increases in failure rate**, **service load drops**, and **service load spikes**. Each anomaly type is detected independently and triggers its own problems and alerts.
 

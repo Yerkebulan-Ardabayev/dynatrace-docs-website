@@ -125,7 +125,7 @@ When you increase or decrease the sampling frequency of HTTP or RPC requests, th
 
 Modifying trace sampling for HTTP or RPC requests does not change the overall capture rate for the process or the overall ingested trace data volume. However, if you deactivate tracing for specific HTTP and RPC requests, the capture rate is increased.
 
-In all environments, there are transactions for which traces are of lower value. You can turn off tracing for specific HTTP and RPC requests completely at any time, freeing up trace volume for more important requests. This feature removes those traces completely from the capture rate calculation (they are no longer considered when computing the capture rate) and therefore leads to an overall increase in capture rate.
+In all environments, there are transactions for which traces are of lower value. You can turn off tracing for specific HTTP and RPC requests completely at any time, freeing up trace volume for more important requests. This feature removes those traces completely from the capture rate calculation (they are no longer considered when computing the capture rate) and therefore leads to an overall increase in capture rate. Deactivation rules always take effect regardless of the current OneAgent capture rate.
 
 ### Prerequisites
 

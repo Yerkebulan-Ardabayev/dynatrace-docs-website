@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 
 * How-to guide
 * 2-min read
-* Published Jun 25, 2021
+* Updated on Aug 18, 2026
 
 To manage all container-related settings, follow the instructions below.
 
@@ -69,6 +69,6 @@ Built-in rules are enabled by default. You can choose to disable them, but you c
 
 * Container monitoring rules are effective only when you install OneAgent on your hosts.
 * Application-only integrations without a full OneAgent installation don’t support monitoring rules. However, in such situations, the integrations themselves effectively provide the same level of control over your container monitoring setup.
-* In Kubernetes, container monitoring rules apply only to the `classicFullStack` injection mode.
+* In Kubernetes, container monitoring rules don't affect webhook-based injection (`cloudNativeFullStack`, `applicationMonitoring`). Injection in these modes is controlled via annotations, as described in [Configure monitoring for namespaces and pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods").
 
-  Container monitoring rules are ignored for webhook-based injection modes (`cloudNativeFullStack` or `applicationMonitoring`). For these modes, use the annotation-based configuration option as described in [Configure monitoring for namespaces and pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods").
+  However, once a container is injected, container monitoring rules can still influence OneAgent's activation/monitoring state, including disabling OneAgent for that process group.

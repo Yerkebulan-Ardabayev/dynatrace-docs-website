@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneage
 
 * How-to guide
 * 3-min read
-* Updated on Jun 09, 2026
+* Updated on Aug 10, 2026
 
 There are two ways to use OneAgent with OpenTelemetry:
 
@@ -100,7 +100,7 @@ Because it's a local-only endpoint, OneAgent does not require authentication.
 The OneAgent code module includes an OpenTelemetry Span Sensor which can create new spans based on OpenTelemetry API calls.
 This is shown in the figure above, where the code module (with the OpenTelemetry Span Sensor) sends data via the OpenTelemetry protocol.
 
-Use this approach
+Use this approach:
 
 * For services that are already instrumented by OneAgent automatically.
 * To extend visibility into frameworks and libraries instrumented with OpenTelemetry.
@@ -109,6 +109,7 @@ Use this approach
 This feature is for advanced users only, who want to create custom spans using OpenTelemetry API calls.
 
 The feature described on this page provides the same functionality as the OneAgent SDK for span detection, but uses OpenTelemetry instead.
+Spans collected by this functionality are treated as OneAgent trace data, not as OpenTelemetry trace ingest.
 
 If you enable this feature while also exporting OTLP data, you will create duplicate spans.
 

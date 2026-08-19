@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/platform/oneagent/monitoring-modes/en
 
 * How-to guide
 * 8-min read
-* Updated on May 20, 2026
+* Updated on Aug 05, 2026
 
 By default, [OneAgent](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") runs in Full-Stack monitoring mode, giving you complete visibility across hosts, processes, and services. If you prefer a lighter approach, you can switch to one of the two alternative modes that focus on essential infrastructure metrics:
 
@@ -22,7 +22,8 @@ You can define a default monitoring mode before installing OneAgent. This will c
 
 To define a default monitoring mode
 
-1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **General** > **Versions and updates** > **OneAgent default mode**.
+1. Go to **Settings** > **General** > **Versions and updates** > **OneAgent default mode**.
+
 2. Select a **OneAgent default monitoring mode** from the dropdown list.
 3. Select **Save changes**.
 
