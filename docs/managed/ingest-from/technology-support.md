@@ -1008,7 +1008,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | [Cassandra client (gocql/gocql)﻿](https://github.com/gocql/gocql) | 1.0 - 1.7[1](#fn-database-frameworks-1-def) |
 | [Microsoft SQL Server (denisenkom/go-mssqldb)﻿](https://github.com/denisenkom/go-mssqldb) | 0.11 - 0.12[1](#fn-database-frameworks-1-def) |
 | [Microsoft SQL Server (microsoft/go-mssqldb)﻿](https://github.com/microsoft/go-mssqldb) | 0.11 - 0.21[1](#fn-database-frameworks-1-def), 1.0 - 1.10[1](#fn-database-frameworks-1-def) |
-| [MongoDB Go driver (mongo-go-driver)﻿](https://github.com/mongodb/mongo-go-driver) | 1.3 - 1.17[1](#fn-database-frameworks-1-def), 2.+[1](#fn-database-frameworks-1-def) |
+| [MongoDB Go driver (mongo-go-driver)﻿](https://github.com/mongodb/mongo-go-driver) | 1.3 - 1.17[1](#fn-database-frameworks-1-def), 2.0.0 - 2.4.+[1](#fn-database-frameworks-1-def), 2.5.0 - 2.7.+[1](#fn-database-frameworks-1-def) |
 | [MySQL﻿](https://github.com/go-sql-driver/mysql/) | 1.4.1[1](#fn-database-frameworks-1-def), 1.5.0[1](#fn-database-frameworks-1-def), 1.6.0[1](#fn-database-frameworks-1-def), 1.7[1](#fn-database-frameworks-1-def), 1.8 - 1.10[1](#fn-database-frameworks-1-def) |
 | [PostgreSQL (jackc/pgx)﻿](https://github.com/jackc/pgx) | 4.7 - 4.18[1](#fn-database-frameworks-1-def), 5.0 - 5.10[1](#fn-database-frameworks-1-def) |
 | [PostgreSQL (lib/pq)﻿](https://github.com/lib/pq/) | 1.2.0[1](#fn-database-frameworks-1-def), 1.3.0[1](#fn-database-frameworks-1-def), 1.4.0 - 1.10.9[1](#fn-database-frameworks-1-def) |

@@ -82,7 +82,7 @@ To get started, see [z/OS installation overview](/managed/ingest-from/dynatrace-
 
 Monitoring of the CICS, IMS, and z/OS Java modules are consumed based on million service units (MSUs).
 
-Dynatrace Platform Subscription, see [Mainframe Monitoring](/managed/license/capabilities/app-infra-observability/mainframe "Learn how your consumption of the Dynatrace Mainframe Monitoring DPS capability is billed and charged.").
+Dynatrace Platform Subscription, see [Mainframe Monitoring](/managed/license/capabilities/app-infra-observability/mainframe "Learn how Mainframe Monitoring consumption is calculated, how to track and analyze your usage, and how to optimize your spend.").
 
 Dynatrace classic licensing, see [Mainframe Monitoring on IBM z/OS](/managed/license/classic-licensing/application-and-infrastructure-monitoring#mainframe-msu "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
 

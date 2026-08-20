@@ -148,7 +148,7 @@ Same capabilities as Full-Stack Monitoring mode.
 
 Discovery mode is only available for the [Dynatrace Platform Subscription (DPS) licensing model](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.").
 
-For monitoring consumption information, see [Host monitoring (DPS): Foundation & Discovery](/managed/license/capabilities/app-infra-observability/foundation-and-discovery "Learn how your consumption of the Dynatrace Foundation & Discovery DPS capability is billed and charged.").
+For monitoring consumption information, see [Host monitoring (DPS): Foundation & Discovery](/managed/license/capabilities/app-infra-observability/foundation-and-discovery "Learn how Foundation & Discovery consumption is calculated, how to track and analyze your usage, and how to optimize your spend.").
 
 ## Further resources
 

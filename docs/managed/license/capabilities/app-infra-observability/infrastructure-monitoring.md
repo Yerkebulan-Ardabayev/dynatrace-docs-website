@@ -13,7 +13,7 @@ source: https://docs.dynatrace.com/managed/license/capabilities/app-infra-observ
 
 Dynatrace Infrastructure Monitoring is a OneAgent monitoring mode that provides comprehensive host-level observability for physical and virtual machines. This page explains how Infrastructure Monitoring consumption is calculated, how to track and analyze your usage, and how to optimize your spend.
 
-In addition to all features of [Foundation & Discovery](/managed/license/capabilities/app-infra-observability/foundation-and-discovery "Learn how your consumption of the Dynatrace Foundation & Discovery DPS capability is billed and charged."), Infrastructure Monitoring also includes detailed process performance metrics, disk performance metrics, process-to-process network analysis, and per process memory analysis.
+In addition to all features of [Foundation & Discovery](/managed/license/capabilities/app-infra-observability/foundation-and-discovery "Learn how Foundation & Discovery consumption is calculated, how to track and analyze your usage, and how to optimize your spend."), Infrastructure Monitoring also includes detailed process performance metrics, disk performance metrics, process-to-process network analysis, and per process memory analysis.
 Dynatrace Extensions can be enabled on hosts with Infrastructure Monitoring mode and may consume [custom metric data points](/managed/license/capabilities/app-infra-observability/infrastructure-monitoring#infra-metrics "Learn how Infrastructure Monitoring consumption is calculated, how to track and analyze your usage, and how to optimize your spend.").
 
 ## How consumption is calculated

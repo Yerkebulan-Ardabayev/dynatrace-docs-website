@@ -19,8 +19,8 @@ Use the pages below to understand how the consumption for each capability is cal
 
 * [Full-Stack Monitoring](/managed/license/capabilities/app-infra-observability/full-stack-monitoring "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.")
 * [Infrastructure Observability](/managed/license/capabilities/app-infra-observability/infrastructure-monitoring "Learn how Infrastructure Monitoring consumption is calculated, how to track and analyze your usage, and how to optimize your spend.")
-* [Foundation & Discovery](/managed/license/capabilities/app-infra-observability/foundation-and-discovery "Learn how your consumption of the Dynatrace Foundation & Discovery DPS capability is billed and charged.")
-* [Mainframe Monitoring](/managed/license/capabilities/app-infra-observability/mainframe "Learn how your consumption of the Dynatrace Mainframe Monitoring DPS capability is billed and charged.")
+* [Foundation & Discovery](/managed/license/capabilities/app-infra-observability/foundation-and-discovery "Learn how Foundation & Discovery consumption is calculated, how to track and analyze your usage, and how to optimize your spend.")
+* [Mainframe Monitoring](/managed/license/capabilities/app-infra-observability/mainframe "Learn how Mainframe Monitoring consumption is calculated, how to track and analyze your usage, and how to optimize your spend.")
 
 ### Application Security
 

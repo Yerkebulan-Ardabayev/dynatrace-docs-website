@@ -25,7 +25,7 @@ The data stored in cookies, web storage, and IndexedDB contains no personal or s
 
 ## Cookies
 
-The following table provides an overview of the cookies used in RUM, RUM Classic, and Session Replay. These are all first-party cookies.
+The following table provides an overview of the cookies used in RUM Classic and Session Replay. These are all first-party cookies.
 
 The `<suffix>` used in the table is explained in [Suffix for cookie names and web storage keys](#cookie-and-web-storage-suffix).
 
@@ -56,7 +56,7 @@ If your company's security policy requires the `Secure` and `SameSite` cookie at
 
 ## Web storage
 
-RUM, RUM Classic, and Session Replay use both `sessionStorage` and `localStorage`. The following table lists the possible entries. Some of them back up RUM, RUM Classic, and Session Replay cookies, because browsers may evict cookies when a large number of them are set.
+RUM Classic and Session Replay use both `sessionStorage` and `localStorage`. The following table lists the possible entries. Some of them back up cookies, because browsers may evict cookies when a large number are set.
 
 | Key | Storage | Purpose |
 | --- | --- | --- |
