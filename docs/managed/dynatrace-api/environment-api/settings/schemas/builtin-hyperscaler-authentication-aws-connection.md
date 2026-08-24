@@ -1,11 +1,11 @@
 ---
-title: Settings API - AWS Connections schema table
+title: Settings API - AWS Connections (deprecated) schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-hyperscaler-authentication-aws-connection
 ---
 
-# Settings API - AWS Connections schema table
+# Settings API - AWS Connections (deprecated) schema table
 
-# Settings API - AWS Connections schema table
+# Settings API - AWS Connections (deprecated) schema table
 
 * Published Oct 14, 2024
 

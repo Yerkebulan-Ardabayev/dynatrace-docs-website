@@ -456,6 +456,8 @@ This module creates endpoints on the ActiveGate that can receive OpenTelemetry t
 **Section: [collector]**   
 You can use an ActiveGate to access the [Dynatrace API](/managed/dynatrace-api "Find out what you need to use the Dynatrace API."). ActiveGate supports calls to all the Dynatrace API configuration and environment endpoints in both, v1 and v2 versions. To access the Dynatrace API using ActiveGate, use a URL in the following format: `https://{your-ActiveGate-domain}/e/{your-environment-id}/api/...`
 
+To access the Dynatrace Platform API through an Environment ActiveGate, use `/platform/` instead of `/api/` in the URL: `https://{your-ActiveGate-domain}/e/{your-environment-id}/platform/`.
+
 | Property | Description |
 | --- | --- |
 | `restInterface` | Enables the REST API module, which facilitates access to Dynatrace API using REST. Possible values: `true` or `false`. |

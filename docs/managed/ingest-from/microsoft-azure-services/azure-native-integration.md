@@ -38,7 +38,7 @@ Azure Marketplace
 
 You can access the Azure Native Dynatrace service through the [Azure Marketplace﻿](https://dt-url.net/9n039mv).
 
-To receive a customized private offer for the Azure Native Dynatrace Service, please contact your Dynatrace account team or send an email to Dynatrace sales ([sales@dynatrace.com](mailto:sales@dynatrace.com)).
+To receive a customized private offer for the Azure Native Dynatrace Service, please contact your Dynatrace Account Team or send an email to Dynatrace Sales ([sales@dynatrace.com](mailto:sales@dynatrace.com)).
 
 Alternatively, you can start a free 30-day trial of the Azure Native Dynatrace Service by subscribing to the "Dynatrace for Azure Trial" plan.
 
