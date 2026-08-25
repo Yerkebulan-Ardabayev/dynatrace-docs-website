@@ -274,7 +274,7 @@ AWS monitoring
 | --- | --- |
 | `aws_monitoring_enabled` | Enables [AWS monitoring](/managed/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services.") module. Possible values: `true` or `false`. |
 | `aws_default_region` | Specify the default region used by [AWS monitoring](/managed/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services.") module. Possible values: valid AWS Regions codes. For example: `us-east-1` |
-| `aws_client_regions` | Specify regions used by [AWS monitoring](/managed/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services.") module. Possible values: list of valid AWS Regions codes, separeated by `;`. For example: `us-east-1;eu-central-1` |
+| `aws_client_regions` | Specify regions used by [AWS monitoring](/managed/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services.") module. Possible values: list of valid AWS Regions codes, separated by `;`. For example: `us-east-1;eu-central-1`. This property filters the list of regions your ActiveGate monitors. It does not enable regions that your ActiveGate version doesn't support. Specifying an unsupported region results in a warning in the ActiveGate log. |
 
 ## Module: Azure
 

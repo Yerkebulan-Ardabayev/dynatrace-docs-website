@@ -160,6 +160,8 @@ Consult the tables below for endpoints specific to each service you might want t
 
 ### AWS Regions supported by Dynatrace AWS Monitoring
 
+Some AWS regions require a minimum ActiveGate version. Regions without a version note are supported by all ActiveGate versions.
+
 * `us-gov-west-1`: AWS GovCloud (US)
 * `us-gov-east-1`: AWS GovCloud (US-East)
 * `us-east-1`: US East (N. Virginia)
@@ -175,7 +177,7 @@ Consult the tables below for endpoints specific to each service you might want t
 * `eu-south-1`: EU (Milan)
 * `eu-south-2`: EU (Spain)
 * `ap-east-1`: Asia Pacific (Hong Kong)
-* `ap-east-2`: Asia Pacific (Taipei)
+* `ap-east-2`: Asia Pacific (Taipei) ActiveGate version 1.331+
 * `ap-south-1`: Asia Pacific (Mumbai)
 * `ap-south-2`: Asia Pacific (Hyderabad)
 * `ap-southeast-1`: Asia Pacific (Singapore)

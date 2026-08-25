@@ -21,9 +21,11 @@ Deletes the specified maintenance window. Deletions can't be undone.
 
 ## Authentication
 
+### Api-Token:
+
 To execute this request, you need an access token with `WriteConfig` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Personal access tokens](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Parameters
 

@@ -19,12 +19,14 @@ Gets the properties of the specified monitor, including its JSON script.
 
 ## Authentication
 
+### Api-Token:
+
 To execute this request, you need an access token with one of the following scopes:
 
 * `ExternalSyntheticIntegration`
 * `ReadSyntheticData`
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Personal access tokens](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Parameters
 

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-e
 
 * Reference
 * 3-min read
-* Updated on Jun 30, 2026
+* Updated on Aug 04, 2026
 
 After you define the scope of your configuration, you need to identify the following:
 
@@ -261,6 +261,19 @@ Requires Active Directory domain set up. Allows you to connect to a database by 
 
 }
 ```
+
+##### One realm and KDC per JVM process
+
+The `realm` and `kdc` fields map to the JVM-wide system properties `java.security.krb5.realm` and `java.security.krb5.kdc`. All SQL Server Kerberos endpoints that run inside the same ActiveGate task or the same Kubernetes executor pod share these values. Only one realm and one KDC can be active per JVM process at a time.
+
+If two or more endpoints in the same process require different `realm` or `kdc` values, only the first endpoint's configuration takes effect; all subsequent endpoints requiring different `kdc` and/or `realm` properties values fail to start. No configuration validation error is raised.
+
+The datasource emits an SFM ERROR event when it detects that a property already set by a previous endpoint differs from the value required by the current endpoint. The event names the conflicting property and both values, so operators can identify the affected endpoints.
+
+To work around this constraint:
+
+* **ActiveGate:** Place endpoints that require different Kerberos realms or KDCs into separate monitoring configurations routed to separate ActiveGate task groups. Each task group runs a separate JVM process.
+* **Kubernetes:** Place endpoints that require different Kerberos realms or KDCs into separate monitoring configurations scheduled onto separate executor pods. Each pod is a separate JVM process.
 
 #### NTLM
 

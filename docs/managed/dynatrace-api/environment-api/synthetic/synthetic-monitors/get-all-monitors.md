@@ -19,13 +19,15 @@ Lists all synthetic monitors in your environment. The list contains only the nam
 
 ## Authentication
 
+### Api-Token:
+
 To execute this request, you need an access token with one of the following scopes:
 
 * `ExternalSyntheticIntegration`
 * `DataExport`
 * `ReadSyntheticData`
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Personal access tokens](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Parameters
 

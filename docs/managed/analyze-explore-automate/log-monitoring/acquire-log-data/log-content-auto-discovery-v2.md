@@ -129,8 +129,6 @@ In special cases, such as very poor hardware performance, the OneAgent log modul
 Scenarios that are not supported in the rotated log autodiscovery process include:
 
 * Rotated log generation with a directory change. This process could lead to the creation of numerous non-aggregated and/or incomplete logs, as well as to resource overuse.
-* Rotated log generation with immediate compression, where the application addresses a file with the same name. If a rotation criterion is met (for example, the required file size is reached), the file is moved to another location and immediately compressed.
-  Example: `/var/log/application.log -> /var/log/application.log.1.gz -> /var/log/application.log.2.gz -> /var/log/application.log.3.gz`. This process might again lead to incomplete log creation.
 
 ## Related topics
 

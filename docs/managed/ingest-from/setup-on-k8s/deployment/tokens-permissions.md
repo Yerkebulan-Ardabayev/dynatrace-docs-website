@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/t
 
 * How-to guide
 * 4-min read
-* Updated on Jul 15, 2026
+* Updated on Aug 20, 2026
 
 Tokens authenticate and authorize API calls, ensuring that only authorized services can interact with your Dynatrace environment. In the context of [Dynatrace Operator](/managed/ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator "Components of Dynatrace Operator") for Kubernetes, two tokens are used:
 
@@ -143,7 +143,7 @@ The Operator token requires the following scopes:
 | Scope | Usage | Dynatrace Operator version |
 | --- | --- | --- |
 | PaaS - Installer (`Installer download`) | Manages OneAgent and ActiveGate lifecycle. | Any version |
-| Access problem and event feed, metrics, and topology (API v1 - `DataExport`) | Notifies the Dynatrace Cluster of graceful shutdown. Starting with OneAgent version 1.301, graceful host shutdown is detected without Dynatrace Operator. | <1.6.0 |
+| Access problem and event feed, metrics, and topology (API v1 - `DataExport`) | Notifies the Dynatrace Cluster of graceful shutdown. Starting with OneAgent version 1.301, graceful host shutdown is detected without Dynatrace Operator. | <1.6.0 or ≥1.7.1 |
 | Read settings (API v2 - `settings.read`) | Manage the ActiveGate object for Kubernetes API monitoring. [2](#fn-1-2-def) | 0.4.0+ |
 | Write settings (API v2 - `settings.write`) | Manage the ActiveGate object for Kubernetes API monitoring. [2](#fn-1-2-def) | 0.4.0+ |
 | Read entities (API v2 - `entities.read`) | Checks if the ActiveGate object exists for Kubernetes API monitoring. [3](#fn-1-3-def) | 0.4.0 - <1.7.0 |
