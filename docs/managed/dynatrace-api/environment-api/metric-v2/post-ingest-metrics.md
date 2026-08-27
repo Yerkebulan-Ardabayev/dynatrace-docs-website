@@ -40,9 +40,17 @@ There's no limit on the number of metrics.
 
 ## Authentication
 
+### Api-Token:
+
 To execute this request, you need an access token with `metrics.ingest` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Personal access tokens](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+
+### Platform Token / OAuth:
+
+Required scope: `storage:metrics:write` (legacy)
+
+To learn how to obtain and use it, see [Platform tokens﻿](https://docs.dynatrace.com/docs/shortlink/platform-tokens) or [OAuth clients﻿](https://docs.dynatrace.com/docs/shortlink/oauth).
 
 ## Parameters
 

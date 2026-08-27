@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integ
 
 * How-to guide
 * 8-min read
-* Updated on Jun 10, 2026
+* Updated on Aug 24, 2026
 
 Dynatrace provides you with a dedicated AWS Lambda layer that contains the Dynatrace extension for AWS Lambda. You need to add the publicly available layer for your runtime and region to your function. Then, based on your configuration method, Dynatrace provides a template or configuration for your AWS Lambda function.
 
@@ -313,7 +313,7 @@ The following table contains uncompressed layer sizes.
 | Node.js | ~23 MB | ~32 MB |
 | Java | ~25 MB | ~32 MB |
 | Python | ~16 MB | ~24 MB |
-| Go | ~25 MB | ~28 MB |
+| Go | ~35 MB | ~38 MB |
 | .NET | ~35 MB | ~44 MB |
 
 ## Dynatrace AWS integration
@@ -460,38 +460,62 @@ OneAgent version 1.335+
 
 ### Go limitations
 
-#### General limitations:
+Go applications for AWS Lambda must be either dynamically linked or started from a dynamically linked parent process.
 
-* Go applications for AWS Lambda must be built with dynamic linking enabled. To enable dynamic linking, set `CGO_ENABLED=1` and use the system linker.
+#### General limitations
 
-  Example
+* **Dynamic linking**: Build with `CGO_ENABLED=1` and the system linker.
+  Build Example
 
   ```
-  CGO_ENABLED=1
-
-
-
-  go build -ldflags '-linkmode=external' -o myapp main.go
+  CGO_ENABLED=1 go build -ldflags '-linkmode=external' -o myapp main.go
   ```
-* Go applications do not require a special runtime. The OS-only runtime is used. `Go 1.x` runtime is deprecated and not supported.
+* **Static linking** (`CGO_ENABLED=0`): Must be started from a dynamically linked parent process, such as `tini` or a shell. See [OneAgent Go Static Monitoring](/managed/ingest-from/technology-support/application-software/go/support/go-known-limitations#static-monitoring "Learn the limitations for Go support and their workarounds.").
+  Build Example
+
+  ```
+  CGO_ENABLED=0 go build -o myapp main.go
+  ```
+
+  Run Example
+
+  ```
+  bash -c './myapp'
+  ```
+* `Go 1.x` runtime is deprecated; use the OS-only runtime.
 
 #### Versioning limitations
 
-* Go support for AWS Lambda requires OneAgent version 1.333+. It is not backwards-compatible with older OneAgent versions.
-* [External metadata](/managed/ingest-from/technology-support/application-software/go/support/supported-go-versions#external-metadata "Find out which Go versions are supported by Dynatrace.") support for Go in AWS Lambda is not supported. As a result, third-party library versions or newly released Go versions are not automatically supported. New version support is shipped with the usual OneAgent release cycle and requires OneAgent to be updated to take effect.
-* [AWS-Lambda-Go﻿](https://github.com/aws/aws-lambda-go) SDK v1.18.0+ is required for Go applications.
+* Go support for AWS Lambda is available starting with OneAgent version 1.333+.
+* Support for statically linked Go applications for AWS Lambda is available starting with OneAgent version 1.345+.
+* For statically linked Go applications, tools such as `comm`, `stat`, `sched`, `status`, and `exe` may show a generic name instead of the original application name — this is expected behavior for this build type.
+* [External metadata](/managed/ingest-from/technology-support/application-software/go/support/supported-go-versions#external-metadata "Find out which Go versions are supported by Dynatrace.") is not available for Go in AWS Lambda. Support for new Go versions and third-party library versions is added only through regular OneAgent releases.
+* [AWS-Lambda-Go﻿](https://github.com/aws/aws-lambda-go) SDK v1.18.0+ is the supported baseline for Go applications.
 
 #### Deployment limitations
 
-* Deployment is possible through a container image or ZIP file. In both cases, dynamic linking must be enabled.
+* Deployment is supported both through a container image and through a ZIP file.
 
   ZIP file archive
 
-  The archive must contain the binary, and the application must be linked against glibc v2.34 or older. Since statically linked applications are not supported, linking against such an old version of glibc requires building in Ubuntu 20.04 or older.
+  The archive must contain the binary. AWS Lambda requires one of the following:
+
+  + The application is linked against glibc v2.34 or earlier (for example, by building on Ubuntu 20.04 or earlier).
+  + The application is built as a statically linked application (`CGO_ENABLED=0`) and started via a dynamically linked parent process.
 
   Container image
 
-  The application must be compiled with a matching glibc version. Both AWS base images and non-AWS base images are supported.
+  AWS Lambda requires the application to be compiled with a glibc version matching the container's base image. For Dynatrace monitoring, use an AWS Lambda base image.
+
+  For statically linked applications (`CGO_ENABLED=0`) in a container image, `tini` can be used as the image's entrypoint to act as a dynamically linked parent process (PID 1), starting the statically linked binary as its child:
+
+  ```
+  ENTRYPOINT ["/tini", "--"]
+
+
+
+  CMD ["./myapp"]
+  ```
 * To set the path to the OneAgent library, use the `LD_PRELOAD` environment variable.
 
   ```

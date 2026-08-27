@@ -23,9 +23,25 @@ The ingestion of custom events consumes [Davis Data Units (DDUs)](/managed/licen
 
 ## Authentication
 
+### Api-Token:
+
 To execute this request, you need an access token with `events.ingest` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+One of the following permissions is required for personal access tokens:
+
+* `environment:roles:viewer`
+* `openpipeline:events.davis:ingest`
+
+To learn how to obtain and use it, see [Personal access tokens](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+
+### Platform Token / OAuth:
+
+One of the following scopes is required:
+
+* `openpipeline:events.davis:ingest`
+* `storage:events:write` (legacy)
+
+To learn how to obtain and use it, see [Platform tokens﻿](https://docs.dynatrace.com/docs/shortlink/platform-tokens) or [OAuth clients﻿](https://docs.dynatrace.com/docs/shortlink/oauth).
 
 ## Parameters
 

@@ -8,6 +8,6 @@ source: https://docs.dynatrace.com/managed/whats-new/oneagent
 # OneAgent release notes
 
 * Release notes
-* Updated on Jul 23, 2026
+* Updated on Aug 25, 2026
 
 Type to filter

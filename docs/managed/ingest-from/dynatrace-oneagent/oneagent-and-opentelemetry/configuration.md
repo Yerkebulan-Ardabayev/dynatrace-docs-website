@@ -50,7 +50,7 @@ Existing tracers are replaced and will no longer work after you enable OpenTelem
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7[1](#fn-monitoring-framework-1-def), 1.8 - 1.11.0[1](#fn-monitoring-framework-1-def), 1.11.1 - 1.27[1](#fn-monitoring-framework-1-def), 1.28 - 1.44[1](#fn-monitoring-framework-1-def) |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7[1](#fn-monitoring-framework-1-def), 1.8 - 1.11.0[1](#fn-monitoring-framework-1-def), 1.11.1 - 1.27[1](#fn-monitoring-framework-1-def), 1.28 - 1.45[1](#fn-monitoring-framework-1-def) |
 
 1
 

@@ -41,7 +41,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Pipelines `pipelines` | set | - | Required |
 | Built-in pipelines `builtinPipelines` | set | - | Required |
 | Query which determines whether the record should be routed to the target pipeline of this rule. `matcher` | text | - | Required |
-| Cloud Vendor Type `cloudVendorType` | enum | The element has these enums * `aws` * `azure` * `gcp` | Required |
+| Cloud Vendor Type `cloudVendorType` | enum | The element has these enums * `aws` * `azure` * `gcp` * `otlp` | Required |
 | AWS Connection `awsConnection` | [AwsConnection](#AwsConnection) | - | Required |
 | Azure Connection `azureConnection` | [AzureConnection](#AzureConnection) | - | Required |
 | GCP Connection `gcpConnection` | [GcpConnection](#GcpConnection) | - | Required |
@@ -69,6 +69,12 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | GCP connection `connectionId` | text | - | Required |
 | GCS Bucket Name `bucketName` | text | - | Required |
+
+##### The `OtlpConnection` object
+
+| Property | Type | Description | Required |
+| --- | --- | --- | --- |
+| OTLP connection `connectionId` | text | - | Required |
 
 ##### The `Stage` object
 

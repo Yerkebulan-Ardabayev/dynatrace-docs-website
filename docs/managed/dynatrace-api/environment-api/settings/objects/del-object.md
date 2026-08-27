@@ -19,9 +19,22 @@ Deletes the specified settings object. Deletion cannot be undone!
 
 ## Authentication
 
+### Api-Token:
+
 To execute this request, you need an access token with `settings.write` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+One of the following permissions is required for personal access tokens:
+
+* `environment:roles:manage-settings`
+* `settings:objects:write`
+
+To learn how to obtain and use it, see [Personal access tokens](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+
+### Platform Token / OAuth:
+
+Required scope: `settings:objects:write`
+
+To learn how to obtain and use it, see [Platform tokens﻿](https://docs.dynatrace.com/docs/shortlink/platform-tokens) or [OAuth clients﻿](https://docs.dynatrace.com/docs/shortlink/oauth).
 
 ## Parameters
 

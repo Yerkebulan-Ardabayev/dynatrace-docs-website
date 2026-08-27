@@ -28,9 +28,17 @@ Be sure to set the correct **Content-Type** header and encode payload with **UTF
 
 ## Authentication
 
+### Api-Token:
+
 To execute this request, you need an access token with `logs.ingest` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Personal access tokens](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+
+### Platform Token / OAuth:
+
+Required scope: `storage:logs:write` (legacy)
+
+To learn how to obtain and use it, see [Platform tokens﻿](https://docs.dynatrace.com/docs/shortlink/platform-tokens) or [OAuth clients﻿](https://docs.dynatrace.com/docs/shortlink/oauth).
 
 ## Parameters
 

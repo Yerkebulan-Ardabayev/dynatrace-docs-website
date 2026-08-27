@@ -21,12 +21,25 @@ The request produces an `application/json` payload.
 
 ## Authentication
 
+### Api-Token:
+
 To execute this request, you need an access token with one of the following scopes:
 
 * `oneAgents.read`
 * `DataExport`
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+One of the following permissions is required for personal access tokens:
+
+* `environment:roles:manage-settings`
+* `fleet-management:oneagents:read`
+
+To learn how to obtain and use it, see [Personal access tokens](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+
+### Platform Token / OAuth:
+
+Required scope: `fleet-management:oneagents:read`
+
+To learn how to obtain and use it, see [Platform tokens﻿](https://docs.dynatrace.com/docs/shortlink/platform-tokens) or [OAuth clients﻿](https://docs.dynatrace.com/docs/shortlink/oauth).
 
 ## Parameters
 
