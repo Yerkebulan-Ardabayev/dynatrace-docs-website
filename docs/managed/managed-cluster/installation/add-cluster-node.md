@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/installation/add-clus
 
 * How-to guide
 * 3-min read
-* Updated on May 08, 2026
+* Updated on Aug 26, 2026
 
 You can scale your Managed Cluster by adding nodes through the Cluster Management Console. You need root access to the target host to run the installer.
 
@@ -124,7 +124,7 @@ Tips
   **Cleanup command:**
 
   ```
-  /opt/dynatrace-managed/utils/cassandra-nodetool.sh
+  sudo /opt/dynatrace-managed/utils/cassandra-nodetool.sh cleanup
   ```
 
 ## Frequently asked questions

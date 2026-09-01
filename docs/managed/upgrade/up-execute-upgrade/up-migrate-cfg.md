@@ -195,7 +195,7 @@ The SaaS Upgrade Assistant is based on the Dynatrace Configuration as Code imple
 
 See the [supported configuration API types](/managed/deliver/configuration-as-code/monaco/reference/supported-configuration#configs "Configuration types and access permissions for Dynatrace Configuration as Code via Monaco") of Dynatrace Configuration as Code.
 
-* [Extensions 1.0](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") and [Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") configuration, including endpoint credentials
+* [Extensions 1.0](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") and [Extensions](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.") configuration, including endpoint credentials
 * [AWS](/managed/observe/infrastructure-observability/cloud-platform-monitoring/aws-monitoring "Monitor AWS with Dynatrace") credentials
 * [Azure](/managed/observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring "Monitor Azure with Dynatrace") credentials
 * [GCP](/managed/observe/infrastructure-observability/cloud-platform-monitoring/gcp-monitoring "Monitor Google Cloud with Dynatrace") monitoring

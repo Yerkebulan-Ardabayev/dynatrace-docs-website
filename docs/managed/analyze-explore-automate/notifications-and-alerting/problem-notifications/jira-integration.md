@@ -68,4 +68,4 @@ Jiraintegration 4
 
 Dynatrace automatically updates the severity levels of issues in Jira based on their impact to your applications and customer experience.
 
-Dynatrace does not automatically close resolved issues. You need to close Jira issues manually.
+Dynatrace doesn't automatically close resolved issues. You need to close Jira issues manually.

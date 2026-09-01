@@ -416,7 +416,7 @@ To use the Settings API
 
 ## Add your configuration to Extensions 2.0
 
-You can also attach your current configuration to your [Extensions 2.0](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") extension so that your custom extension comes with predefined process grouping rules. Add your definition to the [Extension YAML](/managed/ingest-from/extensions/develop-your-extensions/extension-yaml "Learn how to create an extension YAML file using the Extensions framework.") file as in this example:
+You can also attach your current configuration to your [Extensions 2.0](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.") extension so that your custom extension comes with predefined process grouping rules. Add your definition to the [Extension YAML](/managed/ingest-from/extensions/develop-your-extensions/extension-yaml "Learn how to create an extension YAML file using the Extensions framework.") file as in this example:
 
 ```
 ---

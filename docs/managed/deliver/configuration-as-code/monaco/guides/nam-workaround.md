@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/monaco/
 * 1-min read
 * Updated on Nov 25, 2025
 
-Monaco doesn't support [Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."), but you can configure [Synthetic monitors API v2](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-network-availability-monitors "Create, read, update and delete Synthetic monitors. Currently browser and network availability monitors only.") via the [Settings API](/managed/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.").
+Monaco doesn't support [Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."), but you can configure [Synthetic monitors API v2](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-monitors "Create, read, update and delete Synthetic browser, HTTP, and network availability monitors via API v2.") via the [Settings API](/managed/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.").
 
 ## Access token configuration
 
@@ -23,7 +23,7 @@ To use [Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "F
 
 ## Monitor configuration
 
-Definitions of [network availability monitoring (NAM)](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-network-availability-monitors "Create, read, update and delete Synthetic monitors. Currently browser and network availability monitors only.") are covered by the following schemas:
+Definitions of [network availability monitoring (NAM)](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-monitors "Create, read, update and delete Synthetic browser, HTTP, and network availability monitors via API v2.") are covered by the following schemas:
 
 * [`builtin:synthetic.multiprotocol.config`](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-multiprotocol-config "View builtin:synthetic.multiprotocol.config settings schema table of your monitoring environment via the Dynatrace API.")
 * [`builtin:synthetic.multiprotocol.name`](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-multiprotocol-name "View builtin:synthetic.multiprotocol.name settings schema table of your monitoring environment via the Dynatrace API.")
@@ -183,4 +183,4 @@ scope: MULTIPROTOCOL_MONITOR-D48EB7B8D7BC7B71
 
 * [Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers.")
 * [Settings API](/managed/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.")
-* [Synthetic monitors API v2](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-network-availability-monitors "Create, read, update and delete Synthetic monitors. Currently browser and network availability monitors only.")
+* [Synthetic monitors API v2](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-monitors "Create, read, update and delete Synthetic browser, HTTP, and network availability monitors via API v2.")

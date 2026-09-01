@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-
 
 * How-to guide
 * 10-min read
-* Updated on Mar 09, 2026
+* Updated on Aug 27, 2026
 * Early Access
 
 [Add a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#add "Learn how to create a private location for synthetic monitoring.") as well as analyze and manage capacity usage in the **Private synthetic locations** global settings page (select the **Private synthetic locations** settings page from search results).
@@ -160,15 +160,15 @@ If you've installed Chromium manually, there's no need at the time of the update
 4. If necessary, disable the automatic update of Chromium packages. Note that for Red Hat Enterprise Linux and CentOS, packing locking, once performed, remains persistent across all future updates.
 
    ```
-   sudo yum -y install yum-plugin-versionlock
+   sudo dnf -y install python3-dnf-plugin-versionlock
 
 
 
-   sudo yum versionlock chromium
+   sudo dnf versionlock add chromium
 
 
 
-   sudo yum versionlock chromium-common
+   sudo dnf versionlock add chromium-common
    ```
 5. Verify Chromium update by running the following command from the default installation directory. Command output should match the Chromium version you installed.
 

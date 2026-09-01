@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/rac
 
 * Explanation
 * 3-min read
-* Updated on Jul 07, 2026
+* Updated on Aug 26, 2026
 
 Dynatrace Managed rack-aware deployment allows you to group Managed Cluster nodes into three fault domains (racks). A rack-aware deployment is resilient to an outage of all nodes in a rack. You can make a single Managed Cluster rack-aware, or apply rack awareness to each data center in a Premium High Availability (PHA) deployment.
 
@@ -47,10 +47,10 @@ Otherwise, you may lose data and have issues with Managed Cluster availability.
 
 ## Set up rack-aware deployment
 
-To create a rack-aware deployment during the initial Managed deployment, use the installation parameters to indicate the data center and the rack for each node. See [Install a Managed Cluster](/managed/managed-cluster/installation/install-managed-cluster "Install a Managed Cluster by downloading and verifying the installer, running it, and completing the initial configuration.") and [Customize installation for Dynatrace Managed](/managed/managed-cluster/installation/customize-managed-cluster-install#install-managed-cluster "Use command line parameters to customize or automate a Managed Cluster installation, with options for datastores, system users, and SSL certificates."). For example:
+To create a rack-aware deployment during the initial Managed installation, use the installation parameters to indicate the data center and the rack for each node. See [Customize installation for Dynatrace Managed](/managed/managed-cluster/installation/customize-managed-cluster-install#install-managed-cluster "Use command line parameters to customize or automate a Managed Cluster installation, with options for datastores, system users, and SSL certificates."). For example:
 
 ```
-dynatrace-managed.sh --rack-name az-1 --rack-dc datacenter1
+dynatrace-managed.sh --rack-dc <data-center> --rack-name <rack>
 ```
 
 To convert an existing Managed Cluster to rack-aware, choose a method based on your metric storage size:

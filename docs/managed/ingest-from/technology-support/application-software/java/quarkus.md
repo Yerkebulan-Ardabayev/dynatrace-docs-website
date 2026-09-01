@@ -86,7 +86,7 @@ For natively built applications, be sure to follow the [Directly in Micrometer](
 
 ### Ingest Micrometer metrics via an extension
 
-Use the Dynatrace [Extension 2.0 Framework](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") to ingest Micrometer metrics obtained from the [Prometheus data source](/managed/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Learn how to create a Prometheus extension using the Extensions framework.")—you need to create a custom extension for that.
+Use the Dynatrace [Extension 2.0 Framework](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.") to ingest Micrometer metrics obtained from the [Prometheus data source](/managed/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Learn how to create a Prometheus extension using the Extensions framework.")—you need to create a custom extension for that.
 
 As a starting point, you can use the custom extension example below. It's tailored to the `quarkus-micrometer-registry-prometheus` library. Be sure to use the correct metrics endpoint in your configuration. The default endpoint is `localhost:8080/q/metrics`.
 

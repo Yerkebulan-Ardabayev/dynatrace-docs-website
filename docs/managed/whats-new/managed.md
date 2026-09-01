@@ -8,21 +8,22 @@ source: https://docs.dynatrace.com/managed/whats-new/managed
 # Dynatrace Managed release notes
 
 * Release notes
-* Updated on Jul 29, 2026
+* Updated on Aug 26, 2026
 
 New versions are rolled out within configurable [maintenance windows](/managed/managed-cluster/operation/update-cluster "Learn how to update a Managed cluster and how to schedule an automatic update.").
 
 |  | Rollout start | Currently supported |
 | --- | --- | --- |
-| [Version 1.344](/managed/whats-new/managed/sprint-344 "New features, changes, and resolved issues in Dynatrace Managed 1.344") | August 3, 2026 | Yes |
-| [Version 1.342](/managed/whats-new/managed/sprint-342 "New features, changes, and resolved issues in Dynatrace Managed 1.342") | July 6, 2026 | Yes |
-| [Version 1.340](/managed/whats-new/managed/sprint-340 "New features, changes, and resolved issues in Dynatrace Managed 1.340") | Jun 08, 2026 | Yes |
-| [Version 1.338](/managed/whats-new/managed/sprint-338 "New features, changes, and resolved issues in Dynatrace Managed 1.338") | May 11, 2026 | Only with [Enterprise Success and Support﻿](https://dt-url.net/qt03zwg) |
+| [Version 1.346](/managed/whats-new/managed/sprint-346 "New features, changes, and resolved issues in Dynatrace Managed 1.346") | Aug 31, 2026 | Yes |
+| [Version 1.344](/managed/whats-new/managed/sprint-344 "New features, changes, and resolved issues in Dynatrace Managed 1.344") | Aug 03, 2026 | Yes |
+| [Version 1.342](/managed/whats-new/managed/sprint-342 "New features, changes, and resolved issues in Dynatrace Managed 1.342") | Jul 06, 2026 | Yes |
+| [Version 1.340](/managed/whats-new/managed/sprint-340 "New features, changes, and resolved issues in Dynatrace Managed 1.340") | Jun 08, 2026 | Only with [Enterprise Success and Support﻿](https://dt-url.net/qt03zwg) |
 
 Show previous versions
 
 |  | Rollout start | Standard support ended | [Enterprise Success and Support﻿](https://dt-url.net/qt03zwg) ended |
 | --- | --- | --- | --- |
+| [Version 1.338](/managed/whats-new/managed/sprint-338 "New features, changes, and resolved issues in Dynatrace Managed 1.338") | May 11, 2026 | Aug 03, 2026 | Aug 31, 2026 |
 | [Version 1.336](/managed/whats-new/managed/sprint-336 "New features, changes, and resolved issues in Dynatrace Managed 1.336") | Apr 13, 2026 | Jul 06, 2026 | Aug 03, 2026 |
 | [Version 1.334](/managed/whats-new/managed/sprint-334 "New features, changes, and resolved issues in Dynatrace Managed 1.334") | Mar 16, 2026 | Jun 08, 2026 | Jul 06, 2026 |
 | [Version 1.332](/managed/whats-new/managed/sprint-332 "Release notes for Dynatrace Managed, version 1.332") | Feb 16, 2026 | May 11, 2026 | Jun 08, 2026 |

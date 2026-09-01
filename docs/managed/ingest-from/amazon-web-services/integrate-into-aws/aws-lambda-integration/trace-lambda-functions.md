@@ -375,6 +375,20 @@ OneAgent version 1.335+
 * Once injection is complete, the .NET runtime retains both the original assemblies and the instrumented versions in memory. This is a known Microsoft .NET limitation that cannot be mitigated by Dynatrace OneAgent, resulting in approximately 75 MB of additional memory overhead for .NET Lambdas.
 * ASP.NET Core, code-level attack and vulnerability evaluation, and several metrics are not supported within AWS Lambda.
 
+### Java limitations
+
+* Java Lambda functions are not supported when the JDK AOT (Ahead-of-Time) class cache is active, which conflicts with OneAgent injection. The AWS Lambda managed Java 25 runtime [enables the AOT cache by default﻿](https://docs.aws.amazon.com/lambda/latest/dg/java-customization.html#aot-cds-caches).
+
+  OneAgent version 1.343+
+
+  To work around this limitation, set the following Lambda environment variable so that the AOT cache isn't used:
+
+  ```
+  JAVA_TOOL_OPTIONS="-XX:AOTCache=none"
+  ```
+
+  Disabling the AOT cache restores normal OneAgent initialization but increases cold start latency because JVM optimizations that normally reduce startup time are no longer applied.
+
 ### Node.js limitations
 
 * `aws-sdk` tracing support is available for CommonJS only. ECMAScript Lambda deployments will not have AWS-SDK tracing available.

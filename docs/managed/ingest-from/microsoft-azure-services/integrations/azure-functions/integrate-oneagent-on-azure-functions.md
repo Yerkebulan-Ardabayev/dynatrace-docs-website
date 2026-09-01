@@ -218,7 +218,7 @@ Example configuration:
 
 If `AlwaysOn` isn't set to `true`, the installation of OneAgent is triggered on the start-up/first request to Kudu.
 
-To check the deployment status, go to ![Fleet Management](https://dt-cdn.net/images/fleet-management-highresolution-1024-314b8c84b3.png "Fleet Management") **Fleet Management**.
+To check the deployment status, go to **Deployment Status**.
 
 After installation is complete, go to Azure portal and restart the App Function application to recycle the application's worker process. Immediately after restart, OneAgent will begin monitoring your application.
 

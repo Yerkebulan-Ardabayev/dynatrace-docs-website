@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-
 
 * Reference
 * 15-min read
-* Updated on Jul 27, 2026
+* Updated on Aug 19, 2026
 
 Ensure that the host you want to use for your private location complies with the following requirements.
 
@@ -68,6 +68,7 @@ On Windows, the ActiveGate installer package includes the Chrome for Testing bro
 
 | ActiveGate version | Included browser version |
 | --- | --- |
+| 1.345 | 151 |
 | 1.343[1](#fn-1-1-def) | 150 |
 | 1.341 | 148 |
 | 1.339 | 147 |
@@ -80,7 +81,6 @@ On Windows, the ActiveGate installer package includes the Chrome for Testing bro
 | 1.325 | 140 |
 | 1.323 | 139 |
 | 1.321 | 138 |
-| 1.319 | 138 |
 
 1
 
@@ -153,6 +153,7 @@ Please refer to [troubleshooting guide﻿](https://dt-url.net/x303x5f) for detai
 
 | ActiveGate version | Latest supported Chromium version Red Hat/Rocky Linux 9 | Latest supported Chrome for Testing version Amazon Linux 2023, Ubuntu, Oracle Linux 9 |
 | --- | --- | --- |
+| 1.345 | 151 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-151.0.7922.137-1.el9.tgz) | [151﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-151.0.7922.138.zip) |
 | 1.343 | 150 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-150.0.7871.128-1.el9.tgz) | [150﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-150.0.7871.181.zip) |
 | 1.341 | 148 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-148.0.7778.215-1.el9.tgz) | [148﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-148.0.7778.215.zip) |
 | 1.339 | 147 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-147.0.7727.137-1.el9.tgz) | [147﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-147.0.7727.137.zip) |
@@ -168,7 +169,6 @@ Please refer to [troubleshooting guide﻿](https://dt-url.net/x303x5f) for detai
 | 1.325 | 133 [Red Hat/Oracle/Rocky Linux 8﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 140 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-140.0.7339.185-1.el9.tgz) | 140 [Ubuntu 20.04 and 22.04﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-140.0.7339.185-3251.tgz) | 140 |
 | 1.323 | 133 [Red Hat/Oracle/Rocky Linux 8﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 139 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-139.0.7258.138-1.el9.tgz) | 139 [Ubuntu 20.04 and 22.04﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-139.0.7258.138-3235.tgz) | 139 |
 | 1.321 | 133 [Red Hat/Oracle/Rocky Linux 8﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 138 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.157-1.el9.tgz) | 138 [Ubuntu 20.04 and 22.04﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.157-3203.tgz) | 138 |
-| 1.319 | 133 [Red Hat/Oracle/Rocky Linux 8﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 138 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.100-1.el9.tgz) | 138 [Ubuntu 20.04 and 22.04﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.100-3199.tgz) | 138 |
 
 1
 

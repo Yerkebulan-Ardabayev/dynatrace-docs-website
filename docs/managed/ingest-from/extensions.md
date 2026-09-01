@@ -46,3 +46,11 @@ Extensions are useful when you need to monitor a technology or service that Dyna
 * Prometheus-based monitoring: Monitor Prometheus exporters.
 * WMI-based monitoring: Monitor Windows devices.
 * JMX-based monitoring: Acquire data from JMX MBeans.
+
+## Where extensions run
+
+[### OneAgent
+
+Run extensions locally on the monitored host to collect data from local data sources with the Extension Execution Controller.](/managed/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.")[### ActiveGate
+
+Run extensions remotely from an ActiveGate group to collect data from remote technologies and cloud environments.](/managed/ingest-from/extensions/concepts#ag "Learn more about the concept of Dynatrace Extensions.")

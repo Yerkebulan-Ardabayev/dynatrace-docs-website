@@ -73,7 +73,8 @@ Following is the list of self-monitoring metrics that can be used to get insight
 
 | Metric key | Name and description | Unit | Aggregations |
 | --- | --- | --- | --- |
-| dsfm:active\_gate.jvm.gc.major\_collection\_time | Active Gate - Jvm - Gc - Major Collection Time  ActiveGate java process major garbage collection time. | Millisecond | autovalue |
+| dsfm:active\_gate.jvm.gc.duration | Active Gate - Jvm - Gc - Duration  ActiveGate java process garbage collection duration. | Millisecond | autoavgcountmaxminsum |
+| dsfm:active\_gate.jvm.gc.major\_collection\_time | Active Gate - Jvm - Gc - Major Collection Time  Deprecated. To be removed. Use: `dsfm:active_gate.jvm.gc.duration`. | Millisecond | autovalue |
 | dsfm:active\_gate.jvm.cpu\_usage | Active Gate - Jvm - Cpu Usage  ActiveGate java process CPU usage. | Percent (%) | autoavgcountmaxminsum |
 | dsfm:active\_gate.jvm.heap\_memory\_available | Active Gate - Jvm - Heap Memory Available  ActiveGate java process heap memory size. | Byte | autoavgcountmaxminsum |
 | dsfm:active\_gate.jvm.heap\_memory\_used | Active Gate - Jvm - Heap Memory Used  ActiveGate java process heap memory used. Compare with heap memory size reported by `dsfm:active_gate.jvm.heap_memory_available` metric. | Byte | autoavgcountmaxminsum |

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/rac
 
 * How-to guide
 * 3-min read
-* Updated on Jul 07, 2026
+* Updated on Aug 26, 2026
 
 Convert a Managed Cluster to a rack-aware deployment using the backup and restore method.
 

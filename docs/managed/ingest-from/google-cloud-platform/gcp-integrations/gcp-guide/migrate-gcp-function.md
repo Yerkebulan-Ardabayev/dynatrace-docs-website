@@ -13,7 +13,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp
 
 Dynatrace version 1.230+
 
-The new version of the Google Cloud integration (v.1.0) uses [Extensions 2.0](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") and introduces [custom topology](/managed/ingest-from/extend-dynatrace/extend-topology/custom-topology "Learn how to create a custom topology model that's suited to your telemetry data.") for a number of Google Cloud services.
+The new version of the Google Cloud integration (v.1.0) uses [Extensions 2.0](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.") and introduces [custom topology](/managed/ingest-from/extend-dynatrace/extend-topology/custom-topology "Learn how to create a custom topology model that's suited to your telemetry data.") for a number of Google Cloud services.
 
 List of services with custom topology
 

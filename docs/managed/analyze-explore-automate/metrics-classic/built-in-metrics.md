@@ -1833,3 +1833,4 @@ For the purposes of [calculating monitoring consumption](/managed/license/classi
 | builtin:tech.zos.db2.num\_updates | z/OS DB2 SQL update  The number of z/OS DB2 SQL update statements in a one-minute interval | Count | autoavgcountmaxminsum |
 | builtin:tech.zos.db2.ziip\_time | z/OS DB2 ZIIP time  The time spent by the z/OS DB2 on z Integrated Information Processor (zIIP) to optimize CPU usage | Second | autoavgcountmaxminsum |
 | builtin:tech.zos.consumed\_service\_units | z/OS Consumed Service Units per minute  The calculated number of consumed Service Units per minute | Count | autoavgcountmaxminsum |
+| builtin:tech.zos.msu\_hours | z/OS Consumed MSUs per SMF interval (SMF70EDT)  Number of consumed MSUs per SMF interval (SMF70EDT) | Count | autoavgcountmaxminsum |

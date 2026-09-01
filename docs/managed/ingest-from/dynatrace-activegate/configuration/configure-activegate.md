@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/conf
 # Configuration properties and parameters of ActiveGate
 
 * 17-min read
-* Updated on Jul 16, 2026
+* Updated on Jul 29, 2026
 
 ## Before you begin
 
@@ -423,12 +423,40 @@ Metric ingestion: a simple way to push any custom metrics to Dynatrace
 
 ## Module: Memory dumps
 
+ActiveGate version 1.345+
+
 Triggering and downloading of memory dumps  
-**Section: [collector]**
+**Section: [memory\_dumps]**
 
 | Property | Description |
 | --- | --- |
-| `DumpSupported` | Enables the [memory dumps module](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate."). Possible values: `true` or `false`. |
+| `memory_dumps_enabled` | Enables the [memory dumps module](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate."). Possible values: `true` or `false`. |
+
+### Manage memory dumps using `agctl`
+
+ActiveGate version 1.345+
+
+You can use [agctl](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#modules "Learn how to use agctl to configure and manage ActiveGate from the command line") to enable memory dump storage:
+
+After enabling or disabling modules with `agctl`, you must [restart ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.") for the changes to take effect.
+
+```
+agctl modules enable memory_dumps
+```
+
+Deprecated configuration and command
+
+Before ActiveGate version 1.345, memory dump storage was configured using the `[collector]` section with `DumpSupported`:
+
+```
+[collector]
+
+
+
+DumpSupported = true
+```
+
+The corresponding deprecated `agctl` command is `agctl modules enable DumpSupported`. Both the deprecated configuration and the deprecated command are still supported. Both commands write configuration to the `[memory_dumps]` section.
 
 When your application experiences memory leaks or high object churn, it’s important that you get memory dumps so you can analyze these issues. In production environments, this is often a challenge when you can’t log into the environment and you have no other means of triggering memory dumps. Dynatrace enables you to both trigger and securely download memory dumps to the analysis tool of your choice.  
 See [Configure ActiveGate for memory dump storage](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate.").

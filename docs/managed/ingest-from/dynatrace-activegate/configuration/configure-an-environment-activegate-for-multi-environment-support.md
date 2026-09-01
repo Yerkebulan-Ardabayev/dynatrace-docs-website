@@ -20,13 +20,13 @@ You **cannot** use an Environment ActiveGate configured for multi-environment su
 
 * **Connect to environments from different clusters**
 * Install the [zRemote module for z/OS monitoring](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote "Prepare and install the zRemote for z/OS monitoring.")
-* Monitor remote technologies with the [Extensions framework](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+* Monitor remote technologies with the [Extensions framework](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.")
 * Execute monitors from [private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")
 * Run [Database insights](/managed/observe/infrastructure-observability/database-services-classic/database-insights "Learn how to extend your database monitoring to the database infrastructure layer.")
 
 All other ActiveGate features are supported.
 
-[Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") are not supported on multi-environment ActiveGates or Cluster ActiveGates. To run Extensions, deploy a dedicated Environment ActiveGate for each environment and enable the [Extension Execution Controller (EEC)](/managed/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.").
+[Extensions](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.") are not supported on multi-environment ActiveGates or Cluster ActiveGates. To run Extensions, deploy a dedicated Environment ActiveGate for each environment and enable the [Extension Execution Controller (EEC)](/managed/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.").
 
 To configure an existing Environment ActiveGate for multi-environment support
 

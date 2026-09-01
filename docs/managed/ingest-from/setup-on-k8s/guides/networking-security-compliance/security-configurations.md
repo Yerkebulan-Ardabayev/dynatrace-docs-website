@@ -20,7 +20,7 @@ Apply AppArmor profiles on Dynatrace components for enhanced security.](/managed
 
 Overview of seccomp profile configuration for Dynatrace components.](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/seccomp "Overview of seccomp profile configuration for Dynatrace components.")[### Apply Pod Security Standards
 
-Configure Pod Security Standards for the Dynatrace namespace.](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/pod-security-standards "Configure Pod Security Standards for the Dynatrace namespace.")[### Additional OpenShift configurations
+Configure Pod Security Standards for the Dynatrace namespace.](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/pod-security-standards "Configure Pod Security Standards for the Dynatrace namespace and monitored application namespaces that receive CSI-injected pods.")[### Additional OpenShift configurations
 
 Configure Dynatrace Operator in OpenShift environments.](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/openshift-configuration "Configure Dynatrace Operator in OpenShift environments.")[### Token rotation
 

@@ -7,7 +7,7 @@ source: https://docs.dynatrace.com/managed/whats-new/technology/end-of-support-n
 
 # End-of-support announcements
 
-* Updated on Mar 31, 2026
+* Updated on Aug 24, 2026
 
 Dynatrace OneAgent
 
@@ -415,7 +415,8 @@ Note that JMX and PMI Extensions Framework 1.0 are supported past March 2025 but
   + Vendor end of support: 2023-04-30
 * Windows Server 2012, 2012 R2 (OS module)
 
-  + Vendor end of support: 2023-10-10
+  + Vendor end of support: 2026-10-13, extended from the initial 2023-10-10 date
+  + Support was reinstated after the vendor introduced Extended Security Updates (ESU), but Dynatrace plans to desupport this OS again after that date.
 
 ### 2024-03-31 End of support
 

@@ -13,7 +13,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 With Dynatrace you can get observability for IBM MQ on z/OS:
 
 * The CICS, IMS, and z/OS Java modules can trace messages in your applications initiated by IBM MQ clients, including their producer and consumer services across tiers. To learn more about messages queues in Dynatrace, see [Queues](/managed/observe/infrastructure-observability/queues "Monitor and analyze your message queues with Dynatrace.").
-* The ActiveGate extension can collect metrics from IBM MQ servers. To learn more about it, see [IBM MQ ActiveGate extension](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.").
+* The ActiveGate extension can collect metrics from IBM MQ servers. To learn more about it, see [IBM MQ ActiveGate extension](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.").
 
 ## Tracing
 
@@ -31,7 +31,7 @@ The table lists the available IBM MQ configuration items for queues and topics.
 
 ## Manage IBM MQ configuration
 
-You can manage an IBM MQ configuration automatically by installing an [IBM MQ extension](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") and activating **Retrieve topology for improved transaction tracing** to retrieve the IBM MQ configuration of your environment and send it to the Settings API. This can also be done manually via the web UI or the Settings API.
+You can manage an IBM MQ configuration automatically by installing an [IBM MQ extension](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.") and activating **Retrieve topology for improved transaction tracing** to retrieve the IBM MQ configuration of your environment and send it to the Settings API. This can also be done manually via the web UI or the Settings API.
 
 ### Manual configuration via web UI
 

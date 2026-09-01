@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/rac
 
 * How-to guide
 * 4-min read
-* Updated on Jun 15, 2026
+* Updated on Aug 26, 2026
 
 The replication expansion method is useful for small Dynatrace Managed Clusters where one node can contain a full replica. If your current metric storage (Cassandra database) per node is more than 1 TB, use the [rack-aware conversion using restore](/managed/managed-cluster/high-availability/rack-aware-restore "Learn how to convert a Dynatrace Managed Cluster to rack-aware topology using the backup and restore method, including preparation and installer parameters.") method. You can use existing nodes to progressively (one after another) reinstall them with the rack-aware parameter. Optionally, you can use additional hardware as new nodes and remove one node while installing a new node with the rack-aware parameter.
 

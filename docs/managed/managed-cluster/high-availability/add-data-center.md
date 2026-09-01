@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/add
 
 * How-to guide
 * 12-min read
-* Updated on Jul 07, 2026
+* Updated on Aug 26, 2026
 
 To create a globally distributed high availability deployment (Premium High Availability (PHA)), you must add a redundant set of nodes to your original Managed Cluster deployment. Typically, such high availability deployments span across multiple data centers. Dynatrace Managed enables you to add mirrored nodes located in another data center.
 
@@ -158,18 +158,6 @@ DC1_NAME=datacenter1
 DC2_NAME=dc-us-east-2
 ```
 
-### Check for custom settings
-
-If your Cassandra or Elasticsearch cluster is configured with `custom.settings` that enable rack-awareness, contact a Dynatrace product expert via live chat to apply these custom settings before proceeding with **DC-2** installation.
-
-To check whether custom settings are applied, run on **seed node**:
-
-```
-ls $DT_DIR/installer/custom.settings
-```
-
-If the `custom.settings` file exists, you use custom settings.
-
 ## Review network zone setup
 
 Before you migrate to PHA, review your network zone setup for OneAgents and Environment ActiveGates that use the `default` network zone.
@@ -292,6 +280,8 @@ Run the following command on every node in **DC-2**. Follow the on-screen instru
 ```
 sudo /bin/sh ./managed-installer.sh --install-new-dc --premium-ha on --datacenter $DC2_NAME --seed-auth $API_TOKEN
 ```
+
+For rack-aware deployments, also add the `--rack-dc <data-center>` and `--rack-name <rack>` parameters.
 
 The installation takes 3 to 5 minutes. The expected result is similar to the following:
 

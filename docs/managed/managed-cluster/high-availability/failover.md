@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/fai
 
 * Explanation
 * 7-min read
-* Updated on Jul 07, 2026
+* Updated on Aug 26, 2026
 
 The Premium High Availability (PHA) multi-data center failover mechanism detects Elasticsearch or Cassandra node outages longer than 15 minutes and shorter than 72 hours. If Mission Control (MC) detects that two or more Elasticsearch or Cassandra nodes in a data center (DC) are down for 15 minutes, it automatically stops the server processes in that DC. MC then marks the DC as unhealthy.
 
@@ -129,7 +129,7 @@ I got an email titled "Automatic failover of datacenter2 has been started." How 
 The message specifies which components are down (Elasticsearch, Cassandra, or both). First check if the machine is up and running. Then try to start Elasticsearch and Cassandra using the following commands:
 
 ```
-/opt/dynatrace-managed/launcher/Elasticsearch.sh start
+/opt/dynatrace-managed/launcher/elasticsearch.sh start
 
 
 
@@ -139,7 +139,7 @@ The message specifies which components are down (Elasticsearch, Cassandra, or bo
 If you notice any issues with the start process, check the following logs:
 
 ```
-/var/opt/dynatrace-managed/log/Elasticsearch/*
+/var/opt/dynatrace-managed/log/elasticsearch/*
 
 
 

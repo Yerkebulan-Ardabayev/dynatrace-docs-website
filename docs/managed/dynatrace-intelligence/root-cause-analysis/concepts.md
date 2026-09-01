@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-ana
 
 * Explanation
 * 11-min read
-* Updated on Jun 09, 2026
+* Updated on Jul 21, 2026
 
 As dynamic systems architectures increase in complexity and scale, IT teams face mounting pressure to quickly detect and react to business-critical incidents across their multi-cloud environments. Incidents might affect one or more IT components, ultimately leading to large-scale outages that take down critical business services and applications. Such services and applications (for example, accounting systems or web shops) consist of many different components that depend on each other to work reliably and to deliver excellent user experience. If a critical component fails, the ripple effect negatively influences many other dependent components, triggering a large-scale incident.
 
@@ -123,7 +123,7 @@ Consider an example of a metric Davis event configured to use a five-minute slid
 * Individual Davis events use variable analysis sliding windows.
 * A problem is raised at the **event end analysis timestamp**.
 * A problem lifespan is defined by the lifespans of individual Davis events in the problem.
-* A problem is closed when all Davis events in the problem are closed.
+* A problem is closed when all Davis events in the problem are closed, or when you close the problem manually.
 * A closed problem can be reopened during a reopening period of 30 minutes.
 * If a problem lasts for longer than 90 minutes, no new Davis events will be merged after the 90-minute point—a new problem will be raised instead.
 * If the time gap between creation (start timestamp) of the first Davis events is longer than 5 minutes, the Davis events won't be merged into the same problem. Instead, they will be identified as two different problems.

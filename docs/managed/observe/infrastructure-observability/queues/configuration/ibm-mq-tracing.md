@@ -63,7 +63,7 @@ Specifications
 
 ## Manage IBM MQ configuration
 
-You can manage an IBM MQ configuration automatically by installing an [IBM MQ extension](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") and activating **Retrieve topology for improved transaction tracing** to retrieve the IBM MQ configuration of your environment and send it to the Settings API. This can also be done manually via the web UI or the Settings API.
+You can manage an IBM MQ configuration automatically by installing an [IBM MQ extension](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.") and activating **Retrieve topology for improved transaction tracing** to retrieve the IBM MQ configuration of your environment and send it to the Settings API. This can also be done manually via the web UI or the Settings API.
 
 ### Manual configuration via web UI
 

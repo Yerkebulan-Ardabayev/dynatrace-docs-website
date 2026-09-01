@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-ana
 
 * Explanation
 * 5-min read
-* Updated on Jan 28, 2026
+* Updated on Jul 27, 2026
 
 This page provides information about supported availability events and the logic behind raising them.
 
@@ -63,13 +63,13 @@ However, if a process group and its availability are of high importance you can 
 * If any process becomes unavailable. In that case an event is triggered immediately when any process of the group becomes unavailable for any reason.
 * If number of available process is below the specified threshold. In that case you can manually specify the minimum acceptable number of process in the group. An event is triggered in number of active process is below the threshold for **2 consecutive minutes**.
 
-If you intentionally shut down a process, an event will be triggered too, giving that condition is met. In that case just close the raised problem manually.
+If you intentionally shut down a process, an event will be triggered too, given that the condition is met. If the event creates a problem, you can close the raised problem manually.
 
 To configure process group availability monitoring, select **Edit** on the process group details page and select the **Availability monitoring** item.
 
 Closing conditions:
 
-* Event is resolved when the process is available again
+* Event is resolved when the process is available again.
 * Timeout of event occurs after 5 days.
 
 ### Applicable Dynatrace entities

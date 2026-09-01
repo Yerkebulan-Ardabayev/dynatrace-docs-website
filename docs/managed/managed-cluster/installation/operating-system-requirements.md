@@ -26,7 +26,7 @@ Review the operating system requirements before installing Dynatrace Managed.
 | Amazon Linux | 2, 2023[1](#fn-linux-distribution-1-def) | x86-64 |
 | Debian | 11, 12 | x86-64 |
 | Oracle Linux | 8.8, 8.10, 9.2, 9.4, 10.1[1](#fn-linux-distribution-1-def) | x86-64 |
-| Red Hat Enterprise Linux | 8.10, 9.4, 9.6, 9.7, 10.0[1](#fn-linux-distribution-1-def) | x86-64 |
+| Red Hat Enterprise Linux | 8.10, 9.4, 9.6, 9.7, 9.8, 10.0[1](#fn-linux-distribution-1-def), 10.2[1](#fn-linux-distribution-1-def) | x86-64 |
 | Rocky Linux | 9.2, 9.4, 10.0[1](#fn-linux-distribution-1-def) | x86-64 |
 | SUSE Enterprise Linux | 12.5, 15.4, 15.5, 15.6, 15.7 | x86-64 |
 | Ubuntu | 16.04, 18.04, 20.04, 22.04, 24.04, 26.04 | x86-64 |

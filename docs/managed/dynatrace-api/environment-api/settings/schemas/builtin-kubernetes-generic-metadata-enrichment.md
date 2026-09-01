@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 
 ### Kubernetes Telemetry Enrichment (`builtin:kubernetes.generic.metadata.enrichment)`
 
-Generic metadata enrichment for Kubernetes.
+Deprecated. Use [primary Grail tags and fields﻿](https://dt-url.net/q3239iv) for new configurations.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

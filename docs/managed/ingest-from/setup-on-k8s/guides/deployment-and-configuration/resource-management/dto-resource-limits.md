@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deplo
 # Set resource limits for Dynatrace Operator components
 
 * 2-min read
-* Updated on Feb 27, 2026
+* Updated on Aug 19, 2026
 
 Properly configured resource limits ensure optimal performance and stability of Dynatrace Operator components while preventing resource contention in your Kubernetes cluster. This guide helps you understand how to set appropriate resource limits based on your environment size and usage patterns.
 
@@ -422,3 +422,16 @@ Increase the default requests/limits by 100–200%:
 
   + Requests: CPU 50m, Memory 70Mi
   + Limits: CPU 50m, Memory 70Mi
+
+## Injected init container resource limits
+
+When Dynatrace Operator injects an init container into application pods, that container is subject to Kubernetes resource limits set via `initResources` in the [DynaKube spec](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
+By default, the DynaKube sets no limits unless you specify them.
+
+### ZIP download mode
+
+In [ZIP download](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#zip-download "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.") mode (no CSI driver), the init container downloads and unzips a code module archive to the pod's ephemeral volume.
+This archive is typically 250–350 MB.
+
+If you set memory limits via `initResources` in ZIP download mode, use at least **400 Mi**.
+Lower values risk an OOMKill during unzip, causing the init container to crash and restart.

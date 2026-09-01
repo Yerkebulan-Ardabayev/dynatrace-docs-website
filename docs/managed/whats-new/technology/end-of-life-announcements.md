@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/whats-new/technology/end-of-life-anno
 
 * Reference
 * 1-min read
-* Updated on Aug 03, 2026
+* Updated on Aug 27, 2026
 
 ## General policy
 
@@ -54,7 +54,7 @@ OneAgent version 1.299 is the last release that support the Python Extensions 1.
 
 * EoS: Support (that is bug fixes, security updates) ended on Sep 30, 2025.
 * Python Extension Framework 1.0 is EoS since Sep 1, 2024.
-* To continue using extensions after the OneAgent version 1.299 EoL date, migrate to the new [Extensions framework](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") and [update OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-update "Learn how to update OneAgent.") to a supported version. See [Migration guides for custom extensions 1.0](#migration)
+* To continue using extensions after the OneAgent version 1.299 EoL date, migrate to the new [Extensions framework](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.") and [update OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-update "Learn how to update OneAgent.") to a supported version. See [Migration guides for custom extensions 1.0](#migration)
 
 ### ActiveGate extensions
 

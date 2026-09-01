@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support
 # Technology support
 
 * 17-min read
-* Updated on Aug 13, 2026
+* Updated on Aug 27, 2026
 
 Dynatrace supports monitoring of the technologies and versions listed on this page. For serverless monitoring, see [Serverless compute support matrix](/managed/ingest-from/technology-support/serverless-compute-services "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS)."). For mainframe, see [Mainframe technology support](/managed/ingest-from/technology-support/mainframe-technology-support "Learn which technologies Dynatrace supports for Mainframe monitoring.").
 
@@ -484,7 +484,7 @@ Bellsoft Liberica v21+ 32-bit are not supported
 
 | Application servers | Versions |
 | --- | --- |
-| [Apache TomEE﻿](https://tomee.apache.org/) | 1, 7, 8 |
+| [Apache TomEE﻿](https://tomee.apache.org/) | 1, 7 - 10 |
 | [Apache Tomcat﻿](https://tomcat.apache.org/) | 6, 7, 8, 8.5, 9, 10[1](#fn-application-servers-1-def), 11[1](#fn-application-servers-1-def) |
 | [Fujitsu Interstage﻿](https://www.fujitsu.com/global/products/software/middleware/application-infrastructure/interstage/) | 12.0[2](#fn-application-servers-2-def) |
 | [IBM WebSphere Application Server﻿](https://www.ibm.com/products/software) | 8.5.5, 9.0, 8.5[3](#fn-application-servers-3-def) |
@@ -557,7 +557,7 @@ Only TIBCO workflows that are triggered by an incoming web service request, HTTP
 | OkHttp | 3[2](#fn-web-framework-2-def), 4.0 - 4.3[2](#fn-web-framework-2-def), 4.4 - 4.12[2](#fn-web-framework-2-def), 5.+[2](#fn-web-framework-2-def) |
 | [Play Framework﻿](https://www.playframework.com/) | 2.2 - 2.6, 2.7, 2.8 |
 | [Reactor Netty HTTP Client﻿](https://github.com/reactor/reactor-netty) | 0.8[2](#fn-web-framework-2-def), 0.9[2](#fn-web-framework-2-def), 1.0[2](#fn-web-framework-2-def), 1.1[2](#fn-web-framework-2-def), 1.2[2](#fn-web-framework-2-def), 1.3[2](#fn-web-framework-2-def) |
-| [Reactor Netty HTTP Server﻿](https://github.com/reactor/reactor-netty) | 0.6, 0.7, 0.8, 0.9, 1.0 |
+| [Reactor Netty HTTP Server﻿](https://github.com/reactor/reactor-netty) | 0.6, 0.7, 0.8, 0.9, 1.0 - 1.3 |
 | [RxJava﻿](https://github.com/ReactiveX/RxJava) | 3+ |
 | Software AG WebMethods Integration Server | 9.0[8](#fn-web-framework-8-def), 9.5 - 9.12[8](#fn-web-framework-8-def), 10.0 - 10.15[8](#fn-web-framework-8-def), 10.7[8](#fn-web-framework-8-def), 10.11[8](#fn-web-framework-8-def), 10.15[8](#fn-web-framework-8-def) |
 | [Spring WebFlux﻿](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html) | 5, 6, 7 |
@@ -667,6 +667,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | Amazon SNS | 1[1](#fn-messaging-clients-1-def), 2[1](#fn-messaging-clients-1-def) |
 | Amazon SQS | 1[1](#fn-messaging-clients-1-def), 2[1](#fn-messaging-clients-1-def) |
 | [Azure SDK EventHub﻿](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/eventhubs/azure-messaging-eventhubs) | 5.18.6+[2](#fn-messaging-clients-2-def), 1.2.26+ (Azure SDK BOM)[2](#fn-messaging-clients-2-def) |
+| [Azure SDK ServiceBus﻿](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/servicebus/azure-messaging-servicebus) | 7.17.8+[3](#fn-messaging-clients-3-def), 1.2.31+ (Azure SDK BOM)[3](#fn-messaging-clients-3-def) |
 | HornetQ | 2.2[1](#fn-messaging-clients-1-def), 2.3[1](#fn-messaging-clients-1-def), 2.4[1](#fn-messaging-clients-1-def) |
 | [IBM MQ client﻿](https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_9.1.0/com.ibm.mq.dev.doc/q118320_.htm) | 8[1](#fn-messaging-clients-1-def), 9[1](#fn-messaging-clients-1-def) |
 | JMS | 1.1[1](#fn-messaging-clients-1-def), 2.0[1](#fn-messaging-clients-1-def), 3.0[1](#fn-messaging-clients-1-def) |
@@ -675,7 +676,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | Software AG WebMethod Broker and Universal messaging via JMS | All versions supported |
 | [Spring AMQP﻿](https://spring.io/projects/spring-amqp) | 1.5, 2.0, 2.1, 2.2, 2.3 |
 | Spring Cloud Stream Kafka Binder | 3+ |
-| Tibco EMS | All versions supported[3](#fn-messaging-clients-3-def) |
+| Tibco EMS | All versions supported[4](#fn-messaging-clients-4-def) |
 
 1
 
@@ -683,21 +684,24 @@ Publishers supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/in
 
 2
 
-Support for send methods using java.lang.Iterable arguments is currently limited to java.util.Collection.
+For v1.343, support for send methods using java.lang.Iterable arguments is limited to java.util.Collection.
 
 3
+
+For v1.343, support for sendMessages methods using java.lang.Iterable arguments is limited to java.util.Collection.
+
+4
 
 Tracing is only supported via JMS.
 
 | Remoting frameworks | Versions |
 | --- | --- |
-| [Akka Remoting﻿](https://doc.akka.io/docs/akka/2.5/remoting.html) | 2.4[1](#fn-remoting-frameworks-1-def), 2.5[1](#fn-remoting-frameworks-1-def), 2.3[4](#fn-remoting-frameworks-4-def), 2.6[4](#fn-remoting-frameworks-4-def), 2.7[4](#fn-remoting-frameworks-4-def) |
+| [Akka Remoting﻿](https://doc.akka.io/docs/akka/2.5/remoting.html) | 2.4[1](#fn-remoting-frameworks-1-def), 2.5[1](#fn-remoting-frameworks-1-def), 2.3[3](#fn-remoting-frameworks-3-def), 2.6[3](#fn-remoting-frameworks-3-def), 2.7[3](#fn-remoting-frameworks-3-def) |
 | [Amazon AWS Lambda SDK﻿](https://aws.amazon.com/en/sdk-for-java/) | 1[1](#fn-remoting-frameworks-1-def), 2[1](#fn-remoting-frameworks-1-def) |
 | Amazon AWS SDK | 1[2](#fn-remoting-frameworks-2-def), 2[2](#fn-remoting-frameworks-2-def) |
-| [Apache Pekko Remoting﻿](https://pekko.apache.org/docs/pekko/current/remoting.html#classic-remoting-deprecated-) | 1.0.0 - 1.2.0[7](#fn-remoting-frameworks-7-def) |
-| [Apache Thrift﻿](https://thrift.apache.org/) | 0.7 - 0.13 |
+| [Apache Pekko Remoting﻿](https://pekko.apache.org/docs/pekko/current/remoting.html#classic-remoting-deprecated-) | 1.0.0 - 1.2.0[6](#fn-remoting-frameworks-6-def) |
+| [Apache Thrift﻿](https://thrift.apache.org/) | 0.7 - 0.24 |
 | [Azure SDK﻿](https://github.com/Azure/azure-sdk-for-java) | 1.2.9+ (Azure SDK BOM) |
-| [Azure SDK ServiceBus﻿](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/servicebus/azure-servicebus) | 7.17.8+[3](#fn-remoting-frameworks-3-def), 1.2.31+ (Azure SDK BOM)[3](#fn-remoting-frameworks-3-def) |
 | Glassfish RMI-IIOP | All versions supported |
 | IBM JVM RMI-IIOP | All versions supported |
 | JBoss Enterprise Application Platform - RMI-IIOP | 7, 8 |
@@ -706,10 +710,10 @@ Tracing is only supported via JMS.
 | Java IMS TM Resource Adapter | All versions supported |
 | Java RMI-JRMP | All versions supported |
 | OpenJDK/Oracle JVM RMI-IIOP | All versions supported |
-| WebLogic RMI-IIOP | All versions supported[6](#fn-remoting-frameworks-6-def) |
+| WebLogic RMI-IIOP | All versions supported[5](#fn-remoting-frameworks-5-def) |
 | WebSphere Liberty RMI-IIOP | All versions supported |
 | WebSphere RMI-IIOP | All versions supported |
-| [gRPC﻿](https://grpc.github.io/grpc-java/javadoc/index.html) | 1.18 - 1.81[5](#fn-remoting-frameworks-5-def) |
+| [gRPC﻿](https://grpc.github.io/grpc-java/javadoc/index.html) | 1.18 - 1.81[4](#fn-remoting-frameworks-4-def) |
 
 1
 
@@ -721,21 +725,17 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 3
 
-Support for sendMessages methods using java.lang.Iterable arguments is currently limited to java.util.Collection.
+Only supported when Netty is used; not supported when using Artery. Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 4
 
-Only supported when Netty is used; not supported when using Artery. Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+gRPC client calls supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 5
 
-gRPC client calls supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
-
-6
-
 WebLogic 15.1.1 has known vendor IIOP issues. T3 is supported as a workaround for server-to-server connections only; thin client connections are not supported.
 
-7
+6
 
 Only supported when classic-remoting is used; not supported when using Artery. Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
@@ -1281,6 +1281,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | Amazon SNS | 1.11+[1](#fn-messaging-libraries-1-def) |
 | Amazon SQS | 1.11+[1](#fn-messaging-libraries-1-def) |
 | [Azure SDK EventHub﻿](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/eventhub/azure-eventhub) | 5.12+ |
+| [Azure SDK ServiceBus﻿](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/servicebus/azure-servicebus) | 7.10+ |
 | [Celery﻿](https://github.com/celery/celery) | 5.3+ |
 | [Confluent Kafka Python client library﻿](https://github.com/confluentinc/confluent-kafka-python) | 2.0.2+[1](#fn-messaging-libraries-1-def) |
 | [Kombu﻿](https://github.com/celery/kombu) | 4.6.7+ |
@@ -1295,7 +1296,6 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | --- | --- |
 | [Amazon AWS SDK﻿](https://github.com/boto/boto3) | 1.11+[1](#fn-remoting-frameworks-1-def) |
 | [Azure SDK﻿](https://github.com/Azure/azure-sdk-for-python) | 1.0+[2](#fn-remoting-frameworks-2-def) |
-| [Azure SDK ServiceBus﻿](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/servicebus/azure-servicebus) | 7.10+ |
 | [gRPC﻿](https://pypi.org/project/grpcio/) | 1.26+[3](#fn-remoting-frameworks-3-def) |
 
 1
@@ -1615,8 +1615,8 @@ On the following web servers and applications, Dynatrace supports [RUM auto-inje
 | --- |
 | Apache HTTP Server |
 | IBM HTTP Server |
-| Java servlet-based web applications |
-| Kestrel (ASP.NET Core applications)[1](#fn-9-1-def)[2](#fn-9-2-def) |
+| Java servlet-based web applications[1](#fn-9-1-def) |
+| Kestrel (ASP.NET Core applications)[2](#fn-9-2-def)[3](#fn-9-3-def) |
 | Microsoft IIS |
 | [NGINX](/managed/ingest-from/technology-support/application-software/nginx "Learn the details of Dynatrace support for NGINX.") |
 | [Node.js](/managed/ingest-from/technology-support/application-software/nodejs "Read about Dynatrace support for Node.js applications.") |
@@ -1624,9 +1624,13 @@ On the following web servers and applications, Dynatrace supports [RUM auto-inje
 
 1
 
-Minimum required versions: .Net Core 3.1, .Net Standard 2.1, Microsoft.AspNetCore.Http.Abstractions 1.0.2 (for full framework).
+RUM is not supported for Java servlet-based web applications running on [z/OS (mainframe)](/managed/ingest-from/technology-support/mainframe-technology-support#java "Learn which technologies Dynatrace supports for Mainframe monitoring.").
 
 2
+
+Minimum required versions: .Net Core 3.1, .Net Standard 2.1, Microsoft.AspNetCore.Http.Abstractions 1.0.2 (for full framework).
+
+3
 
 To enable this as a OneAgent feature, go to **Settings** > **Preferences** > **OneAgent features** and turn on **Enable Real User Monitoring (RUM) for ASP.NET Core**.
 
@@ -1719,7 +1723,7 @@ You can view more details on the following reference pages.
 
 ## Extensions
 
-See [Dynatrace Hub﻿](https://www.dynatrace.com/hub/?filter=all&type=extension&internal_source=doc&internal_medium=link&internal_campaign=cross) for the complete list of technologies supported by [Dynatrace Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.").
+See [Dynatrace Hub﻿](https://www.dynatrace.com/hub/?filter=all&type=extension&internal_source=doc&internal_medium=link&internal_campaign=cross) for the complete list of technologies supported by [Dynatrace Extensions](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.").
 
 ## Metric ingestion data sources
 

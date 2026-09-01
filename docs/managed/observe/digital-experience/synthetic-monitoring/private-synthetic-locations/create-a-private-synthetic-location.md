@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-
 
 * How-to guide
 * 24-min read
-* Updated on Jul 27, 2026
+* Updated on Aug 27, 2026
 
 You can run your Dynatrace synthetic monitors from a private Synthetic location, which is a location in your private network infrastructure where you install one or more Synthetic-enabled ActiveGate instances.
 
@@ -265,12 +265,6 @@ This section is only relevant for releases 1.329 and earlier.
      curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.157-3203.tgz
      ```
 
-     ActiveGate version 1.319
-
-     ```
-     curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.100-3199.tgz
-     ```
-
      You can [verify the authenticity of the packages](#verify) using the signature files stored together with the package archives.
    * Extract the installation packages. Go to the directory where you saved the archive and run the following command:
 
@@ -359,7 +353,7 @@ You can [verify the authenticity of the packages](#verify) using the signature f
    * Install Synthetic engine dependencies.
 
      ```
-     sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+     sudo dnf install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
      ```
 
    * Register the Red Hat instance.
@@ -383,7 +377,7 @@ You can [verify the authenticity of the packages](#verify) using the signature f
    * Install Synthetic engine dependencies.
 
      ```
-     sudo yum install -y xorg-x11-server-Xvfb xkbcomp xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+     sudo dnf install -y xorg-x11-server-Xvfb xkbcomp xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
      ```
 
    Deprecated operating system
@@ -393,12 +387,12 @@ You can [verify the authenticity of the packages](#verify) using the signature f
    * Enable `EPEL` (Extra Packages for Enterprise Linux ).
 
      ```
-     sudo yum install -y oracle-epel-release-el8
+     sudo dnf install -y oracle-epel-release-el8
      ```
    * Install Synthetic engine dependencies.
 
      ```
-     sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+     sudo dnf install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
      ```
 
    Deprecated operating system
@@ -408,27 +402,35 @@ You can [verify the authenticity of the packages](#verify) using the signature f
    * Enable `EPEL` (Extra Packages for Enterprise Linux ).
 
      ```
-     sudo yum install epel-release
+     sudo dnf install epel-release
      ```
    * Install Synthetic engine dependencies.
 
      ```
-     sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+     sudo dnf install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
      ```
 
    * Enable `EPEL` (Extra Packages for Enterprise Linux ).
 
      ```
-     sudo yum install epel-release
+     sudo dnf install epel-release
      ```
    * Install Synthetic engine dependencies.
 
      ```
-     sudo yum install -y xorg-x11-server-Xvfb xkbcomp xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+     sudo dnf install -y xorg-x11-server-Xvfb xkbcomp xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
      ```
 2. Download and install Chromium.
 
    * Download the rpm package archive. This is a safe and verified archive hosted by Dynatrace.
+
+     ActiveGate version 1.345
+
+     ##### Red Hat Enterprise Linux/Rocky Linux 9
+
+     ```
+     curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-151.0.7922.137-1.el9.tgz
+     ```
 
      ActiveGate version 1.343
 
@@ -544,20 +546,6 @@ You can [verify the authenticity of the packages](#verify) using the signature f
      curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.157-1.el9.tgz
      ```
 
-     ActiveGate version 1.319
-
-     ##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8
-
-     ```
-     curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
-     ```
-
-     ##### Red Hat Enterprise Linux/Rocky Linux 9
-
-     ```
-     curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.100-1.el9.tgz
-     ```
-
      You can [verify the authenticity of the packages](#verify) using the signature files stored together with the package archives.
    * Extract the installation packages. Go to the directory where you saved the archive and run the following command:
 
@@ -569,27 +557,27 @@ You can [verify the authenticity of the packages](#verify) using the signature f
    * Install extracted packages.
 
      ```
-     sudo yum install -y /tmp/chromium/*.rpm
+     sudo dnf install -y /tmp/chromium/*.rpm
      ```
 
      This installs all the packages extracted to the `/tmp/chromium/` directory. You can delete the `/tmp/chromium/` directory and the downloaded `chromium.tgz` archive after successful Chromium installation.
 3. Disable automatic update of Chromium packages:
 
    ```
-   sudo yum -y install yum-plugin-versionlock
+   sudo dnf -y install python3-dnf-plugin-versionlock
 
 
 
-   sudo yum versionlock chromium
+   sudo dnf versionlock add chromium
 
 
 
-   sudo yum versionlock chromium-common
+   sudo dnf versionlock add chromium-common
    ```
 4. Optional Install non-Latin TrueType fonts:
 
    ```
-   sudo yum install dejavu-fonts-common.noarch dejavu-sans-fonts.noarch
+   sudo dnf install dejavu-fonts-common.noarch dejavu-sans-fonts.noarch
    ```
 5. After you satisfy the dependencies, run the ActiveGate installer with root rights with the `--enable-synthetic` parameter set to `manual`. For example:
 
@@ -642,28 +630,28 @@ On Ubuntu Server 20.04 and 22.04 Chrome for Testing is supported since 1.331
    * Install Synthetic engine dependencies:
 
      ```
-     sudo yum install -y lsof psmisc xorg-x11-server-Xvfb xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 nss-tools xkbcomp
+     sudo dnf install -y lsof psmisc xorg-x11-server-Xvfb xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 nss-tools xkbcomp
      ```
    * Install Chrome for Testing dependencies:
 
      ```
-     sudo yum install -y alsa-lib at-spi2-atk atk cairo cups-libs dbus-libs libXcomposite libXdamage libXrandr libxkbcommon mesa-libgbm nspr nss pango
+     sudo dnf install -y alsa-lib at-spi2-atk atk cairo cups-libs dbus-libs libXcomposite libXdamage libXrandr libxkbcommon mesa-libgbm nspr nss pango
      ```
 
    * Enable `EPEL` (Extra Packages for Enterprise Linux):
 
      ```
-     sudo yum install -y oracle-epel-release-el9
+     sudo dnf install -y oracle-epel-release-el9
      ```
    * Install Synthetic engine dependencies:
 
      ```
-     sudo yum install -y lsof psmisc xorg-x11-server-Xvfb xkbcomp xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 nss-tools unzip
+     sudo dnf install -y lsof psmisc xorg-x11-server-Xvfb xkbcomp xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 nss-tools unzip
      ```
    * Install Chrome for Testing dependencies:
 
      ```
-     sudo yum install -y alsa-lib at-spi2-atk atk cairo cups-libs libXcomposite libXdamage libXrandr libxkbcommon mesa-libgbm nspr nss pango
+     sudo dnf install -y alsa-lib at-spi2-atk atk cairo cups-libs libXcomposite libXdamage libXrandr libxkbcommon mesa-libgbm nspr nss pango
      ```
 2. Download and set up Chrome for Testing.
 
@@ -673,6 +661,12 @@ On Ubuntu Server 20.04 and 22.04 Chrome for Testing is supported since 1.331
      sudo mkdir -p /usr/lib/chrome_for_testing
      ```
    * Download the Chrome for Testing package archive to a temporary location. This is a safe and verified archive hosted by Dynatrace.
+
+     ActiveGate version 1.345
+
+     ```
+     curl --output /tmp/chrome.zip https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-151.0.7922.138.zip
+     ```
 
      ActiveGate version 1.343
 
@@ -865,7 +859,7 @@ The configuration is dependent on the Linux distribution. You can find more info
   + More information: [Ubuntu Server Documentation - How to set up basic workstation authentication﻿](https://dt-url.net/3g03w9p)
 * Red Hat/Rocky:
 
-  + `yum install krb5-workstation krb5-libs`
+  + `dnf install krb5-workstation krb5-libs`
   + More information: [Red Hat Documentation - Configuring a Kerberos Client﻿](https://dt-url.net/1u23wq7)
 
 ## Synthetic FIPS compliance

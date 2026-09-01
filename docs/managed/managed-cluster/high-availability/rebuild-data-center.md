@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/reb
 
 * How-to guide
 * 10-min read
-* Updated on Jul 07, 2026
+* Updated on Aug 26, 2026
 
 To rebuild a lost data center (DC) in a Premium High Availability deployment, follow the steps below. The procedure migrates and replicates Dynatrace Managed components so they can replicate data across two data centers.
 
@@ -23,7 +23,7 @@ The procedure uses the following terms:
 
 **Gather information**](/managed/managed-cluster/high-availability/rebuild-data-center#gather-information "Learn how to rebuild a lost data center in a Dynatrace Managed Premium High Availability deployment and restore replication across both data centers.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Set variables and check for custom settings**](/managed/managed-cluster/high-availability/rebuild-data-center#set-variables "Learn how to rebuild a lost data center in a Dynatrace Managed Premium High Availability deployment and restore replication across both data centers.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Set variables**](/managed/managed-cluster/high-availability/rebuild-data-center#set-variables "Learn how to rebuild a lost data center in a Dynatrace Managed Premium High Availability deployment and restore replication across both data centers.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
 **Terminate unavailable data center**](/managed/managed-cluster/high-availability/rebuild-data-center#terminate-unavailable-dc "Learn how to rebuild a lost data center in a Dynatrace Managed Premium High Availability deployment and restore replication across both data centers.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
@@ -120,7 +120,7 @@ Lost data center name
 
 During recovery to **Target-DC**, use the same name as the lost data center.
 
-## Step 2 Set variables and check for custom settings
+## Step 2 Set variables
 
 Set the following environment variables on the **seed node** in **Source-DC** and on every node in **Target-DC**:
 
@@ -173,16 +173,6 @@ SDC_NAME=datacenter1
 
 TDC_NAME=dc-us-east-2
 ```
-
-If your Cassandra or Elasticsearch cluster uses `custom.settings` to turn on rack-awareness, contact a Dynatrace product expert via live chat. The Dynatrace product expert must apply these custom settings before you proceed with **Target-DC** recovery.
-
-To check whether custom settings exist, run this command on the **seed node**:
-
-```
-ls $DT_DIR/installer/custom.settings
-```
-
-If the `custom.settings` file exists, the Managed Cluster uses custom settings.
 
 ## Step 3 Terminate unavailable data center
 
@@ -294,6 +284,8 @@ Run the following command on every node in **Target-DC**. Follow the prompts for
 ```
 sudo /bin/sh ./managed-installer.sh --install-new-dc --premium-ha on --datacenter $TDC_NAME --seed-auth $API_TOKEN
 ```
+
+For rack-aware deployments, also add the `--rack-dc <data-center>` and `--rack-name <rack>` parameters.
 
 The node installation takes about 3–5 minutes. The expected output is:
 

@@ -217,7 +217,7 @@ Watchdog is a binary used for starting and monitoring OneAgent monitoring proces
 
 * `oneagentos`—operating system monitoring
 * `oneagentplugin`—monitoring using [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
-* `oneagentextensions`—monitoring using local [Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+* `oneagentextensions`—monitoring using local [Extensions](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.")
 * `oneagentloganalytics`—[Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
 * `oneagentnetwork`—[network monitoring](/managed/observe/infrastructure-observability/networks "Learn how to monitor network communications.")
 

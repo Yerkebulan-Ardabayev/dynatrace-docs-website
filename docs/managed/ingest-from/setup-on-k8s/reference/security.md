@@ -397,7 +397,7 @@ Log monitoring requires [the same cluster-wide permissions as OneAgent](#oneagen
 
 **Purposes**:
 
-* Extensions extend Dynatrace analytics capabilities by ingesting data from various sources, such as third-party applications, services, and custom metrics. See [Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") for more information.
+* Extensions extend Dynatrace analytics capabilities by ingesting data from various sources, such as third-party applications, services, and custom metrics. See [Extensions](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.") for more information.
 
 **Default configuration**:
 

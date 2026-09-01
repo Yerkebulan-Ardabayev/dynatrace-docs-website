@@ -25,8 +25,22 @@ Familiarize yourself with the [basic rules for working with ActiveGate configura
 
 ## Activate dump functionality
 
-Create the `[collector]` section in the `custom.properties` file, if it doesn't already exist.
-Specify the `DumpSupported` property in this section and set the value to `true`.
+ActiveGate version 1.345+
+
+Create the `[memory_dumps]` section in the `custom.properties` file, if it doesn't already exist.
+Specify the `memory_dumps_enabled` property in this section and set the value to `true`.
+
+```
+[memory_dumps]
+
+
+
+memory_dumps_enabled = true
+```
+
+Deprecated configuration
+
+Before ActiveGate version 1.345, memory dump storage was enabled using the `[collector]` section:
 
 ```
 [collector]
@@ -36,16 +50,18 @@ Specify the `DumpSupported` property in this section and set the value to `true`
 DumpSupported = true
 ```
 
+This configuration is still supported but deprecated.
+
 ## Specify dedicated dump directory (Optional)
 
 Unless configured otherwise, ActiveGate saves memory dumps in a [default directory](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.").
 
 To use a custom path, specify the path in the properties file and create the directory with appropriate permissions:
 
-Create the `[dump]` section in `custom.properties` (if it doesn't already exist) and then specify the `dumpDir` property in this section. For example:
+Specify the `dumpDir` property in the `[memory_dumps]` section in `custom.properties`. For example:
 
 ```
-[dump]
+[memory_dumps]
 
 
 
@@ -73,7 +89,7 @@ Because of possible automatic purging, we recommend that you not use the Linux d
 
 ## Specify parameters for managing dump files (Optional)
 
-Also in the `[dump]` section, you can specify the following properties:
+Also in the `[memory_dumps]` section, you can specify the following properties:
 
 | Property | Default value | Description |
 | --- | --- | --- |
@@ -88,6 +104,48 @@ Also in the `[dump]` section, you can specify the following properties:
 If you modify your ActiveGate configuration, you must [restart the ActiveGate main service](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.") to put your changes into effect.
 
 ## Example custom.properties file contents
+
+```
+[memory_dumps]
+
+
+
+memory_dumps_enabled = true
+
+
+
+# relative to collector root dir or absolute path
+
+
+
+dumpDir = dump
+
+
+
+# maximum size in GB for stored memory dump
+
+
+
+maxSizeGb = 100
+
+
+
+# maximum age in days for keeping stored memory dumps
+
+
+
+maxAgeDays = 7
+
+
+
+# maximum number of concurrent file uploads supported
+
+
+
+maxConcurrentUploads = 5
+```
+
+Deprecated configuration (before ActiveGate 1.345)
 
 ```
 [collector]

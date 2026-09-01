@@ -27,7 +27,7 @@ Following is a non-exhaustive list of custom metric types:
 * Calculated service metrics, custom DEM metrics, and [log metrics](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
 
   + For example, calculated service metrics created upon request attributes
-* All metrics provided by manually installed [Dynatrace Monitoring Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+* All metrics provided by manually installed [Dynatrace Monitoring Extensions](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.")
 
 For full details on the setup and ingestion of custom metrics in Dynatrace, see [Metric ingestion](/managed/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.").
 
@@ -35,7 +35,7 @@ For full details on the setup and ingestion of custom metrics in Dynatrace, see 
 
 Metrics that consume DDUs include:
 
-* Metrics provided by certain [built-in extensions](/managed/ingest-from/extensions#out-of-the-box "Learn how to create and manage Dynatrace Extensions.") that are not enabled by default
+* Metrics provided by certain [built-in extensions](/managed/ingest-from/extensions#out-of-the-box "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.") that are not enabled by default
 
   + Dynatrace web UI switches to enable/disable these metrics are labeled to let you know if they affect DDU consumption.
 * All metrics ingested by the Public Cloud Extensions ([AWS](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics."), [Azure](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics "Monitor Azure services with Dynatrace and view available metrics.") and [Google Cloud](/managed/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")).

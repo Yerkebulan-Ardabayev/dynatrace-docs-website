@@ -52,7 +52,7 @@ To manage your NAM monitors via REST API
    | Get all synthetic monitor definition for the given monitor ID | **GET /synthetic/monitors/{monitorId}** |
    | Update a synthetic monitor definition for the given monitor ID. | **PUT /synthetic/monitors/{monitorId}** |
 
-See [Synthetic monitors API v2](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-network-availability-monitors "Create, read, update and delete Synthetic monitors. Currently browser and network availability monitors only.") for more details.
+See [Synthetic monitors API v2](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-monitors "Create, read, update and delete Synthetic browser, HTTP, and network availability monitors via API v2.") for more details.
 
 ## Manage NAM monitors using web UI
 

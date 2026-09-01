@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/rec
 
 * How-to guide
 * 10-min read
-* Updated on Jul 07, 2026
+* Updated on Aug 26, 2026
 
 To restore a lost data center (DC) from backup in a Premium High Availability deployment, follow these steps.
 
@@ -161,18 +161,6 @@ SDC_NAME=datacenter1
 
 TDC_NAME=dc-us-east-2
 ```
-
-## Check for custom settings
-
-If your Cassandra or Elasticsearch cluster is configured with `custom.settings` that enable rack-awareness, contact a Dynatrace product expert via live chat. Apply the custom settings before proceeding with **Target-DC** installation.
-
-To check whether custom settings are applied, run on **seed node**:
-
-```
-ls $DT_DIR/installer/custom.settings
-```
-
-If the `custom.settings` file exists, you're using custom settings.
 
 API return codes
 

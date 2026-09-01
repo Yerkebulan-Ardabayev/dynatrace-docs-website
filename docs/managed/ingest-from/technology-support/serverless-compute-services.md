@@ -83,19 +83,19 @@ Durable Functions aren't supported.
 
 | Language | [Cloud platform metrics and metadata](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Set up and configure Azure monitoring in Dynatrace.") | [Logs](/managed/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.") | Distributed tracing | [Automatic tracing](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions/integrate-oneagent-on-azure-functions "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.") | OpenTelemetry extend tracing | Infrastructure monitoring | Custom metrics | Automatic RUM | Agentless RUM |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| .NET Core | GA | GA | GA | GA[1](#fn-2-1-def) | GA | n/a | GA | Future | GA |
-| Java | GA | GA | GA | OneAgent version 1.343+ | GA | OneAgent version 1.343+[7](#fn-2-7-def) | GA | Future | GA |
-| Node.js | GA | GA | GA | OneAgent version 1.343+ | GA | OneAgent version 1.343+[7](#fn-2-7-def) | GA | Future | GA |
-| Python | GA | GA | GA | n/a | GA | n/a | GA | Future | GA |
+| .NET Core | GA | GA | OneAgent version 1.343+ | GA | GA | n/a | GA | Future | GA |
+| Java | GA | GA | OneAgent version 1.343+ | OneAgent version 1.343+ | GA | OneAgent version 1.343+[7](#fn-2-7-def) | GA | Future | GA |
+| Node.js | GA | GA | OneAgent version 1.343+ | OneAgent version 1.343+ | GA | OneAgent version 1.343+[7](#fn-2-7-def) | GA | Future | GA |
+| Python | GA | GA | OneAgent version 1.343+ | n/a | GA | n/a | GA | Future | GA |
 
 ### Linux-based
 
-| Language | [Cloud platform metrics and metadata](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Set up and configure Azure monitoring in Dynatrace.") | [Logs](/managed/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.") | Distributed tracing | Automatic tracing | OpenTelemetry extend tracing | Infrastructure monitoring | Custom metrics | Automatic RUM | Agentless RUM |
+| Language | [Cloud platform metrics and metadata](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Set up and configure Azure monitoring in Dynatrace.") | [Logs](/managed/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.") | Distributed tracing | [Automatic tracing](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions/azure-function-linux "Learn how to enable OneAgent monitoring for Azure Functions running on Linux plans.") | OpenTelemetry extend tracing | Infrastructure monitoring | Custom metrics | Automatic RUM | Agentless RUM |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| .NET Core | GA | GA | GA | GA[5](#fn-2-5-def) | GA | n/a | GA | Future | GA |
-| Java | GA | GA | GA | Future | GA | Future[7](#fn-2-7-def) | GA | Future | GA |
-| Node.js | GA | GA | GA | Future | GA | Future[7](#fn-2-7-def) | GA | Future | GA |
-| Python | GA | GA | GA | OneAgent version 1.343+[6](#fn-2-6-def) | GA | Future[7](#fn-2-7-def) | GA | Future | GA |
+| .NET Core | GA | GA | OneAgent version 1.343+ | GA[5](#fn-2-5-def) | GA | n/a | GA | Future | GA |
+| Java | GA | GA | OneAgent version 1.343+ | Future | GA | Future[7](#fn-2-7-def) | GA | Future | GA |
+| Node.js | GA | GA | OneAgent version 1.343+ | Future | GA | Future[7](#fn-2-7-def) | GA | Future | GA |
+| Python | GA | GA | OneAgent version 1.343+ | OneAgent version 1.343+[6](#fn-2-6-def) | GA | Future[7](#fn-2-7-def) | GA | Future | GA |
 
 5
 
@@ -117,13 +117,20 @@ Output bindings are only supported for HTTP triggers.
 
 | Trigger | Java | Node.js | Python |
 | --- | --- | --- | --- |
-| [HTTP and webhooks﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook) | GA | GA | GA |
-| [Service Bus﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-service-bus) | GA | GA | GA |
-| [Event Hubs﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-hubs) | GA | GA | GA |
-| [Timer﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-timer) | GA | GA | GA |
-| [Blob Storage﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-blob-trigger?tabs=python-v2%2Cisolated-process%2Cnodejs-v4%2Cextensionv5&pivots=programming-language-python) | Future | Future | GA |
-| [Event Grid﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-grid-trigger?tabs=python-v2%2Cisolated-process%2Cnodejs-v4%2Cextensionv3&pivots=programming-language-python) | Future | Future | GA |
-| [Azure SQL﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-azure-sql-trigger?tabs=isolated-process%2Cpython-v2%2Cportal&pivots=programming-language-python) | Future | Future | GA |
+| [HTTP and webhooks﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook) | OneAgent version 1.343+ | OneAgent version 1.343+ | OneAgent version 1.343+ |
+| [Service Bus﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-service-bus) | OneAgent version 1.343+ | OneAgent version 1.343+ | OneAgent version 1.343+ |
+| [Event Hubs﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-hubs) | OneAgent version 1.343+ | OneAgent version 1.343+ | OneAgent version 1.343+ |
+| [Timer﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-timer) | OneAgent version 1.343+ | OneAgent version 1.343+ | OneAgent version 1.343+ |
+| [Blob Storage﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-blob-trigger?tabs=python-v2%2Cisolated-process%2Cnodejs-v4%2Cextensionv5&pivots=programming-language-python) | Future | Future | OneAgent version 1.343+ |
+| [Event Grid﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-grid-trigger?tabs=python-v2%2Cisolated-process%2Cnodejs-v4%2Cextensionv3&pivots=programming-language-python) | Future | Future | OneAgent version 1.343+ |
+| [Azure SQL﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-azure-sql-trigger?tabs=isolated-process%2Cpython-v2%2Cportal&pivots=programming-language-python) | Future | Future | OneAgent version 1.343+ |
+| [Azure Cosmos DB﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-cosmosdb-v2-trigger) | Future | Future | OneAgent version 1.345+ |
+| [Apache Kafka﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-kafka-trigger) | Future | Future | OneAgent version 1.345+ |
+| [Queue Storage﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-queue-trigger) | Future | Future | OneAgent version 1.345+ |
+| [IoT Hub﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-iot-trigger) | Future | Future | OneAgent version 1.345+ |
+
+* Python: only the v2 programming model is supported.
+* Node.js: only the v4 programming model is supported.
 
 ## Google Cloud Functions
 
