@@ -143,21 +143,6 @@ To learn about changes to the Dynatrace API in this release, see:
 
 ### Past Dynatrace Managed operating systems support changes
 
-##### The following operating systems are no longer supported since 01 December 2025
-
-* Linux: Red Hat Enterprise Linux 8.8, 9.2, 9.5
-
-  + x86-64
-  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
-* Linux: Oracle Linux 9.5
-
-  + x86-64
-  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
-* Linux: Rocky Linux 9.5
-
-  + x86-64
-  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
-
 ##### The following operating systems are no longer supported since 01 January 2026
 
 * Linux: Debian 10

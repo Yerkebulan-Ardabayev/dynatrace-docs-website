@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support
 # Technology support
 
 * 17-min read
-* Updated on Aug 27, 2026
+* Updated on Aug 28, 2026
 
 Dynatrace supports monitoring of the technologies and versions listed on this page. For serverless monitoring, see [Serverless compute support matrix](/managed/ingest-from/technology-support/serverless-compute-services "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS)."). For mainframe, see [Mainframe technology support](/managed/ingest-from/technology-support/mainframe-technology-support "Learn which technologies Dynatrace supports for Mainframe monitoring.").
 
