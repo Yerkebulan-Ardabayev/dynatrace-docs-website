@@ -22,7 +22,7 @@ On the Azure Database for PostgreSQL (Single Server, Hyperscale, Flexible Server
 
 To learn how to enable service monitoring, see [Enable service monitoring](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
 
-Optionally, for OneAgent integration, see [how database activity is monitored](/managed/observe/infrastructure-observability/database-services-classic/how-database-activity-is-monitored "Learn about automatic detection and monitoring of database services in your application environment.").
+Optionally, for OneAgent integration, see how [database activity is monitored](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/analyze-database-services-new "Analyze your database services with Dynatrace (new page).").
 
 ## View service metrics
 

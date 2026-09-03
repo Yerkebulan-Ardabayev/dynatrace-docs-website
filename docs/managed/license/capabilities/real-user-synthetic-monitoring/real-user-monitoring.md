@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/license/capabilities/real-user-synthe
 
 * Explanation
 * 5-min read
-* Updated on Jun 26, 2026
+* Updated on Sep 03, 2026
 
 Real User Monitoring (RUM) provides full visibility into how end users experience every digital transaction across web, mobile, and single-page applications.
 
@@ -75,9 +75,9 @@ The user:
 
 Because sessions are billed per application per hour, four total sessions are consumed, see the figure below.
 
-![DIAGRAM - Real User Monitoring consumption example](https://dt-cdn.net/images/rum-consumption-calculation-example-corrected-7112-aae60e7915.png)
+![Real User Monitoring consumption example](https://cdn.bfldr.com/B686QPH3/as/9m3ch67h57sbm78n9523mjp4/RUM_Session_Calculation-Light_mode?auto=webp&format=png&position=1)
 
-DIAGRAM - Real User Monitoring consumption example
+Real User Monitoring consumption example
 
 ## Estimate your cost
 
@@ -132,9 +132,9 @@ Go to **Account Management** > **Subscription** > **Overview** > **Cost and usag
 
 For more information about the subscription overview UI, see [Overview (Dynatrace Platform Subscription)](/managed/manage/account-management/license-subscription/subscription-overview-dps "View your Dynatrace Platform Subscription (DPS) budget summary and cost analysis.").
 
-![Diagram - Example usage for Real User Monitoring visible in Account Management](https://dt-cdn.net/images/rum-usage-overview-account-management-2910-7a5d37e705.png)
+![Example usage for Real User Monitoring visible in Account Management](https://dt-cdn.net/images/rum-usage-overview-account-management-2910-7a5d37e705.png)
 
-Diagram - Example usage for Real User Monitoring visible in Account Management
+Example usage for Real User Monitoring visible in Account Management
 
 ### Insights via billing usage events
 

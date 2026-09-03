@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/account-management/license-sub
 
 * Explanation
 * 3-min read
-* Published Nov 24, 2025
+* Updated on Sep 02, 2026
 
 The Account Management **License** view provides a real-time view of your Dynatrace classic licensing product consumption.
 Dynatrace classic licensing covers usage of products such as host units, host unit hours, Digital Experience Monitoring, Davis data units (DDUs), and Application Security units (ASUs).
@@ -55,7 +55,6 @@ Use **Resolution** to choose the granularity:
 * **Hourly**: Hourly cumulative totals for a selected day.
 * **Total**: Cumulative usage for consumption-based licenses (includes host unit hours, Digital Experience Monitoring, Davis data units, and Application Security units).
 * **Linear forecast**: Forecast usage based on linear extrapolation from the last 30 days of usage data (limited to Digital Experience Monitoring and Davis data units only).
-* **Seasonal forecast**: Forecast usage based on a seasonal forecast from the last 365 days of data (limited to Digital Experience Monitoring and Davis data units only).
 
 ## Environment usage breakdown
 
@@ -73,14 +72,6 @@ Account Management License view for Dynatrace classic license model, with Enviro
   These measurements differentiate between free, paid, and overage usage.
 * **Usage details** provides a historic breakdown of total consumption.
   This breakdown includes all units, and does not differentiate between paid, free, and overage usage.
-
-### When should I use linear forecasts and seasonal forecasts?
-
-* Linear model:
-
-  + If you're a new customer, the linear model offers more accurate predictions during the first year of consumption.
-  + The linear model is also accurate if your consumption in the previous 30 days is indicative of your future usage.
-* Seasonal model: If your business is more seasonal (for example, retail usage spikes during holiday periods) and you have a year or more of consumption data, the seasonal model can provide a more accurate estimate of future usage.
 
 ### Why does the forecast show that I have consumed more DDUs than my current license is for?
 

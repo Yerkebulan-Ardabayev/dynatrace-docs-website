@@ -236,8 +236,6 @@ Provide observability into test results automatically across different used tool
 * Visualize test results and KPIs in one central view or dashboard
 * Identify long lasting tests to easily optimize for faster test feedback
 
-Try it yourself: [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
-
 #### Continuous testing validation Continuous testing validation
 
 Goal

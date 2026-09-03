@@ -22,7 +22,7 @@ You **cannot** use an Environment ActiveGate configured for multi-environment su
 * Install the [zRemote module for z/OS monitoring](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote "Prepare and install the zRemote for z/OS monitoring.")
 * Monitor remote technologies with the [Extensions framework](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.")
 * Execute monitors from [private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")
-* Run [Database insights](/managed/observe/infrastructure-observability/database-services-classic/database-insights "Learn how to extend your database monitoring to the database infrastructure layer.")
+* Run Database insights
 
 All other ActiveGate features are supported.
 

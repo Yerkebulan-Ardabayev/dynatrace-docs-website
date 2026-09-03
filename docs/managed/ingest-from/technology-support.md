@@ -544,7 +544,7 @@ Only TIBCO workflows that are triggered by an incoming web service request, HTTP
 | [Apache HttpCore﻿](https://hc.apache.org/httpcomponents-core-ga/) | 4[3](#fn-web-framework-3-def), 5[4](#fn-web-framework-4-def) |
 | [Apache Pekko HTTP client﻿](https://pekko.apache.org/docs/pekko-http/current/client-side/index.html) | 1.0.0 - 1.2.0[2](#fn-web-framework-2-def) |
 | [Apache Pekko HTTP server﻿](https://pekko.apache.org/docs/pekko-http/current/server-side/index.html) | 1.0.0 - 1.6.0[10](#fn-web-framework-10-def) |
-| Elasticsearch | 1.7[5](#fn-web-framework-5-def), 2.0[5](#fn-web-framework-5-def), 2.1[5](#fn-web-framework-5-def), 2.2[5](#fn-web-framework-5-def) |
+| Elasticsearch | 1.7[5](#fn-web-framework-5-def), 2.0-2.4[5](#fn-web-framework-5-def), 5.0-5.3[5](#fn-web-framework-5-def), 5.5-5.6[5](#fn-web-framework-5-def), 6.2[5](#fn-web-framework-5-def), 6.8[5](#fn-web-framework-5-def), 7.1[5](#fn-web-framework-5-def), 7.8-7.10[5](#fn-web-framework-5-def), 7.17[5](#fn-web-framework-5-def), 8.9-8.16[5](#fn-web-framework-5-def), 8.18-8.19[5](#fn-web-framework-5-def), 9.0-9.5[5](#fn-web-framework-5-def) |
 | Grails | 3[6](#fn-web-framework-6-def) |
 | Jakarta Servlet | 2.5, 3.0, 3.1, 4, 5, 6 |
 | Java HttpUrlConnection | All versions supported[2](#fn-web-framework-2-def) |

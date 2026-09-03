@@ -349,7 +349,7 @@ Oracle database insights
 
 | Property | Description |
 | --- | --- |
-| `dbAgent_enabled` | Enables [Oracle database insights](/managed/observe/infrastructure-observability/database-services-classic/database-insights "Learn how to extend your database monitoring to the database infrastructure layer.") module. Possible values: `true` or `false`. |
+| `dbAgent_enabled` | Turn on [Oracle database insights](/managed/observe/infrastructure-observability/databases/database-insights "Learn how to extend your database monitoring to the database infrastructure layer."). Possible values: `true` or `false`. |
 
 ## Module: Extensions
 
@@ -393,10 +393,10 @@ Example: `proxy-password = foo\,bar`
 | `synthetic_autoinstall` | `true` to automatically update the Synthetic engine | Automatically set to `true` at installation time for Synthetic-enabled ActiveGates. |
 | `proxy-server` | unset | Proxy server address |
 | `proxy-port` | unset | Proxy port (numeric) |
-| `proxy-user` | unset | Proxy username (optional) |
+| `proxy-user` | unset | Proxy user name (optional) |
 | `proxy-password` | unset | Proxy password (optional)  The password provided in the `proxy-password` property  is obfuscated following ActiveGate restart and the obfuscated password  is stored in the `proxy-password-encr` property. **Note**: A comma character, when intended to be a part of a value, should be escaped with a single backslash. For example, `proxy-password = foo\,bar`. |
 | `proxy-off` | unset | Disable proxy communication between ActiveGate and tested resource. |
-| `proxy-non-proxy-hosts` | unset | Don't use proxy when communicating with these hosts. |
+| `proxy-non-proxy-hosts` | unset | Do not use proxy when communicating with these hosts. |
 | `chromium_repo` | unset  Specify the custom browser package repository on the HTTP server. Example: `https://172.18.0.100/chromium-repo` Only works if both `synthetic_autoinstall` and `synthetic_autoupgrade_chromium` are `true`. | Enables autoupdate of the browser from the [custom repository](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#custom-repo "Learn how to create a private location for synthetic monitoring."). |
 
 We recommend that you not edit the value of the `synthetic_autoupgrade_chromium` property in `custom.properties` because your changes might be overwritten.

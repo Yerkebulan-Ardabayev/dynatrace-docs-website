@@ -1,11 +1,11 @@
 ---
-title: Databases Services
+title: Databases services
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/databases
 ---
 
-# Databases Services
+# Databases services
 
-# Databases Services
+# Databases services
 
 * Overview
 * 1-min read
@@ -15,12 +15,12 @@ Dynatrace provides you with a number of ways to monitor your database performanc
 
 [### Detection and monitoring
 
-Learn about automatic detection and monitoring of database services in your application environment.](/managed/observe/infrastructure-observability/database-services-classic/how-database-activity-is-monitored "Learn about automatic detection and monitoring of database services in your application environment.")[### Analyze database services
+Learn about automatic detection and monitoring of database services in your application environment.](/managed/observe/infrastructure-observability/databases/how-database-activity-is-monitored "Learn about automatic detection and monitoring of database services in your application environment.")[### Analyze database services
 
-Analyze your database services with Dynatrace.](/managed/observe/infrastructure-observability/database-services-classic/analyze-database-services "Analyze your database services with Dynatrace (classic page).")[### Improve database performance
+Analyze your database services with Dynatrace.](/managed/observe/infrastructure-observability/databases/analyze-database-services "Analyze your database services with Dynatrace (classic page).")[### Improve database performance
 
-Boost your database performance in a few practical steps.](/managed/observe/infrastructure-observability/database-services-classic/improve-database-performance "Boost your database performance in a few practical steps.")[### SQL bind variables
+Boost your database performance in a few practical steps.](/managed/observe/infrastructure-observability/databases/improve-database-performance "Boost your database performance in a few practical steps.")[### SQL bind variables
 
-Learn how you can enable Dynatrace OneAgent to capture the values of bind variables.](/managed/observe/infrastructure-observability/database-services-classic/support-for-sql-bind-variables "Learn how you can enable Dynatrace OneAgent to capture the values of bind variables.")[### Database insights
+Learn how you can enable Dynatrace OneAgent to capture the values of bind variables.](/managed/observe/infrastructure-observability/databases/support-for-sql-bind-variables "Learn how you can enable Dynatrace OneAgent to capture the values of bind variables.")[### Database insights
 
-Learn how to extend your Oracle database monitoring to the database infrastructure layer.](/managed/observe/infrastructure-observability/database-services-classic/database-insights "Learn how to extend your database monitoring to the database infrastructure layer.")
+Learn how to extend your Oracle database monitoring to the database infrastructure layer.](/managed/observe/infrastructure-observability/databases/database-insights "Learn how to extend your database monitoring to the database infrastructure layer.")

@@ -7,7 +7,7 @@ source: https://docs.dynatrace.com/managed/manage/account-management/subscriptio
 
 # Dynatrace Managed license management
 
-* Published Feb 01, 2022
+* Updated on Sep 02, 2026
 
 A Dynatrace Managed deployment can have several clusters, each with its own license, and each license controls the products you can use (products may include host units, host unit hours, Digital Experience Monitoring, Davis data units, and Application security units). Account Management provides a view of license usage across clusters (**Total license usage**) and hourly/daily usage information for each cluster (**Usage details**).
 
@@ -46,7 +46,6 @@ Use the **Usage details** charting to explore the historical consumption of your
 * `Hourly` – view hourly cumulative totals for a selected day
 * `Total` – view cumulative usage for consumption-based licenses (host unit hours, Digital Experience Monitoring, Davis data units, Application security units)
 * `Linear forecast` – view forecast usage based on linear extrapolation from the last 30 days of usage data (Digital Experience Monitoring and Davis data units only).
-* `Seasonal forecast` – view total forecast usage based on a seasonal forecast from the last 365d of data (Digital Experience Monitoring and Davis data units only).
 
 Changing chart options updates the **Cluster usage breakdown** table in the chart below. The table represents total consumption by cluster, based on cluster, product, and timeframe selections.
 
@@ -58,8 +57,3 @@ Why does Consumption usage details not match total license usage?
 
 * License usage provides an accurate and real-time measurement of how much license has been consumed, and differentiates between free, paid, and overage usage.
 * Consumption usage details provides a historic breakdown of total consumption that includes paid, free, and overage units, and therefore may not match the license usage.
-
-When should I use Linear vs. seasonal forecast?
-
-* If you are a new customer, you may have to rely on the linear model until you have a full year of consumption history to predict a better model. The linear model is also accurate if your past 30 days of usage are more indicative of your future usage.
-* If your business is more seasonal (for example, retail spikes during holiday periods) and you have a year or more of consumption data, the seasonal model can provide a better estimate of future use.

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/oneage
 # OneAgent platform and capability support matrix
 
 * 13-min read
-* Updated on Aug 06, 2026
+* Updated on Sep 03, 2026
 
 This page describes which capabilities are supported by OneAgent on different operating systems and platforms.
 
@@ -211,8 +211,6 @@ The following AI providers are supported by OneAgent Python code modules, includ
 
 The following limitations apply:
 
-* Due to missing complex attribute support, prompt and response content is not reported.
-* Due to missing complex attribute support, only fixed guardrail types are collected, namely PII and wordlists.
 * For AWS Bedrock, to get guardrails information on the response, the request must contain the `"trace": "enabled"` setting, as in the following example:
 
   ```
