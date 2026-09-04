@@ -1,0 +1,3741 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-tutorial/">
+      
+      
+        <link rel="prev" href="../unified-analysis-reference/">
+      
+      
+        <link rel="next" href="../../../openkit/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Обучающий курс по Unified analysis - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.v11.css?sha=fb13edae8">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unified-analysis" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Обучающий курс по Unified analysis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Источники данных
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../amazon-web-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Amazon Web Services
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../bulk-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Удалённое управление конфигурацией OneAgent и ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-activegate/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширение Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Расширение Dynatrace
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extend-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обогащение принятых данных полями, специфичными для Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extend-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отправка событий в Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../extend-logs/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширение аналитики логов
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../extend-metrics/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширение наблюдаемости метрик
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../extend-topology/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширение топологии
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../extend-tracing/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширение трассировки
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_6_8" id="__nav_4_6_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширение интерфейса Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_6_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Расширение интерфейса Dynatrace
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extend-unified-analysis-pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширение встроенных страниц единого анализа
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_8_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_6_8_3" id="__nav_4_6_8_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Страницы унифицированного анализа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_6_8_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_6_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Страницы унифицированного анализа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unified-analysis-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Справочник по унифицированному анализу
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучающий курс по Unified analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../openkit/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace OpenKit
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../extensions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../google-cloud-platform/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Google Cloud
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../microsoft-azure-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../opentelemetry/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenTelemetry и Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../setup-on-container-platforms/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на контейнерных и PaaS-платформах
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../setup-on-k8s/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../technology-support/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поддержка технологий
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../observe/application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Источники данных
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Расширение Dynatrace
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Расширение интерфейса Dynatrace
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Страницы унифицированного анализа
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="unified-analysis">Обучающий курс по Unified analysis<a class="headerlink" href="#unified-analysis" title="Permanent link">&para;</a></h1>
+<h1 id="unified-analysis_1">Обучающий курс по Unified analysis<a class="headerlink" href="#unified-analysis_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>5 минут чтения</li>
+<li>Опубликовано 19 апреля 2023 г.</li>
+</ul>
+<p>Пошаговый курс о том, как загрузить пользовательскую топологию в среду Dynatrace и создать расширение для определения типов топологии и связей между ними.</p>
+<p>После этого можно настроить страницы unified analysis для анализа данных из нескольких источников, включая логи, метрики и трейсы, в едином представлении. Также можно подключать различные источники данных и измерения, применять фильтры и углубляться в конкретные детали.</p>
+<h2 id="_1">Предварительные требования<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Dynatrace CLI</p>
+</li>
+<li>
+<p>Python 3.8 или 3.9</p>
+</li>
+<li>Доступ к установщику пакетов pip для Python</li>
+<li>
+<p>Установите dt-cli</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install dt-cli
+</code></pre></div>
+<p>Подробнее см. <a href="../../../../extensions/develop-your-extensions/sign-extensions/" title="Learn how to sign an extension, upload certificates and custom extensions, and configure certificate permissions using the Dynatrace Extensions Framework.">Sign extensions</a>.
+* Токен со следующими разрешениями:</p>
+</li>
+<li>
+<p><strong>Read credential vault entries</strong> (<code>credentialVault.read</code>)</p>
+</li>
+<li><strong>Write credential vault entries</strong> (<code>credentialVault.write</code>)</li>
+<li><strong>Read entities</strong> (<code>entities.read</code>)</li>
+<li><strong>Write entities</strong> (<code>entities.write</code>)</li>
+<li><strong>Ingest events</strong> (<code>events.ingest</code>)</li>
+<li><strong>Ingest metrics</strong> (<code>metrics.ingest</code>)</li>
+<li><strong>Ingest logs</strong> (<code>logs.ingest</code>)</li>
+<li><strong>Read extensions</strong> (<code>extensions.read</code>)</li>
+<li><strong>Write extensions</strong> (<code>extensions.write</code>)</li>
+</ul>
+<h2 id="_2">Загрузка тестовых данных наблюдаемости в среду<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>В этом примере используется <strong>Easy Taxis Fleet Simulator</strong>, интерактивное CLI-приложение, которое имитирует парк умных такси, отправляющих данные наблюдаемости в среду Dynatrace.</p>
+<ol>
+<li>В зависимости от операционной системы скачайте нужный файл из списка <a href="https://dt-url.net/13434et">EasyTaxis executables﻿</a> и запустите его.</li>
+<li>Введите <code>help</code>, чтобы просмотреть все доступные команды.</li>
+<li>Для запуска симуляции парка используйте команду ниже.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>start -e &lt;your-environment-url&gt; -t &lt;your-api-token&gt;
+</code></pre></div>
+<p>Обязательно замените <code>&lt;your-environment-url&gt;</code> и <code>&lt;your-api-token&gt;</code> на реальные значения.</p>
+<p>Подробнее об аргументах и флагах см. команду <code>start help</code>.</p>
+<p>Симуляция отправляет метрики, логи и события в среду Dynatrace.</p>
+<h2 id="_3">Сборка и загрузка расширения<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Перейдите на страницу GitHub и скачайте <a href="https://dt-url.net/sl034x0">Observability Clinic Materials﻿</a>.</li>
+<li>Откройте папку <code>extensions-project-starter</code> в предпочитаемой среде разработки.</li>
+<li>Перейдите в папку <code>scripts</code> и откройте файл <code>config.yaml</code>. Нужно заполнить три обязательных поля: URL среды, токен и версию схемы.</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tenant_url: &lt;your-environment-url&gt;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>api_token: &lt;your-api-token&gt;
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>schema_version: 1.265
+</code></pre></div>
+4. Из директории <code>scripts</code> выполните следующую команду для генерации сертификатов.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python initialize.py
+</code></pre></div>
+<p>Сгенерированные сертификаты появятся в папке <code>certs</code>.
+5. Выполните следующую команду для загрузки схем версии 1.265.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python download_schemas.py
+</code></pre></div>
+6. Перейдите в папку <code>extension</code> и создайте файл <code>extension.yaml</code>. Подробнее о scope расширения см. <a href="../../../../extensions/develop-your-extensions/extension-yaml/#start-extension-yaml-file" title="Learn how to create an extension YAML file using the Extensions framework.">Extension YAML file</a>.
+7. Используйте следующий пример расширения с определённой топологией. Подробнее о scope топологии см. <a href="../../../../extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial/wmi-tutorial-04/" title="Learn about WMI extensions in the Extensions framework.">WMI tutorial - custom topology</a>.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>name: custom:ua.example
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>version: 1.0.0
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>minDynatraceVersion: "1.238"
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>author:
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>name: Joe Doe
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>topology:
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>types:
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>- enabled: true
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>name: easytaxis:smart_fleet
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>displayName: Smart Fleet
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>rules:
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>- idPattern: fleet_{fleet.id}
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>
+<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>instanceNamePattern: Smart Fleet ({fleet.id})
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>
+<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>
+<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>iconPattern: cluster
+<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>
+<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a>
+<a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a>
+<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>sources:
+<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>
+<a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a>
+<a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a>
+<a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a>- sourceType: Metrics
+<a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a>
+<a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a>
+<a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a>
+<a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a>condition: $prefix(custom.easytaxis.fleet)
+<a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a>
+<a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a>
+<a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a>
+<a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a>attributes:
+<a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a>
+<a id="__codelineno-5-71" name="__codelineno-5-71" href="#__codelineno-5-71"></a>
+<a id="__codelineno-5-72" name="__codelineno-5-72" href="#__codelineno-5-72"></a>
+<a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a>- key: FleetID
+<a id="__codelineno-5-74" name="__codelineno-5-74" href="#__codelineno-5-74"></a>
+<a id="__codelineno-5-75" name="__codelineno-5-75" href="#__codelineno-5-75"></a>
+<a id="__codelineno-5-76" name="__codelineno-5-76" href="#__codelineno-5-76"></a>
+<a id="__codelineno-5-77" name="__codelineno-5-77" href="#__codelineno-5-77"></a>pattern: "{fleet.id}"
+<a id="__codelineno-5-78" name="__codelineno-5-78" href="#__codelineno-5-78"></a>
+<a id="__codelineno-5-79" name="__codelineno-5-79" href="#__codelineno-5-79"></a>
+<a id="__codelineno-5-80" name="__codelineno-5-80" href="#__codelineno-5-80"></a>
+<a id="__codelineno-5-81" name="__codelineno-5-81" href="#__codelineno-5-81"></a>- key: Location
+<a id="__codelineno-5-82" name="__codelineno-5-82" href="#__codelineno-5-82"></a>
+<a id="__codelineno-5-83" name="__codelineno-5-83" href="#__codelineno-5-83"></a>
+<a id="__codelineno-5-84" name="__codelineno-5-84" href="#__codelineno-5-84"></a>
+<a id="__codelineno-5-85" name="__codelineno-5-85" href="#__codelineno-5-85"></a>pattern: "{fleet.location}"
+<a id="__codelineno-5-86" name="__codelineno-5-86" href="#__codelineno-5-86"></a>
+<a id="__codelineno-5-87" name="__codelineno-5-87" href="#__codelineno-5-87"></a>
+<a id="__codelineno-5-88" name="__codelineno-5-88" href="#__codelineno-5-88"></a>
+<a id="__codelineno-5-89" name="__codelineno-5-89" href="#__codelineno-5-89"></a>role: default
+<a id="__codelineno-5-90" name="__codelineno-5-90" href="#__codelineno-5-90"></a>
+<a id="__codelineno-5-91" name="__codelineno-5-91" href="#__codelineno-5-91"></a>
+<a id="__codelineno-5-92" name="__codelineno-5-92" href="#__codelineno-5-92"></a>
+<a id="__codelineno-5-93" name="__codelineno-5-93" href="#__codelineno-5-93"></a>- idPattern: fleet_{fleet.id}
+<a id="__codelineno-5-94" name="__codelineno-5-94" href="#__codelineno-5-94"></a>
+<a id="__codelineno-5-95" name="__codelineno-5-95" href="#__codelineno-5-95"></a>
+<a id="__codelineno-5-96" name="__codelineno-5-96" href="#__codelineno-5-96"></a>
+<a id="__codelineno-5-97" name="__codelineno-5-97" href="#__codelineno-5-97"></a>instanceNamePattern: Smart Fleet ({fleet.id})
+<a id="__codelineno-5-98" name="__codelineno-5-98" href="#__codelineno-5-98"></a>
+<a id="__codelineno-5-99" name="__codelineno-5-99" href="#__codelineno-5-99"></a>
+<a id="__codelineno-5-100" name="__codelineno-5-100" href="#__codelineno-5-100"></a>
+<a id="__codelineno-5-101" name="__codelineno-5-101" href="#__codelineno-5-101"></a>iconPattern: cluster
+<a id="__codelineno-5-102" name="__codelineno-5-102" href="#__codelineno-5-102"></a>
+<a id="__codelineno-5-103" name="__codelineno-5-103" href="#__codelineno-5-103"></a>
+<a id="__codelineno-5-104" name="__codelineno-5-104" href="#__codelineno-5-104"></a>
+<a id="__codelineno-5-105" name="__codelineno-5-105" href="#__codelineno-5-105"></a>sources:
+<a id="__codelineno-5-106" name="__codelineno-5-106" href="#__codelineno-5-106"></a>
+<a id="__codelineno-5-107" name="__codelineno-5-107" href="#__codelineno-5-107"></a>
+<a id="__codelineno-5-108" name="__codelineno-5-108" href="#__codelineno-5-108"></a>
+<a id="__codelineno-5-109" name="__codelineno-5-109" href="#__codelineno-5-109"></a>- sourceType: Metrics
+<a id="__codelineno-5-110" name="__codelineno-5-110" href="#__codelineno-5-110"></a>
+<a id="__codelineno-5-111" name="__codelineno-5-111" href="#__codelineno-5-111"></a>
+<a id="__codelineno-5-112" name="__codelineno-5-112" href="#__codelineno-5-112"></a>
+<a id="__codelineno-5-113" name="__codelineno-5-113" href="#__codelineno-5-113"></a>condition: $prefix(custom.easytaxis.taxi)
+<a id="__codelineno-5-114" name="__codelineno-5-114" href="#__codelineno-5-114"></a>
+<a id="__codelineno-5-115" name="__codelineno-5-115" href="#__codelineno-5-115"></a>
+<a id="__codelineno-5-116" name="__codelineno-5-116" href="#__codelineno-5-116"></a>
+<a id="__codelineno-5-117" name="__codelineno-5-117" href="#__codelineno-5-117"></a>- sourceType: Logs
+<a id="__codelineno-5-118" name="__codelineno-5-118" href="#__codelineno-5-118"></a>
+<a id="__codelineno-5-119" name="__codelineno-5-119" href="#__codelineno-5-119"></a>
+<a id="__codelineno-5-120" name="__codelineno-5-120" href="#__codelineno-5-120"></a>
+<a id="__codelineno-5-121" name="__codelineno-5-121" href="#__codelineno-5-121"></a>role: default
+<a id="__codelineno-5-122" name="__codelineno-5-122" href="#__codelineno-5-122"></a>
+<a id="__codelineno-5-123" name="__codelineno-5-123" href="#__codelineno-5-123"></a>
+<a id="__codelineno-5-124" name="__codelineno-5-124" href="#__codelineno-5-124"></a>
+<a id="__codelineno-5-125" name="__codelineno-5-125" href="#__codelineno-5-125"></a>- enabled: true
+<a id="__codelineno-5-126" name="__codelineno-5-126" href="#__codelineno-5-126"></a>
+<a id="__codelineno-5-127" name="__codelineno-5-127" href="#__codelineno-5-127"></a>
+<a id="__codelineno-5-128" name="__codelineno-5-128" href="#__codelineno-5-128"></a>
+<a id="__codelineno-5-129" name="__codelineno-5-129" href="#__codelineno-5-129"></a>name: easytaxis:smart_taxi
+<a id="__codelineno-5-130" name="__codelineno-5-130" href="#__codelineno-5-130"></a>
+<a id="__codelineno-5-131" name="__codelineno-5-131" href="#__codelineno-5-131"></a>
+<a id="__codelineno-5-132" name="__codelineno-5-132" href="#__codelineno-5-132"></a>
+<a id="__codelineno-5-133" name="__codelineno-5-133" href="#__codelineno-5-133"></a>displayName: Smart Taxi
+<a id="__codelineno-5-134" name="__codelineno-5-134" href="#__codelineno-5-134"></a>
+<a id="__codelineno-5-135" name="__codelineno-5-135" href="#__codelineno-5-135"></a>
+<a id="__codelineno-5-136" name="__codelineno-5-136" href="#__codelineno-5-136"></a>
+<a id="__codelineno-5-137" name="__codelineno-5-137" href="#__codelineno-5-137"></a>rules:
+<a id="__codelineno-5-138" name="__codelineno-5-138" href="#__codelineno-5-138"></a>
+<a id="__codelineno-5-139" name="__codelineno-5-139" href="#__codelineno-5-139"></a>
+<a id="__codelineno-5-140" name="__codelineno-5-140" href="#__codelineno-5-140"></a>
+<a id="__codelineno-5-141" name="__codelineno-5-141" href="#__codelineno-5-141"></a>- idPattern: taxi_{fleet.id}_{taxi.id}
+<a id="__codelineno-5-142" name="__codelineno-5-142" href="#__codelineno-5-142"></a>
+<a id="__codelineno-5-143" name="__codelineno-5-143" href="#__codelineno-5-143"></a>
+<a id="__codelineno-5-144" name="__codelineno-5-144" href="#__codelineno-5-144"></a>
+<a id="__codelineno-5-145" name="__codelineno-5-145" href="#__codelineno-5-145"></a>instanceNamePattern: Smart Taxi ({taxi.id})
+<a id="__codelineno-5-146" name="__codelineno-5-146" href="#__codelineno-5-146"></a>
+<a id="__codelineno-5-147" name="__codelineno-5-147" href="#__codelineno-5-147"></a>
+<a id="__codelineno-5-148" name="__codelineno-5-148" href="#__codelineno-5-148"></a>
+<a id="__codelineno-5-149" name="__codelineno-5-149" href="#__codelineno-5-149"></a>sources:
+<a id="__codelineno-5-150" name="__codelineno-5-150" href="#__codelineno-5-150"></a>
+<a id="__codelineno-5-151" name="__codelineno-5-151" href="#__codelineno-5-151"></a>
+<a id="__codelineno-5-152" name="__codelineno-5-152" href="#__codelineno-5-152"></a>
+<a id="__codelineno-5-153" name="__codelineno-5-153" href="#__codelineno-5-153"></a>- sourceType: Metrics
+<a id="__codelineno-5-154" name="__codelineno-5-154" href="#__codelineno-5-154"></a>
+<a id="__codelineno-5-155" name="__codelineno-5-155" href="#__codelineno-5-155"></a>
+<a id="__codelineno-5-156" name="__codelineno-5-156" href="#__codelineno-5-156"></a>
+<a id="__codelineno-5-157" name="__codelineno-5-157" href="#__codelineno-5-157"></a>condition: $prefix(custom.easytaxis.taxi)
+<a id="__codelineno-5-158" name="__codelineno-5-158" href="#__codelineno-5-158"></a>
+<a id="__codelineno-5-159" name="__codelineno-5-159" href="#__codelineno-5-159"></a>
+<a id="__codelineno-5-160" name="__codelineno-5-160" href="#__codelineno-5-160"></a>
+<a id="__codelineno-5-161" name="__codelineno-5-161" href="#__codelineno-5-161"></a>attributes:
+<a id="__codelineno-5-162" name="__codelineno-5-162" href="#__codelineno-5-162"></a>
+<a id="__codelineno-5-163" name="__codelineno-5-163" href="#__codelineno-5-163"></a>
+<a id="__codelineno-5-164" name="__codelineno-5-164" href="#__codelineno-5-164"></a>
+<a id="__codelineno-5-165" name="__codelineno-5-165" href="#__codelineno-5-165"></a>- key: TaxiID
+<a id="__codelineno-5-166" name="__codelineno-5-166" href="#__codelineno-5-166"></a>
+<a id="__codelineno-5-167" name="__codelineno-5-167" href="#__codelineno-5-167"></a>
+<a id="__codelineno-5-168" name="__codelineno-5-168" href="#__codelineno-5-168"></a>
+<a id="__codelineno-5-169" name="__codelineno-5-169" href="#__codelineno-5-169"></a>pattern: "{taxi.id}"
+<a id="__codelineno-5-170" name="__codelineno-5-170" href="#__codelineno-5-170"></a>
+<a id="__codelineno-5-171" name="__codelineno-5-171" href="#__codelineno-5-171"></a>
+<a id="__codelineno-5-172" name="__codelineno-5-172" href="#__codelineno-5-172"></a>
+<a id="__codelineno-5-173" name="__codelineno-5-173" href="#__codelineno-5-173"></a>- key: RegistrationNumber
+<a id="__codelineno-5-174" name="__codelineno-5-174" href="#__codelineno-5-174"></a>
+<a id="__codelineno-5-175" name="__codelineno-5-175" href="#__codelineno-5-175"></a>
+<a id="__codelineno-5-176" name="__codelineno-5-176" href="#__codelineno-5-176"></a>
+<a id="__codelineno-5-177" name="__codelineno-5-177" href="#__codelineno-5-177"></a>pattern: "{taxi.registration}"
+<a id="__codelineno-5-178" name="__codelineno-5-178" href="#__codelineno-5-178"></a>
+<a id="__codelineno-5-179" name="__codelineno-5-179" href="#__codelineno-5-179"></a>
+<a id="__codelineno-5-180" name="__codelineno-5-180" href="#__codelineno-5-180"></a>
+<a id="__codelineno-5-181" name="__codelineno-5-181" href="#__codelineno-5-181"></a>- key: Class
+<a id="__codelineno-5-182" name="__codelineno-5-182" href="#__codelineno-5-182"></a>
+<a id="__codelineno-5-183" name="__codelineno-5-183" href="#__codelineno-5-183"></a>
+<a id="__codelineno-5-184" name="__codelineno-5-184" href="#__codelineno-5-184"></a>
+<a id="__codelineno-5-185" name="__codelineno-5-185" href="#__codelineno-5-185"></a>pattern: "{taxi.class}"
+<a id="__codelineno-5-186" name="__codelineno-5-186" href="#__codelineno-5-186"></a>
+<a id="__codelineno-5-187" name="__codelineno-5-187" href="#__codelineno-5-187"></a>
+<a id="__codelineno-5-188" name="__codelineno-5-188" href="#__codelineno-5-188"></a>
+<a id="__codelineno-5-189" name="__codelineno-5-189" href="#__codelineno-5-189"></a>role: default
+<a id="__codelineno-5-190" name="__codelineno-5-190" href="#__codelineno-5-190"></a>
+<a id="__codelineno-5-191" name="__codelineno-5-191" href="#__codelineno-5-191"></a>
+<a id="__codelineno-5-192" name="__codelineno-5-192" href="#__codelineno-5-192"></a>
+<a id="__codelineno-5-193" name="__codelineno-5-193" href="#__codelineno-5-193"></a>relationships:
+<a id="__codelineno-5-194" name="__codelineno-5-194" href="#__codelineno-5-194"></a>
+<a id="__codelineno-5-195" name="__codelineno-5-195" href="#__codelineno-5-195"></a>
+<a id="__codelineno-5-196" name="__codelineno-5-196" href="#__codelineno-5-196"></a>
+<a id="__codelineno-5-197" name="__codelineno-5-197" href="#__codelineno-5-197"></a>- enabled: true
+<a id="__codelineno-5-198" name="__codelineno-5-198" href="#__codelineno-5-198"></a>
+<a id="__codelineno-5-199" name="__codelineno-5-199" href="#__codelineno-5-199"></a>
+<a id="__codelineno-5-200" name="__codelineno-5-200" href="#__codelineno-5-200"></a>
+<a id="__codelineno-5-201" name="__codelineno-5-201" href="#__codelineno-5-201"></a>sources:
+<a id="__codelineno-5-202" name="__codelineno-5-202" href="#__codelineno-5-202"></a>
+<a id="__codelineno-5-203" name="__codelineno-5-203" href="#__codelineno-5-203"></a>
+<a id="__codelineno-5-204" name="__codelineno-5-204" href="#__codelineno-5-204"></a>
+<a id="__codelineno-5-205" name="__codelineno-5-205" href="#__codelineno-5-205"></a>- sourceType: Metrics
+<a id="__codelineno-5-206" name="__codelineno-5-206" href="#__codelineno-5-206"></a>
+<a id="__codelineno-5-207" name="__codelineno-5-207" href="#__codelineno-5-207"></a>
+<a id="__codelineno-5-208" name="__codelineno-5-208" href="#__codelineno-5-208"></a>
+<a id="__codelineno-5-209" name="__codelineno-5-209" href="#__codelineno-5-209"></a>condition: $prefix(custom.easytaxis)
+<a id="__codelineno-5-210" name="__codelineno-5-210" href="#__codelineno-5-210"></a>
+<a id="__codelineno-5-211" name="__codelineno-5-211" href="#__codelineno-5-211"></a>
+<a id="__codelineno-5-212" name="__codelineno-5-212" href="#__codelineno-5-212"></a>
+<a id="__codelineno-5-213" name="__codelineno-5-213" href="#__codelineno-5-213"></a>fromType: easytaxis:smart_taxi
+<a id="__codelineno-5-214" name="__codelineno-5-214" href="#__codelineno-5-214"></a>
+<a id="__codelineno-5-215" name="__codelineno-5-215" href="#__codelineno-5-215"></a>
+<a id="__codelineno-5-216" name="__codelineno-5-216" href="#__codelineno-5-216"></a>
+<a id="__codelineno-5-217" name="__codelineno-5-217" href="#__codelineno-5-217"></a>typeOfRelation: CHILD_OF
+<a id="__codelineno-5-218" name="__codelineno-5-218" href="#__codelineno-5-218"></a>
+<a id="__codelineno-5-219" name="__codelineno-5-219" href="#__codelineno-5-219"></a>
+<a id="__codelineno-5-220" name="__codelineno-5-220" href="#__codelineno-5-220"></a>
+<a id="__codelineno-5-221" name="__codelineno-5-221" href="#__codelineno-5-221"></a>toType: easytaxis:smart_fleet
+</code></pre></div>
+8. Выполните следующую команду для подписания расширения и его загрузки в среду.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python build_and_upload.py
+</code></pre></div>
+<h2 id="_4">Проверка прогресса<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Если перейти в <strong>Settings</strong> &gt; <strong>Topology model</strong> &gt; <strong>Generic types</strong>, видно, что типы <strong>Smart Fleet</strong> и <strong>Smart taxi</strong> созданы. Определённую связь между ними можно увидеть в разделе <strong>Generic relationships</strong>.</p>
+<ul>
+<li>Список экземпляров Smart Fleet доступен по адресу <code>&lt;your-environment&gt;/ui/entity/list/easytaxis:smart_fleet</code>.</li>
+</ul>
+<p><img alt="Smart Fleet instance" src="https://dt-cdn.net/images/smart-fleet-1239-e7365be7f8.png" /></p>
+<p>Smart Fleet instance
+* Список экземпляров Smart Taxi доступен по адресу <code>&lt;your-environment&gt;/ui/entity/list/easytaxis:smart_taxi</code>.</p>
+<p><img alt="Smart Taxi instance" src="https://dt-cdn.net/images/smart-taxi-1231-2e3fcf1c19.png" /></p>
+<p>Smart Taxi instance</p>
+<h2 id="unified-analysis_2">Настройка страниц unified analysis<a class="headerlink" href="#unified-analysis_2" title="Permanent link">&para;</a></h2>
+<p>Теперь можно настроить страницы сущностей, создав определение страницы в файле <code>extension.yaml</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>screens:
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>- entityType: easytaxis:smart_fleet
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>detailsSettings:
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>staticContent:
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>showProblems: true
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>showProperties: true
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>showTags: true
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>showGlobalFilter: true
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>showAddTag: true
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>layout:
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>autoGenerate: false
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a>
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a>cards:
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a>
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a>
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a>
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a>- type: ENTITIES_LIST
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a>
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a>
+<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a>
+<a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a>key: fleet-list-taxis
+<a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a>
+<a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a>
+<a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a>
+<a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a>entitiesListCards:
+<a id="__codelineno-7-58" name="__codelineno-7-58" href="#__codelineno-7-58"></a>
+<a id="__codelineno-7-59" name="__codelineno-7-59" href="#__codelineno-7-59"></a>
+<a id="__codelineno-7-60" name="__codelineno-7-60" href="#__codelineno-7-60"></a>
+<a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a>- key: fleet-list-taxis
+<a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a>
+<a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a>
+<a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a>
+<a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a>displayName: Taxis part of this fleet
+<a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a>
+<a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a>
+<a id="__codelineno-7-68" name="__codelineno-7-68" href="#__codelineno-7-68"></a>
+<a id="__codelineno-7-69" name="__codelineno-7-69" href="#__codelineno-7-69"></a>pageSize: 5
+<a id="__codelineno-7-70" name="__codelineno-7-70" href="#__codelineno-7-70"></a>
+<a id="__codelineno-7-71" name="__codelineno-7-71" href="#__codelineno-7-71"></a>
+<a id="__codelineno-7-72" name="__codelineno-7-72" href="#__codelineno-7-72"></a>
+<a id="__codelineno-7-73" name="__codelineno-7-73" href="#__codelineno-7-73"></a>entitiesLimit: 500
+<a id="__codelineno-7-74" name="__codelineno-7-74" href="#__codelineno-7-74"></a>
+<a id="__codelineno-7-75" name="__codelineno-7-75" href="#__codelineno-7-75"></a>
+<a id="__codelineno-7-76" name="__codelineno-7-76" href="#__codelineno-7-76"></a>
+<a id="__codelineno-7-77" name="__codelineno-7-77" href="#__codelineno-7-77"></a>displayCharts: false
+<a id="__codelineno-7-78" name="__codelineno-7-78" href="#__codelineno-7-78"></a>
+<a id="__codelineno-7-79" name="__codelineno-7-79" href="#__codelineno-7-79"></a>
+<a id="__codelineno-7-80" name="__codelineno-7-80" href="#__codelineno-7-80"></a>
+<a id="__codelineno-7-81" name="__codelineno-7-81" href="#__codelineno-7-81"></a>enableDetailsExpandability: true
+<a id="__codelineno-7-82" name="__codelineno-7-82" href="#__codelineno-7-82"></a>
+<a id="__codelineno-7-83" name="__codelineno-7-83" href="#__codelineno-7-83"></a>
+<a id="__codelineno-7-84" name="__codelineno-7-84" href="#__codelineno-7-84"></a>
+<a id="__codelineno-7-85" name="__codelineno-7-85" href="#__codelineno-7-85"></a>numberOfVisibleCharts: 2
+<a id="__codelineno-7-86" name="__codelineno-7-86" href="#__codelineno-7-86"></a>
+<a id="__codelineno-7-87" name="__codelineno-7-87" href="#__codelineno-7-87"></a>
+<a id="__codelineno-7-88" name="__codelineno-7-88" href="#__codelineno-7-88"></a>
+<a id="__codelineno-7-89" name="__codelineno-7-89" href="#__codelineno-7-89"></a>displayIcons: true
+<a id="__codelineno-7-90" name="__codelineno-7-90" href="#__codelineno-7-90"></a>
+<a id="__codelineno-7-91" name="__codelineno-7-91" href="#__codelineno-7-91"></a>
+<a id="__codelineno-7-92" name="__codelineno-7-92" href="#__codelineno-7-92"></a>
+<a id="__codelineno-7-93" name="__codelineno-7-93" href="#__codelineno-7-93"></a>entitySelectorTemplate: type(easytaxis:smart_taxi),fromRelationships.isChildOf($(entityConditions))
+<a id="__codelineno-7-94" name="__codelineno-7-94" href="#__codelineno-7-94"></a>
+<a id="__codelineno-7-95" name="__codelineno-7-95" href="#__codelineno-7-95"></a>
+<a id="__codelineno-7-96" name="__codelineno-7-96" href="#__codelineno-7-96"></a>
+<a id="__codelineno-7-97" name="__codelineno-7-97" href="#__codelineno-7-97"></a>columns:
+<a id="__codelineno-7-98" name="__codelineno-7-98" href="#__codelineno-7-98"></a>
+<a id="__codelineno-7-99" name="__codelineno-7-99" href="#__codelineno-7-99"></a>
+<a id="__codelineno-7-100" name="__codelineno-7-100" href="#__codelineno-7-100"></a>
+<a id="__codelineno-7-101" name="__codelineno-7-101" href="#__codelineno-7-101"></a>- type: ATTRIBUTE
+<a id="__codelineno-7-102" name="__codelineno-7-102" href="#__codelineno-7-102"></a>
+<a id="__codelineno-7-103" name="__codelineno-7-103" href="#__codelineno-7-103"></a>
+<a id="__codelineno-7-104" name="__codelineno-7-104" href="#__codelineno-7-104"></a>
+<a id="__codelineno-7-105" name="__codelineno-7-105" href="#__codelineno-7-105"></a>attribute:
+<a id="__codelineno-7-106" name="__codelineno-7-106" href="#__codelineno-7-106"></a>
+<a id="__codelineno-7-107" name="__codelineno-7-107" href="#__codelineno-7-107"></a>
+<a id="__codelineno-7-108" name="__codelineno-7-108" href="#__codelineno-7-108"></a>
+<a id="__codelineno-7-109" name="__codelineno-7-109" href="#__codelineno-7-109"></a>key: Class
+<a id="__codelineno-7-110" name="__codelineno-7-110" href="#__codelineno-7-110"></a>
+<a id="__codelineno-7-111" name="__codelineno-7-111" href="#__codelineno-7-111"></a>
+<a id="__codelineno-7-112" name="__codelineno-7-112" href="#__codelineno-7-112"></a>
+<a id="__codelineno-7-113" name="__codelineno-7-113" href="#__codelineno-7-113"></a>displayName: Class
+<a id="__codelineno-7-114" name="__codelineno-7-114" href="#__codelineno-7-114"></a>
+<a id="__codelineno-7-115" name="__codelineno-7-115" href="#__codelineno-7-115"></a>
+<a id="__codelineno-7-116" name="__codelineno-7-116" href="#__codelineno-7-116"></a>
+<a id="__codelineno-7-117" name="__codelineno-7-117" href="#__codelineno-7-117"></a>- type: ATTRIBUTE
+<a id="__codelineno-7-118" name="__codelineno-7-118" href="#__codelineno-7-118"></a>
+<a id="__codelineno-7-119" name="__codelineno-7-119" href="#__codelineno-7-119"></a>
+<a id="__codelineno-7-120" name="__codelineno-7-120" href="#__codelineno-7-120"></a>
+<a id="__codelineno-7-121" name="__codelineno-7-121" href="#__codelineno-7-121"></a>attribute:
+<a id="__codelineno-7-122" name="__codelineno-7-122" href="#__codelineno-7-122"></a>
+<a id="__codelineno-7-123" name="__codelineno-7-123" href="#__codelineno-7-123"></a>
+<a id="__codelineno-7-124" name="__codelineno-7-124" href="#__codelineno-7-124"></a>
+<a id="__codelineno-7-125" name="__codelineno-7-125" href="#__codelineno-7-125"></a>key: RegistrationNumber
+<a id="__codelineno-7-126" name="__codelineno-7-126" href="#__codelineno-7-126"></a>
+<a id="__codelineno-7-127" name="__codelineno-7-127" href="#__codelineno-7-127"></a>
+<a id="__codelineno-7-128" name="__codelineno-7-128" href="#__codelineno-7-128"></a>
+<a id="__codelineno-7-129" name="__codelineno-7-129" href="#__codelineno-7-129"></a>displayName: Registration
+<a id="__codelineno-7-130" name="__codelineno-7-130" href="#__codelineno-7-130"></a>
+<a id="__codelineno-7-131" name="__codelineno-7-131" href="#__codelineno-7-131"></a>
+<a id="__codelineno-7-132" name="__codelineno-7-132" href="#__codelineno-7-132"></a>
+<a id="__codelineno-7-133" name="__codelineno-7-133" href="#__codelineno-7-133"></a>charts:
+<a id="__codelineno-7-134" name="__codelineno-7-134" href="#__codelineno-7-134"></a>
+<a id="__codelineno-7-135" name="__codelineno-7-135" href="#__codelineno-7-135"></a>
+<a id="__codelineno-7-136" name="__codelineno-7-136" href="#__codelineno-7-136"></a>
+<a id="__codelineno-7-137" name="__codelineno-7-137" href="#__codelineno-7-137"></a>- displayName: Engine Temperature
+<a id="__codelineno-7-138" name="__codelineno-7-138" href="#__codelineno-7-138"></a>
+<a id="__codelineno-7-139" name="__codelineno-7-139" href="#__codelineno-7-139"></a>
+<a id="__codelineno-7-140" name="__codelineno-7-140" href="#__codelineno-7-140"></a>
+<a id="__codelineno-7-141" name="__codelineno-7-141" href="#__codelineno-7-141"></a>graphChartConfig:
+<a id="__codelineno-7-142" name="__codelineno-7-142" href="#__codelineno-7-142"></a>
+<a id="__codelineno-7-143" name="__codelineno-7-143" href="#__codelineno-7-143"></a>
+<a id="__codelineno-7-144" name="__codelineno-7-144" href="#__codelineno-7-144"></a>
+<a id="__codelineno-7-145" name="__codelineno-7-145" href="#__codelineno-7-145"></a>visualization:
+<a id="__codelineno-7-146" name="__codelineno-7-146" href="#__codelineno-7-146"></a>
+<a id="__codelineno-7-147" name="__codelineno-7-147" href="#__codelineno-7-147"></a>
+<a id="__codelineno-7-148" name="__codelineno-7-148" href="#__codelineno-7-148"></a>
+<a id="__codelineno-7-149" name="__codelineno-7-149" href="#__codelineno-7-149"></a>themeColor: DEFAULT
+<a id="__codelineno-7-150" name="__codelineno-7-150" href="#__codelineno-7-150"></a>
+<a id="__codelineno-7-151" name="__codelineno-7-151" href="#__codelineno-7-151"></a>
+<a id="__codelineno-7-152" name="__codelineno-7-152" href="#__codelineno-7-152"></a>
+<a id="__codelineno-7-153" name="__codelineno-7-153" href="#__codelineno-7-153"></a>seriesType: LINE
+<a id="__codelineno-7-154" name="__codelineno-7-154" href="#__codelineno-7-154"></a>
+<a id="__codelineno-7-155" name="__codelineno-7-155" href="#__codelineno-7-155"></a>
+<a id="__codelineno-7-156" name="__codelineno-7-156" href="#__codelineno-7-156"></a>
+<a id="__codelineno-7-157" name="__codelineno-7-157" href="#__codelineno-7-157"></a>metrics:
+<a id="__codelineno-7-158" name="__codelineno-7-158" href="#__codelineno-7-158"></a>
+<a id="__codelineno-7-159" name="__codelineno-7-159" href="#__codelineno-7-159"></a>
+<a id="__codelineno-7-160" name="__codelineno-7-160" href="#__codelineno-7-160"></a>
+<a id="__codelineno-7-161" name="__codelineno-7-161" href="#__codelineno-7-161"></a>- metricSelector: custom.easytaxis.taxi.engine.temperature
+<a id="__codelineno-7-162" name="__codelineno-7-162" href="#__codelineno-7-162"></a>
+<a id="__codelineno-7-163" name="__codelineno-7-163" href="#__codelineno-7-163"></a>
+<a id="__codelineno-7-164" name="__codelineno-7-164" href="#__codelineno-7-164"></a>
+<a id="__codelineno-7-165" name="__codelineno-7-165" href="#__codelineno-7-165"></a>visualizationType: GRAPH_CHART
+<a id="__codelineno-7-166" name="__codelineno-7-166" href="#__codelineno-7-166"></a>
+<a id="__codelineno-7-167" name="__codelineno-7-167" href="#__codelineno-7-167"></a>
+<a id="__codelineno-7-168" name="__codelineno-7-168" href="#__codelineno-7-168"></a>
+<a id="__codelineno-7-169" name="__codelineno-7-169" href="#__codelineno-7-169"></a>- displayName: Speed
+<a id="__codelineno-7-170" name="__codelineno-7-170" href="#__codelineno-7-170"></a>
+<a id="__codelineno-7-171" name="__codelineno-7-171" href="#__codelineno-7-171"></a>
+<a id="__codelineno-7-172" name="__codelineno-7-172" href="#__codelineno-7-172"></a>
+<a id="__codelineno-7-173" name="__codelineno-7-173" href="#__codelineno-7-173"></a>graphChartConfig:
+<a id="__codelineno-7-174" name="__codelineno-7-174" href="#__codelineno-7-174"></a>
+<a id="__codelineno-7-175" name="__codelineno-7-175" href="#__codelineno-7-175"></a>
+<a id="__codelineno-7-176" name="__codelineno-7-176" href="#__codelineno-7-176"></a>
+<a id="__codelineno-7-177" name="__codelineno-7-177" href="#__codelineno-7-177"></a>visualization:
+<a id="__codelineno-7-178" name="__codelineno-7-178" href="#__codelineno-7-178"></a>
+<a id="__codelineno-7-179" name="__codelineno-7-179" href="#__codelineno-7-179"></a>
+<a id="__codelineno-7-180" name="__codelineno-7-180" href="#__codelineno-7-180"></a>
+<a id="__codelineno-7-181" name="__codelineno-7-181" href="#__codelineno-7-181"></a>themeColor: DEFAULT
+<a id="__codelineno-7-182" name="__codelineno-7-182" href="#__codelineno-7-182"></a>
+<a id="__codelineno-7-183" name="__codelineno-7-183" href="#__codelineno-7-183"></a>
+<a id="__codelineno-7-184" name="__codelineno-7-184" href="#__codelineno-7-184"></a>
+<a id="__codelineno-7-185" name="__codelineno-7-185" href="#__codelineno-7-185"></a>seriesType: LINE
+<a id="__codelineno-7-186" name="__codelineno-7-186" href="#__codelineno-7-186"></a>
+<a id="__codelineno-7-187" name="__codelineno-7-187" href="#__codelineno-7-187"></a>
+<a id="__codelineno-7-188" name="__codelineno-7-188" href="#__codelineno-7-188"></a>
+<a id="__codelineno-7-189" name="__codelineno-7-189" href="#__codelineno-7-189"></a>metrics:
+<a id="__codelineno-7-190" name="__codelineno-7-190" href="#__codelineno-7-190"></a>
+<a id="__codelineno-7-191" name="__codelineno-7-191" href="#__codelineno-7-191"></a>
+<a id="__codelineno-7-192" name="__codelineno-7-192" href="#__codelineno-7-192"></a>
+<a id="__codelineno-7-193" name="__codelineno-7-193" href="#__codelineno-7-193"></a>- metricSelector: custom.easytaxis.taxi.speed
+<a id="__codelineno-7-194" name="__codelineno-7-194" href="#__codelineno-7-194"></a>
+<a id="__codelineno-7-195" name="__codelineno-7-195" href="#__codelineno-7-195"></a>
+<a id="__codelineno-7-196" name="__codelineno-7-196" href="#__codelineno-7-196"></a>
+<a id="__codelineno-7-197" name="__codelineno-7-197" href="#__codelineno-7-197"></a>visualizationType: GRAPH_CHART
+<a id="__codelineno-7-198" name="__codelineno-7-198" href="#__codelineno-7-198"></a>
+<a id="__codelineno-7-199" name="__codelineno-7-199" href="#__codelineno-7-199"></a>
+<a id="__codelineno-7-200" name="__codelineno-7-200" href="#__codelineno-7-200"></a>
+<a id="__codelineno-7-201" name="__codelineno-7-201" href="#__codelineno-7-201"></a>- entityType: easytaxis:smart_taxi
+<a id="__codelineno-7-202" name="__codelineno-7-202" href="#__codelineno-7-202"></a>
+<a id="__codelineno-7-203" name="__codelineno-7-203" href="#__codelineno-7-203"></a>
+<a id="__codelineno-7-204" name="__codelineno-7-204" href="#__codelineno-7-204"></a>
+<a id="__codelineno-7-205" name="__codelineno-7-205" href="#__codelineno-7-205"></a>propertiesCard:
+<a id="__codelineno-7-206" name="__codelineno-7-206" href="#__codelineno-7-206"></a>
+<a id="__codelineno-7-207" name="__codelineno-7-207" href="#__codelineno-7-207"></a>
+<a id="__codelineno-7-208" name="__codelineno-7-208" href="#__codelineno-7-208"></a>
+<a id="__codelineno-7-209" name="__codelineno-7-209" href="#__codelineno-7-209"></a>properties:
+<a id="__codelineno-7-210" name="__codelineno-7-210" href="#__codelineno-7-210"></a>
+<a id="__codelineno-7-211" name="__codelineno-7-211" href="#__codelineno-7-211"></a>
+<a id="__codelineno-7-212" name="__codelineno-7-212" href="#__codelineno-7-212"></a>
+<a id="__codelineno-7-213" name="__codelineno-7-213" href="#__codelineno-7-213"></a>- type: RELATION
+<a id="__codelineno-7-214" name="__codelineno-7-214" href="#__codelineno-7-214"></a>
+<a id="__codelineno-7-215" name="__codelineno-7-215" href="#__codelineno-7-215"></a>
+<a id="__codelineno-7-216" name="__codelineno-7-216" href="#__codelineno-7-216"></a>
+<a id="__codelineno-7-217" name="__codelineno-7-217" href="#__codelineno-7-217"></a>relation:
+<a id="__codelineno-7-218" name="__codelineno-7-218" href="#__codelineno-7-218"></a>
+<a id="__codelineno-7-219" name="__codelineno-7-219" href="#__codelineno-7-219"></a>
+<a id="__codelineno-7-220" name="__codelineno-7-220" href="#__codelineno-7-220"></a>
+<a id="__codelineno-7-221" name="__codelineno-7-221" href="#__codelineno-7-221"></a>entitySelectorTemplate: type(easytaxis:smart_fleet),toRelationships.isChildOf($(entityConditions))
+<a id="__codelineno-7-222" name="__codelineno-7-222" href="#__codelineno-7-222"></a>
+<a id="__codelineno-7-223" name="__codelineno-7-223" href="#__codelineno-7-223"></a>
+<a id="__codelineno-7-224" name="__codelineno-7-224" href="#__codelineno-7-224"></a>
+<a id="__codelineno-7-225" name="__codelineno-7-225" href="#__codelineno-7-225"></a>displayName: Mother Fleet
+<a id="__codelineno-7-226" name="__codelineno-7-226" href="#__codelineno-7-226"></a>
+<a id="__codelineno-7-227" name="__codelineno-7-227" href="#__codelineno-7-227"></a>
+<a id="__codelineno-7-228" name="__codelineno-7-228" href="#__codelineno-7-228"></a>
+<a id="__codelineno-7-229" name="__codelineno-7-229" href="#__codelineno-7-229"></a>detailsSettings:
+<a id="__codelineno-7-230" name="__codelineno-7-230" href="#__codelineno-7-230"></a>
+<a id="__codelineno-7-231" name="__codelineno-7-231" href="#__codelineno-7-231"></a>
+<a id="__codelineno-7-232" name="__codelineno-7-232" href="#__codelineno-7-232"></a>
+<a id="__codelineno-7-233" name="__codelineno-7-233" href="#__codelineno-7-233"></a>staticContent:
+<a id="__codelineno-7-234" name="__codelineno-7-234" href="#__codelineno-7-234"></a>
+<a id="__codelineno-7-235" name="__codelineno-7-235" href="#__codelineno-7-235"></a>
+<a id="__codelineno-7-236" name="__codelineno-7-236" href="#__codelineno-7-236"></a>
+<a id="__codelineno-7-237" name="__codelineno-7-237" href="#__codelineno-7-237"></a>showTags: true
+<a id="__codelineno-7-238" name="__codelineno-7-238" href="#__codelineno-7-238"></a>
+<a id="__codelineno-7-239" name="__codelineno-7-239" href="#__codelineno-7-239"></a>
+<a id="__codelineno-7-240" name="__codelineno-7-240" href="#__codelineno-7-240"></a>
+<a id="__codelineno-7-241" name="__codelineno-7-241" href="#__codelineno-7-241"></a>showProperties: true
+<a id="__codelineno-7-242" name="__codelineno-7-242" href="#__codelineno-7-242"></a>
+<a id="__codelineno-7-243" name="__codelineno-7-243" href="#__codelineno-7-243"></a>
+<a id="__codelineno-7-244" name="__codelineno-7-244" href="#__codelineno-7-244"></a>
+<a id="__codelineno-7-245" name="__codelineno-7-245" href="#__codelineno-7-245"></a>showProblems: true
+<a id="__codelineno-7-246" name="__codelineno-7-246" href="#__codelineno-7-246"></a>
+<a id="__codelineno-7-247" name="__codelineno-7-247" href="#__codelineno-7-247"></a>
+<a id="__codelineno-7-248" name="__codelineno-7-248" href="#__codelineno-7-248"></a>
+<a id="__codelineno-7-249" name="__codelineno-7-249" href="#__codelineno-7-249"></a>showAddTag: true
+<a id="__codelineno-7-250" name="__codelineno-7-250" href="#__codelineno-7-250"></a>
+<a id="__codelineno-7-251" name="__codelineno-7-251" href="#__codelineno-7-251"></a>
+<a id="__codelineno-7-252" name="__codelineno-7-252" href="#__codelineno-7-252"></a>
+<a id="__codelineno-7-253" name="__codelineno-7-253" href="#__codelineno-7-253"></a>showGlobalFilter: true
+<a id="__codelineno-7-254" name="__codelineno-7-254" href="#__codelineno-7-254"></a>
+<a id="__codelineno-7-255" name="__codelineno-7-255" href="#__codelineno-7-255"></a>
+<a id="__codelineno-7-256" name="__codelineno-7-256" href="#__codelineno-7-256"></a>
+<a id="__codelineno-7-257" name="__codelineno-7-257" href="#__codelineno-7-257"></a>layout:
+<a id="__codelineno-7-258" name="__codelineno-7-258" href="#__codelineno-7-258"></a>
+<a id="__codelineno-7-259" name="__codelineno-7-259" href="#__codelineno-7-259"></a>
+<a id="__codelineno-7-260" name="__codelineno-7-260" href="#__codelineno-7-260"></a>
+<a id="__codelineno-7-261" name="__codelineno-7-261" href="#__codelineno-7-261"></a>autoGenerate: false
+<a id="__codelineno-7-262" name="__codelineno-7-262" href="#__codelineno-7-262"></a>
+<a id="__codelineno-7-263" name="__codelineno-7-263" href="#__codelineno-7-263"></a>
+<a id="__codelineno-7-264" name="__codelineno-7-264" href="#__codelineno-7-264"></a>
+<a id="__codelineno-7-265" name="__codelineno-7-265" href="#__codelineno-7-265"></a>cards:
+<a id="__codelineno-7-266" name="__codelineno-7-266" href="#__codelineno-7-266"></a>
+<a id="__codelineno-7-267" name="__codelineno-7-267" href="#__codelineno-7-267"></a>
+<a id="__codelineno-7-268" name="__codelineno-7-268" href="#__codelineno-7-268"></a>
+<a id="__codelineno-7-269" name="__codelineno-7-269" href="#__codelineno-7-269"></a>- type: CHART_GROUP
+<a id="__codelineno-7-270" name="__codelineno-7-270" href="#__codelineno-7-270"></a>
+<a id="__codelineno-7-271" name="__codelineno-7-271" href="#__codelineno-7-271"></a>
+<a id="__codelineno-7-272" name="__codelineno-7-272" href="#__codelineno-7-272"></a>
+<a id="__codelineno-7-273" name="__codelineno-7-273" href="#__codelineno-7-273"></a>key: taxi-metrics
+<a id="__codelineno-7-274" name="__codelineno-7-274" href="#__codelineno-7-274"></a>
+<a id="__codelineno-7-275" name="__codelineno-7-275" href="#__codelineno-7-275"></a>
+<a id="__codelineno-7-276" name="__codelineno-7-276" href="#__codelineno-7-276"></a>
+<a id="__codelineno-7-277" name="__codelineno-7-277" href="#__codelineno-7-277"></a>chartsCards:
+<a id="__codelineno-7-278" name="__codelineno-7-278" href="#__codelineno-7-278"></a>
+<a id="__codelineno-7-279" name="__codelineno-7-279" href="#__codelineno-7-279"></a>
+<a id="__codelineno-7-280" name="__codelineno-7-280" href="#__codelineno-7-280"></a>
+<a id="__codelineno-7-281" name="__codelineno-7-281" href="#__codelineno-7-281"></a>- key: taxi-metrics
+<a id="__codelineno-7-282" name="__codelineno-7-282" href="#__codelineno-7-282"></a>
+<a id="__codelineno-7-283" name="__codelineno-7-283" href="#__codelineno-7-283"></a>
+<a id="__codelineno-7-284" name="__codelineno-7-284" href="#__codelineno-7-284"></a>
+<a id="__codelineno-7-285" name="__codelineno-7-285" href="#__codelineno-7-285"></a>displayName: Smart Taxi Metrics
+<a id="__codelineno-7-286" name="__codelineno-7-286" href="#__codelineno-7-286"></a>
+<a id="__codelineno-7-287" name="__codelineno-7-287" href="#__codelineno-7-287"></a>
+<a id="__codelineno-7-288" name="__codelineno-7-288" href="#__codelineno-7-288"></a>
+<a id="__codelineno-7-289" name="__codelineno-7-289" href="#__codelineno-7-289"></a>numberOfVisibleCharts: 3
+<a id="__codelineno-7-290" name="__codelineno-7-290" href="#__codelineno-7-290"></a>
+<a id="__codelineno-7-291" name="__codelineno-7-291" href="#__codelineno-7-291"></a>
+<a id="__codelineno-7-292" name="__codelineno-7-292" href="#__codelineno-7-292"></a>
+<a id="__codelineno-7-293" name="__codelineno-7-293" href="#__codelineno-7-293"></a>charts:
+<a id="__codelineno-7-294" name="__codelineno-7-294" href="#__codelineno-7-294"></a>
+<a id="__codelineno-7-295" name="__codelineno-7-295" href="#__codelineno-7-295"></a>
+<a id="__codelineno-7-296" name="__codelineno-7-296" href="#__codelineno-7-296"></a>
+<a id="__codelineno-7-297" name="__codelineno-7-297" href="#__codelineno-7-297"></a>- displayName: Engine Temperature
+<a id="__codelineno-7-298" name="__codelineno-7-298" href="#__codelineno-7-298"></a>
+<a id="__codelineno-7-299" name="__codelineno-7-299" href="#__codelineno-7-299"></a>
+<a id="__codelineno-7-300" name="__codelineno-7-300" href="#__codelineno-7-300"></a>
+<a id="__codelineno-7-301" name="__codelineno-7-301" href="#__codelineno-7-301"></a>graphChartConfig:
+<a id="__codelineno-7-302" name="__codelineno-7-302" href="#__codelineno-7-302"></a>
+<a id="__codelineno-7-303" name="__codelineno-7-303" href="#__codelineno-7-303"></a>
+<a id="__codelineno-7-304" name="__codelineno-7-304" href="#__codelineno-7-304"></a>
+<a id="__codelineno-7-305" name="__codelineno-7-305" href="#__codelineno-7-305"></a>visualization:
+<a id="__codelineno-7-306" name="__codelineno-7-306" href="#__codelineno-7-306"></a>
+<a id="__codelineno-7-307" name="__codelineno-7-307" href="#__codelineno-7-307"></a>
+<a id="__codelineno-7-308" name="__codelineno-7-308" href="#__codelineno-7-308"></a>
+<a id="__codelineno-7-309" name="__codelineno-7-309" href="#__codelineno-7-309"></a>themeColor: DEFAULT
+<a id="__codelineno-7-310" name="__codelineno-7-310" href="#__codelineno-7-310"></a>
+<a id="__codelineno-7-311" name="__codelineno-7-311" href="#__codelineno-7-311"></a>
+<a id="__codelineno-7-312" name="__codelineno-7-312" href="#__codelineno-7-312"></a>
+<a id="__codelineno-7-313" name="__codelineno-7-313" href="#__codelineno-7-313"></a>seriesType: LINE
+<a id="__codelineno-7-314" name="__codelineno-7-314" href="#__codelineno-7-314"></a>
+<a id="__codelineno-7-315" name="__codelineno-7-315" href="#__codelineno-7-315"></a>
+<a id="__codelineno-7-316" name="__codelineno-7-316" href="#__codelineno-7-316"></a>
+<a id="__codelineno-7-317" name="__codelineno-7-317" href="#__codelineno-7-317"></a>metrics:
+<a id="__codelineno-7-318" name="__codelineno-7-318" href="#__codelineno-7-318"></a>
+<a id="__codelineno-7-319" name="__codelineno-7-319" href="#__codelineno-7-319"></a>
+<a id="__codelineno-7-320" name="__codelineno-7-320" href="#__codelineno-7-320"></a>
+<a id="__codelineno-7-321" name="__codelineno-7-321" href="#__codelineno-7-321"></a>- metricSelector: custom.easytaxis.taxi.engine.temperature
+<a id="__codelineno-7-322" name="__codelineno-7-322" href="#__codelineno-7-322"></a>
+<a id="__codelineno-7-323" name="__codelineno-7-323" href="#__codelineno-7-323"></a>
+<a id="__codelineno-7-324" name="__codelineno-7-324" href="#__codelineno-7-324"></a>
+<a id="__codelineno-7-325" name="__codelineno-7-325" href="#__codelineno-7-325"></a>visualizationType: GRAPH_CHART
+<a id="__codelineno-7-326" name="__codelineno-7-326" href="#__codelineno-7-326"></a>
+<a id="__codelineno-7-327" name="__codelineno-7-327" href="#__codelineno-7-327"></a>
+<a id="__codelineno-7-328" name="__codelineno-7-328" href="#__codelineno-7-328"></a>
+<a id="__codelineno-7-329" name="__codelineno-7-329" href="#__codelineno-7-329"></a>- displayName: Speed
+<a id="__codelineno-7-330" name="__codelineno-7-330" href="#__codelineno-7-330"></a>
+<a id="__codelineno-7-331" name="__codelineno-7-331" href="#__codelineno-7-331"></a>
+<a id="__codelineno-7-332" name="__codelineno-7-332" href="#__codelineno-7-332"></a>
+<a id="__codelineno-7-333" name="__codelineno-7-333" href="#__codelineno-7-333"></a>graphChartConfig:
+<a id="__codelineno-7-334" name="__codelineno-7-334" href="#__codelineno-7-334"></a>
+<a id="__codelineno-7-335" name="__codelineno-7-335" href="#__codelineno-7-335"></a>
+<a id="__codelineno-7-336" name="__codelineno-7-336" href="#__codelineno-7-336"></a>
+<a id="__codelineno-7-337" name="__codelineno-7-337" href="#__codelineno-7-337"></a>visualization:
+<a id="__codelineno-7-338" name="__codelineno-7-338" href="#__codelineno-7-338"></a>
+<a id="__codelineno-7-339" name="__codelineno-7-339" href="#__codelineno-7-339"></a>
+<a id="__codelineno-7-340" name="__codelineno-7-340" href="#__codelineno-7-340"></a>
+<a id="__codelineno-7-341" name="__codelineno-7-341" href="#__codelineno-7-341"></a>themeColor: DEFAULT
+<a id="__codelineno-7-342" name="__codelineno-7-342" href="#__codelineno-7-342"></a>
+<a id="__codelineno-7-343" name="__codelineno-7-343" href="#__codelineno-7-343"></a>
+<a id="__codelineno-7-344" name="__codelineno-7-344" href="#__codelineno-7-344"></a>
+<a id="__codelineno-7-345" name="__codelineno-7-345" href="#__codelineno-7-345"></a>seriesType: LINE
+<a id="__codelineno-7-346" name="__codelineno-7-346" href="#__codelineno-7-346"></a>
+<a id="__codelineno-7-347" name="__codelineno-7-347" href="#__codelineno-7-347"></a>
+<a id="__codelineno-7-348" name="__codelineno-7-348" href="#__codelineno-7-348"></a>
+<a id="__codelineno-7-349" name="__codelineno-7-349" href="#__codelineno-7-349"></a>metrics:
+<a id="__codelineno-7-350" name="__codelineno-7-350" href="#__codelineno-7-350"></a>
+<a id="__codelineno-7-351" name="__codelineno-7-351" href="#__codelineno-7-351"></a>
+<a id="__codelineno-7-352" name="__codelineno-7-352" href="#__codelineno-7-352"></a>
+<a id="__codelineno-7-353" name="__codelineno-7-353" href="#__codelineno-7-353"></a>- metricSelector: custom.easytaxis.taxi.speed
+<a id="__codelineno-7-354" name="__codelineno-7-354" href="#__codelineno-7-354"></a>
+<a id="__codelineno-7-355" name="__codelineno-7-355" href="#__codelineno-7-355"></a>
+<a id="__codelineno-7-356" name="__codelineno-7-356" href="#__codelineno-7-356"></a>
+<a id="__codelineno-7-357" name="__codelineno-7-357" href="#__codelineno-7-357"></a>visualizationType: GRAPH_CHART
+<a id="__codelineno-7-358" name="__codelineno-7-358" href="#__codelineno-7-358"></a>
+<a id="__codelineno-7-359" name="__codelineno-7-359" href="#__codelineno-7-359"></a>
+<a id="__codelineno-7-360" name="__codelineno-7-360" href="#__codelineno-7-360"></a>
+<a id="__codelineno-7-361" name="__codelineno-7-361" href="#__codelineno-7-361"></a>- displayName: Days to revision
+<a id="__codelineno-7-362" name="__codelineno-7-362" href="#__codelineno-7-362"></a>
+<a id="__codelineno-7-363" name="__codelineno-7-363" href="#__codelineno-7-363"></a>
+<a id="__codelineno-7-364" name="__codelineno-7-364" href="#__codelineno-7-364"></a>
+<a id="__codelineno-7-365" name="__codelineno-7-365" href="#__codelineno-7-365"></a>graphChartConfig:
+<a id="__codelineno-7-366" name="__codelineno-7-366" href="#__codelineno-7-366"></a>
+<a id="__codelineno-7-367" name="__codelineno-7-367" href="#__codelineno-7-367"></a>
+<a id="__codelineno-7-368" name="__codelineno-7-368" href="#__codelineno-7-368"></a>
+<a id="__codelineno-7-369" name="__codelineno-7-369" href="#__codelineno-7-369"></a>visualization:
+<a id="__codelineno-7-370" name="__codelineno-7-370" href="#__codelineno-7-370"></a>
+<a id="__codelineno-7-371" name="__codelineno-7-371" href="#__codelineno-7-371"></a>
+<a id="__codelineno-7-372" name="__codelineno-7-372" href="#__codelineno-7-372"></a>
+<a id="__codelineno-7-373" name="__codelineno-7-373" href="#__codelineno-7-373"></a>themeColor: DEFAULT
+<a id="__codelineno-7-374" name="__codelineno-7-374" href="#__codelineno-7-374"></a>
+<a id="__codelineno-7-375" name="__codelineno-7-375" href="#__codelineno-7-375"></a>
+<a id="__codelineno-7-376" name="__codelineno-7-376" href="#__codelineno-7-376"></a>
+<a id="__codelineno-7-377" name="__codelineno-7-377" href="#__codelineno-7-377"></a>seriesType: LINE
+<a id="__codelineno-7-378" name="__codelineno-7-378" href="#__codelineno-7-378"></a>
+<a id="__codelineno-7-379" name="__codelineno-7-379" href="#__codelineno-7-379"></a>
+<a id="__codelineno-7-380" name="__codelineno-7-380" href="#__codelineno-7-380"></a>
+<a id="__codelineno-7-381" name="__codelineno-7-381" href="#__codelineno-7-381"></a>metrics:
+<a id="__codelineno-7-382" name="__codelineno-7-382" href="#__codelineno-7-382"></a>
+<a id="__codelineno-7-383" name="__codelineno-7-383" href="#__codelineno-7-383"></a>
+<a id="__codelineno-7-384" name="__codelineno-7-384" href="#__codelineno-7-384"></a>
+<a id="__codelineno-7-385" name="__codelineno-7-385" href="#__codelineno-7-385"></a>- metricSelector: custom.easytaxis.taxi.engine.daystorevision
+<a id="__codelineno-7-386" name="__codelineno-7-386" href="#__codelineno-7-386"></a>
+<a id="__codelineno-7-387" name="__codelineno-7-387" href="#__codelineno-7-387"></a>
+<a id="__codelineno-7-388" name="__codelineno-7-388" href="#__codelineno-7-388"></a>
+<a id="__codelineno-7-389" name="__codelineno-7-389" href="#__codelineno-7-389"></a>visualizationType: GRAPH_CHART
+<a id="__codelineno-7-390" name="__codelineno-7-390" href="#__codelineno-7-390"></a>
+<a id="__codelineno-7-391" name="__codelineno-7-391" href="#__codelineno-7-391"></a>
+<a id="__codelineno-7-392" name="__codelineno-7-392" href="#__codelineno-7-392"></a>
+<a id="__codelineno-7-393" name="__codelineno-7-393" href="#__codelineno-7-393"></a>listSettings:
+<a id="__codelineno-7-394" name="__codelineno-7-394" href="#__codelineno-7-394"></a>
+<a id="__codelineno-7-395" name="__codelineno-7-395" href="#__codelineno-7-395"></a>
+<a id="__codelineno-7-396" name="__codelineno-7-396" href="#__codelineno-7-396"></a>
+<a id="__codelineno-7-397" name="__codelineno-7-397" href="#__codelineno-7-397"></a>staticContent:
+<a id="__codelineno-7-398" name="__codelineno-7-398" href="#__codelineno-7-398"></a>
+<a id="__codelineno-7-399" name="__codelineno-7-399" href="#__codelineno-7-399"></a>
+<a id="__codelineno-7-400" name="__codelineno-7-400" href="#__codelineno-7-400"></a>
+<a id="__codelineno-7-401" name="__codelineno-7-401" href="#__codelineno-7-401"></a>showGlobalFilter: true
+<a id="__codelineno-7-402" name="__codelineno-7-402" href="#__codelineno-7-402"></a>
+<a id="__codelineno-7-403" name="__codelineno-7-403" href="#__codelineno-7-403"></a>
+<a id="__codelineno-7-404" name="__codelineno-7-404" href="#__codelineno-7-404"></a>
+<a id="__codelineno-7-405" name="__codelineno-7-405" href="#__codelineno-7-405"></a>layout:
+<a id="__codelineno-7-406" name="__codelineno-7-406" href="#__codelineno-7-406"></a>
+<a id="__codelineno-7-407" name="__codelineno-7-407" href="#__codelineno-7-407"></a>
+<a id="__codelineno-7-408" name="__codelineno-7-408" href="#__codelineno-7-408"></a>
+<a id="__codelineno-7-409" name="__codelineno-7-409" href="#__codelineno-7-409"></a>autoGenerate: true
+</code></pre></div>
+<ul>
+<li>Для сущности Smart Taxi это определение включает три графика с данными о скорости, температуре двигателя и количестве дней до ревизии.</li>
+</ul>
+<p>Страница сущности Smart Taxi</p>
+<p><img alt="UA page example" src="https://dt-cdn.net/images/screenshot-2023-04-19-at-6-32-21-pm-1061-c102f4ffd1.png" /></p>
+<p>UA page example
+* Для сущности Smart Fleet это определение включает список такси, входящих в данный парк. Каждую сущность такси можно раскрыть и увидеть два графика с данными о скорости и температуре двигателя.</p>
+<p>Страница сущности Smart Fleet</p>
+<p><img alt="Smart fleet example" src="https://dt-cdn.net/images/fleet-1-1455-ccb222479c.png" /></p>
+<p>Smart fleet example</p>
+<p><img alt="Smart fleet expand" src="https://dt-cdn.net/images/fleet-2-1417-2b62cf52f0.png" /></p>
+<p>Smart fleet expand</p>
+<h2 id="_5">Связанные темы<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../../../extensions/concepts/" title="Learn more about the concept of Dynatrace Extensions.">About Extensions</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/groq-chat.js?sha=fb13edae8"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>
