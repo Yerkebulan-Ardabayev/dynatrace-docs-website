@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/basics/access-limit
 # Dynatrace API - Access limit
 
 * Reference
-* Updated on Jan 09, 2026
+* Updated on Sep 03, 2026
 
 Read access to the Dynatrace API is free of charge on a fair use model. You're charged for defining and pushing new custom metrics through the Dynatrace API on a per-metric, per-month basis.
 
@@ -27,7 +27,7 @@ The payload size is limited to 1 MB. Exceptions are:
 * Log Ingestion API [Log Monitoring API](/managed/dynatrace-api/environment-api/log-monitoring-v2 "Find out what you can do with the Log Monitoring API v2.")—the maximum payload size of a single request is 10 MB.
 * OpenTelemetry trace ingest API [Ingestion API](/managed/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.")—the maximum payload size of a single request is 8 MB.
 * OpenTelemetry metrics ingest API [Ingestion API](/managed/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.")—the maximum payload size of a single request is 4 MB.
-* OpenTelemetry logs ingest API [Ingestion API](/managed/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.")—the maximum payload size of a single request is 2 MB.
+* OpenTelemetry logs ingest API [Ingestion API](/managed/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.")—the maximum payload size of a single request is 10 MB.
 
 ## Request throttling
 

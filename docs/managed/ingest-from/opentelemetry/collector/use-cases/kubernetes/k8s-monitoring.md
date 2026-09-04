@@ -1118,7 +1118,7 @@ Configuration validation
 
 Cumulativetodelta processor recommendation
 
-It is recommended to set the `max_staleness` parameter of the [cumulative\_to\_delta processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/processor/cumulativetodeltaprocessor) to a value higher than how often the Collector receives metrics (e.g., how often metrics via OTLP are received, or how long the Prometheus scrape interval is). This ensures that no references to abandoned metric streams accumulate in memory over time.
+We recommend setting the `max_staleness` parameter of the [cumulative\_to\_delta processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/processor/cumulativetodeltaprocessor) to a value higher than how often the Collector receives metrics (for example, how often metrics via OTLP are received, or how long the Prometheus scrape interval is). This ensures that no references to abandoned metric streams accumulate in memory over time.
 
 ## Components
 

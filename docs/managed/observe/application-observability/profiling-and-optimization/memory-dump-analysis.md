@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/application-observability/pro
 
 * How-to guide
 * 5-min read
-* Updated on Jan 19, 2026
+* Updated on Sep 04, 2026
 
 Dynatrace can store and analyze memory dumps for Java, .NET, and Node.js applications.
 
@@ -60,11 +60,12 @@ In the case of Java applications, the download provides the memory dump in [hpro
 
 Node.js memory dumps can be opened in Google Chrome's integrated memory heap snapshot analysis tool.
 
-.NET memory dumps can be opened in [PerfView﻿](https://dt-url.net/fb03syb) or Visual Studio.
+.NET memory dumps can be opened in [PerfView﻿](https://dt-url.net/fb03syb), [dotnet-dump analyze﻿](https://learn.microsoft.com/de-de/dotnet/core/diagnostics/dotnet-dump#dotnet-dump-analyze) or Visual Studio.
 
 ## Limitations
 
 * .NET memory dumps are not supported in Alpine Linux based containers.
+* .NET `.dmp` dumps on Linux are only supported for .NET applications with .NET Core 3.1+ version and the [diagnostic port﻿](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/diagnostic-port) needs to be endabled. The diagnostic port is enabled by default.
 * Memory dump uploads are not supported for both [Kubernetes Application‑only monitoring](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") and [Kubernetes Cloud Native Full Stack monitoring](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes or OpenShift. Covers installation options, package requirements, and prerequisites.").
 
   This is because OneAgent runs in a container with a read‑only filesystem (OneAgent binary directory `/opt/dynatrace/oneagent-paas` is mounted as read‑only), so Dynatrace cannot write the memory dump files it needs. At the same time, the `DATA_STORAGE` installer parameter used to override the dump directory is [not supported in container‑based deployments](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). Therefore, it's not possible to change the dump location to a writable path. As a result, memory dump collection is not possible in Kubernetes environments monitored with Application‑only monitoring or Cloud Native Full Stack.
@@ -101,6 +102,10 @@ Yes. Because from time to time an ActiveGate endpoint might not be accessible to
   + To access the ActiveGate host, use a protocol that allows you to transfer files (such as sFTP or SSH).
   + To download the memory dump file, you need to [learn the location of the file](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage#specify-dedicated-dump-directory "Learn how to enable storage of memory dumps on an ActiveGate.").
   + To be able to identify the memory dump, unzip its file via a protocol that includes a `summary.json` (such as sFTP or SSH).
+
+What is the difference between `.core` and `.dmp` dumps for .NET applications on Linux?
+
+The `.dmp` dumps are generated with the .NET provided tooling, whereas `.core` dumps are generated with the operating system tooling. `.dmp` dumps can be easier to read and are attempted first. A `.core` dump is generated in case of failure.
 
 ## Related topics
 

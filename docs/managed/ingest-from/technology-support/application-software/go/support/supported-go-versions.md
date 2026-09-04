@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/applic
 # Supported Go versions
 
 * 7-min read
-* Updated on Aug 24, 2026
+* Updated on Sep 03, 2026
 
 Whenever a new Go major version is released, Dynatrace adds support for that version. Support for each minor version is
 added too—see [Version matrix](#go-version-matrix) for more details.
@@ -67,10 +67,10 @@ the latest version that may be supported via [external metadata](#external-metad
 | v1.333 | 1.24.0 - 1.24.12 (1.24.13) | 1.25.0 - 1.25.6 (1.25.11) |  |
 | v1.335 | 1.24.0 - 1.24.13 | 1.25.0 - 1.25.7 (1.25.12) | 1.26.0 (1.26.5) |
 | v1.337 | 1.24.0 - 1.24.13 | 1.25.0 - 1.25.8 (1.25.13) | 1.26.0 - 1.26.1 (1.26.6) |
-| v1.339 | 1.24.0 - 1.24.13 | 1.25.0 - 1.25.9 (1.25.14) | 1.26.0 - 1.26.2 (1.26.7) |
-| v1.341 | 1.24.0 - 1.24.13 | 1.25.0 - 1.25.10 (1.25.14) | 1.26.0 - 1.26.3 (1.26.7) |
-| v1.343 | 1.24.0 - 1.24.13 | 1.25.0 - 1.25.11 (1.25.14) | 1.26.0 - 1.26.4 (1.26.7) |
-| v1.345 | 1.24.0 - 1.24.13 | 1.25.0 - 1.25.12 (1.25.14) | 1.26.0 - 1.26.5 (1.26.7) |
+| v1.339 | 1.24.0 - 1.24.13 | 1.25.0 - 1.25.9 (1.25.14) | 1.26.0 - 1.26.2 (1.26.8) |
+| v1.341 | 1.24.0 - 1.24.13 | 1.25.0 - 1.25.10 (1.25.14) | 1.26.0 - 1.26.3 (1.26.8) |
+| v1.343 | 1.24.0 - 1.24.13 | 1.25.0 - 1.25.11 (1.25.14) | 1.26.0 - 1.26.4 (1.26.8) |
+| v1.345 | 1.24.0 - 1.24.13 | 1.25.0 - 1.25.12 (1.25.14) | 1.26.0 - 1.26.5 (1.26.8) |
 
 ### Older versions
 

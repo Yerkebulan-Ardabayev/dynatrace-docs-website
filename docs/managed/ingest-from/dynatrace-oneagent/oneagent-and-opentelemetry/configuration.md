@@ -375,6 +375,7 @@ OneAgent ignores spans according to the ActivitySource name and the span name, a
 | AWSSDK.Lambda\* | 1.341+ |
 | AWSSDK.SNS\* | 1.341+ |
 | AWSSDK.SQS\* | 1.341+ |
+| Azure.Messaging.EventHubs\* | 1.349+ |
 | Experimental.System.Net.\* | 1.339+ |
 | MassTransit | 1.341+ |
 | Microsoft.AspNet\* | 1.339+ |

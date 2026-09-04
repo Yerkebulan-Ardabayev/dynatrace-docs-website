@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/license/capabilities/app-infra-observ
 
 * Explanation
 * 5-min read
-* Updated on Jul 01, 2026
+* Updated on Sep 03, 2026
 
 Dynatrace Foundation & Discovery provides basic host monitoring, including host health, disk status, and OS service status.
 

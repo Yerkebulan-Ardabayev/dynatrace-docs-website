@@ -114,10 +114,6 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
 
 
 
-   use OpenTelemetry\SDK\Common\Time\ClockFactory;
-
-
-
    use OpenTelemetry\SDK\Metrics\MetricReader\ExportingReader;
 
 
@@ -230,11 +226,7 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
 
 
 
-   new MetricExporter((new OtlpHttpTransportFactory())->create($DT_API_URL . '/v1/metrics', 'application/x-protobuf', [ 'Authorization' => 'Api-Token ' . $DT_API_TOKEN ])),
-
-
-
-   ClockFactory::getDefault()
+   new MetricExporter((new OtlpHttpTransportFactory())->create($DT_API_URL . '/v1/metrics', 'application/x-protobuf', [ 'Authorization' => 'Api-Token ' . $DT_API_TOKEN ]))
 
 
 
