@@ -1,5 +1,6 @@
 #!/bin/bash
-# Локальный перевод очереди статей через подписку Claude (claude -p).
+# Локальный перевод очереди статей через Codex по умолчанию.
+# AI_TRANSLATE_PROVIDER=claude сохраняет прежний маршрут как обратимый вариант.
 #
 # Зачем локально, а не в GitHub Actions: headless-вызову нужен OAuth-токен
 # подписки, и держать его в секретах публичного репозитория не хочется, плюс
@@ -132,7 +133,7 @@ while :; do
     fi
 
     git add docs/managed-ru scripts/.change_tracking/hash_registry.json >>"$LOG" 2>&1
-    git commit -m "docs(ru): перевод ${DONE} статей через claude -p ($(date +%Y-%m-%d))" >>"$LOG" 2>&1 \
+    git commit -m "docs(ru): перевод ${DONE} статей через ${AI_TRANSLATE_PROVIDER:-codex} ($(date +%Y-%m-%d))" >>"$LOG" 2>&1 \
         && log "коммит: +${DONE} статей" \
         || log "нечего коммитить"
 

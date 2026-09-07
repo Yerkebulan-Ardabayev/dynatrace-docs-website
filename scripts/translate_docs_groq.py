@@ -4,10 +4,11 @@
 Перевод документации Dynatrace
 
 Порядок провайдеров:
-  1. claude -p  (подписка Claude Code, основной)
-  2. Google Gemini Flash (1500 req/day бесплатно)
-  3. Groq Llama 3.3 70B (100K tokens/day бесплатно)
-  4. OpenRouter (бесплатные модели)
+  1. Codex CLI (подписка ChatGPT, основной)
+  2. Claude Code CLI (опциональный прежний маршрут)
+  3. Google Gemini Flash (1500 req/day бесплатно)
+  4. Groq Llama 3.3 70B (100K tokens/day бесплатно)
+  5. OpenRouter (бесплатные модели)
 
 Каждый следующий включается, только если предыдущий недоступен, поэтому при
 живой подписке переводит она, а бесплатные ключи это запасной вариант.
@@ -26,6 +27,7 @@ import time
 import shutil
 import hashlib
 import subprocess
+import tempfile
 from pathlib import Path
 
 # requests нужен ТОЛЬКО запасным HTTP-провайдерам (Gemini/Groq/OpenRouter).
@@ -75,7 +77,16 @@ GEMINI_API_KEY = GEMINI_API_KEYS[0] if GEMINI_API_KEYS else ''
 GROQ_API_KEY   = os.environ.get('GROQ_API_KEY', '')
 OPENROUTER_API_KEY = os.environ.get('OPENROUTER_API_KEY', '')
 
-# --- claude -p (подписка Claude Code) ---
+# --- основной маршрут через Codex CLI ---
+# AI_TRANSLATE_PROVIDER=claude возвращает прежний маршрут без правки кода.
+AI_TRANSLATE_PROVIDER = os.environ.get('AI_TRANSLATE_PROVIDER', 'codex').strip().lower()
+CODEX_ENABLED = os.environ.get('CODEX_TRANSLATE', '1') != '0'
+CODEX_BIN = os.environ.get('CODEX_BIN', 'codex')
+CODEX_MODEL = os.environ.get('CODEX_TRANSLATE_MODEL', 'gpt-5.6-terra')
+CODEX_REASONING_EFFORT = os.environ.get('CODEX_TRANSLATE_REASONING_EFFORT', 'low')
+CODEX_TIMEOUT = int(os.environ.get('CODEX_TRANSLATE_TIMEOUT', '600'))
+
+# --- прежний маршрут через claude -p (опциональный) ---
 # Авторизация headless-вызова идёт через CLAUDE_CODE_OAUTH_TOKEN (`claude setup-token`).
 # Без токена CLI отвечает "Not logged in", провайдер отдаёт None и включается fallback.
 CLAUDE_ENABLED = os.environ.get('CLAUDE_TRANSLATE', '1') != '0'
@@ -275,7 +286,7 @@ def _paragraphs_keeping_code(text: str) -> list:
     return [p for p in _split_outside_code(text, lambda ln: ln.strip() == '') if p.strip()]
 
 
-CLAUDE_SYSTEM_PROMPT = """Ты профессиональный технический переводчик документации Dynatrace с английского на русский.
+TRANSLATION_SYSTEM_PROMPT = """Ты профессиональный технический переводчик документации Dynatrace с английского на русский.
 Ты работаешь как чистый преобразователь текста: на вход markdown, на выход только его перевод.
 
 ЖЁСТКИЕ ПРАВИЛА:
@@ -293,11 +304,90 @@ _CLAUDE_AUTH_MARKERS  = ('not logged in', 'please run /login', 'invalid api key'
                          'authentication_error', 'oauth token')
 _CLAUDE_LIMIT_MARKERS = ('usage limit', 'limit reached', 'rate limit',
                          'rate_limit_error', 'overloaded')
+_CODEX_AUTH_MARKERS = ('not logged in', 'authentication', 'login required')
+_CODEX_LIMIT_MARKERS = ('usage limit', 'limit reached', 'rate limit', 'resets at')
+
+
+def codex_available() -> bool:
+    """Можно ли вызвать текущий Codex CLI по подписочной авторизации."""
+    return bool(CODEX_ENABLED and shutil.which(CODEX_BIN))
 
 
 def claude_available() -> bool:
     """Есть ли смысл вообще дёргать claude -p (включён и бинарь на месте)."""
     return bool(CLAUDE_ENABLED and shutil.which(CLAUDE_BIN))
+
+
+def primary_available() -> bool:
+    """Доступность выбранного основного подписочного маршрута."""
+    if AI_TRANSLATE_PROVIDER == 'codex':
+        return codex_available()
+    if AI_TRANSLATE_PROVIDER == 'claude':
+        return claude_available()
+    return False
+
+
+def primary_model() -> str:
+    if AI_TRANSLATE_PROVIDER == 'codex':
+        return CODEX_MODEL
+    if AI_TRANSLATE_PROVIDER == 'claude':
+        return CLAUDE_MODEL
+    return 'OFF'
+
+
+def _translation_system_prompt(extra_rules: str) -> str:
+    if not extra_rules:
+        return TRANSLATION_SYSTEM_PROMPT
+    return (
+        f"{TRANSLATION_SYSTEM_PROMPT}\n\n"
+        f"НОРМА ЭТОГО РАЗДЕЛА КОРПУСА (важнее общих правил):\n{extra_rules}"
+    )
+
+
+def translate_via_codex_cli(text: str, extra_rules: str = '') -> str | None:
+    """Перевод через текущий Codex: read-only sandbox, approval=never."""
+    if not codex_available():
+        return None
+
+    prompt = (
+        "<system_instructions>\n"
+        f"{_translation_system_prompt(extra_rules)}\n"
+        "</system_instructions>\n\n"
+        "<task>Переведи на русский:\n\n"
+        f"{text}\n</task>"
+    )
+    try:
+        with tempfile.TemporaryDirectory(prefix='dt-codex-translate-') as temp_dir:
+            output_path = Path(temp_dir) / 'last-message.txt'
+            cmd = [
+                CODEX_BIN, '-a', 'never', '-s', 'read-only', '-m', CODEX_MODEL,
+                '-c', f'model_reasoning_effort="{CODEX_REASONING_EFFORT}"',
+                'exec', '--ephemeral', '--ignore-user-config', '--ignore-rules',
+                '--skip-git-repo-check', '--output-last-message', str(output_path), '-'
+            ]
+            proc = subprocess.run(
+                cmd, input=prompt, capture_output=True, text=True,
+                timeout=CODEX_TIMEOUT, cwd='/tmp',
+            )
+            if proc.returncode == 0 and output_path.exists():
+                out = output_path.read_text(encoding='utf-8').strip()
+                if out:
+                    return out
+            diag = f"{(proc.stdout or '').strip()}\n{(proc.stderr or '').strip()}".lower()
+    except subprocess.TimeoutExpired:
+        print(f"  ⏱️  codex exec: таймаут {CODEX_TIMEOUT}с")
+        return None
+    except Exception as e:
+        print(f"  ❌ codex exec: не удалось запустить ({e})")
+        return None
+
+    if any(marker in diag for marker in _CODEX_AUTH_MARKERS):
+        print("  🔑 codex exec: нет авторизации ChatGPT, перехожу на запасные маршруты")
+    elif any(marker in diag for marker in _CODEX_LIMIT_MARKERS):
+        print("  ⏳ codex exec: лимит подписки, перехожу на запасные маршруты")
+    else:
+        print(f"  ❌ codex exec: rc={proc.returncode} {diag.strip()[:200]}")
+    return None
 
 
 def translate_via_claude_cli(text: str, extra_rules: str = '') -> str | None:
@@ -313,9 +403,7 @@ def translate_via_claude_cli(text: str, extra_rules: str = '') -> str | None:
     if not claude_available():
         return None
 
-    system_prompt = CLAUDE_SYSTEM_PROMPT
-    if extra_rules:
-        system_prompt += f"\n\nНОРМА ЭТОГО РАЗДЕЛА КОРПУСА (важнее общих правил):\n{extra_rules}"
+    system_prompt = _translation_system_prompt(extra_rules)
 
     cmd = [
         CLAUDE_BIN, '-p',
@@ -361,6 +449,16 @@ def translate_via_claude_cli(text: str, extra_rules: str = '') -> str | None:
         print(f"  ❌ claude -p: rc={proc.returncode} {diag.strip()[:200]}")
         return None
 
+    return None
+
+
+def translate_via_primary_cli(text: str, extra_rules: str = '') -> str | None:
+    """Вызывает выбранный основной маршрут, Claude остаётся обратимо доступным."""
+    if AI_TRANSLATE_PROVIDER == 'codex':
+        return translate_via_codex_cli(text, extra_rules)
+    if AI_TRANSLATE_PROVIDER == 'claude':
+        return translate_via_claude_cli(text, extra_rules)
+    print(f"  ⚠️  Неизвестный AI_TRANSLATE_PROVIDER={AI_TRANSLATE_PROVIDER!r}")
     return None
 
 
@@ -596,7 +694,7 @@ def translate_text(text: str, source_file: str, extra_rules: str = '') -> str:
     Переводит текст. Стратегия:
     1. Проверяем кеш
     2. Защищаем brand-термины плейсхолдерами
-    3. Пробуем claude -p по подписке (основной)
+    3. Пробуем выбранный подписочный маршрут (Codex по умолчанию)
     4. Fallback на Gemini Flash (если подписка недоступна)
     5. Fallback на Groq, затем на OpenRouter
     6. Восстанавливаем термины + пост-фикс ошибок
@@ -615,12 +713,12 @@ def translate_text(text: str, source_file: str, extra_rules: str = '') -> str:
 
     translation = None
 
-    # 1. Основной путь — подписка Claude Code
-    if claude_available():
-        print(f"  🤖 Перевод через claude -p ({CLAUDE_MODEL})...")
-        translation = translate_via_claude_cli(protected_text, extra_rules)
+    # 1. Основной путь — выбранная подписка, Codex по умолчанию.
+    if primary_available():
+        print(f"  🤖 Перевод через {AI_TRANSLATE_PROVIDER} ({primary_model()})...")
+        translation = translate_via_primary_cli(protected_text, extra_rules)
         if translation:
-            print(f"  ✅ claude успешно!")
+            print(f"  ✅ {AI_TRANSLATE_PROVIDER} успешно!")
 
     # 2. Fallback на Gemini (бесплатный ключ)
     if translation is None and GEMINI_API_KEY:

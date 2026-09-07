@@ -24,7 +24,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from translate_docs_groq import (
     translate_text, split_into_chunks, post_fix_known_errors,
     cache, CACHE_FILE, MAX_CHUNK_CHARS,
-    claude_available, CLAUDE_MODEL, forget_translation,
+    primary_available, primary_model, AI_TRANSLATE_PROVIDER, forget_translation,
     GEMINI_API_KEY, GROQ_API_KEY, OPENROUTER_API_KEY,
 )
 # Реестр хэшей ведём здесь: запись «RU сделан от этого EN» имеет право появиться
@@ -319,10 +319,10 @@ def main():
 
     report = json.load(open(report_path, "r", encoding="utf-8"))
 
-    # Есть ли хоть один рабочий провайдер: подписка Claude или запасной ключ
-    has_api = claude_available() or GEMINI_API_KEY or GROQ_API_KEY or OPENROUTER_API_KEY
+    # Есть ли хоть один рабочий провайдер: выбранная подписка или запасной ключ.
+    has_api = primary_available() or GEMINI_API_KEY or GROQ_API_KEY or OPENROUTER_API_KEY
     if not has_api:
-        print("WARNING: нет ни claude CLI, ни ключей "
+        print("WARNING: нет выбранного AI CLI и ключей "
               "(GEMINI_API_KEY, GROQ_API_KEY, OPENROUTER_API_KEY)")
         print("Translation skipped.")
         json.dump({"translated_count": 0, "skipped": "no_api_keys"},
@@ -340,7 +340,7 @@ def main():
     articles = articles[:max_articles]
 
     print(f"Translating {len(articles)} articles...")
-    print(f"Провайдеры: claude={CLAUDE_MODEL if claude_available() else 'OFF'}"
+    print(f"Провайдеры: primary={AI_TRANSLATE_PROVIDER}:{primary_model() if primary_available() else 'OFF'}"
           f" | Gemini={'ON' if GEMINI_API_KEY else 'OFF'}"
           f" | Groq={'ON' if GROQ_API_KEY else 'OFF'}"
           f" | OpenRouter={'ON' if OPENROUTER_API_KEY else 'OFF'}")
