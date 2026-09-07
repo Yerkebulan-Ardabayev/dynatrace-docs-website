@@ -26,7 +26,7 @@ Version 11 is an LTS and its support is currently open-ended.
 | 26 | 2026-03-17 | - | 1.335 | - | - | Supported |
 | 25 LTS | 2025-09-16 | - | 1.321 | - | - | Supported |
 | 24 | 2025-03-18 | - | 1.309 | - | - | Supported |
-| 23 | 2024-09-17 | - | 1.299 | - | - | Supported |
+| 23 | 2024-09-17 | - | 1.299 | 1.345 | - | Supported |
 | 21 LTS | 2023-09-19 | - | 1.275 | - | - | Supported |
 | 17 LTS | 2021-09-30 | - | 1.225 | - | - | Supported |
 | 11 LTS | 2018-09-30 | 2023-09-30 | 1.155 | - | - | Supported |
@@ -47,10 +47,11 @@ Version 11 is an LTS and its support is currently open-ended.
 
 | Java version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/managed/ingest-from/technology-support#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
+| 27 | 2026-09-15 | - | 1.347 | - | - | Not supported |
 | 26 | 2026-03-17 | - | 1.335 | - | - | Supported |
 | 25 LTS | 2025-09-16 | - | 1.321 | - | - | Supported |
 | 24 | 2025-03-18 | - | 1.309 | - | - | Supported |
-| 23 | 2024-09-17 | - | 1.299 | - | - | Supported |
+| 23 | 2024-09-17 | - | 1.299 | 1.345 | - | Supported |
 | 22 | - | - | 1.285 | 1.333 | 2026-05-31 | Not supported |
 | 21 LTS | 2023-09-19 | - | 1.275 | - | - | Supported |
 | 20 | 2023-03-20 | - | 1.263 | 1.307 | 2025-03-11 | Not supported |
@@ -85,7 +86,7 @@ Dynatrace currently provides open-ended support for versions 7 and 8.
 | 26 | - | - | 1.335 | - | - | Supported |
 | 25 LTS | 2025-09-16 | - | 1.321 | - | - | Supported |
 | 24 | 2025-03-18 | - | 1.309 | - | - | Supported |
-| 23 | 2024-09-18 | - | 1.299 | - | - | Supported |
+| 23 | 2024-09-18 | - | 1.299 | 1.345 | - | Supported |
 | 21 LTS | 2023-09-19 | - | 1.275 | - | - | Supported |
 | 17 LTS | - | - | 1.225 | - | - | Supported |
 | 11 LTS | - | - | 1.199 | - | - | Supported |
@@ -130,7 +131,7 @@ The [Amazon Corretto﻿](https://aws.amazon.com/corretto/) JVM is based on OpenJ
 | 26 | - | - | 1.335 | - | - | Supported |
 | 25 LTS | 2025-09-16 | - | 1.321 | - | - | Supported |
 | 24 | 2025-03-18 | - | 1.309 | - | - | Supported |
-| 23 | 2024-09-17 | - | 1.299 | - | - | Supported |
+| 23 | 2024-09-17 | - | 1.299 | 1.345 | - | Supported |
 | 21 LTS | 2023-09-19 | - | 1.275 | - | - | Supported |
 | 17 LTS | 2021-09-14 | - | 1.225 | - | - | Supported |
 | 11 LTS | 2019-02-12 | 2024-08-31 | 1.165 | - | - | Supported |
@@ -162,7 +163,7 @@ Azul has its own [support timeline﻿](https://www.azul.com/products/azul_suppor
 | 26 | - | - | 1.335 | - | - | Supported |
 | 25 LTS | 2025-09-16 | - | 1.321 | - | - | Supported |
 | 24 | 2025-03-18 | - | 1.309 | - | - | Supported |
-| 23 | 2024-09-17 | - | 1.299 | - | - | Supported |
+| 23 | 2024-09-17 | - | 1.299 | 1.345 | - | Supported |
 | 21 LTS | 2023-09-19 | - | 1.275 | - | - | Supported |
 | 17 LTS | 2021-09-13 | 2030-09-30 | 1.225 | - | - | Supported |
 | 11 LTS | 2018-09-30 | 2027-09-30 | 1.173 | - | - | Supported |

@@ -31,7 +31,18 @@ This API only works with Log Monitoring Classic.
 
 To execute this request, you need an access token with `logs.read` scope.
 
+One of the following permissions is required for personal access tokens:
+
+* `environment:roles:logviewer`
+* `storage:logs:read`
+
 To learn how to obtain and use it, see [Personal access tokens](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+
+### Platform Token / OAuth:
+
+Required scope: `storage:logs:read`
+
+To learn how to obtain and use it, see [Platform tokens﻿](https://docs.dynatrace.com/docs/shortlink/platform-tokens) or [OAuth clients﻿](https://docs.dynatrace.com/docs/shortlink/oauth).
 
 ## Parameters
 

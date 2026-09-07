@@ -44,6 +44,10 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `DataExport` scope.
 
+One of the following permissions is required for personal access tokens:
+
+* `environment:roles:viewer`
+
 To learn how to obtain and use it, see [Personal access tokens](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Response

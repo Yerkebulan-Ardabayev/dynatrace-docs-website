@@ -218,7 +218,7 @@ A credentials set of the `USERNAME_PASSWORD` type.
 | --- | --- | --- |
 | externalVault | [ExternalVault](#openapi-definition-ExternalVault) | Information for synchronization credentials with external vault |
 | password | string | The password of the credential. |
-| user | string | The username of the credentials set. |
+| user | string | The username of the credentials set. Must not contain any ":" character. |
 
 #### The `ExternalVault` object
 

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-ana
 
 * Explanation
 * 11-min read
-* Updated on Jul 21, 2026
+* Updated on Sep 04, 2026
 
 As dynamic systems architectures increase in complexity and scale, IT teams face mounting pressure to quickly detect and react to business-critical incidents across their multi-cloud environments. Incidents might affect one or more IT components, ultimately leading to large-scale outages that take down critical business services and applications. Such services and applications (for example, accounting systems or web shops) consist of many different components that depend on each other to work reliably and to deliver excellent user experience. If a critical component fails, the ripple effect negatively influences many other dependent components, triggering a large-scale incident.
 
@@ -107,7 +107,7 @@ The following shows how two individual Davis events are analyzed within one prob
 * Each Davis event comes with its own start and end timestamps.
 * Each Davis event producer uses various observation sliding time windows, which we call event analysis time (shown in yellow).
 
-![Problem timing](https://cdn.bfldr.com/B686QPH3/as/ws7g4rtr6m66rv9x24qq3jr8/Root_cause_analysis_concepts-Problem_timing-Light_Mode?auto=webp&format=png&position=1)
+![Problem timing](https://dt-cdn.net/images/problem-lifecycle-cut-reopen-9541a2f43b.svg)
 
 Problem timing
 
@@ -115,7 +115,6 @@ Consider an example of a metric Davis event configured to use a five-minute slid
 
 * The **event start analysis timestamp** is the earliest point in time when the violating state was observed.
 * The **event end analysis timestamp** is the point in time after all necessary violation samples are collected and a problem is opened.
-* Because each Davis event involved in the problem uses a sliding window, each problem has a trailing period during which a closed problem might be reopened. This is called the **reopening period**, and its maximum length is 30 minutes.
 * If a problem remains open for longer than 90 minutes, no new events are merged into it after the 90-minute point. This prevents Dynatrace Intelligence causal AI from collecting unrelated information for long-lasting incidents (for example, a synthetic test constantly failing and keeping problems open for weeks).
 
 #### Summary of the problem lifecycle timings:
@@ -124,7 +123,7 @@ Consider an example of a metric Davis event configured to use a five-minute slid
 * A problem is raised at the **event end analysis timestamp**.
 * A problem lifespan is defined by the lifespans of individual Davis events in the problem.
 * A problem is closed when all Davis events in the problem are closed, or when you close the problem manually.
-* A closed problem can be reopened during a reopening period of 30 minutes.
+* A closed problem is never reopened. New related active events create a new problem instead.
 * If a problem lasts for longer than 90 minutes, no new Davis events will be merged after the 90-minute point—a new problem will be raised instead.
 * If the time gap between creation (start timestamp) of the first Davis events is longer than 5 minutes, the Davis events won't be merged into the same problem. Instead, they will be identified as two different problems.
 

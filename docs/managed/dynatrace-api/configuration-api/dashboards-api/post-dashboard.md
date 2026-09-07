@@ -517,6 +517,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | --- | --- | --- |
 | **201** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation) | Success. The new dashboard has been created. The response body contains the generated ID. |
 | **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Failed. The input is invalid |
+| **403** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Failed. Only admin users can modify dashboards containing remote environment tiles. |
 
 ### Response body objects
 

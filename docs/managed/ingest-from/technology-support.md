@@ -625,7 +625,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | Hessian Web Services | 2.1, 3.1, 4.0 |
 | JAX-WS | 2 |
 | [JBoss RESTEasy﻿](https://resteasy.dev/) | 3, 4, 5, 6, 7 |
-| JBossWS (Wildfly) | 4[1](#fn-web-services-1-def), 5[2](#fn-web-services-2-def) |
+| JBossWS (Wildfly) | 4[1](#fn-web-services-1-def), 5[2](#fn-web-services-2-def), 6[3](#fn-web-services-3-def) |
 | Jakarta RESTful Web Services | 2.1+ |
 | Jersey | 1, 2, 3 |
 | Play WS API | 2.2 - 2.4 |
@@ -639,6 +639,10 @@ Wildfly 8
 2
 
 Wildfly 8,9,10
+
+3
+
+Wildfly 27 - 33
 
 | Database frameworks | Versions |
 | --- | --- |
@@ -672,7 +676,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | [IBM MQ client﻿](https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_9.1.0/com.ibm.mq.dev.doc/q118320_.htm) | 8[1](#fn-messaging-clients-1-def), 9[1](#fn-messaging-clients-1-def) |
 | JMS | 1.1[1](#fn-messaging-clients-1-def), 2.0[1](#fn-messaging-clients-1-def), 3.0[1](#fn-messaging-clients-1-def) |
 | [Kafka﻿](https://kafka.apache.org/documentation/) | 1.0 - 1.1[1](#fn-messaging-clients-1-def), 2.0 - 2.3[1](#fn-messaging-clients-1-def), 2.4 - 2.7[1](#fn-messaging-clients-1-def), 2.8[1](#fn-messaging-clients-1-def), 3.0 - 3.6[1](#fn-messaging-clients-1-def), 3.7 - 3.9[1](#fn-messaging-clients-1-def), 4.0 - 4.3[1](#fn-messaging-clients-1-def) |
-| [RabbitMQ﻿](https://www.rabbitmq.com/java-client.html) | 3[1](#fn-messaging-clients-1-def), 4.0.0 - 5.22.0[1](#fn-messaging-clients-1-def) |
+| [RabbitMQ﻿](https://www.rabbitmq.com/java-client.html) | 3[1](#fn-messaging-clients-1-def), 4.0.0 - 5.30.0[1](#fn-messaging-clients-1-def) |
 | Software AG WebMethod Broker and Universal messaging via JMS | All versions supported |
 | [Spring AMQP﻿](https://spring.io/projects/spring-amqp) | 1.5, 2.0, 2.1, 2.2, 2.3 |
 | Spring Cloud Stream Kafka Binder | 3+ |
@@ -713,7 +717,7 @@ Tracing is only supported via JMS.
 | WebLogic RMI-IIOP | All versions supported[5](#fn-remoting-frameworks-5-def) |
 | WebSphere Liberty RMI-IIOP | All versions supported |
 | WebSphere RMI-IIOP | All versions supported |
-| [gRPC﻿](https://grpc.github.io/grpc-java/javadoc/index.html) | 1.18 - 1.81[4](#fn-remoting-frameworks-4-def) |
+| [gRPC﻿](https://grpc.github.io/grpc-java/javadoc/index.html) | 1.18 - 1.84[4](#fn-remoting-frameworks-4-def) |
 
 1
 
