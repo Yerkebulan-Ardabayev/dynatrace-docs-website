@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/u
 
 * How-to guide
 * 2-min read
-* Updated on Jul 20, 2026
+* Updated on Aug 31, 2026
 
 OpenTelemetry Host Monitoring is a Dynatrace feature that transforms raw telemetry data from OTel Collectors into actionable insights.
 Rather than simply ingesting metrics, logs, and traces, Dynatrace automatically builds meaningful context around your infrastructure.
@@ -28,7 +28,7 @@ This use case and its reference configuration are designed primarily for VMs and
 
 This use case assumes that you have:
 
-* One of the following Collector distributions with the [`hostmetrics`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/receiver/hostmetricsreceiver) and [`journald`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/receiver/journaldreceiver) receivers, and the [`resource_detection`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/processor/resourcedetectionprocessor), [`filter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/processor/filterprocessor), and [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/processor/transformprocessor) processors.
+* One of the following Collector distributions with the [`hostmetrics`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/receiver/hostmetricsreceiver), [`journald`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/receiver/journaldreceiver), and [`otlp`﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.160.0/receiver/otlpreceiver) receivers, and the [`resource_detection`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/resourcedetectionprocessor), [`filter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/filterprocessor), and [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/transformprocessor) processors.
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OTel Collector Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -50,12 +50,13 @@ For our configuration, we configured the following components that are specific 
 
 Under `receivers`, we specify the following receivers:
 
-* [`hostmetrics`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/receiver/hostmetricsreceiver)
-* [`journald`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/receiver/journaldreceiver)
+* [`hostmetrics`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/receiver/hostmetricsreceiver)
+* [`journald`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/receiver/journaldreceiver)
+* [`otlp`﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.160.0/receiver/otlpreceiver)
 
 #### hostmetrics
 
-The [`hostmetrics` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/receiver/hostmetricsreceiver) collects host-level metrics.
+The [`hostmetrics` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/receiver/hostmetricsreceiver) collects host-level metrics.
 It is configured with three collection intervals: 10 seconds, 5 minutes, and 1 hour.
 
 * Use short intervals for the most important metrics to ensure that Dynatrace provides fast alerts for important changes.
@@ -63,8 +64,8 @@ It is configured with three collection intervals: 10 seconds, 5 minutes, and 1 h
 
 #### journald
 
-The [`journald` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/receiver/journaldreceiver) collects systemd journal logs from the host and ingests them into the logs pipeline alongside your metrics.
-It is configured to read from `/var/log/journal` (the default persistent journal path on Linux hosts) and applies `move` operators to rename journal fields to OpenTelemetry semantic conventions.
+The [`journald` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/receiver/journaldreceiver) collects systemd journal logs from the host and ingests them into the logs pipeline alongside your metrics.
+It is configured to read from `/run/log/journal` and applies `move` operators to rename journal fields to OpenTelemetry semantic conventions.
 
 * `body._PID` is renamed to `body.pid`
 * `body._EXE` is renamed to `attributes["process.executable.name"]`
@@ -79,22 +80,96 @@ On Linux hosts, add the user running the Collector to the `systemd-journal` grou
 
 For full details, see [Use journald to ingest systemd journal logs with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/journald "Configure the OpenTelemetry Collector to ingest systemd journal logs from Linux hosts into Dynatrace.").
 
+#### otlp
+
+The [`otlp` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.160.0/receiver/otlpreceiver) accepts OTLP over gRPC on port `4317` and over HTTP on port `4318`.
+
+In this configuration it is wired into the logs pipeline only, so that application logs sent to the local host Collector are enriched with the host attributes before they are ingested.
+Application metrics and spans are not part of this use case.
+
 ### Processors
 
-Under `processors`, we specify the following processors:
+Under `processors`, we specify the following processors.
+All of them are required, and the order in which they are listed in a pipeline is significant—see [Service pipelines](#service-pipelines).
 
-* [`resource_detection` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/processor/resourcedetectionprocessor), which can be used to detect resource information from the host, in a format that conforms to the OpenTelemetry resource semantic conventions, and append or override the resource value in telemetry data with this information.
-* [`filter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/processor/filterprocessor) is used twice: once to clean up unnecessary metrics dimensions, and secondly to (optionally) filter out unneeded process metrics.
-* [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/processor/transformprocessor).
+* [`resource_detection`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/resourcedetectionprocessor) detects resource information from the host in a format that conforms to the OpenTelemetry resource semantic conventions, and appends it to the telemetry data.
+  This is what adds `host.id`, `host.name`, and the other host attributes that entity extraction depends on.
+  Without it, no host or process entity is created.
+* [`filter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/filterprocessor) is used twice: once to clean up unnecessary metrics dimensions, and secondly to (optionally) filter out unneeded process metrics.
+* [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/transformprocessor) reshapes the scraped metrics.
+  Among other things, it converts `host.ip` from an array to a single value, which the attributes added by `resource_detection` are needed for.
+* [`cumulative_to_delta`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/cumulativetodeltaprocessor) converts the cumulative counters emitted by `hostmetrics` into delta temporality.
+  Dynatrace does not ingest cumulative counters, so without this processor every counter metric in this configuration is discarded.
 
 ### Exporters
 
-Under `exporters`, we specify the [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.158.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.160.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 
 * `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`).
 * `DT_API_TOKEN` contains the [API token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+
+### Service pipelines
+
+Under `service`, we assemble the receivers, processors, and exporter into two pipelines.
+
+```
+service:
+
+
+
+pipelines:
+
+
+
+metrics:
+
+
+
+receivers: [hostmetrics/10s, hostmetrics/5m, hostmetrics/1h]
+
+
+
+processors: [filter, resource_detection, transform, filter/delete-metrics, cumulative_to_delta]
+
+
+
+exporters: [otlp_http]
+
+
+
+logs:
+
+
+
+receivers: [otlp, journald]
+
+
+
+processors: [resource_detection]
+
+
+
+exporters: [otlp_http]
+```
+
+The **metrics** pipeline carries host and process metrics from the three `hostmetrics` receivers.
+The **logs** pipeline carries host logs from `journald` and application logs received over OTLP.
+There is no traces pipeline.
+
+Processors run in the order in which they are listed, and each step in the metrics pipeline depends on the one before it.
+
+* `filter` runs first, so that the CPU datapoints it discards are gone before `transform` aggregates the remainder.
+* `resource_detection` runs before `transform`, because `transform` reads the host attributes that `resource_detection` adds.
+* `transform` runs before `filter/delete-metrics`, because it sets the marker attribute that `filter/delete-metrics` selects on.
+* `cumulative_to_delta` runs last, once the set of metrics to be exported is final.
+
+Reordering these processors does not produce a configuration error: it produces incorrect or missing data.
+So, keep the order as given.
+
+`resource_detection` is what attaches the host attributes, and it only applies to the pipelines that list it.
+Telemetry that reaches the Collector through a pipeline without `resource_detection` is exported without host attributes and is not attached to the OpenTelemetry host entity.
 
 ## How-to
 
@@ -124,7 +199,10 @@ If you use a custom Collector configuration that differs from the reference conf
 
 ### Enrich application telemetry
 
-If you send your application telemetry to your local host Collector, it will automatically enrich the data with the required host attributes so that the signals are correctly attached to the OpenTelemetry host entity.
+If you send your application logs to your local host Collector, the reference configuration enriches them with the required host attributes so that they are correctly attached to the OpenTelemetry host entity.
+This applies to logs only; the reference configuration doesn't accept application metrics or spans over OTLP.
+If you extend it with additional service pipelines for metrics or spans, add `resource_detection` to those pipelines as well to enrich them with the same host attributes.
+See [Service pipelines](#service-pipelines).
 
 To enrich application telemetry with the corresponding process entity, all signals (metrics, logs, and spans) need to have the `process.executable.name` resource attribute.
 For logs and spans to have this attribute, you need to initialize your OTel SDK with the [process resource detector﻿](https://opentelemetry.io/docs/languages/go/resources/).
@@ -239,7 +317,7 @@ The following table shows common overlapping metrics:
 | `system.filesystem.*` | `k8s.node.filesystem.*` | Node filesystem usage |
 | `system.network.*` | `k8s.node.network.*` | Node network I/O |
 
-This overlapp occurs because the Kubernetes monitoring use case uses the [`kubelet_stats` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.158.0/receiver/kubeletstatsreceiver), which reports node-level resource metrics that represent the same underlying data as the `hostmetrics` receiver.
+This overlapp occurs because the Kubernetes monitoring use case uses the [`kubelet_stats` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/receiver/kubeletstatsreceiver), which reports node-level resource metrics that represent the same underlying data as the `hostmetrics` receiver.
 
 To avoid unnecessary duplication on Kubernetes, use only Kubernetes monitoring or only OTel host monitoring, if possible:
 

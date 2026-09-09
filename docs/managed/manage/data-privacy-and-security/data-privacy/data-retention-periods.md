@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/data-privacy-and-security/data
 
 * Reference
 * 7-min read
-* Updated on Jun 16, 2026
+* Updated on Sep 03, 2026
 
 Dynatrace retains different types of monitored data from your environments. The Dynatrace Managed Cluster keeps the monitoring data. The following table shows the general retention periods for service data, Real User Monitoring Classic (RUM Classic), synthetic monitors, Log Monitoring, and metric time series data.
 
@@ -26,9 +26,9 @@ For active Dynatrace accounts, the following retention periods are set by defaul
 | [Distributed traces](#distributed-traces) | Configurable, with maximum `365 days` of retention time |
 | [Services: Requests and request attributes](#request-attributes) | Configurable, with maximum `365 days` of retention time |
 | [RUM Classic: User action data](#rum-aggregated) | Configurable, with maximum `365 days` of retention time |
-| [RUM Classic: User sessions](#rum-user-session) | `35 days` |
+| [RUM Classic: User sessions](#rum-user-session) | Configurable, with maximum `90 days` of retention time, default is `35 days` |
 | [RUM Classic: Mobile crashes](#rum-mobile-crashes) | `35 days` |
-| [RUM Classic: Session Replay](#rum-session-replay) | Configurable, with maximum `35 days` of retention time |
+| [RUM Classic: Session Replay](#rum-session-replay) | Configurable, with maximum `90 days` of retention time |
 | Synthetic | Configurable, with maximum `365 days` of retention time |
 | [Log Monitoring](#log-monitoring) | Configurable, with maximum `90 days` of retention time |
 | [Metrics](#metrics-classic) | `5 years` |
@@ -75,9 +75,11 @@ Transaction store at `DATASTORE_PATH/tenantData` keeps the data. Dynatrace doesn
 
 ## RUM Classic: User sessions
 
-User session data, including Session Replay, is stored for 35 days. Waterfall analysis and JavaScript error data is stored with [distributed trace code-level insights and errors](#purepath).
+User session data retention is configurable 1–90 days, with a default of 35 days. Set the retention per environment in **Cluster Management Console** > **Environments** > **Storage settings**. Session Replay retention cannot exceed the User Session retention setting. Waterfall analysis and JavaScript error data is stored with [distributed trace code-level insights and errors](#purepath).
 
 Data is stored in Elasticsearch store at `DATASTORE_PATH/elasticsearch`. Data is replicated across Managed Cluster nodes. Replication factor is set to three.
+
+Depending on the number and size of Managed Cluster nodes and the selected retention times, only a certain number of environments can use custom User Session and Session Replay retention. The system reports when no more custom retention settings are possible based on the predicted current usage.
 
 ## RUM Classic: Mobile crashes
 
@@ -96,6 +98,8 @@ Total crash count in the crash statistics page
 Data is stored in Elasticsearch store at `DATASTORE_PATH/elasticsearch`. Data is replicated across Managed Cluster nodes. Replication factor is set to three.
 
 ## RUM Classic: Session Replay
+
+Session Replay data retention is configurable 1–90 days and cannot exceed the User Session retention setting.
 
 Minimum size of required Session Replay storage volume is entirely load-dependent. A maximum size isn't required.
 

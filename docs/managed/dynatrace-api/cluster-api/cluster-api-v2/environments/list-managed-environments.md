@@ -181,13 +181,14 @@ Environment level storage usage and limit information. Not returned if includeSt
 | rumNonAggregatedDataRetention | [RumNonAggregatedDataRetention](#openapi-definition-RumNonAggregatedDataRetention) | Non-aggregated RUM data retention settings on environment level. Can be set to any value from 1 to 365 days. If skipped when editing via PUT method then already set limit will remain. |
 | serviceCodeLevelRetention | [ServiceCodeLevelRetention](#openapi-definition-ServiceCodeLevelRetention) | Service code level retention settings on environment level. Service code level retention time can't be greater than service request level retention time and both can't exceed one year.If skipped when editing via PUT method then already set limit will remain. |
 | serviceRequestLevelRetention | [ServiceRequestLevelRetention](#openapi-definition-ServiceRequestLevelRetention) | Service request level retention settings on environment level. Service code level retention time can't be greater than service request level retention time and both can't exceed one year.If skipped when editing via PUT method then already set limit will remain. |
-| sessionReplayRetention | [SessionReplayRetention](#openapi-definition-SessionReplayRetention) | Session replay retention settings on environment level. Can be set to any value from 1 to 35 days. If skipped when editing via PUT method then already set limit will remain. |
+| sessionReplayRetention | [SessionReplayRetention](#openapi-definition-SessionReplayRetention) | Session replay retention settings on environment level. Can be set to any value from 1 to 90 days. Must not exceed the User Session retention (userSessionRetention). If skipped when editing via PUT method then already set limit will remain. |
 | sessionReplayStorage | [SessionReplayStorage](#openapi-definition-SessionReplayStorage) | Session replay storage usage and limit information on environment level. If skipped when editing via PUT method then already set limit will remain. |
 | symbolFilesFromMobileApps | [SymbolFilesFromMobileApps](#openapi-definition-SymbolFilesFromMobileApps) | Symbol files from mobile apps storage usage and limit information on environment level. If skipped when editing via PUT method then already set limit will remain. |
 | syntheticMonitoringRetention | [SyntheticMonitoringRetention](#openapi-definition-SyntheticMonitoringRetention) | Synthetic monitoring retention settings on environment level. Can be set to any value from 1 to 35 days. If skipped when editing via PUT method then already set limit will remain. |
 | transactionStorage | [TransactionStorage](#openapi-definition-TransactionStorage) | Transaction storage usage and limit information on environment level. If skipped when editing via PUT method then already set limit will remain. |
 | transactionTrafficQuota | [TransactionTrafficQuota](#openapi-definition-TransactionTrafficQuota) | Maximum number of newly monitored entry point PurePaths captured per process/minute on environment level. Can be set to any value from 100 to 100000. If skipped when editing via PUT method then already set limit will remain. |
 | userActionsPerMinute | [UserActionsPerMinute](#openapi-definition-UserActionsPerMinute) | Maximum number of user actions generated per minute on environment level. Can be set to any value from 1 to 2147483646 or left unlimited. If skipped when editing via PUT method then already set limit will remain. |
+| userSessionRetention | [UserSessionRetention](#openapi-definition-UserSessionRetention) | RUM user session retention settings on environment level. Can be set to any value from 1 to 90 days. If skipped when editing via PUT method then already set limit will remain. |
 
 #### The `RealUserMonitoringRetention` object
 
@@ -231,7 +232,7 @@ Service request level retention settings on environment level. Service code leve
 
 #### The `SessionReplayRetention` object
 
-Session replay retention settings on environment level. Can be set to any value from 1 to 35 days. If skipped when editing via PUT method then already set limit will remain.
+Session replay retention settings on environment level. Can be set to any value from 1 to 90 days. Must not exceed the User Session retention (userSessionRetention). If skipped when editing via PUT method then already set limit will remain.
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -295,6 +296,16 @@ Maximum number of user actions generated per minute on environment level. Can be
 | Element | Type | Description |
 | --- | --- | --- |
 | maxLimit | integer | Maximum traffic [units per minute] |
+
+#### The `UserSessionRetention` object
+
+RUM user session retention settings on environment level. Can be set to any value from 1 to 90 days. If skipped when editing via PUT method then already set limit will remain.
+
+| Element | Type | Description |
+| --- | --- | --- |
+| currentlyUsedInDays | integer | Current data age [days] |
+| currentlyUsedInMillis | integer | Current data age [milliseconds] |
+| maxLimitInDays | integer | Maximum retention limit [days] |
 
 ### Response body JSON models
 

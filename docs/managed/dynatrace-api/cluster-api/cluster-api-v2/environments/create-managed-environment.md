@@ -7,7 +7,8 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api
 
 # Create a new environment
 
-* Published Mar 09, 2021
+* 1-min read
+* Updated on Sep 03, 2026
 
 This API call creates a new environment.
 
@@ -156,13 +157,14 @@ Environment level storage usage and limit information. Not returned if includeSt
 | rumNonAggregatedDataRetention | [RumNonAggregatedDataRetention](#openapi-definition-RumNonAggregatedDataRetention) | Non-aggregated RUM data retention settings on environment level. Can be set to any value from 1 to 365 days. If skipped when editing via PUT method then already set limit will remain. | Optional |
 | serviceCodeLevelRetention | [ServiceCodeLevelRetention](#openapi-definition-ServiceCodeLevelRetention) | Service code level retention settings on environment level. Service code level retention time can't be greater than service request level retention time and both can't exceed one year.If skipped when editing via PUT method then already set limit will remain. | Optional |
 | serviceRequestLevelRetention | [ServiceRequestLevelRetention](#openapi-definition-ServiceRequestLevelRetention) | Service request level retention settings on environment level. Service code level retention time can't be greater than service request level retention time and both can't exceed one year.If skipped when editing via PUT method then already set limit will remain. | Optional |
-| sessionReplayRetention | [SessionReplayRetention](#openapi-definition-SessionReplayRetention) | Session replay retention settings on environment level. Can be set to any value from 1 to 35 days. If skipped when editing via PUT method then already set limit will remain. | Optional |
+| sessionReplayRetention | [SessionReplayRetention](#openapi-definition-SessionReplayRetention) | Session replay retention settings on environment level. Can be set to any value from 1 to 90 days. Must not exceed the User Session retention (userSessionRetention). If skipped when editing via PUT method then already set limit will remain. | Optional |
 | sessionReplayStorage | [SessionReplayStorage](#openapi-definition-SessionReplayStorage) | Session replay storage usage and limit information on environment level. If skipped when editing via PUT method then already set limit will remain. | Optional |
 | symbolFilesFromMobileApps | [SymbolFilesFromMobileApps](#openapi-definition-SymbolFilesFromMobileApps) | Symbol files from mobile apps storage usage and limit information on environment level. If skipped when editing via PUT method then already set limit will remain. | Optional |
 | syntheticMonitoringRetention | [SyntheticMonitoringRetention](#openapi-definition-SyntheticMonitoringRetention) | Synthetic monitoring retention settings on environment level. Can be set to any value from 1 to 35 days. If skipped when editing via PUT method then already set limit will remain. | Optional |
 | transactionStorage | [TransactionStorage](#openapi-definition-TransactionStorage) | Transaction storage usage and limit information on environment level. If skipped when editing via PUT method then already set limit will remain. | Optional |
 | transactionTrafficQuota | [TransactionTrafficQuota](#openapi-definition-TransactionTrafficQuota) | Maximum number of newly monitored entry point PurePaths captured per process/minute on environment level. Can be set to any value from 100 to 100000. If skipped when editing via PUT method then already set limit will remain. | Optional |
 | userActionsPerMinute | [UserActionsPerMinute](#openapi-definition-UserActionsPerMinute) | Maximum number of user actions generated per minute on environment level. Can be set to any value from 1 to 2147483646 or left unlimited. If skipped when editing via PUT method then already set limit will remain. | Optional |
+| userSessionRetention | [UserSessionRetention](#openapi-definition-UserSessionRetention) | RUM user session retention settings on environment level. Can be set to any value from 1 to 90 days. If skipped when editing via PUT method then already set limit will remain. | Optional |
 
 #### The `RealUserMonitoringRetention` object
 
@@ -206,7 +208,7 @@ Service request level retention settings on environment level. Service code leve
 
 #### The `SessionReplayRetention` object
 
-Session replay retention settings on environment level. Can be set to any value from 1 to 35 days. If skipped when editing via PUT method then already set limit will remain.
+Session replay retention settings on environment level. Can be set to any value from 1 to 90 days. Must not exceed the User Session retention (userSessionRetention). If skipped when editing via PUT method then already set limit will remain.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -270,6 +272,16 @@ Maximum number of user actions generated per minute on environment level. Can be
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | maxLimit | integer | Maximum traffic [units per minute] | Optional |
+
+#### The `UserSessionRetention` object
+
+RUM user session retention settings on environment level. Can be set to any value from 1 to 90 days. If skipped when editing via PUT method then already set limit will remain.
+
+| Element | Type | Description | Required |
+| --- | --- | --- | --- |
+| currentlyUsedInDays | integer | Current data age [days] | Optional |
+| currentlyUsedInMillis | integer | Current data age [milliseconds] | Optional |
+| maxLimitInDays | integer | Maximum retention limit [days] | Optional |
 
 ### Request body JSON model
 
@@ -363,23 +375,23 @@ The short representation of an environment.
 
 Creates an environment called `MyNewTeam` specifying details on license quota, storage limits and data retention.
 
-#### Curl
+### Curl
 
 ```
 curl -X POST "https://myManaged.cluster.com/api/cluster/v2/environments?createToken=true" -H "accept: application/json; charset=utf-8" -H "Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890" -H "Content-Type: application/json; charset=utf-8" -d
 
 
 
-"{\"name\":\"MyNewTeam\",\"state\":\"ENABLED\",\"tags\":[\"owner:john.wicked@dynatrace.com\",\"department:finance\"],\"trial\":false}, \"quotas\":{\"hostUnits\":{\"maxLimit\":1},\"demUnits\":{\"monthlyLimit\":1,\"annualLimit\":1},\"userSessions\":{\"totalMonthlyLimit\":1,\"totalAnnualLimit\":2},\"syntheticMonitors\":{\"monthlyLimit\":1,\"annualLimit\":1},\"davisDataUnits\":{\"monthlyLimit\":1,\"annualLimit\":2}},\"storage\":{\"transactionStorage\":{\"maxLimit\":1024},\"sessionReplayStorage\":{\"maxLimit\":2048},\"symbolFilesFromMobileApps\":{\"maxLimit\":5050},\"serviceRequestLevelRetention\":{\"maxLimitInDays\":35},\"serviceCodeLevelRetention\":{\"maxLimitInDays\":10},\"realUserMonitoringRetention\":{\"maxLimitInDays\":35},\"syntheticMonitoringRetention\":{\"maxLimitInDays\":35},\"sessionReplayRetention\":{\"maxLimitInDays\":35},\"userActionsPerMinute\":{\"maxLimit\":3500},\"transactionTrafficQuota\":{\"maxLimit\":1000}}}"
+"{\"name\":\"MyNewTeam\",\"state\":\"ENABLED\",\"tags\":[\"owner:john.wicked@dynatrace.com\",\"department:finance\"],\"trial\":false}, \"quotas\":{\"hostUnits\":{\"maxLimit\":1},\"demUnits\":{\"monthlyLimit\":1,\"annualLimit\":1},\"userSessions\":{\"totalMonthlyLimit\":1,\"totalAnnualLimit\":2},\"syntheticMonitors\":{\"monthlyLimit\":1,\"annualLimit\":1},\"davisDataUnits\":{\"monthlyLimit\":1,\"annualLimit\":2}},\"storage\":{\"transactionStorage\":{\"maxLimit\":1024},\"sessionReplayStorage\":{\"maxLimit\":2048},\"symbolFilesFromMobileApps\":{\"maxLimit\":5050},\"serviceRequestLevelRetention\":{\"maxLimitInDays\":35},\"serviceCodeLevelRetention\":{\"maxLimitInDays\":10},\"realUserMonitoringRetention\":{\"maxLimitInDays\":35},\"syntheticMonitoringRetention\":{\"maxLimitInDays\":35},\"userSessionRetention\":{\"maxLimitInDays\":35},\"sessionReplayRetention\":{\"maxLimitInDays\":35},\"userActionsPerMinute\":{\"maxLimit\":3500},\"transactionTrafficQuota\":{\"maxLimit\":1000}}}"
 ```
 
-#### Request URL
+### Request URL
 
 ```
 https://myManaged.cluster.com/api/cluster/v2/environments?createToken=true
 ```
 
-#### Request body
+### Request body
 
 ```
 {
@@ -586,6 +598,18 @@ https://myManaged.cluster.com/api/cluster/v2/environments?createToken=true
 
 
 
+"userSessionRetention": {
+
+
+
+"maxLimitInDays": 35
+
+
+
+},
+
+
+
 "sessionReplayRetention": {
 
 
@@ -629,7 +653,7 @@ https://myManaged.cluster.com/api/cluster/v2/environments?createToken=true
 }
 ```
 
-#### Response body
+### Response body
 
 Success. The environment has been created and started. The response body contains the generated ID of the environment and a token with the `Token management` permission. The location header contains the generated ID as well.
 
@@ -657,6 +681,6 @@ Success. The environment has been created and started. The response body contain
 }
 ```
 
-#### Response code
+### Response code
 
 `201`

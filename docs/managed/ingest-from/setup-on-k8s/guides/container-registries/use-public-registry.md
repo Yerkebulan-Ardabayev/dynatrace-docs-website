@@ -43,16 +43,16 @@ Dynatrace publishes its container images to [Amazon ECR Public﻿](https://galle
 
 | Amazon ECR Public | Docker Hub |
 | --- | --- |
-| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-activegate | registry-1.docker.io/dynatrace/dynatrace-activegate |
-| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-codemodules | registry-1.docker.io/dynatrace/dynatrace-codemodules |
-| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-eec | registry-1.docker.io/dynatrace/dynatrace-eec |
-| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-k8s-node-config-collector | registry-1.docker.io/dynatrace/dynatrace-k8s-node-config-collector |
-| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-logmodule | registry-1.docker.io/dynatrace/dynatrace-logmodule |
-| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-oneagent | registry-1.docker.io/dynatrace/dynatrace-oneagent |
-| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-operator | registry-1.docker.io/dynatrace/dynatrace-operator |
-| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-otel-collector | registry-1.docker.io/dynatrace/dynatrace-otel-collector |
-| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-sql-extension-executor | registry-1.docker.io/dynatrace/dynatrace-sql-extension-executor |
-| public.ecr.aws/registry-1.docker.io/dynatrace/edgeconnect | registry-1.docker.io/dynatrace/edgeconnect |
+| public.ecr.aws/dynatrace/dynatrace-activegate | registry-1.docker.io/dynatrace/dynatrace-activegate |
+| public.ecr.aws/dynatrace/dynatrace-codemodules | registry-1.docker.io/dynatrace/dynatrace-codemodules |
+| public.ecr.aws/dynatrace/dynatrace-eec | registry-1.docker.io/dynatrace/dynatrace-eec |
+| public.ecr.aws/dynatrace/dynatrace-k8s-node-config-collector | registry-1.docker.io/dynatrace/dynatrace-k8s-node-config-collector |
+| public.ecr.aws/dynatrace/dynatrace-logmodule | registry-1.docker.io/dynatrace/dynatrace-logmodule |
+| public.ecr.aws/dynatrace/dynatrace-oneagent | registry-1.docker.io/dynatrace/dynatrace-oneagent |
+| public.ecr.aws/dynatrace/dynatrace-operator | registry-1.docker.io/dynatrace/dynatrace-operator |
+| public.ecr.aws/dynatrace/dynatrace-otel-collector | registry-1.docker.io/dynatrace/dynatrace-otel-collector |
+| public.ecr.aws/dynatrace/dynatrace-sql-extension-executor | registry-1.docker.io/dynatrace/dynatrace-sql-extension-executor |
+| public.ecr.aws/dynatrace/edgeconnect | registry-1.docker.io/dynatrace/edgeconnect |
 
 Rate limiting
 

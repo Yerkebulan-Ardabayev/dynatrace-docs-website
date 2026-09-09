@@ -7,7 +7,8 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api
 
 # List properties for specific environment
 
-* Published Mar 09, 2021
+* 1-min read
+* Updated on Sep 03, 2026
 
 This API call gets the properties of a specified environment.
 
@@ -167,13 +168,14 @@ Environment level storage usage and limit information. Not returned if includeSt
 | rumNonAggregatedDataRetention | [RumNonAggregatedDataRetention](#openapi-definition-RumNonAggregatedDataRetention) | Non-aggregated RUM data retention settings on environment level. Can be set to any value from 1 to 365 days. If skipped when editing via PUT method then already set limit will remain. |
 | serviceCodeLevelRetention | [ServiceCodeLevelRetention](#openapi-definition-ServiceCodeLevelRetention) | Service code level retention settings on environment level. Service code level retention time can't be greater than service request level retention time and both can't exceed one year.If skipped when editing via PUT method then already set limit will remain. |
 | serviceRequestLevelRetention | [ServiceRequestLevelRetention](#openapi-definition-ServiceRequestLevelRetention) | Service request level retention settings on environment level. Service code level retention time can't be greater than service request level retention time and both can't exceed one year.If skipped when editing via PUT method then already set limit will remain. |
-| sessionReplayRetention | [SessionReplayRetention](#openapi-definition-SessionReplayRetention) | Session replay retention settings on environment level. Can be set to any value from 1 to 35 days. If skipped when editing via PUT method then already set limit will remain. |
+| sessionReplayRetention | [SessionReplayRetention](#openapi-definition-SessionReplayRetention) | Session replay retention settings on environment level. Can be set to any value from 1 to 90 days. Must not exceed the User Session retention (userSessionRetention). If skipped when editing via PUT method then already set limit will remain. |
 | sessionReplayStorage | [SessionReplayStorage](#openapi-definition-SessionReplayStorage) | Session replay storage usage and limit information on environment level. If skipped when editing via PUT method then already set limit will remain. |
 | symbolFilesFromMobileApps | [SymbolFilesFromMobileApps](#openapi-definition-SymbolFilesFromMobileApps) | Symbol files from mobile apps storage usage and limit information on environment level. If skipped when editing via PUT method then already set limit will remain. |
 | syntheticMonitoringRetention | [SyntheticMonitoringRetention](#openapi-definition-SyntheticMonitoringRetention) | Synthetic monitoring retention settings on environment level. Can be set to any value from 1 to 35 days. If skipped when editing via PUT method then already set limit will remain. |
 | transactionStorage | [TransactionStorage](#openapi-definition-TransactionStorage) | Transaction storage usage and limit information on environment level. If skipped when editing via PUT method then already set limit will remain. |
 | transactionTrafficQuota | [TransactionTrafficQuota](#openapi-definition-TransactionTrafficQuota) | Maximum number of newly monitored entry point PurePaths captured per process/minute on environment level. Can be set to any value from 100 to 100000. If skipped when editing via PUT method then already set limit will remain. |
 | userActionsPerMinute | [UserActionsPerMinute](#openapi-definition-UserActionsPerMinute) | Maximum number of user actions generated per minute on environment level. Can be set to any value from 1 to 2147483646 or left unlimited. If skipped when editing via PUT method then already set limit will remain. |
+| userSessionRetention | [UserSessionRetention](#openapi-definition-UserSessionRetention) | RUM user session retention settings on environment level. Can be set to any value from 1 to 90 days. If skipped when editing via PUT method then already set limit will remain. |
 
 #### The `RealUserMonitoringRetention` object
 
@@ -217,7 +219,7 @@ Service request level retention settings on environment level. Service code leve
 
 #### The `SessionReplayRetention` object
 
-Session replay retention settings on environment level. Can be set to any value from 1 to 35 days. If skipped when editing via PUT method then already set limit will remain.
+Session replay retention settings on environment level. Can be set to any value from 1 to 90 days. Must not exceed the User Session retention (userSessionRetention). If skipped when editing via PUT method then already set limit will remain.
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -282,6 +284,16 @@ Maximum number of user actions generated per minute on environment level. Can be
 | --- | --- | --- |
 | maxLimit | integer | Maximum traffic [units per minute] |
 
+#### The `UserSessionRetention` object
+
+RUM user session retention settings on environment level. Can be set to any value from 1 to 90 days. If skipped when editing via PUT method then already set limit will remain.
+
+| Element | Type | Description |
+| --- | --- | --- |
+| currentlyUsedInDays | integer | Current data age [days] |
+| currentlyUsedInMillis | integer | Current data age [milliseconds] |
+| maxLimitInDays | integer | Maximum retention limit [days] |
+
 ### Response body JSON models
 
 ```
@@ -322,21 +334,21 @@ Maximum number of user actions generated per minute on environment level. Can be
 
 ## Example
 
-Finds the environment with identifier `be22c776-1414-43f3-b39b-32e7bddcb0a3` and includes consumption data.
+Finds the environment with identifier `19a963a7-b19f-4382-964a-4df674c8eb8e` and includes consumption and storage data.
 
-#### Curl
-
-```
-curl -X GET "https://myManaged.cluster.com/api/cluster/v2/environments/19a963a7-b19f-4382-964a-4df674c8eb8e?includeConsumptionInfo=true" -H "accept: application/json; charset=utf-8" -H "Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890"
-```
-
-#### Request URL
+### Curl
 
 ```
-https://myManaged.cluster.com/api/cluster/v2/environments/19a963a7-b19f-4382-964a-4df674c8eb8e?includeConsumptionInfo=true
+curl -X GET "https://myManaged.cluster.com/api/cluster/v2/environments/19a963a7-b19f-4382-964a-4df674c8eb8e?includeConsumptionInfo=true&includeStorageInfo=true" -H "accept: application/json; charset=utf-8" -H "Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890"
 ```
 
-#### Response body
+### Request URL
+
+```
+https://myManaged.cluster.com/api/cluster/v2/environments/19a963a7-b19f-4382-964a-4df674c8eb8e?includeConsumptionInfo=true&includeStorageInfo=true
+```
+
+### Response body
 
 ```
 {
@@ -543,6 +555,54 @@ https://myManaged.cluster.com/api/cluster/v2/environments/19a963a7-b19f-4382-964
 
 
 
+},
+
+
+
+"storage": {
+
+
+
+"userSessionRetention": {
+
+
+
+"maxLimitInDays": 35,
+
+
+
+"currentlyUsedInDays": 28,
+
+
+
+"currentlyUsedInMillis": 2419200000
+
+
+
+},
+
+
+
+"sessionReplayRetention": {
+
+
+
+"maxLimitInDays": 35,
+
+
+
+"currentlyUsedInDays": 20,
+
+
+
+"currentlyUsedInMillis": 1728000000
+
+
+
+}
+
+
+
 }
 
 
@@ -550,6 +610,6 @@ https://myManaged.cluster.com/api/cluster/v2/environments/19a963a7-b19f-4382-964
 }
 ```
 
-#### Response code
+### Response code
 
 `200`
