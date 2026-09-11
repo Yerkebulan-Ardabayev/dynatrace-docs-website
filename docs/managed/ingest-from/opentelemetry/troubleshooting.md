@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/troubleshoo
 
 * Troubleshooting
 * 1-min read
-* Updated on Dec 03, 2025
+* Updated on Jun 16, 2026
 
 Successfully implementing OpenTelemetry requires both reliable data export and proper visualization in Dynatrace.
 This page offers guidance for properly configuring and troubleshooting your OpenTelemetry implementation with Dynatrace.

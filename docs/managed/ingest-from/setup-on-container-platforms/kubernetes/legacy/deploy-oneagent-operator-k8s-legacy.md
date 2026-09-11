@@ -77,7 +77,7 @@ Prerequisites
 
    | **Parameter** | **Description** | **Default value** |
    | --- | --- | --- |
-   | `apiUrl` | Required For **Dynatrace SaaS**, where OneAgent can connect to the internet, replace the Dynatrace `ENVIRONMENTID` in `https://ENVIRONMENTID.live.dynatrace.com/api`. For **Environment ActiveGates** (SaaS or Managed), use the following to download the OneAgent, as well as to communicate OneAgent traffic through the ActiveGate: `https://YourActiveGateIP` or `FQDN:9999/e/<ENVIRONMENTID>/api`. |  |
+   | `apiUrl` | RequiredFor **Dynatrace SaaS**, where OneAgent can connect to the internet, replace the Dynatrace `ENVIRONMENTID` in `https://ENVIRONMENTID.live.dynatrace.com/api`.For **Environment ActiveGates** (SaaS or Managed), use the following to download the OneAgent, as well as to communicate OneAgent traffic through the ActiveGate: `https://YourActiveGateIP` or `FQDN:9999/e/<ENVIRONMENTID>/api`. |  |
    | `useUnprivilegedMode` | Optional Set to `false` if you want to mark the pod as privileged. Defaults to using [Linux capabilities for the OneAgent pod](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Find out when Dynatrace OneAgent requires root privileges on Linux.") | `true` |
    | `tokens` | Optional Name of the secret that holds the API and PaaS tokens from above. | Name of custom resource (`.metadata.name`) if unset |
    | `useImmutableImage` | Optional Set to `true` if you want to pull a OneAgent Docker image from your Dynatrace environment. Use this parameter together with the `agentVersion` parameter to control the version of OneAgent. | `false` |

@@ -714,6 +714,8 @@ example of AWS builtin monitoring service
 
 `InstanceId` is the main dimension.
 
+EC2 instances that are managed by another AWS service, for example Auto Scaling groups, Amazon ECS, Amazon EKS, or AWS Elastic Beanstalk, are not available in Amazon EC2 (built-in) monitoring.
+
 ### Elastic computing (EC2)
 
 | Metric key | Name | Unit | Aggregations | Monitoring consumption |

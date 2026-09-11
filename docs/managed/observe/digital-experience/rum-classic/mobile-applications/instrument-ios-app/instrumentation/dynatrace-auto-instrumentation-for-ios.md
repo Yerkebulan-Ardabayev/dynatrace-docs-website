@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 * How-to guide
 * 8-min read
-* Updated on Jan 19, 2026
+* Updated on Sep 08, 2026
 
 iOS tvOS
 
@@ -27,25 +27,38 @@ To create a mobile application in Dynatrace
 
 ## Set up OneAgent
 
-Use [CocoaPods](#cocoapods) or [Swift Package Manager](#swift-pm) to set up Real User Monitoring for your app. You can also follow the [manual approach](#manual), though it's better to use one of the automated approaches.
+Use [Swift Package Manager](#swift-pm) or [CocoaPods](#cocoapods) to set up Real User Monitoring for your app. You can also follow the [manual approach](#manual), though it's better to use one of the automated approaches.
 
-You can set up OneAgent as a dynamic XCFramework, static XCFramework (available for OneAgent for iOS version 8.237+), traditional framework, or static library.
+You can set up OneAgent as a dynamic XCFramework or traditional framework.
 
-You can't combine the static Dynatrace XCFramework and the dynamic Session Replay XCFramework. For [Session Replay](/managed/observe/digital-experience/session-replay/session-replay-ios "Prerequisites and the procedure for enabling Session Replay Classic for your iOS apps."), both XCFrameworks have to be dynamic.
+If you use the traditional framework to instrument your iOS app, you'll need to perform some additional steps.
 
-If you use the static XCFramework, the traditional framework, or the static library to instrument your iOS app, you'll need to perform some additional steps.
+### Set up OneAgent with Swift Package Manager
+
+1. In Xcode, select **File** > **Swift Packages** > **Add Package Dependency**.
+2. Add `https://github.com/Dynatrace/swift-mobile-sdk.git` as the package repository URL.
+3. Select only **one** package product:
+
+   * `Dynatrace` to add only OneAgent
+   * `DynatraceSessionReplay` to add both OneAgent and the [Session Replay on crashes](/managed/observe/digital-experience/session-replay/session-replay-ios "Prerequisites and the procedure for enabling Session Replay Classic for your iOS apps.") module
+
+     Do not select `DynatraceSessionReplay` for tvOS, as Session Replay is not available for this operating system.
+4. Add your application's identification keys to the [`Info.plist` file](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration."). Check the [instrumentation wizard](#instrumentation-wizard) in Dynatrace for the exact values.
+5. Trigger your project build once before using OneAgent SDK or any import declarations in Xcode.
+
+To update the package version rule, double-click the product entry in the **Swift Packages** tab within the Xcode project settings. To change the product selection, remove the package and add it again.
+
+To update the package, select **File** > **Swift Packages** > **Update to Latest Package Versions** in Xcode.
+
+When switching from [Carthage](#carthage) to Swift Package Manager, remove the script that you previously added in Xcode to remove iOS Simulator architecture from the release binary. Otherwise, you might have issues when building your project in Xcode 15+.
 
 ### Set up OneAgent with CocoaPods
 
-1. Add Dynatrace OneAgent as a dependency within the CocoaPods `Podfile` specification. You can do this by setting up OneAgent as a dynamic XCFramework, static XCFramework, traditional framework, or static library.
+1. Add Dynatrace OneAgent as a dependency within the CocoaPods `Podfile` specification. You can do this by setting up OneAgent as a dynamic XCFramework or traditional framework.
 
    Dynamic XCFramework
 
-   Static XCFramework
-
    Traditional framework
-
-   Static library
 
    To set up Dynatrace as a dynamic XCFramework, add only **one** pod to your `Podfile`.
 
@@ -94,40 +107,6 @@ If you use the static XCFramework, the traditional framework, or the static libr
    end
    ```
 
-   To set up Dynatrace as a static XCFramework, add the `Dynatrace/xcframeworkStatic` pod to your `Podfile`. Ensure that you uncomment the `use_frameworks!` line.
-
-   ```
-   # Uncomment this line to define a global platform for your project
-
-
-
-   # platform :ios, '9.0'
-
-
-
-   target 'DemoApp' do
-
-
-
-   # Uncomment this line if you're using Swift or want to use dynamic frameworks
-
-
-
-   use_frameworks!
-
-
-
-   # Pods for DemoApp
-
-
-
-   pod 'Dynatrace/xcframeworkStatic', '~> 8.279'
-
-
-
-   end
-   ```
-
    To set up Dynatrace as a traditional framework, add the `Dynatrace/framework` pod to your `Podfile`. Ensure that you uncomment the `use_frameworks!` line.
 
    ```
@@ -162,41 +141,7 @@ If you use the static XCFramework, the traditional framework, or the static libr
    end
    ```
 
-   To set up Dynatrace as a static library, add the `Dynatrace/lib` pod to your `Podfile`. Ensure that you comment out the `use_frameworks!` line.
-
-   ```
-   # Uncomment this line to define a global platform for your project
-
-
-
-   # platform :ios, '9.0'
-
-
-
-   target 'DemoApp' do
-
-
-
-   # Uncomment this line if you're using Swift or want to use dynamic frameworks
-
-
-
-   # use_frameworks!
-
-
-
-   # Pods for DemoApp
-
-
-
-   pod 'Dynatrace/lib', '~> 8.279'
-
-
-
-   end
-   ```
-
-   The traditional framework and the static library were deprecated as they don't support ARM64 Simulator architecture. This architecture is required to build apps on Mac computers with Apple silicon.
+   The traditional framework was deprecated as it doesn't support ARM64 Simulator architecture. This architecture is required to build apps on Mac computers with Apple silicon.
 2. Add your application's identification keys to the [`Info.plist` file](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration."). Check the [instrumentation wizard](#instrumentation-wizard) in Dynatrace for the exact values.
 3. Trigger your project build once before using OneAgent SDK or any import declarations in Xcode.
 
@@ -211,64 +156,6 @@ To continue receiving updates, please migrate to [Swift Package Manager](#swift-
 
 For timeline details, see the official [CocoaPods blog﻿](https://blog.cocoapods.org/CocoaPods-Specs-Repo/).
 
-### Set up OneAgent with Swift Package Manager
-
-1. In Xcode, select **File** > **Swift Packages** > **Add Package Dependency**.
-2. Add `https://github.com/Dynatrace/swift-mobile-sdk.git` as the package repository URL.
-3. Select only **one** package product:
-
-   * `Dynatrace` to add only OneAgent
-   * `DynatraceSessionReplay` to add both OneAgent and the [Session Replay on crashes](/managed/observe/digital-experience/session-replay/session-replay-ios "Prerequisites and the procedure for enabling Session Replay Classic for your iOS apps.") module
-
-     Do not select `DynatraceSessionReplay` for tvOS, as Session Replay is not available for this operating system.
-   * `Dynatrace-Static` to add only OneAgent as a static XCFramework
-4. Perform additional steps depending on the framework you use.
-   Static XCFramework: Add a linker flag
-
-   1. In Xcode, go to the **Build Settings** tab of your application target.
-   2. Expand **Linking**.
-   3. Add the `-ObjC` linker flag to **Other Linker Flags**.
-
-   Static XCFramework: Make Dynatrace available to Swift code
-
-   You can skip this step if your application doesn't have Swift code or doesn't need access to the Dynatrace framework.
-
-   We assume that you already created the Objective-C bridging header file for your Swift code in Xcode.
-
-   1. Make sure you set the bridging header file in your application target build settings.
-   2. Add the following import line to the bridging header file:
-
-      ```
-      #import <DynatraceStatic/Dynatrace.h>
-      ```
-
-   Static library: Add a linker flag
-
-   1. In Xcode, go to the **Build Settings** tab of your application target.
-   2. Expand **Linking**.
-   3. Add the `-ObjC` linker flag to **Other Linker Flags**.
-
-   Static library: Make Dynatrace available to Swift code
-
-   You can skip this step if your application doesn't have Swift code or doesn't need access to the Dynatrace library.
-
-   We assume that you already created the Objective-C bridging header file for your Swift code in Xcode.
-
-   1. Make sure you set the bridging header file in your application target build settings.
-   2. Add the following import line to the bridging header file:
-
-      ```
-      #import Dynatrace.h
-      ```
-5. Add your application's identification keys to the [`Info.plist` file](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration."). Check the [instrumentation wizard](#instrumentation-wizard) in Dynatrace for the exact values.
-6. Trigger your project build once before using OneAgent SDK or any import declarations in Xcode.
-
-To update the package version rule, double-click the product entry in the **Swift Packages** tab within the Xcode project settings. To change the product selection, remove the package and add it again.
-
-To update the package, select **File** > **Swift Packages** > **Update to Latest Package Versions** in Xcode.
-
-When switching from [Carthage](#carthage) to Swift Package Manager, remove the script that you previously added in Xcode to remove iOS Simulator architecture from the release binary. Otherwise, you might have issues when building your project in Xcode 15+.
-
 ### Set up OneAgent manually
 
 1. Access the [mobile instrumentation wizard](#instrumentation-wizard).
@@ -280,33 +167,6 @@ When switching from [Carthage](#carthage) to Swift Package Manager, remove the s
 
    Do not add `DynatraceSessionReplay.xcframework` for tvOS, as Session Replay is not available for this operating system.
 4. Perform some additional steps depending on the framework you use.
-
-   Static XCFramework: Add a linker flag
-
-   1. In Xcode, go to the **Build Settings** tab of your application target.
-   2. Expand **Linking**.
-   3. Add the `-ObjC` linker flag to **Other Linker Flags**.
-
-   Static XCFramework: Add a linked library
-
-   1. In Xcode, go to the **General** tab of your application target.
-   2. Expand **Frameworks, Libraries, and Embedded Content**.
-   3. Add the `libc++.tbd` library.
-
-   You might need to add this library twice. In our internal tests, the library was linked to the project tree only after we added the library a second time.
-
-   Static XCFramework: Make Dynatrace available to Swift code
-
-   You can skip this step if your application doesn't have Swift code or doesn't need access to the Dynatrace framework.
-
-   We assume that you already created the Objective-C bridging header file for your Swift code in Xcode.
-
-   1. Make sure you set the bridging header file in your application target build settings.
-   2. Add the following import line to the bridging header file:
-
-      ```
-      #import <DynatraceStatic/Dynatrace.h>
-      ```
 
    Traditional framework: Remove iOS Simulator architecture of the release binary
 
@@ -379,25 +239,6 @@ When switching from [Carthage](#carthage) to Swift Package Manager, remove the s
    3. Select **Run script: For install builds only**.
 
    This removes the iOS Simulator architecture from your release binary used for AppStore Connect upload.
-
-   Static library: Add a linker flag
-
-   1. In Xcode, go to the **Build Settings** tab of your application target.
-   2. Expand **Linking**.
-   3. Add the `-ObjC` linker flag to **Other Linker Flags**.
-
-   Static library: Make Dynatrace available to Swift code
-
-   You can skip this step if your application doesn't have Swift code or doesn't need access to the Dynatrace library.
-
-   We assume that you already created the Objective-C bridging header file for your Swift code in Xcode.
-
-   1. Make sure you set the bridging header file in your application target build settings.
-   2. Add the following import line to the bridging header file:
-
-      ```
-      #import Dynatrace.h
-      ```
 5. Trigger your project build once before using OneAgent SDK or any import declarations in Xcode.
 
 ## Access mobile instrumentation wizard

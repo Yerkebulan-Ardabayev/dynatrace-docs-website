@@ -176,7 +176,7 @@ dynatrace-otel-collector validate --config=[PATH_TO_YOUR_CONFIGURATION_FILE]
 If you run a container instance of the Collector, you can also use the following Docker command to run the validation directly from your container.
 
 ```
-docker run -v $(pwd):$(pwd) -w $(pwd) ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.53.1 validate --config=[YOUR_CONFIGURATION_FILE]
+docker run -v $(pwd):$(pwd) -w $(pwd) ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.56.0 validate --config=[YOUR_CONFIGURATION_FILE]
 ```
 
 ## Delta metrics

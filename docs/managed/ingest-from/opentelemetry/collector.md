@@ -74,7 +74,7 @@ For the full list of provided components, see [Components﻿](https://github.com
 
 #### Dynatrace OTel Collector use cases
 
-For concrete use-case and configuration examples for the individual components, see [OTel Collector use cases](/managed/ingest-from/opentelemetry/collector/use-cases "Configure your OpenTelemetry Collector instance for different use cases.").
+For concrete use-case and configuration examples for the individual components, see [OTel Collector use cases](/managed/ingest-from/opentelemetry/collector/use-cases "Configure your OpenTelemetry Collector instance for different use cases, including authentication, data enrichment, and format conversion.").
 
 #### Deploy the Dynatrace OTel Collector
 

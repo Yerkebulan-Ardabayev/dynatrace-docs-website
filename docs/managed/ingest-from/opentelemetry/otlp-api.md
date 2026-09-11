@@ -133,7 +133,7 @@ Verify that the following are true:
 
 ## Export to the OTel Collector
 
-Using the OTel Collector as an intermediate gateway allows you to streamline and optimize your telemetry data and requests centrally. See [OTel Collector use cases](/managed/ingest-from/opentelemetry/collector/use-cases "Configure your OpenTelemetry Collector instance for different use cases.") for more information and sample configurations for popular Collector use cases.
+Using the OTel Collector as an intermediate gateway allows you to streamline and optimize your telemetry data and requests centrally. See [OTel Collector use cases](/managed/ingest-from/opentelemetry/collector/use-cases "Configure your OpenTelemetry Collector instance for different use cases, including authentication, data enrichment, and format conversion.") for more information and sample configurations for popular Collector use cases.
 
 See [OTel Collector for ingesting telemetry into Dynatrace](/managed/ingest-from/opentelemetry/collector "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.") for more details on how to configure a Collector instance.
 

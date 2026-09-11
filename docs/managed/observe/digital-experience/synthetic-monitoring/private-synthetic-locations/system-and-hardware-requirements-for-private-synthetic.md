@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-
 
 * Reference
 * 15-min read
-* Updated on Aug 19, 2026
+* Updated on Sep 08, 2026
 
 Ensure that the host you want to use for your private location complies with the following requirements.
 
@@ -188,7 +188,7 @@ File Access Policy Daemon framework can be run in debug mode where all denials a
 
 * Note that a Synthetic-enabled ActiveGate has more demanding hardware and system requirements than a regular Environment or Cluster ActiveGate. We strongly recommend using a Synthetic-enabled ActiveGate exclusively for synthetic monitoring purposes.
 * Any additional component running on the host should be taken into account when planning resources provisioning. For instance, if the location is monitored by [OneAgent](/managed/ingest-from/dynatrace-oneagent/oa-requirements "OneAgent code module requirements") or another deep monitoring solution, memory (RAM) requirements will increase.
-* You need to uninstall and reinstall your Synthetic-enabled ActiveGate to change its size, for example, after increasing the resources of your S-sized ActiveGate to meet the requirements for a size M. Reinstallation is required before you can make use of the updated resources for synthetic monitoring; otherwise, your ActiveGate will continue to show up as size S (**Synthetic Node size**) in **Deployment Status** and will be subject to the execution limits of size S.
+* To change the size of a Synthetic-enabled ActiveGate, for example, after upgrading from size S to meet size M requirements, you must uninstall and reinstall it. Reinstallation applies the correct memory limits based on available hardware. Although the Synthetic Engine detects the new size at startup, without reinstallation it keeps the original limits, which can cause instability under heavier load.
 
 ### Sizing guide
 

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform
 
 * Overview
 * 1-min read
-* Updated on Sep 08, 2026
+* Published Mar 12, 2021
 
 Dynatrace automatically discovers, baselines, and intelligently monitors Google Cloud environments to provide fault domain isolation and infrastructure and end-user visibility in real time.
 

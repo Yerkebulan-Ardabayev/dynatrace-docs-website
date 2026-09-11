@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/applic
 # Supported Go versions
 
 * 7-min read
-* Updated on Sep 03, 2026
+* Updated on Sep 10, 2026
 
 Whenever a new Go major version is released, Dynatrace adds support for that version. Support for each minor version is
 added too—see [Version matrix](#go-version-matrix) for more details.

@@ -158,7 +158,7 @@ Note that the following data types are considered confidential and are masked at
 * Client IP addresses
 * Exception messages
 * URL query parameters
-* HTTP headers
+* Some HTTP headers
 * HTTP POST parameters
 * Original captured method argument values (the resulting request attribute is treated separately)
 

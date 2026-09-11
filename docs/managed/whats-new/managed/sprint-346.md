@@ -105,7 +105,9 @@ When configuring Kubernetes or OpenShift monitoring in the Managed deployment fo
 * **Private container registry**
 * **Built-in registry** (deprecated)
 
-Based on your selection, Dynatrace automatically generates a ready-to-use `dynakube.yaml` and matching Helm install command with the correct image locations. For **Amazon ECR** and **Docker Hub**, no manual registry configuration is required, simplifying deployments and activating ARM-based environments. For private container registry, image locations must still be configured manually, as before.
+Based on your selection, Dynatrace generates a Helm install command with the appropriate image locations.
+
+You must manually update the image locations in the generated `dynakube.yaml` before deployment.
 
 The built-in cluster container registry will be shut down on January 1, 2028, and will no longer function because it doesn't support ARM architectures. **Action plan**: Migrate to Amazon ECR or Docker Hub.
 

@@ -784,7 +784,7 @@ fieldPath: status.podIP
 
 
 
-image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.53.1
+image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.56.0
 
 
 
