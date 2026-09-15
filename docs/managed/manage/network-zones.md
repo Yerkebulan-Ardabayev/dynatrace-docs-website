@@ -53,4 +53,10 @@ Find out how network zones prioritize ActiveGates for Environment ActiveGate con
 
 * Explanation
 
-Read this explanation](/managed/manage/network-zones/activegate-connectivity)
+Read this explanation](/managed/manage/network-zones/activegate-connectivity)[#### Network zones - Settings API
+
+Manage network zones programmatically via the Dynatrace Settings API.
+
+* How-to guide
+
+Read this guide](/managed/manage/network-zones/manage-via-settings-api)

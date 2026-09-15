@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 * Reference
 * 9-min read
-* Updated on Jun 01, 2026
+* Updated on Sep 15, 2026
 
 Real User Monitoring Classic (RUM Classic) operates within an HTTP ecosystem and relies on a set of requests, headers, and cookies to capture and report real user data, and to link it with backend distributed traces. For RUM Classic to work as expected, your infrastructure—including firewalls, proxies, load balancers, content delivery networks, web servers, and any other components in the request path—must allow these requests, headers, and cookies to pass through unaltered. In addition, OneAgent uses the headers described in [Span and trace context propagation in Distributed Traces Classic](/managed/observe/application-observability/distributed-traces/context-propagation "Understand span and trace context propagation in Dynatrace and how to set them up.") for distributed tracing, which also need to pass through your infrastructure.
 
@@ -35,6 +35,7 @@ RUM beacons report the data captured by the RUM JavaScript back to a [beacon end
 * For agentless monitoring, beacons are, by default, sent to a beacon endpoint with the URL path `/bf/<id>` that is part of a Cluster ActiveGate.
 * For auto-injection, beacons are, by default, sent to the web or app server that hosts the application, and the URL path ends with `/rb_<id>`.
 * The beacon URL includes a query string that must not be altered—this includes modifying, removing, or reordering parameters.
+* Don't filter the query string for specific parameter keys, and let all beacon requests pass instead. Dynatrace intentionally doesn't publish a list of parameter keys, because the parameters can change at any time and setups that rely on a fixed list break with the next change.
 * The `POST` body contains the payload, sent with the `text/plain` content type. For Session Replay, the `application/octet-stream` content type can also be used.
 * For Session Replay, `POST` requests may be preceded by [CORS preflight requests﻿](https://developer.mozilla.org/en-US/docs/Glossary/Preflight_request), which are `OPTIONS` requests.
 
@@ -128,6 +129,8 @@ OneAgent for Mobile sends beacon requests to report the captured RUM data. The b
 In addition to the `POST` requests that report the captured data, OneAgent for Mobile also sends `GET` requests to the beacon endpoint to retrieve configuration updates. Beacon responses have a `text/plain` content type.
 
 The beacon URL includes a query string that must not be altered—this includes modifying, removing, or reordering parameters.
+
+Don't filter the query string for specific parameter keys, and let all beacon requests pass instead. Dynatrace intentionally doesn't publish a list of parameter keys, because the parameters can change at any time and setups that rely on a fixed list break with the next change.
 
 ### Headers
 

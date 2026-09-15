@@ -42,7 +42,7 @@ It consists of three standalone capabilities that you can use and combine accord
   For more information, see [Understand and measure consumption for HTTP Monitor (DPS)](/managed/license/capabilities/real-user-synthetic-monitoring/http-monitor "Learn how your consumption of the Dynatrace HTTP Monitor DPS capability is billed and charged.").
 * **Third-Party Synthetic Integration**: Push third-party synthetic data and events to Dynatrace.
 
-  For more information, see [Understand and measure consumption for Third-Party Synthetic API Integration (DPS)](/managed/license/capabilities/real-user-synthetic-monitoring/third-party-api "Learn how your consumption of the the Dynatrace Third-Party Synthetic API Integration DPS capability is billed and charged.").
+  For more information, see [Understand and measure consumption for Third-Party Synthetic API Integration (DPS)](/managed/license/capabilities/real-user-synthetic-monitoring/third-party-api "Learn how your consumption of the Dynatrace Third-Party Synthetic API Integration DPS capability is billed and charged.").
 
 ## Related topics
 

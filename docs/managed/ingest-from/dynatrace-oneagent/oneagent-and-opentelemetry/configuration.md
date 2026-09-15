@@ -33,7 +33,7 @@ Python
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-java/) | 1.0 - 1.3[1](#fn-monitoring-framework-1-def), 1.4 - 1.54[1](#fn-monitoring-framework-1-def), 1.55 - 1.60 |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-java/) | 1.0 - 1.3[1](#fn-monitoring-framework-1-def), 1.4 - 1.54[1](#fn-monitoring-framework-1-def), 1.55 - 1.60, 1.61 - 1.64 |
 | [OpenTracing﻿](https://opentracing.io/guides/java/) | 0.33, 0.32, 0.31 |
 
 1

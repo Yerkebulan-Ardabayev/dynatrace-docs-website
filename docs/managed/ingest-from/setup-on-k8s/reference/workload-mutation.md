@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/reference/wo
 # Dynatrace pod mutations for application workloads
 
 * 3-min read
-* Updated on Aug 28, 2026
+* Updated on Sep 10, 2026
 
 When you enable metadata enrichment or OneAgent for application pods, Dynatrace Operator uses a webhook to intercept workload creation events and applies mutations to the resulting pods. These mutations modify the pod specification to enable monitoring capabilities.
 
@@ -387,7 +387,36 @@ OneAgent injection specific arguments for the init-container
 | `DT_DEPLOYMENT_METADATA` | `orchestration_tech=Operator-cloud_native_fullstack;script_version=snapshot;orchestrator_id=b9c38fb3-6c0f-45f6-8c25-9eb3b4b5af2a` | Contains deployment metadata for OneAgent |
 | `LD_PRELOAD` | `/opt/dynatrace/oneagent-paas/agent/lib64/liboneagentproc.so` | Preloads the OneAgent library for monitoring |
 
-If `LD_PRELOAD` is already set on the container at the Kubernetes workload level, Dynatrace Operator appends the OneAgent library path to the existing value. However, if `LD_PRELOAD` is set inside the container image (for example, via a `Dockerfile`), Dynatrace Operator has no visibility into that value and will still inject its own, overwriting the image-defined value, which can cause unexpected behavior. To avoid this, define `LD_PRELOAD` in the Kubernetes workload manifest instead of the container image.
+#### Custom preload libraries
+
+You can add your own custom libraries alongside Dynatrace OneAgent. Set `LD_PRELOAD` on your application container with your custom library path:
+
+```
+env:
+
+
+
+- name: LD_PRELOAD
+
+
+
+value: /lib/my-custom.so
+```
+
+Dynatrace Operator appends its library to the existing `LD_PRELOAD`, so the custom library has priority. Dynatrace's library is also loaded independently via `/etc/ld.so.preload`, but the linker deduplicates it, so it only loads once.
+
+```
+# After Operator injection:
+
+
+
+LD_PRELOAD=/lib/my-custom.so:/opt/dynatrace/oneagent-paas/agent/lib64/liboneagentproc.so
+```
+
+Define `LD_PRELOAD` in the Kubernetes workload manifest, not in the container image.
+
+* If `LD_PRELOAD` is set inside the container image (for example, via a `Dockerfile`), Dynatrace Operator has no visibility into that value and will overwrite it during injection, which can cause unexpected behavior.
+* Do **not** place custom library paths in `/etc/ld.so.preload` within your container image—they will be silently lost when OneAgent is injected.
 
 ### `volumes`
 

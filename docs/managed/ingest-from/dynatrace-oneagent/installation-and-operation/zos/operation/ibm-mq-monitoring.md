@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 # Set up IBM MQ tracing on z/OS
 
 * 1-min read
-* Updated on May 16, 2022
+* Updated on Sep 11, 2026
 
 With Dynatrace you can get observability for IBM MQ on z/OS:
 
@@ -32,6 +32,12 @@ The table lists the available IBM MQ configuration items for queues and topics.
 ## Manage IBM MQ configuration
 
 You can manage an IBM MQ configuration automatically by installing an [IBM MQ extension](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.") and activating **Retrieve topology for improved transaction tracing** to retrieve the IBM MQ configuration of your environment and send it to the Settings API. This can also be done manually via the web UI or the Settings API.
+
+Manual mapping rules might be required
+
+Automatic topology retrieval doesn't always produce a complete set of mapping rules. For environments with complex, multi-level queue mappings, Dynatrace might not resolve which queues belong to the same message flow, so trace stitching can break even after you retrieve the topology. In this case, adapt the IBM MQ mapping rules manually via the web UI or the Settings API. For details about which mappings the extension collects automatically and how to adjust them, see [IBM MQ extension](/managed/observe/infrastructure-observability/extensions/ibm-mq-local#activation-and-setup "Monitor IBM MQ queue managers, queues, channels, topics, and listeners by collecting performance metrics and system events into Dynatrace via OneAgent or ActiveGate.").
+
+To stitch a producer and a consumer, both must resolve to the same queue manager and queue name. A mapping rule doesn't need to reflect your real IBM MQ configuration: the mapped name can be an artificial value that doesn't exist in IBM MQ, as long as it's unique and identical in the producer and consumer rules.
 
 ### Manual configuration via web UI
 

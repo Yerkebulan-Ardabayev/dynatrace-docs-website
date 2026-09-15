@@ -59,10 +59,10 @@ Supported CPU architectures
 | --- | --- | --- |
 | [AlmaLinux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 8, 9, 10 | ARM64 (AArch64), PPCLE, s390, x86-64 |
 | [Alpine Linux (musl libc) for containers](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") | 3.10 - 3.23[1](#fn-supported-os-1-def) | ARM64 (AArch64), x86-64 |
-| [Amazon Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 2023 | ARM64 (AArch64), x86-64 |
+| [Amazon Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 2, 2023 | ARM64 (AArch64), x86-64 |
 | [Azure Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 2, 3 | x86-64 |
 | [Bottlerocket](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") | 1[2](#fn-supported-os-2-def) | ARM64 (AArch64), x86-64 |
-| [CentOS Stream](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 9 | ARM64 (AArch64), PPCLE, x86-64 |
+| [CentOS Stream](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 9, 10 | ARM64 (AArch64), PPCLE, x86-64 |
 | [Debian](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 11, 12, 13 | ARM64 (AArch64), x86-64 |
 | [Fedora](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 42, 43, 44 | x86-64 |
 | [Fedora](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 44 | ARM64 (AArch64) |
@@ -453,22 +453,22 @@ See [Dynatrace support/desupport for Java versions](/managed/ingest-from/technol
 
 | Virtual machines | Versions | Platforms |
 | --- | --- | --- |
-| Amazon Corretto | 8 LTS, 11 LTS, 17 LTS, 21 LTS, 23, 24, 25 LTS, 26 | Linux (x86-64, ARM64 (AArch64)) |
-| Azul Platform Core (Zulu) | 7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 23, 24, 25 LTS, 26 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
+| Amazon Corretto | 8 LTS, 11 LTS, 17 LTS, 21 LTS, 24, 25 LTS, 26, 27 | Linux (x86-64, ARM64 (AArch64)) |
+| Azul Platform Core (Zulu) | 7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 24, 25 LTS, 26 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
 | Azul Platform Prime (Zing) | 6[2](#fn-virtual-machines-2-def), 7[2](#fn-virtual-machines-2-def), 8 LTS[2](#fn-virtual-machines-2-def), 11 LTS[2](#fn-virtual-machines-2-def) | Alpine Linux 64-bit (x86-64), Linux (x86-64), Windows (x86-64) |
-| Bellsoft Liberica | 8 LTS, 11 LTS, 17 LTS, 21 LTS[3](#fn-virtual-machines-3-def), 23, 24, 25 LTS, 26 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64), PPCLE), Solaris (SPARC, x86-64), Windows (x86-64) |
-| Eclipse Temurin (a.k.a. 'Adoptium') | 8 LTS, 11 LTS, 17 LTS, 21 LTS, 23, 24, 25 LTS, 26 | AIX (POWER8, POWER9, POWER10), Linux (x86-64, ARM64 (AArch64), PPCLE, s390), Windows (x86-64) |
+| Bellsoft Liberica | 8 LTS, 11 LTS, 17 LTS, 21 LTS[3](#fn-virtual-machines-3-def), 24, 25 LTS, 26 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64), PPCLE), Solaris (SPARC, x86-64), Windows (x86-64) |
+| Eclipse Temurin (a.k.a. 'Adoptium') | 8 LTS, 11 LTS, 17 LTS, 21 LTS, 24, 25 LTS, 26, 27 | AIX (POWER8, POWER9, POWER10), Linux (x86-64, ARM64 (AArch64), PPCLE, s390), Windows (x86-64) |
 | Fujitsu | 5, 6, 8 | Linux (x86-64), Windows (x86-64) |
-| GraalVM | 17 LTS[1](#fn-virtual-machines-1-def), 21[1](#fn-virtual-machines-1-def), 23[1](#fn-virtual-machines-1-def), 24[1](#fn-virtual-machines-1-def), 25 LTS[1](#fn-virtual-machines-1-def) | Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
+| GraalVM | 17 LTS[1](#fn-virtual-machines-1-def), 21[1](#fn-virtual-machines-1-def), 24[1](#fn-virtual-machines-1-def), 25 LTS[1](#fn-virtual-machines-1-def) | Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
 | Hitachi | 5 | Windows (x86-64) |
 | Huawei | 8 | Linux (ARM64 (AArch64)) |
 | IBM JVM | 6, 7, 8 LTS | AIX (POWER8, POWER9, POWER10), Alpine Linux 64-bit (x86-64), Linux (PPCLE, PPCBE, s390, x86-64), Windows (x86-64) |
-| IBM Semeru | 8 LTS, 11 LTS, 17 LTS, 21 LTS, 25 LTS | AIX (POWER8, POWER9, POWER10), Linux (x86-64, ARM64 (AArch64), PPCLE, s390), Windows (x86-64) |
+| IBM Semeru | 8 LTS, 11 LTS, 17 LTS, 21 LTS, 25 LTS, 27 | AIX (POWER8, POWER9, POWER10), Linux (x86-64, ARM64 (AArch64), PPCLE, s390), Windows (x86-64) |
 | Microsoft OpenJDK | 11 LTS, 17 LTS, 21 LTS, 25 LTS | Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
-| OpenJDK | 6, 7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 23, 24, 25 LTS, 26 | Alpine Linux 64-bit (x86-64), Linux (x86-64, s390), Windows (x86-64) |
-| Oracle HotSpot VM | 6, 7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 23, 24, 25 LTS, 26 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Solaris (SPARC, x86-64), Windows (x86-64) |
+| OpenJDK | 6, 7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 24, 25 LTS, 26, 27 | Alpine Linux 64-bit (x86-64), Linux (x86-64, s390), Windows (x86-64) |
+| Oracle HotSpot VM | 6, 7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 24, 25 LTS, 26, 27 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Solaris (SPARC, x86-64), Windows (x86-64) |
 | Oracle JRockit | 6 | Alpine Linux 64-bit (x86-64), Linux (x86-64), Solaris (SPARC), Windows (x86-64) |
-| SapMachine | 7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 23, 24, 25 LTS, 26 | Alpine Linux 64-bit (x86-64), Linux (x86-64), Windows (x86-64) |
+| SapMachine | 7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 24, 25 LTS, 26, 27 | Alpine Linux 64-bit (x86-64), Linux (x86-64), Windows (x86-64) |
 
 1
 
@@ -706,6 +706,7 @@ Tracing is only supported via JMS.
 | [Apache Pekko Remoting﻿](https://pekko.apache.org/docs/pekko/current/remoting.html#classic-remoting-deprecated-) | 1.0.0 - 1.2.0[6](#fn-remoting-frameworks-6-def) |
 | [Apache Thrift﻿](https://thrift.apache.org/) | 0.7 - 0.24 |
 | [Azure SDK﻿](https://github.com/Azure/azure-sdk-for-java) | 1.2.9+ (Azure SDK BOM) |
+| [Azure SDK Blob Storage﻿](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/storage/azure-storage-blob) | 12.14.3+, 1.1.0+ (Azure SDK BOM) |
 | Glassfish RMI-IIOP | All versions supported |
 | IBM JVM RMI-IIOP | All versions supported |
 | JBoss Enterprise Application Platform - RMI-IIOP | 7, 8 |
@@ -745,7 +746,7 @@ Only supported when classic-remoting is used; not supported when using Artery. S
 
 | Monitoring frameworks | Versions |
 | --- | --- |
-| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-java/) | 1.0 - 1.3[1](#fn-monitoring-frameworks-1-def), 1.4 - 1.54[1](#fn-monitoring-frameworks-1-def), 1.55 - 1.60 |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-java/) | 1.0 - 1.3[1](#fn-monitoring-frameworks-1-def), 1.4 - 1.54[1](#fn-monitoring-frameworks-1-def), 1.55 - 1.60, 1.61 - 1.64 |
 | [OpenTracing﻿](https://opentracing.io/guides/java/) | 0.33, 0.32, 0.31 |
 
 1
@@ -1022,7 +1023,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | [Cassandra client (gocql/gocql)﻿](https://github.com/gocql/gocql) | 1.0 - 1.7[1](#fn-database-frameworks-1-def) |
 | [Microsoft SQL Server (denisenkom/go-mssqldb)﻿](https://github.com/denisenkom/go-mssqldb) | 0.11 - 0.12[1](#fn-database-frameworks-1-def) |
 | [Microsoft SQL Server (microsoft/go-mssqldb)﻿](https://github.com/microsoft/go-mssqldb) | 0.11 - 0.21[1](#fn-database-frameworks-1-def), 1.0 - 1.10[1](#fn-database-frameworks-1-def) |
-| [MongoDB Go driver (mongo-go-driver)﻿](https://github.com/mongodb/mongo-go-driver) | 1.3 - 1.17[1](#fn-database-frameworks-1-def), 2.0.0 - 2.4.+[1](#fn-database-frameworks-1-def), 2.5.0 - 2.7.+[1](#fn-database-frameworks-1-def) |
+| [MongoDB Go driver (mongo-go-driver)﻿](https://github.com/mongodb/mongo-go-driver) | 1.3 - 1.17[1](#fn-database-frameworks-1-def), 2.0.0 - 2.4.+[1](#fn-database-frameworks-1-def), 2.5.0 - 2.7.+[1](#fn-database-frameworks-1-def), 2.8+[1](#fn-database-frameworks-1-def) |
 | [MySQL﻿](https://github.com/go-sql-driver/mysql/) | 1.4.1[1](#fn-database-frameworks-1-def), 1.5.0[1](#fn-database-frameworks-1-def), 1.6.0[1](#fn-database-frameworks-1-def), 1.7[1](#fn-database-frameworks-1-def), 1.8 - 1.10[1](#fn-database-frameworks-1-def) |
 | [PostgreSQL (jackc/pgx)﻿](https://github.com/jackc/pgx) | 4.7 - 4.18[1](#fn-database-frameworks-1-def), 5.0 - 5.10[1](#fn-database-frameworks-1-def) |
 | [PostgreSQL (lib/pq)﻿](https://github.com/lib/pq/) | 1.2.0[1](#fn-database-frameworks-1-def), 1.3.0[1](#fn-database-frameworks-1-def), 1.4.0 - 1.10.9[1](#fn-database-frameworks-1-def) |
@@ -1035,7 +1036,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | Messaging clients | Versions |
 | --- | --- |
 | [Amazon EventBridge﻿](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/eventbridge) | 1.13.0 - 1.45.25[1](#fn-messaging-clients-1-def) |
-| [Amazon SNS﻿](https://github.com/aws/aws-sdk-go-v2/tree/main/service/sns) | 1.15.0 - 1.38.0[1](#fn-messaging-clients-1-def), 1.38.1 - 1.39.17[1](#fn-messaging-clients-1-def), 1.39.18 - 1.40.1[1](#fn-messaging-clients-1-def), 1.40.2 - 1.41.1[1](#fn-messaging-clients-1-def) |
+| [Amazon SNS﻿](https://github.com/aws/aws-sdk-go-v2/tree/main/service/sns) | 1.15.0 - 1.38.0[1](#fn-messaging-clients-1-def), 1.38.1 - 1.39.17[1](#fn-messaging-clients-1-def), 1.39.18 - 1.40.1[1](#fn-messaging-clients-1-def), 1.40.2 - 1.41.1[1](#fn-messaging-clients-1-def), 1.41.2 - 1.42.6[1](#fn-messaging-clients-1-def) |
 | [Amazon SQS﻿](https://github.com/aws/aws-sdk-go-v2/tree/main/service/sqs) | 1.16.0-1.42.27[1](#fn-messaging-clients-1-def), 1.42.28 - 1.44.0[1](#fn-messaging-clients-1-def), 1.44.1 - 1.45.1[1](#fn-messaging-clients-1-def) |
 | [Kafka (IBM/sarama)﻿](https://github.com/IBM/sarama) | 1.40+[1](#fn-messaging-clients-1-def) |
 | [Kafka (Shopify/sarama)﻿](https://github.com/Shopify/sarama) | 1.18 - 1.48[1](#fn-messaging-clients-1-def) |
@@ -1048,7 +1049,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | Remoting frameworks | Versions |
 | --- | --- |
 | [Amazon AWS Lambda SDK﻿](https://github.com/aws/aws-lambda-go) | 1.18.0-1.54.0[1](#fn-remoting-frameworks-1-def) |
-| [Amazon AWS SDK﻿](https://github.com/aws/aws-sdk-go-v2) | 1.13.0 - 1.39.0[2](#fn-remoting-frameworks-2-def), 1.39.1 - 1.41.1[2](#fn-remoting-frameworks-2-def), 1.41.2 - 1.41.7[2](#fn-remoting-frameworks-2-def), 1.41.8 - 1.42.0[2](#fn-remoting-frameworks-2-def), 1.42.1[2](#fn-remoting-frameworks-2-def) |
+| [Amazon AWS SDK﻿](https://github.com/aws/aws-sdk-go-v2) | 1.13.0 - 1.39.0[2](#fn-remoting-frameworks-2-def), 1.39.1 - 1.41.1[2](#fn-remoting-frameworks-2-def), 1.41.2 - 1.41.7[2](#fn-remoting-frameworks-2-def), 1.41.8 - 1.42.0[2](#fn-remoting-frameworks-2-def), 1.42.1[2](#fn-remoting-frameworks-2-def), 1.42.2 - 1.43.6[2](#fn-remoting-frameworks-2-def) |
 | [gRPC﻿](https://godoc.org/google.golang.org/grpc) | 1.17 - 1.28[3](#fn-remoting-frameworks-3-def), 1.29[3](#fn-remoting-frameworks-3-def), 1.30 - 1.39[3](#fn-remoting-frameworks-3-def), 1.40 - 1.59[3](#fn-remoting-frameworks-3-def), 1.60 - 1.68[3](#fn-remoting-frameworks-3-def), 1.69 - 1.76[3](#fn-remoting-frameworks-3-def), 1.78 - 1.83[3](#fn-remoting-frameworks-3-def) |
 
 1

@@ -57,7 +57,6 @@ Each MSU hour of Mainframe Monitoring includes:
 * Distributed tracing and code-level insight for [30+ supported z/OS technologies](/managed/ingest-from/technology-support/mainframe-technology-support "Learn which technologies Dynatrace supports for Mainframe monitoring.").
 * Application performance monitoring metrics and service metrics.
 * Topology and dependency mapping for mainframe transactions and services.
-
 * Query consumption generated from within ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing** and  **Services** is included with Dynatrace; no additional query charges apply for these apps.
 
 MSU hours do not include custom metrics, such as [custom JMX metrics](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics "Learn how to set up JMX metrics monitoring for your Java applications on z/OS.").

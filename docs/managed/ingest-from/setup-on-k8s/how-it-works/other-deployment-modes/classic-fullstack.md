@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/how-it-works
 # Classic Full-Stack monitoring
 
 * 2-min read
-* Published Oct 31, 2024
+* Updated on Sep 14, 2026
 
 Classic Full-Stack monitoring integrates host and application monitoring for Kubernetes environments. Instrumented Pods maintain their relationship with hosts, enabling the collection of host metrics.
 
@@ -20,8 +20,6 @@ See [`.spec.oneAgent.classicFullStack`](/managed/ingest-from/setup-on-k8s/refere
 * This all-in-one approach includes Kubernetes cluster monitoring, distributed tracing, fault domain isolation, and deep code-level insights using a single deployment configuration across your clusters.
 
 ## Limitations
-
-Classic Full-Stack mode is not supported when using a [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 
 There’s a startup dependency between the container where OneAgent is deployed and the application container to be instrumented (for example, containers with deep process monitoring enabled). The OneAgent container must be started, and the `oneagenthelper` process must be running before the application container is launched to ensure proper instrumentation.
 

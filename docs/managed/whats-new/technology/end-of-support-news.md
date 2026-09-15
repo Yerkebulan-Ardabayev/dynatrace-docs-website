@@ -1602,6 +1602,7 @@ OpenShift
 | 1.7.x | October 1, 2027 | 1.34 | November 1, 2027 |
 | 1.8.x | October 1, 2027 | 1.34 | November 1, 2027 |
 | 1.9.x | October 1, 2027 | 1.34 | November 1, 2027 |
+| 1.10.x | July 1, 2027 | 1.31 | January 1, 2027 |
 
 | Dynatrace Operator version | End of support date | Last supported OpenShift version | OpenShift EOL date |
 | --- | --- | --- | --- |
@@ -1612,6 +1613,7 @@ OpenShift
 | 1.7.x | October 1, 2027 | 4.19 | March 1, 2028 |
 | 1.8.x | October 1, 2027 | 4.19 | March 1, 2028 |
 | 1.9.x | October 1, 2027 | 4.19 | March 1, 2028 |
+| 1.10.x | July 1, 2027 | 4.14 | November 1, 2026 |
 
 ### Past Dynatrace Operator support changes
 

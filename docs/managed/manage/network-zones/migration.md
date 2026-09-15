@@ -22,4 +22,5 @@ If you don't use Dynatrace yet, refer to [New installation](/managed/manage/netw
 
 ## Related topics
 
+* [Network zones - Settings API](/managed/manage/network-zones/manage-via-settings-api "Manage network zones programmatically via the Dynatrace Settings API.")
 * [Network zones API](/managed/dynatrace-api/environment-api/network-zones "Manage network zones via the Dynatrace API.")

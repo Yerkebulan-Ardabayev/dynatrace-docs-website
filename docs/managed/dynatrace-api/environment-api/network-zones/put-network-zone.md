@@ -10,6 +10,8 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/network
 * Reference
 * Published Apr 08, 2020
 
+This API is deprecated. Use the [Settings API](/managed/dynatrace-api/environment-api/settings/schemas/builtin-networkzones-zones "View builtin:networkzones.zones settings schema table of your monitoring environment via the Dynatrace API.") instead.
+
 Updates the specified network zone. If the network zone with the specified ID doesn't exist, a new network zone is created.
 
 The request produces and consumes an `application/json` payload.

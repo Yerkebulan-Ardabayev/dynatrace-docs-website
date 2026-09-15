@@ -33,7 +33,7 @@ Use the pages below to understand how the consumption for each capability is cal
 * [Real User Monitoring (RUM)](/managed/license/capabilities/real-user-synthetic-monitoring/real-user-monitoring "Learn how your consumption of the Dynatrace Real User Monitoring (RUM) DPS capabilities are billed and charged.")
 * [Browser Monitor or Clickpath](/managed/license/capabilities/real-user-synthetic-monitoring/browser-monitor-clickpath "Learn how your consumption of the Browser Monitor or Clickpath DPS capability is billed and charged.")
 * [HTTP Monitor](/managed/license/capabilities/real-user-synthetic-monitoring/http-monitor "Learn how your consumption of the Dynatrace HTTP Monitor DPS capability is billed and charged.")
-* [Third-Party Synthetic API Integration](/managed/license/capabilities/real-user-synthetic-monitoring/third-party-api "Learn how your consumption of the the Dynatrace Third-Party Synthetic API Integration DPS capability is billed and charged.")
+* [Third-Party Synthetic API Integration](/managed/license/capabilities/real-user-synthetic-monitoring/third-party-api "Learn how your consumption of the Dynatrace Third-Party Synthetic API Integration DPS capability is billed and charged.")
 
 ### Platform extensions
 

@@ -10,6 +10,8 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/network
 * Reference
 * Published Apr 08, 2020
 
+This API is deprecated. Use the [Settings API](/managed/dynatrace-api/environment-api/settings/schemas/builtin-networkzones-zones "View builtin:networkzones.zones settings schema table of your monitoring environment via the Dynatrace API.") instead.
+
 Deletes the specified network zone. Deletion cannot be undone!
 
 You can only delete an empty network zone (a zone that no ActiveGate or OneAgent is using). If the network zone is used as an alternative zone for any OneAgent, it will be automatically removed from the list of possible alternatives.

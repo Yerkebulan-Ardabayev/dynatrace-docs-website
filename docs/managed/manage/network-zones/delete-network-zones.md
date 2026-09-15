@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/network-zones/delete-network-z
 
 * How-to guide
 * 1-min read
-* Published Apr 14, 2020
+* Updated on Aug 28, 2026
 
 To delete a network zone, first make sure no OneAgent or ActiveGate is using that zone. You can only delete an empty network zone. If the network zone is used as an alternative zone for any OneAgent, it will be automatically removed from the list of possible alternatives.
 
@@ -69,8 +69,8 @@ Follow these steps:
    [Deploy OneAgent on Heroku](/managed/ingest-from/setup-on-container-platforms/heroku "Install OneAgent to monitor applications running on Heroku.")
 5. [Uninstall the ActiveGates](/managed/ingest-from/dynatrace-activegate/operation/uninstall-activegate "Learn how to remove ActiveGate from Windows or Linux-based systems.") responsible for message routing in the network zone to be deleted.  
    Alternatively, you can re-assign these ActiveGates to other network zones. Change the network zone in the [ActiveGate configuration](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate "Learn which ActiveGate properties you can configure based on your needs and requirements.") and [restart the ActiveGate main service](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").
-6. Delete the network zone. Use the [DELETE a network zone](/managed/dynatrace-api/environment-api/network-zones/del-network-zone "Delete a network zone via the Dynatrace API.") API call.
+6. Delete the network zone. Use the [Settings API](/managed/manage/network-zones/manage-via-settings-api#delete-a-network-zone "Manage network zones programmatically via the Dynatrace Settings API.").
 
 ## Related topics
 
-* [Network zones API](/managed/dynatrace-api/environment-api/network-zones "Manage network zones via the Dynatrace API.")
+* [Network zones - Settings API](/managed/manage/network-zones/manage-via-settings-api "Manage network zones programmatically via the Dynatrace Settings API.")

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 
 * How-to guide
 * 6-min read
-* Updated on Jun 21, 2022
+* Updated on Sep 11, 2026
 
 Dynatrace can automatically create a continuous [service flow](/managed/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") for IBM MQ when the producer and consumer services use the same queue or topic name. If the producer and consumer services refer to different queue or topic names, IBM MQ configuration might be required to create a continuous service flow.
 
@@ -64,6 +64,12 @@ Specifications
 ## Manage IBM MQ configuration
 
 You can manage an IBM MQ configuration automatically by installing an [IBM MQ extension](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.") and activating **Retrieve topology for improved transaction tracing** to retrieve the IBM MQ configuration of your environment and send it to the Settings API. This can also be done manually via the web UI or the Settings API.
+
+Manual mapping rules might be required
+
+Automatic topology retrieval doesn't always produce a complete set of mapping rules. For environments with complex, multi-level queue mappings, Dynatrace might not resolve which queues belong to the same message flow, so trace stitching can break even after you retrieve the topology. In this case, adapt the IBM MQ mapping rules manually via the web UI or the Settings API. For details about which mappings the extension collects automatically and how to adjust them, see [IBM MQ extension](/managed/observe/infrastructure-observability/extensions/ibm-mq-local#activation-and-setup "Monitor IBM MQ queue managers, queues, channels, topics, and listeners by collecting performance metrics and system events into Dynatrace via OneAgent or ActiveGate.").
+
+To stitch a producer and a consumer, both must resolve to the same queue manager and queue name. A mapping rule doesn't need to reflect your real IBM MQ configuration: the mapped name can be an artificial value that doesn't exist in IBM MQ, as long as it's unique and identical in the producer and consumer rules.
 
 ### Manual configuration via web UI
 

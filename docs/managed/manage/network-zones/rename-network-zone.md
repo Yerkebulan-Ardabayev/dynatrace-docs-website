@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/network-zones/rename-network-z
 
 * How-to guide
 * 1-min read
-* Published Apr 08, 2020
+* Updated on Aug 28, 2026
 
 To rename a network zone, create a new network zone with the new name and move all ActiveGates and OneAgents to the new zone.
 
@@ -75,8 +75,8 @@ Deploy network zones in a cloud
    3. Application-only deployments
    4. zRemote code module
 2. [Uninstall the ActiveGates](/managed/ingest-from/dynatrace-activegate/operation/uninstall-activegate "Learn how to remove ActiveGate from Windows or Linux-based systems.") in the old network zone.
-3. Delete the old network zone. Use the [DELETE a network zone](/managed/dynatrace-api/environment-api/network-zones/del-network-zone "Delete a network zone via the Dynatrace API.") API call.
+3. Delete the old network zone. Use the [Settings API](/managed/manage/network-zones/manage-via-settings-api#delete-a-network-zone "Manage network zones programmatically via the Dynatrace Settings API.").
 
 ## Related topics
 
-* [Network zones API](/managed/dynatrace-api/environment-api/network-zones "Manage network zones via the Dynatrace API.")
+* [Network zones - Settings API](/managed/manage/network-zones/manage-via-settings-api "Manage network zones programmatically via the Dynatrace Settings API.")

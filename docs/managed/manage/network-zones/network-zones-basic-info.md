@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/network-zones/network-zones-ba
 
 * Tutorial
 * 3-min read
-* Updated on Dec 10, 2025
+* Updated on Aug 28, 2026
 
 Network zones are Dynatrace entities that represent your network structure. They help you to route the traffic efficiently, avoiding unnecessary traffic across data centers and network regions.
 
@@ -98,7 +98,7 @@ To configure alternative network zones
 2. Select the network zone you want to configure and the select **Edit** in the upper-right corner of the page.
 3. Select the required network zones.
 
-Alternatively, you can use the [PUT a network zone](/managed/dynatrace-api/environment-api/network-zones/put-network-zone "Update a network zone via the Dynatrace API.") call of the Environment API to configure the list of alternative zones.
+Alternatively, you can use the [Settings API](/managed/manage/network-zones/manage-via-settings-api#update-a-network-zone "Manage network zones programmatically via the Dynatrace Settings API.") to configure the list of alternative zones.
 
 ## Fallback mode
 
@@ -106,9 +106,9 @@ Fallback mode determines how the network handles traffic if no ActiveGates are a
 
 Available fallback modes:
 
-* **Any ActiveGate (default)**: Traffic is routed to any available ActiveGate if the primary network zone is not accessible.
-* **Only DefaultZone**: Traffic is directed only to the default network zone.
-* **None (drop traffic)**: Traffic is discarded if the primary network zone is unavailable.
+* **Any ActiveGate (default)**: If no ActiveGate in the primary or alternative zones is available, traffic is routed to any available ActiveGate, including an ActiveGate in the default zone.
+* **Only default zone**: If no ActiveGate in the primary or alternative zones is available, traffic is routed only to an available ActiveGate in the default zone. ActiveGates in other zones aren't considered.
+* **None**: Traffic stays within the primary zone and its alternative zones. If no ActiveGate in those zones is available, OneAgents don't send data to another zone.
 
 ### Configure fallback mode
 
@@ -126,4 +126,4 @@ The maximum number of network zones per environment is 10,000 by default. If you
 
 ## Related topics
 
-* [Network zones API](/managed/dynatrace-api/environment-api/network-zones "Manage network zones via the Dynatrace API.")
+* [Network zones - Settings API](/managed/manage/network-zones/manage-via-settings-api "Manage network zones programmatically via the Dynatrace Settings API.")

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deplo
 # Deploy Dynatrace alongside Istio
 
 * 10-min read
-* Updated on Oct 22, 2025
+* Updated on Sep 11, 2026
 
 This guide explains how Dynatrace components can be deployed alongside Istio. A Dynatrace deployment on Kubernetes contains several components that need to communicate with each other, with the Dynatrace cluster and other external resources.
 
@@ -39,6 +39,56 @@ This guide covers two predefined configurations of Istio, chosen for their simpl
 
   If none of the points above apply, choose [Default Istio configuration](#setup-guide-for-default-istio-configuration).  
   Follow the [setup guide for the secure Istio configuration](#setup-guide-for-secure-istio-configuration) if Istio is deployed accordingly.
+
+### Native sidecar support
+
+Istio 1.28 or later, deployed on Kubernetes 1.29 or later, uses native sidecar containers by default. Dynatrace Operator does not support injection into native sidecar containers. To enable monitoring of the `istio-proxy` sidecar, disable native sidecars in your Istio deployment by adding the following environment variable to the pilot deployment.
+
+Example values for the Istio Helm chart:
+
+```
+pilot:
+
+
+
+...
+
+
+
+env:
+
+
+
+ENABLE_NATIVE_SIDECARS: false
+
+
+
+...
+```
+
+If you customize the `istio-proxy` sidecar as described in the [official Istio documentation﻿](https://istio.io/latest/docs/setup/additional-setup/sidecar-injection/#customizing-injection) while native sidecars are enabled, monitoring will be lost for the entire pod.
+
+Dynatrace Operator cannot reliably detect this scenario. To prevent monitoring loss, either disable Istio native sidecars by setting `ENABLE_NATIVE_SIDECARS: false` in the pilot deployment, or manually exclude the `istio-proxy` container from Dynatrace injection:
+
+```
+...
+
+
+
+metadata:
+
+
+
+annotations:
+
+
+
+...
+
+
+
+container.inject.dynatrace.com/istio-proxy: "false"
+```
 
 ### Other deployment considerations
 
@@ -79,34 +129,6 @@ podAnnotations:
 
 
 oneagent.dynatrace.com/inject: "false"
-```
-
-Native sidecar support
-
-#### Native sidecar support
-
-Istio 1.28 deployed on a compatible Kubernetes cluster (>=1.29) will use native sidecar containers. This new type of sidecar container is currently not supported by Dynatrace Operator. Disable native sidecars in your Istio deployment by adding the following environment variable to the pilot deployment.
-
-Example values for the Istio helm chart:
-
-```
-pilot:
-
-
-
-...
-
-
-
-env:
-
-
-
-ENABLE_NATIVE_SIDECARS: false
-
-
-
-...
 ```
 
 ## Setup guide for default Istio configuration

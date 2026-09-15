@@ -8,11 +8,9 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/o
 # Get started with Full observability (classic full-stack deployment)
 
 * 8-min read
-* Updated on Sep 05, 2025
+* Updated on Sep 14, 2026
 
 This deployment mode is supported by Dynatrace but is no longer recommended for most environments.
-
-Classic Full-Stack mode is not supported when using a [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 
 This page provides instructions for deploying the Dynatrace Operator in classic full-stack configuration to a Kubernetes cluster.
 

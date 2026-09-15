@@ -53,5 +53,4 @@ You can access and edit your event list at any time: Select your monitor in **Sy
 
 ## Related topics
 
-* [Real User and Synthetic Monitoring overview (DPS)](/managed/license/capabilities/real-user-synthetic-monitoring "Learn how Dynatrace Real User and Synthetic Monitoring consumption is calculated using the Dynatrace Platform Subscription model.")
 * [Digital Experience Monitoring (DEM units)](/managed/license/classic-licensing/digital-experience-monitoring-units "Understand how Dynatrace Digital Experience Monitoring consumption is calculated based on DEM units.")

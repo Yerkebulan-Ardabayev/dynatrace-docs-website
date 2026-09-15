@@ -48,28 +48,41 @@ Infrastructure Monitoring consumption example
 
 ### Bundled functionality
 
+#### Metrics
+
 This section assumes that you have followed the Dynatrace-recommended deployment options.
 If you implement a custom deployment, the charging of included metrics may still work as described—but this is not guaranteed by Dynatrace.
 
-Use of Infrastructure Monitoring metrics and [other built-in metrics](/managed/analyze-explore-automate/metrics-classic/built-in-metrics "Explore the complete list of built-in Dynatrace metrics.") is included at no additional cost on Infrastructure Monitoring-enabled hosts.
+Infrastructure Monitoring includes:
 
-Every host also includes 1,500 custom metric data points in each 15-minute interval. Unused custom metric data points don't roll over to subsequent intervals.
+* Infrastructure monitoring metrics and [other built-in metrics](/managed/analyze-explore-automate/metrics-classic/built-in-metrics "Explore the complete list of built-in Dynatrace metrics.") is included at no additional cost on Infrastructure Monitoring-enabled hosts.
+* For each host, 1,500 custom metric data points are included in each 15-minute interval. Unused custom metric data points don't roll over to subsequent intervals.
+  For examples of included custom metrics, see [Included custom metric data points](#included).
 
-Included metric data points are applied automatically to metrics that originate at hosts that are monitored by OneAgent in Infrastructure Monitoring mode. This applies to custom metrics as described in the table below.
+  Custom metric data points that exceed your included volume of metric data points are charged as [Custom Metrics Classic](/managed/license/capabilities/platform-extensions/custom-metrics-classic "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
 
-Custom metric data points that exceed your included volume of metric data points are charged as [Custom Metrics Classic](/managed/license/capabilities/platform-extensions/custom-metrics-classic "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
+##### Included custom metric data points
 
-| Origin | Examples (including but not limited to) |
-| --- | --- |
-| An Infrastructure-monitored host and sent via the [OneAgent metric API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.") | * OpenTelemetry metrics * Spring Micrometer * StatsD * JMX * Extensions run locally on the host by OneAgent * a host-local Telegraf |
-| An Infrastructure-monitored Kubernetes node | * OpenTelemetry metrics * Spring Micrometer * JMX * [Prometheus metrics via ActiveGate](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.")  * This doesn't include Metrics sent via the Dynatrace Collector or OpenTelemetry Collector. |
+Your volume of included custom metric data points is applied automatically to metrics that originate at hosts that are monitored by OneAgent in Infrastructure Monitoring mode.
+Originating hosts include:
 
-#### Included custom metric data points calculation example
+* An Infrastructure-monitored host and sent via the [OneAgent metric API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities."), with metrics including for example:
 
-* First 15-minute interval: `1 (hosts monitored) × 1,500 (metric data points) = 1,500 included custom metric data points`
-* Second 15-minute interval: `2 (hosts monitored) × 1,500 (metric data points) = 3,000 included custom metric data points`
-* Third 15-minute interval: `1 (hosts monitored) × 1,500 (metric data points) = 1,500 included custom metric data points`
-* Fourth 15-minute interval: `1 (hosts monitored) × 1,500 (metric data points) = 1,500 included custom metric data points`
+  + OpenTelemetry metrics
+  + Spring Micrometer
+  + StatsD
+  + JMX
+  + Extensions run locally on the host by OneAgent
+  + a host-local Telegraf
+* An Infrastructure-monitored Kubernetes node, with metrics including for example:
+
+  + OpenTelemetry metrics
+  + Spring Micrometer
+  + JMX
+  + [Prometheus metrics via ActiveGate](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.")
+  + This doesn't include Metrics sent via the Dynatrace Collector or OpenTelemetry Collector.
+
+##### Included metric data point calculation
 
 Custom metric data point consumption takes many forms.
 An equal number of custom metric data points can be consumed:
@@ -78,7 +91,21 @@ An equal number of custom metric data points can be consumed:
 * Equally across multiple 15-minute intervals or all at once in a single minute.
 * By all Infrastructure-monitored hosts, a subset of all Infrastructure-monitored hosts, or a single infrastructure-monitored host.
 
-## Understand and manage your consumption
+Included custom metric data points are calculated according to 15-minute intervals, as shown in the figure below.
+
+![Included custom metric data points are calculated according to 15-minute intervals](https://dt-cdn.net/images/infrastructure-monitoring-included-metric-data-points-host-spans-light-mode-2188-ee0a9568a4.png)
+
+Included custom metric data points are calculated according to 15-minute intervals
+
+## Estimate your cost
+
+The following example uses a list price of $0.04 per host-hour. This may differ from your rate card price.
+
+This example assumes 100 hosts are monitored 24 hours per day for 30 days:
+
+`100 hosts × $0.04 × 24 hours × 30 days = $2,880 per month`
+
+## Understand your consumption
 
 Dynatrace provides various options to help you understand and analyze your organization's consumption of Infrastructure Monitoring.
 
