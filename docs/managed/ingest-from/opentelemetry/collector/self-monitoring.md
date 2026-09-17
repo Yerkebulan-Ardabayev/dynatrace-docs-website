@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/s
 
 * Explanation
 * 8-min read
-* Updated on Jun 09, 2026
+* Updated on Aug 04, 2026
 
 The OTel Collector provides extensive internal telemetry to help you monitor and troubleshoot its performance.
 
@@ -28,13 +28,93 @@ Every Collector has self-monitoring capabilities, but they need to be activated.
 
 Self-monitoring data can be exported from the Collector via the OTLP protocol.
 
-* The configuration below assumes the environment variables `DT_ENDPOINT` and `DT_API_TOKEN` are set.
-* To send data to Dynatrace via OTLP, you will need to supply a Dynatrace endpoint and an ingest token with the `metrics.ingest` scope set. See the [OTLP Export documentation](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") for more information.
+* The configuration below assumes the environment variables `DT_ENDPOINT` and either `DT_PLATFORM_TOKEN` or `DT_API_TOKEN` are set.
+* To send data to Dynatrace via OTLP, you will need to supply a Dynatrace endpoint and a [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") with the `openpipeline:metrics:ingest` scope, or a [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") with the **Ingest metrics** (`metrics.ingest`) scope. See the [OTLP Export documentation](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") for more information.
 * The `DT_ENDPOINT` environment variable should contain the base URL and the base `/api/v2/otlp`.
 
   Example: `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`
 
 To send self-monitoring data to Dynatrace, use the following configuration:
+
+Platform token
+
+Classic access token
+
+```
+service:
+
+
+
+# turn on self-monitoring
+
+
+
+telemetry:
+
+
+
+metrics:
+
+
+
+# metrics verbosity level. Higher verbosity means more metrics.
+
+
+
+# The dashboard relies on metrics at level detailed.
+
+
+
+level: detailed
+
+
+
+# set up OTLP exporter
+
+
+
+readers:
+
+
+
+- periodic:
+
+
+
+interval: 60000
+
+
+
+exporter:
+
+
+
+otlp:
+
+
+
+protocol: http/protobuf
+
+
+
+temporality_preference: delta
+
+
+
+endpoint: "${env:DT_ENDPOINT}/v1/metrics"
+
+
+
+headers:
+
+
+
+- name: Authorization
+
+
+
+value: "Bearer ${env:DT_PLATFORM_TOKEN}"
+```
 
 ```
 service:
@@ -305,6 +385,458 @@ endpoint: <...>
 In this approach, Collector instances are configured to send their internal telemetry data to themselves via an `otlp` receiver, in order to enrich the incoming telemetry with Kubernetes attributes using the `k8sattributesprocessor` processor. It retrieves this data from the Kuberenetes API and attaches it to the telemetry data passing through it.
 
 For this option, you need to set up a pipeline for enriching the self-monitoring data with the `k8sattributesprocessor` processor in the Collector configuration:
+
+Platform token
+
+Classic access token
+
+```
+receivers:
+
+
+
+otlp:
+
+
+
+protocols:
+
+
+
+grpc:
+
+
+
+endpoint: ${env:MY_POD_IP}:4317
+
+
+
+http:
+
+
+
+cors:
+
+
+
+allowed_origins:
+
+
+
+- http://*
+
+
+
+- https://*
+
+
+
+endpoint: ${env:MY_POD_IP}:4318
+
+
+
+processors:
+
+
+
+k8sattributes:
+
+
+
+extract:
+
+
+
+metadata:
+
+
+
+- k8s.pod.name
+
+
+
+- k8s.pod.uid
+
+
+
+- k8s.pod.ip
+
+
+
+- k8s.deployment.name
+
+
+
+- k8s.replicaset.name
+
+
+
+- k8s.statefulset.name
+
+
+
+- k8s.daemonset.name
+
+
+
+- k8s.job.name
+
+
+
+- k8s.cronjob.name
+
+
+
+- k8s.namespace.name
+
+
+
+- k8s.node.name
+
+
+
+- k8s.cluster.uid
+
+
+
+- k8s.container.name
+
+
+
+annotations:
+
+
+
+- from: pod
+
+
+
+key_regex: metadata.dynatrace.com/(.*)
+
+
+
+tag_name: $$1
+
+
+
+pod_association:
+
+
+
+- sources:
+
+
+
+- from: resource_attribute
+
+
+
+name: k8s.pod.name
+
+
+
+- from: resource_attribute
+
+
+
+name: k8s.namespace.name
+
+
+
+- sources:
+
+
+
+- from: resource_attribute
+
+
+
+name: k8s.pod.ip
+
+
+
+- sources:
+
+
+
+- from: resource_attribute
+
+
+
+name: k8s.pod.uid
+
+
+
+- sources:
+
+
+
+- from: connection
+
+
+
+memory_limiter:
+
+
+
+check_interval: 5s
+
+
+
+limit_percentage: 80
+
+
+
+spike_limit_percentage: 25
+
+
+
+transform:
+
+
+
+error_mode: ignore
+
+
+
+metric_statements:
+
+
+
+- context: resource
+
+
+
+statements:
+
+
+
+- set(attributes["k8s.workload.kind"], "job") where IsString(attributes["k8s.job.name"])
+
+
+
+- set(attributes["k8s.workload.name"], attributes["k8s.job.name"]) where IsString(attributes["k8s.job.name"])
+
+
+
+- set(attributes["k8s.workload.kind"], "cronjob") where IsString(attributes["k8s.cronjob.name"])
+
+
+
+- set(attributes["k8s.workload.name"], attributes["k8s.cronjob.name"]) where IsString(attributes["k8s.cronjob.name"])
+
+
+
+- set(attributes["k8s.workload.kind"], "daemonset") where IsString(attributes["k8s.daemonset.name"])
+
+
+
+- set(attributes["k8s.workload.name"], attributes["k8s.daemonset.name"]) where IsString(attributes["k8s.daemonset.name"])
+
+
+
+- set(attributes["k8s.workload.kind"], "statefulset") where IsString(attributes["k8s.statefulset.name"])
+
+
+
+- set(attributes["k8s.workload.name"], attributes["k8s.statefulset.name"]) where IsString(attributes["k8s.statefulset.name"])
+
+
+
+- set(attributes["k8s.workload.kind"], "replicaset") where IsString(attributes["k8s.replicaset.name"])
+
+
+
+- set(attributes["k8s.workload.name"], attributes["k8s.replicaset.name"]) where IsString(attributes["k8s.replicaset.name"])
+
+
+
+- set(attributes["k8s.workload.kind"], "deployment") where IsString(attributes["k8s.deployment.name"])
+
+
+
+- set(attributes["k8s.workload.name"], attributes["k8s.deployment.name"]) where IsString(attributes["k8s.deployment.name"])
+
+
+
+# remove the delete statements if you want to preserve these attributes
+
+
+
+- delete_key(attributes, "k8s.deployment.name")
+
+
+
+- delete_key(attributes, "k8s.replicaset.name")
+
+
+
+- delete_key(attributes, "k8s.statefulset.name")
+
+
+
+- delete_key(attributes, "k8s.daemonset.name")
+
+
+
+- delete_key(attributes, "k8s.cronjob.name")
+
+
+
+- delete_key(attributes, "k8s.job.name")
+
+
+
+exporters:
+
+
+
+otlp_http/dynatrace:
+
+
+
+endpoint: ${env:DT_ENDPOINT}
+
+
+
+headers:
+
+
+
+Authorization: "Bearer ${env:DT_PLATFORM_TOKEN}"
+
+
+
+sending_queue:
+
+
+
+batch:
+
+
+
+# Recommended metrics defaults
+
+
+
+min_size: 3000
+
+
+
+max_size: 3000
+
+
+
+flush_timeout: 60s
+
+
+
+service:
+
+
+
+pipelines:
+
+
+
+metrics:
+
+
+
+receivers:
+
+
+
+- otlp
+
+
+
+processors:
+
+
+
+- k8sattributes
+
+
+
+- transform
+
+
+
+- memory_limiter
+
+
+
+- batch
+
+
+
+exporters:
+
+
+
+- otlp_http/dynatrace
+
+
+
+# turn on self-monitoring
+
+
+
+telemetry:
+
+
+
+metrics:
+
+
+
+# metrics verbosity level. Higher verbosity means more metrics.
+
+
+
+# The dashboard relies on metrics at level detailed.
+
+
+
+level: detailed
+
+
+
+readers:
+
+
+
+- periodic:
+
+
+
+interval: 10000
+
+
+
+timeout: 5000
+
+
+
+exporter:
+
+
+
+otlp:
+
+
+
+protocol: http/protobuf
+
+
+
+temporality_preference: delta
+
+
+
+endpoint: ${env:MY_POD_IP}:4318
+```
 
 ```
 receivers:

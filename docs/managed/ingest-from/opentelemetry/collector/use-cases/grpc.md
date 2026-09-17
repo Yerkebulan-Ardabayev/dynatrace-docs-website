@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/u
 
 * How-to guide
 * 1-min read
-* Published Oct 11, 2023
+* Updated on Aug 04, 2026
 
 The following configuration example shows how you would configure a Collector instance to transform a gRPC OTLP request to its HTTP counterpart.
 
@@ -26,6 +26,108 @@ The following configuration example shows how you would configure a Collector in
 See [Collector Deployment](/managed/ingest-from/opentelemetry/collector/deployment "How to deploy the Dynatrace OpenTelemetry Collector.") and [Collector Configuration](/managed/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
 
 ## Demo configuration
+
+Platform token
+
+Classic access token
+
+```
+receivers:
+
+
+
+otlp:
+
+
+
+protocols:
+
+
+
+grpc:
+
+
+
+endpoint: 0.0.0.0:4317
+
+
+
+exporters:
+
+
+
+otlp_http:
+
+
+
+endpoint: ${env:DT_ENDPOINT}
+
+
+
+headers:
+
+
+
+Authorization: "Bearer ${env:DT_PLATFORM_TOKEN}"
+
+
+
+service:
+
+
+
+pipelines:
+
+
+
+traces:
+
+
+
+receivers: [otlp]
+
+
+
+processors: []
+
+
+
+exporters: [otlp_http]
+
+
+
+metrics:
+
+
+
+receivers: [otlp]
+
+
+
+processors: []
+
+
+
+exporters: [otlp_http]
+
+
+
+logs:
+
+
+
+receivers: [otlp]
+
+
+
+processors: []
+
+
+
+exporters: [otlp_http]
+```
+
+Assign the scope that matches your signal type: `openpipeline:logs:ingest` for logs, `openpipeline:metrics:ingest` for metrics, or `openpipeline:traces:ingest` for traces.
 
 ```
 receivers:
@@ -141,8 +243,11 @@ Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://gith
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 
-* `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
-* `DT_API_TOKEN` contains the [API token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`).
+* One token variable, depending on the token type you use:
+
+  + **Platform token**: `DT_PLATFORM_TOKEN` contains your [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") with the `openpipeline:logs:ingest`, `openpipeline:metrics:ingest`, and `openpipeline:traces:ingest` scopes.
+  + **Classic access token**: `DT_API_TOKEN` contains your [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") with the **Ingest logs** (`logs.ingest`), **Ingest metrics** (`metrics.ingest`), and **Ingest OpenTelemetry traces** (`openTelemetryTrace.ingest`) scopes.
 
 ### Service pipelines
 

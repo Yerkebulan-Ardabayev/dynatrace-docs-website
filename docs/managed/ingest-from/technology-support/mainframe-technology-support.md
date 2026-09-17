@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/mainfr
 # Mainframe technology support
 
 * 3-min read
-* Updated on Sep 07, 2026
+* Updated on Sep 09, 2026
 
 Dynatrace supports monitoring of the technologies and versions listed below on IBM z/OS.
 
@@ -122,6 +122,7 @@ Real User Monitoring (RUM) is not supported for Java applications on z/OS. This 
 | IBM Semeru for z/OS | 11 |
 | IBM Semeru for z/OS | 17 |
 | IBM Semeru for z/OS[1](#fn-5-1-def) | 21 |
+| IBM Semeru for z/OS[1](#fn-5-1-def)[2](#fn-5-2-def) | 25 |
 
 1
 
@@ -131,11 +132,13 @@ The technologies listed below are supported only when used with a supported Java
 In some cases, a manual Java runtime upgrade may be required to remain supported
 (for example, the IBM CICS Transaction Gateway earlier than 9.2).
 
+2
+
+Java 25 is only supported in OneAgent version 1.345+
+
 | Technology | Versions |
 | --- | --- |
-| IBM WebSphere Application Server | 8.5.5, 9.0 |
-| IBM WebSphere Liberty [6](#fn-6-6-def) | 18, 19, 20, 21, 22, 23, 24, 25, 26 |
-| IBM z/OS Connect [1](#fn-6-1-def)[2](#fn-6-2-def) | 3.0.30+ |
+| IBM z/OS Connect [1](#fn-6-1-def)[2](#fn-6-2-def)[6](#fn-6-6-def) | 3.0.30+ |
 | IBM CICS Transaction Gateway [3](#fn-6-3-def)[4](#fn-6-4-def) | 9.0, 9.1, 9.2, 9.3, 10.1 |
 | IBM IMS SOAP Gateway [5](#fn-6-5-def) | 3.2 |
 | Apache HttpClient | 3.1, 4, 5 |
@@ -163,11 +166,28 @@ Only inbound tracing is supported.
 
 6
 
+Only the [zosConnect-2.0﻿](https://www.ibm.com/docs/en/zos-connect/3.0.0?topic=reference-zos-connect-features#zosconnect_features__title__2) feature is supported.
+
+| Application servers | Versions |
+| --- | --- |
+| IBM WebSphere Application Server | 8.5.5, 9.0 |
+| IBM WebSphere Liberty [1](#fn-7-1-def) | 18 - 26 |
+
+1
+
+Servlets in the Jakarta namespace are only supported in OneAgent version 1.327+. In OneAgent versions earlier than 1.341, this feature is off by default, in which case you need to enable it with the OneAgent option `enable-jakarta-support=true`.
+
+| Web framework | Versions |
+| --- | --- |
+| Jakarta Servlet | 2.5, 3.0, 3.1, 4, 5 [1](#fn-8-1-def), 6 [1](#fn-8-1-def) |
+
+1
+
 Servlets in the Jakarta namespace are only supported in OneAgent version 1.327+. In OneAgent versions earlier than 1.341, this feature is off by default, in which case you need to enable it with the OneAgent option `enable-jakarta-support=true`.
 
 | Database framework | Versions |
 | --- | --- |
-| JDBC [1](#fn-7-1-def) | 3, 4 |
+| JDBC [1](#fn-9-1-def) | 3, 4 |
 
 1
 
@@ -175,8 +195,12 @@ Only the [Db2 JDBC driver types﻿](https://www.ibm.com/docs/en/sdi/7.2.0.3?topi
 
 | Messaging client | Versions |
 | --- | --- |
-| IBM MQ | 8.0, 9.0, 9.1, 9.2 |
-| JMS | 1.1 |
+| IBM MQ | 8.0, 9.0, 9.1, 9.2, 9.3, 9.4 |
+| JMS [1](#fn-10-1-def) | 1.1 |
+
+1
+
+z/OS Java module supports ActiveMQ, IBM MQ, and WebSphere JMS message providers.
 
 | Monitoring framework | Versions |
 | --- | --- |

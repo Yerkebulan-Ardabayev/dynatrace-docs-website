@@ -104,7 +104,7 @@ kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/downlo
 
 2. Create secret for access token
 
-Create a secret named `dynakube` for the Dynatrace Operator token obtained in [Tokens and permissions required](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
+Create a secret named `dynakube` for the Dynatrace Operator token obtained in [Tokens and permissions required](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions/tokens-permissions-classic "Configure Classic API tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.").
 
 ```
 kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=<OPERATOR_TOKEN>"
@@ -220,7 +220,7 @@ oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1
 
 2. Create secret for access token
 
-Create a secret named `dynakube` for the Dynatrace Operator token obtained in [Tokens and permissions required](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
+Create a secret named `dynakube` for the Dynatrace Operator token obtained in [Tokens and permissions required](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions/tokens-permissions-classic "Configure Classic API tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.").
 
 ```
 oc -n dynatrace create secret generic dynakube --from-literal="apiToken=<OPERATOR_TOKEN>"
@@ -306,7 +306,7 @@ kubectl -n dynatrace wait pod --for=condition=ready --selector=app.kubernetes.io
 
 3. Create secret for access token
 
-Create a secret named `dynakube` for the Dynatrace Operator token obtained in [Tokens and permissions required](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
+Create a secret named `dynakube` for the Dynatrace Operator token obtained in [Tokens and permissions required](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions/tokens-permissions-classic "Configure Classic API tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.").
 
 ```
 kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=<OPERATOR_TOKEN>"
@@ -386,7 +386,7 @@ oc -n dynatrace wait pod --for=condition=ready --selector=app.kubernetes.io/name
 
 3. Create secret for access token
 
-Create a secret named `dynakube` for the Dynatrace Operator token obtained in [Tokens and permissions required](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
+Create a secret named `dynakube` for the Dynatrace Operator token obtained in [Tokens and permissions required](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions/tokens-permissions-classic "Configure Classic API tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.").
 
 ```
 oc -n dynatrace create secret generic dynakube --from-literal="apiToken=<OPERATOR_TOKEN>"

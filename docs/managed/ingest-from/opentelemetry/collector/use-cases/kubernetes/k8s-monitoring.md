@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/u
 
 * How-to guide
 * 5-min read
-* Updated on Nov 20, 2025
+* Updated on Aug 04, 2026
 
 The OTel Collector provides extensive support for Kubernetes cluster and workload monitoring. It supports various receivers to collect critical metrics about the Kubernetes cluster, nodes, and objects.
 
@@ -411,6 +411,712 @@ Service account
 
 In addition to the Collector configuration, be sure to also update your Kubernetes configuration to match the service account name used in the [RBAC file](#kubernetes-configuration)
 (see entries for [Helm﻿](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.127.2/charts/opentelemetry-collector/values.yaml#L245-L252) and [Operator﻿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.158.0/docs/api/opentelemetrycollectors.md#opentelemetrycollectorspec)).
+
+Platform token
+
+Classic access token
+
+```
+extensions:
+
+
+
+health_check:
+
+
+
+endpoint: 0.0.0.0:13133
+
+
+
+k8s_leader_elector:
+
+
+
+auth_type: "serviceAccount"
+
+
+
+lease_name: k8smonitoring
+
+
+
+lease_namespace: ${env:POD_NAMESPACE}
+
+
+
+receivers:
+
+
+
+otlp:
+
+
+
+protocols:
+
+
+
+grpc:
+
+
+
+endpoint: 0.0.0.0:4317
+
+
+
+k8s_events:
+
+
+
+auth_type: "serviceAccount"
+
+
+
+k8s_leader_elector: k8s_leader_elector
+
+
+
+kubelet_stats:
+
+
+
+auth_type: "serviceAccount"
+
+
+
+collection_interval: 10s
+
+
+
+node: '${env:K8S_NODE_NAME}'
+
+
+
+extra_metadata_labels:
+
+
+
+- k8s.volume.type
+
+
+
+k8s_api_config:
+
+
+
+auth_type: "serviceAccount"
+
+
+
+endpoint: "https://${env:K8S_NODE_NAME}:10250"
+
+
+
+insecure_skip_verify: true
+
+
+
+metric_groups:
+
+
+
+- node
+
+
+
+- pod
+
+
+
+- container
+
+
+
+- volume
+
+
+
+k8s_cluster:
+
+
+
+auth_type: "serviceAccount"
+
+
+
+collection_interval: 10s
+
+
+
+k8s_leader_elector: k8s_leader_elector
+
+
+
+allocatable_types_to_report:
+
+
+
+- cpu
+
+
+
+- memory
+
+
+
+- pods
+
+
+
+node_conditions_to_report:
+
+
+
+- Ready
+
+
+
+- MemoryPressure
+
+
+
+- PIDPressure
+
+
+
+- DiskPressure
+
+
+
+- NetworkUnavailable
+
+
+
+metrics:
+
+
+
+k8s.node.condition:
+
+
+
+enabled: true
+
+
+
+k8s.pod.status_reason:
+
+
+
+enabled: true
+
+
+
+processors:
+
+
+
+cumulativetodelta:
+
+
+
+max_staleness: 25h
+
+
+
+filter:
+
+
+
+error_mode: ignore
+
+
+
+metrics:
+
+
+
+metric:
+
+
+
+- 'IsMatch(name, "k8s.volume.*") and resource.attributes["k8s.volume.type"] == nil'
+
+
+
+- 'resource.attributes["k8s.volume.type"] == "configMap"'
+
+
+
+- 'resource.attributes["k8s.volume.type"] == "emptyDir"'
+
+
+
+- 'resource.attributes["k8s.volume.type"] == "secret"'
+
+
+
+transform:
+
+
+
+error_mode: ignore
+
+
+
+trace_statements: &dynatrace_transformations
+
+
+
+# Set attributes taken from k8s metadata.
+
+
+
+- context: resource
+
+
+
+statements:
+
+
+
+- set(attributes["k8s.cluster.name"], "${env:CLUSTER_NAME}")
+
+
+
+- set(attributes["k8s.workload.kind"], "job") where IsString(attributes["k8s.job.name"])
+
+
+
+- set(attributes["k8s.workload.name"], attributes["k8s.job.name"]) where IsString(attributes["k8s.job.name"])
+
+
+
+- set(attributes["k8s.workload.kind"], "cronjob") where IsString(attributes["k8s.cronjob.name"])
+
+
+
+- set(attributes["k8s.workload.name"], attributes["k8s.cronjob.name"]) where IsString(attributes["k8s.cronjob.name"])
+
+
+
+- set(attributes["k8s.workload.kind"], "daemonset") where IsString(attributes["k8s.daemonset.name"])
+
+
+
+- set(attributes["k8s.workload.name"], attributes["k8s.daemonset.name"]) where IsString(attributes["k8s.daemonset.name"])
+
+
+
+- set(attributes["k8s.workload.kind"], "statefulset") where IsString(attributes["k8s.statefulset.name"])
+
+
+
+- set(attributes["k8s.workload.name"], attributes["k8s.statefulset.name"]) where IsString(attributes["k8s.statefulset.name"])
+
+
+
+- set(attributes["k8s.workload.kind"], "replicaset") where IsString(attributes["k8s.replicaset.name"])
+
+
+
+- set(attributes["k8s.workload.name"], attributes["k8s.replicaset.name"]) where IsString(attributes["k8s.replicaset.name"])
+
+
+
+- set(attributes["k8s.workload.kind"], "deployment") where IsString(attributes["k8s.deployment.name"])
+
+
+
+- set(attributes["k8s.workload.name"], attributes["k8s.deployment.name"]) where IsString(attributes["k8s.deployment.name"])
+
+
+
+# remove the delete statements if you want to preserve these attributes
+
+
+
+- delete_key(attributes, "k8s.deployment.name")
+
+
+
+- delete_key(attributes, "k8s.replicaset.name")
+
+
+
+- delete_key(attributes, "k8s.statefulset.name")
+
+
+
+- delete_key(attributes, "k8s.daemonset.name")
+
+
+
+- delete_key(attributes, "k8s.cronjob.name")
+
+
+
+- delete_key(attributes, "k8s.job.name")
+
+
+
+# Set attributes from metadata specified in Dynatrace and set through the Dynatrace Operator.
+
+
+
+# For more info: https://docs.dynatrace.com/docs/shortlink/k8s-metadata-telemetry-enrichment
+
+
+
+- context: resource
+
+
+
+statements:
+
+
+
+- merge_maps(attributes, ParseJSON(attributes["metadata.dynatrace.com"]), "upsert") where IsMatch(attributes["metadata.dynatrace.com"], "^\\{")
+
+
+
+- delete_key(attributes, "metadata.dynatrace.com")
+
+
+
+metric_statements: *dynatrace_transformations
+
+
+
+log_statements: *dynatrace_transformations
+
+
+
+k8sattributes:
+
+
+
+extract:
+
+
+
+metadata:
+
+
+
+- k8s.pod.name
+
+
+
+- k8s.pod.uid
+
+
+
+- k8s.pod.ip
+
+
+
+- k8s.deployment.name
+
+
+
+- k8s.replicaset.name
+
+
+
+- k8s.statefulset.name
+
+
+
+- k8s.daemonset.name
+
+
+
+- k8s.job.name
+
+
+
+- k8s.cronjob.name
+
+
+
+- k8s.namespace.name
+
+
+
+- k8s.node.name
+
+
+
+- k8s.cluster.uid
+
+
+
+- k8s.container.name
+
+
+
+annotations:
+
+
+
+- from: pod
+
+
+
+key_regex: metadata.dynatrace.com/(.*)
+
+
+
+tag_name: $$1
+
+
+
+- from: pod
+
+
+
+key: metadata.dynatrace.com
+
+
+
+tag_name: metadata.dynatrace.com
+
+
+
+pod_association:
+
+
+
+- sources:
+
+
+
+- from: resource_attribute
+
+
+
+name: k8s.pod.name
+
+
+
+- from: resource_attribute
+
+
+
+name: k8s.namespace.name
+
+
+
+- sources:
+
+
+
+- from: resource_attribute
+
+
+
+name: k8s.pod.ip
+
+
+
+- sources:
+
+
+
+- from: resource_attribute
+
+
+
+name: k8s.pod.uid
+
+
+
+- sources:
+
+
+
+- from: connection
+
+
+
+exporters:
+
+
+
+otlp_http:
+
+
+
+endpoint: ${env:DT_ENDPOINT}
+
+
+
+headers:
+
+
+
+Authorization: "Bearer ${env:DT_PLATFORM_TOKEN}"
+
+
+
+service:
+
+
+
+extensions:
+
+
+
+- health_check
+
+
+
+- k8s_leader_elector
+
+
+
+pipelines:
+
+
+
+metrics/node:
+
+
+
+receivers:
+
+
+
+- kubelet_stats
+
+
+
+processors:
+
+
+
+- filter
+
+
+
+- k8sattributes
+
+
+
+- transform
+
+
+
+- cumulativetodelta
+
+
+
+exporters:
+
+
+
+- otlp_http
+
+
+
+metrics:
+
+
+
+receivers:
+
+
+
+- k8s_cluster
+
+
+
+processors:
+
+
+
+- k8sattributes
+
+
+
+- transform
+
+
+
+- cumulativetodelta
+
+
+
+exporters:
+
+
+
+- otlp_http
+
+
+
+logs:
+
+
+
+receivers:
+
+
+
+- k8s_events
+
+
+
+processors:
+
+
+
+- transform
+
+
+
+exporters:
+
+
+
+- otlp_http
+
+
+
+traces:
+
+
+
+receivers:
+
+
+
+- otlp
+
+
+
+processors:
+
+
+
+- k8sattributes
+
+
+
+- transform
+
+
+
+exporters:
+
+
+
+- otlp_http
+```
+
+Assign the scope that matches your signal type: `openpipeline:logs:ingest` for logs, `openpipeline:metrics:ingest` for metrics, or `openpipeline:traces:ingest` for traces.
 
 ```
 extensions:
@@ -1152,8 +1858,11 @@ Under `exporters`, we specify the [`otlp_http` exporter﻿](https://github.com/o
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 
-* `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
-* `DT_API_TOKEN` contains the [API token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`).
+* One token variable, depending on the token type you use:
+
+  + **Platform token**: `DT_PLATFORM_TOKEN` contains your [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") with the `openpipeline:logs:ingest`, `openpipeline:metrics:ingest`, and `openpipeline:traces:ingest` scopes.
+  + **Classic access token**: `DT_API_TOKEN` contains your [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") with the **Ingest logs** (`logs.ingest`), **Ingest metrics** (`metrics.ingest`), and **Ingest OpenTelemetry traces** (`openTelemetryTrace.ingest`) scopes.
 
 #### Extensions
 

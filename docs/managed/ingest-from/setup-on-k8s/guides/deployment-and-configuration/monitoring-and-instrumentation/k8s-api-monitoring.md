@@ -84,7 +84,7 @@ This feature flag is deprecated and enabled by default starting from Dynatrace O
 
 To connect automatically to the local Kubernetes API endpoint
 
-1. Make sure to enable the **Read entities**, **Read settings**, and **Write settings** permissions (API v2) for your access token (see [Access tokens and permissions](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster")).
+1. Make sure to enable the **Read entities**, **Read settings**, and **Write settings** permissions (API v2) for your access token (see [Access tokens and permissions](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.")).
 2. Make sure that you have the `kubernetes-monitoring` capability enabled in your DynaKube custom resource.
 3. Add the following annotation (see example below).
 

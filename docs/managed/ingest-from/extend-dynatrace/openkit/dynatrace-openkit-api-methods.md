@@ -2674,17 +2674,23 @@ You can dynamically adjust data privacy settings and build your custom applicati
 
 The table below describes the available data collection levels and shows whether [user tags](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") and custom user actions, events, values, and errors are reported for a particular level.
 
-| Level | Description | User tags, custom events, and custom values | Custom user actions and errors |
-| --- | --- | --- | --- |
-| **Off**  Monitoring data is not sent | No personal data is sent; all identifiers are randomized on every launch.[1](#fn-1-1-def) | Not applicable | Not applicable |
-| **Performance**  Only performance, automatically captured data is sent | No personal data is sent; all identifiers are randomized on every launch. | Not applicable | Applicable |
-| **User behavior**  Performance data and user data is sent | Personal data is sent; OneAgent recognizes and reports users who revisit in the future.[2](#fn-1-2-def) | Applicable | Applicable |
+| Level | Description | User tags, custom events, and custom values | Custom user actions and errors | Business events |
+| --- | --- | --- | --- | --- |
+| **Off**  Only a single monitoring event is sent | No personal data but device metadata is sent in a single event; all identifiers are randomized on every launch.[1](#fn-1-1-def) | Not applicable | Not applicable | Applicable [2](#fn-1-2-def) |
+| **Performance**  Only performance, automatically captured data is sent | No personal data is sent—only monitoring data; all identifiers are randomized on every launch. | Not applicable | Applicable | Applicable |
+| **User behavior**  Performance data and user data is sent | Personal and monitoring data is sent; OneAgent recognizes and reports users who revisit in the future.[3](#fn-1-3-def) | Applicable | Applicable | Applicable |
+
+If you need to ensure that no data is transmitted before obtaining end-user consent, turn off the OneAgent for Mobile auto-start and start it manually after consent is given, with the data collection level set accordingly.
 
 1
 
-A single `Loading <App>` event is sent to track the number of users that opted out.
+A single `Loading <App>` event is sent to track the number of users that opted out. This event contains device metadata (like model or operating system), including the IP address, which is transmitted as part of HTTP communication.
 
 2
+
+Business events are sent even when data collection is set to **Off**. To prevent sending business events in this case, check the data collection level before calling `sendBizEvent` and only send when the level is **Performance** or **User behavior**.
+
+3
 
 If you haven't configured user tagging and custom event or value reporting, the **User behavior** level works similarly to the **Performance** level.
 

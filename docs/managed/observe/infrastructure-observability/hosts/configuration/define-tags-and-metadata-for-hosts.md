@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 
 * How-to guide
 * 4-min read
-* Updated on Aug 03, 2026
+* Updated on Aug 20, 2026
 
 Within dynamic or large environments, manual host tagging can be impractical. For dynamic deployments that include frequently changing host instances and names (for example, AWS or MS Azure), you should automate adding tags and metadata to your hosts.
 
@@ -96,6 +96,8 @@ To set a security context for your host, use the following command:
   `./oneagentctl --set-host-tag=dt.security_context=easytrade_sec`
 * **Windows**  
   `.\oneagentctl.exe --set-host-tag=dt.security_context=easytrade_sec`
+
+OneAgent reserves the `dt.` prefix for host tags and properties. Aside from `dt.security_context`, `dt.cost.costcenter`, and `dt.cost.product`, OneAgent silently drops any other `dt.`-prefixed tag or property you set via these commands or the Remote Configuration Management API.
 
 To **remove host properties**, run the following command:
 

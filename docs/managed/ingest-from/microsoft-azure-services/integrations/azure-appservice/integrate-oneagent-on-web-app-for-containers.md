@@ -60,7 +60,7 @@ In the Azure portal, go to your web app > **Settings** > **Environment variables
 | --- | --- |
 | `DT_CONNECTION_POINT` | Your Dynatrace connection endpoint address. |
 | `DT_TENANT` | Your tenant environment ID. |
-| `DT_TENANTTOKEN` | PaaS token for your Dynatrace environment. |
+| `DT_TENANTTOKEN` | Your [tenant token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Learn what a tenant token is and how to change it."). If you use a PaaS token here, the OneAgent connection fails. |
 | `LD_PRELOAD` | `/home/dynatrace/oneagent/active/agent/lib64/liboneagentproc.so` |
 
 ### 2. Azure portal: Add the bootstrapper sidecar container

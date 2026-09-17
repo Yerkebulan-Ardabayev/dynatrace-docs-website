@@ -250,7 +250,7 @@ Set the `--set-auto-update-enabled` parameter to `true` or `false` to disable or
 * **Windows**:  
   `.\oneagentctl.exe --set-auto-update-enabled=true`
 
-After you use this command to disable auto-updates, you won't be able to control OneAgent automatic updates using Dynatrace at **Settings** > **Deployment** > **OneAgent updates**.
+After you use this command to disable auto-updates, you won't be able to control any OneAgent updates using Dynatrace at **Settings** > **Deployment** > **OneAgent updates**.
 
 ## Log monitoring
 

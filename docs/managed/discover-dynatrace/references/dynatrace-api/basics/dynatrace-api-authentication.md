@@ -8,11 +8,9 @@ source: https://docs.dynatrace.com/managed/discover-dynatrace/references/dynatra
 # Dynatrace API - Tokens and authentication
 
 * Reference
-* Updated on Jun 12, 2026
+* Updated on Aug 04, 2026
 
-To be authenticated to use the Dynatrace API, you need a valid [access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") or a valid [personal access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token "Learn the concept of a personal access token and its scopes."). Access to the API is fine-grained, meaning that you also need the proper scopes assigned to the token. See the description of each request to find out which scopes are required to use it.
-
-For details on OAuth clients, see [OAuth clients](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+To use the Dynatrace API, you need to authenticate using a valid [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."), a [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes."), or a [personal access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token "Learn the concept of a personal access token and its scopes."). Access to the API is fine-grained, meaning that you also need the proper scopes assigned to the token. See the description of each request to find out which scopes are required to use it.
 
 ## Token format
 
@@ -42,13 +40,20 @@ Dynatrace uses a unique token format consisting of three components separated by
 | `dt0s06` | This is an OAuth2 Refresh Token, which is used to retrieve a new Access Token and generally changes frequently (typically every 5 to 15 minutes). |
 | `dt0s08` | OAuth2 Clients for internal and external services and integrations. |
 | `dt0s09` | Chat and identity linking. |
-| `dt0s16` | Platform Token enabling programmatic access to Dynatrace platform services. |
 
 ## Generate a token
+
+Platform token
 
 Access token
 
 Personal access token
+
+To generate a platform token:
+
+1. Go to [My platform tokens﻿](https://myaccount.dynatrace.com/platformTokens).
+2. Create a platform token with the required scopes.
+   See [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") for details.
 
 To generate an access token:
 
@@ -213,15 +218,51 @@ Dynatrace provides the following permissions for personal access tokens. You can
 
 ## Authenticate
 
-You have two options to pass your API token: in the **Authorization** HTTP header or in the **api-token** query parameter.
+Attach your token to the **Authorization** HTTP header. Platform tokens use `Bearer`; Classic access tokens use the `Api-Token` realm.
 
-We recommend that you use the **Authorization** header, as URLs (along with tokens passed within them) might be logged in various locations. Users might also bookmark the URLs or share them in plain text. Therefore, placing authentication tokens into the URL increases the risk that they will be captured by an attacker.
+Platform token
 
-HTTP header
+Classic access token
 
-Query parameter
+[Platform tokens](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") use the **Bearer** realm in the **Authorization** HTTP header.
 
-You can authenticate by attaching the token to the **Authorization** HTTP header preceding the **Api-Token** realm.
+```
+--header 'Authorization: Bearer <your-platform-token>'
+```
+
+The following example shows authentication with a platform token.
+
+```
+curl --request POST \
+
+
+
+--url https://{your-environment-id}.live.dynatrace.com/api/v2/logs/ingest \
+
+
+
+--header 'Authorization: Bearer <your-platform-token>' \
+
+
+
+--header 'Content-Type: application/json; charset=utf-8' \
+
+
+
+--data '[{"content": "example log entry"}]'
+```
+
+Platform tokens work across ingest endpoints and require a scope that matches the signal type:
+
+* Logs: `openpipeline:logs:ingest`
+* Metrics: `openpipeline:metrics:ingest`
+* Traces (OTLP): `openpipeline:traces:ingest`
+* Events: `openpipeline:events:ingest`
+* Business events: `openpipeline:bizevents:ingest`
+
+For more details on creating platform tokens and the full scope list, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+
+Attach the token to the **Authorization** HTTP header preceding the **Api-Token** realm.
 
 ```
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -241,7 +282,7 @@ curl --request GET \
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
 ```
 
-You can authenticate by adding the token as the value of the **api-token** query parameter.
+You can also authenticate by adding the token as the value of the **api-token** query parameter. We recommend the header approach, as URLs (along with tokens passed within them) might be logged in various locations.
 
 ```
 curl --request GET \

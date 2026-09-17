@@ -18,7 +18,7 @@ Enable Dynatrace telemetry endpoints in Kubernetes for cluster-local data ingest
 
 ## Prerequisites
 
-* The [data ingest token](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions#dataIngestToken "Configure tokens and permissions to monitor your Kubernetes cluster") requires the token scopes `openTelemetryTrace.ingest`, `logs.ingest`, and `metrics.ingest` and must be provided via the `dataIngestToken` field in the same [secret](/managed/ingest-from/setup-on-k8s/deployment/k8s-obs-managed#create-secret-helm "Deploy Dynatrace Operator for Kubernetes observability.") as your API token.
+* The [data ingest token](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions/tokens-permissions-classic#classic-dataIngestToken "Configure Classic API tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.") requires the token scopes `openTelemetryTrace.ingest`, `logs.ingest`, and `metrics.ingest` and must be provided via the `dataIngestToken` field in the same [secret](/managed/ingest-from/setup-on-k8s/deployment/k8s-obs-managed#create-secret-helm "Deploy Dynatrace Operator for Kubernetes observability.") as your API token.
 
 ## Setup and Use
 

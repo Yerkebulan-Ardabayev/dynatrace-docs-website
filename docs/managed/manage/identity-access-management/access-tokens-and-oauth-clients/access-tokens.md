@@ -50,7 +50,6 @@ Dynatrace uses a unique token format consisting of three components separated by
 | `dt0s06` | This is an OAuth2 Refresh Token, which is used to retrieve a new Access Token and generally changes frequently (typically every 5 to 15 minutes). |
 | `dt0s08` | OAuth2 Clients for internal and external services and integrations. |
 | `dt0s09` | Chat and identity linking. |
-| `dt0s16` | Platform Token enabling programmatic access to Dynatrace platform services. |
 
 This predictable format offers you several capabilities:
 

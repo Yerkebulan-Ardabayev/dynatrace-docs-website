@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/u
 
 * How-to guide
 * 4-min read
-* Published Mar 12, 2026
+* Updated on Aug 04, 2026
 
 The journald receiver reads log entries from the [systemd journal﻿](https://wiki.archlinux.org/title/Systemd/Journal) by invoking `journalctl` as a subprocess and streaming its output into the OTel Collector pipeline.
 
@@ -51,6 +51,140 @@ The following configuration example shows how to:
 * Configure a Collector instance to read logs from specific systemd units.
 * Map journald fields to OpenTelemetry semantic conventions.
 * Send the entries to Dynatrace.
+
+Platform token
+
+Classic access token
+
+```
+extensions:
+
+
+
+health_check:
+
+
+
+endpoint: 0.0.0.0:13133
+
+
+
+receivers:
+
+
+
+journald:
+
+
+
+directory: /var/log/journal
+
+
+
+priority: info
+
+
+
+start_at: end
+
+
+
+operators:
+
+
+
+# Move (rename) _PID to pid
+
+
+
+- type: move
+
+
+
+from: body._PID
+
+
+
+to: body.pid
+
+
+
+# Promote _EXE to a semantic convention attribute
+
+
+
+- type: move
+
+
+
+from: body._EXE
+
+
+
+to: attributes["process.executable.name"]
+
+
+
+# Rename MESSAGE to a consistently named body field
+
+
+
+- type: move
+
+
+
+from: body.MESSAGE
+
+
+
+to: body.message
+
+
+
+exporters:
+
+
+
+otlp_http:
+
+
+
+endpoint: ${env:DT_ENDPOINT}
+
+
+
+headers:
+
+
+
+Authorization: "Bearer ${env:DT_PLATFORM_TOKEN}"
+
+
+
+service:
+
+
+
+extensions: [health_check]
+
+
+
+pipelines:
+
+
+
+logs:
+
+
+
+receivers: [journald]
+
+
+
+exporters: [otlp_http]
+```
+
+Assign the scope that matches your signal type: `openpipeline:logs:ingest` for logs, `openpipeline:metrics:ingest` for metrics, or `openpipeline:traces:ingest` for traces.
 
 ```
 extensions:
@@ -219,7 +353,10 @@ Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://gith
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 
 * `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`).
-* `DT_API_TOKEN` contains the [API token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+* One token variable, depending on the token type you use:
+
+  + **Platform token**: `DT_PLATFORM_TOKEN` contains your [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") with the `openpipeline:logs:ingest` scope.
+  + **Classic access token**: `DT_API_TOKEN` contains your [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") with the **Ingest logs** (`logs.ingest`) scope.
 
 ### Service pipelines
 

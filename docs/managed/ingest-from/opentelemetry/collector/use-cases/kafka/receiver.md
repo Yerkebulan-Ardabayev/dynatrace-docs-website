@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/u
 
 * How-to guide
 * 3-min read
-* Published Nov 05, 2025
+* Updated on Aug 04, 2026
 
 The following configuration example shows how you configure Kafka to read data from topics and relay this data via OTLP.
 
@@ -29,6 +29,108 @@ The following configuration example shows how you configure Kafka to read data f
 ## Demo configuration
 
 Here is an example YAML file for a basic Collector configuration that can be used to receive OpenTelemetry traces, metrics, and logs from Kafka.
+
+Platform token
+
+Classic access token
+
+```
+receivers:
+
+
+
+kafka:
+
+
+
+tls:
+
+
+
+insecure: true # Only necessary if your Kafka server does not provide a certificate that's trusted by the OTel Collector.
+
+
+
+traces:
+
+
+
+metrics:
+
+
+
+logs:
+
+
+
+brokers: ["${env:BROKER_ADDRESS}"]
+
+
+
+exporters:
+
+
+
+otlp_http:
+
+
+
+endpoint: ${env:DT_ENDPOINT}
+
+
+
+headers:
+
+
+
+Authorization: "Bearer ${env:DT_PLATFORM_TOKEN}"
+
+
+
+service:
+
+
+
+pipelines:
+
+
+
+traces:
+
+
+
+receivers: [kafka]
+
+
+
+exporters: [otlp_http]
+
+
+
+metrics:
+
+
+
+receivers: [kafka]
+
+
+
+exporters: [otlp_http]
+
+
+
+logs:
+
+
+
+receivers: [kafka]
+
+
+
+exporters: [otlp_http]
+```
+
+Assign the scope that matches your signal type: `openpipeline:logs:ingest` for logs, `openpipeline:metrics:ingest` for metrics, or `openpipeline:traces:ingest` for traces.
 
 ```
 receivers:
@@ -130,7 +232,7 @@ For this configuration to work, you need to set the following environment variab
 
 * `BROKER_ADDRESS`: Specific to your Kafka server.
 * `DT_ENDPOINT`: The [base URL of the Dynatrace API endpoint](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`).
-* `DT_API_TOKEN`: The [API token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+* `DT_PLATFORM_TOKEN` or `DT_API_TOKEN`: Your [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") or [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes."), depending on the token type you use.
 
 Configuration validation
 
@@ -152,7 +254,10 @@ Under `exporters`, we specify the [`otlp_http` exporter﻿](https://github.com/o
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 
 * `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`).
-* `DT_API_TOKEN` contains the [API token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+* One token variable, depending on the token type you use:
+
+  + **Platform token**: `DT_PLATFORM_TOKEN` contains your [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") with the `openpipeline:logs:ingest`, `openpipeline:metrics:ingest`, and `openpipeline:traces:ingest` scopes.
+  + **Classic access token**: `DT_API_TOKEN` contains your [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") with the **Ingest logs** (`logs.ingest`), **Ingest metrics** (`metrics.ingest`), and **Ingest OpenTelemetry traces** (`openTelemetryTrace.ingest`) scopes.
 
 ### Service pipeline
 

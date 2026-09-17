@@ -232,7 +232,7 @@ oc -n dynatrace delete secret dynakube
 
 ### Step 3 Create new access tokens
 
-For instructions on how to create the tokens, see [Access tokens and permissions](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
+For instructions on how to create the tokens, see [Access tokens and permissions](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.").
 
 ### Step 4 Create a new secret with updated access tokens
 

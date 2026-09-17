@@ -7,6 +7,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/migra
 
 # Migration guides
 
+* How-to guide
 * 1-min read
 * Updated on Sep 05, 2025
 

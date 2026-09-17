@@ -78,8 +78,8 @@ Dynatrace version 1.290+
 
    * **Name**: Defines the display name of your Kubernetes cluster within Dynatrace. Additionally, this name will be used as a prefix for naming Dynatrace-specific resources inside your Kubernetes cluster, such as DynaKube (custom resource), ActiveGate (pod), OneAgents (pods), and as a name for the secret holding your tokens.
    * Recommended **Group**: Defines a group used by various Dynatrace settings, including network zone, ActiveGate group, and host group. If not set, defaults or empty values are used.
-   * **Dynatrace Operator token**: Select **Create token** or enter the **API token** you previously created. For more information, see [Access tokens and permissions](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
-   * Optional**Data ingest token**: Select **Create token** or enter the **API token** you previously created. For more information, see [Access tokens and permissions](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
+   * **Dynatrace Operator token**: Select **Create token** or enter the **API token** you previously created. For more information, see [Access tokens and permissions](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions/tokens-permissions-classic "Configure Classic API tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.").
+   * Optional**Data ingest token**: Select **Create token** or enter the **API token** you previously created. For more information, see [Access tokens and permissions](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions/tokens-permissions-classic "Configure Classic API tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.").
 4. Optional Decide whether you want the Dynatrace Operator to disable the verification of the Dynatrace SSL certificate.
 
    This is relevant if you are using Dynatrace Managed with self-signed certificates.
@@ -242,7 +242,7 @@ The installation process is independent of whether you are using Kubernetes or O
    VMware Tanzu Kubernetes (TKGI) and IBM Kubernetes Service (IKS) require [additional configuration](/managed/ingest-from/setup-on-k8s/deployment/supported-technologies "Overview of different configurations for all major Kubernetes distributions.").
 2. Create secret for access tokens
 
-   Create a secret named `dynakube` for the Dynatrace Operator token and data ingest token obtained in [Tokens and permissions required](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
+   Create a secret named `dynakube` for the Dynatrace Operator token and data ingest token obtained in [Tokens and permissions required](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions/tokens-permissions-classic "Configure Classic API tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.").
 
    ```
    kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=<OPERATOR_TOKEN>" --from-literal="dataIngestToken=<DATA_INGEST_TOKEN>"
@@ -350,7 +350,7 @@ OpenShift
    ```
 3. Create secret for Access tokens
 
-   Create a secret named `dynakube` for the Dynatrace Operator token and data ingest token obtained in [Tokens and permissions required](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
+   Create a secret named `dynakube` for the Dynatrace Operator token and data ingest token obtained in [Tokens and permissions required](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions/tokens-permissions-classic "Configure Classic API tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.").
 
    ```
    kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=<OPERATOR_TOKEN>" --from-literal="dataIngestToken=<DATA_INGEST_TOKEN>"
@@ -450,7 +450,7 @@ OpenShift
    ```
 3. Create secret for Access tokens
 
-   Create a secret named `dynakube` for the Dynatrace Operator token and data ingest token obtained in [Tokens and permissions required](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
+   Create a secret named `dynakube` for the Dynatrace Operator token and data ingest token obtained in [Tokens and permissions required](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions/tokens-permissions-classic "Configure Classic API tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.").
 
    ```
    oc -n dynatrace create secret generic dynakube --from-literal="apiToken=<OPERATOR_TOKEN>" --from-literal="dataIngestToken=<DATA_INGEST_TOKEN>"

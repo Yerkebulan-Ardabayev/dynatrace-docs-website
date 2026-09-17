@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/u
 
 * How-to guide
 * 5-min read
-* Published May 28, 2024
+* Updated on Aug 04, 2026
 
 A distributed application under heavy load may generate a massive amount of observability data. This data incurs generation, processing, transmission, and storage costs. However, it's often possible to use sampling—where you use only a relatively small portion of the observability data and drop the rest—to reduce costs and still effectively monitor your application.
 
@@ -39,6 +39,196 @@ The following configuration example shows how to configure a Collector instance 
 See [Collector Deployment](/managed/ingest-from/opentelemetry/collector/deployment "How to deploy the Dynatrace OpenTelemetry Collector.") and [Collector Configuration](/managed/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
 
 ## Demo configuration
+
+Platform token
+
+Classic access token
+
+```
+receivers:
+
+
+
+otlp:
+
+
+
+protocols:
+
+
+
+grpc:
+
+
+
+endpoint: 0.0.0.0:4317
+
+
+
+http:
+
+
+
+endpoint: 0.0.0.0:4318
+
+
+
+processors:
+
+
+
+tail_sampling:
+
+
+
+# This configuration keeps errors, traces longer than 500ms, and 20% of all remaining traces.
+
+
+
+# Adjust with policies of your choice.
+
+
+
+policies:
+
+
+
+- name: policy1-keep-errors
+
+
+
+type: status_code
+
+
+
+status_code: {status_codes: [ERROR, UNSET]}
+
+
+
+- name: policy2-keep-slow-traces
+
+
+
+type: latency
+
+
+
+latency: {threshold_ms: 500}
+
+
+
+- name: policy3-keep-random-sample
+
+
+
+type: probabilistic
+
+
+
+probabilistic: {sampling_percentage: 20}
+
+
+
+decision_wait: 30s
+
+
+
+connectors:
+
+
+
+spanmetrics:
+
+
+
+aggregation_temporality: "AGGREGATION_TEMPORALITY_DELTA"
+
+
+
+namespace: "requests"
+
+
+
+metrics_flush_interval: 15s
+
+
+
+exporters:
+
+
+
+otlp_http:
+
+
+
+endpoint: ${env:DT_ENDPOINT}
+
+
+
+headers:
+
+
+
+Authorization: Bearer ${env:DT_PLATFORM_TOKEN}
+
+
+
+service:
+
+
+
+pipelines:
+
+
+
+traces:
+
+
+
+receivers: [otlp]
+
+
+
+processors: [tail_sampling]
+
+
+
+exporters: [otlp_http]
+
+
+
+traces/spanmetrics:
+
+
+
+receivers: [otlp]
+
+
+
+processors: []
+
+
+
+exporters: [spanmetrics]
+
+
+
+metrics:
+
+
+
+receivers: [spanmetrics]
+
+
+
+processors: []
+
+
+
+exporters: [otlp_http]
+```
+
+Assign the scope that matches your signal type: `openpipeline:logs:ingest` for logs, `openpipeline:metrics:ingest` for metrics, or `openpipeline:traces:ingest` for traces.
 
 ```
 receivers:
@@ -250,8 +440,11 @@ Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://gith
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 
-* `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
-* `DT_API_TOKEN` contains the [API token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`).
+* One token variable, depending on the token type you use:
+
+  + **Platform token**: `DT_PLATFORM_TOKEN` contains your [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") with the `openpipeline:metrics:ingest` and `openpipeline:traces:ingest` scopes.
+  + **Classic access token**: `DT_API_TOKEN` contains your [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") with the **Ingest metrics** (`metrics.ingest`) and **Ingest OpenTelemetry traces** (`openTelemetryTrace.ingest`) scopes.
 
 ### Service pipelines
 

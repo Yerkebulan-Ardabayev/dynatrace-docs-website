@@ -49,7 +49,7 @@ You currently have the option to choose from a classic or cloud service to prese
 
   + Entities containing historical and new data.
   + Cloud service data and data coming from OneAgent for opaque **Amazon RDS**—not linked to the new cloud service page with CloudWatch metrics.
-* Logs from [Amazon Data Firehose](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lm-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.") to **Amazon RDS** are still being linked to the historical data and entity `RELATIONAL_DATABASE_SERVICE`.
+* Logs from Amazon Data Firehose to **Amazon RDS** are still being linked to the historical data and entity `RELATIONAL_DATABASE_SERVICE`.
 * Events or problems that would have been auto-detected on the historical (classic) data might not be automatically raised. Alerting rules are not provided for these cloud services:
 
   + **Amazon RDS**

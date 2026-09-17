@@ -108,7 +108,10 @@ Under `exporters`, we specify the [`otlp_http` exporter﻿](https://github.com/o
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 
 * `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`).
-* `DT_API_TOKEN` contains the [API token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+* One token variable, depending on the token type you use:
+
+  + **Platform token**: Use `Authorization: Bearer ${env:DT_PLATFORM_TOKEN}` in the exporter headers and assign the `openpipeline:logs:ingest` and `openpipeline:metrics:ingest` scopes.
+  + **Classic access token**: Use `Authorization: Api-Token ${env:DT_API_TOKEN}` in the exporter headers and assign the **Ingest logs** (`logs.ingest`) and **Ingest metrics** (`metrics.ingest`) scopes.
 
 ### Service pipelines
 

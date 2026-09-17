@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deplo
 # Instrument ingress-nginx
 
 * 1-min read
-* Updated on Mar 18, 2026
+* Updated on Aug 20, 2026
 
 The instructions below are relevant only for the [official Kubernetes ingress controller implementation from Google﻿](https://dt-url.net/xr03xh3).
 
@@ -23,7 +23,7 @@ The NGINX process of the official Kubernetes ingress-nginx controller container 
 ARM64 architecture is not supported.
 
 * OneAgent version 1.227+
-* The pod name must contain the substring `ingress-nginx-` to ensure proper instrumentation of the NGINX binary. We recommend maintaining the default pod name `ingress-nginx-controller`.
+* The pod or container name must contain the substring `ingress-nginx-` or `nginx-ingress-` to ensure proper instrumentation of the NGINX binary. We recommend maintaining the default pod name `ingress-nginx-controller`.
 
 ## Instrument Kubernetes ingress-nginx
 

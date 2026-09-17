@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/reference/se
 
 * Reference
 * 16-min read
-* Updated on May 20, 2026
+* Updated on Sep 14, 2026
 
 Kubernetes observability relies on components with different purposes, default configurations, and permissions. These different components need permissions to perform and maintain operational function of Dynatrace within your cluster.
 
@@ -249,8 +249,13 @@ If you don't deploy the CSI driver, use [Without CSI driver﻿](https://github.c
 
 **RBAC objects**:
 
-* Service Account: `dynatrace-kubernetes`
-* ClusterRole: `dynatrace-kubernetes-monitoring`
+* Service Accounts
+
+  + `dynatrace-activegate`
+* ClusterRoles
+
+  + `dynatrace-kubernetes-monitoring-default`
+  + `dynatrace-activegate` (OpenShift and OLM only)
 
 In Dynatrace Operator version 1.8, `dynatrace-kubernetes-monitoring` was an aggregated ClusterRole. For details, see [ClusterRole aggregation](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation "Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.").
 
@@ -283,19 +288,27 @@ In Dynatrace Operator version 1.8, `dynatrace-kubernetes-monitoring` was an aggr
 | `customresourcedefinitions` | `apiextensions.k8s.io` | List, Watch, Get |  |
 | `ingresses` | `networking.k8s.io` | List, Watch, Get |  |
 | `networkpolicies` | `networking.k8s.io` | List, Watch, Get |  |
-| `securitycontextconstraints` | `security.openshift.io` | Use | ``` privileged``nonroot-v2 ``` |
+| `endpointslices` | `discovery.k8s.io` | List, Watch, Get |  |
+| `horizontalpodautoscalers` | `autoscaling` | List, Watch, Get |  |
+| `/metrics`, `/version`, `/readyz`, `/livez` (non-resource URLs) |  | Get |  |
+| `securitycontextconstraints` | `security.openshift.io` | Use | `privileged`, `nonroot-v2` |
 
 #### Dynatrace Kubernetes Security Posture Management (KSPM)
 
 **Purposes**: [Kubernetes Security Posture Management](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") detects, analyzes, and continuously watches for
 misconfigurations, security hardening guidelines, and potential compliance violations in Kubernetes.
 
-**Default configuration**: `1-replica-per-node` (deployed via a DaemonSet)
+**Default configuration**: node configuration collector: `1-replica-per-node` (deployed via a DaemonSet)
 
 **RBAC objects**:
 
-* Service Account `dynatrace-node-config-collector`
-* ClusterRole: `dynatrace-kubernetes-monitoring-kspm`
+* Service Accounts
+
+  + `dynatrace-node-config-collector`
+* ClusterRoles
+
+  + `dynatrace-kubernetes-monitoring-kspm` (bound to `dynatrace-activegate`)
+  + `dynatrace-node-config-collector` (bound to `dynatrace-node-config-collector`; OpenShift and OLM only)
 
 In Dynatrace Operator version 1.8, `dynatrace-kubernetes-monitoring-kspm` was aggregated by the `dynatrace-kubernetes-monitoring` ClusterRole. For details, see [ClusterRole aggregation](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation "Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.").
 
@@ -320,6 +333,7 @@ In Dynatrace Operator version 1.8, `dynatrace-kubernetes-monitoring-kspm` was ag
 | `clusterroles` | `rbac.authorization.k8s.io` | Get, List, Watch |  |
 | `rolebindings` | `rbac.authorization.k8s.io` | Get, List, Watch |  |
 | `roles` | `rbac.authorization.k8s.io` | Get, List, Watch |  |
+| `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` |
 
 ### OneAgent
 

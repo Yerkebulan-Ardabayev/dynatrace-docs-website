@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp
 
 * How-to guide
 * 9-min read
-* Updated on Nov 13, 2023
+* Updated on Aug 04, 2026
 
 This guide shows how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace. To learn more about how Dynatrace works with OpenTelemetry, see [OpenTelemetry and Dynatrace](/managed/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
 
@@ -74,14 +74,25 @@ To determine the endpoint
    * **Dynatrace SaaS**: `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`
    * **Dynatrace Managed**: `https://{your-domain}/e/{your-environment-id}/api/v2/otlp`
 
-To create an authentication token
+To authenticate, create one of the following:
 
-1. Go to **Access Tokens** > **Generate new token**.
-2. Provide a **Token name**.
-3. In the **Search scopes** box, search for `Ingest OpenTelemetry traces` and select the checkbox.
-4. Select **Generate token**.
-5. Select **Copy** to copy the token to your clipboard.
-6. Save the token in a safe place; you can't display it again, and you will need it to configure the OpenTelemetry exporter.
+* **Platform token**:
+
+  1. Go to [My platform tokens﻿](https://myaccount.dynatrace.com/platformTokens).
+  2. Create a platform token with the required scope (listed below). See [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") for details.
+* **Classic access token**:
+
+  1. Go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
+  2. Select **Generate new token**.
+  3. Enter a name for your token.
+  4. Select the required scopes listed below.
+  5. Select **Generate token**.
+  6. Copy the generated token. Store it securely — you can only access it once.
+
+Required scopes:
+
+* Platform token: `openpipeline:traces:ingest`
+* Classic access token: **Ingest OpenTelemetry traces** (`openTelemetryTrace.ingest`)
 
 Here is how to set up the OpenTelemetry tracing pipeline:
 
@@ -236,7 +247,10 @@ return tracerProvider
 To configure the exporter to your tenant, add the following environment variables when deploying your Google Cloud function:
 
 * `OTEL_EXPORTER_OTLP_ENDPOINT`: set it to the previously determined endpoint.
-* `OTEL_EXPORTER_OTLP_HEADERS`: set it to `Authorization=Api-Token <TOKEN>`, where `<TOKEN>` is the previously created authentication token.
+* `OTEL_EXPORTER_OTLP_HEADERS`:
+
+  + **Platform token**: Set to `Authorization=Bearer <your-platform-token>`. The required scope is `openpipeline:traces:ingest`.
+  + **Classic access token**: Set to `Authorization=Api-Token <TOKEN>`, where `<TOKEN>` is the previously created authentication token.
 
 Alternatively, the endpoint and authentication token can be configured in code by providing them as options to `otlptracehttp.NewClient`.
 

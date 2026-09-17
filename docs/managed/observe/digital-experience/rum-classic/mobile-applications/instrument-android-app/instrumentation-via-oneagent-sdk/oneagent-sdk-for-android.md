@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 * How-to guide
 * 26-min read
-* Updated on Mar 26, 2026
+* Updated on Aug 18, 2026
 
 Use the OneAgent SDK for Android to report additional details about the user sessions in your mobile app. The OneAgent SDK for Android allows you to create custom actions, report errors, tag specific users, and more. The sections below explain how to enable these capabilities.
 

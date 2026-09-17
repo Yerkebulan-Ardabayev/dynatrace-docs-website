@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthrough
 
 * How-to guide
 * 4-min read
-* Updated on Nov 14, 2023
+* Updated on Aug 04, 2026
 
 This walkthrough shows how to add observability to your Python application using the OpenTelemetry Python libraries and tools.
 
@@ -19,11 +19,22 @@ This walkthrough shows how to add observability to your Python application using
 
 For details on how to assemble the base OTLP endpoint URL, see [Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). The URL should end in `/api/v2/otlp`.
 
-### Get API access token
+### Get an authentication token
 
-To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
+To authenticate with Dynatrace, use a [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") or a [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.").
 
-[Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api#authentication "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") has more details on the format and the necessary access scopes.
+* **Platform token**:
+
+  1. Go to [My platform tokens﻿](https://myaccount.dynatrace.com/platformTokens).
+  2. Create a platform token with the scope matching your signal type: `openpipeline:logs:ingest` for logs, `openpipeline:metrics:ingest` for metrics, or `openpipeline:traces:ingest` for traces.
+  3. Use `Authorization: Bearer <your-platform-token>` as the header value.
+* **Classic access token**:
+
+  1. Go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
+  2. Generate a token with the scope matching your signal type: `logs.ingest` for logs, `metrics.ingest` for metrics, or `openTelemetryTrace.ingest` for traces.
+  3. Use `Authorization: Api-Token <your-classic-access-token>` as the header value.
+
+[Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api#authentication "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") has more details on authentication formats and the required scopes.
 
 ## Step 2 Instrument your application
 
@@ -133,7 +144,10 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
 
    from opentelemetry._logs import set_logger_provider
    ```
-3. Add the following code to your startup sequence, to initialize OpenTelemetry right after your application has started. Provide the variables `DT_API_URL` and `DT_API_TOKEN` with the [Dynatrace URL](#base-url) and the [access token](#access-token).
+3. Add the following code to your startup sequence, to initialize OpenTelemetry right after your application has started. Configure `DT_API_URL` and `DT_API_TOKEN`:
+
+   * **Platform token**: Set `DT_API_TOKEN` to your platform token and replace `"Api-Token "` with `"Bearer "` in the Authorization headers.
+   * **Classic access token**: Set `DT_API_TOKEN` to your Classic access token. The code uses `Api-Token` format.
 
    ```
    # ===== GENERAL SETUP =====

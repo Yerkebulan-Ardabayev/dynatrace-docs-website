@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp
 
 * How-to guide
 * 15-min read
-* Updated on Feb 09, 2026
+* Updated on Sep 08, 2026
 
 Dynatrace version 1.230+
 
@@ -498,7 +498,7 @@ To check whether installation was successful
 
 ### Services enabled by default
 
-Monitoring of following services will be enabled during deployment of GCP Monitor:
+Monitoring of following services will be enabled during deployment of GCP Monitor, provided that the appropriate extensions from Dynatrace Hub are also installed:
 
 * [Google APIs](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-apis-monitoring "Monitor Google Cloud APIs and view available metrics.")
 * [Google App Engine](/managed/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine/app-engine-monitoring "Monitor Google App Engine and view available metrics.")

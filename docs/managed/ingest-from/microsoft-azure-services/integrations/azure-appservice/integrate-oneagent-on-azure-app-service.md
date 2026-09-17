@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/
 
 * How-to guide
 * 9-min read
-* Updated on Feb 18, 2026
+* Updated on Aug 20, 2026
 
 Azure App Service provides many different hosting options for Windows, Linux, and containers with shared infrastructure ([App Service plan﻿](https://dt-url.net/f4031wl)), or fully isolated and dedicated infrastructure ([Azure App Service Environment﻿](https://dt-url.net/u0231c3)).
 
@@ -777,6 +777,8 @@ If you use App Service [built-in authentication and authorization capabilties﻿
 
 In this case, if your application process isn't instrumented, you need to set the `DT_MONITORED_CLR` environment variable to instance that your application is running on: `clr` or `coreclr`.
 You can set this variable in the Azure portal (**Settings** > **Configuration** > **Application Settings**).
+
+After you add or change `DT_MONITORED_CLR`, reinstall the OneAgent site extension for the setting to take effect.
 
 ## Override OneAgent configuration
 

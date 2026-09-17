@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthrough
 
 * How-to guide
 * 4-min read
-* Updated on May 11, 2026
+* Updated on Aug 04, 2026
 
 This walkthrough shows how to add observability to your Ruby application using the OpenTelemetry Ruby libraries and tools.
 
@@ -37,11 +37,22 @@ This walkthrough shows how to add observability to your Ruby application using t
 
 For details on how to assemble the base OTLP endpoint URL, see [Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). The URL should end in `/api/v2/otlp`.
 
-### Get API access token
+### Get an authentication token
 
-To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
+To authenticate with Dynatrace, use a [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") or a [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.").
 
-[Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api#authentication "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") has more details on the format and the necessary access scopes.
+* **Platform token**:
+
+  1. Go to [My platform tokens﻿](https://myaccount.dynatrace.com/platformTokens).
+  2. Create a platform token with the scope matching your signal type: `openpipeline:logs:ingest` for logs, `openpipeline:metrics:ingest` for metrics, or `openpipeline:traces:ingest` for traces.
+  3. Use `Authorization: Bearer <your-platform-token>` as the header value.
+* **Classic access token**:
+
+  1. Go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
+  2. Generate a token with the scope matching your signal type: `logs.ingest` for logs, `metrics.ingest` for metrics, or `openTelemetryTrace.ingest` for traces.
+  3. Use `Authorization: Api-Token <your-classic-access-token>` as the header value.
+
+[Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api#authentication "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") has more details on authentication formats and the required scopes.
 
 ## Step 2 Choose how you want to instrument your application
 
@@ -71,7 +82,111 @@ It's a good idea to start with automatic instrumentation and add manual instrume
 
    require 'opentelemetry/exporter/otlp'
    ```
-3. Add the `init_opentelemetry` function to startup code and provide the variables `DT_API_URL` and `DT_API_TOKEN` with the values for the [Dynatrace URL](#base-url) and [access token](#access-token).
+3. Add the `init_opentelemetry` function to startup code and provide the variables `DT_API_URL` and `DT_API_TOKEN` with the values for the [Dynatrace URL](#base-url) and [access token](#authentication-token).
+
+   Platform token
+
+   Classic access token
+
+   ```
+   DT_API_URL = ENV['DT_API_URL']
+
+
+
+   DT_API_TOKEN = ENV['DT_API_TOKEN']
+
+
+
+   def init_opentelemetry
+
+
+
+   OpenTelemetry::SDK.configure do |c|
+
+
+
+   c.service_name = 'ruby-quickstart' #TODO Replace with the name of your application
+
+
+
+   c.service_version = '1.0.1' #TODO Replace with the version of your application
+
+
+
+   # TODO: add automatic instrumentation here (step 3 - optional)
+
+
+
+   for name in ["dt_metadata_e617c525669e072eebe3d0f08212e8f2.properties", "/var/lib/dynatrace/enrichment/dt_metadata.properties", "/var/lib/dynatrace/enrichment/dt_host_metadata.properties"] do
+
+
+
+   begin
+
+
+
+   c.resource = OpenTelemetry::SDK::Resources::Resource.create(Hash[*File.read(name.start_with?("/var") ? name : File.read(name)).split(/[=\n]+/)])
+
+
+
+   rescue
+
+
+
+   end
+
+
+
+   end
+
+
+
+   c.add_span_processor(
+
+
+
+   OpenTelemetry::SDK::Trace::Export::BatchSpanProcessor.new(
+
+
+
+   OpenTelemetry::Exporter::OTLP::Exporter.new(
+
+
+
+   endpoint: DT_API_URL + "/v1/traces",
+
+
+
+   headers: {
+
+
+
+   "Authorization": "Bearer " + DT_API_TOKEN
+
+
+
+   }
+
+
+
+   )
+
+
+
+   )
+
+
+
+   )
+
+
+
+   end
+
+
+
+   end
+   ```
 
    ```
    DT_API_URL = ENV['DT_API_URL']

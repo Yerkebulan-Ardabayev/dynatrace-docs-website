@@ -27,6 +27,392 @@ See [Collector Deployment](/managed/ingest-from/opentelemetry/collector/deployme
 
 ## Demo configuration
 
+Platform token
+
+Classic access token
+
+```
+receivers:
+
+
+
+syslog/f5:
+
+
+
+tcp:
+
+
+
+listen_address: "0.0.0.0:54526"
+
+
+
+protocol: rfc5424
+
+
+
+operators:
+
+
+
+- type: add
+
+
+
+field: attributes.log.source
+
+
+
+value: syslog
+
+
+
+- type: add
+
+
+
+field: attributes.dt.ip_addresses
+
+
+
+value: "1xx.xx.xx.xx1"
+
+
+
+- type: add
+
+
+
+field: attributes.instance.name
+
+
+
+value: "ip-1xx-xx-x-xx9.ec2.internal"
+
+
+
+- type: add
+
+
+
+field: attributes.device.type
+
+
+
+value: "f5bigip"
+
+
+
+syslog/host:
+
+
+
+tcp:
+
+
+
+listen_address: "0.0.0.0:54527"
+
+
+
+protocol: rfc5424
+
+
+
+operators:
+
+
+
+- type: add
+
+
+
+field: attributes.log.source
+
+
+
+value: syslog
+
+
+
+- type: add
+
+
+
+field: attributes.device.type
+
+
+
+value: "ubuntu-syslog"
+
+
+
+processors:
+
+
+
+attributes:
+
+
+
+actions:
+
+
+
+- key: net.host.name
+
+
+
+action: delete
+
+
+
+- key: net.peer.name
+
+
+
+action: delete
+
+
+
+- key: net.peer.port
+
+
+
+action: delete
+
+
+
+- key: net.transport
+
+
+
+action: delete
+
+
+
+- key: net.host.ip
+
+
+
+action: delete
+
+
+
+- key: dt.ingest.port
+
+
+
+from_attribute: net.host.port
+
+
+
+action: upsert
+
+
+
+- key: dt.ingest.source.ip
+
+
+
+from_attribute: net.peer.ip
+
+
+
+action: upsert
+
+
+
+- key: net.peer.ip
+
+
+
+action: delete
+
+
+
+- key: net.host.port
+
+
+
+action: delete
+
+
+
+- key: syslog.hostname
+
+
+
+from_attribute: hostname
+
+
+
+action: upsert
+
+
+
+- key: hostname
+
+
+
+action: delete
+
+
+
+- key: syslog.facility
+
+
+
+from_attribute: facility
+
+
+
+action: upsert
+
+
+
+- key: facility
+
+
+
+action: delete
+
+
+
+- key: syslog.priority
+
+
+
+from_attribute: priority
+
+
+
+action: upsert
+
+
+
+- key: priority
+
+
+
+action: delete
+
+
+
+- key: syslog.proc_id
+
+
+
+from_attribute: proc_id
+
+
+
+action: upsert
+
+
+
+- key: proc_id
+
+
+
+action: delete
+
+
+
+- key: syslog.version
+
+
+
+from_attribute: version
+
+
+
+action: upsert
+
+
+
+- key: version
+
+
+
+action: delete
+
+
+
+- key: syslog.appname
+
+
+
+from_attribute: appname
+
+
+
+action: upsert
+
+
+
+- key: appname
+
+
+
+action: delete
+
+
+
+- key: message
+
+
+
+action: delete
+
+
+
+exporters:
+
+
+
+otlp_http:
+
+
+
+endpoint: ${env:DT_ENDPOINT}
+
+
+
+headers:
+
+
+
+Authorization: "Bearer ${env:DT_PLATFORM_TOKEN}"
+
+
+
+service:
+
+
+
+pipelines:
+
+
+
+logs:
+
+
+
+receivers: [syslog/f5, syslog/host]
+
+
+
+processors: [attributes]
+
+
+
+exporters: [otlp_http]
+```
+
+Assign the scope that matches your signal type: `openpipeline:logs:ingest` for logs, `openpipeline:metrics:ingest` for metrics, or `openpipeline:traces:ingest` for traces.
+
 ```
 receivers:
 
@@ -470,8 +856,11 @@ Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://gith
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 
-* `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
-* `DT_API_TOKEN` contains the [API token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`).
+* One token variable, depending on the token type you use:
+
+  + **Platform token**: `DT_PLATFORM_TOKEN` contains your [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") with the `openpipeline:logs:ingest` scope.
+  + **Classic access token**: `DT_API_TOKEN` contains your [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") with the **Ingest logs** (`logs.ingest`) scope.
 
 ### Service pipelines
 

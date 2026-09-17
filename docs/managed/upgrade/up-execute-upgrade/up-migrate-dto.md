@@ -47,7 +47,7 @@ To generate an access token in the target SaaS environment,
 3. Enter a name for your token.  
    Dynatrace doesn't enforce unique token names. You can create multiple tokens with the same name. Be sure to provide a meaningful name for each token you generate. Proper naming helps you to efficiently manage your tokens and perhaps delete them when they're no longer needed.
 4. Select the template **Kubernetes: Dynatrace Operator**.  
-   This will automatically add the required scopes (see [Operator token](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions#operator-token "Configure tokens and permissions to monitor your Kubernetes cluster")).
+   This will automatically add the required scopes (see [Operator token](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions/tokens-permissions-classic#operator-token "Configure Classic API tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.")).
 5. Select **Generate token**.
 6. Copy the generated token to the clipboard. Store the token in a password manager for future use.
 

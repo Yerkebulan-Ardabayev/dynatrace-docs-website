@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 # Monitor Prometheus metrics
 
 * 14-min read
-* Updated on Jun 19, 2026
+* Updated on Sep 14, 2026
 
 Prometheus is an open-source monitoring and alerting toolkit which is popular in the Kubernetes community. Prometheus scrapes metrics from a number of HTTP(s) endpoints that expose metrics in the OpenMetrics format.
 See the list of available [exporters﻿](https://dt-url.net/vd03n1m) in the Prometheus documentation.
@@ -250,7 +250,7 @@ The values of `metrics.dynatrace.com/path`, `metrics.dynatrace.com/port`, and `m
 
 ### Client authentication Optional
 
-**Requirements:** Add the permissions to access `secrets` and `configmaps` for the `dynatrace-kubernetes-monitoring` ClusterRole.
+**Requirements:** ActiveGate needs access to the referenced `secrets` and `configmaps`. These permissions aren't granted by default. Create a ClusterRole with them and bind it, with a ClusterRoleBinding, to the service account your ActiveGate uses (if deployed with Dynatrace Operator, this is `dynatrace-activegate`).
 
 Some systems require extra authentication before Dynatrace can scrape them. For such cases, you can set the following additional annotations:
 
@@ -331,7 +331,7 @@ Ingesting metrics from exporters requiring client authentication is only possibl
 
 ### HTTP - Basic authentication Optional
 
-**Requirements:** Add the permissions to access `secrets` for the `dynatrace-kubernetes-monitoring` ClusterRole.
+**Requirements:** ActiveGate needs access to the referenced `secrets`. These permissions aren't granted by default. Create a ClusterRole with them and bind it, with a ClusterRoleBinding, to the service account your ActiveGate uses (if deployed with Dynatrace Operator, this is `dynatrace-activegate`).
 
 For systems that require basic HTTP authentication before scraping, you can apply the following additional annotations.
 
@@ -463,7 +463,7 @@ Ingesting metrics from exporters requiring basic HTTP authentication is only pos
 **Requirements:**
 
 * ActiveGate version 1.317+
-* Add the permissions to access `secrets` for the `dynatrace-kubernetes-monitoring` ClusterRole.
+* ActiveGate needs access to the referenced `secrets`. These permissions aren't granted by default. Create a ClusterRole with them and bind it, with a ClusterRoleBinding, to the service account your ActiveGate uses (if deployed with Dynatrace Operator, this is `dynatrace-activegate`).
 
 For systems that require Bearer token authentication before scraping, you can apply the additional annotation `metrics.dynatrace.com/http.auth`.
 
@@ -567,7 +567,7 @@ For more information on how to annotate pods, see [Annotation best practices](#b
 
 ## Annotate Kubernetes services
 
-**Requirements:** Add the permission to access **services** for the `dynatrace-kubernetes-monitoring` ClusterRole (not needed for Dynatrace Operator users, as this is enabled by default in [clusterrole-kubernetes-monitoring.yaml﻿](https://dt-url.net/gl027s4)).
+**Requirements:** ActiveGate needs access to `services` (not needed for Dynatrace Operator users, as this is enabled by default in [clusterrole-kubernetes-monitoring-default.yaml﻿](https://dt-url.net/gl027s4)). Otherwise, create a ClusterRole with this permission and bind it, with a ClusterRoleBinding, to the service account your ActiveGate uses.
 
 You can also annotate services instead of pods. Pods corresponding to the Kubernetes services are automatically discovered via the service label selector, causing scraping of all pods belonging to the service.
 

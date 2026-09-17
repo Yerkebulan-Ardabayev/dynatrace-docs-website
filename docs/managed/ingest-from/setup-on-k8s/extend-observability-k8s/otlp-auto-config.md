@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/extend-obser
 # Enable automatic OpenTelemetry OTLP exporter configuration
 
 * How-to guide
-* Published Nov 24, 2025
+* Updated on Aug 04, 2026
 
 Dynatrace Operator can automatically configure the OpenTelemetry OTLP exporter for applications instrumented with an [OpenTelemetry SDK﻿](https://opentelemetry.io/docs/languages/). This is done by injecting environment variables into your application pods at startup, allowing telemetry data to be sent directly to Dynatrace.
 
@@ -18,7 +18,7 @@ Dynatrace Operator version 1.8.0+
 
 ### Provide a data ingest token
 
-You need to provide a [data ingest token](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster") to the Dynatrace Operator. This token is passed to your application as part of the OTLP exporter configuration.
+You need to provide a [data ingest token](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.") to the Dynatrace Operator. This token is passed to your application as part of the OTLP exporter configuration.
 
 ### Update your DynaKube resource
 
@@ -80,7 +80,7 @@ The following secrets are created in each [injected namespace](#namespace-select
 
   + The TLS certificate for the ActiveGate.
   + Certificates contained in `.spec.trustedCAs`, if provided and no ActiveGate with TLS certificates is available.
-* `dynatrace-otlp-exporter-config` holds a copy of the [data ingest token](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
+* `dynatrace-otlp-exporter-config` holds a copy of the [data ingest token](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.").
 
 Secrets are updated automatically when the token or certificate changes, but only new pods will receive updated values. Restart your application pods subsequent to a change to avoid authentication or communication issues.
 
@@ -127,6 +127,11 @@ The following environment variables are injected into your application container
 | `OTEL_EXPORTER_OTLP_LOGS_PROTOCOL` | `http/protobuf` |
 | `OTEL_EXPORTER_OTLP_LOGS_HEADERS` | `authorization=Api-Token $(DT_API_TOKEN)` |
 | `OTEL_RESOURCE_ATTRIBUTES` | `k8s.cluster.name=dynakube,k8s.container.name=app ...` |
+
+The Operator injects the authorization header based on the token type configured as the data ingest token (see [Tokens and permissions](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.")):
+
+* **Platform token**: The Operator injects `Bearer` in the `OTEL_EXPORTER_OTLP_*_HEADERS` variables. Required scopes: `openpipeline:logs:ingest`, `openpipeline:metrics:ingest`, and `openpipeline:traces:ingest`.
+* **Classic access token**: The Operator injects `Api-Token` in the `OTEL_EXPORTER_OTLP_*_HEADERS` variables.
 
 ### Resource attributes
 

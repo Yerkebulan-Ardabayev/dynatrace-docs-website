@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 * How-to guide
 * 23-min read
-* Updated on Mar 24, 2026
+* Updated on Aug 18, 2026
 
 Use the OneAgent SDK for iOS to report additional details about the user sessions in your mobile app. The OneAgent SDK for iOS allows you to create custom actions, measure web requests, report errors, and tag specific users. The sections below explain how to enable these capabilities.
 

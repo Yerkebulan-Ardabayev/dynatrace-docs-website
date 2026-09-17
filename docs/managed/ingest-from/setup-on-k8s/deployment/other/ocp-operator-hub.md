@@ -51,8 +51,8 @@ To install Dynatrace Operator on OpenShift via OperatorHub
 6. Go to **Operators** > **Installed Operators** and wait until you see **Install Succeeded**.
 7. Go to **Workloads** > **Secrets** and create a new key named `dynakube` with two values:
 
-   * `apiToken` equal to your cluster's [Dynatrace Operator token](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
-   * `dataIngestToken` equal to your cluster's [Data Ingest token](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
+   * `apiToken` equal to your cluster's [Dynatrace Operator token](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.").
+   * `dataIngestToken` equal to your cluster's [Data Ingest token](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.").
 8. Go to **Operators** > **Installed Operators** from the side menu and select **Dynatrace Operator**.
 9. Select **Create instance**.
 10. Make the following changes:

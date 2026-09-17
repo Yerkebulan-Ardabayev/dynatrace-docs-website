@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/u
 
 * How-to guide
 * 3-min read
-* Updated on May 11, 2026
+* Updated on Aug 04, 2026
 
 The following configuration example shows how you configure a Collector instance and the `otlp_http` exporter to queue and batch OTLP requests and improve throughput performance.
 
@@ -33,6 +33,196 @@ you are encouraged to determine the best settings for your particular situation.
 See [Collector Deployment](/managed/ingest-from/opentelemetry/collector/deployment "How to deploy the Dynatrace OpenTelemetry Collector.") and [Collector Configuration](/managed/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
 
 ## Demo configuration
+
+Platform token
+
+Classic access token
+
+```
+receivers:
+
+
+
+otlp:
+
+
+
+protocols:
+
+
+
+grpc:
+
+
+
+endpoint: 0.0.0.0:4317
+
+
+
+http:
+
+
+
+endpoint: 0.0.0.0:4318
+
+
+
+exporters:
+
+
+
+otlp_http/traces:
+
+
+
+endpoint: ${env:DT_ENDPOINT}
+
+
+
+headers:
+
+
+
+Authorization: "Bearer ${env:DT_PLATFORM_TOKEN}"
+
+
+
+sending_queue:
+
+
+
+batch:
+
+
+
+min_size: 5000
+
+
+
+max_size: 5000
+
+
+
+flush_timeout: 60s
+
+
+
+otlp_http/metrics:
+
+
+
+endpoint: ${env:DT_ENDPOINT}
+
+
+
+headers:
+
+
+
+Authorization: "Bearer ${env:DT_PLATFORM_TOKEN}"
+
+
+
+sending_queue:
+
+
+
+batch:
+
+
+
+min_size: 3000
+
+
+
+max_size: 3000
+
+
+
+flush_timeout: 60s
+
+
+
+otlp_http/logs:
+
+
+
+endpoint: ${env:DT_ENDPOINT}
+
+
+
+headers:
+
+
+
+Authorization: "Bearer ${env:DT_PLATFORM_TOKEN}"
+
+
+
+sending_queue:
+
+
+
+batch:
+
+
+
+min_size: 1800
+
+
+
+max_size: 2000
+
+
+
+flush_timeout: 60s
+
+
+
+service:
+
+
+
+pipelines:
+
+
+
+traces:
+
+
+
+receivers: [otlp]
+
+
+
+exporters: [otlp_http/traces]
+
+
+
+metrics:
+
+
+
+receivers: [otlp]
+
+
+
+exporters: [otlp_http/metrics]
+
+
+
+logs:
+
+
+
+receivers: [otlp]
+
+
+
+exporters: [otlp_http/logs]
+```
+
+Assign the scope that matches your signal type: `openpipeline:logs:ingest` for logs, `openpipeline:metrics:ingest` for metrics, or `openpipeline:traces:ingest` for traces.
 
 ```
 receivers:
@@ -238,8 +428,11 @@ Under `exporters`, we specify an [`otlp_http` exporter﻿](https://github.com/op
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 
-* `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
-* `DT_API_TOKEN` contains the [API token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`).
+* One token variable, depending on the token type you use:
+
+  + **Platform token**: `DT_PLATFORM_TOKEN` contains your [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") with the `openpipeline:logs:ingest`, `openpipeline:metrics:ingest`, and `openpipeline:traces:ingest` scopes.
+  + **Classic access token**: `DT_API_TOKEN` contains your [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") with the **Ingest logs** (`logs.ingest`), **Ingest metrics** (`metrics.ingest`), and **Ingest OpenTelemetry traces** (`openTelemetryTrace.ingest`) scopes.
 
 Under the `sending_queue` section of the exporter's config, we specify a different [`batch` section﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.160.0/exporter/exporterhelper#sending-queue-batch-settings)
 for each telemetry signal, with the following parameters:

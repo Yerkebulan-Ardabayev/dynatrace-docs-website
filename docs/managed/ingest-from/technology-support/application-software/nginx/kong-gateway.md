@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/applic
 # Kong Gateway monitoring
 
 * 4-min read
-* Updated on Sep 04, 2024
+* Updated on Aug 04, 2026
 
 To enable Kong Observability in Dynatrace, you have the following options.
 
@@ -112,6 +112,92 @@ curl -X POST http://{HOST}:8001/plugins \
 ## Step 3 Configure OpenTelemetry Collector
 
 Configure your OpenTelemetry Collector to send data to your Dynatrace environment. The example below shows how to export traces and logs.
+
+Platform token
+
+Classic access token
+
+```
+receivers:
+
+
+
+otlp:
+
+
+
+protocols:
+
+
+
+http:
+
+
+
+endpoint: 0.0.0.0:4318
+
+
+
+exporters:
+
+
+
+otlp_http:
+
+
+
+endpoint: "${env:DT_BASEURL}/api/v2/otlp"
+
+
+
+headers:
+
+
+
+"Authorization": "Bearer ${env:DT_PLATFORM_TOKEN}"
+
+
+
+service:
+
+
+
+pipelines:
+
+
+
+traces:
+
+
+
+receivers: [otlp]
+
+
+
+processors: []
+
+
+
+exporters: [otlp_http]
+
+
+
+logs:
+
+
+
+receivers: [otlp]
+
+
+
+processors: []
+
+
+
+exporters: [otlp_http]
+```
+
+The required scopes are `openpipeline:traces:ingest` and `openpipeline:logs:ingest`.
 
 ```
 receivers:

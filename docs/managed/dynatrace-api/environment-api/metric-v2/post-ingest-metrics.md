@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-
 # Metrics API - POST ingest data points
 
 * Reference
-* Published Aug 21, 2020
+* Updated on Aug 04, 2026
 
 Pushes custom data points to Dynatrace.
 
@@ -210,6 +210,28 @@ To learn how to obtain and use it, see [Platform tokens﻿](https://docs.dynatra
 ## Example
 
 With this `curl` command, you'll ingest the `cpu.temperature` metric assigned to the `HOST-06F288EE2A930951` dimension.
+
+Platform token
+
+Classic access token
+
+```
+curl -L -X POST 'https://mySampleEnv.live.dynatrace.com/api/v2/metrics/ingest' \
+
+
+
+-H 'Authorization: Bearer <your-platform-token>' \
+
+
+
+-H 'Content-Type: text/plain' \
+
+
+
+--data-raw 'cpu.temperature,dt.entity.host=HOST-06F288EE2A930951,cpu=1 55'
+```
+
+Required scope: `openpipeline:metrics:ingest`
 
 ```
 curl -L -X POST 'https://mySampleEnv.live.dynatrace.com/api/v2/metrics/ingest' \

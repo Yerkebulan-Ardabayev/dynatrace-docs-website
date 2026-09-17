@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 
 * How-to guide
 * 10-min read
-* Updated on Aug 07, 2023
+* Updated on Aug 20, 2026
 
 Dynatrace detects which processes are part of the same [process groups](/managed/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.") by means of a default set of detection rules.
 
@@ -31,6 +31,8 @@ You can change the structure of default process groups by modifying the default 
 Simple process group detection rules enable you to adapt the default process-group detection logic for deep monitored processes via [**Java system properties**](#java) or [**environment variables**](#env). You can create a simple detection rule using the Dynatrace web UI or the [Settings API](#api) - see [Example JSON payload for a simple detection rule](#eg1).
 
 Simple process-group detection rules are only effective when OneAgent is installed on your hosts or images for processes that can be deep monitored.
+
+Simple process-group detection rules aren't supported for Python processes.
 
 This feature can only split a process group into multiple parts. Use it if you have different deployments into the same process group.
 
@@ -75,6 +77,8 @@ Any Apache HTTP process that includes the environment variable `MY_PG_NAME` with
 Advanced process group detection rules allow you to create a process group by merging processes from different groups, and enable you to adapt the detection logic for deep monitored processes by leveraging properties that are automatically detected by OneAgent during the startup of a process. You can create an advanced detection rule using the Dynatrace web UI or the [Settings API](#api) - see [Example JSON payload for an advanced detection rule](#eg2).
 
 Advanced process-group detection rules are only effective when OneAgent is installed on your hosts or images for processes that can be deep monitored.
+
+Advanced process-group detection rules aren't supported for Python processes.
 
 To create an advanced detection rule in the Dynatrace web UI
 

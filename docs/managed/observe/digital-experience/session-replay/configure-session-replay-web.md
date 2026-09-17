@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/session-re
 
 * How-to guide
 * 22-min read
-* Updated on Mar 05, 2026
+* Updated on Sep 15, 2026
 
 You can configure monitoring consumption and data privacy settings for Session Replay. The following sections describe all possible configuration options:
 
@@ -192,7 +192,9 @@ Session Replay provides two options for configuring content masking.
 
 The `data-dtrum-mask` attribute requires a change in the application code and is secure by design. It allows you to consider the elements that can contain confidential information at the design and implementation stages. The recorder automatically detects and masks the content (text, input values, and attributes values) and interactions (cursor movements and scrolls) in the node that contains the attribute as well as its descendants.
 
-The application code must be modified to incorporate the `data-dtrum-mask` attribute.
+Starting with RUM JavaScript version 1.345+, you can use `data-dt-mask` instead of `data-dtrum-mask`. Both attribute names have the same effect, and you can mix them within the same application. The `data-dtrum-mask` attribute remains supported, so there's no need to update existing application code.
+
+The application code must be modified to incorporate the `data-dtrum-mask` or `data-dt-mask` attribute.
 
 ![The data-drum-mask attribute displayed in the code](https://dt-cdn.net/images/data-dtrum-mask-example-655-045d2f8d23.png)
 

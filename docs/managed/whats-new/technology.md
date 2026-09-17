@@ -317,7 +317,7 @@ Rollout starts Sep 9, 2024, for OneAgent
 Rollout starts Aug 13, 2024, for OneAgent
 
 * Apache Tomcat access log enrichment (Java module). OneAgent feature: Java - Trace/span context enrichment for unstructured Apache Tomcat access logs
-* Log monitoring for IBM CICS regions and IBM IMS subsystems. [Get started](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")
+* Log monitoring for IBM CICS regions and IBM IMS subsystems. [Get started](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs "Monitor your z/OS logs with Dynatrace, including SYSLOG and OPERLOG as well as logs from CICS regions and IMS subsystems.")
 * NGINX 1.26.1, 1.27 (NGINX module)
 
 ## 1.295 OneAgent

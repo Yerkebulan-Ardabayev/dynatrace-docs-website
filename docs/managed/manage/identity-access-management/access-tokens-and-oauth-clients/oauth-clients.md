@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/identity-access-management/acc
 
 * Reference
 * 4-min read
-* Updated on Jul 22, 2026
+* Updated on Aug 04, 2026
 
 OAuth clients provide credentials according to the OAuth 2.0 standard. Credentials are managed by Dynatrace administrators and are used to automate account management, or build user-facing applications.
 

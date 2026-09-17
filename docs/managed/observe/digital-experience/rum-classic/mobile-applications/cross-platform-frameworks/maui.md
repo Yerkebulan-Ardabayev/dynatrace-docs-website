@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 * How-to guide
 * 10-min read
-* Updated on Jun 22, 2026
+* Updated on Aug 18, 2026
 
 Dynatrace version 1.265+
 
