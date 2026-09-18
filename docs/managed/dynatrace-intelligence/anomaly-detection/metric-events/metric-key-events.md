@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detect
 
 * How-to guide
 * 4-min read
-* Updated on May 22, 2025
+* Updated on Sep 14, 2026
 
 Metric key events are based on incoming raw measurements of a single metric. For this event type, only the static threshold monitoring strategy is available. You can monitor all metric dimensions within one configuration (for example, it is possible to create an alert for 20,000 CPUs in a single metric event configuration). As a safeguard, Dynatrace throttles these configurations with a limit of 200 simultaneous alerts. You can narrow down the scope of the event to particular dimensions.
 
@@ -46,11 +46,15 @@ Metric key example
 
    1. Specify the threshold value. Select **Use suggested threshold** to use a value based on the previous data.
    2. If applicable, select the threshold unit.
-   3. Choose the [missing data alert](/managed/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#missing-data "How to set up an alert for missing measurements.") behavior.  
-      If the missing data alert is enabled, it is combined with the threshold condition by the **OR** logic.
-   4. Select the alert condition: alert if the metric is above or below the threshold.
-   5. Optional In the **Advanced model properties** section, specify a sliding window for comparison.  
-      The sliding window defines how often the threshold (whether automatically calculated or manually specified) must be violated within a sliding window of time to raise an event (violations don't have to be successive). It helps you to avoid overly aggressive alerting on single violations. You can set a sliding window of up to 60 minutes.
+   3. Select the alert condition: alert if the metric is above or below the threshold.
+
+   Alerting on missing data is not supported for metric key events. If you want to alert on missing data, select a [metric selector event](/managed/dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events "Learn about metric events based on a metric selector.") instead.
+
+   4. Optional In the **Advanced model properties** section, configure the evaluation window:
+
+      * **Violating samples**: The number of one-minute samples within the evaluation window that must violate the threshold to trigger an event.
+      * **Sliding window**: The number of one-minute samples that form the sliding evaluation window. You can set a sliding window of up to 60 samples.
+      * **Dealerting samples**: The number of one-minute samples within the evaluation window that must return to normal to close the event.
 8. Check the preview for your alert and evaluate how effective your configuration is.
 
    1. Select the dimension values that you want to see on the preview.

@@ -8,20 +8,18 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 # Monitor z/OS logs
 
 * 4-min read
-* Updated on Aug 07, 2026
+* Updated on Jan 28, 2026
 
-zRemote module version 1.297+ zDC module version 1.347+
+zRemote module version 1.297+ zDC module version 1.291+
 
 Log analysis is typically one of the first steps in troubleshooting application problems. When a critical issue arises, it is therefore essential that you have the right logs to quickly and easily understand the full scope of what is happening within your applications.
 
-Dynatrace can automatically discover and collect logs from monitored IBM z/OS LPARs, IBM CICS regions and IBM IMS subsystems. All collected logs are enriched with metadata to map them to the entity model of z/OS hosts (logical partitions) and z/OS processes (regions and subsystems). This allows you to extend your root cause analysis for any issue identified by Davis AI with logs automatically linked to your applications.
+Dynatrace can automatically discover and collect logs from monitored IBM CICS regions and IBM IMS subsystems. All collected logs are enriched with metadata to map them to the entity model of z/OS hosts (logical partitions) and z/OS processes (regions and subsystems). This allows you to extend your root cause analysis for any issue identified by Davis AI with logs automatically linked to your applications.
 
 To learn more about related use cases, see [Log Management and Analytics](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 
 The following log sources are supported:
 
-* zDC module version 1.347+ SYSLOG for LPARs configured for SYSLOG
-* zDC module version 1.347+ OPERLOG for LPARs configured for OPERLOG
 * CICS module version 1.291+ MSGUSR DD statement for IBM CICS regions
 * IMS module version 1.295+ Primary and secondary master terminal for IBM IMS subsystems
 
@@ -36,26 +34,22 @@ Collection of logs from z/OS requires a [Log ingest rule](/managed/upgrade/unava
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Activate log ingest rule**](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs#ingest-rules "Monitor your z/OS logs with Dynatrace, including SYSLOG and OPERLOG as well as logs from CICS regions and IMS subsystems.")[![Step 2 optional](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
+**Activate log ingest rule**](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs#ingest-rules "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")[![Step 2 optional](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
 
-**Mask sensitive log data**](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs#mask-data "Monitor your z/OS logs with Dynatrace, including SYSLOG and OPERLOG as well as logs from CICS regions and IMS subsystems.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Mask sensitive log data**](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs#mask-data "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Analyze log data**](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs#analyze-logs "Monitor your z/OS logs with Dynatrace, including SYSLOG and OPERLOG as well as logs from CICS regions and IMS subsystems.")
+**Analyze log data**](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs#analyze-logs "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")
 
 ### Step 1 Activate log ingest rule
 
 Go to **Settings** and select **Log Monitoring** > **Log ingest rules**.
 
-Activate one of the following built-in rules to ingest discovered logs from your IBM CICS regions, IBM IMS subsystems, z/OS SYSLOG and z/OS OPERLOG to Dynatrace.
+Activate one of the following built-in rules to ingest discovered logs from your IBM CICS regions and IBM IMS subsystems to Dynatrace.
 
 | Rule | Condition | Scope |
 | --- | --- | --- |
 | **z/OS CICS message user** | **Log source** is: `z/OS CICS message user`  **Log record level** is any of: `ERROR` or `WARN` | Environment |
 | **z/OS IMS master terminal** | **Log source** is any of: `z/OS IMS primary master` or `z/OS IMS secondary master`  **Log record level** is any of: `ERROR` or `WARN` | Environment |
-| **z/OS OPERLOG** | **Log source** is: `z/OS OPERLOG`  **Log record level** is any of: `ERROR` or `WARN` | Environment |
-| **z/OS SYSLOG** | **Log source** is: `z/OS SYSLOG`  **Log record level** is any of: `ERROR` or `WARN` | Environment |
-
-Selection of z/OS Syslog with z/OS Operlog on the same LPAR will result in duplicate log records if the LPAR is defined with both SYSLOG and OPERLOG active. Additional rules can be added to the log ingest to eliminate any confusion
 
 ![z/OS log settings](https://dt-cdn.net/images/zos-log-settings-1651-077ed26fb6.png)
 
@@ -75,7 +69,7 @@ To do this, define a [Log ingest rule](/managed/upgrade/unavailable-in-managed "
 
 | Attribute | Description | Search dropdown logic |
 | --- | --- | --- |
-| **Log source** | Matching is based on a **Log source** attribute. For CICS, select the `z/OS CICS message user`. For IMS, select either or both of `z/OS IMS primary master` or `z/OS IMS secondary master`. For z/OS OPERLOG, select the `z/OS OPERLOG`. For z/OS SYSLOG, select the `z/OS SYSLOG`. | Can be entered manually. No time limit. |
+| **Log source** | Matching is based on a **Log source** attribute. For CICS, select the `z/OS CICS message user`. For IMS, select either or both of `z/OS IMS primary master` or `z/OS IMS secondary master`. | Can be entered manually. No time limit. |
 | **Log record level**[1](#fn-1-1-def) | Matching is based on the level of the log record. It supports the following values: `alert`, `critical`, `debug`, `emergency`, `error`, `info`, `none`, `notice`, `severe`, `warn`. | Can be entered manually. No time limit. |
 | **Log content** | Matching is based on the content of the log; wildcards are supported in the form of an asterisk. | Can be entered manually. No time limit. |
 | **Process group** | Matching is based on the process group ID. | Entities visible in the last 3 days are listed. |

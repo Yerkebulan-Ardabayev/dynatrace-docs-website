@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthrough
 
 * How-to guide
 * 5-min read
-* Updated on Aug 04, 2026
+* Updated on Sep 15, 2026
 
 This walkthrough shows how to add observability to your C++ application using the OpenTelemetry C++ libraries and tools.
 
@@ -355,51 +355,7 @@ To authenticate with Dynatrace, use a [platform token](/managed/upgrade/unavaila
 
 
 
-   std::string key_to_compare = key.data();
-
-
-
-   // Header's first letter seems to be  automatically capitaliazed by our test http-server, so
-
-
-
-   // compare accordingly.
-
-
-
-   if (key == opentelemetry::trace::propagation::kTraceParent)
-
-
-
-   {
-
-
-
-   key_to_compare = "Traceparent";
-
-
-
-   }
-
-
-
-   else if (key == opentelemetry::trace::propagation::kTraceState)
-
-
-
-   {
-
-
-
-   key_to_compare = "Tracestate";
-
-
-
-   }
-
-
-
-   auto it = headers_.find(key_to_compare);
+   auto it = headers_.find(std::string(key));
 
 
 
@@ -435,7 +391,7 @@ To authenticate with Dynatrace, use a [platform token](/managed/upgrade/unavaila
 
 
 
-   headers_.insert(std::pair<std::string, std::string>(std::string(key), std::string(value)));
+   headers_.emplace(std::string(key), std::string(value));
 
 
 
@@ -1069,13 +1025,15 @@ To use OpenTelemetry, you first need to complete these two steps:
 
 Context propagation is particularly important when network calls (for example, REST) are involved.
 
-In the following examples, we assume that we are handling context propagation using the standard [W3C trace context﻿](https://www.w3.org/TR/trace-context/) headers, and we receive and set HTTP headers with the OpenTelemetry `http_client::Headers` object.
+In the following examples, we assume that we are handling context propagation using the standard [W3C trace context﻿](https://www.w3.org/TR/trace-context/) headers.
 
 For that purpose, we use an instance of the class `HttpTextMapCarrier`, which we defined during the setup, and which is based on the OpenTelemetry class [`TextMapCarrier`﻿](https://opentelemetry-cpp.readthedocs.io/en/latest/otel_docs/classopentelemetry_1_1context_1_1propagation_1_1TextMapCarrier.html#exhale-class-classopentelemetry-1-1context-1-1propagation-1-1textmapcarrier).
 
 #### Extracting the context when receiving a request
 
-To extract information on an existing context, we call the `Extract` method of the global propagator singleton and pass it the `HttpTextMapCarrier` instance, as well as the current context. This returns a new context object (`new_context`), which we allows us to continue the previous trace with our spans.
+In the following example, we assume that we have received a network call via the [cpp-httplib﻿](https://github.com/yhirose/cpp-httplib) library and its `httplib::Request`/`httplib::Response` types (`#include <httplib.h>`). If you use a different HTTP server library, adjust the field and type names accordingly.
+
+To extract information on an existing context, we call the `Extract` method of the global propagator singleton and pass it the `HttpTextMapCarrier` instance, as well as the current context. This returns a new context object (`new_context`), which allows us to continue the previous trace with our spans.
 
 ```
 StartSpanOptions options;
@@ -1086,7 +1044,7 @@ options.kind          = SpanKind::kServer;
 
 
 
-std::string span_name = request.uri;
+std::string span_name = request.path;
 
 
 
@@ -1094,15 +1052,11 @@ std::string span_name = request.uri;
 
 
 
-std::map<std::string, std::string> &request_headers =
+httplib::Headers &request_headers = const_cast<httplib::Headers &>(request.headers);
 
 
 
-const_cast<std::map<std::string, std::string> &>(request.headers);
-
-
-
-const HttpTextMapCarrier<std::map<std::string, std::string>> carrier(request_headers);
+const HttpTextMapCarrier<httplib::Headers> carrier(request_headers);
 
 
 
@@ -1162,7 +1116,7 @@ span->AddEvent("Processing request");
 
 
 
-response.headers[HTTP_SERVER_NS::CONTENT_TYPE] = HTTP_SERVER_NS::CONTENT_TYPE_TEXT;
+response.set_header("Content-Type", "text/plain");
 
 
 
@@ -1175,7 +1129,7 @@ span->End();
 
 #### Injecting the context when sending requests
 
-For injecting current context information into an outbound request, we call the `Inject` method of the global propagator singleton and pass it the `HttpTextMapCarrier` instance, as well as the current context. This adds the applicable headers to the `carrier` instance, which we then use in the text step with our HTTP request.
+For injecting current context information into an outbound request, we call the `Inject` method of the global propagator singleton and pass it the `HttpTextMapCarrier` instance, as well as the current context. This adds the applicable headers to the `carrier` instance, which we then use in the next step with our HTTP request.
 
 ```
 auto http_client = http_client::curl::HttpCurlClientFactory{}.CreateSync();

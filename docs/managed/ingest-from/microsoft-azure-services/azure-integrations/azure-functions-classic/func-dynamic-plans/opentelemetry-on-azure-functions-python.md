@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/
 * 4-min read
 * Published Jul 13, 2022
 
-The following integrations are designed for the classic version of Azure Functions. For the newest versions of Azure Functions, see [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Monitor Azure Functions").
+The following integrations are designed for the classic version of Azure Functions. For the newest versions of Azure Functions, see [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Learn how to monitor Azure Functions with Dynatrace OneAgent, including automatic instrumentation, distributed tracing, and hosting-plan-aware modes.").
 
 The [`dynatrace-opentelemetry-azure-functions` package﻿](https://pypi.org/project/dynatrace-opentelemetry-azure-functions) provides APIs for tracing Python Azure Functions.
 
@@ -290,6 +290,6 @@ return func.HttpResponse("Hello world", status_code=200)
 
 ## Related topics
 
-* [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Monitor Azure Functions")
+* [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Learn how to monitor Azure Functions with Dynatrace OneAgent, including automatic instrumentation, distributed tracing, and hosting-plan-aware modes.")
 * [Set up Dynatrace on Microsoft Azure](/managed/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
 * [Azure monitoring﻿](https://www.dynatrace.com/technologies/azure-monitoring/)

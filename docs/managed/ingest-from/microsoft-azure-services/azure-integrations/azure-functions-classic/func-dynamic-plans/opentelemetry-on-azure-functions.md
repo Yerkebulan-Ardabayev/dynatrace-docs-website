@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/
 * 3-min read
 * Updated on Feb 09, 2026
 
-The following integrations are designed for the classic version of Azure Functions. For the newest versions of Azure Functions, see [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Monitor Azure Functions").
+The following integrations are designed for the classic version of Azure Functions. For the newest versions of Azure Functions, see [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Learn how to monitor Azure Functions with Dynatrace OneAgent, including automatic instrumentation, distributed tracing, and hosting-plan-aware modes.").
 
 Dynatrace version 1.240+ OneAgent version 1.193+
 
@@ -80,7 +80,7 @@ The Dynatrace Azure Functions integration doesn't capture the IP addresses of ou
 
 ## Related topics
 
-* [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Monitor Azure Functions")
+* [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Learn how to monitor Azure Functions with Dynatrace OneAgent, including automatic instrumentation, distributed tracing, and hosting-plan-aware modes.")
 * [Monitor Azure Functions on Plans for Windows](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions/integrate-oneagent-on-azure-functions "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.")
 * [Set up Dynatrace on Microsoft Azure](/managed/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
 * [OneAgent platform and capability support matrix](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 # OpenTelemetry Host Monitoring extension
 
 * Extension
-* Updated on Aug 10, 2026
+* Updated on Sep 10, 2026
 
 Monitor OpenTelemetry-instrumented hosts with auto-generated entity topology, metric visualizations, and alerts for faster infrastructure analysis.
 
@@ -44,7 +44,7 @@ The [OpenTelemetry Collector](/managed/ingest-from/opentelemetry/collector "Lear
 
 The extension displays telemetry data captured by the OpenTelemetry Collector and adds Dynatrace-specific context to all signals (metrics, logs, and spans) for analysis and correlation.
 
-For information on how to use the extension within Dynatrace, see [Monitor hosts that send OpenTelemetry data to Dynatrace](/managed/ingest-from/opentelemetry/collector/use-cases/host-monitoring "How to monitor your hosts that use Collectors to send OpenTelemetry data to Dynatrace.").
+For information on how to use the extension within Dynatrace, see [Monitor hosts that send OpenTelemetry data to Dynatrace](/managed/ingest-from/opentelemetry/collector/use-cases/host-monitoring "Set up a reference OpenTelemetry Collector configuration for host monitoring in Dynatrace, including cloud VM correlation and Kubernetes node deployment.").
 
 ### Limitations
 

@@ -7,7 +7,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/operation/change-stor
 
 # Change storage location
 
-* Updated on May 20, 2026
+* Updated on Sep 17, 2026
 
 Dynatrace Managed stores multiple types of monitoring data that vary depending on the use case. There are default storage locations, as listed in [Dynatrace Managed hardware and system requirements](/managed/managed-cluster/installation/managed-hardware-requirements#storage "Review the hardware sizing, storage, and multi-node cluster requirements before installing Dynatrace Managed on your infrastructure.").
 
@@ -132,6 +132,7 @@ If you customized the storage locations, `SERVER_DATASTORE_PATH`, `CASSANDRA_DAT
 | `PRODUCT_PATH` | `/opt/dynatrace-managed` | Main directory for Dynatrace Managed binaries | 12 GB [1](#fn-1-1-def) | 10 GB [1](#fn-1-1-def) |
 | `DATASTORE_PATH` | `/var/opt/dynatrace-managed` | Main directory for Dynatrace Managed data | 24 GB | 3 GB |
 | `LOG_PATH` | `DATASTORE_PATH` `/log` | Logs of all Dynatrace Managed components, services, and tools | 2 GB | 1 GB |
+| Not configurable (fixed path) | `/var/log/dynatrace` | Logs of the installer, upgrade, and configurator, such as `install.log`, `install-status.log`, and `configurator.log`. Shared with OneAgent, which uses the `oneagent` subdirectory. | 1 MB [2](#fn-1-2-def) | 1 MB [2](#fn-1-2-def) |
 | `CASSANDRA_DATASTORE_PATH` | `DATASTORE_PATH` `/cassandra` | Metrics repository | 25 GB | 1 GB |
 | `ELASTICSEARCH_DATASTORE_PATH` | `DATASTORE_PATH` `/elasticsearch` | Elasticsearch store | 3 GB | 1 GB |
 | `SERVER_DATASTORE_PATH` | `DATASTORE_PATH` `/server/tenantData` | Transactions store | 14 GB | 1 GB |
@@ -142,6 +143,16 @@ If you customized the storage locations, `SERVER_DATASTORE_PATH`, `CASSANDRA_DAT
 1
 
 This value is part of a total value required for the `/opt` directory. Total required free disk space is the sum of the required disk space for `/opt/dynatrace-managed` and `/opt/dynatrace`.
+
+2
+
+The installer verifies the free space on the filesystem that holds `/var/log`. Requirements for paths located on the same filesystem are added together.
+
+/var/log/dynatrace must be writable
+
+The installer writes its own logs to `/var/log/dynatrace`. This path is fixed and can't be changed. It's shared with OneAgent, which uses the `/var/log/dynatrace/oneagent` subdirectory.
+
+If `/var/log/dynatrace` is a symbolic link or carries restrictive POSIX ACLs, make sure that the Dynatrace product user has write access to the effective target directory, including the ACL mask.
 
 Not supported
 

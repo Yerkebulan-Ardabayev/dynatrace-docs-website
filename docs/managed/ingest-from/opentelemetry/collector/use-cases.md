@@ -37,7 +37,7 @@ Configure the Collector to compute bucket summaries for histogram metrics.](/man
 
 ### Host monitoring
 
-Monitor your hosts that send OpenTelemetry data to Dynatrace.](/managed/ingest-from/opentelemetry/collector/use-cases/host-monitoring "How to monitor your hosts that use Collectors to send OpenTelemetry data to Dynatrace.")[![Jaeger](https://dt-cdn.net/images/jaeger-300-3d21c8cbd4-300-2d7104a994.png "Jaeger")
+Monitor your hosts that send OpenTelemetry data to Dynatrace.](/managed/ingest-from/opentelemetry/collector/use-cases/host-monitoring "Set up a reference OpenTelemetry Collector configuration for host monitoring in Dynatrace, including cloud VM correlation and Kubernetes node deployment.")[![Jaeger](https://dt-cdn.net/images/jaeger-300-3d21c8cbd4-300-2d7104a994.png "Jaeger")
 
 ### Jaeger
 

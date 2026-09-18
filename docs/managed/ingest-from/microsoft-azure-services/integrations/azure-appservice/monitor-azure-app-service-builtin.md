@@ -94,4 +94,4 @@ Full OneAgent service integration and linking:
 * Attributes
 * Tags
 
-to `Service` entities, is supported only for [Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Monitor Azure Functions").
+to `Service` entities, is supported only for [Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Learn how to monitor Azure Functions with Dynatrace OneAgent, including automatic instrumentation, distributed tracing, and hosting-plan-aware modes.").

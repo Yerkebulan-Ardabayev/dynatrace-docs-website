@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 # z/OS module messages - zDC system messages
 
 * 63-min read
-* Updated on Feb 10, 2026
+* Updated on Sep 14, 2026
 
 ## ZDC000I
 
@@ -331,6 +331,13 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 * **Explanation** - This message is written to `SYSPRINT` indicating that the log subtask has failed. Return and reason codes are contained in this message.
 * **System action** - Processing continues but without the log.
 * **User response** - Scan the system console and the JES job log for messages relating to this problem. Look carefully for any system access `(RACF, ACF/2, TOPSECRET)` messages relating to the log data set.
+
+## ZDC068E
+
+* **Full message** - SYSLOG ingestion suspended due to 100 invalid records
+* **Explanation** - This message is written to `SYSLOG` indicating that the log subtask has found 100 SYSLOG records containing non-numeric characters in the timestamp. Report this message to systems programmer who may need to call the Dynatrace technical support representatative.
+* **System action** - SYSLOG message collection is terminated until the logger has been restarted. zDC processing continues.
+* **User response** - Collect the ZDC and zRemote logs, all sysout from the ZDC and a copy of the JES SYSLOG. Consider disabling SYSLOG processing until a resolution is found.
 
 ## ZDC069W
 

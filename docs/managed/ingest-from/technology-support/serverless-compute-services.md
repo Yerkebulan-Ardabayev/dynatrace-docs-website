@@ -90,7 +90,7 @@ Durable Functions aren't supported.
 
 ### Linux-based
 
-| Language | [Cloud platform metrics and metadata](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Set up and configure Azure monitoring in Dynatrace.") | [Logs](/managed/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.") | Distributed tracing | [Automatic tracing](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions/azure-function-linux "Learn how to enable OneAgent monitoring for Azure Functions running on Linux plans.") | OpenTelemetry extend tracing | Infrastructure monitoring | Custom metrics | Automatic RUM | Agentless RUM |
+| Language | [Cloud platform metrics and metadata](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Set up and configure Azure monitoring in Dynatrace.") | [Logs](/managed/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.") | Distributed tracing | [Automatic tracing](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions/azure-function-linux "Learn how to enable OneAgent monitoring for Azure Functions on Linux hosting plans, including runtime setup, environment variables, and package deployment.") | OpenTelemetry extend tracing | Infrastructure monitoring | Custom metrics | Automatic RUM | Agentless RUM |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | .NET Core | GA | GA | OneAgent version 1.343+ | GA[5](#fn-2-5-def) | GA | n/a | GA | Future | GA |
 | Java | GA | GA | OneAgent version 1.343+ | Future | GA | Future[7](#fn-2-7-def) | GA | Future | GA |
@@ -103,7 +103,7 @@ Requires integration of [OneAgent on AppServices for Linux and Containers](/mana
 
 6
 
-For Flex Consumption only.
+For Flex Consumption (OneAgent version 1.343+) and Premium Plan for Linux (OneAgent version 1.347+) only.
 
 7
 

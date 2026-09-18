@@ -19,7 +19,7 @@ Dynatrace provides comprehensive monitoring support for Azure services, by integ
 
 [Microsoft Azure Arc-enabled servers](/managed/ingest-from/microsoft-azure-services/integrations/azure-arc-enabled-servers "Azure integration with ARC servers")
 
-[Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Monitor Azure Functions")
+[Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Learn how to monitor Azure Functions with Dynatrace OneAgent, including automatic instrumentation, distributed tracing, and hosting-plan-aware modes.")
 
 [Monitor Azure Spring Apps](/managed/ingest-from/microsoft-azure-services/integrations/azure-spring "Learn how to configure OneAgent for monitoring Azure Spring Apps.")
 

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/
 
 * How-to guide
 * 6-min read
-* Updated on Jul 31, 2026
+* Updated on Aug 28, 2026
 
 ## Prerequisites
 
@@ -38,6 +38,14 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/
 
   If you're using Dynatrace Managed, or if your cluster traffic should be routed through an [ActiveGate](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate."), you need to configure the API endpoint used by the extension for downloading OneAgent.
 
+Dedicated Plan
+
+Before you install the site extension, enable the Azure Functions OneAgent feature for the technology that you want to monitor:
+
+1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **General monitoring settings** > **OneAgent features**.
+2. Filter for `azure function`.
+3. Enable the feature for your technology.
+
 ## Install Dynatrace OneAgent site extension
 
 There are two ways to install the Dynatrace OneAgent site extension: via Azure portal or using an ARM template. Follow the steps below for instructions.
@@ -46,29 +54,33 @@ There are two ways to install the Dynatrace OneAgent site extension: via Azure p
 
 Consumption Plan
 
-If you are on the Consumption plan you need to first stop Azure Function before running the site-extension installation process. You then need to restart Azure Functions once all steps have been completed.
+If you use a Consumption Plan, stop the function app before you install the site extension. Restart the function app after you complete the installation.
 
-1. In Azure Portal, go to **Azure Functions** and select an app service where you want to add the OneAgent extension.
-2. In the left menu, go to to **Development Tools** > **Extensions**.
-3. Select **Add**.
-4. Select **Choose an Extension**.
-5. From the list of extensions, select Dynatrace OneAgent.
-6. Accept legal terms and select **Add**. It should take a moment until you see the **Dynatrace OneAgent** extension in the list.
-7. In the left menu, go to to **Development Tools** > **Advanced Tools** and select **Go**. This will redirect you to the Kudu site.
+1. In the Azure portal, open the function app that you want to monitor.
+2. In the left menu, search for **Extensions** and select it.
+3. Select **+ Add**.
+4. Select **Choose an extension**, search for **Dynatrace OneAgent**, and select it.
+5. Accept the legal terms and select **Add**.
+6. Wait for the extension to install and refresh the extensions list.
 
-   ![Kudu site](https://dt-cdn.net/images/screenshot-2023-08-08-at-5-41-34-pm-1046-18f975f56f.png)
+7. In the **Browse** column for **Dynatrace OneAgent**, select the icon to open the extension configuration page in a new tab.
+8. Enter your [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") and [PaaS token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas "Learn the concept of an access token and its scopes."), as described in [Prerequisites](#prerequisites). For Managed environments, also go to the **Optional** section and enter the **Server URL**. Ensure the URL ends with `/api`. For example, `https://{your-server-url}/api`.
 
-   Kudu site
-8. Select **Site extensions**.
-9. Select **Launch** on the Dynatrace tile.
-10. On the **Start monitoring your App Functions instance** page, enter the relevant configuration details. See the [Prerequisites](#prerequisites) section for details.
-11. Select **Install OneAgent**.
-12. Restart the application to recycle the application's worker process
-13. To check the deployment status, go to the **Fleet Management app in Dynatrace**.
+9. Select the **Technology** that you want to monitor.
+10. Select **Refresh versions** and choose a OneAgent version. If you don't choose one, the extension defaults to the latest version.
+11. Select **Install OneAgent** and wait for the installation to finish. The page displays the required OneAgent environment variables, with an Azure CLI command at the bottom to set them. The Azure CLI command is shown for Consumption and Premium plans, but not for Dedicated plans.
+12. Run the provided Azure CLI command to add the required application settings.
+
+13. Return to the extension configuration page and verify that all configuration values are set.
+14. In the Azure portal, refresh and restart the function app.
+
+Monitoring starts automatically
 
 After restart, OneAgent starts monitoring your application automatically.
 
-Select only the technologies you need to reduce download time and package size. By default, all technologies are included, which increases the package size.
+Reduce package size
+
+To reduce download time and package size, select only the technologies you need. By default, all technologies are included.
 
 ### Install Dynatrace OneAgent site extension using an ARM template
 
@@ -222,28 +234,6 @@ To check the deployment status, go to **Deployment Status**.
 
 After installation is complete, go to Azure portal and restart the App Function application to recycle the application's worker process. Immediately after restart, OneAgent will begin monitoring your application.
 
-## Automate the installation and update of Dynatrace OneAgent site extension with Kudu REST API
-
-After you install the Dynatrace OneAgent site extension, you can use the **Kudu REST API** to automate installation and update of the Dynatrace OneAgent site extension.
-
-The root URL to access the REST API is `https://<Your-AppService-Subdomain>.scm.azurewebsites.net/dynatrace/`, where you need to replace `<Your-AppService-Subdomain>` with your own value. To authenticate, you can use either the user publishing credentials or the site-level credentials.
-
-### Kudu REST API endpoints
-
-| Method | Endpoint | Parameters/Response | Example |
-| --- | --- | --- | --- |
-| GET | `/api/status`  Returns the current status of the OneAgent installation. | **Response:**  The `state` field can be:  * `NotInstalled` * `Downloading` * `Installing` * `Installed` * `Failed`  For automation, use `isAgentInstalled` and `isUpgradeAvailable` to determine whether OneAgent is installed and whether an upgrade is available. | ```  {  "state": "Installed",  "message": "OneAgent installed",  "version": "1.157",  "latestVersion": "1.343.77.20260727-122922",  "isAgentInstalled": true,  "isUpgradeAvailable": false  } ``` |
-| GET | `/api/settings`  Returns the current settings, including Dynatrace credentials. | **Response:**  The value for `apiUrl` can be left empty for a SaaS environment. | ```  {  "apiUrl": "",  "apiToken": "<your-api-token>",  "environmentId": "<your-environment-id>",  "sslMode": "Default",  "tech": "All",  "agentVersion": "1.343.77.20260727-122922",  "monitoredCLR": "Both"  } ``` |
-| PUT | `/api/settings`  Starts OneAgent installation with the given settings. These settings are stored only if the installation finishes successfully.  If an update is available in the status request, this `PUT` request can be used to start the upgrade. | **Parameters:**  Send the data in the format received by the `GET /dynatrace/api/settings` request.  * `apiUrl` * `tech` * `agentVersion` * `monitoredCLR`  To check all available versions, use the [Deployment API - List available versions of OneAgent](/managed/dynatrace-api/environment-api/deployment/oneagent/get-available-versions "List available versions of OneAgent via Dynatrace API.").  **Response:** Empty response | ```  {  "apiUrl": "string",  "apiToken": "string",  "environmentId": "string",  "sslMode": "Default",  "monitoredCLR": "Both",  "tech": "string",  "agentVersion": "string"  } ``` |
-
-### Accepted values for each field
-
-| Field | Accepted values |
-| --- | --- |
-| `tech` | * `All` * `Java` * `NodeJS` |
-| `monitoredCLR` | * `Both` * `Clr` * `CoreClr` |
-| `sslMode` | * `Default` * `AcceptAll` |
-
 ## Override OneAgent configuration
 
 To override the default configuration, you can use the following parameters.
@@ -271,16 +261,14 @@ How to add the DT\_CONNECTION\_POINT parameter in the Azure portal
 
 Dynatrace doesn't provide OneAgent updates on Azure Functions automatically. To update OneAgent on Azure Functions:
 
-1. Go to Azure portal, browse to your site extension, and, if an update is available, select **Update**. You can monitor the progress until the update is finished.
+1. In the Azure portal, go to **Extensions** and select **Browse** for **Dynatrace OneAgent**. If an update is available, select **Update**. You can monitor the progress until the update is finished.
 2. Restart Azure Functions to recycle the application worker process.
 
 If you're on a **Consumption Plan**, stop Azure Functions before the update and restart them after the update.
 
-The extension provides its own REST API for automating OneAgent updates. For details, see the Kudu REST API section above.
-
 ### Update the site extension
 
-To update the site extension on Azure Functions, go to the Azure portal, browse to your site extension, and, if an update is available, select **Update**.
+To update the site extension on Azure Functions, go to **Extensions**, select **Browse** for **Dynatrace OneAgent**, and, if an update is available, select **Update**.
 
 An update to the site extension doesn't force an update to OneAgent.
 
@@ -294,4 +282,4 @@ If the application is running at the time of removal, the extension recognizes t
 
 * [Set up Dynatrace on Microsoft Azure](/managed/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
 * [Serverless compute support matrix](/managed/ingest-from/technology-support/serverless-compute-services "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS).")
-* [Monitor Azure Functions on Plans for Linux](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions/azure-function-linux "Learn how to enable OneAgent monitoring for Azure Functions running on Linux plans.")
+* [Monitor Azure Functions on Linux plans](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions/azure-function-linux "Learn how to enable OneAgent monitoring for Azure Functions on Linux hosting plans, including runtime setup, environment variables, and package deployment.")

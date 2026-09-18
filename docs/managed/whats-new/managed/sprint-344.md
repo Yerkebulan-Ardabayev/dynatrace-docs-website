@@ -9,12 +9,12 @@ source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-344
 
 * Release notes
 * 8-min read
-* Updated on Aug 03, 2026
+* Updated on Sep 17, 2026
 * Rollout start on Aug 03, 2026
 
 This page showcases new features, changes, and bug fixes in Dynatrace Managed version 1.344. It contains:
 
-* [Feature updates](#updates): 14
+* [Feature updates](#updates): 15
 * [Breaking changes](#breaking): 1
 * [Fixes and maintenance](#fixes): 22
 
@@ -111,6 +111,12 @@ Platform
 ### NGINX updated to version 1.30.4
 
 The Dynatrace Managed installer now includes NGINX version 1.30.4.
+
+Platform
+
+### Cassandra nodes upgrade to version 4.1.12
+
+The Cassandra nodes are upgraded to version 4.1.12, delivering critical bug and security fixes. No manual user intervention or downtime is required—the upgrade happens via rolling updates as a part of normal version updates.
 
 Platform
 

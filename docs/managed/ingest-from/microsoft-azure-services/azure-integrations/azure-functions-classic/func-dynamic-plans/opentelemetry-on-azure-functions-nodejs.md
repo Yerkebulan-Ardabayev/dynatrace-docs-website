@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/
 * 6-min read
 * Updated on Nov 04, 2025
 
-The following integrations are designed for the classic version of Azure Functions. For the newest versions of Azure Functions, see [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Monitor Azure Functions").
+The following integrations are designed for the classic version of Azure Functions. For the newest versions of Azure Functions, see [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Learn how to monitor Azure Functions with Dynatrace OneAgent, including automatic instrumentation, distributed tracing, and hosting-plan-aware modes.").
 
 The [`@dynatrace/opentelemetry-azure-functions` module﻿](https://dt-url.net/9603x96) provides APIs for tracing Node.js on Azure Functions.
 
@@ -604,5 +604,5 @@ Supported [Azure Functions programming model﻿](https://learn.microsoft.com/en-
 
 ## Related topics
 
-* [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Monitor Azure Functions")
+* [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Learn how to monitor Azure Functions with Dynatrace OneAgent, including automatic instrumentation, distributed tracing, and hosting-plan-aware modes.")
 * [Set up Dynatrace on Microsoft Azure](/managed/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")

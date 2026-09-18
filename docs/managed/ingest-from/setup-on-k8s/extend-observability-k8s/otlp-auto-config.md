@@ -128,7 +128,7 @@ The following environment variables are injected into your application container
 | `OTEL_EXPORTER_OTLP_LOGS_HEADERS` | `authorization=Api-Token $(DT_API_TOKEN)` |
 | `OTEL_RESOURCE_ATTRIBUTES` | `k8s.cluster.name=dynakube,k8s.container.name=app ...` |
 
-The Operator injects the authorization header based on the token type configured as the data ingest token (see [Tokens and permissions](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster with Dynatrace Operator.")):
+The Operator injects the authorization header based on the token type configured as the data ingest token:
 
 * **Platform token**: The Operator injects `Bearer` in the `OTEL_EXPORTER_OTLP_*_HEADERS` variables. Required scopes: `openpipeline:logs:ingest`, `openpipeline:metrics:ingest`, and `openpipeline:traces:ingest`.
 * **Classic access token**: The Operator injects `Api-Token` in the `OTEL_EXPORTER_OTLP_*_HEADERS` variables.

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/applic
 
 * Reference
 * 3-min read
-* Updated on Oct 23, 2025
+* Updated on Sep 18, 2026
 
 With the NGINX code module of OneAgent, you can get observability for your NGINX instances and processed web requests.
 
@@ -6876,6 +6876,13 @@ Support for the latest Tengine release may differ from the NGINX support lifecyc
 | 2.3.4 | - | - | 1.255 | - | - | Supported |
 | 2.3.0 - 2.3.3 | - | - | 1.237 | - | - | Supported |
 | 1.4.2 - 2.2.3 | - | - | 1.173 | - | - | Supported |
+
+### Why deep monitoring might not start
+
+Instrumenting the NGINX binary and starting deep monitoring are two separate steps.
+
+* **Instrumentation** patches the NGINX binary so that OneAgent can load into it. This step succeeds independently of your NGINX configuration. The startup log reports that NGINX was successfully instrumented even if deep monitoring never starts.
+* **Deep monitoring** starts only if the merged NGINX configuration contains at least one `http { server { ... } }` block.
 
 ## NGINX HTTP connection metrics
 

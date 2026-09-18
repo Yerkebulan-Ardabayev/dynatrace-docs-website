@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/u
 
 * How-to guide
 * 2-min read
-* Updated on Aug 31, 2026
+* Updated on Sep 10, 2026
 
 OpenTelemetry Host Monitoring is a Dynatrace feature that transforms raw telemetry data from OTel Collectors into actionable insights.
 Rather than simply ingesting metrics, logs, and traces, Dynatrace automatically builds meaningful context around your infrastructure.
@@ -41,6 +41,9 @@ This use case assumes that you have:
 A reference configuration is available in the Dynatrace OTel Collector's GitHub repo, see [`host-metrics.yaml`﻿](https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/host-metrics.yaml).
 
 You can use this configuration as-is, or modify it to meet your specific needs.
+
+If your hosts are cloud VMs that are already monitored through [Dynatrace Cloud Monitoring](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."), add a `transform` processor to this configuration to link the OpenTelemetry host entity to its cloud VM entity.
+See [Correlate hosts with their cloud VM entity](#cloud-entity-correlation).
 
 ## Components
 
@@ -285,6 +288,196 @@ To do this, you can filter via the process memory usage or an allow list.
   - resource.attributes["low-memory-process"] != nil
   ```
 
+## Host monitoring on cloud VMs
+
+If a host runs on a cloud VM that Dynatrace monitors through Cloud Monitoring, that VM already exists in Dynatrace as its own entity—an AWS EC2 instance, an Azure virtual machine, or a Google Compute Engine instance.
+
+* By default, the OpenTelemetry host entity created from your Collector data and that cloud VM entity are unrelated, even though they describe the same machine.
+* To correlate the OpenTelemetry host entity with its cloud VM entity, configure the Collector to send the cloud provider's resource identifier along with the host metrics. Dynatrace then joins the two and creates a `runs_on` relationship from the OpenTelemetry host to the cloud VM.
+  In Smartscape, you can follow this relationship from your OpenTelemetry host and process data to the cloud VM's tags, account, and region.
+
+### Prerequisites
+
+* Cloud Monitoring is enabled in your environment for the account, subscription, or project the host belongs to.
+  Cloud VM entities come from Cloud Monitoring only. The Collector cannot create them, and a VM that Dynatrace doesn't monitor can't be correlated.
+* The Collector runs on the cloud VM itself, so that the cloud provider's instance metadata service is reachable.
+
+### Add the correlation processor
+
+Add a `transform/dt-cloud-correlation` processor to the metrics pipeline, and add your cloud provider's detector to `resource_detection`.
+
+* The `transform/dt-cloud-correlation` processor composes the identity attribute that Dynatrace joins on.
+* The `resource_detection` processor emits the parts the attribute is composed of: the account ID, the region or zone, and the instance name or ID. It doesn't emit the final attribute directly.
+
+The following sections show the detector, the identity attribute, and the statement that composes it for each provider.
+
+#### AWS
+
+Detector: `ec2`. Identity attribute: `aws.arn`.
+
+```
+processors:
+
+
+
+resource_detection:
+
+
+
+detectors: ["ec2", "system"]
+
+
+
+transform/dt-cloud-correlation:
+
+
+
+error_mode: ignore
+
+
+
+metric_statements:
+
+
+
+- context: resource
+
+
+
+statements:
+
+
+
+- set(resource.attributes["aws.arn"], Concat(["arn:aws:ec2:", resource.attributes["cloud.region"], ":", resource.attributes["cloud.account.id"], ":instance/", resource.attributes["host.id"]], "")) where resource.attributes["cloud.provider"] == "aws"
+```
+
+#### Azure
+
+Detector: `azure`. Identity attribute: `azure.resource.id`.
+
+```
+processors:
+
+
+
+resource_detection:
+
+
+
+detectors: ["azure", "system"]
+
+
+
+transform/dt-cloud-correlation:
+
+
+
+error_mode: ignore
+
+
+
+metric_statements:
+
+
+
+- context: resource
+
+
+
+statements:
+
+
+
+- set(resource.attributes["azure.resource.id"], ConvertCase(Concat(["/subscriptions/", resource.attributes["cloud.account.id"], "/resourcegroups/", resource.attributes["azure.resourcegroup.name"], "/providers/microsoft.compute/virtualmachines/", resource.attributes["azure.vm.name"]], ""), "lower")) where resource.attributes["cloud.provider"] == "azure" and resource.attributes["azure.vm.scaleset.name"] == nil
+```
+
+The lowercase conversion is required. Dynatrace stores the value of `azure.resource.id` fully lowercased, and a mixed-case value doesn't correlate.
+
+The statement skips VMs in a virtual machine scale set, because their resource ID follows a different format.
+
+#### Google Cloud
+
+Detector: `gcp`. Identity attribute: `gcp.resource.name`.
+
+```
+processors:
+
+
+
+resource_detection:
+
+
+
+detectors: ["gcp", "system"]
+
+
+
+gcp:
+
+
+
+resource_attributes:
+
+
+
+gcp.gce.instance.name:
+
+
+
+enabled: true
+
+
+
+transform/dt-cloud-correlation:
+
+
+
+error_mode: ignore
+
+
+
+metric_statements:
+
+
+
+- context: resource
+
+
+
+statements:
+
+
+
+- set(resource.attributes["gcp.resource.name"], Concat(["//compute.googleapis.com/projects/", resource.attributes["cloud.account.id"], "/zones/", resource.attributes["cloud.availability_zone"], "/instances/", resource.attributes["gcp.gce.instance.name"]], "")) where resource.attributes["cloud.provider"] == "gcp"
+```
+
+The `gcp.gce.instance.name` attribute is disabled by default, so you need to enable it explicitly.
+
+#### Pipeline placement
+
+Add the processor to the metrics pipeline directly after `resource_detection`, which provides the attributes it reads.
+
+```
+service:
+
+
+
+pipelines:
+
+
+
+metrics:
+
+
+
+processors: [filter, resource_detection, transform/dt-cloud-correlation, transform, filter/delete-metrics, cumulative_to_delta]
+```
+
+List the respective cloud detector (`azure`, `ec2`, or `gcp`) **before** `system` in `resource_detection`.
+Detectors are merged first-writer-wins, and both the cloud detector and `system` emit `host.id`.
+With `system` first, `host.id` holds the operating system machine ID instead of the cloud instance ID, so the composed identifier is well-formed but matches no cloud VM.
+The Collector would not log any error in this case, and no relationship would be created.
+
 ## Host monitoring on Kubernetes nodes
 
 The reference configuration and this use case are optimized for VMs and bare-metal hosts.
@@ -335,5 +528,5 @@ To avoid unnecessary duplication on Kubernetes, use only Kubernetes monitoring o
 
 * The `system.processes.created` metric is only available on Linux.
 * The `process.disk.io` metric requires running the Collector with privileged access.
-  If you don't do this, the metric will be prevented from being captured.
+  Without privileged access, the metric is not captured.
 * The `journald` receiver is only supported on Linux. Attempting to use the `journald` receiver on a different operating system will cause the Collector to return an error and exit on startup.
