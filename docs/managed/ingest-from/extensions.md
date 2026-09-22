@@ -53,4 +53,6 @@ Extensions are useful when you need to monitor a technology or service that Dyna
 
 Run extensions locally on the monitored host to collect data from local data sources with the Extension Execution Controller.](/managed/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.")[### ActiveGate
 
-Run extensions remotely from an ActiveGate group to collect data from remote technologies and cloud environments.](/managed/ingest-from/extensions/concepts#ag "Learn more about the concept of Dynatrace Extensions.")
+Run extensions remotely from an ActiveGate group to collect data from remote technologies and cloud environments.](/managed/ingest-from/extensions/concepts#ag "Learn more about the concept of Dynatrace Extensions.")[### Kubernetes
+
+Run SQL monitoring extensions on Kubernetes using Dynatrace Operator.](/managed/ingest-from/extensions/kubernetes "Create and manage monitoring configurations for SQL extensions running on Kubernetes, and explore advanced configuration options for SQL Extension Executor pods.")

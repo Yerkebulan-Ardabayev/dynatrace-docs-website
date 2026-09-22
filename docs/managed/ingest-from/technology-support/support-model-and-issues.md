@@ -68,7 +68,7 @@ Dynatrace Operator is responsible for rollout and lifecycle management of variou
 
 The three latest Dynatrace Operator versions are tested with the latest Kubernetes and OpenShift versions. Additionally, we perform a backport assessment for any bug or vulnerability to analyze the severity and change risk of the fix. We recommend that you use the latest patch version, as the newly implemented features increment the minor version. For details, see the [Dynatrace Operator release notes](/managed/whats-new/dynatrace-operator "Release notes for Dynatrace Operator").
 
-All Dynatrace Operator versions that are not considered end-of-life are treated as being in maintenance mode, which includes our regular customer support processes. Versions in maintenance mode do not receive bug fixes and vulnerability backports. See end-of-support announcements on [End-of-support announcements](/managed/whats-new/technology/end-of-support-news#dto "End of support announcements for technologies supported by Dynatrace.").
+Dynatrace Operator versions that are not end-of-life but are no longer actively maintained are in maintenance mode. In maintenance mode, support cases continue to be accepted and investigated; however, bug fixes and security vulnerability backports are no longer provided. See end-of-support announcements on [End-of-support announcements](/managed/whats-new/technology/end-of-support-news#dto "End of support announcements for technologies supported by Dynatrace.").
 
 ## Known issues and resolutions
 

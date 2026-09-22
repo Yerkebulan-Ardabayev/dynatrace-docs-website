@@ -7,7 +7,7 @@ source: https://docs.dynatrace.com/managed/whats-new/technology/end-of-support-n
 
 # End-of-support announcements
 
-* Updated on Aug 24, 2026
+* Updated on Sep 02, 2026
 
 Dynatrace OneAgent
 
