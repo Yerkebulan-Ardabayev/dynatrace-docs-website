@@ -1,19 +1,23 @@
 ---
-title: Rack-aware conversion using replication
+title: Convert a Managed Cluster to a rack-aware deployment using replication
 source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/rack-aware-replication
 ---
 
-# Rack-aware conversion using replication
+# Convert a Managed Cluster to a rack-aware deployment using replication
 
-# Rack-aware conversion using replication
+# Convert a Managed Cluster to a rack-aware deployment using replication
 
 * How-to guide
 * 4-min read
-* Updated on Aug 26, 2026
+* Updated on Sep 21, 2026
 
-The replication expansion method is useful for small Dynatrace Managed Clusters where one node can contain a full replica. If your current metric storage (Cassandra database) per node is more than 1 TB, use the [rack-aware conversion using restore](/managed/managed-cluster/high-availability/rack-aware-restore "Learn how to convert a Dynatrace Managed Cluster to rack-aware topology using the backup and restore method, including preparation and installer parameters.") method. You can use existing nodes to progressively (one after another) reinstall them with the rack-aware parameter. Optionally, you can use additional hardware as new nodes and remove one node while installing a new node with the rack-aware parameter.
+To convert a Managed Cluster to a rack-aware deployment using the replication method, follow the steps below.
 
-The advantage of this approach is that it doesn't affect Managed Cluster availability. To maintain Managed Cluster availability, Dynatrace Managed uses its native replication methods to preserve data. Removing and adding a node to the Managed Cluster takes time. The duration depends on the size of your metric storage and the speed of your disk or network. Some cluster operations may take even one or two days. Dynatrace Managed will prevent all other cluster operations during that time (adding and removing nodes, upgrading, and backup). If you choose to perform reinstallation on the existing host, wait 72 hours before reattaching that host to the Managed Cluster.
+If you're combining this conversion with Premium High Availability, see [Combine Premium High Availability with rack awareness](/managed/managed-cluster/high-availability/pha-rack-aware "Combine Premium High Availability with rack awareness so each data center holds three racks and the cluster spans six independent fault domains."): converting DC-1 first is the usual order, but not a requirement.
+
+The replication method is useful for small Dynatrace Managed Clusters. If your current metric storage (Cassandra database) per node is more than 1 TB, use the [rack-aware conversion using restore](/managed/managed-cluster/high-availability/rack-aware-restore "Learn how to convert a Managed Cluster to a rack-aware deployment using the restore method, including preparation and installer parameters.") method instead. You can use existing nodes to progressively (one after another) reinstall them with the rack-aware parameter. Optionally, install a new node on additional hardware with the rack-aware parameter, then remove one existing node.
+
+The advantage of this approach is that it doesn't affect Managed Cluster availability. To maintain Managed Cluster availability, Dynatrace Managed uses its native replication methods to preserve data. Removing and adding a node to the Managed Cluster takes time. The duration depends on the size of your metric storage and the speed of your disk or network. Some Managed Cluster operations can take one or two days. Dynatrace Managed will prevent all other cluster operations during that time (adding and removing nodes, upgrading, and backup). If you choose to perform reinstallation on the existing host, wait 72 hours before reattaching that host to the Managed Cluster.
 
 ![Process of converting Managed Cluster to rack-aware.](https://cdn.bfldr.com/B686QPH3/as/f92j44kp5b2xm3ttwqfr2q9n/Rack_aware_conversion_using_replication-Light_Mode?auto=webp&format=png&position=1)
 
@@ -21,52 +25,15 @@ Process of converting Managed Cluster to rack-aware.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Preparation**](#preparation)[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Prepare for the conversion**](/managed/managed-cluster/high-availability/rack-aware-replication#preparation "Learn how to convert a Dynatrace Managed Cluster to a rack-aware deployment using the replication method, including preparation and node migration steps.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Extend the Managed Cluster into new racks**](#extend-racks)[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Extend the Managed Cluster into new racks**](/managed/managed-cluster/high-availability/rack-aware-replication#extend-racks "Learn how to convert a Dynatrace Managed Cluster to a rack-aware deployment using the replication method, including preparation and node migration steps.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Verify the conversion**](#verify)
+**Verify the conversion**](/managed/managed-cluster/high-availability/rack-aware-replication#verify "Learn how to convert a Dynatrace Managed Cluster to a rack-aware deployment using the replication method, including preparation and node migration steps.")
 
-## Step 1 Preparation
+## Step 1 Prepare for the conversion
 
-1. Prepare the Cassandra database to spread replicas around your Managed Cluster (Python 2.7 is required).
-
-   This step applies only to Dynatrace Managed version 1.304 and earlier.
-
-   On one of the existing nodes, alter the keyspace to change the snitch settings using Cassandra Query Language (CQL):
-
-   ```
-   sudo <managed-installation-dir>/cassandra/bin/cqlsh <node_IP>
-   ```
-
-   Where `<managed-installation-dir>` is a directory of Dynatrace Managed binaries and `<node-IP>` is the current node's IP (node that you are currently using).
-
-   The CQL shell opens:
-
-   ```
-   Connected to 00aa0a0a-1ab1-11a1-aaa1-0a0a0aa1a1aa at xx.xxx.xx.xxx:9042.
-
-
-
-   [cqlsh 5.0.1 | Cassandra 3.0.23 | CQL spec 3.4.0 | Native protocol v4]
-
-
-
-   Use HELP for help.
-
-
-
-   cqlsh>
-   ```
-
-   Then, run:
-
-   ```
-   ALTER KEYSPACE ruxitdb WITH REPLICATION = {'class': 'NetworkTopologyStrategy', 'datacenter1':3};
-   ```
-
-   When finished, enter `exit`.
-2. Prepare the Managed Cluster for adding nodes in different racks.
+1. Prepare the Managed Cluster for adding nodes in different racks.
 
    On each existing node, edit `/etc/dynatrace.conf` and adjust the following settings:
 
@@ -82,19 +49,19 @@ Process of converting Managed Cluster to rack-aware.
    ELASTICSEARCH_NODE_RACK = rack1
    ```
 
-   Run `sudo /opt/dynatrace-managed/installer/reconfigure.sh` to apply configuration changes for the Managed Cluster node.
+   Run `sudo /opt/dynatrace-managed/installer/reconfigure.sh` to apply configuration changes for the Cluster node.
 
    Run sequentially
 
    Run the `reconfigure.sh` script sequentially, because it triggers process restarts and there's a risk of Cassandra database downtime if it's run on multiple nodes in parallel.
-3. Prepare new nodes.
+2. Prepare new nodes.
 
    Make sure the disk partition allocated for Cassandra storage on the new node is sufficient to contain the entire Cassandra database (with margin for compaction and new data). The disk size should be at least double the combined Cassandra storage of all existing nodes. Keep Cassandra data on a separate volume to avoid disk space issues caused by other data types.
-4. Verify that rack settings map correctly to physical racks and data centers. Ideally, there should be an equal number of nodes in each rack at the end of the whole conversion.
+3. Verify that rack settings map correctly to physical racks and data centers. Ideally, there should be an equal number of nodes in each rack at the end of the whole conversion.
 
 ## Step 2 Extend the Managed Cluster into new racks
 
-During the initial Dynatrace Managed deployment, all nodes by default are grouped in a single default rack placed in a default data center. Even if your deployment isn't rack-aware, all nodes already are in `datacenter1` `rack1`. To avoid adding a new node to the default rack, don't use the `rack1` as a `--rack-name` parameter value for the new rack.
+During the initial deployment, Dynatrace Managed groups all nodes in a single default rack in a default data center. Even if your deployment isn't rack-aware, all nodes already are in `datacenter1` `rack1`. To avoid adding a new node to the default rack, don't use the `rack1` as a `--rack-name` parameter value for the new rack.
 
 If you convert the Managed Cluster in the same data center, use the default `datacenter1` parameter value.
 
@@ -112,12 +79,14 @@ If the node has difficulties maintaining the data load, you can temporarily stop
    /bin/sh dynatrace-managed-installer.sh --seed-auth abcdefjhij1234567890 --rack-name rack2 --rack-dc datacenter1
    ```
 
-   Wait until the node fully joins the Managed Cluster. Depending on your database size, Cassandra bootstrapping may take several days.
+   This command applies to a single Managed Cluster only. On a Premium High Availability cluster, use the command in [Combine Premium High Availability with rack awareness](/managed/managed-cluster/high-availability/pha-rack-aware "Combine Premium High Availability with rack awareness so each data center holds three racks and the cluster spans six independent fault domains.") instead, or the node joins with no data center assigned.
+
+   Wait until the node fully joins the Managed Cluster. Depending on your database size, Cassandra bootstrapping can take several days.
 2. Add another node to the same rack, with the same rack parameters.
 
-   For the second node, Cassandra bootstrapping is expected to be quicker.
-3. Continue adding new nodes to `rack2`. Once you have enough nodes in `rack2` (1/3 of the target Managed Cluster size), begin adding new nodes with rack parameters to `rack3` minding the disk space requirements.
-4. Remove the original nodes that were configured without rack awareness (in the default `rack1` rack) once you have enough nodes in `rack3`.
+   For the second node, Cassandra bootstrapping should be quicker.
+3. Continue adding new nodes to `rack2`. Once you have enough nodes in `rack2` (one third of the target Managed Cluster size), begin adding new nodes with rack parameters to `rack3` minding the disk space requirements.
+4. Once you have enough nodes in `rack3`, remove only the `rack1` nodes whose capacity has moved to `rack2` and `rack3` and are no longer needed. `rack1` stays populated with however many nodes the target topology still requires.
 
 ## Step 3 Verify the conversion
 
@@ -126,3 +95,7 @@ When the conversion is complete, you see racks in the **Deployment status** page
 ![Cluster Management Console deployment status page of a Managed Cluster that's rack-aware](https://dt-cdn.net/images/cmcstatus-2263-58f0a8359d.png)
 
 Cluster Management Console deployment status page of a Managed Cluster that's rack-aware
+
+## Related topics
+
+* [Combine Premium High Availability with rack awareness](/managed/managed-cluster/high-availability/pha-rack-aware "Combine Premium High Availability with rack awareness so each data center holds three racks and the cluster spans six independent fault domains.")

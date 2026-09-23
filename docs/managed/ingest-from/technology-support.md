@@ -454,12 +454,13 @@ See [Dynatrace support/desupport for Java versions](/managed/ingest-from/technol
 | Virtual machines | Versions | Platforms |
 | --- | --- | --- |
 | Amazon Corretto | 8 LTS, 11 LTS, 17 LTS, 21 LTS, 24, 25 LTS, 26, 27 | Linux (x86-64, ARM64 (AArch64)) |
-| Azul Platform Core (Zulu) | 7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 24, 25 LTS, 26 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
+| Azul Platform Core (Zulu) | 7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 24, 25 LTS, 26, 27 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
 | Azul Platform Prime (Zing) | 6[2](#fn-virtual-machines-2-def), 7[2](#fn-virtual-machines-2-def), 8 LTS[2](#fn-virtual-machines-2-def), 11 LTS[2](#fn-virtual-machines-2-def) | Alpine Linux 64-bit (x86-64), Linux (x86-64), Windows (x86-64) |
-| Bellsoft Liberica | 8 LTS, 11 LTS, 17 LTS, 21 LTS[3](#fn-virtual-machines-3-def), 24, 25 LTS, 26 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64), PPCLE), Solaris (SPARC, x86-64), Windows (x86-64) |
+| Bellsoft Liberica | 8 LTS, 11 LTS, 17 LTS, 21 LTS[3](#fn-virtual-machines-3-def), 24, 25 LTS, 26, 27 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64), PPCLE), Solaris (SPARC, x86-64), Windows (x86-64) |
 | Eclipse Temurin (a.k.a. 'Adoptium') | 8 LTS, 11 LTS, 17 LTS, 21 LTS, 24, 25 LTS, 26, 27 | AIX (POWER8, POWER9, POWER10), Linux (x86-64, ARM64 (AArch64), PPCLE, s390), Windows (x86-64) |
 | Fujitsu | 5, 6, 8 | Linux (x86-64), Windows (x86-64) |
 | GraalVM | 17 LTS[1](#fn-virtual-machines-1-def), 21[1](#fn-virtual-machines-1-def), 24[1](#fn-virtual-machines-1-def), 25 LTS[1](#fn-virtual-machines-1-def) | Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
+| GraalVM Mandrel | 11 LTS, 17 LTS, 21 LTS, 24, 25 LTS | Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
 | Hitachi | 5 | Windows (x86-64) |
 | Huawei | 8 | Linux (ARM64 (AArch64)) |
 | IBM JVM | 6, 7, 8 LTS | AIX (POWER8, POWER9, POWER10), Alpine Linux 64-bit (x86-64), Linux (PPCLE, PPCBE, s390, x86-64), Windows (x86-64) |

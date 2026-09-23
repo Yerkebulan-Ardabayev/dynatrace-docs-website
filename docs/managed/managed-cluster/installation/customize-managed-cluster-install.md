@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/installation/customiz
 
 * Reference
 * 9-min read
-* Updated on Aug 26, 2026
+* Updated on Sep 21, 2026
 
 Use command line parameters to override default settings of a Managed Cluster installation. By default, no parameters are required—the Managed installer runs in interactive mode, prompting you to confirm or override default settings. Values entered interactively always take precedence over command line parameter values.
 
@@ -157,8 +157,8 @@ You can specify one or both parameters.
 | `--cluster-nodes <id:ip, ..>` | You can specify the node ID with the IP address. Use this when you restore a Managed Cluster and you must attach a replacement node that has a different IP address than the original. |
 | `--seed-ip <ip>` | IPv4 address of the seed node in the Managed Cluster. |
 | `--seed-auth <auth-token>` | Authentication token for connection to seed node. You'll find this after logging into the seed node, on the **Download node installer** page. This token is valid for three hours. |
-| `--rack-dc <data-center>` | For rack-aware deployments, provide the data center that contains the rack where you want to add the node. |
-| `--rack-name <rack>` | For rack-aware deployments, provide the name of the rack where you want to add the node. |
+| `--rack-dc <data-center>` | For rack-aware deployments, provide the data center that contains the rack where you want to add the node. Always use it together with `--rack-name`, and set it to the same value as `--datacenter`—the installer refuses to proceed otherwise. |
+| `--rack-name <rack>` | For rack-aware deployments, provide the name of the rack where you want to add the node. Accepts only letters, digits, and hyphens, up to 80 characters, with no leading hyphen. Defaults to `rack1` when omitted, as long as the Managed Cluster holds one rack name or fewer; once a second rack name exists, an omitted value is rejected instead. |
 
 ### OneAgent
 

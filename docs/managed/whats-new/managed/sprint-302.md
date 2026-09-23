@@ -18,7 +18,7 @@ Rollout start: Oct 14, 2024
 
 The new Premium High Availability (HA) multi-datacenter failover mechanism automatically detects Elasticsearch or Cassandra node outages. After the nodes are operational again, it automatically triggers a repair on all nodes that were not available during the outage.
 
-For details, see [managed-auto-repair](/managed/managed-cluster/high-availability/failover "Learn how the Premium High Availability multi-data center failover mechanism detects node outages and transfers responsibility to a healthy data center.").
+For details, see [managed-auto-repair](/managed/managed-cluster/high-availability/failover "The Premium High Availability failover mechanism detects node outages exceeding 15 minutes and transfers server responsibility to a healthy data center.").
 
 ### Improved Cassandra CPU in some deployments
 

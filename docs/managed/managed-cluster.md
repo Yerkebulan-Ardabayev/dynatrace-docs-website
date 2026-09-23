@@ -26,6 +26,6 @@ Operate a Managed Cluster.](/managed/managed-cluster/operation)
 
 [### High availability
 
-Set up a Premium High Availability Cluster.](/managed/managed-cluster/high-availability "Explore Dynatrace Managed high availability options, including Premium High Availability across data centers and rack-aware deployment.")[### Self-monitoring
+Set up a Premium High Availability Cluster.](/managed/managed-cluster/high-availability "Explore Dynatrace Managed high availability options, including Premium High Availability across data centers and rack awareness.")[### Self-monitoring
 
 Monitor the health, performance, and utilization of your Managed Clusters.](/managed/managed-cluster/self-monitoring "Dynatrace Managed collects health statistics, performance metrics, and service utilization from all deployment components through self-monitoring.")

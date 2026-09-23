@@ -8,16 +8,16 @@ source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/reb
 # Rebuild a data center
 
 * How-to guide
-* 10-min read
-* Updated on Aug 26, 2026
+* 8-min read
+* Updated on Sep 21, 2026
 
 To rebuild a lost data center (DC) in a Premium High Availability deployment, follow the steps below. The procedure migrates and replicates Dynatrace Managed components so they can replicate data across two data centers.
 
 The procedure uses the following terms:
 
-* **Source-DC**: Surviving data center that contains the Managed Cluster.
-* **Target-DC**: Lost data center designated for recovery.
-* **seed node**: Node in **Source-DC** that performs installation tasks and distributes configuration.
+* **Source-DC**: Surviving data center that contains the Managed Cluster
+* **Target-DC**: Lost data center designated for recovery
+* **seed node**: Node in **Source-DC** that performs installation tasks and distributes configuration
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
@@ -51,12 +51,14 @@ The procedure uses the following terms:
 
 API return codes
 
-Steps 3–14 use Dynatrace Cluster API calls. Each call returns an HTTP code. Go to the next step only when the returned code is `200`. Expect the following return codes:
+Steps 3 to 14 use Dynatrace Cluster API calls. Go to the next step only when the call returns `200`.
 
-`200`: Go to the next step. The current step succeeded.  
-`207`: The request is still processing. Repeat the step after a few minutes.  
-`40x`: Revise your request path and arguments, and repeat the request.  
-`5xx`: Contact support.
+| Return code | What to do |
+| --- | --- |
+| `200` | Go to the next step. The current step succeeded. |
+| `207` | The request is still processing. Repeat the step after a few minutes. |
+| `40x` | Revise your request path and arguments, and repeat the request. |
+| `5xx` | Contact support. |
 
 ## Step 1 Gather information
 
@@ -125,7 +127,7 @@ During recovery to **Target-DC**, use the same name as the lost data center.
 Set the following environment variables on the **seed node** in **Source-DC** and on every node in **Target-DC**:
 
 ```
-SEED_IP=<seed-ip>
+SEED_IP=<seed-node-ip>
 
 
 
@@ -133,7 +135,7 @@ DT_DIR=<dynatrace-directory>
 
 
 
-NODES_IPS=echo '[<nodes-ips]'
+NODES_IPS=$(echo '[<nodes-ips>]')
 
 
 
@@ -159,7 +161,7 @@ DT_DIR=/opt/dynatrace-managed
 
 
 
-NODES_IPS=echo '["10.176.37.218", "10.176.37.227", "10.176.37.120"]'
+NODES_IPS=$(echo '["10.176.37.218", "10.176.37.227", "10.176.37.120"]')
 
 
 
@@ -180,10 +182,10 @@ Stop all required Dynatrace Managed services in the recommended order. See [Star
 
 ## Step 4 Remove nodes
 
-1. Go to the **CMC**.
+1. Go to the CMC.
 2. For each node in the unavailable data center, go to the **Node details** page and remove the node.
 
-For more information on other ways to remove a node, see [Remove a Managed Cluster node](/managed/managed-cluster/operation/remove-a-cluster-node "Learn how to remove a new cluster node using either the command prompt or the Cluster Management Console.").
+For more information on other ways to remove a node, see [Remove a Cluster node](/managed/managed-cluster/operation/remove-a-cluster-node "Learn how to remove a new cluster node using either the command prompt or the Cluster Management Console.").
 
 ## Step 5 Remove lost data center from configuration
 
@@ -209,7 +211,7 @@ In this step, copy the node installer to every node in **Target-DC**.
 
 In this step, prepare data indexes for replication.
 
-### Prepare Managed Cluster data
+### Start Managed Cluster data preparation
 
 Run the following Cluster API call only on the **seed node**:
 
@@ -275,7 +277,7 @@ If the status code from this call isn't `200`, try again after a few minutes.
 
 ## Step 10 Install second data center nodes
 
-In this step, install Managed Cluster nodes on all hosts in **Target-DC**. Then check for the Nodekeeper service to verify that all nodes installed successfully in **Target-DC**.
+In this step, install Cluster nodes on all hosts in **Target-DC**. Then check for the Nodekeeper service to verify that all nodes installed successfully in **Target-DC**.
 
 ### Install nodes in the target data center
 
@@ -285,9 +287,11 @@ Run the following command on every node in **Target-DC**. Follow the prompts for
 sudo /bin/sh ./managed-installer.sh --install-new-dc --premium-ha on --datacenter $TDC_NAME --seed-auth $API_TOKEN
 ```
 
-For rack-aware deployments, also add the `--rack-dc <data-center>` and `--rack-name <rack>` parameters.
+For rack-aware deployments, also add the `--rack-dc <data-center>` and `--rack-name <rack>` parameters, which assign the node to a data center and a rack. For the parameter descriptions, go to [Customize Managed Cluster installation](/managed/managed-cluster/installation/customize-managed-cluster-install "Use command line parameters to customize or automate a Managed Cluster installation, with options for datastores, system users, and SSL certificates.").
 
-The node installation takes about 3–5 minutes. The expected output is:
+Target-DC's rack layout comes from the `--rack-name` value you pass per node above, not from Source-DC, so Target-DC can become rack-aware whether or not Source-DC already is. For the full procedure, go to [Combine Premium High Availability with rack awareness](/managed/managed-cluster/high-availability/pha-rack-aware "Combine Premium High Availability with rack awareness so each data center holds three racks and the cluster spans six independent fault domains.").
+
+The node installation takes about three to five minutes. The expected output is:
 
 ```
 Installation in new data center completed successfully after 2 minutes 51 seconds.
@@ -307,62 +311,61 @@ If the status code isn't `200`, try again after a few minutes.
 
 In this step, reconfigure Cassandra in **Source-DC** and **Target-DC** for cross data center replication. Then trigger data synchronization, rebuild Cassandra data, and verify Cassandra state.
 
-The Cassandra migration may take minutes to hours depending on your metric storage size.
+The Cassandra migration can take minutes to hours, depending on your metric storage size.
 
-1. ### Trigger migration
+### Trigger migration
 
-   To start migration of Cassandra in the **Target-DC** data center, run the following Cluster API call only on the **seed node**:
+To start migration of Cassandra in **Target-DC**, run the following Cluster API call only on the **seed node**:
 
-   ```
-   curl -ikS -X POST https://$SEED_IP/api/v1.0/onpremise/multiDc/migration/cassandra/newDc?Api-Token=$API_TOKEN -H "accept: application/json" -H "Content-Type: application/json"
-   ```
+```
+curl -ikS -X POST https://$SEED_IP/api/v1.0/onpremise/multiDc/migration/cassandra/newDc?Api-Token=$API_TOKEN -H "accept: application/json" -H "Content-Type: application/json"
+```
 
-   If successful, the status code is `200` and the response body contains a request ID. Use this ID to check the migration status. Set the request ID environment variable only on the **seed node**.
+If successful, the status code is `200` and the response body contains a request ID. Use this ID to check the migration status. Set the request ID environment variable only on the **seed node**.
 
-   ```
-   REQ_ID=<migration-new-datacenter-request-id>
-   ```
+```
+REQ_ID=<migration-new-datacenter-request-id>
+```
 
-   If the status code isn't `200` and the response doesn't suggest next steps, contact a Dynatrace product expert via live chat.
+If the status code isn't `200` and the response doesn't suggest next steps, contact a Dynatrace product expert via live chat.
 
-   ### Check migration status
+### Check migration status
 
-   To check the migration status, run the following Cluster API call only on the **seed node**:
+To check the migration status, run the following Cluster API call only on the **seed node**:
 
-   ```
-   curl -ikS -X GET https://$SEED_IP/api/v1.0/onpremise/multiDc/migration/cassandra/newDc/$REQ_ID?Api-Token=$API_TOKEN -H  "accept: application/json" -H  "Content-Type: application/json"
-   ```
+```
+curl -ikS -X GET https://$SEED_IP/api/v1.0/onpremise/multiDc/migration/cassandra/newDc/$REQ_ID?Api-Token=$API_TOKEN -H  "accept: application/json" -H  "Content-Type: application/json"
+```
 
-   If the status code isn't `200`, try again after a few minutes.
-2. ### Rebuild Cassandra data
+If the status code isn't `200`, try again after a few minutes.
 
-   Depending on the size of your Cassandra database, this can take several hours.
+### Start the Cassandra rebuild
 
-   #### Rebuild data
+Depending on the size of your Cassandra database, the rebuild can take several hours.
 
-   To rebuild Cassandra data in the **Target-DC** data center, run the following Cluster API call only on the **seed node**:
+To rebuild Cassandra data in **Target-DC**, run the following Cluster API call only on the **seed node**:
 
-   ```
-   curl -ikS -X POST https://$SEED_IP/api/v1.0/onpremise/multiDc/migration/cassandra/rebuild?Api-Token=$API_TOKEN -H "accept: application/json" -H "Content-Type: application/json"
-   ```
+```
+curl -ikS -X POST https://$SEED_IP/api/v1.0/onpremise/multiDc/migration/cassandra/rebuild?Api-Token=$API_TOKEN -H "accept: application/json" -H "Content-Type: application/json"
+```
 
-   If successful, the status code is `200`. If the status code isn't `200` and the response doesn't suggest next steps, contact a Dynatrace product expert via live chat.
+If successful, the status code is `200`. If the status code isn't `200` and the response doesn't suggest next steps, contact a Dynatrace product expert via live chat.
 
-   #### Check the rebuild data status
+### Check the rebuild status
 
-   To check the rebuild data status, run the following Cluster API call only on the **seed node**:
+To check the rebuild status, run the following Cluster API call only on the **seed node**:
 
-   ```
-   curl -ikS -X GET https://$SEED_IP/api/v1.0/onpremise/multiDc/migration/cassandra/rebuild?Api-Token=$API_TOKEN -H  "accept: application/json" -H  "Content-Type: application/json"
-   ```
+```
+curl -ikS -X GET https://$SEED_IP/api/v1.0/onpremise/multiDc/migration/cassandra/rebuild?Api-Token=$API_TOKEN -H  "accept: application/json" -H  "Content-Type: application/json"
+```
 
-   If the status code isn't `200`, try again after approximately 15 minutes. The rebuild process can take several hours.
+If the status code isn't `200`, try again after approximately 15 minutes.
 
-   If the response has an error flag set to true, contact a Dynatrace product expert via live chat.
+If the response has an error flag set to true, contact a Dynatrace product expert via live chat.
 
 ## Step 12 Migrate Elasticsearch
 
-In this step, migrate Elasticsearch to the **Target-DC** data center. Then verify the configuration and data migration. The Elasticsearch migration can take minutes or hours depending on your Elasticsearch storage.
+In this step, migrate Elasticsearch to **Target-DC**. Then verify the configuration and data migration. The Elasticsearch migration can take minutes or hours depending on your Elasticsearch storage.
 
 ### Migrate Elasticsearch to the target data center
 
@@ -372,7 +375,7 @@ Start Elasticsearch. Run the following command on every node in **Target-DC** in
 sudo $DT_DIR/launcher/elasticsearch.sh start
 ```
 
-To start migration of Elasticsearch to the **Target-DC** data center, run the following Cluster API call only on the **seed node**:
+To start migration of Elasticsearch to **Target-DC**, run the following Cluster API call only on the **seed node**:
 
 ```
 curl -ikS -X POST https://$SEED_IP/api/v1.0/onpremise/multiDc/restore/elasticsearch/recover?Api-Token=$API_TOKEN -H "accept: application/json" -H "Content-Type: application/json"
@@ -402,11 +405,11 @@ If the status code isn't `200`, try again after a few minutes.
 
 ## Step 13 Migrate the server
 
-In this step, migrate the server, refresh authorization tokens for OneAgent connectivity, and start NGINX in the **Target-DC** data center. Also, refresh installers in **Source-DC** for adding nodes.
+In this step, migrate the server, refresh authorization tokens for OneAgent connectivity, and start NGINX in **Target-DC**. Also, refresh installers in **Source-DC** for adding nodes.
 
-### Migrate the server
+### Start the Managed Cluster in the target data center
 
-Launch the Managed Cluster in the **Target-DC** by running the following Cluster API call only on the **seed node**:
+Start the Managed Cluster in **Target-DC** by running the following Cluster API call only on the **seed node**:
 
 ```
 curl -ikS -X POST https://$SEED_IP/api/v1.0/onpremise/multiDc/restore/server/recovery?Api-Token=$API_TOKEN -H "accept: application/json" -H "Content-Type: application/json"
@@ -436,3 +439,10 @@ If the status code isn't `200`, try again after a few minutes.
    For details, see [Cluster node capabilities](/managed/managed-cluster/configuration/configure-cluster-capabilities "Configure OneAgent data processing and web UI traffic on individual Managed Cluster nodes using the Cluster Management Console or REST API.").
 2. Turn on backup in one of the data centers. Migration turns off backup.  
    For details, see [Back up and restore a Managed Cluster](/managed/managed-cluster/operation/back-up-and-restore-a-cluster "Understand the steps and commands required to restore a Dynatrace Managed cluster.").
+
+Go to the **Deployment status** page in the Cluster Management Console and confirm that it lists both data centers with all nodes healthy.
+
+## Related topics
+
+* [Multi-data center high availability](/managed/managed-cluster/high-availability/multi-data-centers "Understand how Dynatrace Managed Premium High Availability provides failover, data resilience, and data routing across data centers.")
+* [Multi-data center failover](/managed/managed-cluster/high-availability/failover "The Premium High Availability failover mechanism detects node outages exceeding 15 minutes and transfers server responsibility to a healthy data center.")

@@ -161,6 +161,7 @@ Azul has its own [support timeline﻿](https://www.azul.com/products/azul_suppor
 
 | Java version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/managed/ingest-from/technology-support#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
+| 27 | 2026-09-15 | - | 1.347 | - | - | Supported |
 | 26 | - | - | 1.335 | - | - | Supported |
 | 25 LTS | 2025-09-16 | - | 1.321 | - | - | Supported |
 | 24 | 2025-03-18 | - | 1.309 | - | - | Supported |

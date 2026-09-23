@@ -66,7 +66,7 @@ Stage 3: Dynatrace Managed deployment integrated with a customer load balancer a
 
 ## Stage 4: High availability with automatic recovery
 
-A high-availability deployment spans distributed networks and provides near-zero downtime, continuous monitoring without data loss in failover scenarios, and cost savings by eliminating standby recovery hosts and backup transfer infrastructure. For capacity planning, treat the nodes in the additional data center as redundant rather than expanded capacity, and balance both data centers equally. For details, see [Premium high availability](/managed/managed-cluster/high-availability "Explore Dynatrace Managed high availability options, including Premium High Availability across data centers and rack-aware deployment.").
+A high-availability deployment spans distributed networks and provides near-zero downtime, continuous monitoring without data loss in failover scenarios, and cost savings by eliminating standby recovery hosts and backup transfer infrastructure. For capacity planning, treat the nodes in the additional data center as redundant rather than expanded capacity, and balance both data centers equally. For details, see [Premium high availability](/managed/managed-cluster/high-availability "Explore Dynatrace Managed high availability options, including Premium High Availability across data centers and rack awareness.").
 
 ![Stage 4: Premium high-availability Dynatrace Managed deployment spanning two data centers](https://dt-cdn.net/images/con-man-global-005-1200-aa4bbfc45b.png)
 

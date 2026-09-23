@@ -8,8 +8,8 @@ source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/fai
 # Multi-data center failover
 
 * Explanation
-* 7-min read
-* Updated on Aug 26, 2026
+* 6-min read
+* Updated on Sep 18, 2026
 
 The Premium High Availability (PHA) multi-data center failover mechanism detects Elasticsearch or Cassandra node outages longer than 15 minutes and shorter than 72 hours. If Mission Control (MC) detects that two or more Elasticsearch or Cassandra nodes in a data center (DC) are down for 15 minutes, it automatically stops the server processes in that DC. MC then marks the DC as unhealthy.
 
@@ -22,7 +22,7 @@ If one part of a Managed Cluster loses connection with another part, the disconn
 
 The graphics in the following sections illustrate the PHA failover mechanism in case of Elasticsearch or Cassandra node outages.
 
-## PHA failover triggered by Elasticsearch downtime
+## Elasticsearch failover mechanism
 
 The following graphic illustrates the PHA failover mechanism when two or more Elasticsearch nodes in a DC are down.
 
@@ -37,7 +37,7 @@ Elasticsearch failover mechanism
 5. All servers are up and running.
 6. After 30 minutes, Mission Control requests the Nodekeepers to change the responsibility override—the Managed Cluster is fully operational.
 
-## PHA failover triggered by Cassandra downtime
+## Cassandra failover mechanism
 
 The following graphic illustrates the PHA failover mechanism when two or more Cassandra nodes in a DC are down.
 
@@ -49,14 +49,14 @@ Cassandra failover mechanism
 2. After 15 minutes, Mission Control informs all Nodekeepers that one DC is unhealthy, requests to change the responsibility override (to the healthy DC), and requests Nodekeepers to stop all server processes in the unhealthy DC.
 3. Nodekeepers stop server processes in the unhealthy DC, switch responsibility override, and ask a healthy server to generate an event and an email.
 4. After you start the Cassandra processes on the nodes that were down, Mission Control requests that Nodekeepers start all server processes.
-5. Nodekeepers run Cassandra repairs, one by one, on all nodes in the unhealthy DC. At the same time, MC initiates server startup (sending the desired server state to RUNNING).
-6. 30 minutes after all Cassandra nodes are repaired, Mission Control requests the Nodekeepers to change the responsibility override—the Managed Cluster is fully operational.
+5. Nodekeepers run Cassandra repairs, one by one, on all nodes in the unhealthy DC. At the same time, MC initiates server startup (sending the desired server state to `RUNNING`).
+6. Thirty minutes after all Cassandra nodes are repaired, Mission Control requests the Nodekeepers to change the responsibility override—the Managed Cluster is fully operational.
 
 ## Rack awareness
 
 Dynatrace ignores racks when a DC contains only one or two racks.
 
-When you configure rack awareness for a Managed Cluster, make sure to account for it during unhealthy data center detection.
+When you configure rack awareness for a Managed Cluster, make sure to account for it during unhealthy data center detection. If you're setting up rack awareness together with PHA, go to [Combine Premium High Availability with rack awareness](/managed/managed-cluster/high-availability/pha-rack-aware "Combine Premium High Availability with rack awareness so each data center holds three racks and the cluster spans six independent fault domains.") for the procedure.
 
 The following five rules apply when evaluating DC health:
 
@@ -70,7 +70,7 @@ The following five rules apply when evaluating DC health:
 
 What triggers the PHA failover mechanism?
 
-The PHA failover mechanism is triggered when at least two Elasticsearch or Cassandra nodes are down. When a node isn't reachable by other nodes, it's automatically added to the list of Elasticsearch/Cassandra down nodes.
+The PHA failover mechanism is triggered when at least two Elasticsearch or Cassandra nodes are down. When a node isn't reachable by other nodes, it's automatically added to the list of Elasticsearch or Cassandra down nodes.
 
 Does Elasticsearch in RED status trigger the PHA failover mechanism?
 
@@ -86,7 +86,7 @@ No. The Elasticsearch or Cassandra nodes must be down for 15 minutes for the fai
 
 What happens after 72 hours have passed?
 
-The Managed Cluster will be marked in Mission Control as not repaired in 72 hours from the failover. Such a Managed Cluster isn't reliable and you should replicate it from a healthy DC.
+The Managed Cluster will be marked in Mission Control as not repaired in 72 hours from the failover. Such a Managed Cluster is not reliable, and you should replicate it from a healthy DC.
 
 What if the primary DC fails without MC access?
 
@@ -161,3 +161,10 @@ What logs are crucial for troubleshooting?
 In an unhealthy DC, check `nodekeeper.0.0.log`, `nodekeeper-healthcheck.0.log`, and `repair-cassandra-data.log`.
 
 In a healthy DC, only `server.log` and `audit.cluster.event.0.0.log` are important.
+
+## Related topics
+
+* [Recover from another data center](/managed/managed-cluster/high-availability/recover-from-data-center "Recover a data center when Premium High Availability can't repair it within 72 hours by restoring or recreating it from another data center.")
+* [Rebuild a data center](/managed/managed-cluster/high-availability/rebuild-data-center "Learn how to rebuild a lost data center in a Dynatrace Managed Premium High Availability deployment and restore replication across both data centers.")
+* [Recover from a backup](/managed/managed-cluster/high-availability/recover-from-backup "Learn how to restore a Premium High Availability data center from backup in a Dynatrace Managed multi-DC deployment after a data center loss.")
+* [Combine Premium High Availability with rack awareness](/managed/managed-cluster/high-availability/pha-rack-aware "Combine Premium High Availability with rack awareness so each data center holds three racks and the cluster spans six independent fault domains.")
