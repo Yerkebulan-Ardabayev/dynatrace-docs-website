@@ -49,6 +49,7 @@ To rename an application
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **General settings** > **Application name**.
 5. Type in the name you prefer in the box at the top of the page. Note that application names must be unique.
 

@@ -64,6 +64,7 @@ To configure the cache duration
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Manual insertion**.
+
 5. In the **JavaScript tag** section, use the dropdown under **Cache monitoring code and configuration for** to select the required cache duration.
 
 ##### Script execution
@@ -81,6 +82,7 @@ To configure script execution
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Manual insertion**.
+
 5. In the **JavaScript tag** section, set **Script execution attribute** to **async**, **defer**, or **No attribute**.
 6. Copy the snippet and insert it into your page.
 
@@ -98,6 +100,7 @@ To enable the addition of the `crossorigin="anonymous"` attribute
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Manual insertion**.
+
 5. In the **JavaScript tag** section, enable **Add the crossorigin=anonymous attribute**.
 6. Copy the snippet and insert it into your page.
 
@@ -136,6 +139,7 @@ To configure script execution for automatic injection
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Automatic injection**.
+
 5. If **Snippet format** is set to **OneAgent JavaScript tag**, the **Script execution attribute** option becomes available. Choose either **async**, **defer**, or **No attribute** from the dropdown.
 6. Select **Save changes**.
 
@@ -145,6 +149,7 @@ To configure script execution for manual insertion
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Manual insertion**.
+
 5. In the **OneAgent JavaScript tag** section, set **Script execution attribute** to **async**, **defer**, or **No attribute**.
 6. Copy the snippet and insert it into your page.
 
@@ -183,6 +188,7 @@ To configure script execution for automatic injection
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Automatic injection**.
+
 5. If **Snippet format** is set to **OneAgent JavaScript tag with SRI**, the **Script execution attribute** option becomes available. Choose either **async**, **defer**, or **No attribute** from the dropdown.
 6. Select **Save changes**.
 
@@ -192,6 +198,7 @@ To configure script execution for manual insertion
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Manual insertion**.
+
 5. In the **OneAgent JavaScript tag with SRI** section, set **Script execution attribute** to **async**, **defer** or **No attribute**.
 6. Copy the snippet and insert it into your page.
 
@@ -254,6 +261,7 @@ To configure script execution for manual insertion
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Manual insertion**.
+
 5. In the **Code snippet** section, use the dropdown under **Load the monitoring code** to select either **synchronously** or **deferred**.
 6. Copy the snippet and insert it into your page.
 
@@ -263,6 +271,7 @@ To configure script execution for automatic injection
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Automatic injection**.
+
 5. Under **Snippet format**, select **Code snippet**.
 6. Under **Load the monitoring code**, select the option **synchronously** or **deferred**.
 7. Select **Save changes**.

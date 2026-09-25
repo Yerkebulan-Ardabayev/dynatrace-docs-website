@@ -304,7 +304,6 @@ You can disable problem generation for global and local outages if you're testin
   This allows you to raise a problem when there are consecutive failures at one or more locations. At the environment level, you can choose the number of failures. At the monitor level, you can also determine the number of monitor locations that need to fail in order to generate a local outage problem.
 
   In the example below, a monitor is configured for `4` locations, and a problem will be generated if `3` of those `4` locations are unable to access your site during `2` or more consecutive executions.
-
 * **Automatic retry on error**
 
   With this setting, enabled by default, single-URL browser monitors and browser clickpaths are automatically retried from the same location when errors are encountered. Upon subsequent success, the initial error data point is discarded. This approach reduces false positive errors.

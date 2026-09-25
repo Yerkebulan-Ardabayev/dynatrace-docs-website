@@ -20,6 +20,7 @@ To access the data privacy settings for your web application
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **General settings** > **Data privacy** > **General**. The **Data privacy** page opens.
 
 On this page, the following settings are available:
@@ -101,6 +102,7 @@ By default, the `rxVisitor` cookie is stored for two years. If applicable data p
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Capturing** > **Custom configuration properties**.
+
 5. Select **Add a custom configuration property** and enter the `rvcl=<time-in-months>` key-value pair to set your desired cookie lifetime value. The maximum is 24 months.
 
    For example, `rvcl=12` is 12 months.
@@ -108,6 +110,14 @@ By default, the `rxVisitor` cookie is stored for two years. If applicable data p
 ## Opt-in mode
 
 To access this option, select **General settings** > **Data privacy** > **General** from the application settings.
+
+---
+
+changelog:
+
+* 2026-03-05 Updated the URL of JavaScript API documentation
+
+---
 
 🔴 Disabled by default
 

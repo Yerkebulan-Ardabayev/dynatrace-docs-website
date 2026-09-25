@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/otlp-api/in
 
 * Explanation
 * 2-min read
-* Updated on Jun 11, 2026
+* Updated on Sep 21, 2026
 
 This page provides information about how Dynatrace ingests and enriches OpenTelemetry metrics.
 
@@ -78,7 +78,7 @@ For examples on how to set the temporality under each individual language, see t
 
 ### Metric keys
 
-* A metric key consists of sections separated by dots (for example, `dt.metrics`).
+* A metric key consists of sections separated by dots (for example, `custom.metrics`).
 * A metric key can contain lowercase and uppercase letters, numbers, hyphens (`-`), and underscores (`_`).
 * A metric key must start with a letter character.
 * A metric key must not contain non-Latin characters (such as `ä`, `ö`, and `ü`).
@@ -86,6 +86,8 @@ For examples on how to set the temporality under each individual language, see t
 
 If you use characters that are invalid according to the rules above, they will be replaced with underscores.
 If your metric key does not have at least one valid character, the data point will be dropped.
+
+The `dt.` prefix is reserved for Dynatrace-internal metrics. Metrics with a key starting with `dt.` (for example, `dt.sfm.*`) are dropped by the OTLP metrics ingest endpoint and are not ingested.
 
 ### Dimension keys
 

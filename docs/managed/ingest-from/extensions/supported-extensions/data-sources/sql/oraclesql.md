@@ -31,6 +31,36 @@ To get started, check [Dynatrace Hub﻿](https://www.dynatrace.com/hub/?query=or
 Dynatrace Hub provides a unified workflow to enable and manage extensions that will ingest Oracle Database data into your Dynatrace environment.
 
 Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
 
 1. In Dynatrace Hub, select and install the **Oracle Database** extension. (You can use "Oracle SQL" to filter search results.) This enables the extension in your environment.
 2. Add a monitoring configuration so that the extension can begin collecting data.

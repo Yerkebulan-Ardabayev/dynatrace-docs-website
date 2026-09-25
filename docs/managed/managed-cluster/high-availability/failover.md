@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/fai
 
 * Explanation
 * 6-min read
-* Updated on Sep 18, 2026
+* Updated on Sep 22, 2026
 
 The Premium High Availability (PHA) multi-data center failover mechanism detects Elasticsearch or Cassandra node outages longer than 15 minutes and shorter than 72 hours. If Mission Control (MC) detects that two or more Elasticsearch or Cassandra nodes in a data center (DC) are down for 15 minutes, it automatically stops the server processes in that DC. MC then marks the DC as unhealthy.
 
@@ -41,7 +41,7 @@ Elasticsearch failover mechanism
 
 The following graphic illustrates the PHA failover mechanism when two or more Cassandra nodes in a DC are down.
 
-![Cassandra failover mechanism](https://cdn.bfldr.com/B686QPH3/as/9q4bp3sfbm6989r5vbz6fg4/Cassandra_failover_mechanism_-_Light_Mode?auto=webp&format=png&position=1)
+![Cassandra failover mechanism](https://dt-cdn.net/images/cassandra-failover-mechanism-light-mode-3840-777451c10d.png)
 
 Cassandra failover mechanism
 
@@ -49,7 +49,7 @@ Cassandra failover mechanism
 2. After 15 minutes, Mission Control informs all Nodekeepers that one DC is unhealthy, requests to change the responsibility override (to the healthy DC), and requests Nodekeepers to stop all server processes in the unhealthy DC.
 3. Nodekeepers stop server processes in the unhealthy DC, switch responsibility override, and ask a healthy server to generate an event and an email.
 4. After you start the Cassandra processes on the nodes that were down, Mission Control requests that Nodekeepers start all server processes.
-5. Nodekeepers run Cassandra repairs, one by one, on all nodes in the unhealthy DC. At the same time, MC initiates server startup (sending the desired server state to `RUNNING`).
+5. MC initiates server startup (sending the desired server state to `RUNNING`). If Cassandra was down for 3 hours or more, Nodekeepers also run Cassandra repairs, one by one, on all nodes in the unhealthy DC.
 6. Thirty minutes after all Cassandra nodes are repaired, Mission Control requests the Nodekeepers to change the responsibility override—the Managed Cluster is fully operational.
 
 ## Rack awareness
@@ -82,7 +82,7 @@ Dynatrace repairs only the nodes that were down.
 
 Can the minimum node downtime and Mission Control health assessment intervals be changed?
 
-No. The Elasticsearch or Cassandra nodes must be down for 15 minutes for the failover mechanism to start. Mission Control needs 30 minutes to consider the Managed Cluster fully recovered.
+No. The Elasticsearch or Cassandra nodes must be down for 15 minutes for the failover mechanism to start. Cassandra repair is only triggered when nodes were down for 3 hours or more. Mission Control needs 30 minutes to consider the Managed Cluster fully recovered.
 
 What happens after 72 hours have passed?
 

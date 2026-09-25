@@ -55,6 +55,7 @@ To create an application in Dynatrace
 1. In Dynatrace, go to **Mobile**.
 2. Select **Create mobile app**.
 3. Enter a name for your application and select **Create mobile app**. The application settings page opens.
+
 4. From the application settings, select **Instrumentation wizard** > **Cordova**.
 5. Follow the steps described in the wizard. Do not forget to select **Monitor the web view** to create a web application.
 

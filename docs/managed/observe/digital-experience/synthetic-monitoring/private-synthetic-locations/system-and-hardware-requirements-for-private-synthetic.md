@@ -153,8 +153,8 @@ Please refer to [troubleshooting guide﻿](https://dt-url.net/x303x5f) for detai
 
 | ActiveGate version | Latest supported Chromium version Red Hat/Rocky Linux 9 | Latest supported Chrome for Testing version Amazon Linux 2023, Ubuntu, Oracle Linux 9 |
 | --- | --- | --- |
-| 1.345 | 151 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-151.0.7922.137-1.el9.tgz) | [151﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-151.0.7922.138.zip) |
-| 1.343 | 150 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-150.0.7871.128-1.el9.tgz) | [150﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-150.0.7871.181.zip) |
+| 1.345 | 151 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-151.0.7922.169-1.el9.tgz) | [151﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-151.0.7922.173.zip) |
+| 1.343 | 150 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-150.0.7871.181-1.el9.tgz) | [150﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-150.0.7871.181.zip) |
 | 1.341 | 148 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-148.0.7778.215-1.el9.tgz) | [148﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-148.0.7778.215.zip) |
 | 1.339 | 147 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-147.0.7727.137-1.el9.tgz) | [147﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-147.0.7727.137.zip) |
 | 1.337 | 146 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-146.0.7680.177-1.el9.tgz) | [146﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-146.0.7680.178.zip) |

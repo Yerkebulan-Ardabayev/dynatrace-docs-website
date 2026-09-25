@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/server
 # Serverless compute support matrix
 
 * 13-min read
-* Updated on Jan 12, 2026
+* Updated on Sep 15, 2026
 
 This page describes which features and capabilities are available across the various flavors of serverless compute services for functions (FaaS).
 
@@ -124,10 +124,11 @@ Output bindings are only supported for HTTP triggers.
 | [Blob Storage﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-blob-trigger?tabs=python-v2%2Cisolated-process%2Cnodejs-v4%2Cextensionv5&pivots=programming-language-python) | Future | Future | OneAgent version 1.343+ |
 | [Event Grid﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-grid-trigger?tabs=python-v2%2Cisolated-process%2Cnodejs-v4%2Cextensionv3&pivots=programming-language-python) | Future | Future | OneAgent version 1.343+ |
 | [Azure SQL﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-azure-sql-trigger?tabs=isolated-process%2Cpython-v2%2Cportal&pivots=programming-language-python) | Future | Future | OneAgent version 1.343+ |
-| [Azure Cosmos DB﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-cosmosdb-v2-trigger) | Future | Future | OneAgent version 1.345+ |
+| [Azure Cosmos DB﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-cosmosdb-v2-trigger) | Future | OneAgent version 1.349+ | OneAgent version 1.345+ |
 | [Apache Kafka﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-kafka-trigger) | Future | Future | OneAgent version 1.345+ |
 | [Queue Storage﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-queue-trigger) | Future | Future | OneAgent version 1.345+ |
 | [IoT Hub﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-iot-trigger) | Future | Future | OneAgent version 1.345+ |
+| [Azure Managed Redis﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-cache) | Future | OneAgent version 1.349+ | Future |
 
 * Python: only the v2 programming model is supported.
 * Node.js: only the v4 programming model is supported.

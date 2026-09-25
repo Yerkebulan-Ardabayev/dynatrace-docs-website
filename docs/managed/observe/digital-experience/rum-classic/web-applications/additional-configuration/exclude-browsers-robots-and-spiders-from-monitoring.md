@@ -28,6 +28,7 @@ To exclude an IP address
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Capturing** > **Exclusions** > **IP address exclusions**.
 5. Select **Add an IP address to exclude**.
 6. Specify the IP addresses that you want to exclude from Real User Monitoring.
@@ -41,6 +42,7 @@ To create a browser exclusion rule
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Capturing** > **Exclusions** > **Browser exclusions**.
 5. Select **Add a browser exclusion rule**.
 6. In the **Browser** dropdown list, select the browser you want to exclude, and then specify the exact version and type.
@@ -54,6 +56,7 @@ To exclude bots and spiders from RUM
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Capturing** > **Exclusions** > **Browser exclusions**.
 5. Select **Add a browser exclusion rule**.
 6. In the **Browser** dropdown list, select **Bots & Spiders**.

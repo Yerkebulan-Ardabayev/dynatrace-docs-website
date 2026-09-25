@@ -53,10 +53,14 @@ Support for the latest NGINX release is typically included in the next subsequen
 
 | NGINX version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/managed/ingest-from/technology-support#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
+| 1.31.6 | 2026-09-15 | - | 1.349 | - | - | Not supported |
+| 1.31.5 | 2026-09-02 | - | 1.349 | - | - | Not supported |
+| 1.31.4 | 2026-08-19 | - | 1.349 | - | - | Not supported |
 | 1.31.3 | 2026-07-15 | - | 1.345 | - | - | Supported |
 | 1.31.2 | 2026-06-17 | - | 1.345 | - | - | Supported[1](#fn-nginx-1-def) |
 | 1.31.1 | 2026-05-22 | - | 1.345 | - | - | Supported[1](#fn-nginx-1-def) |
 | 1.31.0 | 2026-05-13 | - | 1.341 | - | - | Supported[1](#fn-nginx-1-def) |
+| 1.30.5 | 2026-09-15 | - | 1.349 | - | - | Not supported |
 | 1.30.4 | 2026-07-15 | - | 1.345 | - | - | Supported |
 | 1.30.3 | 2026-06-17 | - | 1.345 | - | - | Supported[1](#fn-nginx-1-def) |
 | 1.30.2 | 2026-05-22 | - | 1.345 | - | - | Supported[1](#fn-nginx-1-def) |

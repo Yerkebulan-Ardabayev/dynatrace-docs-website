@@ -30,6 +30,7 @@ For auto-injected applications, the monitoring code is, by default, delivered by
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Automatic injection**.
+
 5. In the **Real User Monitoring code source** dropdown list, select **CDN**.
 6. In the **Snippet format** dropdown list, select **OneAgent JavaScript Tag with SRI**.
 
@@ -43,6 +44,7 @@ To get the OneAgent JavaScript tag with SRI from the web UI
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Manual insertion**.
+
 5. In the **OneAgent JavaScript Tag with SRI** section, select **Copy** to copy the tag to the clipboard.
 
 We don't recommend using the OneAgent JavaScript tag with SRI from the web UI unless timely configuration updates are not critical.

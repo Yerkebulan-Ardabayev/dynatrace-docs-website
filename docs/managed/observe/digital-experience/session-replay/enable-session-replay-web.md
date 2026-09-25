@@ -52,6 +52,7 @@ To enable Session Replay
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **General settings** > **Enablement and cost control**.
+
 5. Turn on **Enable Session Replay**.
 
 After you've enabled Session Replay, it's time to [configure it](/managed/observe/digital-experience/session-replay/configure-session-replay-web "Configure monitoring consumption and data privacy settings for Session Replay Classic.").

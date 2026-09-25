@@ -60,6 +60,7 @@ The mobile instrumentation wizard in Dynatrace provides you with get-started ins
 2. Select the mobile application that you want to configure.
 3. Select **More** (**…**) > **Edit** in the upper-right corner of the tile with your application name.
 4. From the application settings, select **Instrumentation wizard**.
+
 5. Select **Android**.
 
 ## Related topics

@@ -15,9 +15,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 * **Full message** - ZDTP001S Persistent Storage allocation failed.
 * **Explanation** - The CICS PLT program was unable to allocate a required persistent storage area.
 * **System action** - The PLT program terminates and the CICS code module is not enabled.
-* **User response** - Determine why the CICS region is unable to provide storage for the DTAX transaction.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine why the CICS region is unable to provide storage for the DTAX transaction. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP002S
 
@@ -31,9 +29,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 * **Full message** - ZDTP003S ZDTSOAPH Load failed. Disabling Dynatrace CICS code module.
 * **Explanation** - CICS could not load `ZDTSOAPH`.
 * **System action** - The PLT program terminates and the CICS code module is disabled.
-* **User response** - Determine why the CICS region is unable to load one of the DTAX modules - ZDTSOAPH.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine why the CICS region is unable to load one of the DTAX modules - ZDTSOAPH. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP004S
 
@@ -47,18 +43,14 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 * **Full message** - ZDTP005S START DTAX ICE failed.
 * **Explanation** - The `EXEC CICS START` command used to initiate the `DTAX ICE` transaction in 5 minutes interval has failed.
 * **System action** - None
-* **User response** - Examine the more detailed message in the appropriate CICS job log to look at the precise EIBRESP code that indicates why this EXEC CICS START command failed.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Examine the more detailed message in the appropriate CICS job log to look at the precise EIBRESP code that indicates why this EXEC CICS START command failed. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP006S
 
 * **Full message** - ZDTP006S Inquire MQCONN <QMGR Name> returned with resp:<xx> resp2:<xx>.
 * **Explanation** - `EXEC CICS INQUIRE` for MQ Connection information has failed.
 * **System action** - Missing MQ Queue manager name in CICS attachment details.
-* **User response** - With the help of `resp` and `resp2` codes, determine why INQUIRE MQCONN failed.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - With the help of `resp` and `resp2` codes, determine why INQUIRE MQCONN failed. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP007S
 
@@ -170,9 +162,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 * **Full message** - ZDTP023S Inquire DB2Entry failed. resp:<xx>, resp2:<xx>, rcode:<xx>.
 * **Explanation** - `EXEC CICS INQUIRE DB2ENTRY` has failed.
 * **System action** - CICS code module operation continues.
-* **User response** - Determine the cause of the problem from `resp` and `resp2` codes.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine the cause of the problem from `resp` and `resp2` codes. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP024S
 
@@ -186,144 +176,112 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 * **Full message** - ZDTP025S Inquire System failed. resp:<xx>, resp2:<xx>, rcode:<xx>.
 * **Explanation** - `EXEC CICS INQUIRE SYSTEM` for CICS version retrieval has failed.
 * **System action** - By default CICS code module for CICS Version 4.2 is loaded.
-* **User response** - Determine the cause of the problem from `resp` and `resp2` codes.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine the cause of the problem from `resp` and `resp2` codes. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP026S
 
 * **Full message** - ZDTP026S Inquire Program failed. resp:<xx>, resp2:<xx>, rcode:<xx>.
 * **Explanation** - `EXEC CICS INQUIRE PROGRAM` has failed.
 * **System action** - CICS code module operation continues.
-* **User response** - Determine the cause of the problem from `resp` and `resp2` codes.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine the cause of the problem from `resp` and `resp2` codes. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP027S
 
 * **Full message** - ZDTP027S Disable Exit program failed. resp:<xx>, resp2:<xx>, rcode:<xx>.
 * **Explanation** - `EXEC CICS DISABLE PROGRAM` for all exits has failed.
 * **System action** - CICS code module is not disabled successfully.
-* **User response** - Determine the cause of the problem from `resp` and `resp2` codes.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine the cause of the problem from `resp` and `resp2` codes. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP028S
 
 * **Full message** - ZDTP028S Disable RMI Exit failed. resp:<xx>, resp2:<xx>, rcode:<xx>.
 * **Explanation** - `EXEC CICS DISABLE PROGRAM` for RMI exit has failed.
 * **System action** - RMI exit is not disabled successfully.
-* **User response** - Determine the cause of the problem from `resp` and `resp2` codes.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine the cause of the problem from `resp` and `resp2` codes. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP029S
 
 * **Full message** - ZDTP029S START Exit failed. resp:<xx>, resp2:<xx>, rcode:<xx>.
 * **Explanation** - `EXEC CICS ENABLE START` for `XPCREQC/XRMIIN/XRMIOUT` exit has failed.
 * **System action** - Exits are not started successfully.
-* **User response** - Determine the cause of the problem from `resp` and `resp2` codes.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine the cause of the problem from `resp` and `resp2` codes. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP030S
 
 * **Full message** - ZDTP030S FREEMAIN failed. resp:<xx>, resp2:<xx>, rcode:<xx>.
 * **Explanation** - `EXEC CICS FREEMAIN` has failed.
 * **System action** - Global Work Area for PLT program FREEMAIN fails.
-* **User response** - Determine the cause of the problem from `resp` and `resp2` codes.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine the cause of the problem from `resp` and `resp2` codes. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP031S
 
 * **Full message** - ZDTP031S Enable Exit failed. resp:<xx>, resp2:<xx>, rcode:<xx>.
 * **Explanation** - `EXEC CICS ENABLE PROGRAM` for enabling exits failed.
 * **System action** - CICS code module exits are not enabled successfully.
-* **User response** - Determine the cause of the problem from `resp` and `resp2` codes.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine the cause of the problem from `resp` and `resp2` codes. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP032S
 
 * **Full message** - ZDTP032S STOP Exit failed. resp:<xx>, resp2:<xx>, rcode:<xx>.
 * **Explanation** - `EXEC CICS DISABLE` stop for exits failed.
 * **System action** - CICS code module exits are not stopped successfully.
-* **User response** - Determine the cause of the problem from `resp` and `resp2` codes.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine the cause of the problem from `resp` and `resp2` codes. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP033S
 
 * **Full message** - ZDTP033S Cancel ReqID failed. resp:<xx>, resp2:<xx>, rcode:<xx>.
 * **Explanation** - `EXEC CICS CANCEL REQID` has failed.
 * **System action** - `DTAX ICE` transaction is not cancelled.
-* **User response** - Determine the cause of the problem from `resp` and `resp2` codes.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine the cause of the problem from `resp` and `resp2` codes. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP034S
 
 * **Full message** - ZDTP034S Inquire ReqID failed. resp:<xx>, resp2:<xx>, rcode:<xx>.
 * **Explanation** - `EXEC CICS INQUIRE REQID` has failed.
 * **System action** - `DTAX ICE` transaction is not started successfully.
-* **User response** - Determine the cause of the problem from `resp` and `resp2` codes.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine the cause of the problem from `resp` and `resp2` codes. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP035S
 
 * **Full message** - ZDTP035S GETMAIN failed. resp:<xx>, resp2:<xx>, rcode:<xx>.
 * **Explanation** - `EXEC CICS GETMAIN` for Global Work Area has failed.
 * **System action** - Global Work Area for PLT program is not allocated. CICS code module doesn't initialize successfully.
-* **User response** - Determine the cause of the problem from `resp` and `resp2` codes.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine the cause of the problem from `resp` and `resp2` codes. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP036S
 
 * **Full message** - ZDTP036S START DTAX ICE failed. resp:<xx>, resp2:<xx>, rcode:<xx>.
 * **Explanation** - `EXEC CICS START` has failed.
 * **System action** - DTAX Interval control transaction is not started every 5 minutes.
-* **User response** - Determine the cause of the problem from `resp` and `resp2` codes.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine the cause of the problem from `resp` and `resp2` codes. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP037S
 
 * **Full message** - ZDTP037S LOAD Agent failed. resp:<xx>, resp2:<xx>, rcode:<xx>.
 * **Explanation** - `EXEC CICS LOAD PROGRAM` for `ZDTAGTxx` module has failed.
 * **System action** - `ZDTAGTxx` PTF and build date is not printed in the log messages.
-* **User response** - Determine the cause of the problem from `resp` and `resp2` codes.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine the cause of the problem from `resp` and `resp2` codes. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP038S
 
 * **Full message** - ZDTP038S LOAD ZDTSOAPH failed. resp:<xx>, resp2:<xx>, rcode:<xx>.
 * **Explanation** - `EXEC CICS LOAD PROGRAM` for `ZDTSOAPH` module has failed.
 * **System action** - `ZDTSOAPH` build date and version information are not printed in the log messages.
-* **User response** - Determine the cause of the problem from `resp` and `resp2` codes.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine the cause of the problem from `resp` and `resp2` codes. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP039S
 
 * **Full message** - ZDTP039S Release agent failed. resp:<xx>, resp2:<xx>, rcode:<xx>.
 * **Explanation** - `EXEC CICS RELEASE PROGRAM` for `ZDTAGTxx/ZDTSOAPH` module has failed.
 * **System action** - CICS code module operation continues.
-* **User response** - Determine the cause of the problem from `resp` and `resp2` codes.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine the cause of the problem from `resp` and `resp2` codes. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP040S
 
 * **Full message** - ZDTP040S CICS Receive failed. resp:<xx>, resp2:<xx>.
 * **Explanation** - `EXEC CICS RECEIVE DATA` has failed.
 * **System action** - User command for `DTAX` transaction is not received and hence is not processed successfully.
-* **User response** - Determine the cause of the problem from `resp` and `resp2` codes.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Determine the cause of the problem from `resp` and `resp2` codes. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP041S
 
@@ -456,9 +414,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 * **Full message** - ZDTP059S Freemain failed for DSA area @@
 * **Explanation** - Bad address for DSA storage free from CICS chain.
 * **System action** - No attempt to free main storage.
-* **User response** - The storage chain is broken or corrupt.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - The storage chain is broken or corrupt. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP060S
 
@@ -647,9 +603,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 * **Full message** - ZDTP016W zDC <zdcName> INIT Failed.
 * **Explanation** - The PLT program is unable to connect to the collection system.
 * **System action** - Execution continues. The PLT program tries to reconnect with the collection system during the next 5 minute window.
-* **User response** - Check if the zRemote code module is up and running and connected to Dynatrace. If not, start the service that is down.
-
-  If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+* **User response** - Check if the zRemote code module is up and running and connected to Dynatrace. If not, start the service that is down. If the problem persists, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## ZDTP017W
 

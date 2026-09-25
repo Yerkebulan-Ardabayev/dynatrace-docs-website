@@ -772,6 +772,7 @@ To obtain the correct startup parameters, go to **Instrumentation wizard** in Dy
 2. Select the mobile application that you want to configure.
 3. Select **More** (**…**) > **Edit** in the upper-right corner of the tile with your application name.
 4. From the application settings, select **Instrumentation wizard**.
+
 5. Select **Android**, and then go to either the **Groovy (build.gradle)** or the **Kotlin (build.gradle.kts)** tab.
 6. Use the preconfigured snippet (see the step called **Apply the Dynatrace plugin and add the plugin configuration**) that is already populated with the configuration values from your mobile app.
 

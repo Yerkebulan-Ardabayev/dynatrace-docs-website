@@ -24,6 +24,36 @@ Designate an ActiveGate group or groups that will remotely connect to your Micro
 Dynatrace Hub provides a unified workflow to enable and manage extensions that ingest Microsoft SQL Server data into your Dynatrace environment.
 
 Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
 
 1. In Dynatrace Hub, select and install the **Microsoft SQL Server** extension. This enables the extension in your environment.
 2. Add a monitoring configuration so that the extension can begin collecting data.

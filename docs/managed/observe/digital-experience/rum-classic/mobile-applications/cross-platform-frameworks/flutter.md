@@ -30,6 +30,7 @@ For detailed technical documentation, see the [Dynatrace Flutter Plugin﻿](http
 1. In Dynatrace, go to **Mobile**.
 2. Select **Create mobile app**.
 3. Enter a name for your application and select **Create mobile app**. The application settings page opens.
+
 4. From the application settings, select **Instrumentation wizard** > **Flutter**.
 5. Follow the steps described in the wizard.
 

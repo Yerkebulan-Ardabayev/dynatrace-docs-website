@@ -38,6 +38,7 @@ To modify the beacon endpoint URL for an auto-injected application
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **General settings** > **Beacon endpoint**.
+
 5. In the **Type** dropdown list, select **OneAgent**.
 6. In **URL**, enter the relative beacon endpoint URL.
 
@@ -61,6 +62,7 @@ If you want the RUM beacons of an auto-injected application to be handled by you
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **General settings** > **Beacon endpoint**.
+
 5. In the **Type** dropdown list, select **Cluster ActiveGate**.
 
 For this configuration, Dynatrace applies the [beacon origin allowlist](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-beacon-domain-allowlist "Specify the origins from which cross-origin RUM beacons should be accepted.") to the RUM beacons of your application.

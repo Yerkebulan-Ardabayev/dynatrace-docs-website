@@ -76,9 +76,7 @@ Select **Analyze execution details** at the top of the details page or **Analyze
 
 Any response body and captured [HTTP metrics](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/http-monitor-metrics-classic "Learn about the performance metrics collected for HTTP monitors.") are also displayed along with the HTTP status code per request. If the monitor contains [credentials](/managed/manage/credential-vault "Store and manage credentials in the credential vault.") sent in the request URL, HTTP header values, or request body, the JSON only displays the credential ID in the corresponding element. (This feature requires ActiveGate version 1.229.)
 
-You can limit the display of sensitive information (such as credentials returned in the response body) in execution details by selecting **Do not store and display request and response bodies, header values, and peer certificate details in execution details** in [monitor settings](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.").
-
-You need to do this for each request you wish to limit the display of. Request and response bodies, values of request and response headers, and peer certificate details are then replaced by placeholder text.
+You can limit the display of sensitive information (such as credentials returned in the response body) in execution details by selecting **Do not store and display request and response bodies, header values, and peer certificate details in execution details** in [monitor settings](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors."). You need to do this for each request you wish to limit the display of. Request and response bodies, values of request and response headers, and peer certificate details are then replaced by placeholder text.
 
 ![Execution details hidden fields](https://dt-cdn.net/images/analyze-execution-details-hidden-948-0e70ad67cb.png)
 

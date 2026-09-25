@@ -181,7 +181,7 @@ Kubernetes cluster or namespace
    * **Namespace**: Find and select the required namespace, and then select **More** (**…**) > **Settings** in the upper-right corner of the namespace overview page.
 4. Select **Trace sampling for HTTP requests** or **Trace sampling for RPC requests**.
 
-### 2. Modify trace sampling
+### 1. Modify trace sampling
 
 Adjust the trace sampling for your HTTP or RPC requests.
 

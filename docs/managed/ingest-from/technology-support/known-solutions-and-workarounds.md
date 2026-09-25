@@ -441,6 +441,7 @@ Turn off extended Ext JS event capturing in Real User Monitoring settings.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Capturing** > **Custom configuration properties**.
+
 5. Select **Add a custom configuration property** and enter `exteventsoff=1`.
 
 If certain user actions are not captured afterwards, use the JavaScript API to trigger actions manually.

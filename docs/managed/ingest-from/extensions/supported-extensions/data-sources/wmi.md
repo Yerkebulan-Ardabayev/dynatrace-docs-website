@@ -28,6 +28,36 @@ First, check [Dynatrace Hub﻿](https://www.dynatrace.com/hub/?query=wmi) to see
 Dynatrace Hub provides a unified workflow to enable and manage extensions that will ingest WMI data into your Dynatrace environment.
 
 Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
 
 1. In Dynatrace Hub, search for a WMI extension. You can use the "WMI" keyword to filter results.
 2. Select and install the extension you're interested in. This enables the extension in your monitoring environment.

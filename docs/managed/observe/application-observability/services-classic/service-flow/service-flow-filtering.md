@@ -19,6 +19,7 @@ The general **Service flow** filtration procedure looks like this:
 1. Go to **Services**.
 2. Select the service you want to analyze.
 3. On the service overview page, under **Understand dependencies**, select **View service flow**.
+
 4. Within **Service flow**, select a called service to define the sequence of services you want to analyze.  
    The [pane on the right](/managed/observe/application-observability/services-classic/service-flow/service-flow-metrics#side-pane "Learn about the service flow metrics that measure the performance of the service calls that are triggered by each service request in your environment.") directly opens to the **Passing transactions** tab.
 5. To create a filter for the selected service sequence, do one of the following:
@@ -49,6 +50,7 @@ To focus **Service Flow** on these calls
 1. Go to **Services**.
 2. Select the service you want to analyze.
 3. On the service overview page, under **Understand dependencies**, select **View service flow**.
+
 4. Within **Service flow**, select a called service to define the sequence of services you want to analyze. In our example, it's `easyTravel-Business`.  
    The **Passing transactions** tab appears on the right side of the page.
 5. To create a filter for the selected service sequence, do one of the following:

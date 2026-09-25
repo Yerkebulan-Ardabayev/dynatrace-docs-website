@@ -63,6 +63,7 @@ To create a custom injection rule that specifies the injection point in the HTML
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Custom injection rules**.
+
 5. Under **Define custom injection rules**, select **Add custom rule**.
 6. Define the **Operator** and, if required, the corresponding **URL pattern** to control to which pages your custom injection rule applies.
 7. Under **Rule**, select either **Before specific HTML** or **After specific HTML**, and enter the corresponding HTML pattern.
@@ -76,6 +77,7 @@ To disable injection for one or more pages within your application
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Custom injection rules**.
+
 5. Under **Define custom injection rules**, select **Add custom rule**.
 6. Define the **Operator** and, if required, the corresponding **URL pattern** to control to which pages your custom injection rule applies.
 7. Under **Rule**, select **Do not inject**.
@@ -91,6 +93,7 @@ To configure the snippet format for automatic injection
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Automatic injection**.
+
 5. Under **Snippet format**, select the desired format.
 
 To learn more about the different snippet formats, refer to [Select a snippet format in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats "Select a format for the RUM JavaScript snippet that best fits your specific use case").
@@ -162,6 +165,7 @@ To disable the cache control header optimizations
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Automatic injection**.
+
 5. Turn off **Optimize the value of cache control headers for use with Dynatrace Real User Monitoring Classic**.
 6. Select **Save changes**.
 
@@ -180,6 +184,7 @@ First, you need to suppress automatic injection as described in [Disable injecti
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Injection** > **Manual insertion**.
 5. Select the required [snippet format](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats "Select a format for the RUM JavaScript snippet that best fits your specific use case"), and copy the provided snippet.
 6. Insert the snippet in your HTML before any other scripts.

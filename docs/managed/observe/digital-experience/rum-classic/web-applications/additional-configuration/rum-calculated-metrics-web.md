@@ -80,6 +80,7 @@ Once a metric has been created, you can't change its properties.
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Metrics**.
 5. Select the metric you want to manage and check its properties or perform one of the following actions.
 

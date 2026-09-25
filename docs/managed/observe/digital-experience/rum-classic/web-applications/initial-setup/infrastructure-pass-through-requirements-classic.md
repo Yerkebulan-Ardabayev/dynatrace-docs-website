@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 * Reference
 * 9-min read
-* Updated on Sep 15, 2026
+* Updated on Sep 18, 2026
 
 Real User Monitoring Classic (RUM Classic) operates within an HTTP ecosystem and relies on a set of requests, headers, and cookies to capture and report real user data, and to link it with backend distributed traces. For RUM Classic to work as expected, your infrastructure—including firewalls, proxies, load balancers, content delivery networks, web servers, and any other components in the request path—must allow these requests, headers, and cookies to pass through unaltered. In addition, OneAgent uses the headers described in [Span and trace context propagation in Distributed Traces Classic](/managed/observe/application-observability/distributed-traces/context-propagation "Understand span and trace context propagation in Dynatrace and how to set them up.") for distributed tracing, which also need to pass through your infrastructure.
 
@@ -88,7 +88,7 @@ RUM Classic uses the following HTTP headers, all of which must be allowed to pas
 | [`Expires`﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Expires) | Set for responses to [requests for the RUM monitoring code](#requests-monitoring-code) when they are handled via the Dynatrace CDN. |
 | [`Last-Modified`﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Last-Modified) | When [cache control header optimizations](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection#cache-header-optimization "Configure automatic injection of the RUM JavaScript into the pages of your applications") are active, OneAgent subtracts 1 second from the original header value. The header is also set for responses to [requests for the RUM monitoring code](#requests-monitoring-code). |
 | [`Server-Timing`﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Server-Timing) | Set by OneAgent to carry information relevant for RUM correlation. |
-| [`Set-Cookie`﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie) | Set by OneAgent to place the [`dtCookie`](#cookies-web). |
+| [`Set-Cookie`﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie) | Set by OneAgent to place the [`dtCookie`](#cookies-web). Responses cached on infrastructure components such as web servers, proxies, caching servers, and CDNs must not include this cookie. |
 | [`Strict-Transport-Security`﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security) | Set by the [beacon endpoint](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server.") on the Cluster ActiveGate. |
 | [`Timing-Allow-Origin`﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Timing-Allow-Origin) | Set by OneAgent to allow the RUM JavaScript to access the content of the `Server-Timing` header in cross-origin scenarios. Also set for responses to [requests for the RUM monitoring code](#requests-monitoring-code) when they are handled via the Dynatrace CDN. |
 | [`Transfer-Encoding`﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Transfer-Encoding) | Read by OneAgent during HTML injection. |
@@ -96,7 +96,7 @@ RUM Classic uses the following HTTP headers, all of which must be allowed to pas
 
 ### Cookies
 
-RUM Classic uses the following cookies. All of these must be able to reach Dynatrace. For more details on how Dynatrace uses cookies, and for an explanation of the `<suffix>` used in the table, see [Cookies and client-side storage for RUM and Session Replay](/managed/manage/data-privacy-and-security/data-privacy/rum-cookies-and-web-storage "Learn how Dynatrace RUM and Session Replay use cookies, web storage, and IndexedDB.").
+RUM Classic uses the following cookies, which must be able to reach Dynatrace. Configure infrastructure components such as web servers, proxies, caching servers, and CDNs to ignore these cookies in requests and responses. For more details on how Dynatrace uses cookies, and for an explanation of the `<suffix>` used in the table, see [Cookies and client-side storage for RUM and Session Replay](/managed/manage/data-privacy-and-security/data-privacy/rum-cookies-and-web-storage "Learn how Dynatrace RUM and Session Replay use cookies, web storage, and IndexedDB.").
 
 | Cookie | Max size | Purpose |
 | --- | --- | --- |

@@ -41,9 +41,11 @@ To add a user tag rule
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Capturing** > **User tags**.
 5. Select **Add user tag rule**.
 6. Select a **Source type** and source name for this user tag rule.
+
    Available source types
 
    * **CSS selector**. Use when the user's identifier is visible on the page. This mechanism captures the first match `innerText/textContent` value (available for browsers that support `querySelector`). To retrieve a specific attribute value of the element, append the '@' symbol followed by the attribute name, for example, `#someDomElement@someAttribute`.

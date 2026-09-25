@@ -34,6 +34,7 @@ To add a request error rule
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Errors** > **Request errors**.
 5. Select **Add request error rule**.
 6. Use at least one of the following options:
@@ -84,6 +85,7 @@ To delete or disable the **HTTP 970-979** request error rule
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Errors** > **Request errors**.
 5. Find the **HTTP 970-979** error rule, and do one of the following:
 
@@ -110,6 +112,7 @@ To add a custom error rule
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Errors** > **Custom errors**.
 5. Select **Add custom error rule**.
 6. Provide the conditions that Dynatrace should use to identify the custom error.
@@ -159,6 +162,7 @@ To ignore all JavaScript errors in Apdex calculations
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Errors** > **JavaScript errors**.
 5. Turn on **Ignore JavaScript errors in Apdex calculations**.
 

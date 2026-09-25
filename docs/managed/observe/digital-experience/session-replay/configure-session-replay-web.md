@@ -36,6 +36,7 @@ To limit the number of sessions recorded with Session Replay
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **General settings** > **Enablement and cost control**.
+
 5. Under **Session Replay**, enter the new value for **Cost and traffic control**.
 
 ### Calculate number of sessions recorded with SR
@@ -130,6 +131,7 @@ To enable Session Replay opt-in mode
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **General settings** > **Data privacy** > **Session Replay**.
+
 5. Turn on **Enable opt-in mode for Session Replay**.
 
 With these configuration settings, Session Replay is inactive in your end users' browsers, and sessions are not recorded until the [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) method is called from the application.
@@ -154,6 +156,7 @@ To exclude pages from recording
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **General settings** > **Data privacy** > **Session Replay**.
+
 5. Under **URL exclusion**, select **Add exclusion rule**.
 
    ![URL exclusion](https://dt-cdn.net/images/url-exclusion-1343-e10f29c49d.png)
@@ -212,6 +215,7 @@ To configure Session Replay masking
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **General settings** > **Data privacy** > **Session Replay**.
+
 5. Under **Content masking preferences**, select a [predefined masking option](#masking-preset-options) for recording and playback.
 6. If you selected **Allow list** or **Block list**, add the desired masking rules.
 
@@ -256,6 +260,7 @@ To enable and configure resource capture
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Capturing** > **Resource capture for Session Replay**.
 5. Turn on **Enable resource capture**.
 6. Optional To avoid capturing resources for certain pages, select **Add exclusion rule**, enter a regular expression, and then select **Add rule**.
@@ -341,6 +346,7 @@ To disable the use of web workers by Session Replay
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Capturing** > **Custom configuration properties**.
+
 5. Select **Add a custom configuration property**.
 6. Enter the property `srbw=0` and save the changes.
 

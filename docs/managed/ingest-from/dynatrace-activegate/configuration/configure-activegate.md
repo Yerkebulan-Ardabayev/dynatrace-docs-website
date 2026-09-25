@@ -623,7 +623,7 @@ Similarly, the entire `[http.client.external]` section does not exist, then all 
 
 | Property | Default value | Description |
 | --- | --- | --- |
-| `reverseDnsLookupEnabled` | `true` | ActiveGate version 1.255+ Enabled or disables Fully Qualified Domain Name resolution using reverse DNS lookup. When enabled and standard FQDN resolution produces no result, the attempt to resolve the name using reverse DNS lookup is made. ActiveGates that were previously depicted by the IP address may now be presented by the hostname. Possible values: `true` or `false`. |
+| `reverseDnsLookupEnabled` | `true` | ActiveGate version 1.255+Enabled or disables Fully Qualified Domain Name resolution using reverse DNS lookup. When enabled and standard FQDN resolution produces no result, the attempt to resolve the name using reverse DNS lookup is made. ActiveGates that were previously depicted by the IP address may now be presented by the hostname.Possible values: `true` or `false`. |
 
 ## Trusted root certificate
 

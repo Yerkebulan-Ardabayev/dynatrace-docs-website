@@ -76,6 +76,61 @@ To view screenshots from private Synthetic locations, your Synthetic-enabled Act
 
 Visit [Can't see screenshots in browser monitor results﻿](https://dt-url.net/mfw2xmb) in the Dynatrace Community for more information.
 
+![Chat button](https://dt-cdn.net/images/chat-button-94-3f05b29976.png)
+
+Chat button
+
+–>
+
+![Chat button](https://dt-cdn.net/images/chat-button-94-3f05b29976.png)
+
+Chat button
+
+–>
+
+![Chat button](https://dt-cdn.net/images/chat-button-94-3f05b29976.png)
+
+Chat button
+
+–>
+
+![Chat button](https://dt-cdn.net/images/chat-button-94-3f05b29976.png)
+
+Chat button
+
+–>
+
+![Chat button](https://dt-cdn.net/images/chat-button-94-3f05b29976.png)
+
+Chat button
+
+–>
+
+![Chat button](https://dt-cdn.net/images/chat-button-94-3f05b29976.png)
+
+Chat button
+
+–>
+
+![Chat button](https://dt-cdn.net/images/chat-button-94-3f05b29976.png)
+
+Chat button
+
+–>
+
+![Chat button](https://dt-cdn.net/images/chat-button-94-3f05b29976.png)
+
+Chat button
+
+–>
+
+![Chat button](https://dt-cdn.net/images/chat-button-94-3f05b29976.png)
+
+Chat button
+
+–>
+–>
+
 ## Availability
 
 The **Availability** card shows overall availability across all monitor locations, with annotations for global/local outages and global/local missing data (as when the monitor is disabled).

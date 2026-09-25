@@ -120,6 +120,7 @@ If you don't have the OneAgent distribution package, you can download it from yo
 2. Select the mobile application that you want to configure.
 3. Select **More** (**…**) > **Edit** in the upper-right corner of the tile with your application name.
 4. From the application settings, select **Instrumentation wizard**.
+
 5. Select **iOS**, and then switch to the **Developer** tab.
 6. Select **Download OneAgent**.
 

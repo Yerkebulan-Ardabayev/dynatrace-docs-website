@@ -31,6 +31,7 @@ To select which interaction types Dynatrace should capture automatically
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Capturing** > **Advanced setup**.
+
 5. Scroll down to the **Wrappers for addEventListener and attachEvent** section, and use the toggles to include or exclude the interaction types from being captured. Some of the options are available for both **Global event capture** and `addEventListener`/`attachEvent` modes.
 
    Difference between Global event capture and addEventListener / attachEvent options

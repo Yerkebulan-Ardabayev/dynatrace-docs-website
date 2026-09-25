@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detect
 
 * Explanation
 * 7-min read
-* Updated on Jul 27, 2026
+* Updated on Sep 07, 2026
 
 An anomaly detection configuration relies on several components:
 

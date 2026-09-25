@@ -20,6 +20,7 @@ To select the RUM JavaScript version
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **RUM JavaScript updates**.
+
 5. Select the required RUM JavaScript version from the dropdown list.
 6. Select **Save changes**.
 

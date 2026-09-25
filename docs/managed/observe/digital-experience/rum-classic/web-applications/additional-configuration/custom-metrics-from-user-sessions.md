@@ -762,7 +762,6 @@ We've identified the following limitations for USQL metric events:
 
 * You can create up to 500 user session custom metrics per environment.
 * You can create up to 100 user action custom metrics per environment.
-
 * Synthetic user session data is not factored into values of USQL metric events; only real-user data is included.
 * Dynatrace updates USQL metric events each time a session closes. This means that live session data is not factored into USQL custom metric values; only closed session data is included.
 * The `DISTINCT` keyword used in [USQL](/managed/observe/digital-experience/rum-classic/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") is not supported. If you have a query like `SELECT COUNT(DISTINCT country) from usersession`, it is not possible to create an equivalent USQL custom metric.

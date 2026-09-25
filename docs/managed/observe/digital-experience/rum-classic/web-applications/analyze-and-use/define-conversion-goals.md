@@ -22,6 +22,7 @@ To define a conversion goal for an application
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Behavior analytics** > **Conversion goals**.
 5. Select **Add goal**.
 6. Enter the name for the conversion goal, and configure other settings.

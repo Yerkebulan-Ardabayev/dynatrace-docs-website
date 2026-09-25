@@ -342,12 +342,12 @@ dynatrace-aws-logs.sh subscribe {--log-groups <your_log_group_list> | --log-grou
 
 | Command-line parameter | Environment variable | Description | Default value |
 | --- | --- | --- | --- |
-| `--log-groups` | `LOG_GROUPS_LIST` | A space-separated list of log group names you want to subscribe to. For example: `/aws/lambda/my-lambda /aws/apigateway/my-api`. |  |
+| `--log-groups` | `LOG_GROUPS_LIST` | A space-separated list of log group names you want to subscribe to. For example:`/aws/lambda/my-lambda /aws/apigateway/my-api`. |  |
 | `--log-groups-from-file` | `LOG_GROUPS_FILE` | A file listing the log groups you want to subscribe to. The file should contain each log group name on a separate line. |  |
 | `--filter-pattern` | `FILTER_PATTERN` | If set, it allows you to subscribe to a filtered stream of logs. | You subscribe to all logs in the log group. |
 | `--stack-name` | `STACK_NAME` | The name of the CloudFormation stack where you have deployed the resources. | `dynatrace-aws-logs` |
-| `--firehose-arn` | `FIREHOSE_ARN` | Specify to which Amazon Data Firehose the logs should be streamed by providing its ARN (Amazon Resource Name). **Usage recommendation:** Set this option if you have permission or performance issues with CloudFormation. | It will be extracted from the output of the CloudFormation stack used in the deploy step: either the `$DEFAULT_STACK_NAME` default value or the one specified with the `--stack-name <your_stack_name>` option. |
-| `--role-arn` | `ROLE_ARN` | The ARN of an IAM role that grants CloudWatch Logs permission to deliver ingested log events to the destination stream. **Usage recommendation:** Set this option if you have permission or performance issues with CloudFormation. | It will be extracted from the output of the CloudFormation stack used in the deploy step: either the `$DEFAULT_STACK_NAME` default value or the one specified with the `--stack-name <your_stack_name>` option. |
+| `--firehose-arn` | `FIREHOSE_ARN` | Specify to which Amazon Data Firehose the logs should be streamed by providing its ARN (Amazon Resource Name).**Usage recommendation:** Set this option if you have permission or performance issues with CloudFormation. | It will be extracted from the output of the CloudFormation stack used in the deploy step: either the `$DEFAULT_STACK_NAME` default value or the one specified with the `--stack-name <your_stack_name>` option. |
+| `--role-arn` | `ROLE_ARN` | The ARN of an IAM role that grants CloudWatch Logs permission to deliver ingested log events to the destination stream.**Usage recommendation:** Set this option if you have permission or performance issues with CloudFormation. | It will be extracted from the output of the CloudFormation stack used in the deploy step: either the `$DEFAULT_STACK_NAME` default value or the one specified with the `--stack-name <your_stack_name>` option. |
 
 ## Unsubscribe from log groups
 
@@ -383,7 +383,7 @@ dynatrace-aws-logs.sh unsubscribe {--log-groups <your_log_group_list> | --log-gr
 
 | Command-line parameter | Environment variable | Description | Default value |
 | --- | --- | --- | --- |
-| `--log-groups` | `LOG_GROUPS_LIST` | A space-separated list of log group names you want to unsubscribe from. For example: `/aws/lambda/my-lambda /aws/apigateway/my-api`. |  |
+| `--log-groups` | `LOG_GROUPS_LIST` | A space-separated list of log group names you want to unsubscribe from. For example:`/aws/lambda/my-lambda /aws/apigateway/my-api`. |  |
 | `--log-groups-from-file` | `LOG_GROUPS_FILE` | A file listing log groups you want to unsubscribe from, with each log group name on a separate line. |  |
 | `--stack-name` | `STACK_NAME` | The name of the CloudFormation stack where you have deployed the resources. | `dynatrace-aws-logs` |
 
@@ -617,7 +617,7 @@ For a complete list of parameters, see the deploy table below.
 
 | **Command-line parameter** | **Environment variable** | **Description** | **Default value** |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `--target-url` | `TARGET_URL` | Required The API URL to your Dynatrace SaaS environment logs ingest target. If you choose to use an existing environment ActiveGate, set it to your ActiveGate endpoint: `https://<your_activegate_IP_or_hostname>:9999/e/<your_environment_ID>` **Note:** To determine `<your_environment_ID>`, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments."). |  |  |  |  |  |
+| `--target-url` | `TARGET_URL` | Required The API URL to your Dynatrace SaaS environment logs ingest target.If you choose to use an existing environment ActiveGate, set it to your ActiveGate endpoint: `https://<your_activegate_IP_or_hostname>:9999/e/<your_environment_ID>`**Note:** To determine `<your_environment_ID>`, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments."). |  |  |  |  |  |
 | `--target-api-token` | `TARGET_API_TOKEN` | Required Your API token. For instructions, see [Prerequisites](#dynatrace). |  |  |  |  |  |
 | `--require-valid-certificate` | `REQUIRE_VALID_CERTIFICATE` | Optional If `true`, the log forwarder Lambda function verifies the SSL certificate of your Dynatrace environment URL. | `false` |  |  |  |  |
 | `--stack-name` | `STACK_NAME` | Optional The name of the CloudFormation stack where you want to deploy the resources. | `dynatrace-aws-logs` |  |  |  |  |

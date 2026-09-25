@@ -134,6 +134,7 @@ Application settings
 1. Go to **Mobile**.
 2. Select the mobile application that you want to configure.
 3. Select **More** (**…**) > **Edit** in the upper-right corner of the tile with your application name.
+
 4. From the application settings, select **Symbol files**.
 5. Under **Android**, select **Upload files**.
 6. Provide the **Package name**—the application package name, such as `com.yourcompany.app`.
@@ -410,6 +411,7 @@ Application settings
 1. Go to **Mobile**.
 2. Select the mobile application that you want to configure.
 3. Select **More** (**…**) > **Edit** in the upper-right corner of the tile with your application name.
+
 4. From the application settings, select **Symbol files**.
 5. Under **iOS** or **tvOS**, select **Upload files**.
 6. Provide the **Bundle identifier**—this is the application `bundleId` that can be found in **App's target** > **General** > **Bundle Identifier**.
@@ -447,6 +449,7 @@ Application settings
 1. Go to **Mobile**.
 2. Select the mobile application that you want to configure.
 3. Select **More** (**…**) > **Edit** in the upper-right corner of the tile with your application name.
+
 4. From the application settings, select **Symbol files**.
 5. Under **React Native**, select **Upload files**.
 6. Select the **Platform** for which you want to upload a symbol file.
@@ -468,6 +471,7 @@ To list the uploaded symbol files for a particular application
 1. Go to **Mobile**.
 2. Select the mobile application that you want to configure.
 3. Select **More** (**…**) > **Edit** in the upper-right corner of the tile with your application name.
+
 4. From the application settings, select **Symbol files**.
 
 To list the uploaded source maps and symbol files for all your applications

@@ -22,6 +22,15 @@ You should start OneAgent manually in the following cases:
 * If you've [disabled the automatic OneAgent startup](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-android-app/instrumentation-via-plugin/configure-plugin-for-instrumentation#disable-auto-startup "Learn how to configure the Dynatrace Android Gradle plugin to adjust the auto-instrumentation process.")
 * If you're using [standalone manual instrumentation](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/manual-instrumentation "Use OneAgent SDK for Android to manually instrument your Android application.") instead of auto-instrumentation
 
+---
+
+changelog:
+
+* 2026-03-26 Added section which explains that OneAgent can only be started once per application.
+* 2026-03-05 Updated the URL of JavaDoc for OneAgent SDK for Android
+
+---
+
 Use the [`Dynatrace.startup(Application, Configuration)`﻿](https://docs.dynatrace.com/javadoc/oneagent/android/agent/com/dynatrace/android/agent/Dynatrace.html#startup(android.app.Application,com.dynatrace.android.agent.conf.Configuration)) API method, and start OneAgent manually in the [`Application.onCreate`﻿](https://developer.android.com/reference/android/app/Application#onCreate()) method.
 
 Java

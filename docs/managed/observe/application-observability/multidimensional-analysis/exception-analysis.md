@@ -49,12 +49,12 @@ You can export the table data in a comma-separated values (CSV) file.
 
 ## View
 
-* The chart shows the top 15 dimensions (all other dimensions are aggregated into a single dimension) and the table beneath contains up to 85 more dimensions, bringing the total number of chartable dimensions to 100. The view instantly adapts to the changes you make in the **Configure view** pane.
+The chart shows the top 15 dimensions (all other dimensions are aggregated into a single dimension) and the table beneath contains up to 85 more dimensions, bringing the total number of chartable dimensions to 100. The view instantly adapts to the changes you make in the **Configure view** pane.
 
-  In the **Actions** column of the table, you can select:
+In the **Actions** column of the table, you can select:
 
-  + **Filter**  to filter the view for the specified dimension.
-  + **More** (**…**) to access further analysis options from the [**Analyze** menu](/managed/observe/application-observability/services-classic/context-specific-drill-down#analyze-menu "Learn about easy navigation and filtering for services analysis.").
+* **Filter**  to filter the view for the specified dimension.
+* **More** (**…**) to access further analysis options from the [**Analyze** menu](/managed/observe/application-observability/services-classic/context-specific-drill-down#analyze-menu "Learn about easy navigation and filtering for services analysis.").
 * The chart uses [trace and request data](/managed/observe/application-observability/multidimensional-analysis#data-source "Configure a multidimensional analysis view and save it as a calculated metric."), which has different data retention periods. For timeframes containing data older than 10 days, you can turn on the **Show data retention** toggle to better understand which data is available for which period directly from the chart.
 
 ## Exception details

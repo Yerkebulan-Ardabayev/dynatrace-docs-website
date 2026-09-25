@@ -86,6 +86,7 @@ To configure these settings
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Capturing** > **Content capture**.
+
 5. Add your desired setting.
 
    * `Threshold`:  
@@ -118,6 +119,7 @@ To set the key performance metric for an application
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. Select **General settings** > **Load actions** / **XHR actions** /**Custom actions**.
 5. Under **Key performance metric**, select the key performance metric from the list for each of the user action types.
 
@@ -127,6 +129,7 @@ To disable capturing Visually complete and Speed index timings
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Capturing** > **Content capture**.
+
 5. Turn off the **Visually complete & Speed index** setting.
 
 ### Use Visually complete with single page applications

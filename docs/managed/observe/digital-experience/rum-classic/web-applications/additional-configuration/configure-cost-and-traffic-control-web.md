@@ -21,6 +21,7 @@ To limit the number of user sessions to be analyzed
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **General settings** > **Enablement and cost control**.
+
 5. Under **Real User Monitoring**, enter a value of less than `100` in the **Cost and traffic control** field. The default value of this field is `100`.
 
 With this setting defined, Dynatrace analyzes an evenly distributed number of user sessions that equates to the percentage of user sessions that you've specified.

@@ -45,14 +45,15 @@ The view in this example is configured with the metric **Fetch count** filtered 
 
 Fetch count in top database statements analysis
 
-* You can export the table data in a comma-separated values (CSV) file.
+You can export the table data in a comma-separated values (CSV) file.
 
-  1. Select **Export** and choose one of the following options.
+1. Select **Export** and choose one of the following options.
 
-     | Option | Exported data | Fields | Number of entries |
-     | --- | --- | --- | --- |
-     | **Only displayed data** | The currently displayed area of the table, taking into account applied filters | Only visible data | Up to 100 top dimensions |
-     | **All available data** | All table data | All the available data related to top dimensions | Up to 100 top dimensions |
+   | Option | Exported data | Fields | Number of entries |
+   | --- | --- | --- | --- |
+   | **Only displayed data** | The currently displayed area of the table, taking into account applied filters | Only visible data | Up to 100 top dimensions |
+   | **All available data** | All table data | All the available data related to top dimensions | Up to 100 top dimensions |
+
 * The chart uses [trace and request data](/managed/observe/application-observability/multidimensional-analysis#data-source "Configure a multidimensional analysis view and save it as a calculated metric."), which has different data retention periods. For timeframes containing data older than 10 days, you can turn on the **Show data retention** toggle to better understand which data is available for which period directly from the chart.
 
 ## Analyze individual SQL statements

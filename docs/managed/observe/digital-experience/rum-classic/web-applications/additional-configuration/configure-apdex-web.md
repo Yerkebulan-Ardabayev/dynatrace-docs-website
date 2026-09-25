@@ -26,6 +26,7 @@ As a workaround, you can manually implement the standard Apdex calculation using
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. Select **General settings** > **Load actions** / **XHR actions** /**Custom actions**.
 5. Use the sliders under **Key performance metric thresholds** to select the values that determine a user action as **Satisfactory**, **Tolerable**, and **Frustrating**.
 6. Under **Load actions** and **XHR actions**, use the dropdown list to select the key performance metric that should be used for Apdex calculation.

@@ -73,6 +73,7 @@ Create a new mobile application in Dynatrace and download the configuration file
 1. In Dynatrace, go to **Mobile**.
 2. Select **Create mobile app**.
 3. Enter a name for your application and select **Create mobile app**. The application settings page opens.
+
 4. From the application settings, select **Instrumentation wizard** > **.NET MAUI**.
 5. Under step 2, select **Download dynatrace.config.json** to get the configuration file.
 
@@ -541,10 +542,8 @@ Agent.Instance.ReportCrashWithException("CrashWithExceptionObj", exception);
 The time when the crash details are sent to Dynatrace depends on your mobile application operating system.
 
 * **Android**
-
   In general, the crash details are sent immediately after the crash, so the user doesn’t have to relaunch the application. However, in some cases, the application should be reopened within 10 minutes so that the crash report is sent. Note that Dynatrace doesn't send crash reports that are older than 10 minutes (as such reports can no longer be correlated on the Dynatrace Cluster).
 * **iOS**
-
   The crash details are sent only when the user reopens the mobile application (so on the next application launch). However, if the user doesn't open the application within 10 minutes, the crash report is deleted. This is because Dynatrace doesn't send crash reports that are older than 10 minutes (as such reports can no longer be correlated on the Dynatrace Cluster).
 
 Reporting a crash forces a user session to be completed. Any subsequent actions are included in a new user session.

@@ -39,6 +39,36 @@ Prometheus extensions can run locally on a OneAgent (recommended) or remotely on
 * When monitored remotely, the ActiveGates belonging to an ActiveGate group that you'll designate for remote monitoring need to be able to connect to the host where Prometheus metrics originate.
 
 Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
+–>
+
+Required permission: **Change monitoring settings**
 
 ## Step 2 Add extension to environment
 

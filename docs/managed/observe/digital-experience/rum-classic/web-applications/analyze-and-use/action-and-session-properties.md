@@ -152,6 +152,7 @@ To create a metric from your web application settings
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Metrics**, and then select **Add metric**.
 5. Select the required metric, and specify a **Metric name** and **Metric key for API usage**.
 6. Optional In **Filter by**, set the required filters. For example, you can filter by user action properties.

@@ -40,6 +40,7 @@ To modify the RUM monitoring code URL path for an auto-injected application
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Automatic injection**.
+
 5. In the **Real User Monitoring code source** dropdown list, select **OneAgent**.
 6. In **Specify path for RUM monitoring code**, enter the relative monitoring code URL path.
 
@@ -67,6 +68,7 @@ If you want the monitoring code for an auto-injected application to be requested
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Automatic injection**.
+
 5. In the **Real User Monitoring code source** dropdown list, select **CDN**.
 
 This configuration is effective for both automatic injection and [manual insertion for pages of an auto-injected application](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications"). Using it, filenames previously starting with `ruxitagentjs_` will start with `ruxitagent_` instead.

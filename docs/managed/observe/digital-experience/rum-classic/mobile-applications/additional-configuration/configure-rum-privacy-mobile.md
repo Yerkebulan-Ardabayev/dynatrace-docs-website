@@ -49,6 +49,7 @@ To activate the opt-in mode for mobile applications
 1. Go to **Mobile**.
 2. Select the mobile application that you want to configure.
 3. Select **More** (**…**) > **Edit** in the upper-right corner of the tile with your application name.
+
 4. From the application settings, select **General** > **Data privacy**.
 5. Turn on **Enable user opt-in mode**.
 6. Update your application's configuration file (build file for Android, `Info.plist` for iOS, and `dynatrace.config.<extension>` for cross-platform frameworks) by adding a special flag or key that enables opt-in mode.

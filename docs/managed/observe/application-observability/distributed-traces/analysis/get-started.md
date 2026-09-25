@@ -19,6 +19,7 @@ To get started with a distributed trace analysis
 
 1. Go to **Distributed Traces**.
 2. Optional Use the **Overview** chart to understand the request count and response time over the selected timeframe.
+
    Data retention
 
    The chart uses [trace and request data](/managed/observe/application-observability/multidimensional-analysis#data-source "Configure a multidimensional analysis view and save it as a calculated metric."), which has different data retention periods. For timeframes containing data older than 10 days, you can turn on the **Show data retention** toggle to better understand which data is available for which period directly from the chart.

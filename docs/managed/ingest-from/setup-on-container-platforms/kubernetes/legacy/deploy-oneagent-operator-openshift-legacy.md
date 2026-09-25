@@ -27,9 +27,10 @@ Deploy with Helm
 
 Prerequisites
 
-* Generate an [API token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") and a [PaaS token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.") in your Dynatrace environment.
+Generate an [API token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") and a [PaaS token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.") in your Dynatrace environment.
 
-  Make sure you have the **Access problem and event feed, metrics, and topology** setting enabled for the API token.
+Make sure you have the **Access problem and event feed, metrics, and topology** setting enabled for the API token.
+
 * Pods must allow egress to your Dynatrace environment or to your Environment ActiveGate in order for metric routing to work properly.
 * See [Support lifecycle](/managed/ingest-from/technology-support/support-model-and-issues "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues") for supported OpenShift versions.
 
@@ -291,9 +292,10 @@ Prerequisites
 
 Prerequisites
 
-* Generate an [API token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") and a [PaaS token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.") in your Dynatrace environment.
+Generate an [API token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") and a [PaaS token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.") in your Dynatrace environment.
 
-  Make sure you have the **Access problem and event feed, metrics, and topology** setting enabled for the API token.
+Make sure you have the **Access problem and event feed, metrics, and topology** setting enabled for the API token.
+
 * Pods must allow egress to your Dynatrace environment or to your Environment ActiveGate in order for metric routing to work properly.
 * See [Support lifecycle](/managed/ingest-from/technology-support/support-model-and-issues "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues") for supported OpenShift versions.
 * [Install Helm version 3﻿](https://helm.sh/docs/intro/install/).

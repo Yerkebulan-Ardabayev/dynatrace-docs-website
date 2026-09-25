@@ -69,7 +69,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Processor identifier `id` | text | - | Required |
-| Type `type` | enum | Processor type The element has these enums * `fieldsAdd` * `fieldsRemove` * `fieldsRename` * `dql` * `technology` * `drop` * `bucketAssignment` * `noStorage` * `securityContext` * `counterMetric` * `samplingAwareCounterMetric` * `valueMetric` * `histogramMetric` * `samplingAwareValueMetric` * `samplingAwareHistogramMetric` * `davis` * `bizevent` * `sdlcEvent` * `azureLogForwarding` * `securityEvent` * `costAllocation` * `productAllocation` * `smartscapeNode` * `smartscapeEdge` * `geoLookup` * `inlineLookup` | Required |
+| Type `type` | enum | Processor type The element has these enums * `fieldsAdd` * `fieldsRemove` * `fieldsRename` * `dql` * `technology` * `drop` * `bucketAssignment` * `noStorage` * `securityContext` * `counterMetric` * `samplingAwareCounterMetric` * `valueMetric` * `histogramMetric` * `samplingAwareValueMetric` * `samplingAwareHistogramMetric` * `davis` * `bizevent` * `sdlcEvent` * `azureLogForwarding` * `securityEvent` * `costAllocation` * `productAllocation` * `smartscapeNode` * `smartscapeEdge` * `geoLookup` * `dataMasking` * `inlineLookup` | Required |
 | Matcher (DQL) `matcher` | text | [See our documentation﻿](https://dt-url.net/bp234rv) | Required |
 | Description `description` | text | - | Required |
 | Sample data `sampleData` | text | - | Optional |
@@ -97,6 +97,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Cost allocation processor attributes `costAllocation` | [CostAllocationAttributes](#CostAllocationAttributes) | - | Required |
 | Product allocation processor attributes `productAllocation` | [ProductAllocationAttributes](#ProductAllocationAttributes) | - | Required |
 | Geo lookup processor attributes `geoLookup` | [GeoLookupAttributes](#GeoLookupAttributes) | - | Required |
+| Data masking processor attributes `dataMasking` | [DataMaskingAttributes](#DataMaskingAttributes) | - | Required |
 | Inline lookup processor attributes `inlineLookup` | [InlineLookupAttributes](#InlineLookupAttributes) | - | Required |
 
 ##### The `DqlAttributes` object
@@ -279,6 +280,13 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Geo field prefix `geoFieldPrefix` | text | Optional prefix for all output geo fields. If specified, output fields will be prefixed as .geo.. If omitted, output fields will be geo.. | Optional |
 | Output fields `outputFields` | Set<[GeoOutputField](#GeoOutputField)> | The geo fields to enrich the record with. If empty or not specified, the default fields (city name, country ISO code, country name, location) are used. The element has these enums * `cityName` * `countryIsoCode` * `countryName` * `location` * `continentIsoCode` * `continentName` * `postalCode` * `regionIsoCode` * `regionName` * `subdivisionIsoCodes` | Required |
 
+##### The `DataMaskingAttributes` object
+
+| Property | Type | Description | Required |
+| --- | --- | --- | --- |
+| Data masking fields `dataMaskingFields` | list | - | Required |
+| Masking rules `maskingRules` | [MaskingRule](#MaskingRule)[] | - | Required |
+
 ##### The `InlineLookupAttributes` object
 
 | Property | Type | Description | Required |
@@ -361,6 +369,14 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Edge type `edgeType` | text | - | Required |
 | Target type `targetType` | text | - | Required |
 | Target ID field name `targetIdFieldName` | text | - | Required |
+
+##### The `MaskingRule` object
+
+| Property | Type | Description | Required |
+| --- | --- | --- | --- |
+| Data type `dataType` | text | - | Required |
+| Masking strategy `maskingStrategy` | text | - | Required |
+| Masked output `maskedOutput` | text | - | Required |
 
 ##### The `ValueAssignmentFromFieldEntry` object
 

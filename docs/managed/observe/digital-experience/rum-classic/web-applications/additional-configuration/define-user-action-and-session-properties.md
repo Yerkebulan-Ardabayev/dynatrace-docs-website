@@ -78,6 +78,7 @@ To define a custom property
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Capturing** > **Session and action properties**.
+
 5. Select **Add property** > **Custom-defined property**.
 6. Configure the property:
 
@@ -105,6 +106,7 @@ To add a property from a property pack
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Capturing** > **Session and action properties**.
+
 5. Select **Add property** > **Property packs**, and then choose the required property pack from the dropdown list.
 6. In the **Configure properties** column, select **Add** for the properties that you want to add, and then select **Next**.
 7. Choose at least one [storage type](#storage-levels)—user action property, session property, or both—for each of the added properties.
@@ -172,6 +174,7 @@ You can integrate Adobe Analytics with Dynatrace to facilitate collaboration amo
   2. Select the application that you want to configure.
   3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
   4. From the application settings, select **Capturing** > **Session and action properties**.
+
   5. Scroll down to **Property usage quotas**.
 
 ## Related topics

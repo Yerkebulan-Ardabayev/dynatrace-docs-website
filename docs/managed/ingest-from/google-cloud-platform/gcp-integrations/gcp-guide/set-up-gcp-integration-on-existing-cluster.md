@@ -407,7 +407,7 @@ wget -q "https://github.com/dynatrace-oss/dynatrace-gcp-monitor/releases/latest/
    | `dynatraceUrlSecretName` | Optional You can specify the key to fetch the endpoint from GCP Secret Manager, instead of using `dynatraceUrl`. |  |
    |  |  |  |
    | `dynatraceLogIngestUrlSecretName` | Optional You can specify the key to fetch the endpoint from GCP Secret Manager, instead of using `dynatraceLogIngestUrl`. |  |
-   | `requireValidCertificate` | Optional If set to `true`, Dynatrace requires the SSL certificate of your Dynatrace environment.For Managed log ingestion with a new ActiveGate, we recommend setting this value to `false`. | `true` |
+   | `requireValidCertificate` | Optional If set to `true`, Dynatrace requires the SSL certificate of your Dynatrace environment. For Managed log ingestion with a new ActiveGate, we recommend setting this value to `false`. | `true` |
    | `selfMonitoringEnabled` | Optional Send custom metrics to GCP to quickly diagnose if `dynatrace-gcp-monitor` processes and sends metrics/logs to Dynatrace properly.For details, see [Self-monitoring metrics for the Dynatrace GCP integration](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp "Determine if your self-monitoring function is properly processing and sending logs to Dynatrace."). | `false` |
    | `serviceAccount` | Optional Name of the service account to be created. |  |
    | `dockerImage` | OptionalDynatrace GCP Monitor docker image. We recommend using the default value, but you can adapt it if needed. | `dynatrace/dynatrace-gcp-monitor:v1-latest` |

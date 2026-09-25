@@ -41,6 +41,7 @@ Also, if you created your environment before Dynatrace version 1.266, you can us
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **RUM JavaScript updates**.
+
 5. Select the **Latest IE7-10 supported** option from the dropdown list.
 
 ## Activate support for Angular 2–16
@@ -52,6 +53,7 @@ To enable support for Angular 2–16
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Capturing** > **Async web requests and SPAs**.
 5. Under **JavaScript framework support**, turn on the **Angular** toggle.
 6. Angular 12+ Enter the Angular package name.
@@ -95,6 +97,7 @@ To enable support for Angular 17+, perform the following actions.
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Capturing** > **Async web requests and SPAs**.
 5. Under **JavaScript framework support**, turn off the **Angular** toggle.
 6. Under **Generic support**, turn on the required options.
@@ -114,6 +117,7 @@ If the default exception handler is used, enable console error capture so that t
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Capturing** > **Custom configuration properties**.
+
 5. Select **Add a custom configuration property** and enter `cce=1`.
 
    `cce` stands for *capture console error*. When this option is enabled, the RUM JavaScript reports the first `Error` object or string that it can find in the arguments passed to the `console.error`.
@@ -273,6 +277,7 @@ If your application uses a JavaScript framework other than Angular, enable gener
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Capturing** > **Async web requests and SPAs**.
 5. Under **Generic support**, turn on the required options:
 
@@ -287,6 +292,7 @@ Depending on the XHR (AJAX) framework or architecture of your application, you m
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Capturing** > **Content capture**.
+
 5. Enable **Timed action support**.
 
 ## Exclude specific XHR calls from monitoring
@@ -308,6 +314,7 @@ To exclude XHR calls from monitoring
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Capturing** > **Exclusions** > **XHR exclusions**.
 5. Select **Add an XHR exclusion rule**, and specify a JavaScript regular expression that matches the URLs of the requests you want to exclude.
 

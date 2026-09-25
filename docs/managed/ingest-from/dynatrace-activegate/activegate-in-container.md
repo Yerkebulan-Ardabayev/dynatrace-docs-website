@@ -18,6 +18,7 @@ Dynatrace supports running ActiveGate in a container. As an example of a contain
 2. [Create an authentication token](/managed/ingest-from/dynatrace-activegate/activegate-security#generate-individual "Secure ActiveGates with dedicated tokens.")
 3. Determine the ActiveGate communication endpoints and authentication. Use the [GET connectivity information for ActiveGate](/managed/dynatrace-api/environment-api/deployment/activegate/get-activegate-connectivity "View the connectivity information for ActiveGate via Dynatrace API.") API.
 4. Get your kube-system namespace UUID
+
    How to extract the kube-system namespace UUID
 
    Run the command below and save the UUID from the output for later use.
@@ -1578,11 +1579,11 @@ Dynatrace built-in registry
    Options:
 
    * Optional You can change the image version by using different version tag
+
      Versions
 
      + `raw`—The latest available image
      + `1.sprint.patchlevel-raw`—An image for a particular ActiveGate version (for example, `1.297.0-raw`)
-
    * Optional Enable AppArmor if available.
 
      AppArmor profile

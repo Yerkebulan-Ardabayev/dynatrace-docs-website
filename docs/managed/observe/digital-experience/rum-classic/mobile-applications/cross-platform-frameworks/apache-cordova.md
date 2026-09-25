@@ -25,6 +25,7 @@ For detailed technical documentation, see the [Dynatrace Cordova plugin﻿](http
 1. In Dynatrace, go to **Mobile**.
 2. Select **Create mobile app**.
 3. Enter a name for your application and select **Create mobile app**. The application settings page opens.
+
 4. From the application settings, select **Instrumentation wizard** and select your mobile app platform, for example, **Cordova**.
 
    ![Creating an app in Dynatrace](https://dt-cdn.net/images/setup-wizard-1764-763c621790.png)

@@ -66,6 +66,7 @@ To create a placeholder
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Capturing** > **User actions**.
 5. Under **Placeholders**, select **Add placeholder**, and select your input data type.
 
@@ -102,6 +103,7 @@ In this example, we use `CampaignID` to create a new custom naming rule that ide
 1. Go to **Web**.
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+
 4. From the application settings, select **Capturing** > **User actions**.
 5. Scroll down to **User action naming rules**, and select the **Naming rules for load actions** or **Naming rules for XHR actions** tab.
 6. Select **Add naming rule**.

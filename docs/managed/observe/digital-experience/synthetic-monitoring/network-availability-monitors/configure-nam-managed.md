@@ -97,24 +97,25 @@ You need to **Save changes** for each step of the NAM configuration. Otherwise, 
 7. Required Select **Add step-level constraint** and set **Constraint type** to `SUCCESS_RATE_PERCENT`. Step-level constraint applies the condition for successful monitor execution on the step level and includes all requests made within the step. For details, see [Step-level constraints](/managed/observe/digital-experience/synthetic-monitoring/network-availability-monitors/configure-nam-managed#step-level-constraints "Learn how to set up and manage a NAM monitor to check the performance and availability of your site.").
 8. Select **Add property** twice to create two property key fields and fill them in similarly to the following example:
 
-   | Property key | Property value |
-   | --- | --- |
-   | **operator** | `=` |
-   | **value** | `100` |
+| Property key | Property value |
+| --- | --- |
+| **operator** | `=` |
+| **value** | `100` |
 
-   The **operator** and **value** keys are case-sensitive and have to be written in lower case. Otherwise, the configuration will not work.
+The **operator** and **value** keys are case-sensitive and have to be written in lower case. Otherwise, the configuration will not work.
 
-   Configuration property operator example
+Configuration property operator example
 
-   ![Creating NAM with Managed web UI, step-level key operator example](https://dt-cdn.net/images/manged-nam-ui-step-key-operator-1916-dcdf83cacb.png)
+![Creating NAM with Managed web UI, step-level key operator example](https://dt-cdn.net/images/manged-nam-ui-step-key-operator-1916-dcdf83cacb.png)
 
-   Creating NAM with Managed web UI, step-level key operator example
+Creating NAM with Managed web UI, step-level key operator example
 
-   Configuration property value example
+Configuration property value example
 
-   ![Creating NAM with Managed web UI, step-level value property example](https://dt-cdn.net/images/manged-nam-ui-step-key-value-1918-658439bda9.png)
+![Creating NAM with Managed web UI, step-level value property example](https://dt-cdn.net/images/manged-nam-ui-step-key-value-1918-658439bda9.png)
 
-   Creating NAM with Managed web UI, step-level value property example
+Creating NAM with Managed web UI, step-level value property example
+
 9. Required Select **Add request-level configuration**.
 
 Steps from **10** to **12** are mandatory only for ICMP and DNS monitors. You can skip these steps and leave **Request configuration** empty if you have a different type of monitor.
@@ -132,12 +133,12 @@ The selected monitor type determines the constraint types from which you can cho
 
 12. Select **Add property** twice to create two property key fields and fill them in similarly to the following example:
 
-    | Property key | Property value |
-    | --- | --- |
-    | **operator** | `=` |
-    | **value** | `100` |
+| Property key | Property value |
+| --- | --- |
+| **operator** | `=` |
+| **value** | `100` |
 
-    The **operator** and **value** keys are case-sensitive and have to be written in lower case. Otherwise, the configuration will not work.
+The **operator** and **value** keys are case-sensitive and have to be written in lower case. Otherwise, the configuration will not work.
 
 Configuration property operator example
 
@@ -439,8 +440,8 @@ DNS constraints are **optional**, but at least one must be defined to indicate w
 | Property | Type | Description | Value | Default value |
 | --- | --- | --- | --- | --- |
 | `operator` | string | Comparison operator to compare actual and expected value | `=` or `!=` | `=` |
-| `statusCode` | integer | Numeric code indicating status of DNS response Exclusive with `status` | Valid code, for example, `0` Range = `0`–`65535` | `0` |
-| `status` | string | Mnemonic representing DNS status code Exclusive with `statusCode` | Valid status, for example, `NOERROR` | `NOERROR` |
+| `statusCode` | integer | Numeric code indicating status of DNS responseExclusive with `status` | Valid code, for example, `0`Range = `0`–`65535` | `0` |
+| `status` | string | Mnemonic representing DNS status codeExclusive with `statusCode` | Valid status, for example, `NOERROR` | `NOERROR` |
 
 ```
 {
@@ -506,9 +507,9 @@ Verifies the IP address value returned in A/AAAA records.
 | --- | --- | --- | --- | --- |
 | `quantifier` | string | How many records must match the condition for the constraint to pass | `any` (at least one) or `all` | `any` |
 | `operator` | string | Comparison operator | `=`, `!=` or `in` | `=` for an address, `in` for a subnet |
-| `recordType` | string | DNS record type | `A` or `AAAA` | `A` if address/subnet is IPv4 `AAAA` if address/subnet is IPv6 |
-| `address` | string | IPv4 address in dot notation or IPv6 address in colon notation Only with the operators `=`, `!=` Exclusive with `subnet` | Valid address, for example, `192.168.0.1`, `2001:db8::2:1` |  |
-| `subnet` | string | IPv4 subnet in dot notation or IPv6 subnet in colon notation, followed by network prefix length Only with the operator `in` Exclusive with `address` | Valid subnet, for example, `172.22.80.0/20`, `2001:db8:85a3::0/48` |  |
+| `recordType` | string | DNS record type | `A` or `AAAA` | `A` if address/subnet is IPv4`AAAA` if address/subnet is IPv6 |
+| `address` | string | IPv4 address in dot notation or IPv6 address in colon notationOnly with the operators `=`, `!=`Exclusive with `subnet` | Valid address, for example, `192.168.0.1`, `2001:db8::2:1` |  |
+| `subnet` | string | IPv4 subnet in dot notation or IPv6 subnet in colon notation, followed by network prefix lengthOnly with the operator `in`Exclusive with `address` | Valid subnet, for example, `172.22.80.0/20`, `2001:db8:85a3::0/48` |  |
 
 ```
 {
@@ -680,10 +681,10 @@ Constraints process all records in a response, regardless of the section to whic
 | Property | Type | Description | Value | Default value |
 | --- | --- | --- | --- | --- |
 | `quantifier` | string | How many records must match the condition for the constraint to pass | `any` (at least one) or `all` | `any` |
-| `operator` | string | Comparison operator - `contains` checks if the record value contains a given sequence. - `matches` checks if record value matches a given pattern. | `contains` or `matches` | `contains` |
+| `operator` | string | Comparison operator- `contains` checks if the record value contains a given sequence.- `matches` checks if record value matches a given pattern. | `contains` or `matches` | `contains` |
 | `recordType` | string | DNS record type | Valid record type, for example, `TXT` |  |
-| `sequence` | string | Sequence of characters that the record value should contain Only with the operator `contains` Exclusive with `pattern` | Non-empty sequence, for example, `ms71815323` |  |
-| `pattern` | string | Pattern to be matched against the record value, with `*` denoting 0 or more characters Only with the operator `matches` Exclusive with `sequence` | Non-empty pattern, for example, `"v=spf1 include:*` |  |
+| `sequence` | string | Sequence of characters that the record value should containOnly with the operator `contains`Exclusive with `pattern` | Non-empty sequence, for example, `ms71815323` |  |
+| `pattern` | string | Pattern to be matched against the record value, with `*` denoting 0 or more charactersOnly with the operator `matches`Exclusive with `sequence` | Non-empty pattern, for example, `"v=spf1 include:*` |  |
 
 ```
 {

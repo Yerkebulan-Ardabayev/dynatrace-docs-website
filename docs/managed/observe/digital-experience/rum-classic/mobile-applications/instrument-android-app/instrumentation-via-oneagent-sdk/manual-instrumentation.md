@@ -77,6 +77,15 @@ When you use standalone manual instrumentation, nothing is done automatically. E
    Add the OneAgent library as an `api` dependency in your base module (Android application module). If you use internal Android library modules that need to be instrumented, add the OneAgent library as an `implementation` dependency to these internal Android library modules.
 3. Start OneAgent manually.
 
+   ---
+
+   changelog:
+
+   * 2026-03-26 Added section which explains that OneAgent can only be started once per application.
+   * 2026-03-05 Updated the URL of JavaDoc for OneAgent SDK for Android
+
+   ---
+
    Use the [`Dynatrace.startup(Application, Configuration)`﻿](https://docs.dynatrace.com/javadoc/oneagent/android/agent/com/dynatrace/android/agent/Dynatrace.html#startup(android.app.Application,com.dynatrace.android.agent.conf.Configuration)) API method, and start OneAgent manually in the [`Application.onCreate`﻿](https://developer.android.com/reference/android/app/Application#onCreate()) method.
 
    Java

@@ -337,9 +337,7 @@ In a monitor containing multiple validations, all rules are evaluated. However, 
 
 #### Do not store and display request and response bodies, header values, and peer certificate details in execution details
 
-Turn on this option to hide potentially sensitive information (contained in, say, the response body) in [execution details (**Analyze last execution**)](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic#analyze-last-execution "Learn about the Synthetic details page for HTTP monitors.").
-
-You need to do this for each request you wish to limit the display of. Request and response bodies, values of request and response headers, and peer certificate details are then replaced by placeholder text.
+Turn on this option to hide potentially sensitive information (contained in, say, the response body) in [execution details (**Analyze last execution**)](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic#analyze-last-execution "Learn about the Synthetic details page for HTTP monitors."). You need to do this for each request you wish to limit the display of. Request and response bodies, values of request and response headers, and peer certificate details are then replaced by placeholder text.
 
 This option is automatically turned on for OAuth 2.0 requests and [external vault synchronization monitors](/managed/observe/digital-experience/synthetic-monitoring/general-information/external-vault-integration "Synchronize Synthetic Monitoring Classic credentials with external vaults."). Users with access to any credentials contained in the monitor may disable it.
 

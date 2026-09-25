@@ -13,13 +13,6 @@ source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-330
 
 New versions are rolled out within configurable [maintenance windows](/managed/managed-cluster/operation/update-cluster "Learn how to update a Managed cluster and how to schedule an automatic update.").
 
-|  | Rollout start | Currently supported |
-| --- | --- | --- |
-| [Version 1.346](/managed/whats-new/managed/sprint-346 "New features, changes, and resolved issues in Dynatrace Managed 1.346") | Aug 31, 2026 | Yes |
-| [Version 1.344](/managed/whats-new/managed/sprint-344 "New features, changes, and resolved issues in Dynatrace Managed 1.344") | Aug 03, 2026 | Yes |
-| [Version 1.342](/managed/whats-new/managed/sprint-342 "New features, changes, and resolved issues in Dynatrace Managed 1.342") | Jul 06, 2026 | Yes |
-| [Version 1.340](/managed/whats-new/managed/sprint-340 "New features, changes, and resolved issues in Dynatrace Managed 1.340") | Jun 08, 2026 | Only with [Enterprise Success and Support﻿](https://dt-url.net/qt03zwg) |
-
 This page showcases new features, changes, and bug fixes in Dynatrace Managed version 1.330. It contains:
 
 * [Feature updates](#updates): 8
