@@ -81,6 +81,13 @@ Definition of the end of support version schema with examples:
   + Last supported OneAgent version: 1.351
   + For more details, see [Deprecation Notice: .NET In-Process Model Azure Functions Monitoring﻿](https://community.dynatrace.com/t5/Product-news/Deprecation-Notice-Azure-Functions-NET-In-Process-Model/ba-p/302232)
 
+### 2026-10-31 End of Support
+
+* IBM App Connect Enterprise 11
+
+  + Vendor end of support: [2026-04-30﻿](https://www.ibm.com/support/pages/ibm-app-connect-enterprise110x-withdrawal-notification)
+  + Last supported OneAgent version: 1.349
+
 ### 2026-09-30 End of Support
 
 * Hitachi Java 5
@@ -152,11 +159,11 @@ Definition of the end of support version schema with examples:
   + Vendor end of support: 2020-03-03
   + Last supported OneAgent version: 1.343
 
-### 2026-06-30 End of Support
+### 2026-05-31 End of Support
 
-* IBM Integration Bus 10 (IIB module)
+* IBM Integration Bus 10
 
-  + Vendor end of support: 2025-04-30
+  + Vendor end of support: [2025-04-30﻿](https://www.ibm.com/support/pages/ibm-integration-bus100x-withdrawal-notification)
   + Last supported OneAgent version: 1.337
 
 ### 2026-05-31 End of Support

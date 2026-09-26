@@ -15,7 +15,7 @@ The Dynatrace Extensions 2.0 framework enables you to tailor the Dynatrace web U
 
 [### Create specialized unified analysis pages
 
-Extend the Dynatrace web UI using entity-tailored unified analysis pages.](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend the Dynatrace web UI using entity-tailored unified analysis pages.")[### Extend built-in unified analysis pages
+Extend the Dynatrace web UI using entity-tailored unified analysis pages.](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend Dynatrace unified analysis pages with custom cards to surface metrics, logs, events, and metadata for any entity type in one focused view.")[### Extend built-in unified analysis pages
 
 Extend the built-in unified analysis page with additional data ingested by your extension.](/managed/ingest-from/extend-dynatrace/extend-ui/extend-unified-analysis-pages "Extend the built-in unified analysis page with additional data ingested by your extension.")[### Distribute custom dashboards
 

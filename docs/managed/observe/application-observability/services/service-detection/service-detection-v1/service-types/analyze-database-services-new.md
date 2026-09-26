@@ -139,4 +139,4 @@ Lists [logs](/managed/analyze-explore-automate/log-monitoring "Learn how to enab
 
 ## Related topics
 
-* [Unified analysis pages](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend the Dynatrace web UI using entity-tailored unified analysis pages.")
+* [Unified analysis pages](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend Dynatrace unified analysis pages with custom cards to surface metrics, logs, events, and metadata for any entity type in one focused view.")

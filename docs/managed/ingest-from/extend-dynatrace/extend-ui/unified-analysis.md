@@ -36,21 +36,9 @@ Use the chart group component to group configured charts in a grid. For configur
 
 You can use the following chart types (controlled by the `visualizationType` field).
 
-* **Graph chart:**
+![Graph chart](https://dt-cdn.net/images/chart-group-1169-76d6ed5a9e.png)![Pie chart](https://dt-cdn.net/images/pie-chart-519-7780ea60ce.png)![Single value](https://dt-cdn.net/images/single-value-550-35129a06f1.png)
 
-  ![Chart group example](https://dt-cdn.net/images/chart-group-1169-76d6ed5a9e.png)
-
-  Chart group example
-* **Pie chart:**
-
-  ![Pie chart](https://dt-cdn.net/images/pie-chart-519-7780ea60ce.png)
-
-  Pie chart
-* **Single value:**
-
-  ![Single value](https://dt-cdn.net/images/single-value-550-35129a06f1.png)
-
-  Single value
+1 of 3Graph chart
 
 ### Entity list
 
@@ -76,7 +64,7 @@ Metric table card
 
 Use the properties card to show attributes and tags. By default, it displays all attributes coming from the [Monitored entities API](/managed/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API."). For more information, see [Notifications bar](/managed/observe/infrastructure-observability/hosts/monitoring/host-monitoring#notifications-bar "Monitor hosts with Dynatrace.").
 
-See [Properties cards](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#properties-cards "Learn about unified analysis syntax") for configuration details.
+For configuration details, see [Properties cards](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#properties-cards "Learn about unified analysis syntax").
 
 ![Properties card example](https://dt-cdn.net/images/properties-528-184d1764f0-528-10fef21345.png)
 
@@ -84,9 +72,9 @@ Properties card example
 
 ### Logs
 
-Use the logs card—which has the same functionalities as the [Log viewer](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.")—to display a bar chart representing different log occurrences within the selected timeframe and a detailed table where each log is an entry with additional properties such as timestamp, status, and content.
+Use the logs card (which has the same functionality as the [Log viewer](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.")) to display a bar chart representing different log occurrences within the selected timeframe and a detailed table where each log is an entry with additional properties such as timestamp, status, and content.
 
-See [Logs cards](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#logs-cards "Learn about unified analysis syntax") for configuration details.
+For configuration details, see [Logs cards](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#logs-cards "Learn about unified analysis syntax").
 
 ![logs-card](https://dt-cdn.net/images/screenshot-2023-03-14-at-10-16-08-624-bf7cf1200b.png)
 
@@ -96,8 +84,8 @@ logs-card
 
 Use the message card to show information when a certain condition is satisfied. For configuration details, see [Message cards](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#message-cards "Learn about unified analysis syntax"). There are two types of message card visualization:
 
-* **Message**—a card that just displays text information.
-* **Card**—a card with a title, description, and available actions.
+* **Message**: A card that displays text information.
+* **Card**: A card with a title, description, and available actions.
 
 For example, display the message card if OneAgent is not deployed:
 
@@ -109,7 +97,7 @@ Message card example
 
 Use the events card to display events related to the specified entities.
 
-See [Events cards](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#events-cards "Learn about unified analysis syntax") for configuration details.
+For configuration details, see [Events cards](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#events-cards "Learn about unified analysis syntax").
 
 ![Events card example](https://dt-cdn.net/images/screenshot-2023-03-14-at-14-12-35-571-7d4521137a.png)
 
@@ -119,14 +107,16 @@ Events card example
 
 Use the health card to display specific metrics in a visual format. By default, it provides a quick overview of up to six distinct tiles, each representing a unique metric or data point.
 
-Single tile reacts to certain events on connected metrics and may take different colors:
+Each tile reacts to certain events on connected metrics and may take different colors:
 
-* green—there is data on at least one connected metric
-* red—there is an open problem related to at least one connected metric
-* gray—there is a closed problem related to at least one connected metric
-* white—there is no data for this tile in current timeframe
+| Color | State |
+| --- | --- |
+| Green | Data on at least one connected metric |
+| Red | Open problem on at least one connected metric |
+| Gray | Closed problem on at least one connected metric |
+| White | No data for this tile in the current timeframe |
 
-See [Health cards](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#health-cards "Learn about unified analysis syntax") for configuration details.
+For configuration details, see [Health cards](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#health-cards "Learn about unified analysis syntax").
 
 ![Health card](https://dt-cdn.net/images/dee80e89-6646-420a-810d-0e7e2566677b-1640-4b6291895b.png)
 
@@ -136,16 +126,16 @@ Health card
 
 ### Actions
 
-Actions define what happens after selecting one of the available options available from the **More** (**…**) menu in the upper-right corner of every card.
+Actions define what happens after selecting one of the available options from the **More** (**…**) menu in the upper-right corner of every card.
 
-See [Actions](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#actions "Learn about unified analysis syntax") for configuration details.
+For configuration details, see [Actions](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#actions "Learn about unified analysis syntax").
 
 ### Filtering
 
 Unified analysis supports filtering entities by indexed entity attributes. You can enable filtering for the list page and in the context of specific cards. Entity filtering can be configured at two levels:
 
 * At the page level, where filtering affects all cards on the page. There are separate configurations for the [details page](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#details-filters "Learn about unified analysis syntax") and [list page](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#list-filters "Learn about unified analysis syntax").
-* In the entity list level, where filtering affects only a single list.
+* At the entity list level, where filtering affects only a single list.
 
 ### Injections
 
@@ -153,6 +143,6 @@ If you want to display the cards on the page without modifying their layout, see
 
 ### Exploratory analysis
 
-The exploratory analysis analyzes only the metrics from the graph charts that are in the chart groups, entities lists, and metric tables. For more information, see [Davis® causal correlation analysis](/managed/dynatrace-intelligence/ai-models/causal-correlation-analysis "Learn how Davis® causal correlation analysis finds related metrics across your environment.").
+Exploratory analysis covers only the metrics from the graph charts that are in the chart groups, entity lists, and metric tables. For more information, see [Dynatrace Intelligence causal correlation analysis](/managed/dynatrace-intelligence/ai-models/causal-correlation-analysis "Learn how Davis® causal correlation analysis finds related metrics across your environment.").
 
 **Next step**: [Unified analysis tutorial](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-tutorial "Learn how to upload sample data to your Dynatrace environment and create a simple unified analysis extension.")

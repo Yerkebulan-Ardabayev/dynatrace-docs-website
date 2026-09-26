@@ -10,6 +10,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-e
 * Reference
 * 2-min read
 * Updated on Jul 28, 2026
+* Deprecated
 
 After you define the scope of your configuration, you need to identify the following:
 

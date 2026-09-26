@@ -14,6 +14,7 @@ New versions are rolled out within configurable [maintenance windows](/managed/m
 
 |  | Rollout start | Currently supported |
 | --- | --- | --- |
+| [Version 1.348](/managed/whats-new/managed/sprint-348 "New features, changes, and resolved issues in Dynatrace Managed 1.348") | Sep 28, 2026 (planned) | (planned) |
 | [Version 1.346](/managed/whats-new/managed/sprint-346 "New features, changes, and resolved issues in Dynatrace Managed 1.346") | Aug 31, 2026 | Yes |
 | [Version 1.344](/managed/whats-new/managed/sprint-344 "New features, changes, and resolved issues in Dynatrace Managed 1.344") | Aug 03, 2026 | Yes |
 | [Version 1.342](/managed/whats-new/managed/sprint-342 "New features, changes, and resolved issues in Dynatrace Managed 1.342") | Jul 06, 2026 | Yes |

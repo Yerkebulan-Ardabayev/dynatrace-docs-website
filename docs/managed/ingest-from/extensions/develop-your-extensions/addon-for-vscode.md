@@ -39,7 +39,7 @@ Check out the instructions for [getting started](/managed/ingest-from/extensions
 
 You can speed up development by automatically generating significant portions of your extension's manifest and assets. These features include:
 
-* Generating [unified analysis pages](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend the Dynatrace web UI using entity-tailored unified analysis pages.") for your entities.
+* Generating [unified analysis pages](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend Dynatrace unified analysis pages with custom cards to surface metrics, logs, events, and metadata for any entity type in one focused view.") for your entities.
 * Code completions based on data from your environment.
 
 * Generating documentation, dashboards, and alerts.

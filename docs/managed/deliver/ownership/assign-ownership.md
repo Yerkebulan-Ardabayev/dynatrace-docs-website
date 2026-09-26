@@ -476,7 +476,7 @@ For adding, changing, or deleting tags via the web UI, you need the **Manage mon
 
 ## View ownership information in the web UI
 
-Ownership information is only available for [unified analysis pages](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend the Dynatrace web UI using entity-tailored unified analysis pages.").
+Ownership information is only available for [unified analysis pages](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend Dynatrace unified analysis pages with custom cards to surface metrics, logs, events, and metadata for any entity type in one focused view.").
 
 For hosts and all Kubernetes entities, select **Owners** on the entity details page to view ownership information.
 
@@ -522,4 +522,4 @@ Unknown team
 * [Best practices for scaling tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.")
 * [Kubernetes labels﻿](https://dt-url.net/g442yn5 "Official Kubernetes documentation on labels")
 * [Kubernetes annotations﻿](https://dt-url.net/bz62yto "Official Kubernetes documentation on annotations")
-* [Unified analysis pages](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend the Dynatrace web UI using entity-tailored unified analysis pages.")
+* [Unified analysis pages](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend Dynatrace unified analysis pages with custom cards to surface metrics, logs, events, and metadata for any entity type in one focused view.")

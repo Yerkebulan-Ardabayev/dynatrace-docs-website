@@ -132,6 +132,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Enable endpoint detection](/managed/dynatrace-api/environment-api/settings/schemas/builtin-endpoint-detection-rules-opt-in) | `builtin:endpoint-detection-rules-opt-in` | `environment` |
 | [Enhanced endpoints for SDv1](/managed/dynatrace-api/environment-api/settings/schemas/builtin-enhanced-endpoints-for-sdv1) | `builtin:enhanced-endpoints-for-sdv1` | `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
 | [Terms of use](/managed/dynatrace-api/environment-api/settings/schemas/builtin-eula-settings) | `builtin:eula-settings` | `environment`  `environment-default` - Managed cluster-wide |
+| [Event correlation rule](/managed/dynatrace-api/environment-api/settings/schemas/builtin-event-correlation-rules) | `builtin:event-correlation-rules` | `environment` |
 | [Exclude network traffic](/managed/dynatrace-api/environment-api/settings/schemas/builtin-exclude-network-traffic) | `builtin:exclude.network.traffic` | `HOST` - Host |
 | [Failure detection](/managed/dynatrace-api/environment-api/settings/schemas/builtin-failure-detection-rulesets) | `builtin:failure-detection-rulesets` | `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
 | [Failure detection parameters](/managed/dynatrace-api/environment-api/settings/schemas/builtin-failure-detection-environment-parameters) | `builtin:failure-detection.environment.parameters` | `environment` |
@@ -286,6 +287,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [OS services monitoring](/managed/dynatrace-api/environment-api/settings/schemas/builtin-os-services-monitoring) | `builtin:os-services-monitoring` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
 | [Configure ownership](/managed/dynatrace-api/environment-api/settings/schemas/builtin-ownership-config) | `builtin:ownership.config` | `environment` |
 | [Ownership teams](/managed/dynatrace-api/environment-api/settings/schemas/builtin-ownership-teams) | `builtin:ownership.teams` | `environment` |
+| [Platform event correlation](/managed/dynatrace-api/environment-api/settings/schemas/builtin-platform-event-correlation) | `builtin:platform-event-correlation` | `environment` |
 | [Anonymize End-User IP Addresses](/managed/dynatrace-api/environment-api/settings/schemas/builtin-preferences-ipaddressmasking) | `builtin:preferences.ipaddressmasking` | `MOBILE_APPLICATION` - Mobile App  `CUSTOM_APPLICATION` - Custom Application  `APPLICATION` - Web application  `environment` |
 | [End users' data privacy](/managed/dynatrace-api/environment-api/settings/schemas/builtin-preferences-privacy) | `builtin:preferences.privacy` | `APPLICATION` - Web application  `environment` |
 | [Problem fields](/managed/dynatrace-api/environment-api/settings/schemas/builtin-problem-fields) | `builtin:problem.fields` | `environment` |
