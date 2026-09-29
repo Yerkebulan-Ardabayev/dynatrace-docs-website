@@ -531,6 +531,6 @@ In any case, don't worry about losing data. Dashboards and tiles are visualizati
 * There's an ongoing [Dynatrace Community thread﻿](https://community.dynatrace.com/t5/Dashboarding/Data-explorer-upgrade-aka-Custom-chart-deprecation/td-p/194200) you are welcome to participate in.
 * To start a conversation with a Dynatrace product expert, use live chat within your Dynatrace environment.
 
-  ![Chat button](https://dt-cdn.net/images/chat-button-94-3f05b29976.png)
+![Chat button](https://dt-cdn.net/images/chat-button-94-3f05b29976.png)
 
-  Chat button
+Chat button

@@ -30,6 +30,7 @@ To share a dashboard
    * To display a dashboard, go to **Dashboards** and select the name of the dashboard.
 2. Select **More** (**…**) > **Share** in the upper-right corner of the dashboard.
 3. Select **Advanced settings** to open **Dashboard settings** to the **Manage access** tab.
+
 4. Turn on **Share dashboard** and specify the sharing details as described below.
 
    * [Grant access to a specific user](#access-user)

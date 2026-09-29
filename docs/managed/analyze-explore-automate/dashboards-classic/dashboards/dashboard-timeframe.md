@@ -21,6 +21,7 @@ Timeframe selector: menu bar
 
 * Select the filter button to select a new management zone
 * Select the timeframe to select a new timeframe
+
   Timeframe selector controls
 
   The global timeframe selector serves as a time filter that, in most cases, enables you to select a specific analysis timeframe that persists across all product pages and views as you navigate through your analysis.

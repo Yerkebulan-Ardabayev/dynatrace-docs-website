@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support
 # Technology support
 
 * 17-min read
-* Updated on Aug 28, 2026
+* Updated on Sep 24, 2026
 
 Dynatrace supports monitoring of the technologies and versions listed on this page. For serverless monitoring, see [Serverless compute support matrix](/managed/ingest-from/technology-support/serverless-compute-services "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS)."). For mainframe, see [Mainframe technology support](/managed/ingest-from/technology-support/mainframe-technology-support "Learn which technologies Dynatrace supports for Mainframe monitoring.").
 
@@ -1461,20 +1461,25 @@ See [OneAgent SDK for PHP](/managed/ingest-from/extend-dynatrace/extend-tracing/
 | [IBM App Connect Enterprise﻿](https://www.ibm.com/support/knowledgecenter/en/SSTTDS) | 11.0.0.4+, 12.0.3.0+, 13.0.2.0+ | AIX (POWER8, POWER9, POWER10), Linux (x86-64, s390), Windows (x86-64) |
 | [IBM Integration Bus﻿](https://www.ibm.com/support/knowledgecenter/de/SSMKHH/mapfiles/product_welcome.html) | 10 | AIX (POWER8, POWER9, POWER10), Linux (x86-64, s390), Windows (x86-64) |
 
-* Only the 64-bit version is supported
-* Monitoring is supported for all node types
-* Tracing is supported for the following node types:
+* **Only** the **64-bit** version is supported
+* **Monitoring** is supported for **all** node types
+* **Property Insight and Tracing** is supported for the following node types:
 
-  + IBM MQ: MQInput, MQOutput, MQReply
-  + JMS: JMSInput, JMSOutput
-  + HTTP: HTTPInput, HTTPReply, HTTPRequest, HTTPAsyncRequest, HTTPAsyncResponse
-  + REST: RESTRequest, RESTAsyncRequest, RESTAsyncResponse
-  + Web services: SOAPInput, SOAPReply, SOAPRequest, SOAPAsyncRequest, SOAPAsyncResponse
-  + Callables (OneAgent version 1.257+): CallableFlowAsyncInvoke, CallableFlowAsyncResponse, CallableFlowInvoke, CallableInput, CallableReply
-  + Routing: Publication
-  + Compute: Java
-  + Database: DatabaseRetrieve, DatabaseRoute
-  + CICS (OneAgent version 1.277+): CICSRequest
+  + ***Callable flow*** `CallableInput`, `CallableReply`, `CallableFlowInvoke`, `CallableFlowAsyncInvoke`, `CallableFlowAsyncResponse`
+  + ***HTTP*** `HTTPInput`, `HTTPReply`, `HTTPRequest`, `HTTPAsyncRequest`, `HTTPAsyncResponse`
+  + ***IBM CICS*** `CICSRequest`
+  + ***IBM IMS*** `IMSRequest`
+  + ***IBM MQ*** `MQInput`, `MQOutput`, `MQReply`, `MQPublication`
+  + ***JMS*** `JMSInput`, `JMSOutput`, `JMSReply`
+  + ***REST*** `RESTRequest`, `RESTAsyncRequest`, `RESTAsyncResponse`
+  + ***SOAP*** `SOAPInput`, `SOAPReply`, `SOAPRequest`, `SOAPAsyncRequest`, `SOAPAsyncResponse`
+  + ***Timer*** `TimeoutControl`, `TimeoutNotification`
+  + ***Transformation*** `.NETCompute`, `JavaCompute` | Deep monitoring of .NET resp. Java code is available
+* **Property Insight only** is provided for following node types:
+
+  + ***Database*** `DatabaseRetrieve`, `DatabaseRoute`
+  + ***Routing*** `RouteToLabel`
+  + ***Transformation*** `Compute` | ESQL deep monitoring is NOT available
 
 ### C / [C++](/managed/ingest-from/technology-support/application-software/cpp "Learn how to instrument your C++ application with OpenTelemetry as a data source for Dynatrace.")
 

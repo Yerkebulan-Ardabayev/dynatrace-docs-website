@@ -21,6 +21,7 @@ Dynatrace supports two OAuth 2.0 grant types:
 ## Create an OAuth2 client
 
 1. Go to [**Account Management**﻿](https://myaccount.dynatrace.com/). If you have more than one account, select the account you want to manage.
+
 2. On the top navigation bar, go to **Identity & access management** > **OAuth clients**.
 3. Select **Create client**.
 4. Under **Grant type**, select either **Client credentials** or **Authorization code**.

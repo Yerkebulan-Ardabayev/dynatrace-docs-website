@@ -35,7 +35,7 @@ To get a definition of the metric but not its data points, set the **includeData
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| timeseriesId | string | Case-sensitive ID of the metric from which you want to read parameters.  You can execute a [GET metric definitions](/managed/dynatrace-api/environment-api/metric-v1/metric-definitions/get-list "View definitions of all metrics of you monitoring environment via the Timeseries v1 API.") request to obtain the list of available metrics. | path | Required |
+| timeseriesId | string | Case-sensitive ID of the metric from which you want to read parameters.You can execute a [GET metric definitions](/managed/dynatrace-api/environment-api/metric-v1/metric-definitions/get-list "View definitions of all metrics of you monitoring environment via the Timeseries v1 API.") request to obtain the list of available metrics. | path | Required |
 | includeData | boolean | Flag to include data points to the response. Set to `false` to obtain just the definition of the metric. | query | Optional |
 
 ## Response

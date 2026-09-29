@@ -1544,7 +1544,7 @@ After fold transformation
 
 |  |  |
 | --- | --- |
-| Syntax | `:last<aggregation>` `:lastReal<aggregation>` |
+| Syntax | ``` :last<aggregation>``:lastReal<aggregation> ``` |
 | Arguments | Optional The required [aggregation](#aggregation) method. |
 
 The **last** transformation returns the most recent data point from the query timeframe. To get the result in a specific aggregation, specify the aggregation as an argument. If the specified aggregation is not supported, the default aggregation is used. For example, `:last(median)` on a gauge metric equals to `:last(avg)` because median is not supported and avg is the default. If an aggregation has been applied in the transformation chain before, the argument is ignored.
@@ -2131,7 +2131,7 @@ After limit transformation
 |  |  |
 | --- | --- |
 | Syntax | `:merge("<dimension0>","<dimension1>","<dimensionN>")` |
-| Arguments | A list of [dimensions](#dimension) to be removed. A dimension must be specified by its key.  Quotes (`"`) and tildes (`~`) that are part of the dimension key must be escaped with a tilde (`~`). |
+| Arguments | A list of [dimensions](#dimension) to be removed. A dimension must be specified by its key.Quotes (`"`) and tildes (`~`) that are part of the dimension key must be escaped with a tilde (`~`). |
 
 The **merge** transformation removes the specified dimensions from the result. All series/values that have the same dimensions after the removal are merged into one. The values are recalculated according to the selected aggregation.
 
@@ -3567,7 +3567,7 @@ After sort transformation
 |  |  |
 | --- | --- |
 | Syntax | `:splitBy("<dimension0>","<dimension1>","<dimensionN>")` |
-| Arguments | A list of [dimensions](#dimension) to be preserved in the result. A dimension must be specified by its key.  Quotes (`"`) and tildes (`~`) that are part of the dimension key must be escaped with a tilde (`~`). |
+| Arguments | A list of [dimensions](#dimension) to be preserved in the result. A dimension must be specified by its key.Quotes (`"`) and tildes (`~`) that are part of the dimension key must be escaped with a tilde (`~`). |
 
 The **split by** transformation keeps the specified dimensions in the result and merges all remaining dimensions. The values are recalculated according to the selected aggregation. Only metric series that have each of the specified dimensions are considered.
 
@@ -4076,7 +4076,7 @@ Let's consider an example with a timeframe from `1615550400000` (March 12, 2021 
 |  |  |
 | --- | --- |
 | Syntax | `:setUnit(<unit>)` |
-| Argument | The desired unit.  To fetch the list of available units, use the [GET all units](/managed/dynatrace-api/environment-api/metrics-units/get-all-units "List all metrics that are available for your monitoring environment via the Dynatrace API.") API call. |
+| Argument | The desired unit.To fetch the list of available units, use the [GET all units](/managed/dynatrace-api/environment-api/metrics-units/get-all-units "List all metrics that are available for your monitoring environment via the Dynatrace API.") API call. |
 
 The **setUnit** transformation sets the unit in the metric metadata.
 
@@ -4087,7 +4087,7 @@ This transformation **does not** affect data points.
 |  |  |
 | --- | --- |
 | Syntax | `:toUnit(<sourceUnit>,<targetUnit>)` |
-| Arguments | The source and the target unit of the transformation.  To fetch the list of available units, use the [GET all units](/managed/dynatrace-api/environment-api/metrics-units/get-all-units "List all metrics that are available for your monitoring environment via the Dynatrace API.") API call. |
+| Arguments | The source and the target unit of the transformation.To fetch the list of available units, use the [GET all units](/managed/dynatrace-api/environment-api/metrics-units/get-all-units "List all metrics that are available for your monitoring environment via the Dynatrace API.") API call. |
 
 The **toUnit** transformation converts data points from the source unit to target unit. If specified units are incompatible, the original unit is persisted and a warning is included in the response.
 

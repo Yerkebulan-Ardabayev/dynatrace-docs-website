@@ -700,9 +700,11 @@ In this variation, the host metric is extended by host group.
 
   For a Honeycomb visualization, you can bypass this limit: turn on **Advanced mode** and delete `:limit(100)` from the query.
 * Unlike multidimensional analysis, Data Explorer uses long-term metric data, not [trace and request data](/managed/observe/application-observability/multidimensional-analysis#data-source "Configure a multidimensional analysis view and save it as a calculated metric."), so values on visualizations might differ from values in multidimensional analysis.
+
 * To prevent performance issues on dashboard tiles created with Data Explorer, the maximum number of data points for a query on a dashboard tile is 4,000. Based on the selected timeframe and the applied custom resolution, Dynatrace projects the number of data points for the query result. If the projected number of data points exceeds 4,000, Dynatrace automatically switches to a resolution high enough to keep the number of data points below 4,000.
 
   Note that this does not apply to visualizations in Data Explorer itself, where you can have more than 4,000 data points. It applies only to dashboard tiles created with Data Explorer where the resolution/timeframe combination selected on the dashboard results in more than 4,000 data points.
+
 * Examples of order-of-magnitude notation in Dynatrace:
 
   | Notation | Factor | Meaning |
@@ -712,7 +714,7 @@ In this variation, the host metric is extended by host group.
   | G | 10^9 | giga, billion |
   | T | 10^12 | tera, trillion |
 
-  For details, see [Order-of-magnitude notation](/managed/discover-dynatrace/get-started/dynatrace-ui/order-of-magnitude-notation "Learn how Dynatrace displays metric values using SI-based order-of-magnitude notation, and how to override the automatic unit selection.").
+For details, see [Order-of-magnitude notation](/managed/discover-dynatrace/get-started/dynatrace-ui/order-of-magnitude-notation "Learn how Dynatrace displays metric values using SI-based order-of-magnitude notation, and how to override the automatic unit selection.").
 
 ### Fold transformation and resolution
 

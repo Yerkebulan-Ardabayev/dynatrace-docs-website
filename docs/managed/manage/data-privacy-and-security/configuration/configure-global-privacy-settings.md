@@ -172,6 +172,14 @@ Dynatrace allows you to decide whether a request attribute should be [marked as 
 
 To access this setting, go to **Settings** > **Preferences** > **Data privacy** > **General**.
 
+---
+
+changelog:
+
+* 2026-03-05 Updated the URL of JavaScript API documentation
+
+---
+
 🔴 Disabled by default
 
 To give your end users the ability to decide whether their activities should be tracked or not, enable opt-in mode.

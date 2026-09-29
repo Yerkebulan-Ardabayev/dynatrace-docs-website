@@ -91,6 +91,7 @@ If you need the full cookie names to configure your firewalls and other infrastr
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Cookie**.
+
 5. The cookie names are displayed on the top of the page.
 
 ## Allow users to opt in to cookies, web storage, and IndexedDB

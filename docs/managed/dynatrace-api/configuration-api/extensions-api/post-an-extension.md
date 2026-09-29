@@ -31,8 +31,8 @@ To learn how to obtain and use it, see [Personal access tokens](/managed/discove
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| file | .zip file | Extension .zip file to be uploaded.  The file name must match the **name** field in the `plugin.json` file.  For example, for the extension whose **name** is `custom.remote.python.demo`, the name of the extension file must be `custom.remote.python.demo.zip`. | body | Required |
-| overrideAlerts | Boolean | Use extension-defined thresholds for alerts (`true`) or user-defined thresholds (`false`).  Extension-defined thresholds are stored in the `plugin.json` file.  If not set, user-defined thresholds are used. | query | Optional |
+| file | .zip file | Extension .zip file to be uploaded.The file name must match the **name** field in the `plugin.json` file.For example, for the extension whose **name** is `custom.remote.python.demo`, the name of the extension file must be `custom.remote.python.demo.zip`. | body | Required |
+| overrideAlerts | Boolean | Use extension-defined thresholds for alerts (`true`) or user-defined thresholds (`false`).Extension-defined thresholds are stored in the `plugin.json` file.If not set, user-defined thresholds are used. | query | Optional |
 
 ## Response
 

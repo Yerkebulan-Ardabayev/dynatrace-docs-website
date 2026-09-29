@@ -87,6 +87,11 @@ Dynatrace provides the following environment-level permissions. Select all that 
 
 For details on Application Security permissions, see [Fine-tune permissions](/managed/secure/application-security#restrict-permissions-managed "Access the Dynatrace Application Security functionalities.").
 
+* **Manage security problems:** Allows viewing and management of vulnerabilities reported by Dynatrace Application Security.
+* **View security problems:** Allows viewing (but not management) of vulnerabilities reported by Dynatrace Application Security.
+
+For details on Application Security permissions, see [Fine-tune permissions](/managed/secure/application-security#restrict-permissions-managed "Access the Dynatrace Application Security functionalities.").
+
 * **Manage support tickets:** Allows access to all support tickets that have been created for this environment.
 
 ### Management zone permissions

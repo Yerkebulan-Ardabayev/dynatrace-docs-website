@@ -89,8 +89,8 @@ tls.verify On
 You can place your API token in the header or as `GET` variable in URI (see example below).
 
 * If [Environment ActiveGate](/managed/ingest-from/dynatrace-activegate#agtypes "Understand the basic concepts related to ActiveGate.") is your choice for an endpoint in local environmentor for Dynatrace Managed, install ActiveGate instance.
-
   Go to **Deploy Dynatrace**, then select **Install ActiveGate**.
+
 * Log ingestion API v2 is automatically enabled on ActiveGate.
 
 ## Example
