@@ -140,8 +140,8 @@ jobs:
         if: steps.detect.outputs.total_changes != '0'
         run: |
           set -e
-          git config user.name "Yerkebulan Ardabayev"
-          git config user.email "yerkebulan.ardabayev@gmail.com"
+          git config user.name "dynatrace-docs-bot"
+          git config user.email "87047363+Yerkebulan-Ardabayev@users.noreply.github.com"
 
           # CI коммитит ТОЛЬКО английский корпус. Русский перевод и реестр хэшей
           # ведёт локальный переводчик на Mac и пушит сам: если добавлять их здесь,
@@ -352,8 +352,8 @@ jobs:
           publish_branch: gh-pages
           # Плоская ветка без накопления истории сборок (P1-8, см. deploy.yml).
           force_orphan: true
-          user_name: 'Yerkebulan Ardabayev'
-          user_email: 'yerkebulan.ardabayev@gmail.com'
+          user_name: 'dynatrace-docs-bot'
+          user_email: '87047363+Yerkebulan-Ardabayev@users.noreply.github.com'
           commit_message: 'deploy: sync Managed docs update'
 
       # ---------- Summary ----------

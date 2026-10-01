@@ -183,8 +183,8 @@ def stage_git_push(translated_count: int):
 
     log("STAGE 5: Committing and pushing...")
 
-    run_cmd(["git", "config", "user.name", "Yerkebulan Ardabayev"])
-    run_cmd(["git", "config", "user.email", "yerkebulan.ardabayev@gmail.com"])
+    run_cmd(["git", "config", "user.name", "dynatrace-docs-bot"])
+    run_cmd(["git", "config", "user.email", "87047363+Yerkebulan-Ardabayev@users.noreply.github.com"])
     run_cmd(["git", "add", "docs/ru/", "pdf-docs/", "scripts/.change_tracking/"])
 
     # Check if there are staged changes

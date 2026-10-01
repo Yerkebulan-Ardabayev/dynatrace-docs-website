@@ -110,8 +110,8 @@ jobs:
           # gh-pages копил полную сборку каждый раз (40 версий search_index,
           # .git раздулся до 466 МБ) — force_orphan держит ветку плоской (P1-8).
           force_orphan: true
-          user_name: 'Yerkebulan Ardabayev'
-          user_email: 'yerkebulan.ardabayev@gmail.com'
+          user_name: 'dynatrace-docs-bot'
+          user_email: '87047363+Yerkebulan-Ardabayev@users.noreply.github.com'
           commit_message: 'deploy: update documentation'
 
       - name: Create summary

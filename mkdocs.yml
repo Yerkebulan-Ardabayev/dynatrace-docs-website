@@ -1,6 +1,5 @@
 site_name: Dynatrace — Документация
 site_description: Документация Dynatrace Managed с AI-помощником
-site_author: Yerkebulan Ardabayev
 site_url: https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/
 
 repo_name: dynatrace-docs-website
@@ -156,4 +155,4 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/Yerkebulan-Ardabayev
 
-copyright: "\xA9 2026 Dynatrace Docs | Yerkebulan Ardabayev"
+copyright: "\xA9 2026 Dynatrace Docs"

@@ -48,5 +48,5 @@ RELEASE_NOTES_URL = "https://docs.dynatrace.com/whats-new"
 RELEASE_REGISTRY_FILE = DOCS_DIR / "releases" / "registry.json"
 
 # === CI/CD ===
-GIT_AUTHOR_NAME = "Yerkebulan Ardabayev"
-GIT_AUTHOR_EMAIL = "yerkebulan.ardabayev@gmail.com"
+GIT_AUTHOR_NAME = "dynatrace-docs-bot"
+GIT_AUTHOR_EMAIL = "87047363+Yerkebulan-Ardabayev@users.noreply.github.com"
