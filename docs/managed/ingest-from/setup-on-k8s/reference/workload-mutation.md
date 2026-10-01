@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/reference/wo
 # Dynatrace pod mutations for application workloads
 
 * 3-min read
-* Updated on Sep 10, 2026
+* Updated on Sep 30, 2026
 
 When you enable metadata enrichment or OneAgent for application pods, Dynatrace Operator uses a webhook to intercept workload creation events and applies mutations to the resulting pods. These mutations modify the pod specification to enable monitoring capabilities.
 
@@ -93,6 +93,8 @@ An init container named `dynatrace-operator` is added to enrich the container wi
 
     - without CSI: no defaults
     - with CSI: defaults are set
+
+For information about configuring the init-container's user and group identity, see [Configure init-container user and group identity](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/init-container-security-context "Configure user and group identity for the Dynatrace Operator injected init-container.").
 
 Example YAML
 
@@ -424,7 +426,7 @@ These `volumes` are relevant for the OneAgent injection.
 
 | `name` | `type` | Description |
 | --- | --- | --- |
-| `oneagent-bin` | `csi` or `emptyDir` | Contains OneAgent binaries |
+| `oneagent-bin` | `image`, `csi` or `emptyDir` | Contains OneAgent binaries |
 
 The `csi` mount uses the `csi.oneagent.dynatrace.com` driver and is always read-only.
 
@@ -445,12 +447,29 @@ These metadata enrichment–specific mutations are therefore applied to pods in 
 
 In metadata-enrichment mode, Dynatrace Operator enhances pods with additional metadata.
 
+### Recognized workload kinds
+
+To determine a pod's workload, Dynatrace Operator walks up the pod's `OwnerReferences` and stops at the highest owner in the chain that matches one of the following kinds. If none of the pod's owners match, Dynatrace Operator treats the pod itself as the workload.
+
+| Kind | API version |
+| --- | --- |
+| `Deployment` | `apps/v1` |
+| `ReplicaSet` | `apps/v1` |
+| `StatefulSet` | `apps/v1` |
+| `DaemonSet` | `apps/v1` |
+| `ReplicationController` | `v1` |
+| `Job` | `batch/v1` |
+| `CronJob` | `batch/v1` |
+| `DeploymentConfig` (OpenShift) | `apps.openshift.io/v1` |
+
+This resolved workload backs both the `k8s.workload.kind`/`k8s.workload.name` attributes and, starting with Dynatrace Operator version 1.11.0+, dedicated metadata annotations placed on the workload instead of the pod.
+
 Metadata enrichment–specific arguments for the init-container
 
 * `--metadata-enrichment`: Instructs the init-container to perform metadata enrichment
-* `--attribute=k8s.workload.kind=...`: The webhook determines this by following the `OwnerReferences` of the pod
-* `--attribute=k8s.workload.name=...`: The webhook determines this by following the `OwnerReferences` of the pod
-* `--attribute=...`: Metadata propagated from the annotations of the pod's namespace appears as attributes
+* `--attribute=k8s.workload.kind=...`: The webhook determines this by following the `OwnerReferences` of the pod, see [Recognized workload kinds](#well-known-workload-kinds)
+* `--attribute=k8s.workload.name=...`: The webhook determines this by following the `OwnerReferences` of the pod, see [Recognized workload kinds](#well-known-workload-kinds)
+* `--attribute=...`: Metadata propagated from the annotations of the pod's namespace appears as attributes. Starting with Dynatrace Operator version 1.11.0+, this also includes metadata propagated from the annotations of the pod's workload, see [Recognized workload kinds](#well-known-workload-kinds)
 
 ### `annotations`
 

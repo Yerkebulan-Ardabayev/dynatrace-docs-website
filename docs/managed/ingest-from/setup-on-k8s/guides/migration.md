@@ -29,6 +29,8 @@ Migrate from manifests to Helm for Dynatrace Operator installation.](/managed/in
 
 Migrate from your old `DynaKube` with an older `apiVersion` to the newest supported for a given Dynatrace Operator version.](/managed/ingest-from/setup-on-k8s/guides/migration/dynakube "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.")[### Migrate from CSI driver to ephemeral volumes
 
-Migrate from CSI-based injection to ephemeral-volume injection with minimal disruption.](/managed/ingest-from/setup-on-k8s/guides/migration/csi-to-ephemeral-volumes "Migrate your Dynatrace deployment from CSI-based injection to ephemeral-volume injection with minimal disruption.")[### Migrate to public registry
+Migrate from CSI-based injection to ephemeral-volume injection with minimal disruption.](/managed/ingest-from/setup-on-k8s/guides/migration/csi-to-ephemeral-volumes "Migrate your Dynatrace deployment from CSI-based injection to ephemeral-volume injection with minimal disruption.")[### Consolidate Kubernetes monitoring into a single DynaKube
+
+Replace a dedicated `kubernetes-monitoring` DynaKube with the `spec.kubernetesMonitoring` section on your existing DynaKube.](/managed/ingest-from/setup-on-k8s/guides/migration/double-dynakube-to-single "Replace a dedicated kubernetes-monitoring DynaKube with the kubernetesMonitoring section on the DynaKube that runs your routing ActiveGate and OneAgent.")[### Migrate to public registry
 
 Migrate an existing Dynatrace Operator installation to use automatic public registry image resolution.](/managed/ingest-from/setup-on-k8s/guides/migration/migrate-to-public-registry "How to migrate an existing Dynatrace Operator installation to use automatic public registry image resolution.")

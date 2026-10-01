@@ -16,6 +16,7 @@ The table below lists the verified and tested release versions:
 
 | Kubernetes upstream version | OpenShift version | Minimum OneAgent version | Minimum ActiveGate version | Minimum Dynatrace Operator version | Recommended Dynatrace Operator version | End of support (Kubernetes) | End of support (OpenShift) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1.37 |  | 1.335 | 1.335 | v1.6.x | v1.9.0+ | Oct 28, 2028 |  |
 | 1.36 |  | 1.335 | 1.335 | v1.6.x | v1.9.0+ | Jul 1, 2028 |  |
 | 1.35 | 4.22[4](#fn-1-4-def) | 1.329 | 1.329 | v1.6.x | v1.9.0+ | Apr 1, 2028 | Nov 1, 2028 |
 | 1.34 | 4.21[4](#fn-1-4-def) | 1.321 | 1.321 | v1.6.x | v1.9.0+ | Nov 1, 2027 | Oct 1, 2028 |

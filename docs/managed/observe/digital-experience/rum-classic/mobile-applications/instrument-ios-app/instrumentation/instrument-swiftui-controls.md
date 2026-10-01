@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 * How-to guide
 * 13-min read
-* Updated on Jul 10, 2026
+* Updated on Sep 23, 2026
 
 OneAgent for iOS version 8.249+
 
@@ -18,6 +18,8 @@ After [instrumenting your mobile app with OneAgent for iOS](/managed/observe/dig
 To instrument SwiftUI controls, our SwiftUI instrumentor adds additional code to your project's source code (`*.swift` files) during the build process. This code observes the state of UI elements and notifies the OneAgent for iOS about any updates. After the build process is completed, all changes to your project's source code are reverted.
 
 For detailed information on actions performed by the SwiftUI instrumentor and a copy of the altered code files, check the `dynatrace_instrumented` directory. The SwiftUI instrumentor creates backups of the instrumented files and generated logs in ZIP archive format.
+
+In April 2027, the SDK will switch to Xcode 27. This removes x86\_64 (Intel) support for the Swift instrumentor (DTSwiftInstrumentor) and the symbol extractor (DSSClient). Only Apple Silicon (arm64) will be supported from that point on.
 
 ## Requirements
 

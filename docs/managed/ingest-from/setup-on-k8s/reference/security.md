@@ -96,9 +96,9 @@ Granting `escalate` and `bind` disables Kubernetes privilege escalation preventi
 
 Sample deployer ClusterRole manifest (includes CSI driver, GKE Autopilot, and OpenShift permissions):
 
-[With CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.2/assets/samples/deployer/deployer-clusterrole-with-csi.yaml)
+[With CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.11.0/assets/samples/deployer/deployer-clusterrole-with-csi.yaml)
 
-If you don't deploy the CSI driver, use [Without CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.2/assets/samples/deployer/deployer-clusterrole-no-csi.yaml) instead — it omits the `CSIDriver` and `PriorityClass` permissions.
+If you don't deploy the CSI driver, use [Without CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.11.0/assets/samples/deployer/deployer-clusterrole-no-csi.yaml) instead — it omits the `CSIDriver` and `PriorityClass` permissions.
 
 #### Option B: Expanded permissions if `escalate` or `bind` are prohibited
 
@@ -108,9 +108,9 @@ The no-escalate ClusterRole directly grants all runtime permissions—secrets re
 
 Sample deployer ClusterRole manifest (no escalate, includes CSI driver, GKE Autopilot, and OpenShift permissions):
 
-[With CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.2/assets/samples/deployer/deployer-clusterrole-no-escalate-with-csi.yaml)
+[With CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.11.0/assets/samples/deployer/deployer-clusterrole-no-escalate-with-csi.yaml)
 
-If you don't deploy the CSI driver, use [Without CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.2/assets/samples/deployer/deployer-clusterrole-no-escalate-no-csi.yaml) instead — it omits the `CSIDriver` and `PriorityClass` permissions.
+If you don't deploy the CSI driver, use [Without CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.11.0/assets/samples/deployer/deployer-clusterrole-no-escalate-no-csi.yaml) instead — it omits the `CSIDriver` and `PriorityClass` permissions.
 
 ## Permission list
 
@@ -431,7 +431,6 @@ Depending on the used extension, the following RBAC objects are required.
   + `dynatrace-extension-controller`
 * Roles
 
-  + `dynatrace-extension-controller-prometheus`
   + `dynatrace-extension-controller-database`
 
 ##### Cluster-wide permissions
@@ -443,53 +442,12 @@ Depending on the used extension, the following RBAC objects are required.
 
 ##### Namespace `dynatrace` permissions
 
-*Prometheus extension*
-
-| Resources accessed | API group | Verbs | Resource names |
-| --- | --- | --- | --- |
-| `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` |
-
 *Database extension*
 
 | Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
 | `pods` | `""` | List |  |
 | `securitycontextconstraints` | `security.openshift.io` | Use | `nonroot-v2` |
-
-#### Prometheus extension
-
-**Purpose**:
-
-* Collects metrics from Prometheus endpoints in your cluster.
-
-**Default configuration**:
-
-* Prometheus datasource: `replicas-set-in-dynakube` (no default, replicas set in the DynaKube)
-
-**RBAC objects**:
-
-* Service Accounts
-
-  + `dynatrace-otel-collector`
-* Cluster-Roles
-
-  + `dynatrace-extensions-prometheus`
-
-##### Cluster-wide permissions
-
-| Resources accessed | API group | Verbs | Resource names |
-| --- | --- | --- | --- |
-| `pods` | `""` | Get, List, Watch |  |
-| `namespaces` | `""` | Get, List, Watch |  |
-| `endpoints` | `""` | Get, List, Watch |  |
-| `services` | `""` | Get, List, Watch |  |
-| `nodes` | `""` | Get, List, Watch |  |
-| `nodes/metrics` | `""` | Get, List, Watch |  |
-| `deployments` | `apps` | Get, List, Watch |  |
-| `daemonsets` | `apps` | Get, List, Watch |  |
-| `replicasets` | `apps` | Get, List, Watch |  |
-| `statefulsets` | `apps` | Get, List, Watch |  |
-| `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` |
 
 #### Database extension
 

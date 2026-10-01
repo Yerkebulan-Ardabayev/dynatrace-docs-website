@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deplo
 
 * How-to guide
 * 2-min read
-* Updated on Jul 01, 2026
+* Updated on Sep 08, 2026
 
 Dynatrace Operator manages the rollout and updates of the following components in Kubernetes:
 
@@ -88,7 +88,9 @@ To request images from a specific supported public registry, set `spec.publicReg
 
 ### What changes when the feature is enabled
 
-* **Component images**: Dynatrace Operator resolves image references from your Dynatrace environment for OneAgent, ActiveGate, and CodeModules. Components without a default image source (Extension Execution Controller, Standalone Log Module, SQL Extension Executor) always require a custom image in the respective `spec.templates` field.
+* **Component images**: Dynatrace Operator resolves image references from your Dynatrace environment.
+
+  + Container images for Extension Execution Controller, Dynatrace Log Module and the SQL Extension Executor are supported from Dynatrace SaaS 1.350 and Dynatrace Operator 1.11. In older versions, these components always require a image specified in the respective `spec.templates` field.
 * **Pod restarts**: All managed component pods restart when the feature is first enabled.
 * **Application injection**: The init container image injected into application pods changes on the pod's next restart, if you are not using the CSI driver or if you use [node image pull via ephemeral volume](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#ephemeral-node-image-pull "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download."). In both cases the webhook switches from ZIP-download mode to self-extracting mode using the CodeModules image.
 

@@ -20,7 +20,7 @@ Dynatrace provides extensive Python, Node.js, Java, Go, and .NET monitoring capa
 * Automatic distributed tracing across AWS services such as [API Gateway](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-api-gateway "Monitor Amazon API Gateway and view available metrics."), [SQS](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-simple-queue-service-sqs "Monitor Amazon Simple Queue Service (Amazon SQS) and view available metrics."), [SNS](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-simple-notification-service-sns "Monitor Amazon Simple Notification Service (Amazon SNS) and view available metrics.") and seamless integration with other AWS services. For more details, refer to [AWS Lambda integration](/managed/ingest-from/amazon-web-services/integrate-into-aws "Learn how to integrate Dynatrace into AWS platform.").
 
 * OpenTelemetry support for trace and metric ingestion.
-* Native log ingestion from Lambda functions. Dynatrace supports log ingestion directly via the AWS Lambda Telemetry API, reducing dependency on CloudWatch. For more details, refer to [AWS Lambda log collection](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector "Collect logs from AWS Lambda functions").
+* Native log ingestion from Lambda functions. Dynatrace supports log ingestion directly via the AWS Lambda Telemetry API, reducing dependency on CloudWatch. For more details, refer to [AWS Lambda log collection](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector "Collect logs from AWS Lambda functions using the Dynatrace Lambda extension---a lower-latency, lower-cost alternative to the CloudWatch log forwarder.").
 * [Cold start](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/trace-lambda-functions#filter-cold-start "Monitor AWS Lambda functions.") detection and optimization.
 * Infrastructure-as-Code support (Terraform, AWS SAM, Serverless Framework).
 
@@ -258,7 +258,7 @@ This option always overrides `DT_CONNECTION_AUTH_TOKEN` (`Connection.AuthToken`)
 
 A fetch accesses AWS Secrets Manager only once, during the Lambda function's initialization phase; this causes an increase of the Lambda function's cold start duration.
 
-For details on fetching the token for log collection, refer to [Fetch token from AWS Secrets Manager](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector#aws-secrets-manager "Collect logs from AWS Lambda functions").
+For details on fetching the token for log collection, refer to [Fetch token from AWS Secrets Manager](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector#aws-secrets-manager "Collect logs from AWS Lambda functions using the Dynatrace Lambda extension---a lower-latency, lower-cost alternative to the CloudWatch log forwarder.").
 
 #### Enforce Lambda layer signature verification
 

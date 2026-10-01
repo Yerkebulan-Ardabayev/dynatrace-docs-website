@@ -32,6 +32,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Infrastructure & Operations app settings](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-infraops-settings) | `app:dynatrace.infraops:settings` | `environment` |
 | [Jenkins Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-jenkins-connector-connection) | `app:dynatrace.jenkins.connector:connection` | `environment` |
 | [Jira Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-jira-connection) | `app:dynatrace.jira:connection` | `environment` |
+| [Jira Service Management connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-jsm-connector-connection) | `app:dynatrace.jsm.connector:connection` | `environment` |
 | [Kubernetes Connector](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-kubernetes-connector-connection) | `app:dynatrace.kubernetes.connector:connection` | `environment` |
 | [Launcher](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-launcher-home-launchpad) | `app:dynatrace.launcher:home.launchpad` | `environment` |
 | [Microsoft Defender for Cloud](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-microsoft-defender-cloud-connections) | `app:dynatrace.microsoft.defender.cloud:connections` | `environment` |
@@ -39,9 +40,11 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Microsoft 365 Email Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-microsoft365-connector-mail-connection) | `app:dynatrace.microsoft365.connector:mail.connection` | `environment` |
 | [Microsoft Teams](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-msteams-connection) | `app:dynatrace.msteams:connection` | `environment` |
 | [PagerDuty Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-pagerduty-connection) | `app:dynatrace.pagerduty:connection` | `environment` |
+| [PagerDuty Event Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-pagerduty-events-connection) | `app:dynatrace.pagerduty:events-connection` | `environment` |
 | [QuickStart Token Configuration](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-quickstart-dynatrace-quickstart-token-config) | `app:dynatrace.quickstart:dynatrace.quickstart.token-config` | `environment` |
 | [Red Hat Ansible Automation Controller Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-redhat-ansible-automation-controller-connection) | `app:dynatrace.redhat.ansible:automation-controller.connection` | `environment` |
 | [Red Hat Event-Driven Ansible Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-redhat-ansible-eda-webhook-connection) | `app:dynatrace.redhat.ansible:eda-webhook.connection` | `environment` |
+| [Generic Security Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-security-operations-connections) | `app:dynatrace.security.operations:connections` | `environment` |
 | [ServiceNow Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-servicenow-connection) | `app:dynatrace.servicenow:connection` | `environment` |
 | [Site Reliability Guardian](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-site-reliability-guardian-guardians) | `app:dynatrace.site.reliability.guardian:guardians` | `environment` |
 | [Slack](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-slack-connection) | `app:dynatrace.slack:connection` | `environment` |

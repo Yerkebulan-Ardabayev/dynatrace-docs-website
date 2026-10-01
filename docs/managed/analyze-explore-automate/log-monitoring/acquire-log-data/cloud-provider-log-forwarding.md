@@ -51,7 +51,7 @@ For detailed instructions on how to set up log ingestion from AWS S3, see [docum
 
 ### AWS Lambda log collection
 
-You can collect logs directly from your AWS Lambda functions and send them to Dynatrace for analysis. The solution is an alternative to the CloudWatch log forwarder with benefits in terms of cost and latency, and is also easier to set up, particularly if AWS Lambda tracing is already in place. As part of the OneAgent installation process, this feature provides a streamlined solution for collecting logs from your Lambda functions. For more information, see [AWS Lambda documentation page](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector "Collect logs from AWS Lambda functions").
+You can collect logs directly from your AWS Lambda functions and send them to Dynatrace for analysis. The solution is an alternative to the CloudWatch log forwarder with benefits in terms of cost and latency, and is also easier to set up, particularly if AWS Lambda tracing is already in place. As part of the OneAgent installation process, this feature provides a streamlined solution for collecting logs from your Lambda functions. For more information, see [AWS Lambda documentation page](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector "Collect logs from AWS Lambda functions using the Dynatrace Lambda extension---a lower-latency, lower-cost alternative to the CloudWatch log forwarder.").
 
 ### AWS log monitoring using log forwarder Deprecated
 

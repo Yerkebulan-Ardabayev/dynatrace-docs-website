@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-
 
 * How-to guide
 * 24-min read
-* Updated on Aug 27, 2026
+* Updated on Sep 28, 2026
 
 You can run your Dynatrace synthetic monitors from a private Synthetic location, which is a location in your private network infrastructure where you install one or more Synthetic-enabled ActiveGate instances.
 
@@ -260,12 +260,6 @@ This section is only relevant for releases 1.329 and earlier.
      curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-139.0.7258.138-3235.tgz
      ```
 
-     ActiveGate version 1.321
-
-     ```
-     curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.157-3203.tgz
-     ```
-
      You can [verify the authenticity of the packages](#verify) using the signature files stored together with the package archives.
    * Extract the installation packages. Go to the directory where you saved the archive and run the following command:
 
@@ -425,6 +419,14 @@ You can [verify the authenticity of the packages](#verify) using the signature f
 
    * Download the rpm package archive. This is a safe and verified archive hosted by Dynatrace.
 
+     ActiveGate version 1.347
+
+     ##### Red Hat Enterprise Linux/Rocky Linux 9
+
+     ```
+     curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-152.0.7977.82-1.el9.tgz
+     ```
+
      ActiveGate version 1.345
 
      ##### Red Hat Enterprise Linux/Rocky Linux 9
@@ -531,20 +533,6 @@ You can [verify the authenticity of the packages](#verify) using the signature f
 
      ```
      curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-139.0.7258.138-1.el9.tgz
-     ```
-
-     ActiveGate version 1.321
-
-     ##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8
-
-     ```
-     curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
-     ```
-
-     ##### Red Hat Enterprise Linux/Rocky Linux 9
-
-     ```
-     curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.157-1.el9.tgz
      ```
 
      You can [verify the authenticity of the packages](#verify) using the signature files stored together with the package archives.
@@ -662,6 +650,12 @@ On Ubuntu Server 20.04 and 22.04 Chrome for Testing is supported since 1.331
      sudo mkdir -p /usr/lib/chrome_for_testing
      ```
    * Download the Chrome for Testing package archive to a temporary location. This is a safe and verified archive hosted by Dynatrace.
+
+     ActiveGate version 1.347
+
+     ```
+     curl --output /tmp/chrome.zip https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-152.0.7977.82.zip
+     ```
 
      ActiveGate version 1.345
 

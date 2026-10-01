@@ -30,7 +30,51 @@ Follow the steps below to enable Kubernetes API monitoring.
 
 ## Step 2 Configure DynaKube
 
-Configure the **ActiveGate** values of the DynaKube according to the [list of parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters#ag "List the available parameters for setting up Dynatrace Operator on Kubernetes.") and add `kubernetes-monitoring` to the ActiveGate capabilities.
+Configure the DynaKube according to the [list of parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
+
+Dynatrace Operator version 1.11.0+
+
+Dynatrace Operator version 1.10.0 and earlier
+
+Add `spec.kubernetesMonitoring` to your DynaKube. Set `registration` to automatically register the cluster for Kubernetes API monitoring:
+
+```
+...
+
+
+
+spec:
+
+
+
+...
+
+
+
+activeGate:
+
+
+
+capabilities:
+
+
+
+- routing
+
+
+
+...
+
+
+
+kubernetesMonitoring:
+
+
+
+registration: {}
+```
+
+Add `kubernetes-monitoring` to the ActiveGate capabilities:
 
 ```
 ...

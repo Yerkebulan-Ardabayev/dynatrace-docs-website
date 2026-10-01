@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/netwo
 # Security configurations
 
 * 1-min read
-* Updated on Apr 13, 2026
+* Updated on Sep 09, 2026
 
 This page provides a comprehensive guide to security in your environment.
 
@@ -24,4 +24,6 @@ Configure Pod Security Standards for the Dynatrace namespace.](/managed/ingest-f
 
 Configure Dynatrace Operator in OpenShift environments.](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/openshift-configuration "Configure Dynatrace Operator in OpenShift environments.")[### Token rotation
 
-Token rotation procedure for Dynatrace Operator-managed tokens](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/token-rotation "This page describes token rotation behavior for Dynatrace environments and explains how to manually rotate communication tokens created and managed by Dynatrace Operator.")
+Token rotation procedure for Dynatrace Operator-managed tokens](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/token-rotation "This page describes token rotation behavior for Dynatrace environments and explains how to manually rotate communication tokens created and managed by Dynatrace Operator.")[### Init-container user and group identity
+
+Configure user and group identity for the Dynatrace Operator injected init-container.](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/init-container-security-context "Configure user and group identity for the Dynatrace Operator injected init-container.")

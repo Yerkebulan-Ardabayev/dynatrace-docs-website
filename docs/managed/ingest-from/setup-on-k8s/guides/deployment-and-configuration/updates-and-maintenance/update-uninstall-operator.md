@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deplo
 # Update or uninstall Dynatrace Operator
 
 * 12-min read
-* Updated on May 05, 2026
+* Updated on Sep 16, 2026
 
 This page provides detailed instructions on how to update or uninstall Dynatrace Operator in Kubernetes and OpenShift environments.
 
@@ -33,11 +33,11 @@ Kubernetes
 OpenShift
 
 ```
-kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.2/kubernetes.yaml
+kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.11.0/kubernetes.yaml
 ```
 
 ```
-oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.2/openshift.yaml
+oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.11.0/openshift.yaml
 ```
 
 Starting with Dynatrace Operator version 1.4.0, the `kubernetes-csi.yaml` includes all Dynatrace Operator components. For more details, see [Dynatrace Operator release notes version 1.4.0](/managed/whats-new/dynatrace-operator/dto-fix-1-4-0#upgrade-from-dynatrace-operator-version-1-3-0 "Release notes for Dynatrace Operator, version 1.4.0").
@@ -49,11 +49,11 @@ Kubernetes
 OpenShift
 
 ```
-kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.2/kubernetes-csi.yaml
+kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.11.0/kubernetes-csi.yaml
 ```
 
 ```
-oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.2/openshift-csi.yaml
+oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.11.0/openshift-csi.yaml
 ```
 
 ### Helm
@@ -110,7 +110,7 @@ oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1
 
    Migrate from the legacy Helm repository
 
-   The legacy `dynatrace/helm-charts` repository is deprecated. If you're still using it, update before your next upgrade.
+   The legacy `dynatrace/helm-charts` repository is archived and no longer receives updates. If you're still using it, update before your next upgrade.
 
    Remove the old repository and add the current one:
 
@@ -155,11 +155,11 @@ oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1
    OpenShift
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.2/dynatrace-operator-crd.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.11.0/dynatrace-operator-crd.yaml
    ```
 
    ```
-   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.2/dynatrace-operator-crd.yaml
+   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.11.0/dynatrace-operator-crd.yaml
    ```
 
 ## Update ActiveGate pods
@@ -379,23 +379,23 @@ After all Dynatrace Operator–managed components have been successfully removed
    * If the CSI driver was **not** installed (you used `kubernetes.yaml` during installation):
 
      ```
-     kubectl delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.2/kubernetes.yaml
+     kubectl delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.11.0/kubernetes.yaml
      ```
    * If the CSI driver **was** installed (you used `kubernetes-csi.yaml` during installation):
 
      ```
-     kubectl delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.2/kubernetes-csi.yaml
+     kubectl delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.11.0/kubernetes-csi.yaml
      ```
 
    * If the CSI driver was **not** installed (you used `openshift.yaml` during installation):
 
      ```
-     oc delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.2/openshift.yaml
+     oc delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.11.0/openshift.yaml
      ```
    * If the CSI driver **was** installed (you used `openshift-csi.yaml` during installation):
 
      ```
-     oc delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.2/openshift-csi.yaml
+     oc delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.11.0/openshift-csi.yaml
      ```
 2. Delete the namespace.
 
@@ -422,7 +422,7 @@ Before running the node cleanup, ensure that no DynaKube is deployed and all mon
 1. Download the script.
 
 ```
-curl -O https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/refs/tags/v1.10.2/hack/cluster/cleanup-node-fs.sh
+curl -O https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/refs/tags/v1.11.0/hack/cluster/cleanup-node-fs.sh
 ```
 
 2. Make the script executable.
@@ -454,9 +454,23 @@ After all cleanup pods complete successfully, the DaemonSet is automatically del
 
 ## Upgrade from older versions
 
-If you have **ever run a Dynatrace Operator version older than 1.4** in your cluster - regardless of which version you're on today - you must upgrade to version **1.7.3 first** before going to the latest release. From 1.7.3, the Operator handles the necessary DynaKube conversion and CRD cleanup automatically.
+Depending on which Dynatrace Operator version you are currently running, you may need to stop at an intermediate version before upgrading to the latest release. Use the [version compatibility table](#compatibility-table) to find your required stops, then follow the [upgrade steps](#upgrade-steps). For background on why these stops are required, see [What happens at the intermediate stop](#upgrade-details).
 
-To find out whether you're affected and if a version jump is possible, see [Check your current versions](#check-versions).
+### Version compatibility
+
+The table shows the required intermediate stop based on which Dynatrace Operator version you are currently running. The intermediate stop is the last release that still has your current storage version in the CRD schema—once you pass through it, Dynatrace Operator cleans up `.status.storedVersions` in the DynaKube and the path to the latest release is clear.
+
+If your cluster has previously run Dynatrace Operator 1.3 and earlier, additional cleanup steps are required before upgrading to certain versions. See [Special instructions for clusters that ran version 1.3 and earlier](#legacy-cleanup) below.
+
+If your DynaKube had `spec.extensions` configured (Extensions Controller), you must stop at version 1.8.x or 1.9.x before upgrading to version 1.10 or later. See [Special instructions for clusters using the Extensions Controller in version 1.7 and earlier](#extensions-cleanup) below.
+
+| Currently on | DynaKube Storage version | Maximum direct upgrade |
+| --- | --- | --- |
+| ≤ 1.3 | `v1beta2` | 1.7.3 |
+| 1.4.x | `v1beta3` | 1.8.x |
+| 1.5.x | `v1beta4` | 1.10.x |
+| 1.6.x – 1.7.x | `v1beta5` | latest |
+| ≥ 1.8 | `v1beta6` | latest |
 
 ### Check your current versions
 
@@ -478,21 +492,13 @@ kubectl get deployment dynatrace-operator -n dynatrace \
 -o jsonpath='{.metadata.labels.app\.kubernetes\.io/version}'
 ```
 
-Check your current DynaKube API version:
-
-```
-kubectl get dynakubes -n dynatrace -o custom-columns='NAME:.metadata.name,API VERSION:.apiVersion'
-```
-
-Check which API versions have ever been used to store DynaKubes in this cluster:
+Check which API versions have been used to store DynaKubes in this cluster:
 
 ```
 kubectl get crd dynakubes.dynatrace.com -o jsonpath='{.status.storedVersions}'
 ```
 
-Every API version listed in `.status.storedVersions` must still be served by the Dynatrace Operator version you're upgrading to. If an entry is no longer served, you must first upgrade to an intermediate Operator version that still supports it so the stored resources can be converted and the obsolete entry removed.
-
-`v1beta1` and `v1beta2` are a special exception: if the output contains either of them, **only Dynatrace Operator 1.7.3** can convert these resources and remove the entries. No other version will fix it - see [Upgrade steps](#upgrade-steps).
+Cross-reference the output with the [DynaKube API version overview](#api-overview) below. Any version listed in `.status.storedVersions` that is no longer in the CRD schema of your target version requires an intermediate upgrade stop.
 
 ### DynaKube API version overview
 
@@ -500,7 +506,7 @@ Every API version listed in `.status.storedVersions` must still be served by the
 | --- | --- | --- | --- | --- | --- |
 | v1beta6 | 1.8.0 |  |  |  |  |
 | v1beta5 | 1.6.0 | 1.10.0 |  |  | [to v1beta6](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta5-v1beta6 "Migrate your v1beta5 DynaKube CR to the v1beta6 apiVersions.") |
-| v1beta4 | 1.5.0 | 1.9.0 | 1.10.0 |  | [to v1beta6](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta4-v1beta6 "Migrate your v1beta4 DynaKube CR to the v1beta6 apiVersions."), [to v1beta5](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta4-v1beta5 "Migrate your v1beta4 DynaKube CR to the v1beta5 apiVersions.") |
+| v1beta4 | 1.5.0 | 1.9.0 | 1.10.0 | 1.11.0 | [to v1beta6](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta4-v1beta6 "Migrate your v1beta4 DynaKube CR to the v1beta6 apiVersions."), [to v1beta5](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta4-v1beta5 "Migrate your v1beta4 DynaKube CR to the v1beta5 apiVersions.") |
 | v1beta3 | 1.4.0 | 1.7.0 | 1.8.0 | 1.9.0 | [to v1beta5](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta3-v1beta5 "Migrate your v1beta3 DynaKube CR to the v1beta5 apiVersions."), [to v1beta4](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta3-v1beta4 "Migrate your v1beta3 DynaKube CR to the v1beta4 apiVersions.") |
 | v1beta2 | 1.2.0 | 1.6.0 | 1.7.0 | 1.8.0 | [to v1beta5](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta5 "Migrate your v1beta2 DynaKube CR to the v1beta5 apiVersions."), [to v1beta4](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta4 "Migrate your v1beta2 DynaKube CR to the v1beta4 apiVersions.") |
 | v1beta1 | 0.3.0 | 1.6.0 | 1.7.0 | 1.8.0 | [to v1beta5](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta5 "Migrate your v1beta1 DynaKube CR to the v1beta5 apiVersions."), [to v1beta4](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta4 "Migrate your v1beta1 DynaKube CR to the v1beta4 apiVersions.") |
@@ -511,28 +517,24 @@ The stated Dynatrace Operator version no longer serves this API version. You can
 
 ### Upgrade steps
 
-Dynatrace Operator versions **older than 1.4** stored DynaKube as `v1beta1` or `v1beta2`. These API versions are removed in 1.8.0, and **1.7.3 is the last and only release that can migrate them**.
+The intermediate upgrade follows the same pattern regardless of which stop is required:
 
-What matters is your cluster's history, not your current version: if your DynaKube was *ever* stored as `v1beta1` or `v1beta2` (anywhere along the upgrade path), you must pass through 1.7.3 before going to 1.8.0 or later - even if you've upgraded the Operator several times since. Skipping this step blocks both the operator and CRD upgrade.
+1. **Upgrade to the intermediate version**
 
-You can confirm this by checking the CRD's `.status.storedVersions` - see [Check your current versions](#check-versions).
-
-1. **Upgrade to version 1.7.3**
-
-   This step automatically converts your DynaKube to a supported API version.
+   Replace `<intermediate-version>` with the version from the table (for example, `1.7.3`, `1.8.2`, `1.10.x`).
 
    Helm
 
    Manifest
 
-   Do not use `--reuse-values` when upgrading across major Dynatrace Operator versions. New chart versions introduce fields that have no defaults in older values files, which causes nil pointer errors during templating. Pass only the values you need explicitly with `--set` or `-f values.yaml`.
+   Do not use `--reuse-values` when upgrading across major and minor Dynatrace Operator versions. New chart versions introduce fields that have no defaults in older values files, which causes nil pointer errors during templating. Pass only the values you need explicitly with `--set` or `-f values.yaml`.
 
    ```
    helm upgrade dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
 
 
 
-   --version 1.7.3 \
+   --version <intermediate-version> \
 
 
 
@@ -540,18 +542,23 @@ You can confirm this by checking the CRD's `.status.storedVersions` - see [Check
    ```
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.7.3/kubernetes-csi.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v<intermediate-version>/kubernetes-csi.yaml
    ```
 
-   Wait for the Operator pod to restart and give it roughly 10 minutes to ensure a healthy reconciliation.
-2. **Upgrade to the latest version**
+   Wait for Dynatrace Operator pod to restart and give it roughly 10 minutes to ensure a healthy reconciliation.
+2. **Verify `.status.storedVersions` is clean**
+
+   ```
+   kubectl get crd dynakubes.dynatrace.com -o jsonpath='{.status.storedVersions}'
+   ```
+
+   The obsolete API version should no longer appear in the output. If it still does, wait a few minutes and check again—Dynatrace Operator's init container or Helm hook may still be running.
+3. **Upgrade to the target version**
 
    To upgrade, follow [Update Dynatrace Operator](#update).
 
-   The upgrade automatically cleans up obsolete CRD entries and migrates your DynaKube to the current API version (`v1beta6`).
-
    When installing with manifests, make sure to provide the right RBAC permissions for the cleanup job, see [Dynatrace Operator security and RBAC](/managed/ingest-from/setup-on-k8s/reference/security#upgrade-support "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require").
-3. **Verify the upgrade**
+4. **Verify the upgrade**
 
    Check that the Dynatrace Operator is healthy, your DynaKube is on `v1beta6`, and `.status.storedVersions` is clean:
 
@@ -569,15 +576,60 @@ You can confirm this by checking the CRD's `.status.storedVersions` - see [Check
 
    The expected output is `dynatrace.com/v1beta6` and `["v1beta6"]`. Update your stored manifests to reflect the new `apiVersion` so they remain your source of truth.
 
-   Check for warning events about outdated CRD versions:
+### What happens at the intermediate stop
+
+When you upgrade to an intermediate version, the Dynatrace Operator handles two things automatically:
+
+* **DynaKube custom resource conversion** to a supported API version. Dynatrace Operator converts DynaKubes while the old API version is still served by the CRD. Once a version is removed from the schema, conversion is no longer possible—this is why you cannot skip the intermediate stop.
+* **`.status.storedVersions` cleanup** on the CRD. From 1.7.3 onward, Dynatrace Operator removes obsolete entries automatically, either via a Helm pre-upgrade hook (before the CRD is updated) or an Operator init container (after startup). For Helm-based installations on version 1.4.0 and later, the pre-upgrade hook also handles cleanup of entries predating your current version, removing the need for additional intermediate stops for historical entries.
+
+### Special instructions for clusters that ran version 1.3 and earlier
+
+Clusters that have previously run Dynatrace Operator version 1.3 and earlier may have obsolete `v1beta1` or `v1beta2` entries in the DynaKube CRD's `.status.storedVersions`. These must be removed before upgrading to this release, or the CRD upgrade will fail.
+
+Whether you need to stop at Dynatrace Operator version 1.7.3 first depends on your installation method:
+
+* **Helm-based installation**
+
+  + **Current version 1.4.0 and later**—No action required. The Helm pre-upgrade hook automatically removes obsolete `.status.storedVersions` entries during the upgrade.
+  + **Current version 1.3 and earlier**—You must upgrade to Dynatrace Operator 1.7.3 before upgrading to the next release.
+* **Alternative installation methods** (Red Hat OpenShift OperatorHub, OperatorHub.io, Google Marketplace, or plain Kubernetes manifests)
+
+  + **Never ran version 1.3 and earlier**—No action required.
+  + **Previously ran version 1.3 and earlier**—You must upgrade to Dynatrace Operator 1.7.3 before upgrading to the next release.
+
+Manually remove obsolete entries from `.status.storedVersions`
+
+Instead of upgrading to version 1.7.3, you can manually remove the obsolete entries from `.status.storedVersions`:
+
+1. List the stored versions in the CRD:
 
    ```
-   kubectl get events -n dynatrace --field-selector reason=Warning
+   kubectl -n dynatrace get crd dynakubes.dynatrace.com -o jsonpath='{.status.storedVersions}'
+   ```
+2. Continue only if multiple versions are listed in the output. If only one version is listed, no action is required.
+3. Identify the currently active version:
+
+   ```
+   storage_version=$(kubectl get customresourcedefinitions dynakubes.dynatrace.com -o jsonpath='{.spec.versions[?(@.storage==true)].name}')
+   ```
+4. Convert all DynaKubes to the active version:
+
+   ```
+   kubectl get dynakube -n dynatrace -o yaml | kubectl replace -f -
+   ```
+5. Remove all previous versions while keeping the active version:
+
+   ```
+   kubectl patch customresourcedefinitions dynakubes.dynatrace.com --subresource='status' --type='merge' -p "{\"status\":{\"storedVersions\":[\"${storage_version}\"]}}"
    ```
 
-### What happens during the upgrade to 1.7.3
+Ensuring that `.status.storedVersions` is clean is crucial to avoid issues with future upgrades.
 
-When you follow the steps above, the Dynatrace Operator takes care of two concerns automatically:
+ArgoCD may display resources that are still using an old API version as "out-of-sync".
 
-* **DynaKube custom resource conversion** to a supported API version. The Operator auto-converts DynaKubes only while the source version is still served by the CRD. Once a version is removed, conversion is no longer possible - this is why version 1.7.3 is mandatory for resources on `v1beta1` or `v1beta2`.
-* **`.status.storedVersions` cleanup** on the CRD. Kubernetes tracks every API version that has ever been used to store data. Entries that remain listed there but no longer exist in the schema block any further CRD update. From 1.7.3 onward, the Dynatrace Operator removes obsolete entries automatically - either via a Helm pre-upgrade hook (for Helm-based installations) or an Operator init container (for manifest-based installations). Because this cleanup logic was introduced in 1.7.3 and does not exist in earlier releases, **1.7.3 is the mandatory entry point** for clusters that still carry `v1beta1` or `v1beta2` in `storedVersions`.
+### Special instructions for clusters using the Extensions Controller in version 1.7 and earlier
+
+If your DynaKube had `spec.extensions` configured, you must stop at Dynatrace Operator version 1.8.x or 1.9.x before upgrading to version 1.10.0 or later.
+
+**Why this stop is required:** In version 1.8.0, the Extensions Controller StatefulSet was renamed from `extensions-controller` to `extension-controller`. The Dynatrace Operator performs a one-time migration during the 1.8.x-1.9.x lifecycle—it creates the new resources and removes the old ones. If you skip directly to version 1.10 or later, this cleanup never runs, and the old `extensions-controller` StatefulSet, Service, and Secret remain in the cluster indefinitely.

@@ -854,6 +854,12 @@ The list of operating system versions supported by Dynatrace ActiveGate is updat
 
   + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 
+##### The following operating systems will no longer be supported starting 01 June 2028
+
+* Linux: SUSE Enterprise Linux 16.0
+
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
+
 ##### The following operating systems will no longer be supported starting 01 October 2028
 
 * Linux: Amazon Linux 2023
@@ -1669,6 +1675,17 @@ OpenShift
 ## OneAgent for Mobile
 
 Dynatrace typically supports mobile operating system versions and development tools beyond their vendor end-of-support dates to give you enough time to upgrade your environment.
+
+### April 2027 — upcoming end of support
+
+* iOS 15 and iOS 16
+
+  + New minimum version: iOS 17+ (starting April 2027)
+  + Support ends when the SDK is built with Xcode 27 (April 2027).
+* x86\_64 (Intel) architecture — Swift instrumentor (DTSwiftInstrumentor) and symbol extractor (DSSClient)
+
+  + The switch to Xcode 27 in April 2027 removes x86\_64 support for both tools.
+  + Only Apple Silicon (arm64) will be supported from that point on.
 
 ### 2026-07-14 End of support
 

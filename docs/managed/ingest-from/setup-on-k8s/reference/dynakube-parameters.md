@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/reference/dy
 # DynaKube parameters for Dynatrace Operator
 
 * 57-min read
-* Updated on Jul 10, 2026
+* Updated on Sep 14, 2026
 
 This page will help you to understand and configure the DynaKube [Kubernetes Custom Resource﻿](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/), enabling you to optimize your Dynatrace Operator setup according to your specific requirements.
 
@@ -18,7 +18,7 @@ The table below specifies the required Dynatrace Operator versions corresponding
 | --- | --- | --- |
 | `v1beta6` | 1.8 |  |
 | `v1beta5` | 1.6 |  |
-| `v1beta4` | 1.5 |  |
+| `v1beta4` | 1.5 | 1.10 |
 | `v1beta3` | 1.4 | 1.7 |
 | `v1beta2` | 1.2 | 1.6 |
 | `v1beta1` | All versions | 1.6 |
@@ -27,7 +27,7 @@ The table below specifies the required Dynatrace Operator versions corresponding
 
 The corresponding DynaKube API versions will be removed from the Dynatrace Operator in the subsequent minor or major release.
 
-See the DynaKube YAML samples on [GitHub﻿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.10.2/assets/samples/dynakube).
+See the DynaKube YAML samples on [GitHub﻿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.11.0/assets/samples/dynakube).
 
 v1beta6
 
@@ -95,7 +95,7 @@ Recommended
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
 | `storageHostPath` | Writable directory on the host filesystem where OneAgent configurations will be stored. | No default (optional) | string |
 | `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
-| `version` | The OneAgent version to be used for host monitoring OneAgents running in the dedicated pod. This setting doesn't affect the OneAgent version used for application monitoring. | The latest version is used by default. | string |
+| `version` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your environment to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for all components managed by Dynatrace Operator"). The OneAgent version to be used for host monitoring OneAgents running in the dedicated pod. This setting doesn't affect the OneAgent version used for application monitoring. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.classicFullStack`
 
@@ -120,7 +120,7 @@ Classic Full-Stack mode is not supported when using a [platform token](/managed/
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
 | `storageHostPath` | Writeable directory on the host filesystem where OneAgent configurations will be stored. | No default (optional) | string |
 | `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
-| `version` | The OneAgent version to be used. | The latest version is used by default. | string |
+| `version` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for all components managed by Dynatrace Operator"). The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.applicationMonitoring`
 
@@ -134,7 +134,7 @@ Classic Full-Stack mode is not supported when using a [platform token](/managed/
 | `imagePullPolicy` | Defines the image pull policy. When empty, the Kubernetes default applies. | No default (optional) | string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containers﻿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject.For more information, see [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | No default (optional) | LabelSelector |
-| `version` | The OneAgent version to be used. | The latest version is used by default. | string |
+| `version` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for all components managed by Dynatrace Operator"). The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.hostMonitoring`
 
@@ -157,7 +157,7 @@ Classic Full-Stack mode is not supported when using a [platform token](/managed/
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
 | `storageHostPath` | Writeable directory on the host filesystem where OneAgent configurations will be stored. | No default (optional) | string |
 | `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
-| `version` | The OneAgent version to be used. | The latest version is used by default. | string |
+| `version` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for all components managed by Dynatrace Operator"). The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.activeGate`
 
@@ -192,6 +192,35 @@ Classic Full-Stack mode is not supported when using a [platform token](/managed/
 
 A custom certificate is required for this capability. See the `tlsSecretName` parameter for details.
 
+## `.spec.kubernetesMonitoring`
+
+`.spec.kubernetesMonitoring` is mutually exclusive with the `kubernetes-monitoring` capability in [`.spec.activeGate`](#active-gate). Do not configure both in the same DynaKube.
+
+* All parameters are Optional.
+
+| **Parameter** | **Description** | **Default value** | **Data type** |
+| --- | --- | --- | --- |
+| `annotations` | Add custom annotations to the Kubernetes monitoring pods. | No default (optional) | map[string]string |
+| `customProperties` | Add a custom properties file by providing it as a value or reference it from a secret. | No default (optional) | string |
+| `dnsPolicy` | Sets DNS policy for the Kubernetes monitoring pods. | No default (optional) | string |
+| `env` | Set additional environment variables for the Kubernetes monitoring pods. | No default (optional) | []EnvVar |
+| `group` | Set activation group for Kubernetes monitoring. | No default (optional) | string |
+| `image` | The Kubernetes monitoring container image. Defaults to the latest ActiveGate image provided by the registry on the environment. | No default (optional) | string |
+| `imagePullPolicy` | The Kubernetes monitoring container image pull policy. Possible values: `IfNotPresent`, `Always`, `Never`. | No default (optional) | string |
+| `labels` | Add custom labels to the Kubernetes monitoring pods. | No default (optional) | map[string]string |
+| `nodeSelector` | Specifies the nodes on which pods are scheduled. | No default (optional) | map[string]string |
+| `priorityClassName` | Indicates the pod's priority class. Create a PriorityClass object with the same name first. For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `registration` | When present (even as `{}`), enables automatic cluster registration in Dynatrace. | No default (optional) | object |
+| `registration.clusterName` | Display name used during registration. When empty, falls back to the `automatic-kubernetes-api-monitoring-cluster-name` feature flag, then the DynaKube name. | No default (optional) | string |
+| `replicas` | Number of replicas for the Kubernetes monitoring pods. Defaults to one. Set more than one replica for high-availability mode. | 1 | int |
+| `resources` | Define resource requests and limits for single Kubernetes monitoring pods. | No default (optional) | ResourceRequirements |
+| `rollingUpdate` | Define the rolling update strategy for the Kubernetes monitoring StatefulSet. For details, see [StatefulSet Specification﻿](https://dt-url.net/ql238m1). | No default (optional) | RollingUpdateStatefulSetStrategy |
+| `terminationGracePeriodSeconds` | Configures the terminationGracePeriodSeconds parameter of the Kubernetes monitoring pod. | No default (optional) | int |
+| `tlsCertsRef` | Reference to a secret containing the Kubernetes monitoring TLS certificate, key, and password. | No default (optional) | object |
+| `tlsCertsRef.secretName` | Name of the Secret in the DynaKube namespace. Expected keys: `server.p12` (certificate and key in PKCS12 format) and `password` (passphrase for `server.p12`). | No default (required) | string |
+| `tolerations` | Set tolerations for the Kubernetes monitoring pods. For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `topologySpreadConstraints` | Adds [topology spread constraints﻿](https://dt-url.net/xc03ysw) for the Kubernetes monitoring pods. | No default (optional) | []TopologySpreadConstraint |
+
 ## `.spec.metadataEnrichment`
 
 * All parameters are Optional.
@@ -210,7 +239,6 @@ Available with a future Dynatrace version.
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `prometheus` | Enables prometheus extension. | No default (optional) |  |
 | `databases` | List of database extensions. | No default (optional) | [[]DatabaseSpec](#extensions-databases) |
 
 * `kubernetes-monitoring` is mandatory and has to be added to the [list of ActiveGate capabilities](#active-gate) in `.spec.activeGate.capabilities` and
@@ -577,7 +605,7 @@ Dynatrace Operator version 1.8.0+
 | `labels` | Add custom labels to the Node Configuration Collector pods. | No default (optional) | map[string]string |
 | `annotations` | Add custom annotations to the Node Configuration Collector pods. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes the Node Configuration Collector pods will be deployed. | No default (optional) | map[string]string |
-| `imageRef` | Overrides the default image. | No default (optional) | [imageRef](#kspm-image-ref) |
+| `imageRef` | Overrides the image automatically resolved from the fleet management endpoint. Optional when the public registry feature flag is enabled. Dynatrace Operator resolves the image automatically in that mode. Auto-resolution: Dynatrace Operator version 1.11.0+ | No default (optional) | [imageRef](#kspm-image-ref) |
 | `priorityClassName` | If specified, indicates the Pod's priority. Name must be defined by creating a PriorityClass object with that name. If not specified the setting will be removed from the DaemonSet. | No default (optional) | string |
 | `resources` | Define resource requests and limits for Node Configuration Collector Pods. | No default (optional) | ResourceRequirements |
 | `nodeAffinity` | Define the nodeAffinity for the DaemonSet of the Node Configuration Collector | No default (optional) | NodeAffinity |
@@ -665,7 +693,7 @@ Dynatrace Operator version 1.6.0+
 
 | Parameter | Description | Default value | Data type |
 | --- | --- | --- | --- |
-| `imageRef` | Image that is used for Dynatrace Collector. | No default (optional) | [imageRef](#extensions-collector-image-ref) |
+| `imageRef` | Overrides the image automatically resolved from the fleet management endpoint for the Dynatrace OTel Collector. Optional when the public registry feature flag is enabled. Dynatrace Operator resolves the image automatically in that mode. Auto-resolution: Dynatrace Operator version 1.11.0+ | No default (optional) | [imageRef](#extensions-collector-image-ref) |
 | `replicas` | Number of Dynatrace Collector replicas. | 1 | int32 |
 | `labels` | Labels applied to Dynatrace Collector pod. | No default (optional) | map[string]string |
 | `annotations` | Annotations applied to Dynatrace Collector pod. | No default (optional) | map[string]string |
@@ -960,7 +988,7 @@ Enable Dynatrace [telemetry endpoints](/managed/ingest-from/setup-on-k8s/extend-
 | `labels` | Add custom labels to the Node Configuration Collector pods. | No default (optional) | map[string]string |
 | `annotations` | Add custom annotations to the Node Configuration Collector pods. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes the Node Configuration Collector pods will be deployed. | No default (optional) | map[string]string |
-| `imageRef` | Overrides the default image. | No default (optional) | [imageRef](#kspm-image-ref) |
+| `imageRef` | Overrides the image automatically resolved from the fleet management endpoint. Optional when the public registry feature flag is enabled. Dynatrace Operator resolves the image automatically in that mode. Auto-resolution: Dynatrace Operator version 1.11.0+ | No default (optional) | [imageRef](#kspm-image-ref) |
 | `priorityClassName` | If specified, indicates the Pod's priority. Name must be defined by creating a PriorityClass object with that name. If not specified the setting will be removed from the DaemonSet. | No default (optional) | string |
 | `resources` | Define resource requests and limits for Node Configuration Collector Pods. | No default (optional) | ResourceRequirements |
 | `nodeAffinity` | Define the nodeAffinity for the DaemonSet of the Node Configuration Collector | No default (optional) | NodeAffinity |
@@ -1041,7 +1069,7 @@ Dynatrace Operator version 1.6.0+
 
 | Parameter | Description | Default value | Data type |
 | --- | --- | --- | --- |
-| `imageRef` | Image that is used for Dynatrace Collector. | No default (optional) | [imageRef](#extensions-collector-image-ref) |
+| `imageRef` | Overrides the image automatically resolved from the fleet management endpoint for the Dynatrace OTel Collector. Optional when the public registry feature flag is enabled. Dynatrace Operator resolves the image automatically in that mode. Auto-resolution: Dynatrace Operator version 1.11.0+ | No default (optional) | [imageRef](#extensions-collector-image-ref) |
 | `replicas` | Number of Dynatrace Collector replicas. | 1 | int32 |
 | `labels` | Labels applied to Dynatrace Collector pod. | No default (optional) | map[string]string |
 | `annotations` | Annotations applied to Dynatrace Collector pod. | No default (optional) | map[string]string |
@@ -1059,7 +1087,11 @@ Dynatrace Operator version 1.6.0+
 | `repository` | URL of Dynatrace Collector image. | `public.ecr.aws/dynatrace/dynatrace-otel-collector` | string |
 | `tag` | Tag for Dynatrace Collector image. | `latest` | string |
 
-Dynatrace Operator version 1.5.0+
+Dynatrace Operator version 1.5.0 - 1.10.0
+
+Deprecation notice
+
+DynaKube API version `v1beta4` is no longer available with Dynatrace Operator version 1.11.0+.
 
 ## `.spec`
 
@@ -1103,7 +1135,7 @@ Recommended
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject.For more information, see [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | No default (optional) | LabelSelector |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings from the DynaKube samples on [GitHub﻿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.10.2/assets/samples/dynakube).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings from the DynaKube samples on [GitHub﻿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.11.0/assets/samples/dynakube).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
 | `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
 | `storageHostPath` | Writeable directory on the host filesystem where OneAgent configurations will be stored. | No default (optional) | string |
@@ -1310,7 +1342,7 @@ Adding this section deploys the Dynatrace Collector by the Operator.
 | `labels` | Add custom labels to the Node Configuration Collector Pods. | No default (optional) | map[string]string |
 | `annotations` | Add custom annotations to the Node Configuration Collector Pods. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes the Node Configuration Collector Pods will be deployed. | No default (optional) | map[string]string |
-| `imageRef` | Overrides the default image. | No default (optional) | [imageRef](#kspm-image-ref) |
+| `imageRef` | Overrides the image automatically resolved from the fleet management endpoint. Optional when the public registry feature flag is enabled. Dynatrace Operator resolves the image automatically in that mode. Auto-resolution: Dynatrace Operator version 1.11.0+ | No default (optional) | [imageRef](#kspm-image-ref) |
 | `priorityClassName` | If specified, indicates the Pod's priority. Name must be defined by creating a PriorityClass object with that name. If not specified the setting will be removed from the DaemonSet. | No default (optional) | string |
 | `resources` | Define resource requests and limits for Node Configuration Collector Pods. | No default (optional) | ResourceRequirements |
 | `nodeAffinity` | Define the nodeAffinity for the DaemonSet of the Node Configuration Collector | No default (optional) | NodeAffinity |
@@ -1391,7 +1423,7 @@ Dynatrace Operator version 1.6.0+
 
 | Parameter | Description | Default value | Data type |
 | --- | --- | --- | --- |
-| `imageRef` | Image that is used for Dynatrace Collector. | No default (optional) | [imageRef](#extensions-collector-image-ref) |
+| `imageRef` | Overrides the image automatically resolved from the fleet management endpoint for the Dynatrace OTel Collector. Optional when the public registry feature flag is enabled. Dynatrace Operator resolves the image automatically in that mode. Auto-resolution: Dynatrace Operator version 1.11.0+ | No default (optional) | [imageRef](#extensions-collector-image-ref) |
 | `replicas` | Number of Dynatrace Collector replicas. | 1 | int32 |
 | `labels` | Labels applied to Dynatrace Collector Pod. | No default (optional) | map[string]string |
 | `annotations` | Annotations applied to Dynatrace Collector Pod. | No default (optional) | map[string]string |
@@ -1409,7 +1441,11 @@ Dynatrace Operator version 1.6.0+
 | `repository` | URL of Dynatrace Collector image. | `public.ecr.aws/dynatrace/dynatrace-otel-collector` | string |
 | `tag` | Tag for Dynatrace Collector image. | `latest` | string |
 
-Dynatrace Operator version 1.4.0+
+Dynatrace Operator version 1.4.0 - 1.7.0
+
+Deprecation notice
+
+DynaKube API version `v1beta3` is no longer available with Dynatrace Operator version 1.8.0+.
 
 ## `.spec`
 
@@ -1642,7 +1678,7 @@ values:
 | `labels` | Add custom labels to the Node Configuration Collector Pods. | No default (optional) | map[string]string |
 | `annotations` | Add custom annotations to the Node Configuration Collector Pods. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes the Node Configuration Collector Pods will be deployed. | No default (optional) | map[string]string |
-| `imageRef` | Overrides the default image. | No default (optional) | [imageRef](#kspm-image-ref) |
+| `imageRef` | Overrides the image automatically resolved from the fleet management endpoint. Optional when the public registry feature flag is enabled. Dynatrace Operator resolves the image automatically in that mode. Auto-resolution: Dynatrace Operator version 1.11.0+ | No default (optional) | [imageRef](#kspm-image-ref) |
 | `priorityClassName` | If specified, indicates the Pod's priority. Name must be defined by creating a PriorityClass object with that name. If not specified the setting will be removed from the DaemonSet. | No default (optional) | string |
 | `resources` | Define resource requests and limits for Node Configuration Collector Pods. | No default (optional) | ResourceRequirements |
 | `nodeAffinity` | Define the nodeAffinity for the DaemonSet of the Node Configuration Collector | No default (optional) | NodeAffinity |
@@ -1724,7 +1760,7 @@ Available with a future Dynatrace version.
 
 | Parameter | Description | Default value | Data type |
 | --- | --- | --- | --- |
-| `imageRef` | Image that is used for Dynatrace Collector. | No default (optional) | [imageRef](#extensions-collector-image-ref) |
+| `imageRef` | Overrides the image automatically resolved from the fleet management endpoint for the Dynatrace OTel Collector. Optional when the public registry feature flag is enabled. Dynatrace Operator resolves the image automatically in that mode. Auto-resolution: Dynatrace Operator version 1.11.0+ | No default (optional) | [imageRef](#extensions-collector-image-ref) |
 | `replicas` | Number of Dynatrace Collector replicas. | 1 | int32 |
 | `labels` | Labels applied to Dynatrace Collector Pod. | No default (optional) | map[string]string |
 | `annotations` | Annotations applied to Dynatrace Collector Pod. | No default (optional) | map[string]string |

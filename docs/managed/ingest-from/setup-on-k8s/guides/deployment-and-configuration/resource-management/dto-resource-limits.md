@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deplo
 # Set resource limits for Dynatrace Operator components
 
 * 2-min read
-* Updated on Aug 19, 2026
+* Updated on Sep 18, 2026
 
 Properly configured resource limits ensure optimal performance and stability of Dynatrace Operator components while preventing resource contention in your Kubernetes cluster. This guide helps you understand how to set appropriate resource limits based on your environment size and usage patterns.
 
@@ -426,7 +426,13 @@ Increase the default requests/limits by 100–200%:
 ## Injected init container resource limits
 
 When Dynatrace Operator injects an init container into application pods, that container is subject to Kubernetes resource limits set via `initResources` in the [DynaKube spec](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
-By default, the DynaKube sets no limits unless you specify them.
+
+When the delivery mode is CSI driver or image volume, or when only metadata enrichment is enabled, the init container receives the following default resource limits:
+
+* Requests: CPU 30m, Memory 30Mi
+* Limits: CPU 100m, Memory 60Mi
+
+In ZIP download or node-image-pull mode, Dynatrace Operator sets no default resource limits on the init container, because restrictive limits significantly slow down extraction in these modes. In all modes, you can override the defaults by specifying `initResources` in the DynaKube spec.
 
 ### ZIP download mode
 

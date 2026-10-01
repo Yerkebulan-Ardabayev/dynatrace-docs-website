@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support
 # Technology support
 
 * 17-min read
-* Updated on Sep 24, 2026
+* Updated on Sep 25, 2026
 
 Dynatrace supports monitoring of the technologies and versions listed on this page. For serverless monitoring, see [Serverless compute support matrix](/managed/ingest-from/technology-support/serverless-compute-services "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS)."). For mainframe, see [Mainframe technology support](/managed/ingest-from/technology-support/mainframe-technology-support "Learn which technologies Dynatrace supports for Mainframe monitoring.").
 
@@ -1205,7 +1205,8 @@ gRPC client calls supported in [AWS Lambda](/managed/ingest-from/amazon-web-serv
 
 | Monitoring frameworks | Versions |
 | --- | --- |
-| [OpenTelemetry﻿](https://www.npmjs.com/package/@opentelemetry/api) | 1[1](#fn-monitoring-frameworks-1-def) |
+| [OpenTelemetry API for JavaScript﻿](https://www.npmjs.com/package/@opentelemetry/api) | 1[1](#fn-monitoring-frameworks-1-def) |
+| [OpenTelemetry SDK for JavaScript﻿](https://www.npmjs.com/package/@opentelemetry/core) | 1[1](#fn-monitoring-frameworks-1-def), 2.0-2.8[1](#fn-monitoring-frameworks-1-def), 2.9+[1](#fn-monitoring-frameworks-1-def) |
 
 1
 
@@ -1456,10 +1457,13 @@ See [OneAgent SDK for PHP](/managed/ingest-from/extend-dynatrace/extend-tracing/
 
 ### IBM App Connect Enterprise / IBM Integration Bus
 
+End of support for IBM Integration Bus 10 and IBM App Connect Enterprise 11
+
+Dynatrace support for IBM Integration Bus 10 ended on May 31, 2026 (last supported OneAgent version 1.337), and Dynatrace support for IBM App Connect Enterprise 11 ends on October 31, 2026 (last supported OneAgent version 1.349). For details, see [End-of-support announcements](/managed/whats-new/technology/end-of-support-news "End of support announcements for technologies supported by Dynatrace.").
+
 | Versions | Versions | Platforms |
 | --- | --- | --- |
 | [IBM App Connect Enterprise﻿](https://www.ibm.com/support/knowledgecenter/en/SSTTDS) | 11.0.0.4+, 12.0.3.0+, 13.0.2.0+ | AIX (POWER8, POWER9, POWER10), Linux (x86-64, s390), Windows (x86-64) |
-| [IBM Integration Bus﻿](https://www.ibm.com/support/knowledgecenter/de/SSMKHH/mapfiles/product_welcome.html) | 10 | AIX (POWER8, POWER9, POWER10), Linux (x86-64, s390), Windows (x86-64) |
 
 * **Only** the **64-bit** version is supported
 * **Monitoring** is supported for **all** node types
@@ -1701,7 +1705,11 @@ Starting with OneAgent for iOS version 8.335, Dynatrace stopped supporting Xcode
 
 Also, be aware that [Apple's App Store submission guidelines﻿](https://dt-url.net/we038fb) will restrict support to applications built with a minimum of Xcode 26 around April 2026.
 
-Starting with OneAgent for iOS version 8.343, Dynatrace stopped supporting iOS 12, iOS 13, and iOS 14. The minimum supported version is iOS 15. Version 8.341 is the last OneAgent for iOS version to support iOS 12 - 14.
+Starting April 2027 Dynatrace will stop supporting iOS 15 and iOS 16. The minimum supported version will be iOS 17.
+
+Also, be aware that [Apple's App Store submission guidelines﻿](https://dt-url.net/we038fb) will restrict support to applications built with a minimum of Xcode 27 around April 2027.
+
+In April 2027, the SDK will switch to Xcode 27. This removes x86\_64 (Intel) support for the Swift instrumentor (DTSwiftInstrumentor) and the symbol extractor (DSSClient). Only Apple Silicon (arm64) will be supported from that point on.
 
 #### Dynatrace Android Gradle plugin
 

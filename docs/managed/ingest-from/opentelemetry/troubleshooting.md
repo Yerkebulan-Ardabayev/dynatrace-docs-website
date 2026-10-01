@@ -102,7 +102,7 @@ Specific information about ingesting each signal type is available at
 
 * [Ingest OTLP logs](/managed/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")
 * [About OTLP metrics ingest](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
-* [Ingest OTLP traces](/managed/ingest-from/opentelemetry/otlp-api/ingest-traces "Learn how Dynatrace ingests OpenTelemetry traces and what limitations apply.")
+* [Ingest OTLP traces](/managed/ingest-from/opentelemetry/otlp-api/ingest-traces "Understand how Dynatrace ingests OpenTelemetry traces via OTLP, which attribute value types it supports, and what ingestion limits apply.")
 
 ### Traces
 

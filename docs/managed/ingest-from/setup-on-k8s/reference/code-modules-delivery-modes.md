@@ -9,40 +9,85 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/reference/co
 
 * Reference
 * 7-min read
-* Updated on Jul 10, 2026
+* Updated on Sep 04, 2026
 
 cloudNativeFullStack applicationMonitoring
 
-Dynatrace Operator can deliver OneAgent code modules to application pods in several ways. Which one applies depends on whether the CSI driver is enabled, the Dynatrace Operator version, and how you configure the DynaKube.
+On Kubernetes 1.35+, image volume injection is the recommended way to deliver OneAgent code modules to application pods. It requires no CSI driver, no privileged access, and the container runtime handles node-level caching natively. For clusters on older Kubernetes versions, ephemeral volume and CSI driver delivery remain available.
 
 Notable use cases:
 
-* Cloud-native full-stack monitoring works independently of the CSI driver.
+* Cloud-native full-stack monitoring works independently of the code modules delivery mode
 * Cloud-native full-stack monitoring can be deployed via OpenShift OperatorHub.
-* Non-CSI and CSI-based code module injection can be combined — for details, see [Enforce ephemeral-volume injection on mixed clusters](#mixed-mode).
+* During a migration to image volumes, pods injected with image volumes and pods still using the CSI driver can coexist on the same cluster. See [Migrate to image volumes](/managed/ingest-from/setup-on-k8s/guides/migration/migrate-to-image-volume "Step-by-step guide to migrating your Dynatrace Operator deployment to image volume injection for improved storage efficiency and security posture.").
+* During a migration from CSI-based to ephemeral-volume injection, both can coexist on the same cluster. See [Enforce ephemeral-volume injection on mixed clusters](#mixed-mode).
 
 | Delivery mode | CSI driver enabled | Storage overhead | When it applies | Notes |
 | --- | --- | --- | --- | --- |
-| [Node Image Pull via Ephemeral Volume](#ephemeral-node-image-pull) | No, ephemeral volume | Per-pod storage consumption | Code modules image configured. Default since Operator v1.10 | Uses Node credentials. Image cached on each node. |
-| [CSI driver image pull](#csi-image-pull) | Yes, CSI volume | Node-level cache | Code modules image configured, and CSI driver enabled | Requires `customPullSecret` for private registries |
-| [Node Image Pull via CSI volume](#csi-node-image-pull) | Yes, CSI volume | Node-level cache | Code modules image configured and CSI driver enabled. Opt-in via `feature.dynatrace.com/node-image-pull: "true"` | Uses Node credentials alongside the `customPullSecret` for private registries.[1](#fn-1-1-def) |
-| [CSI driver ZIP download](#csi-zip) | Yes, CSI volume | Node-level cache | No code modules image configured | Not supported on Latest Dynatrace environments. Use [CSI driver image pull](#csi-image-pull) instead. |
-| [ZIP download](#zip-download) | No, ephemeral volume | Per-pod storage consumption | No code modules image configured | Adds latency on every pod start. ZIP downloaded and extracted to each pod’s ephemeral volume. Not supported on the Latest Dynatrace environments. Use [Node Image Pull via Ephemeral Volume](#ephemeral-node-image-pull) instead. |
+| [Image Volume](#ephemeral-node-image-pull) Recommended | No, image volume | Node-level cache (via container runtime) | Recommended for Kubernetes 1.35+. Opt-in via `feature.dynatrace.com/mount-code-modules-via-image-volume:"true"` | Best combination of storage efficiency and security posture. See [Migrate to image volume](/managed/ingest-from/setup-on-k8s/guides/migration/migrate-to-image-volume "Step-by-step guide to migrating your Dynatrace Operator deployment to image volume injection for improved storage efficiency and security posture."). |
+| [Node Image Pull via Ephemeral Volume](#ephemeral-node-image-pull) | No, ephemeral volume | Per-pod storage consumption | Default since Operator v1.10 when no CSI driver is enabled | Uses Node credentials. Image cached on each node. |
+| [CSI driver image pull](#csi-image-pull) | Yes, CSI volume | Node-level cache | CSI driver enabled | Requires `customPullSecret` for private registries |
+| [Node Image Pull via CSI volume](#csi-node-image-pull) | Yes, CSI volume | Node-level cache | CSI driver enabled. Opt-in via `feature.dynatrace.com/node-image-pull: "true"` | Uses Node credentials alongside the `customPullSecret` for private registries.[1](#fn-1-1-def) |
 
 1
 
-Because images are pulled by the Kubernetes node using its own credentials, no `customPullSecret` is needed for private registries as long as the nodes are already configured to authenticate against the registry. For details, see [Prerequisites](#csi-node-image-pull-prerequisites).
+Because images are pulled by the Kubernetes node using node-level credentials, no `customPullSecret` is needed for private registries as long as the nodes are already configured to authenticate against the registry. For details, see [Prerequisites](#csi-node-image-pull-prerequisites).
 
 ## Volume types
 
-The delivery mode depends on which volume type is used to expose code module binaries to the application pod.
+Each code modules delivery mode instruments the application pod using a different volume type.
 
-|  | Ephemeral volume | CSI volume |
-| --- | --- | --- |
-| **CSI driver required** | No | Yes |
-| **Storage** | Per-pod (each pod gets its own copy) | Node-level cache (shared across pods on the same node) |
-| **Credentials for private registries** | Node credentials or pod-level `imagePullSecrets` | `customPullSecret` (or node credentials for Node Image Pull via CSI) |
-| **When to use** | No CSI driver available, or ephemeral injection is preferred for specific workloads | CSI driver is available and node-level caching is preferred |
+|  | Image volume | Ephemeral volume | CSI volume |
+| --- | --- | --- | --- |
+| **CSI driver required** | No | No | Yes |
+| **Storage of Code Modules binary** | Node-level cache (managed by container runtime) | Per-pod (each pod gets its own copy) | Node-level cache (shared across pods on the same node) |
+| **Credentials for private registries** | Node credentials or pod-level `imagePullSecrets` | Node credentials or pod-level `imagePullSecrets` | `customPullSecret` (or node credentials for Node Image Pull via CSI) |
+| **When to use** | Kubernetes 1.35+ environment. Recommended for all new and existing deployments | Kubernetes version older than 1.35, or when image volumes are not yet available | Kubernetes version older than 1.35 with CSI driver already deployed |
+
+## Image volume
+
+Image volume injection is available from Kubernetes version 1.35+ and is the recommended delivery mode for new and existing deployments. The container runtime mounts the code modules image directly as a read-only volume in each injected pod. Because the runtime handles image caching at the node level, only one copy of the code modules image is stored per node regardless of how many pods are instrumented.
+
+Image volume injection requires no CSI driver and no additional privileges, which makes it well suited for security-sensitive environments.
+
+For setup instructions, see [Use image volumes for code modules injection](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/use-image-volumes "Configure Dynatrace Operator to deliver OneAgent code modules via image volumes for improved security and storage efficiency."). To migrate an existing deployment, see [Migrate to image volumes](/managed/ingest-from/setup-on-k8s/guides/migration/migrate-to-image-volume "Step-by-step guide to migrating your Dynatrace Operator deployment to image volume injection for improved storage efficiency and security posture.").
+
+Configuration
+
+### Prerequisites
+
+* Dynatrace Operator version 1.11+
+* Kubernetes version 1.35+
+* Container runtime with image volume support: ContainerD v2.2+ or CRI-O v1.33+
+* A code modules image from a [public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.") or [private registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Use a private registry")
+
+### DynaKube configuration
+
+Add the `feature.dynatrace.com/mount-code-modules-via-image-volume` annotation to your DynaKube:
+
+```
+apiVersion: dynatrace.com/v1beta6
+
+
+
+kind: DynaKube
+
+
+
+metadata:
+
+
+
+name: dynakube
+
+
+
+annotations:
+
+
+
+feature.dynatrace.com/mount-code-modules-via-image-volume: "true"
+```
 
 ## Ephemeral volume
 
@@ -50,10 +95,9 @@ When the CSI driver is not enabled, code modules are copied into the application
 
 ### Node Image Pull via Ephemeral Volume
 
-With Node Image Pull via ephemeral volumes, the injected init container image is the code modules image instead of the Operator's image. The Kubernetes node pulls it directly and the init container copies the OneAgent binaries into an ephemeral volume on the application pod.
+Node Image Pull via Ephemeral Volume delivers OneAgent code modules by having the Kubernetes node pull the code modules image and copy the binaries into an ephemeral volume on each injected pod. No CSI driver is required, but each pod gets its own copy of the binaries, which increases per-pod storage consumption compared to node-level caching.
 
-Since Dynatrace Operator version 1.10, Node Image Pull to ephemeral volumes is used when a code modules image is configured.
-In previous versions, this behavior is gated by the `feature.dynatrace.com/node-image-pull: "true"` feature flag.
+Since Dynatrace Operator version 1.10, Node Image Pull via ephemeral volumes is the default when no CSI driver is enabled. In previous versions, this behavior is gated by the `feature.dynatrace.com/node-image-pull: "true"` feature flag.
 
 Configuration
 
@@ -62,9 +106,7 @@ Configuration
 * Dynatrace OneAgent version 1.317+
 * A Dynatrace code modules image sourced from a [supported public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.") or your [private registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Use a private registry").
 
-With this mode, the Kubernetes node pulls the code modules image for your injected application pods. When using a private registry, the DynaKube `customPullSecret` does **not** apply to these pods—Dynatrace Operator does not replicate pull secrets into application namespaces or add them to pods outside the `dynatrace` namespace.
-
-Ensure that all nodes are authenticated to the registry, or distribute a pull secret to your application namespaces, nodes, or pods. For details, see [Provide pull secrets for injected workloads](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#injected-workloads "Use a private registry").
+When using a private registry, the DynaKube `customPullSecret` does not apply to injected pods. Dynatrace Operator does not replicate pull secrets into application namespaces or add them to pods outside the `dynatrace` namespace. If the Kubernetes node is not authenticated to your private registry, the init container image pull fails. Ensure that all nodes are authenticated to the registry, or distribute a pull secret to your application namespaces, nodes, or pods. For details, see [Provide pull secrets for injected workloads](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#injected-workloads "Use a private registry").
 
 #### DynaKube configuration
 
@@ -116,19 +158,17 @@ codeModulesImage: <dynatrace-codemodules-image> # optional if resolved automatic
 
 ### ZIP download
 
-The injected init container downloads and unpacks the code module ZIP archive from your Dynatrace Environment into an ephemeral volume at pod startup.
+Deprecated as of Dynatrace Operator version 1.11. Not supported on Latest Dynatrace environments. Use [Image Volume](#image-volume) or [Node Image Pull via Ephemeral Volume](#ephemeral-node-image-pull) instead.
 
-This delivery method is used when no code modules image is configured or it cannot be auto resolved and the CSI driver is not enabled.
+Configuration
 
-Drawbacks:
+The injected init container downloads and unpacks the code module ZIP archive from your Dynatrace Environment into an ephemeral volume at pod startup. This delivery method is used when no code modules image is configured and the CSI driver is not enabled.
+
+Drawbacks compared to image-based delivery:
 
 * Each pod downloads the code modules ZIP from the Dynatrace Environment, which adds latency and load.
 * The init container must have network access to the Environment API during pod startup.
-* No Kubernetes-native supply chain integration—the binaries are not delivered as an OCI image, so image-signing and admission policies do not apply.
-
-For these reasons, node image pull via ephemeral volume delivery is recommended over ZIP download whenever possible.
-
-Configuration
+* The binaries are not delivered as an OCI image, so image-signing and admission policies do not apply.
 
 #### Prerequisites
 
@@ -265,11 +305,11 @@ When specifying a comma-separated list of technology identifiers, ensure there a
 
 ## CSI volume
 
-When code modules are delivered with the CSI driver, the code modules binaries are shared between pods, avoiding per-pod copies.
+When code modules are delivered with the CSI driver, the code modules binaries are cached on the host filesystem and shared between pods, avoiding per-pod copies.
 
 ### CSI driver image pull
 
-The CSI driver pulls the code modules image and exposes the code modules binaries on the host filesystem, where each injected application pod mounts them through a CSI volume.
+The CSI driver pulls the code modules image from a container image registry and exposes the code modules binaries on the host filesystem, where each injected application pod mounts them through a CSI volume.
 
 Configuration
 
@@ -277,7 +317,7 @@ Configuration
 
 * A Dynatrace code modules image sourced from a [supported public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment."), your [private registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Use a private registry") or [resolved automatically](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#automatic-public-registry "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.").
 
-  + For private registries, configure a `customPullSecret`. For details, see [Use a private registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Use a private registry").
+  + For private registries, configure a `customPullSecret`. Note that `customPullSecret` does not apply to injected pods in application namespaces. For details, see [Provide pull secrets for injected workloads](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#injected-workloads "Use a private registry").
 * CSI driver enabled on the cluster.
 
 #### DynaKube configuration
@@ -348,6 +388,8 @@ Configuration
 
 * Dynatrace OneAgent version 1.317+
 * A Dynatrace code modules image sourced from a [supported public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.") or your [private registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Use a private registry").
+
+  + For private registries, ensure all nodes are authenticated to the registry. For details, see [Provide pull secrets for injected workloads](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#injected-workloads "Use a private registry").
 * CSI driver enabled on the cluster.
 
 #### DynaKube configuration
@@ -408,9 +450,11 @@ GKE Autopilot dynamically provisions nodes and their sizes based on the aggregat
 
 ### CSI driver ZIP download
 
-The CSI driver downloads, extracts and exposes the code modules ZIP on the host filesystem, where each injected application pod mounts them through a CSI volume.
+Deprecated as of Dynatrace Operator version 1.11. Not supported on Latest Dynatrace environments. Use [Image Volume](#image-volume) or [Node Image Pull via Ephemeral Volume](#ephemeral-node-image-pull) instead.
 
 Configuration
+
+The CSI driver downloads, extracts, and exposes the code modules ZIP on the host filesystem, where each injected application pod mounts them through a CSI volume. This delivery method is used when the CSI driver is enabled and no code modules image is configured.
 
 #### Prerequisites
 

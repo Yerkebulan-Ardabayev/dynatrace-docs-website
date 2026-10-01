@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/monaco/
 
 * How-to guide
 * 9-min read
-* Updated on Nov 25, 2025
+* Updated on Sep 28, 2026
 
 The last Monaco version to support the `convert` command is Monaco version `2.19.0`.  
 If you want to convert your project using the steps outlined on this page, download and use that version.
@@ -29,7 +29,7 @@ If you use Dynatrace Configuration as Code via Monaco (Dynatrace Monaco CLI) 1.x
 
 This guide will help you convert your existing projects.
 
-To illustrate the commands, we convert a project found in the samples in the [GitHub repository﻿](https://github.com/Dynatrace/dynatrace-configuration-as-code-samples).
+To illustrate the commands, we convert a project found in the samples in the [GitHub repository﻿](https://github.com/Dynatrace/community-examples/tree/main/configuration-as-code).
 
 If you want to follow the exact commands of the guide, clone or download the repo and navigate into the `observability_clinic_sample` folder.
 

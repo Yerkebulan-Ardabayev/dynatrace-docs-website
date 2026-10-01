@@ -279,7 +279,7 @@ A fetch accesses AWS Secrets Manager only once, during the Lambda function's ini
 
 The Node.js and Python layers use the AWS SDK version provided by the AWS Lambda runtime to access the secret.
 
-To [fetch the token for log collection](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector#aws-secrets-manager "Collect logs from AWS Lambda functions"), set another fetch.
+To [fetch the token for log collection](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector#aws-secrets-manager "Collect logs from AWS Lambda functions using the Dynatrace Lambda extension---a lower-latency, lower-cost alternative to the CloudWatch log forwarder."), set another fetch.
 
 ### Filter cold starts
 

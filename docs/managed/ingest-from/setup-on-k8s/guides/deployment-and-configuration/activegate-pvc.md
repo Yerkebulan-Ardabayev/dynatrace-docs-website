@@ -16,12 +16,8 @@ The [`log_analytics_collector`](/managed/ingest-from/dynatrace-activegate/config
 
 The following snippet shows how you can attach the PersistentVolumeClaim to the ActiveGate in the DynaKube.
 
-v1beta5
-
-v1beta4
-
 ```
-apiVersion: dynatrace.com/v1beta5
+apiVersion: dynatrace.com/v1beta6
 
 
 
@@ -50,58 +46,6 @@ activeGate:
 
 
 volumeClaimTemplate:
-
-
-
-accessModes:
-
-
-
-- ReadWriteOnce
-
-
-
-resources:
-
-
-
-requests:
-
-
-
-storage: 1Gi
-```
-
-```
-apiVersion: dynatrace.com/v1beta4
-
-
-
-kind: DynaKube
-
-
-
-metadata:
-
-
-
-name: dynakube
-
-
-
-namespace: dynatrace
-
-
-
-spec:
-
-
-
-activeGate:
-
-
-
-persistentVolumeClaim:
 
 
 

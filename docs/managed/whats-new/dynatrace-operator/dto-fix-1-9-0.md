@@ -8,9 +8,11 @@ source: https://docs.dynatrace.com/managed/whats-new/dynatrace-operator/dto-fix-
 # Dynatrace Operator release notes version 1.9.0
 
 * Release notes
-* Updated on Jul 16, 2026
+* Updated on Sep 08, 2026
 
-Release date: April 13, 2026
+**Release date:** April 13, 2026
+
+**Minimum operator version required for direct upgrade:** 1.5.0—see [Upgrade from older versions](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator#upgrade-path "Upgrade paths, update procedures, and uninstallation guide for Dynatrace Operator."). Review the release notes for each intermediate version and pay attention to breaking changes before upgrading.
 
 On this page, you’ll find an overview of what’s new and improved in Dynatrace Operator version 1.9.0.
 
@@ -77,8 +79,29 @@ On this page, you’ll find an overview of what’s new and improved in Dynatrac
 
 ## Removal and deprecation notices
 
-* The Helm repository located in `dynatrace/helm-charts` is deprecated and will stop receiving updates in a future release! If you are still using it,
-  please update the URL to `dynatrace/dynatrace-operator` or switch to the OCI registry-based approach. Update the Helm repository URL with the following commands:
+* The Helm repository located in `dynatrace/helm-charts` is archived and no longer receives updates. If you still install or upgrade Dynatrace Operator from it, switch to the OCI registry:
+
+  ```
+  helm upgrade dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
+
+
+
+  --version <version> \
+
+
+
+  --namespace dynatrace \
+
+
+
+  --reset-then-reuse-values \
+
+
+
+  --install
+  ```
+
+  If you can't use OCI, point your Helm repository to `dynatrace/dynatrace-operator` instead:
 
   ```
   helm repo remove dynatrace
@@ -88,11 +111,18 @@ On this page, you’ll find an overview of what’s new and improved in Dynatrac
   helm repo add dynatrace https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/main/config/helm/repos/stable
   ```
 
+  For details, see [Migrate from the legacy Helm repository](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator#helm-repo-migrate "Upgrade paths, update procedures, and uninstallation guide for Dynatrace Operator.").
+
 * To prevent potential disruptions, we strongly advise keeping your DynaKube API version up to date. Once a version is deprecated and removed, updates may become significantly more complex and time-sensitive.
 
   + More information about the deprecation process of the DynaKube API versions can be found in the [migration guide](/managed/ingest-from/setup-on-k8s/guides/migration/dynakube#deprecation "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.").
 
 * The `operator.apparmor`, `webhook.apparmor`, and `csidriver.apparmor` Helm values are deprecated. On Kubernetes version 1.31+, set AppArmor using `appArmorProfile` in the `podSecurityContext` instead. These values will continue to work until Kubernetes version 1.30 reaches end of life (August 2026). See [Enable AppArmor for enhanced security](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/enable-app-armor "Apply AppArmor profiles on Dynatrace components for enhanced security.") for details.
+
+* The DynaKube field `.spec.oneAgent.(cloudNativeFullStack|classicFullStack|hostMonitoring|applicationMonitoring).version` is deprecated and should no longer be used. The flag will be removed in a future version of the Dynatrace Operator. Do one of the following:
+
+  + Pin the OneAgent version on your environment to control all connected Kubernetes clusters at once.
+  + Use the `.spec.oneAgent.(cloudNativeFullStack|classicFullStack|hostMonitoring|).image` and `.spec.oneAgent.(cloudNativeFullStack|applicationMonitoring|).codeModulesImage` fields to pin the version on a per-DynaKube basis.
 
 * The `feature.dynatrace.com/oneagent-max-unavailable` flag is deprecated. Use the `rollingUpdate` field in the DynaKube instead. For details, see [DynaKube parameters for Dynatrace Operator](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
 
@@ -103,3 +133,48 @@ In Dynatrace Operator version 1.9, the DynaKube API version `v1beta3` is removed
 Pods injected via `applicationMonitoring` or `cloudNativeFullStack` now automatically receive metadata enrichment. If `metadataEnrichment` in the DynaKube was enabled only to support OneAgent injection, it can be removed.
 
 The [feature flag](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/seccomp#init-container "Overview of seccomp profile configuration for Dynatrace components.") `feature.dynatrace.com/init-container-seccomp-profile` is now enabled by default. If you relied on the unspecified seccomp profile on injected init containers, set the flag to `false` on your DynaKube.
+
+Important notice for clusters that have been running Dynatrace Operator version 1.3 and earlier in the past
+
+Clusters that have previously run Dynatrace Operator version 1.3 and earlier may have obsolete `v1beta1` or `v1beta2` entries in the DynaKube CRD's `.status.storedVersions`. These must be removed before upgrading to this release, or the CRD upgrade will fail.
+
+Whether you need to stop at Dynatrace Operator version 1.7.3 first depends on your installation method:
+
+* **Helm-based installation**
+
+  + **Current version 1.4.0 and later**—No action required. The Helm pre-upgrade hook automatically removes obsolete `.status.storedVersions` entries during the upgrade.
+  + **Current version 1.3 and earlier**—You must upgrade to Dynatrace Operator 1.7.3 before upgrading to the next release.
+* **Alternative installation methods** (Red Hat OpenShift OperatorHub, OperatorHub.io, Google Marketplace, or plain Kubernetes manifests)
+
+  + **Never ran version 1.3 and earlier**—No action required.
+  + **Previously ran version 1.3 and earlier**—You must upgrade to Dynatrace Operator 1.7.3 before upgrading to the next release.
+
+Manually remove obsolete entries from `.status.storedVersions`
+
+Instead of upgrading to version 1.7.3, you can manually remove the obsolete entries from `.status.storedVersions`:
+
+1. List the stored versions in the CRD:
+
+   ```
+   kubectl -n dynatrace get crd dynakubes.dynatrace.com -o jsonpath='{.status.storedVersions}'
+   ```
+2. Continue only if multiple versions are listed in the output. If only one version is listed, no action is required.
+3. Identify the currently active version:
+
+   ```
+   storage_version=$(kubectl get customresourcedefinitions dynakubes.dynatrace.com -o jsonpath='{.spec.versions[?(@.storage==true)].name}')
+   ```
+4. Convert all DynaKubes to the active version:
+
+   ```
+   kubectl get dynakube -n dynatrace -o yaml | kubectl replace -f -
+   ```
+5. Remove all previous versions while keeping the active version:
+
+   ```
+   kubectl patch customresourcedefinitions dynakubes.dynatrace.com --subresource='status' --type='merge' -p "{\"status\":{\"storedVersions\":[\"${storage_version}\"]}}"
+   ```
+
+Ensuring that `.status.storedVersions` is clean is crucial to avoid issues with future upgrades.
+
+ArgoCD may display resources that are still using an old API version as "out-of-sync".

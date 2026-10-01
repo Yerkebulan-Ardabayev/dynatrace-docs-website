@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/conta
 # Use a public registry
 
 * 6-min read
-* Updated on Jul 01, 2026
+* Updated on Sep 11, 2026
 
 To accommodate diverse infrastructure requirements and organizational preferences, Dynatrace images are available on selected public registries. These images adhere to best practices, ensuring immutability and signing for enhanced security and resilience against potential supply chain risks.
 
@@ -26,7 +26,6 @@ Start using these fortified images today for a safer and more efficient containe
 
 Before you begin, be sure to meet the following prerequisites:
 
-* Dynatrace SaaS version 1.343+
 * Dynatrace Operator version 0.11+
 * Target CPU architectures are ARM64 (AArch64), x86-64, s390x, and/or ppc64le
 * Allow egress traffic to public registry
@@ -64,7 +63,7 @@ Dynatrace employs version-based image tagging for its container images and does 
 
 ## Automatic Image Resolution with Dynatrace Operator
 
-Dynatrace Operator version 1.10.0+
+Dynatrace SaaS version 1.343+ Dynatrace Operator version 1.10.0+
 
 Dynatrace Operator can automatically resolve the latest public image URIs for managed components from your Dynatrace environment, without manual `image` field configuration.
 
@@ -125,7 +124,9 @@ To request images from a specific supported public registry, set `spec.publicReg
 
 ### What changes when the feature is enabled
 
-* **Component images**: Dynatrace Operator resolves image references from your Dynatrace environment for OneAgent, ActiveGate, and CodeModules. Components without a default image source (Extension Execution Controller, Standalone Log Module, SQL Extension Executor) always require a custom image in the respective `spec.templates` field.
+* **Component images**: Dynatrace Operator resolves image references from your Dynatrace environment.
+
+  + Container images for Extension Execution Controller, Dynatrace Log Module and the SQL Extension Executor are supported from Dynatrace SaaS 1.350 and Dynatrace Operator 1.11. In older versions, these components always require a image specified in the respective `spec.templates` field.
 * **Pod restarts**: All managed component pods restart when the feature is first enabled.
 * **Application injection**: The init container image injected into application pods changes on the pod's next restart, if you are not using the CSI driver or if you use [node image pull via ephemeral volume](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#ephemeral-node-image-pull "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download."). In both cases the webhook switches from ZIP-download mode to self-extracting mode using the CodeModules image.
 
@@ -231,7 +232,7 @@ To use images from a public registry, configure the respective `image` fields in
 The following DynaKube snippet demonstrates how to configure [Cloud-Native Full-Stack monitoring setup](/managed/ingest-from/setup-on-k8s/how-it-works#cloud-native "In-depth description on how the deployment on Kubernetes works.") leveraging the public Amazon ECR registry.
 
 ```
-apiVersion: dynatrace.com/v1beta5
+apiVersion: dynatrace.com/v1beta6
 
 
 
@@ -303,6 +304,7 @@ image: public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-activegate:<tag>
 ```
 
 Note that the `version` field has no effect when the `image` and/or `codeModulesImage` fields are set.
+The `version` field has been deprecated since `v1beta6`. For more details, see [DynaKube parameters for Dynatrace Operator](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
 
 After configuring the required fields, the DynaKube custom resource must be applied to the Kubernetes cluster.
 
@@ -313,7 +315,7 @@ Looking for more examples?
 The following custom resource describes how to configure DynaKube for [Application Observability and Kubernetes observability](/managed/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes"):
 
 ```
-apiVersion: dynatrace.com/v1beta5
+apiVersion: dynatrace.com/v1beta6
 
 
 

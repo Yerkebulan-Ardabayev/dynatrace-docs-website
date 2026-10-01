@@ -453,7 +453,7 @@ For example, attributes on spans/metrics/logs can make a batch size with the sam
 depending on how many/how large the attributes are.
 
 Use the configuration values above as a starting point, but be sure to adapt them to fit your data volume
-and comply with the Dynatrace API limits for each signal type ([traces](/managed/ingest-from/opentelemetry/otlp-api/ingest-traces#ingestion-limits "Learn how Dynatrace ingests OpenTelemetry traces and what limitations apply."),
+and comply with the Dynatrace API limits for each signal type ([traces](/managed/ingest-from/opentelemetry/otlp-api/ingest-traces#ingestion-limits "Understand how Dynatrace ingests OpenTelemetry traces via OTLP, which attribute value types it supports, and what ingestion limits apply."),
 [metrics](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#limits "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply."), [logs](/managed/ingest-from/opentelemetry/otlp-api/ingest-logs#ingestion-limits "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")) to avoid request rejections.
 
 You can use the [ActiveGate self-monitoring metrics](/managed/ingest-from/dynatrace-activegate/activegate-sfm-metrics#rest "Explore ActiveGate self-monitoring  metrics.")

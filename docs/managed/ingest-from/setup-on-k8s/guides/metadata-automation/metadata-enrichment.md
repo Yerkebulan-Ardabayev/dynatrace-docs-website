@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/metad
 
 * How-to guide
 * 3-min read
-* Updated on Jun 25, 2026
+* Updated on Sep 30, 2026
 
 Metadata enrichment attaches Kubernetes metadata—cluster, namespace, workload, pod, and container identifiers—to telemetry signals. The mechanism differs by mode:
 
@@ -67,7 +67,7 @@ cloudNativeFullStack: {}
 To verify, inspect any injected pod and look for the `metadata.dynatrace.com` annotation containing a JSON object with the enriched Kubernetes metadata:
 
 ```
-kubectl get pod <pod-name> -n <namespace> -o yaml
+kubectl get pod <pod-name> -n <namespace> -o jsonpath='{.metadata.annotations.metadata\.dynatrace\.com}'
 ```
 
 2. Enable OTLP exporter injection
@@ -418,14 +418,14 @@ When both OneAgent injection and OTLP exporter injection are active on the same 
 
 ### Attribute key sanitization
 
-For pod injection use cases (OneAgent injection and OTLP exporter injection), Dynatrace Operator propagates attributes as Kubernetes pod annotations in the form `metadata.dynatrace.com/<key>`. Kubernetes annotation key suffixes must consist of valid DNS label characters, so Dynatrace Operator sanitizes attribute keys by replacing any invalid characters before writing them to annotations.
+Before merging resource attributes into these targets, Dynatrace Operator sanitizes each key: it replaces any character outside `a-zA-Z0-9-_.` and strips leading or trailing non-alphanumeric characters.
 
 Dynatrace Operator validates attribute keys and reports the following:
 
-* **Warning**: The key contains characters Dynatrace Operator replaces during sanitization - Dynatrace Operator renames the key but still writes the annotation.
+* **Warning**: The key contains characters Dynatrace Operator replaces during sanitization - Dynatrace Operator renames the key but still applies the attribute.
 * **Error**: The sanitized key is an empty string - Dynatrace Operator drops the key.
 * **Error**: Two keys produce the same sanitized value - the result is a collision.
-* **Error**: The sanitized key exceeds 63 characters - this violates the Kubernetes annotation name-segment limit for `metadata.dynatrace.com/<key>`.
+* **Error**: The sanitized key exceeds 63 characters.
 
 For the full parameter reference, see the [DynaKube API reference](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
 

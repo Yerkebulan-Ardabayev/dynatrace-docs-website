@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/migra
 
 * Reference
 * 5-min read
-* Updated on Mar 19, 2026
+* Updated on Sep 11, 2026
 
 This guide will show you how you can manually migrate from `apiVersion: dynatrace.com/v1beta4` to `apiVersion: dynatrace.com/v1beta6` of the DynaKube.
 
@@ -39,16 +39,16 @@ The `spec.activeGate.persistentVolumeClaim` field has been renamed to `spec.acti
 
 ### Deprecated fields
 
-#### OneAgent `autoUpdate`
+#### OneAgent `autoUpdate`, `version`
 
-The `spec.oneAgent.<mode>.autoUpdate: true/false` field is [deprecated](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Configure auto-updates for all components managed by Dynatrace Operator") in `v1beta5`, so it shouldn't be used.
+The `spec.oneAgent.<mode>.autoUpdate: true/false` field is [deprecated](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Configure auto-updates for all components managed by Dynatrace Operator") in `v1beta5` and the `spec.oneAgent.<mode>.version` field is deprecated in `v1beta6`, so it shouldn't be used.
 
 We recommend the following:
 
 * If you want `autoUpdate: true`, do not set `image`, `codeModulesImage`, or `version`.
 
   ```
-  apiVersion: dynatrace.com/v1beta5
+  apiVersion: dynatrace.com/v1beta6
 
 
 
@@ -82,10 +82,10 @@ We recommend the following:
 
   # ...
   ```
-* If you want `autoUpdate: false`, set `image`, `codeModulesImage` or `version`
+* If you want `autoUpdate: false`, set `image`, `codeModulesImage`
 
   ```
-  apiVersion: dynatrace.com/v1beta5
+  apiVersion: dynatrace.com/v1beta6
 
 
 
@@ -122,50 +122,6 @@ We recommend the following:
 
 
   codeModulesImage: # same effect as autoUpdate: false
-
-
-
-  # ...
-
-
-
-  ---
-
-
-
-  apiVersion: dynatrace.com/v1beta5
-
-
-
-  kind: DynaKube
-
-
-
-  metadata:
-
-
-
-  name: example
-
-
-
-  namespace: dynatrace
-
-
-
-  spec:
-
-
-
-  oneAgent:
-
-
-
-  cloudNativeFullstack:
-
-
-
-  version: ... # replaces autoUpdate: false
 
 
 

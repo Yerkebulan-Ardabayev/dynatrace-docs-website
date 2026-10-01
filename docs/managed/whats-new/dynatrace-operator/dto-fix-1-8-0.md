@@ -8,9 +8,11 @@ source: https://docs.dynatrace.com/managed/whats-new/dynatrace-operator/dto-fix-
 # Dynatrace Operator release notes version 1.8.0
 
 * Release notes
-* Updated on Apr 23, 2026
+* Updated on Sep 16, 2026
 
-Release date: January 27th, 2026
+**Release date:** January 27, 2026
+
+**Minimum operator version required for direct upgrade:** 1.4.0—see [Upgrade from older versions](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator#upgrade-path "Upgrade paths, update procedures, and uninstallation guide for Dynatrace Operator."). Review the release notes for each intermediate version and pay attention to breaking changes before upgrading.
 
 Upgrade to 1.8.1
 
@@ -77,49 +79,50 @@ For configuration details and examples, see the [OTLP auto-configuration guide](
 
      **After** the upgrade was successful and the new Dynatrace Operator version 1.8.0 is operational, it migrates all existing DynaKubes to the latest supported API version `v1beta6`. After the DynaKube migration, the `status.storedVersions` field in the DynaKube CRD is updated to hold only the latest API version `v1beta6` to ensure consistency.
 
-  Important notice for clusters that have been running Dynatrace Operator version < 1.4.0 in the past
+Important notice for clusters that have been running Dynatrace Operator version 1.3 and earlier in the past
 
-  + **If you have used Dynatrace Operator version <= 1.2 upgrading to Dynatrace Operator version 1.7.3 is mandatory as an intermediate step before upgrading to later releases to ensures a smooth and reliable transition.** As a general rule, skipping versions is not recommended.
-  + Helm based installation
+Clusters that have previously run Dynatrace Operator version 1.3 and earlier may have obsolete `v1beta1` or `v1beta2` entries in the DynaKube CRD's `.status.storedVersions`. These must be removed before upgrading to this release, or the CRD upgrade will fail.
 
-    When **using Helm** to install or upgrade from a Dynatrace Operator version >=1.3.0, no further action is required on your part. The required adjustments will be automatically handled by a Helm pre-upgrade hook during the upgrade progress.
-  + Alternative installation methods
+Whether you need to stop at Dynatrace Operator version 1.7.3 first depends on your installation method:
 
-    **If you are relying on one of the alternative deployment methods listed below upgrading to Dynatrace Operator version 1.7.3 is mandatory as an intermediate step before upgrading to later releases to ensures a smooth and reliable transition.**
+* **Helm-based installation**
 
-    - Red Hat OpenShift OperatorHub
-    - OperatorHub.io
-    - Google Marketplace
-    - Plain Kubernetes manifests
-  + Manual approach
+  + **Current version 1.4.0 and later**—No action required. The Helm pre-upgrade hook automatically removes obsolete `.status.storedVersions` entries during the upgrade.
+  + **Current version 1.3 and earlier**—You must upgrade to Dynatrace Operator 1.7.3 before upgrading to the next release.
+* **Alternative installation methods** (Red Hat OpenShift OperatorHub, OperatorHub.io, Google Marketplace, or plain Kubernetes manifests)
 
-    Instead of upgrading to version 1.7.3, you can manually perform the required adjustments to the CRD
+  + **Never ran version 1.3 and earlier**—No action required.
+  + **Previously ran version 1.3 and earlier**—You must upgrade to Dynatrace Operator 1.7.3 before upgrading to the next release.
 
-    1. Run the following command to list stored versions in the CRD of your cluster.
+Manually remove obsolete entries from `.status.storedVersions`
 
-       ```
-       kubectl -n dynatrace get crd dynakubes.dynatrace.com -o jsonpath='{.status.storedVersions}'
-       ```
-    2. Continue the procedure if `v1beta1` or `v1beta2` are listed in the stored versions of the CRD in your cluster.
-    3. Identify the currently active version:
+Instead of upgrading to version 1.7.3, you can manually remove the obsolete entries from `.status.storedVersions`:
 
-       ```
-       storage_version=$(kubectl get customresourcedefinitions dynakubes.dynatrace.com -o jsonpath='{.spec.versions[?(@.storage==true)].name}')
-       ```
-    4. Convert all DynaKubes to the active version:
+1. List the stored versions in the CRD:
 
-       ```
-       kubectl get dynakube -n dynatrace -o yaml | kubectl apply -f -
-       ```
-    5. Remove all previous versions while keeping the active version:
+   ```
+   kubectl -n dynatrace get crd dynakubes.dynatrace.com -o jsonpath='{.status.storedVersions}'
+   ```
+2. Continue only if multiple versions are listed in the output. If only one version is listed, no action is required.
+3. Identify the currently active version:
 
-       ```
-       kubectl patch customresourcedefinitions dynakubes.dynatrace.com --subresource='status' --type='merge' -p "{\"status\":{\"storedVersions\":[\"${storage_version}\"]}}"
-       ```
+   ```
+   storage_version=$(kubectl get customresourcedefinitions dynakubes.dynatrace.com -o jsonpath='{.spec.versions[?(@.storage==true)].name}')
+   ```
+4. Convert all DynaKubes to the active version:
 
-  Ensuring that the CRD's `.status.storedVersions` field is properly cleaned up is crucial to avoid issues with future upgrades.
+   ```
+   kubectl get dynakube -n dynatrace -o yaml | kubectl replace -f -
+   ```
+5. Remove all previous versions while keeping the active version:
 
-  ArgoCD may display resources that are still using an old API version as "out-of-sync".
+   ```
+   kubectl patch customresourcedefinitions dynakubes.dynatrace.com --subresource='status' --type='merge' -p "{\"status\":{\"storedVersions\":[\"${storage_version}\"]}}"
+   ```
+
+Ensuring that `.status.storedVersions` is clean is crucial to avoid issues with future upgrades.
+
+ArgoCD may display resources that are still using an old API version as "out-of-sync".
 
 * It is no longer possible to set `codeModulesImage` if the Dyntrace Operator CSI driver is disabled and neither `applicationMonitoring` nor `cloudNativeFullStack` is used. When attempting to do so, a validation error will be raised during DynaKube deployment or update.
 
@@ -171,8 +174,29 @@ For configuration details and examples, see the [OTLP auto-configuration guide](
 
   Details: Dynatrace Operator 1.8.0 uses `aggregationRules` to merge permissions from different ClusterRoles. This makes the ClusterRoleBinding `dynatrace-kubernetes-monitoring-sensitive` obsolete, which can safely be deleted after upgrading to Operator 1.8.0.
 
-* The Helm repository located in `dynatrace/helm-charts` is deprecated and will stop receiving updates in a future release! If you are still using it,
-  please update the URL to `dynatrace/dynatrace-operator` or switch to the OCI registry-based approach. Update the Helm repository URL with the following commands:
+* The Helm repository located in `dynatrace/helm-charts` is archived and no longer receives updates. If you still install or upgrade Dynatrace Operator from it, switch to the OCI registry:
+
+  ```
+  helm upgrade dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
+
+
+
+  --version <version> \
+
+
+
+  --namespace dynatrace \
+
+
+
+  --reset-then-reuse-values \
+
+
+
+  --install
+  ```
+
+  If you can't use OCI, point your Helm repository to `dynatrace/dynatrace-operator` instead:
 
   ```
   helm repo remove dynatrace
@@ -181,6 +205,8 @@ For configuration details and examples, see the [OTLP auto-configuration guide](
 
   helm repo add dynatrace https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/main/config/helm/repos/stable
   ```
+
+  For details, see [Migrate from the legacy Helm repository](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator#helm-repo-migrate "Upgrade paths, update procedures, and uninstallation guide for Dynatrace Operator.").
 
 * To prevent potential disruptions, we strongly advise keeping your DynaKube API version up to date. Once a version is deprecated and removed, updates may become significantly more complex and time-sensitive.
 

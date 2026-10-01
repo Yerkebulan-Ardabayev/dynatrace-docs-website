@@ -73,7 +73,8 @@ OneAgent version 1.217 and earlier The OpenTelemetry Go Sensor propagates Dynatr
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetry﻿](https://www.npmjs.com/package/@opentelemetry/api) | 1[1](#fn-monitoring-framework-1-def) |
+| [OpenTelemetry API for JavaScript﻿](https://www.npmjs.com/package/@opentelemetry/api) | 1[1](#fn-monitoring-framework-1-def) |
+| [OpenTelemetry SDK for JavaScript﻿](https://www.npmjs.com/package/@opentelemetry/core) | 1[1](#fn-monitoring-framework-1-def), 2.0-2.8[1](#fn-monitoring-framework-1-def), 2.9+[1](#fn-monitoring-framework-1-def) |
 
 1
 

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/log-mon
 # Log Monitoring API v2 - POST ingest logs
 
 * Reference
-* Published May 05, 2021
+* Updated on Sep 28, 2026
 
 Pushes custom logs to Dynatrace.
 
@@ -381,6 +381,156 @@ A list of constraint violations
 
 }
 ```
+
+## Example
+
+This example ingests a JSON log event with the `content`, `status`, `service.name`, and `service.namespace` attributes. The API token is passed in the `Authorization` header. A successful request returns response code `204`.
+
+### Curl
+
+Platform token
+
+Classic access token
+
+```
+curl -X POST \
+
+
+
+https://{your-environment-id}.live.dynatrace.com/api/v2/logs/ingest \
+
+
+
+-H 'Content-Type: application/json; charset=utf-8' \
+
+
+
+-H 'Authorization: Bearer <your-platform-token>' \
+
+
+
+-d '[
+
+
+
+{
+
+
+
+"content": "Exception: Custom error log sent via Log ingestion API",
+
+
+
+"status": "error",
+
+
+
+"service.name": "log-monitoring-tenant",
+
+
+
+"service.namespace": "dev-stage-cluster"
+
+
+
+}
+
+
+
+]'
+```
+
+Required scope: `openpipeline:logs:ingest`
+
+```
+curl -X POST \
+
+
+
+https://environment.activegate.domain.com:9999/e/abc123a/api/v2/logs/ingest \
+
+
+
+-H 'Content-Type: application/json; charset=utf-8' \
+
+
+
+-H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
+
+
+
+-d '[
+
+
+
+{
+
+
+
+"content": "Exception: Custom error log sent via Log ingestion API",
+
+
+
+"status": "error",
+
+
+
+"service.name": "log-monitoring-tenant",
+
+
+
+"service.namespace": "dev-stage-cluster"
+
+
+
+}
+
+
+
+]'
+```
+
+### Response code
+
+`204`
+
+## Retry failed requests
+
+API clients must retry log ingestion requests that fail on retryable errors. Each API endpoint's documentation specifies which response codes are retryable. When retrying, implement an exponential backoff strategy.
+
+## Log data queue
+
+You can customize the log data queue properties by editing the `custom.properties` file (see [Configuration properties and parameters of ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#generic-ingest "Learn which ActiveGate properties you can configure based on your needs and requirements.")) on your ActiveGate:
+
+```
+[generic_ingest]
+
+
+
+#disk_queue_path=<custom_path> # defaults to temp folder
+
+
+
+#disk_queue_max_size_mb=<limit> # defaults to 300 MB
+```
+
+503 Usable space limit reached
+
+The log data ingestion API returns a `503 Usable space limit reached` error when the ingested log data exceeds the configured queue size. Typically, this is a temporary situation that occurs only during spikes. If this error persists, increase the value of `disk_queue_max_size_mb` in `custom.properties` to allow log ingestion spikes to be queued.
+
+## Troubleshooting
+
+Visit Dynatrace Community for troubleshooting guides.
+
+* [Troubleshooting log Ingestion via API - POST ingest logs﻿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
+
+## Related sizing guides
+
+For detailed ActiveGate sizing recommendations based on workload profiles, see:
+
+* [Linux ActiveGate sizing guide](/managed/ingest-from/dynatrace-activegate/installation/linux/linux-activegate-hardware-and-system-requirements#sizing-guide "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Linux for routing and monitoring purposes.")
+* [Windows ActiveGate sizing guide](/managed/ingest-from/dynatrace-activegate/installation/windows/windows-activegate-hardware-and-system-requirements#sizing-guide "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Windows for routing and monitoring.")
+* [Kubernetes ActiveGate sizing guide](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Find CPU and memory resource recommendations for Dynatrace ActiveGates deployed in Kubernetes, sized by cluster scale and workload type.")
 
 ## Related topics
 

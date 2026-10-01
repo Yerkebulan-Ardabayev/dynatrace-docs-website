@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/extend-obser
 # Enable automatic OpenTelemetry OTLP exporter configuration
 
 * How-to guide
-* Updated on Aug 04, 2026
+* Updated on Sep 30, 2026
 
 Dynatrace Operator can automatically configure the OpenTelemetry OTLP exporter for applications instrumented with an [OpenTelemetry SDK﻿](https://opentelemetry.io/docs/languages/). This is done by injecting environment variables into your application pods at startup, allowing telemetry data to be sent directly to Dynatrace.
 
@@ -149,7 +149,7 @@ Dynatrace Operator adds resource attributes in `OTEL_RESOURCE_ATTRIBUTES` to enr
 * `dt.kubernetes.cluster.id`
 * `dt.entity.kubernetes_cluster`
 
-The values for those attributes are derived from the cluster and pod metadata. Furthermore, all metadata provided in the `metadata.dynatrace.com/<key>: <value>` annotations on the namespace or on the injected pod are added as resource attributes.
+The values for those attributes are derived from the cluster and pod metadata. Furthermore, all metadata provided in the `metadata.dynatrace.com/<key>: <value>` annotations on the namespace, [workload](/managed/ingest-from/setup-on-k8s/reference/workload-mutation#well-known-workload-kinds "Pod mutations applied by Dynatrace Operator when OneAgent injection or metadata enrichment is enabled."), or on the injected pod are added as resource attributes.
 
 Any attributes you have already set in `OTEL_RESOURCE_ATTRIBUTES` are preserved, and the above attributes are appended.
 

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/migra
 
 * Reference
 * 5-min read
-* Published Jan 20, 2026
+* Updated on Sep 11, 2026
 
 This guide will show you how you can manually migrate from `apiVersion: dynatrace.com/v1beta5` to `apiVersion: dynatrace.com/v1beta6` of the DynaKube.
 
@@ -28,6 +28,97 @@ This guide will show you how you can manually migrate from `apiVersion: dynatrac
 Reminder
 
 When migrating your DynaKube, remember to update the `apiVersion` field as well as any other fields that have changed
+
+### Deprecated fields
+
+#### OneAgent `version`
+
+The `spec.oneAgent.<mode>.version` field is [deprecated](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Configure auto-updates for all components managed by Dynatrace Operator") in `v1beta6`, so it shouldn't be used.
+
+We recommend the following:
+
+* If you want OneAgent to be autoupdated, do not set `image`, `codeModulesImage`, or `version`.
+
+  ```
+  apiVersion: dynatrace.com/v1beta6
+
+
+
+  kind: DynaKube
+
+
+
+  metadata:
+
+
+
+  name: example
+
+
+
+  namespace: dynatrace
+
+
+
+  spec:
+
+
+
+  oneAgent:
+
+
+
+  cloudNativeFullstack: {}
+
+
+
+  # ...
+  ```
+* If you want to use specific version, set `image`, `codeModulesImage`.
+
+  ```
+  apiVersion: dynatrace.com/v1beta6
+
+
+
+  kind: DynaKube
+
+
+
+  metadata:
+
+
+
+  name: example
+
+
+
+  namespace: dynatrace
+
+
+
+  spec:
+
+
+
+  oneAgent:
+
+
+
+  cloudNativeFullstack:
+
+
+
+  image: ...
+
+
+
+  codeModulesImage: ...
+
+
+
+  # ...
+  ```
 
 ### Moved fields
 

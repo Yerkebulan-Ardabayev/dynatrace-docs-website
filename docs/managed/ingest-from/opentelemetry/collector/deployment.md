@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/d
 
 * How-to guide
 * 9-min read
-* Updated on Apr 10, 2026
+* Updated on Sep 08, 2026
 
 This page describes how to deploy the Dynatrace distribution of the OTel Collector ("Dynatrace OTel Collector").
 
@@ -1571,6 +1571,8 @@ journalctl -u dynatrace-otel-collector
 ## Container image registries
 
 Container images for the Dynatrace OTel Collector:
+
+When you deploy the OTel Collector via Dynatrace Operator, the image is [resolved automatically from the public registry](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#public-registry-auto-update "Configure auto-updates for all components managed by Dynatrace Operator") in Dynatrace Operator version 1.11.0+. No manual image configuration is needed.
 
 * [GitHub Container Registry (GHCR)﻿](https://github.com/Dynatrace/dynatrace-otel-collector/pkgs/container/dynatrace-otel-collector%2Fdynatrace-otel-collector)
 

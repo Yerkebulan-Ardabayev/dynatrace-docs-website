@@ -1,15 +1,15 @@
 ---
-title: AWS Lambda log collection
+title: Collect logs from AWS Lambda functions
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector
 ---
 
-# AWS Lambda log collection
+# Collect logs from AWS Lambda functions
 
-# AWS Lambda log collection
+# Collect logs from AWS Lambda functions
 
 * How-to guide
 * 7-min read
-* Updated on May 14, 2026
+* Updated on Sep 22, 2026
 
 Dynatrace version 1.263
 
@@ -43,19 +43,19 @@ For .NET Lambda functions, follow the steps described in [Monitor AWS Lambda wit
 
 If you previously used tracing integration without logging, you have to adapt the configuration as provided in the wizard—by adding the necessary enhancements for the log collector.
 
-Disable Firehose log streaming or CloudWatch log forwarding
+Turn off Firehose log streaming or CloudWatch log forwarding
 
-If you are currently using it, you must disable Firehose log streaming or CloudWatch log forwarding for functions on which you wish to use this log collection feature in order to avoid duplicate log exports. See [Log monitoring with AWS log forwarder](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/aws-log-forwarder#unsubscribe "Use AWS log forwarding to ingest AWS logs.") or (lm-stream-logs-with-firehose#unsubscribe).
+If you are currently using it, you must turn off Firehose log streaming or CloudWatch log forwarding for functions on which you wish to use this log collection feature in order to avoid duplicate log exports. See [Log monitoring with AWS log forwarder](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/aws-log-forwarder#unsubscribe "Use AWS log forwarding to ingest AWS logs.") or (lm-stream-logs-with-firehose#unsubscribe).
 
 ## Usage
 
-After deployment, collected logs for each future function invocation and initialization can be found in the **Related logs** card on the Lambda function's service page in Dynatrace, and in the **Log viewer**. You can inspect the log details to find the type of the log under the `telemetryevent.type` attribute, among other metadata. Note that the content of `platform` logs will be JSON data, while the content of `function` logs will be plain text.
+After deployment, collected logs for each future function invocation and initialization can be found in the **Related logs** card on the Lambda function's service page in Dynatrace, and in the **Log viewer**. You can inspect the log details to find the type of the log under the `telemetryevent.type` attribute, among other metadata. The content of `platform` logs is JSON data; the content of `function` logs is plain text.
 
 ### Logs in context of traces
 
 To correlate and see application logs with traces in Dynatrace, you need to enrich logs with the trace identifiers. For more details see [Logs in context of traces](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment "Configure log message enrichment with OpenTelemetry on AWS Lambda.").
 
-## Configuration
+## Configure
 
 ### Log event types
 
@@ -74,7 +74,7 @@ Set the value to `["function"]` (or `function`) to collect only function logs.
 
 OneAgent version 1.275+
 
-The endpoint that is used for exporting logs to is derived from the base URL of your configuration [deployment screen](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension#lambda-cfg-method "Monitor Lambda functions written in Python, Node.js, and Java."). You can override the default value by setting the override-value location to a specific full endpoint URL that contains also the path.
+The log export endpoint defaults to the base URL of your configuration [deployment screen](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension#lambda-cfg-method "Monitor Lambda functions written in Python, Node.js, and Java."). You can override it by setting the override-value location to a specific full endpoint URL that contains the path.
 
 | Configure with | Default-value location | Override-value location |
 | --- | --- | --- |
@@ -109,13 +109,13 @@ Prerequisites
 
 To fetch the token for log collection, set the token secret ARN either to the environment variable `DT_LOG_COLLECTION_AUTH_TOKEN_SECRETS_MANAGER_ARN` or the JSON property `LogCollection.AuthTokenSecretsManagerArn`.
 
-This option always overrides `DT_LOG_COLLECTION_AUTH_TOKEN` (`LogCollection.AuthToken`). If the fetch fails, the log collector won't be able to export log data.
+This option always overrides `DT_LOG_COLLECTION_AUTH_TOKEN` (`LogCollection.AuthToken`). If the fetch fails, the log collector will not be able to export log data.
 
 A fetch accesses AWS Secrets Manager only once, during the Lambda function's initialization phase; this causes an increase of the Lambda function's cold start duration.
 
 To [fetch the token for trace connection](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension#aws-secrets-manager "Monitor Lambda functions written in Python, Node.js, and Java."), set another fetch.
 
-### Filtering
+### Filter logs by level
 
 OneAgent version 1.291+
 
@@ -139,24 +139,24 @@ To configure from which level to start log collection, for example, starting fro
 
 For example, if `<Log level>` is `WARN`
 
-* Logs for `TRACE`, `DEBUG`, and `INFO` levels are not collected.
+* Logs for `TRACE`, `DEBUG`, and `INFO` levels aren't collected.
 * Logs for `WARN`, `ERROR`, and `FATAL` levels are collected.
 
 To configure log collection filters directly in AWS, see [Using Amazon CloudWatch Logs with AWS Lambda﻿](https://dt-url.net/h503n1u). Note that with this option
 
-* Logs are not shown on CloudWatch.
-* Dynatrace will not collect logs that are already filtered out in AWS.
+* Logs aren't shown on CloudWatch.
+* Dynatrace doesn't collect logs that are already filtered out in AWS.
 
-### Log enrichment
+### Enrich logs
 
 OneAgent version 1.337+
 
-You can enrich collected logs with custom tags and fields by setting the `DT_TAGS` environment variable on your Lambda function. The defined values are added as attributes to all logs collected from that function.
+You can enrich collected logs with custom tags and fields by setting the `DT_TAGS` environment variable on your Lambda function. Dynatrace adds these values as attributes to all logs collected from that function.
 
-Supported fields:
+The `DT_TAGS` variable supports these fields:
 
 * Primary tags, for example, `primary_tags.<tag>`
-* Special fields: `dt.cost.costcenter`, `dt.cost.product`, `dt.security_context`
+* Special fields: `dt.cost.costcenter`, `dt.cost.product`, `dt.security_context`, `dt.space` (`dt.space` is available with OneAgent version 1.351+)
 * Primary fields, when not auto-detected from AWS: `aws.account.id`, `aws.region`, `dt.host_group.id`
 
 **Example:**
@@ -167,15 +167,15 @@ DT_TAGS="primary_tags.environment=production dt.cost.costcenter=12345 aws.accoun
 
 ## Limitations
 
-* The `extension` event type currently is not supported: if you try to configure the `extension` event type, an error is shown and log collection does not start.
-* In the classic AWS Lambda integration, logs collected by the log collector are not associated with traces and are not shown in the trace view in the **Logs** tab, and will only be shown on the **Related logs** card or in the **Log viewer**. However, you may use [manual log enrichment](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") in order to connect your function logs to your traces. See [AWS Lambda logs in context of traces](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment "Configure log message enrichment with OpenTelemetry on AWS Lambda.") for language-specific examples of manual log enrichment.
-* When using the latest AWS Lambda integration, automatic log enrichment is available for structured logs printed with supported logging frameworks.
-* If an AWS log event doesn't have a log level and the log message contains the string `[error]` or `[ERROR]`, the log level will be set to `ERROR`. Otherwise `INFO` level is used.
-* We do not recommend combining the standalone collector layer with a OneAgent layer. If you want tracing and log collection for your Lambda functions, use the combined **Traces and Logs** layer instead.
+* The `extension` event type isn't supported. Configuring this event type results in an error and log collection doesn't start.
+* Logs collected by the log collector in the classic AWS Lambda integration are not associated with traces and don't appear in the trace view **Logs** tab—they appear only on the **Related logs** card or in **Log viewer**. To connect function logs to traces, use [manual log enrichment](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."). See [AWS Lambda logs in context of traces](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment "Configure log message enrichment with OpenTelemetry on AWS Lambda.") for language-specific examples.
+* Automatic log enrichment in the latest AWS Lambda integration applies only to structured logs printed with supported logging frameworks.
+* A log event without a detected log level receives `ERROR` when the message contains `[error]` or `[ERROR]`; otherwise Dynatrace assigns `INFO`.
+* Combining the standalone collector layer with a OneAgent layer isn't recommended. For both tracing and log collection, use the combined **Traces and Logs** layer instead.
 
 * The environment variable `DT_CONNECTION_BASE_URL` can't be copied from the deployment screen. Instead, the value of `DT_CONNECTION_BASE_URL` must be set to a URL in the form of `https://{activegate-host}:9999/e/{your-environment-id}`.
 
-## Troubleshooting
+## Troubleshoot
 
 * [Dynatrace does not ingest logs (HTTP 429)﻿](https://dt-url.net/hm23mng)
 

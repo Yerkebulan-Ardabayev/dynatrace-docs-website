@@ -187,19 +187,300 @@ For high-volume Prometheus scraping, and for new deployments, we recommend the [
 
 ## Example DynaKube resources
 
-This section provides an example manifest that includes two DynaKube resources that you can use to configure your ActiveGates.
-
-It follows the deployment recommendation to use two sets of ActiveGates: one for Kubernetes Platform Monitoring, and one for OneAgent traffic routing and telemetry ingest.
-You can apply one or both manifests according to your deployment.
-
-* The `k8s-monitoring` DynaKube resource handles Kubernetes platform monitoring, and is sized for a medium cluster (1,000–5,000 nodes).
-  It includes an optional (commented-out) configuration for Kubernetes Security Posture Management.
-* The `agents` DynaKube resource handles OneAgent traffic routing, and is sized for a large cluster (5,000–20,000 nodes).
-  It includes an optional (commented-out) configuration for OTLP log ingest, log monitoring, telemetry ingest, and the OTel Collector.
-
 Adjust requests (and limits if required) to fit your environment.
 
 CPU limits are commented out. We recommend defining requests only so the ActiveGate can use additional CPU when available. If limits are required, set them equal to or higher than requests.
+
+Single DynaKube (Operator 1.11.0+)
+
+Two DynaKubes (Operator versions earlier than 1.11.0)
+
+This DynaKube covers Kubernetes platform monitoring and OneAgent traffic routing in a single resource. The routing ActiveGate is sized for a large cluster (5,000–20,000 nodes); the Kubernetes monitoring StatefulSet is sized for a medium cluster (1,000–5,000 nodes) and can be scaled independently. It includes optional (commented-out) configuration for Kubernetes Security Posture Management, OTLP log ingest, log monitoring, telemetry ingest, and the OTel Collector.
+
+```
+apiVersion: dynatrace.com/v1beta6
+
+
+
+kind: DynaKube
+
+
+
+metadata:
+
+
+
+name: dynakube
+
+
+
+namespace: dynatrace
+
+
+
+spec:
+
+
+
+apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
+
+
+
+tokens: <SECRET NAME>
+
+
+
+# Link to api reference for further information: https://docs.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
+
+
+
+oneAgent:
+
+
+
+applicationMonitoring: {}   # or cloudNativeFullStack: {}
+
+
+
+activeGate:
+
+
+
+capabilities:
+
+
+
+- routing
+
+
+
+- debugging
+
+
+
+resources:
+
+
+
+requests:
+
+
+
+cpu: 1000m
+
+
+
+memory: 6Gi
+
+
+
+limits:
+
+
+
+# cpu: 4000m
+
+
+
+memory: 6Gi
+
+
+
+replicas: 6
+
+
+
+kubernetesMonitoring:
+
+
+
+registration: {}
+
+
+
+resources:
+
+
+
+requests:
+
+
+
+cpu: 1000m
+
+
+
+memory: 10Gi
+
+
+
+limits:
+
+
+
+# cpu: 2000m
+
+
+
+memory: 10Gi
+
+
+
+#kspm:
+
+
+
+#mappedHostPaths:
+
+
+
+#- /boot
+
+
+
+#- /etc
+
+
+
+#- /proc/sys/kernel
+
+
+
+#- /sys/fs
+
+
+
+#- /sys/kernel/security/apparmor
+
+
+
+#- /usr/lib/systemd/system
+
+
+
+#- /var/lib
+
+
+
+#logMonitoring: {}
+
+
+
+#telemetryIngest:
+
+
+
+#protocols:
+
+
+
+#- jaeger
+
+
+
+#- otlp
+
+
+
+#- statsd
+
+
+
+#- zipkin
+
+
+
+#serviceName: telemetry-ingest
+
+
+
+templates:
+
+
+
+#kspmNodeConfigurationCollector:
+
+
+
+#imageRef:
+
+
+
+#repository: public.ecr.aws/dynatrace/dynatrace-k8s-node-config-collector
+
+
+
+#tag: 1.5.2
+
+
+
+#logMonitoring:
+
+
+
+#imageRef:
+
+
+
+#repository: public.ecr.aws/dynatrace/dynatrace-logmodule
+
+
+
+#tag: <>
+
+
+
+#tolerations:
+
+
+
+#- effect: NoSchedule
+
+
+
+#  key: node-role.kubernetes.io/master
+
+
+
+#  operator: Exists
+
+
+
+#- effect: NoSchedule
+
+
+
+#  key: node-role.kubernetes.io/control-plane
+
+
+
+#  operator: Exists
+
+
+
+#otelCollector:
+
+
+
+#replicas: 1
+
+
+
+#imageRef:
+
+
+
+#repository: public.ecr.aws/dynatrace/dynatrace-otel-collector
+
+
+
+#tag: <tag>
+```
+
+* The `k8s-monitoring` DynaKube handles Kubernetes platform monitoring, sized for a medium cluster (1,000–5,000 nodes).
+  It includes an optional (commented-out) configuration for Kubernetes Security Posture Management.
+* The `agents` DynaKube handles OneAgent traffic routing, sized for a large cluster (5,000–20,000 nodes).
+  It includes an optional (commented-out) configuration for OTLP log ingest, log monitoring, telemetry ingest, and the OTel Collector.
 
 ```
 apiVersion: dynatrace.com/v1beta5
@@ -438,22 +719,6 @@ replicas: 6
 
 
 
-#customProperties:
-
-
-
-#value: |
-
-
-
-#[otlp_ingest]
-
-
-
-#otlp_ingest_enabled = true
-
-
-
 #logMonitoring: {}
 
 
@@ -503,34 +768,6 @@ templates:
 
 
 #tag: <>
-
-
-
-#tolerations:
-
-
-
-#- effect: NoSchedule
-
-
-
-#  key: node-role.kubernetes.io/master
-
-
-
-#  operator: Exists
-
-
-
-#- effect: NoSchedule
-
-
-
-#  key: node-role.kubernetes.io/control-plane
-
-
-
-#  operator: Exists
 
 
 

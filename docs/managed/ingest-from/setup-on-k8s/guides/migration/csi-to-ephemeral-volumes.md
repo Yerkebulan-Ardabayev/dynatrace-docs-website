@@ -11,6 +11,8 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/migra
 * 5-min read
 * Updated on Aug 04, 2026
 
+If your cluster runs Kubernetes 1.35 or later, consider migrating directly to [image volume injection](/managed/ingest-from/setup-on-k8s/guides/migration/migrate-to-image-volume "Step-by-step guide to migrating your Dynatrace Operator deployment to image volume injection for improved storage efficiency and security posture.") instead. It provides the same node-level storage efficiency as the CSI driver and the same security posture as ephemeral volumes, without the operational overhead of running and maintaining the CSI driver.
+
 This guide describes the steps required to migrate your Dynatrace Operator deployment from CSI volumes to ephemeral volumes. Using the `csidriver.migrationMode` Helm value, you can complete this migration with a single pod-restart cycle instead of two, reducing disruption to your workloads.
 
 ## CSI migration mode

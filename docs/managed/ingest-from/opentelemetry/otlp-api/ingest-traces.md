@@ -9,7 +9,11 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/otlp-api/in
 
 * Reference
 * 1-min read
-* Updated on Jul 15, 2024
+* Updated on Sep 29, 2026
+
+The following reference covers the ingestion limits and supported attribute types for OTLP trace ingest in Dynatrace.
+
+## Ingestion limits
 
 The following limitations apply to OpenTelemetry trace ingest requests and ingested spans.
 
@@ -28,3 +32,22 @@ The following limitations apply to OpenTelemetry trace ingest requests and inges
 1
 
 Typical limit of the OpenTelemetry SDK. Not limited by Dynatrace.
+
+## Supported attribute types
+
+Dynatrace supports all OTLP attribute value types in trace ingest, including all primitive types and the complex types introduced in [OTEP 4485﻿](https://opentelemetry.io/blog/2025/complex-attribute-types/): maps, heterogeneous arrays, byte arrays, and null values.
+
+| Type | Description |
+| --- | --- |
+| `string` | UTF-8 string value. |
+| `bool` | Boolean value (`true` or `false`). |
+| `int` | 64-bit signed integer. |
+| `double` | 64-bit double-precision floating-point number. |
+| `bytes` | Byte array. |
+| `array` | Array whose elements can be any attribute value type, including heterogeneous values. |
+| `kvlist` | Key-value list (map), where each key is a string and each value can be any attribute value type, including nested `kvlist` values. |
+| `null` | Empty (null) value. |
+
+Once ingested, all attribute value types, including complex ones, are preserved and available for querying with [Dynatrace Query Language (DQL)](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+
+Complex attributes are only supported in Latest Dynatrace.

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 * How-to guide
 * 8-min read
-* Updated on Jul 16, 2026
+* Updated on Sep 23, 2026
 
 Android iOS tvOS React Native
 
@@ -60,6 +60,8 @@ The DSSClient enables you to deobfuscate mobile application crash reports or han
 **Upload mapping files via DSSClient**](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files#upload-mapping-files "Learn about deobfuscation (Android) and symbolication (iOS, tvOS, and React Native) and your options for uploading and managing symbol files in Dynatrace.")
 
 You can use the DSSClient only on machines running macOS.
+
+In April 2027, the SDK will switch to Xcode 27. This removes x86\_64 (Intel) support for the Swift instrumentor (DTSwiftInstrumentor) and the symbol extractor (DSSClient). Only Apple Silicon (arm64) will be supported from that point on.
 
 ### Step 1 Get the DSSClient
 
@@ -182,6 +184,8 @@ To download dSYM files using Xcode's app archive
 ### Step 2 Get the DSSClient
 
 You can use the DSSClient only on machines running macOS.
+
+In April 2027, the SDK will switch to Xcode 27. This removes x86\_64 (Intel) support for the Swift instrumentor (DTSwiftInstrumentor) and the symbol extractor (DSSClient). Only Apple Silicon (arm64) will be supported from that point on.
 
 You can download the DSSClient from the Dynatrace web UI.
 
