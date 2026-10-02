@@ -497,23 +497,23 @@ Bellsoft Liberica v21+ 32-bit are not supported
 
 1
 
-This version requires Java Servlet 5.0 support feature to be active
+This version requires Java Servlet 5.0 support feature to be active.
 
 2
 
-[Limited Support](#limited-support): Fully supported base technology: Java
+[Limited Support](#limited-support): Fully supported base technology: Java.
 
 3
 
-Starting with OneAgent 1.183 only Java 7 is supported in WebSphere Application Server 8.5
+Starting with OneAgent 1.183 only Java 7 is supported in WebSphere Application Server 8.5.
 
 4
 
-Websphere Liberty's servlet 5 engine is supported since OneAgent version 1.259
+Websphere Liberty's servlet 5 engine is supported since OneAgent version 1.259.
 
 5
 
-10.3 = 11g
+10.3 = 11g.
 
 6
 
@@ -589,7 +589,7 @@ Currently, only the web protocol is supported, not the proprietary TCP protocol.
 
 6
 
-in servlet container only
+in servlet container only.
 
 7
 
@@ -635,15 +635,15 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Wildfly 8
+Wildfly 8.
 
 2
 
-Wildfly 8,9,10
+Wildfly 8,9,10.
 
 3
 
-Wildfly 27 - 41
+Wildfly 27 - 41.
 
 | Database frameworks | Versions |
 | --- | --- |
@@ -727,7 +727,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Extended tracing support for all AWS service calls
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Extended tracing support for all AWS service calls.
 
 3
 
@@ -833,7 +833,7 @@ Dynatrace supports .NET applications written in C#. Limited support for .NET app
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.335+
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.335+.
 
 | Web service | Versions |
 | --- | --- |
@@ -847,11 +847,11 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.335+
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.335+.
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.337+
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.337+.
 
 | Database framework | Versions |
 | --- | --- |
@@ -864,11 +864,11 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.335+
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.335+.
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.337+
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.337+.
 
 | Messaging client | Versions |
 | --- | --- |
@@ -884,15 +884,15 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.335+
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.335+.
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.337+
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.337+.
 
 3
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.339+
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.339+.
 
 | Monitoring framework | Versions |
 | --- | --- |
@@ -900,7 +900,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.337+
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.337+.
 
 | Logging framework | Versions |
 | --- | --- |
@@ -911,11 +911,11 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.335+
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.335+.
 
 2
 
-This feature is only available when using Advanced .NET Instrumentation Mode
+This feature is only available when using Advanced .NET Instrumentation Mode.
 
 See also [OneAgent SDK for .NET](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing capabilities.
 
@@ -993,7 +993,7 @@ The IAsyncResult pattern (APM) for .NET Framework 3.5 is supported in version 1.
 
 1
 
-This feature is only available when using Advanced .NET Instrumentation Mode
+This feature is only available when using Advanced .NET Instrumentation Mode.
 
 ### [Go](/managed/ingest-from/technology-support/application-software/go "Read an overview of Dynatrace support for Go applications.")
 
@@ -1015,7 +1015,7 @@ This feature is only available when using Advanced .NET Instrumentation Mode
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 | Database frameworks | Versions |
 | --- | --- |
@@ -1051,19 +1051,15 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | --- | --- |
 | [Amazon AWS Lambda SDK﻿](https://github.com/aws/aws-lambda-go) | 1.18.0-1.54.0[1](#fn-remoting-frameworks-1-def) |
 | [Amazon AWS SDK﻿](https://github.com/aws/aws-sdk-go-v2) | 1.13.0 - 1.39.0[2](#fn-remoting-frameworks-2-def), 1.39.1 - 1.41.1[2](#fn-remoting-frameworks-2-def), 1.41.2 - 1.41.7[2](#fn-remoting-frameworks-2-def), 1.41.8 - 1.42.0[2](#fn-remoting-frameworks-2-def), 1.42.1[2](#fn-remoting-frameworks-2-def), 1.42.2 - 1.43.6[2](#fn-remoting-frameworks-2-def) |
-| [gRPC﻿](https://godoc.org/google.golang.org/grpc) | 1.17 - 1.28[3](#fn-remoting-frameworks-3-def), 1.29[3](#fn-remoting-frameworks-3-def), 1.30 - 1.39[3](#fn-remoting-frameworks-3-def), 1.40 - 1.59[3](#fn-remoting-frameworks-3-def), 1.60 - 1.68[3](#fn-remoting-frameworks-3-def), 1.69 - 1.76[3](#fn-remoting-frameworks-3-def), 1.78 - 1.83[3](#fn-remoting-frameworks-3-def) |
+| [gRPC﻿](https://godoc.org/google.golang.org/grpc) | 1.17 - 1.28[1](#fn-remoting-frameworks-1-def), 1.29[1](#fn-remoting-frameworks-1-def), 1.30 - 1.39[1](#fn-remoting-frameworks-1-def), 1.40 - 1.59[1](#fn-remoting-frameworks-1-def), 1.60 - 1.68[1](#fn-remoting-frameworks-1-def), 1.69 - 1.76[1](#fn-remoting-frameworks-1-def), 1.78 - 1.83[1](#fn-remoting-frameworks-1-def) |
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Extended tracing support for all AWS service calls
-
-3
-
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Extended tracing support for all AWS service calls.
 
 | Monitoring frameworks | Versions |
 | --- | --- |
@@ -1113,7 +1109,7 @@ Node.js follows a Long Term Support (LTS) release schedule. The following table 
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 2
 
@@ -1127,7 +1123,7 @@ Nest is supported implicitly via underlying Express or Fastify platforms.
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 | Database frameworks | Versions |
 | --- | --- |
@@ -1145,7 +1141,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 2
 
@@ -1153,7 +1149,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 3
 
-Note that 5.0 versions are not supported
+Note that 5.0 versions are not supported.
 
 | API Querying frameworks | Versions |
 | --- | --- |
@@ -1178,11 +1174,11 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 2
 
-RabbitMQ publishers supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+RabbitMQ publishers supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 | Remoting frameworks | Versions |
 | --- | --- |
@@ -1193,15 +1189,15 @@ RabbitMQ publishers supported in [AWS Lambda](/managed/ingest-from/amazon-web-se
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Extended tracing support for all AWS service calls
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Extended tracing support for all AWS service calls.
 
 3
 
-gRPC client calls supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+gRPC client calls supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 | Monitoring frameworks | Versions |
 | --- | --- |
@@ -1218,7 +1214,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 | Logging frameworks | Versions |
 | --- | --- |
@@ -1229,7 +1225,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 See also [OneAgent SDK for Node.js](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing capabilities.
 
@@ -1311,11 +1307,11 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 2
 
-based on decorator @distributed\_trace
+based on decorator @distributed\_trace.
 
 3
 
-Async calls supported since version 1.331
+Async calls supported since version 1.331.
 
 | Asynchronous execution libraries | Versions |
 | --- | --- |
@@ -1363,7 +1359,7 @@ Experimental. Prompt capturing supported since OneAgent 1.345.
 
 3
 
-Experimental
+Experimental.
 
 * See [OneAgent SDK for Python](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing capabilities.
 * See [Instrument your Python application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/python "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.") for OpenTelemetry support.
@@ -1413,7 +1409,7 @@ See [Dynatrace support model for PHP applications](/managed/ingest-from/technolo
 
 1
 
-Supported only for PHP NG Monitoring
+Supported only for PHP NG Monitoring.
 
 2
 
@@ -1447,7 +1443,7 @@ Supported only for PHP NG Monitoring. The implementation using phpredis cluster 
 
 1
 
-Supported only for PHP NG Monitoring on Linux and Alpine Linux/MUSL
+Supported only for PHP NG Monitoring on Linux and Alpine Linux/MUSL.
 
 | Logging frameworks | Versions |
 | --- | --- |
@@ -1752,7 +1748,7 @@ See [Dynatrace Hub﻿](https://www.dynatrace.com/hub/?filter=all&type=extension&
 
 1
 
-Requires OneAgent EEC. Supported on Windows and Linux and the x64 CPU architecture
+Requires OneAgent EEC. Supported on Windows and Linux and the x64 CPU architecture.
 
 ## Private Synthetic locations
 

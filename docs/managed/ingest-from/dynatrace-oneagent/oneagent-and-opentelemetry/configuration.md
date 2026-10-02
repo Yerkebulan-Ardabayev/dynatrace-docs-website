@@ -108,7 +108,7 @@ Existing tracers are not affected by OneAgent OpenTelemetry for PHP support.
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.337+
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.337+.
 
 Opt-in
 

@@ -148,13 +148,6 @@ The built-in cluster container registry will be shut down on January 1, 2028, an
 
 ### Past Dynatrace Managed operating systems support changes
 
-##### The following operating systems are no longer supported since 01 January 2026
-
-* Linux: Debian 10
-
-  + x86-64
-  + [Vendor announcement﻿](https://wiki.debian.org/DebianReleases)
-
 ##### The following operating systems are no longer supported since 01 June 2026
 
 * Linux: Oracle Linux 9.6
