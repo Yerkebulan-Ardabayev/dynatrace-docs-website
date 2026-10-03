@@ -1,0 +1,10 @@
+{
+  "_comment": "AI Chat configuration template. Copy this to ai-config.local.json (gitignored) and fill in your key for local development.",
+  "_production": "In production (GitHub Pages), the ai-config.json file is generated at build time from the GEMINI_API_KEY GitHub Secret — never committed with a real key.",
+  "_setup_local": "cp docs/assets/ai-config.example.json docs/assets/ai-config.local.json && edit ai-config.local.json",
+  "_setup_ci": "Set GEMINI_API_KEY in GitHub repo Settings → Secrets and variables → Actions.",
+  "_setup_worker": "For production without committing any key: deploy Cloudflare Worker and set worker_url below. FREE: 100K req/day.",
+  "worker_url": "",
+  "gemini_api_key": "",
+  "groq_api_key": ""
+}

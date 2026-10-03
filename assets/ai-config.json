@@ -1,0 +1,7 @@
+{
+  "_comment": "Public config shipped to GitHub Pages. Keys MUST be empty in this file — they are injected at CI build time from GitHub Secrets.",
+  "_local_dev": "For local testing: create ai-config.local.json (gitignored) next to this file with real keys. groq-chat.js loads .local.json first.",
+  "worker_url": "",
+  "gemini_api_key": "",
+  "groq_api_key": ""
+}
