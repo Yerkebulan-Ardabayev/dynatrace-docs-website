@@ -24,7 +24,7 @@ You can navigate to the self-monitoring environment from the [user menu](/manage
 
 ## Explore self-monitoring metrics
 
-For an overview of the currently implemented self-monitoring metrics, filter for metrics prefixed with `dsfm:` in the [metric browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser."). The metric description provides details. You can use the self-monitoring environment to set up alerting or further dashboarding. Dynatrace protects this environment from deletion.
+For an overview of the currently implemented self-monitoring metrics, filter for metrics prefixed with `dsfm:` in the [metric browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics."). The metric description provides details. You can use the self-monitoring environment to set up alerting or further dashboarding. Dynatrace protects this environment from deletion.
 
 ## Cluster deployment health and utilization dashboard
 

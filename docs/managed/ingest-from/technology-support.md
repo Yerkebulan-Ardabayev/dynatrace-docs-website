@@ -1535,7 +1535,7 @@ Only Apache versions 2.2 and 2.4 are supported.
 
 1
 
-As of version 1.29, Envoy exports data using [OpenTelemetry](/managed/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace."). See [Configure OpenTelemetry tracing with Envoy](/managed/ingest-from/opentelemetry/integrations/envoy "Configure Envoy to export OpenTelemetry traces to Dynatrace using the Envoy OpenTelemetry tracer, including resource detection and adaptive sampling.") for details.
+As of version 1.29, Envoy exports data using [OpenTelemetry](opentelemetry). See  for details.
 
 ### NGINX
 

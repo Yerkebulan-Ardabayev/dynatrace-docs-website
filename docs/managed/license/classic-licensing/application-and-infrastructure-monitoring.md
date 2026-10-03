@@ -10,6 +10,8 @@ source: https://docs.dynatrace.com/managed/license/classic-licensing/application
 * 12-min read
 * Updated on Mar 18, 2026
 
+This page describes a legacy license model and should not be used for pricing estimates related to the current Dynatrace Platform Subscription (DPS) license model. All new Dynatrace contracts are signed based on DPS, for more information see [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.").
+
 Dynatrace application and infrastructure monitoring is provided via installation of a single [Dynatrace OneAgent](/managed/platform/oneagent "Learn the monitoring capabilities of OneAgent.") on each monitored host in your environment. OneAgent is licensed on a per-host basis (virtual or physical server).
 
 However, not all hosts are of equal size. Larger hosts consume more host units than do smaller-sized hosts. We use the amount of RAM on a monitored server as a measuring stick to determine the size of a host (that is how many host units it comprises). The advantage of this approach is its simplicity. You can have 10 JVMs or 1,000 JVMs; such factors don't affect the amount of monitoring that an environment consumes.

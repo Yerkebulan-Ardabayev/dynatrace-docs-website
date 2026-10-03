@@ -49,7 +49,3 @@ Note that a large number of dimensions can exceed the limits and impact your Dyn
 * Certain metrics can be assigned to dimensions with a constantly increasing set of values, each of them becoming a new dimension.
 
 See [Prometheus data source reference](/managed/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference "Learn about Prometheus extensions in the Extensions framework.") to learn about the structure of the Prometheus extension YAML file and monitoring configuration format.
-
-## Related topics
-
-* [Scrape Prometheus metrics with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape Prometheus endpoints and ingest the data into Dynatrace.")

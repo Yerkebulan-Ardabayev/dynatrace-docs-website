@@ -10,6 +10,8 @@ source: https://docs.dynatrace.com/managed/license/classic-licensing/digital-exp
 * 7-min read
 * Published Mar 30, 2021
 
+This page describes a legacy license model and should not be used for pricing estimates related to the current Dynatrace Platform Subscription (DPS) license model. All new Dynatrace contracts are signed based on DPS, for more information see [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.").
+
 In addition to the [application and infrastructure monitoring](/managed/license/classic-licensing/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") provided by OneAgent, you may also require Dynatrace Synthetic Monitoring, Real User Monitoring, and Session Replay.
 These capabilities are consumed based on Digital Experience Monitoring units, otherwise known as DEM units.
 

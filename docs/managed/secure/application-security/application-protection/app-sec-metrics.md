@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/secure/application-security/applicati
 # Metrics Classic for Dynatrace Runtime Application Protection
 
 * Reference
-* Updated on Nov 06, 2025
+* Updated on Oct 01, 2026
 
 ## Available metrics
 
@@ -34,8 +34,8 @@ To view Application Security metrics
 2. Filter for the metric you want.
 
    * If you don't see results, turn off **Only show metrics reported after the start of the selected timeframe**.
-   * You can add more filters (`Tag`, `Unit`, `Favorites`). See [Filter and sort the table](/managed/analyze-explore-automate/dashboards-classic/metrics-browser#filter "Browse metrics with the Dynatrace metrics browser.") for details.
-3. Expand **Details** for any metric to see metric details and a chart of the metric over the selected timeframe. For more information, see [Metrics browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.").
+   * You can add more filters (`Tag`, `Unit`, `Favorites`). See [Metric filters and sorting](/managed/analyze-explore-automate/metrics-browser/metrics-browser-filters-and-fields#filter "Look up Metrics browser filters, sorting options, metric details, and custom metadata fields before creating charts or editing custom metrics.") for details.
+3. Expand **Details** for any metric to see metric details and a chart of the metric over the selected timeframe. For more information, see [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics.").
 
    Example metric details:
 
@@ -47,7 +47,7 @@ To view Application Security metrics
 
 You can use Application Security metrics to
 
-* [Create charts and pin them to your dashboards](/managed/analyze-explore-automate/dashboards-classic/metrics-browser#pin "Browse metrics with the Dynatrace metrics browser.")
+* [Create charts and pin them to your dashboards](/managed/analyze-explore-automate/metrics-browser/metrics-browser-filters-and-fields#chart "Look up Metrics browser filters, sorting options, metric details, and custom metadata fields before creating charts or editing custom metrics.")
 * [Query data in Data Explorer](/managed/analyze-explore-automate/explorer#query-components-and-concepts "Query for metrics and transform results to gain desired insights.")
 
 ### Example

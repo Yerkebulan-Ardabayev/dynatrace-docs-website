@@ -11,6 +11,8 @@ source: https://docs.dynatrace.com/managed/license/monitoring-consumption-classi
 * 3-min read
 * Updated on May 15, 2026
 
+This page describes a legacy license model and should not be used for pricing estimates related to the current Dynatrace Platform Subscription (DPS) license model. All new Dynatrace contracts are signed based on DPS, for more information see [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.").
+
 You can track the license usage of your host units, Davis data units, and Digital Experience Monitoring units under classic licensing in two ways:
 
 * Via the **Cluster Management Console**

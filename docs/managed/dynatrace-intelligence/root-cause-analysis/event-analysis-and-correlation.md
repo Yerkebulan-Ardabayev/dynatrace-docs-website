@@ -131,7 +131,7 @@ While event correlation and deduplication are fully automatic, some use cases re
 | **dt.event.suppress\_problem** | Boolean | Problems suppression is active (`true`) or (`false`) inactive.  If suppression is active, Davis doesn't raise a problem and doesn't trigger event correlation and deduplication for the event. The event is stored and visualized in Dynatrace, but no problem is raised and analyzed based on it. |
 | **dt.event.timeout** | String | The timeout (in minutes) of the event. It defines the time period until a refresh must arrive from the event source. If no refresh is received, the event is closed with the change reason `TIMED_OUT`. |
 
-Additionally, the processing of events can be influenced by the event sender or the source using `event.davis` field defined in the Semantic Dictionary. For more information, see [Semantic Dictionary](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+Additionally, the processing of events can be influenced by the event sender or the source using `dt.davis.events` field defined in the Semantic Dictionary. For more information, see [Semantic Dictionary](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 
 ## Root cause analysis
 

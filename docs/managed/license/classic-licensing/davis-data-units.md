@@ -10,6 +10,8 @@ source: https://docs.dynatrace.com/managed/license/classic-licensing/davis-data-
 * 8-min read
 * Published Mar 30, 2020
 
+This page describes a legacy license model and should not be used for pricing estimates related to the current Dynatrace Platform Subscription (DPS) license model. All new Dynatrace contracts are signed based on DPS, for more information see [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.").
+
 Davis data units (DDU) provide a simple means of licensing certain capabilities (custom metrics, log monitoring, and custom events) on the Dynatrace platform. Think of DDUs as a kind of Dynatrace currency. In the same way that license consumption for Dynatrace RUM and Synthetic Monitoring relies on [Digital Experience Monitoring (DEM) units](/managed/license/classic-licensing/digital-experience-monitoring-units "Understand how Dynatrace Digital Experience Monitoring consumption is calculated based on DEM units."), DDUs provide a seamless, shared consumption model across custom metrics, Log Monitoring, and custom events.
 
 Because DDUs are consumption-based, you buy a certain volume and your available quota is consumed over time based on the amount of monitoring your environment consumes. This licensing approach makes it much easier for you to control and monitor your metric consumption (for example, in the case of misconfigured metrics) and to identify top consumers in your environment. To learn more about how metrics are licensed with DDUs, see [Metric cost calculation](/managed/license/classic-licensing/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").

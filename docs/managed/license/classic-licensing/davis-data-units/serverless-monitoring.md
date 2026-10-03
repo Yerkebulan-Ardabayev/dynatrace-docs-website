@@ -10,6 +10,8 @@ source: https://docs.dynatrace.com/managed/license/classic-licensing/davis-data-
 * 2-min read
 * Published Mar 30, 2021
 
+This page describes a legacy license model and should not be used for pricing estimates related to the current Dynatrace Platform Subscription (DPS) license model. All new Dynatrace contracts are signed based on DPS, for more information see [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.").
+
 Dynatrace monitors serverless compute technologies through integration with cloud platform providers and tracing integrations.
 
 ## Metrics captured from cloud provider integrations

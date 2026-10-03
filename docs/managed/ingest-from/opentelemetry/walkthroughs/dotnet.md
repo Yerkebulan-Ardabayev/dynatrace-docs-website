@@ -910,7 +910,7 @@ logger.LogInformation(eventId: 123, "Log line");
 
 ### Ensure context propagation Optional
 
-[Context propagation](/managed/ingest-from/opentelemetry#context-propagation "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") is particularly important when network calls (for example, REST) are involved.
+[Context propagation](/managed/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration#context-propagation "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.") is particularly important when network calls (for example, REST) are involved.
 
 If you are using automatic instrumentation and your networking libraries are covered by automatic instrumentation, this will be automatically taken care of by the instrumentation libraries. Otherwise, your code needs to take this into account.
 

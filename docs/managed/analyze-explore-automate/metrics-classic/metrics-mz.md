@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/metrics-clas
 # Filter metrics by management zone
 
 * 4-min read
-* Updated on Jul 12, 2023
+* Updated on Oct 01, 2026
 
 You can filter metric data by [management zone](/managed/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") in two ways.
 
@@ -30,10 +30,10 @@ You can check the entity type of a metric using:
   ![Metric entity type in Data Explorer](https://dt-cdn.net/images/data-explorer-entity-type-1122-6a93ade8f2.png)
 
   Metric entity type in Data Explorer
-* The [Metric browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.").
+* The [Metric browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics.").
 * The [GET metric descriptor endpoint of the Metrics API](/managed/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API."); check the [`entityType` element](/managed/dynatrace-api/environment-api/metric-v2/get-descriptor#response "View the descriptor of a metric via Metrics v2 API.").
 
-Alternatively, you can explicitly configure the entity type for **ingested custom metrics** by setting the **Source entity type** on the [**Metric metadata** page](/managed/analyze-explore-automate/dashboards-classic/metrics-browser#configuration-ui "Browse metrics with the Dynatrace metrics browser.").
+Alternatively, you can explicitly configure the entity type for **ingested custom metrics** by setting **Source entity type** on the [**Metric metadata** page](/managed/analyze-explore-automate/metrics-browser/configure-custom-metric-metadata#edit-metadata "Edit the name, description, unit, value type, dimensions, tags, and other metadata for a custom metric from the Metrics browser.").
 
 ![Metric metadata modal with completed 'Source entity type' field.](https://dt-cdn.net/images/sourceentitytype-metricmetadata-1270-b154365f51.png)
 

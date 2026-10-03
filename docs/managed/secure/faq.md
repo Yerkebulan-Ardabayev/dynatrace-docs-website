@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/secure/faq
 # Application Security FAQ
 
 * Troubleshooting
-* Updated on Jul 28, 2026
+* Updated on Oct 01, 2026
 
 See below for answers to some of the most frequently asked questions about Dynatrace Application Security, grouped by topics.
 
@@ -200,7 +200,7 @@ You can [set up notifications](/managed/secure/application-security/application-
 
 ### How can I create reports and share them with others?
 
-* With the Dynatrace API, you can chart [Application Security metrics](/managed/secure/application-security/vulnerability-analytics/app-sec-metrics "View available Application Security metrics for Dynatrace Runtime Vulnerability Analytics.") and [pin them to your dashboard](/managed/analyze-explore-automate/dashboards-classic/metrics-browser#pin "Browse metrics with the Dynatrace metrics browser."). For example, you can retrieve [all security problems detected in your applications](/managed/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerabilities "View the list of vulnerabilities via Dynatrace API.") or the [vulnerable functions of a security problem](/managed/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerable-functions "View the vulnerable functions of a vulnerability via Dynatrace API.").
+* With the Dynatrace API, you can chart [Application Security metrics](/managed/secure/application-security/vulnerability-analytics/app-sec-metrics "View available Application Security metrics for Dynatrace Runtime Vulnerability Analytics.") and [pin them to your dashboard](/managed/analyze-explore-automate/metrics-browser/metrics-browser-filters-and-fields#chart "Look up Metrics browser filters, sorting options, metric details, and custom metadata fields before creating charts or editing custom metrics."). For example, you can retrieve [all security problems detected in your applications](/managed/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerabilities "View the list of vulnerabilities via Dynatrace API.") or the [vulnerable functions of a security problem](/managed/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerable-functions "View the vulnerable functions of a vulnerability via Dynatrace API.").
 * With [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), you can [share your metric results](/managed/analyze-explore-automate/explorer#share "Query for metrics and transform results to gain desired insights.") and [export them to a CSV file](/managed/analyze-explore-automate/explorer#csv "Query for metrics and transform results to gain desired insights.").
 
 ### How can I stop receiving notifications for an irrelevant vulnerability or entity?

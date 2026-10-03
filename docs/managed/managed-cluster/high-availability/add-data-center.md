@@ -252,7 +252,7 @@ In this step, you add firewall rules that open ports for traffic to the new DC-2
 To open ports to traffic from the new **DC-2** nodes, run the following Cluster API call only on the **seed node**:
 
 ```
-curl --noproxy '*' -ikS -X POST -d "$NODES_IPS" https://$SEED_IP/api/v1.0/onpremise/multiDc/migration/clusterNodes/currentDc?Api-Token=$API_TOKEN -H "accept: application/json" -H "Content-Type: application/json"
+curl --noproxy '*' -ikS -X POST https://$SEED_IP/api/v1.0/onpremise/multiDc/migration/clusterNodes/currentDc?Api-Token=$API_TOKEN -H "accept: application/json" -H "Content-Type: application/json"
 ```
 
 If successful, the status code is `200` and the response body contains a request ID you need to check the firewall rules status.

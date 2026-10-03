@@ -28,7 +28,7 @@ Examples of order-of-magnitude notation in Dynatrace:
 
 ### Metrics browser
 
-In this example from the [Metrics browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser."), you can see values displayed in millions. This is order-of-magnitude notation (`7.5M` means "about 7.5 million" and not "exactly 7.5 million").
+In this example from the [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics."), you can see values displayed in millions. This is order-of-magnitude notation (`7.5M` means "about 7.5 million" and not "exactly 7.5 million").
 
 Dynatrace selects the order of magnitude automatically based on the size of the values. For example, the same metric measured over a shorter timeframe might appear in `k` values instead of `M`.
 

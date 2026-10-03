@@ -10,6 +10,8 @@ source: https://docs.dynatrace.com/managed/license/classic-licensing/davis-data-
 * 2-min read
 * Published Mar 30, 2021
 
+This page describes a legacy license model and should not be used for pricing estimates related to the current Dynatrace Platform Subscription (DPS) license model. All new Dynatrace contracts are signed based on DPS, for more information see [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.").
+
 While there are no additional costs or licensing involved in the integration of OpenTracing and OpenTelemetry span data into Dynatrace via OneAgent, you have the option to configure the Dynatrace Trace API to ingest OpenTelemetry and OpenTracing spans; these are known as "custom traces." This approach is useful for seamlessly integrating OpenTelemetry trace data that's emitted by third-party services. Ingestion of spans via the Trace API endpoint consumes [Davis data units](/managed/license/classic-licensing/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") because this approach requires more processing and analytical power than ingestion via OneAgent.
 
 For details on OneAgent-based ingestion of OpenTelemetry and OpenTracing spans, which does not consume DDUs, see [OneAgent OpenTracing and OpenTelemetry support](/managed/ingest-from/extend-dynatrace/extend-tracing/opentracing "Learn how to integrate OpenTracing with Dynatrace.").

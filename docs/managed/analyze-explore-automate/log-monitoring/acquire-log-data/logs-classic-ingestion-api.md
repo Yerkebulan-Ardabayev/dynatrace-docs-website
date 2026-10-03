@@ -139,4 +139,3 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ## Related topics
 
 * [Log Monitoring API v2 - POST ingest logs](/managed/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.")
-* [Ingest OTLP logs](/managed/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")

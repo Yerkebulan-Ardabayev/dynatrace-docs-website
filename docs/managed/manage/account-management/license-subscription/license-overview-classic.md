@@ -11,6 +11,8 @@ source: https://docs.dynatrace.com/managed/manage/account-management/license-sub
 * 3-min read
 * Updated on Sep 02, 2026
 
+This page describes a legacy license model and should not be used for pricing estimates related to the current Dynatrace Platform Subscription (DPS) license model. All new Dynatrace contracts are signed based on DPS, for more information see [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.").
+
 The Account Management **License** view provides a real-time view of your Dynatrace classic licensing product consumption.
 Dynatrace classic licensing covers usage of products such as host units, host unit hours, Digital Experience Monitoring, Davis data units (DDUs), and Application Security units (ASUs).
 Historical analysis is available at the daily or hourly level.

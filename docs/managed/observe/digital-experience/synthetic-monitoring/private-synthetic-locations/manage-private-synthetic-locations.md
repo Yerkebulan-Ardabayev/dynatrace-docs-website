@@ -62,7 +62,7 @@ The ActiveGates assigned to the location are listed and displayed in red when a 
 
 Private location details in previous Dynatrace
 
-Metrics for the health status of each monitor type are available for charting and alerting. For example, choose the **Synthetic - Browser - Engine Utilization** metric in the [Metrics browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.") or [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."). We strongly recommend splitting these metrics by location to get an accurate view of location health.
+Metrics for the health status of each monitor type are available for charting and alerting. For example, choose the **Synthetic - Browser - Engine Utilization** metric in the [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics.") or [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."). We strongly recommend splitting these metrics by location to get an accurate view of location health.
 
 ![Synthetic monitors metrics in Data Explorer Classic](https://dt-cdn.net/images/screenshot-2025-10-22-174729-1400-717532af10.png)
 

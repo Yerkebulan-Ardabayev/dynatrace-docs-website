@@ -22,13 +22,11 @@ Each log record from the ingested batch is mapped to a single Dynatrace log reco
 ### Timestamp
 
 * Set based on the **Timestamp** field of the input log record.
-
 * If the `timestamp` cannot be set based on the **Timestamp** field, `timestamp` is determined based on one of the following, evaluated in order:
 
   1. The content of the body (if the body is a map).
   2. The attributes of the OTLP log record.
 * If the timestamp is taken from the body or OTLP log record, it is set based on the value of the first key from the following list, evaluated in the order presented in the list, and is case-insensitive: `timestamp`, `@timestamp`, `_timestamp`, `eventtime`, `date`, `published_date`, `syslog.timestamp`, `time`, `epochSecond`, `startTime`, `datetime`, `ts`, `timeMillis`, `@t`.
-
 * Supported formats are Unix epoch time in UTC, `RFC3339`, and `RFC3164`.
   Unix epoch time can be displayed in seconds, milliseconds, and Dynatrace version 1.339+ fractional seconds.
 * The default value is the current timestamp and the default timezone is UTC if it's missing in timestamp.
@@ -37,22 +35,18 @@ Each log record from the ingested batch is mapped to a single Dynatrace log reco
 ### Log level
 
 * Set based on the **SeverityText** field (first priority) or **SeverityNumber** field (second priority) of the input log record.
-
 * If the `loglevel` cannot be set based on the **SeverityText** or **SeverityNumber** field, `loglevel` is determined based on one of the following, evaluated in order:
 
   1. The content of the body (if the body is a map).
   2. The attributes of the OTLP log record.
 * If the `loglevel` is taken from the body or OTLP log record, it is set based on the value of the first key from the following list, evaluated in the order presented in the list, and is case-insensitive: `loglevel`, `status`, `severity`, `level`, `syslog.severity`.
-
 * The default value is `NONE`.
 
 ### Content
 
 * The content is set based on the **Body** field of the input log record.
-
 * If the **Body** field is of **kvlist\_value** type (a list of key-value pairs), `content` is set based on the value of the first key found in **Body** from the following list, evaluated in the order presented in the list: `content`, `message`, `payload`, `body`, `log`.
 * If no attribute is found among supported content keys, then `content` is set to an empty string.
-
 * If the **Body** field is not a string type, the value is stringified. In case of complex types, it is stringified as a JSON string.
 
 ### Attributes

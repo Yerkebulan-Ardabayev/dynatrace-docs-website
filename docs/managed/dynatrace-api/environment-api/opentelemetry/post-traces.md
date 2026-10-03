@@ -99,7 +99,3 @@ Enable for a single host
 | Ingestion API | OneAgent endpoint |
 | --- | --- |
 | * Supports all OpenTelemetry signals (traces, metrics, logs) * No automatic information enrichment * SSL and authentication | * Automatic information enrichment * No support for metrics and logs (only traces) * No authentication |
-
-## Related topics
-
-* [Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")

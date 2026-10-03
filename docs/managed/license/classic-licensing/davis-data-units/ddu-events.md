@@ -10,6 +10,8 @@ source: https://docs.dynatrace.com/managed/license/classic-licensing/davis-data-
 * 2-min read
 * Published Jul 09, 2021
 
+This page describes a legacy license model and should not be used for pricing estimates related to the current Dynatrace Platform Subscription (DPS) license model. All new Dynatrace contracts are signed based on DPS, for more information see [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.").
+
 While there are no additional costs or licensing involved in the default monitoring and reporting of built-in event types via OneAgent or cloud integrations, you have the option to configure custom events and/or event-ingestion channels. Such event-related customizations do result in the consumption of [Davis data units](/managed/license/classic-licensing/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU)."). Custom Davis event ingestion consumes DDUs because it requires significantly more processing and analytical power than does built-in event ingestion via OneAgent of cloud integrations.
 
 ## Custom Davis event types that consume DDUs

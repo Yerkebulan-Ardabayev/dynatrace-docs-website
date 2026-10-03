@@ -282,7 +282,7 @@ value: column:Name
 
 ## Results
 
-Your six metrics should show up in the [Metrics browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser."). To find them, filter by text `custom.demo`.
+Your six metrics should show up in the [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics."). To find them, filter by text `custom.demo`.
 
 ![result](https://dt-cdn.net/images/wmi-tutorial-metricbrowser-1590-12b46b5f17.png)
 

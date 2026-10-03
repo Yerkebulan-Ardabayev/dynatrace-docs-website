@@ -73,7 +73,7 @@ In this walkthrough, you'll:
 
        Data Explorer: metric selector: type and select
 
-     + If you have favorited any metrics in the [Metrics browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.") browser, those metrics are displayed at the top of the list in the metric selector.
+     + If you have favorited any metrics in the [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics.") browser, those metrics are displayed at the top of the list in the metric selector.
 
        ![Data Explorer: metric selector: favorites](https://dt-cdn.net/images/metric-selector-favorites-475-665c98b195.png)
 
@@ -90,7 +90,7 @@ In this walkthrough, you'll:
 
        Data Explorer: metric selector: metric details
 
-       To see more information about that metric, select **View all metric information**. This opens the [Metrics browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.") in a new tab (so you don't lose your work in Data Explorer) with lots of useful details about the selected metric.
+       To see more information about that metric, select **View all metric information**. This opens the [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics.") in a new tab (so you don't lose your work in Data Explorer) with lots of useful details about the selected metric.
    * Choose an aggregation (for example, `Average`, `Minimum`, or `Maximum`)
    * Select **Split by** dimensions. In this example (`CPU usage %`), we split by host to see CPU usage per host.
    * Specify **Filter by** criteria as needed. In this example, we leave it empty.

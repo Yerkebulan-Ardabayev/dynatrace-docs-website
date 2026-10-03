@@ -183,7 +183,7 @@ autodiscoveryResourcesYaml: |
 
 
 
-autodicovery_config:
+autodiscovery_config:
 
 
 

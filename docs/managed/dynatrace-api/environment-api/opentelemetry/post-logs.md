@@ -85,7 +85,3 @@ Log records are mapped to Dynatrace log records containing three special attribu
 | **504** | - | Failed. Gateway Timeout. This may occur due to an issue in the underlying infrastructure causing a delay in processing the request. Retryable with exponential backoff strategy. |
 | **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
 | **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Server side error. |
-
-## Related topics
-
-* [Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")

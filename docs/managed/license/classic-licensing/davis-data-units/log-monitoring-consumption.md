@@ -10,6 +10,8 @@ source: https://docs.dynatrace.com/managed/license/classic-licensing/davis-data-
 * 7-min read
 * Published Dec 21, 2020
 
+This page describes a legacy license model and should not be used for pricing estimates related to the current Dynatrace Platform Subscription (DPS) license model. All new Dynatrace contracts are signed based on DPS, for more information see [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.").
+
 ## How does Dynatrace calculate DDU consumption for Log Monitoring Classic?
 
 The Davis data units (DDUs) model counts all incoming log records (entries) from your log data. Each log record (line, message, entry) deducts `0.0005 DDU` from your available quota. For example, 1 million log records multiplied by a DDU weight of 0.0005 consumes a total of 500 DDUs.

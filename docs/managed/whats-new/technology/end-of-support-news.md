@@ -292,7 +292,7 @@ For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability 
 
   + [General guidance and how to migrate﻿](https://www.dynatrace.com/news/blog/unmatched-scalability-and-security-of-dynatrace-extensions-now-available-for-all-supported-technologies-7-reasons-to-migrate-your-jmx-and-python-plugins/)
 
-Note that JMX and PMI Extensions Framework 1.0 are supported past March 2025 but are deprecated. If you plan to use JMX and PMI EF1.0 extensions further, please contact Dynatrace.
+Note that JMX and PMI Extensions Framework 1.0 are supported past March 2025 but are deprecated. If you plan to use JMX and PMI EF1.0 extensions further, please contact Dynatrace. JMX and PMI EF1.0 will reach End of Support on July 1, 2027.
 
 ### 2025-02-28 End of support
 

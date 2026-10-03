@@ -45,7 +45,7 @@ If you previously used tracing integration without logging, you have to adapt th
 
 Turn off Firehose log streaming or CloudWatch log forwarding
 
-If you are currently using it, you must turn off Firehose log streaming or CloudWatch log forwarding for functions on which you wish to use this log collection feature in order to avoid duplicate log exports. See [Log monitoring with AWS log forwarder](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/aws-log-forwarder#unsubscribe "Use AWS log forwarding to ingest AWS logs.") or (lm-stream-logs-with-firehose#unsubscribe).
+If you are currently using it, you must turn off Firehose log streaming or CloudWatch log forwarding for functions on which you wish to use this log collection feature in order to avoid duplicate log exports. See [Log monitoring with AWS log forwarder](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/aws-log-forwarder#unsubscribe "Use AWS log forwarding to ingest AWS logs.") or [Stream logs via Amazon Data Firehose (Logs Classic)](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lm-stream-logs-with-firehose#unsubscribe "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.").
 
 ## Usage
 

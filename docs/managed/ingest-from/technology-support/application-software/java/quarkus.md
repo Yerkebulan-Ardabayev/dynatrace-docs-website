@@ -762,4 +762,3 @@ For the procedure below, we assume your application writes logs to the `/var/log
 * [Send Micrometer metrics to Dynatrace](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer "Learn how to send Micrometer metrics to Dynatrace using the Dynatrace registry or the OpenTelemetry (OTLP) registry.")
 * [Manage Prometheus extensions](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")
 * [Prometheus data source](/managed/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Learn how to create a Prometheus extension using the Extensions framework.")
-* [Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")

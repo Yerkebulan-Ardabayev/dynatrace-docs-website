@@ -38,7 +38,7 @@ Get an overview of metrics available out of the box.](/managed/analyze-explore-a
 
 Get an overview of self-monitoring metrics available out of the box.](/managed/analyze-explore-automate/metrics-classic/self-monitoring-metrics "Explore the complete list of self-monitoring Dynatrace metrics.")[### Metric browser
 
-Get an overview of all metrics available in your environment.](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.")
+Get an overview of all metrics available in your environment.](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics.")
 
 ### Calculated metrics
 

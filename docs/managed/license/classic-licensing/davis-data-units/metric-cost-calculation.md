@@ -10,6 +10,8 @@ source: https://docs.dynatrace.com/managed/license/classic-licensing/davis-data-
 * 17-min read
 * Updated on Jul 24, 2026
 
+This page describes a legacy license model and should not be used for pricing estimates related to the current Dynatrace Platform Subscription (DPS) license model. All new Dynatrace contracts are signed based on DPS, for more information see [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.").
+
 This page explains how we calculate DDUs for metrics, the concept of custom metrics, and how you can estimate and track DDU consumption for metrics.
 
 ## Which types of metrics consume DDUs?

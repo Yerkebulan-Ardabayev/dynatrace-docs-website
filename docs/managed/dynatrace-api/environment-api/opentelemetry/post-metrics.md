@@ -47,7 +47,3 @@ To learn how to obtain and use it, see [Personal access tokens](/managed/discove
 | **503** | - | The service is currently unavailable. This may happen if the module is paused. |
 | **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
 | **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Server side error. |
-
-## Related topics
-
-* [Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")

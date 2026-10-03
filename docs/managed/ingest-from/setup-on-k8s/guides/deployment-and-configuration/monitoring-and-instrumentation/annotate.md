@@ -156,8 +156,20 @@ To exclude certain namespaces from being monitored, modify the DynaKube custom r
 * `key` defines the key of the label. Starting with Kubernetes version 1.22, a default label `kubernetes.io/metadata.name` is added to namespaces.
 * `values` define the value of the label.
 
+Metadata enrichment
+
+Cloud-native full-stack monitoring
+
+Application monitoring
+
+OTLP exporter configuration
+
 ```
-...
+spec:
+
+
+
+metadataEnrichment:
 
 
 
@@ -184,9 +196,111 @@ values:
 - LabelValue
 ```
 
-Example with Kubernetes default label
+```
+spec:
 
-If you run `kubectl describe namespace dynatrace`, you'll see:
+
+
+oneAgent:
+
+
+
+cloudNativeFullStack:
+
+
+
+namespaceSelector:
+
+
+
+matchExpressions:
+
+
+
+- key: LabelKey
+
+
+
+operator: NotIn
+
+
+
+values:
+
+
+
+- LabelValue
+```
+
+```
+spec:
+
+
+
+oneAgent:
+
+
+
+applicationMonitoring:
+
+
+
+namespaceSelector:
+
+
+
+matchExpressions:
+
+
+
+- key: LabelKey
+
+
+
+operator: NotIn
+
+
+
+values:
+
+
+
+- LabelValue
+```
+
+```
+spec:
+
+
+
+otlpExporterConfiguration:
+
+
+
+namespaceSelector:
+
+
+
+matchExpressions:
+
+
+
+- key: LabelKey
+
+
+
+operator: NotIn
+
+
+
+values:
+
+
+
+- LabelValue
+```
+
+**Example**: If you run `kubectl describe namespace dynatrace`, you'll see:
 
 ```
 metadata:
@@ -204,10 +318,18 @@ labels:
 kubernetes.io/metadata.name=dynatrace
 ```
 
-A valid selector example to exclude `dynatrace` would be:
+To exclude the `dynatrace` namespace using the default Kubernetes label, use `kubernetes.io/metadata.name` as the key and the namespace name as the value. For example, for cloud-native full-stack monitoring:
 
 ```
-...
+spec:
+
+
+
+oneAgent:
+
+
+
+cloudNativeFullStack:
 
 
 

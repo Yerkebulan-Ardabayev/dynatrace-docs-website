@@ -889,7 +889,7 @@ The Dynatrace Extensions framework supports metric payloads in the gauge (`gauge
 
 ## Metric metadata
 
-An Extension can define metadata for each metric available in Dynatrace. For example, you might want to add the metric display name and the unit, both of which can be used for filtering in the [Metrics browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.").
+An Extension can define metadata for each metric available in Dynatrace. For example, you might want to add the metric display name and the unit, both of which can be used for filtering in the [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics.").
 
 Define all metric metadata in the `metrics` section of the extension's YAML file to ensure it's correctly associated with the metric configuration.
 

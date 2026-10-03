@@ -366,7 +366,7 @@ Go to [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metr
 
 Data Explorer with z/OS JMX metrics
 
-To get a list of metrics available in your monitoring environment, Go to **Metrics** to open the [Metrics browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser."). In the following example, you can see the three metrics that we have created above:
+To get a list of metrics available in your monitoring environment, Go to **Metrics** to open the [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics."). In the following example, you can see the three metrics that we have created above:
 
 ![Metrics browser with z/OS JMX metrics](https://dt-cdn.net/images/metrics-browser-1636-1096adef93.png)
 
@@ -374,5 +374,5 @@ Metrics browser with z/OS JMX metrics
 
 ## Related topics
 
-* [Metrics browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.")
+* [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics.")
 * [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.")

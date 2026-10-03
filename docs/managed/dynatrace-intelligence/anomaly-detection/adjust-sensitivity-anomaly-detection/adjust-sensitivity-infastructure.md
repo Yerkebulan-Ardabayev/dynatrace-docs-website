@@ -31,18 +31,6 @@ You can opt-in to receive notifications about graceful shutdowns as well.
 
 ## Thresholds for specific disks
 
-Server-side disk alerting for new tenants
-
-Starting with SaaS version 1.308, server-side disk alerting is disabled for new tenants by default. We recommend using [Disk Edge alerting](/managed/observe/infrastructure-observability/hosts/configuration/anomaly-detection#disk-edge-alerting "Configure host anomaly detection, including problem and event thresholds.") instead. Disk Edge alerting allows you to create more complex and specific rules using:
-
-* Metrics to alert on (available disk space, is read-only file system, read time, write time, and available inodes)
-* Operating system to which the policy should be applied
-* Disk name filters
-* Host custom metadata conditions
-* Custom-defined properties attached to the triggered event
-
-Keep in mind that Disk Edge alerting requires OneAgent version 1.293+.
-
 Davis automatically detects disk anomalies such as low available disk space or slow disks. There are different kinds of disks on a host, such as a boot disk, a disk holding all the logs, or a disk for storing business data. While alerting on low disk space would not make any sense for a fixed-sized boot disk image, it makes perfect sense for a disk containing critical business data.
 
 With custom disk detection rules, you can provide fine-tuned rules for individual groups (groups are based on disk name patterns and/or host tags) of disks. Disk-level thresholds override global thresholds for matching disks, while global settings still apply to other disks.

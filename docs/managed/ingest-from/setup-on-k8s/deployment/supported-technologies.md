@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/s
 # Supported distributions
 
 * 6-min read
-* Updated on Jun 24, 2026
+* Updated on Sep 29, 2026
 
 This page gives an overview and documents the different configurations for all major Kubernetes distributions.
 
@@ -229,21 +229,17 @@ value: "true"
 
 applicationMonitoring
 
-For GKE Autopilot, you can [install Dynatrace for App Observability](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"). Dynatrace Operator CSI driver is supported for all GKE Autopilot clusters running Kubernetes version 1.26+. Additionally, only images from the following repositories are supported and must be set during installation:
+For GKE Autopilot, you can [install Dynatrace for App Observability](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"). Dynatrace Operator CSI driver is supported for all GKE Autopilot clusters running Kubernetes version 1.26+. Additionally, workloads that need security exemptions on Autopilot must use images from one of the following registries, which you set during installation:
 
-* `gcr.io/dynatrace-marketplace-prod/dynatrace-operator`
-* `docker.io/dynatrace/dynatrace-operator`
-* `public.ecr.aws/dynatrace/dynatrace-operator`
+* `gcr.io/dynatrace-marketplace-prod`
+* `docker.io/dynatrace`
+* `public.ecr.aws/dynatrace`
 
-**Code modules**: On GKE Autopilot with the Dynatrace Operator CSI driver and the [node image pull](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.") feature enabled for Application observability, `codeModulesImage` in your DynaKube must reference one of the following repositories:
+This applies to `dynatrace-operator` (CSI driver), `dynatrace-codemodules` (code modules download job), and `dynatrace-logmodule` (Standalone LogMonitoring). For example, `public.ecr.aws/dynatrace/dynatrace-operator`. Other Dynatrace images the Operator deploys, such as ActiveGate, dont need to be allowlisted and are not restricted to these registries.
 
-* `docker.io/dynatrace/dynatrace-codemodules`
-* `public.ecr.aws/dynatrace/dynatrace-codemodules`
+**Code modules**: On GKE Autopilot with the Dynatrace Operator CSI driver and the [node image pull](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.") feature enabled for Application observability, `codeModulesImage` in your DynaKube must reference the `dynatrace-codemodules` image from one of the registries above.
 
-**Standalone log monitoring**: Fully supported on GKE Autopilot since Dynatrace Operator version 1.4.2 from the following repositories:
-
-* `docker.io/dynatrace/dynatrace-logmodule`
-* `public.ecr.aws/dynatrace/dynatrace-logmodule`
+**Standalone log monitoring**: Fully supported on GKE Autopilot since Dynatrace Operator version 1.4.2.
 
 #### Allowlisting Dynatrace workloads
 
@@ -254,9 +250,19 @@ Dynatrace is working with Google to roll out these `WorkloadAllowlists` in a tim
 
 Further details on the process can be found on the official [Google Cloud docs﻿](https://cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners).
 
-Deploying and managing the AllowlistSynchronizer will be automated in Dynatrace Operator version 1.5.0+. For versions 1.4.1 - 1.4.X you will have to apply such manifest yourself.
+Dynatrace maintains a separate allowlist for each workload that needs exemptions:
 
-##### AllowlistSynchronizer for version 1.4.2:
+* `Dynatrace/csidriver`: the Dynatrace Operator CSI driver DaemonSet, which runs the `dynatrace-operator` image.
+* `Dynatrace/csijob`: the code modules download job, which runs the `dynatrace-codemodules` image. Available since Dynatrace Operator version 1.5.0.
+* `Dynatrace/logmonitoring`: the Standalone LogMonitoring DaemonSet, which runs the `dynatrace-logmodule` image.
+
+Dynatrace Operator creates and manages the `AllowlistSynchronizer` automatically for **Helm chart deployments only**. The Helm chart detects the `auto.gke.io/v1/AllowlistSynchronizer` API and creates the resource as a pre-install hook.
+
+For manifest-based (`kubectl apply`) deployments, you must apply the `AllowlistSynchronizer` yourself, as shown below.
+
+For the deployer permissions the synchronizer requires, see [Platform-specific resources](/managed/ingest-from/setup-on-k8s/reference/security#deployment-gke-autopilot "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require").
+
+##### AllowlistSynchronizer
 
 ```
 apiVersion: auto.gke.io/v1
@@ -283,12 +289,18 @@ allowlistPaths:
 
 
 
-- Dynatrace/csidriver/1.4.2/*
+- Dynatrace/csidriver/<VERSION>/*
 
 
 
-- Dynatrace/logmonitoring/1.4.2/*
+- Dynatrace/logmonitoring/<VERSION>/*
+
+
+
+- Dynatrace/csijob/<VERSION>/*
 ```
+
+Replace `<VERSION>` with the Dynatrace Operator version you install, for example `1.10.2`. The Helm chart scopes these paths the same way, so a manifest-based deployment has to update them on every Operator upgrade.
 
 Apply the `AllowlistSynchronizer`:
 

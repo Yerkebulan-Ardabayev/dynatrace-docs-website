@@ -10,6 +10,8 @@ source: https://docs.dynatrace.com/managed/license/classic-licensing/application
 * 6-min read
 * Published Nov 30, 2021
 
+This page describes a legacy license model and should not be used for pricing estimates related to the current Dynatrace Platform Subscription (DPS) license model. All new Dynatrace contracts are signed based on DPS, for more information see [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.").
+
 ## Application Security
 
 [Application Security](/managed/secure/application-security "Access the Dynatrace Application Security functionalities.") helps you to visualize, analyze, and monitor security vulnerabilities in your environment that are related to third-party libraries at runtime.

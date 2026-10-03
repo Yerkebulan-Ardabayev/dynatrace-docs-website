@@ -221,16 +221,6 @@ curl -ikS -X POST https://$SEED_IP/api/v1.0/onpremise/multiDc/migration/clusterR
 
 If the status code isn't `200` and the response doesn't suggest next steps, contact a Dynatrace product expert via live chat.
 
-### Check Managed Cluster preparation status
-
-Run the following Cluster API call only on the **seed node**:
-
-```
-curl -ikS -X GET https://$SEED_IP/api/v1.0/onpremise/multiDc/migration/clusterReplicationPreparation?Api-Token=$API_TOKEN -H  "accept: application/json"
-```
-
-If the status code from this call isn't `200`, try again after a few minutes.
-
 ## Step 8 Create the data center topology
 
 In this step, create configuration that identifies which nodes belong to each data center.
@@ -252,7 +242,7 @@ In this step, add firewall rules that open ports to traffic from the **Target-DC
 To open ports to traffic from the new **Target-DC** nodes, run the following Cluster API call only on the **seed node**:
 
 ```
-curl --noproxy '*' -ikS -X POST -d "$NODES_IPS" https://$SEED_IP/api/v1.0/onpremise/multiDc/migration/clusterNodes/currentDc?Api-Token=$API_TOKEN -H "accept: application/json" -H "Content-Type: application/json"
+curl --noproxy '*' -ikS -X POST https://$SEED_IP/api/v1.0/onpremise/multiDc/migration/clusterNodes/currentDc?Api-Token=$API_TOKEN -H "accept: application/json" -H "Content-Type: application/json"
 ```
 
 If successful, the status code is `200` and the response body contains a request ID. Use this ID to check the firewall rules status.

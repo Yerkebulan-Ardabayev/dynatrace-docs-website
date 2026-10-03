@@ -8,7 +8,9 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-
 # Metrics API - GET metrics
 
 * Reference
-* Published Jun 14, 2019
+* Updated on Oct 01, 2026
+
+Metrics API V2 isn't supported for latest Dynatrace users. We recommend using [DQL query via API﻿](https://developer.dynatrace.com/develop/platform-services/services/grail-service/) instead.
 
 Lists all available metrics.
 

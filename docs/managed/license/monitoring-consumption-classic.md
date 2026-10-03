@@ -10,6 +10,8 @@ source: https://docs.dynatrace.com/managed/license/monitoring-consumption-classi
 * 1-min read
 * Updated on May 15, 2026
 
+This page describes a legacy license model and should not be used for pricing estimates related to the current Dynatrace Platform Subscription (DPS) license model. All new Dynatrace contracts are signed based on DPS, for more information see [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.").
+
 Monitoring consumption for Dynatrace classic licensing is based on various monitoring units your Dynatrace environment consumes as your organization uses Dynatrace platform capabilities. If you have a Dynatrace Platform Subscription, see the [Dynatrace Platform Subscription (DPS) documentation](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.").
 
 To get started using Dynatrace, [contact Dynatrace Sales﻿](https://www.dynatrace.com/contact/). Your sales representative will provide you with further details.

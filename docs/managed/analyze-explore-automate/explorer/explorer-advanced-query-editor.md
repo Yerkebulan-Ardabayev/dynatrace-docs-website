@@ -128,7 +128,7 @@ More about metrics
 * For an overview of metrics, see [Metrics](/managed/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.").
 * To review a list of built-in metrics, see [Built-in metrics](/managed/analyze-explore-automate/metrics-classic/built-in-metrics "Explore the complete list of built-in Dynatrace metrics.").
 * To learn about ingesting custom metrics into Dynatrace, see [Extend metric observability](/managed/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.").
-* Use the [Metrics browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.") to:
+* Use the [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics.") to:
 
   + Check metric details
   + Open the selected metric in Data Explorer

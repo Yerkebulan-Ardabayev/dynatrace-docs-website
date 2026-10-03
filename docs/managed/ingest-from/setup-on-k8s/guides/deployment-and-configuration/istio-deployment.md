@@ -490,7 +490,3 @@ curl localhost:8080/debug/registryz
 This dumps all known services as JSON. It should contain entries for the Dynatrace tenant and ActiveGate in the cluster.
 
 If not, check if `enableIstio` is set to `true` in the DynaKube.
-
-## Related topics
-
-* [Configure OpenTelemetry tracing with Istio](/managed/ingest-from/opentelemetry/integrations/istio "Configure Istio to export OpenTelemetry traces to Dynatrace using the Istio OpenTelemetry extension provider, in a standalone deployment or with Dynatrace Operator.")

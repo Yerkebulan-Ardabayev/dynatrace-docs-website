@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthrough
 
 * How-to guide
 * 4-min read
-* Updated on Aug 04, 2026
+* Updated on Oct 01, 2026
 
 This walkthrough shows how to add observability to your Ruby application using the OpenTelemetry Ruby libraries and tools.
 

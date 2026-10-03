@@ -23,7 +23,3 @@ Ingest OpenTelemetry metrics.](/managed/dynatrace-api/environment-api/openteleme
 Ingest OpenTelemetry traces.](/managed/dynatrace-api/environment-api/opentelemetry/post-traces "Send OpenTelemetry traces to Dynatrace via API..")[### Logs
 
 Ingest OpenTelemetry logs.](/managed/dynatrace-api/environment-api/opentelemetry/post-logs "Send OpenTelemetry logs to Dynatrace via API.")
-
-## Related topics
-
-* [Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")

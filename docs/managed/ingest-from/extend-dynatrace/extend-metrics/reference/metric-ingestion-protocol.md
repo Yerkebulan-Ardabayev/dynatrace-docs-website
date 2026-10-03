@@ -106,7 +106,7 @@ If no timestamp is provided, **the current timestamp of the server** is used.
 
 ### Metadata Optional
 
-You can provide custom metric metadata via the ingestion protocol. The ingestion protocol supports only creation of metadata. If metadata for the same metric is specified several times in the payload, only the first occurrence is used. To view or update metadata, use either [Metrics browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.") or the Settings API (to learn how to compose an API payload, see [Set metric metadata](/managed/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata#create "Provide metadata for your custom metric.")).
+You can provide custom metric metadata via the ingestion protocol. The ingestion protocol supports only creation of metadata. If metadata for the same metric is specified several times in the payload, only the first occurrence is used. To view or update metadata, use either [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics.") or the Settings API (to learn how to compose an API payload, see [Set metric metadata](/managed/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata#create "Provide metadata for your custom metric.")).
 
 ```
 #metric.key <payload-format> dt.meta.<property>="<value>"

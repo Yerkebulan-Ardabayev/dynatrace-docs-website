@@ -893,7 +893,3 @@ For upstream reference documentation, see:
 
 * [Micrometer OTLP registry documentation﻿](https://docs.micrometer.io/micrometer/reference/implementations/otlp.html)
 * [OpenTelemetry resource semantic conventions﻿](https://opentelemetry.io/docs/specs/semconv/resource/)
-
-## Related topics
-
-* [Ingest OTLP metrics](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics "Learn how Dynatrace ingests OpenTelemetry metrics.")
