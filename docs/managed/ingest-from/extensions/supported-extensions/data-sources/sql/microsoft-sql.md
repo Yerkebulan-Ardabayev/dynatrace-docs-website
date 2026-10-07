@@ -44,13 +44,13 @@ Activate the extension](/managed/ingest-from/extensions/supported-extensions/dat
    * Optional Port
    * Optional Instance name
    * Optional Database name
-   * Authentication scheme. You can choose from the following [authentication schemes](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring#authentication "Microsoft SQL extensions in the Extensions framework."):
+   * Authentication scheme. You can choose from the following [authentication schemes](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring#authentication "Learn how to configure Microsoft SQL Server monitoring with extensions, including endpoints, authentication, SSL, and the ActiveGate group scope."):
 
      + Basic authentication
      + Kerberos authentication
      + NTLM authentication
-   * You can [enable SSL](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring#ssl "Microsoft SQL extensions in the Extensions framework.") to establish a secure connection for your configuration.
-   * You can [use credential vault](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring#credential-vault "Microsoft SQL extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
+   * You can [enable SSL](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring#ssl "Learn how to configure Microsoft SQL Server monitoring with extensions, including endpoints, authentication, SSL, and the ActiveGate group scope.") to establish a secure connection for your configuration.
+   * You can [use credential vault](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring#credential-vault "Learn how to configure Microsoft SQL Server monitoring with extensions, including endpoints, authentication, SSL, and the ActiveGate group scope.") to provide a more secure approach of storing and managing user credentials.
 2. Select **Next step**.
 
 ### Step 2 Select ActiveGates

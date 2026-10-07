@@ -138,6 +138,23 @@ When deployed in application-only mode, OneAgent monitors the memory, disk, CPU,
 
    * Setting unsupported values will break the deployment, since this directly affects the download instructions.
    * Adding code modules will increase the disk space requirements.
+7. Optional Configure a custom OneAgent download location
+
+   Use `customoneagenturl` to fetch the OneAgent installer from a location you host yourself instead of from the Dynatrace API. This is intended for environments that can't reach the Dynatrace API during staging—for example, where policy restricts outbound access from the Cloud Foundry foundation—so you mirror the installer to an internal location and the buildpack downloads it from there.
+
+   To protect your internal mirror without embedding credentials in the URL, use network-level access controls (firewall rules, VPC isolation, or IP whitelisting) instead of HTTP authentication.
+
+   ```
+   cf cups dynatrace-service -p "environmentid, apitoken, customoneagenturl"
+   ```
+
+   When `customoneagenturl` is set:
+
+   * The buildpack uses the value verbatim as the installer download URL; no query parameters are appended
+   * `networkzone` and `addtechnologies` have no effect because the buildpack passes both only to the default download endpoint as query parameters
+   * The endpoint must be reachable without authentication, as the download request is sent without an `Authorization` header
+
+   The URL must point directly to a valid OneAgent PaaS installer for the target platform (`paasInstaller.sh` for Linux, `paasInstaller.zip` for Windows).
 
 ## Related topics
 

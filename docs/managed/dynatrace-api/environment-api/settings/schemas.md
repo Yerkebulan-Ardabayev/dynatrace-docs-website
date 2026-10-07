@@ -49,6 +49,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Site Reliability Guardian](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-site-reliability-guardian-guardians) | `app:dynatrace.site.reliability.guardian:guardians` | `environment` |
 | [Slack](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-slack-connection) | `app:dynatrace.slack:connection` | `environment` |
 | [DPS Advisor — Subscription API connection](/managed/dynatrace-api/environment-api/settings/schemas/app-my-dps-advisor-dps-advisor-subscription-api-connection) | `app:my.dps.advisor:dps-advisor-subscription-api-connection` | `environment` |
+| [CDN Configuration](/managed/dynatrace-api/environment-api/settings/schemas/app-my-dynatrace-demo-now-cdn) | `app:my.dynatrace.demo.now:cdn` | `environment` |
 | [Conversion Configuration](/managed/dynatrace-api/environment-api/settings/schemas/app-my-user-session-analytics-conversion-config) | `app:my.user.session.analytics:conversion-config` | `environment` |
 | [Saved Segments](/managed/dynatrace-api/environment-api/settings/schemas/app-my-user-session-analytics-segment-config) | `app:my.user.session.analytics:segment-config` | `environment` |
 | [Network security](/managed/dynatrace-api/environment-api/settings/schemas/builtin-activegate-token) | `builtin:activegate-token` | `environment` |

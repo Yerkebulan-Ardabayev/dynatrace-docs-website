@@ -65,7 +65,7 @@ For details, see [Order-of-magnitude notation](/managed/discover-dynatrace/get-s
 
 ## Metric charts
 
-Select **Create chart** in the expanded row of a metric to open the metric in [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."). From there, you can adjust the query and visualization and [pin the chart to a dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+Select **Create chart** in the expanded row of a metric to open the metric in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues."). From there, you can adjust the query and visualization and [pin the chart to a dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
 
 ## Metadata for custom metrics
 

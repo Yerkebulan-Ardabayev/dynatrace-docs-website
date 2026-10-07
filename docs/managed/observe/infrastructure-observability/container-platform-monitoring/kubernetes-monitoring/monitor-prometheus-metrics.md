@@ -747,7 +747,7 @@ If you don't have full control over the pod template, you have the following opt
 
 ## View metrics on a dashboard
 
-Metrics from Prometheus exporters are available in Data Explorer for custom charting. Select **Create custom chart** and select **Try it out** in the top banner. For more information, see [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+Metrics from Prometheus exporters are available in Data Explorer for custom charting. Select **Create custom chart** and select **Try it out** in the top banner. For more information, see [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
 You can simply search for metric keys of all available metrics and define how you’d like to analyze and chart your metrics. After that you can pin your charts on a dashboard.
 

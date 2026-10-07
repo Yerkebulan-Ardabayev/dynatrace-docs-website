@@ -25,7 +25,7 @@ You can define [UI-based](/managed/manage/identity-access-management/permission-
 
 You can check the entity type of a metric using:
 
-* The metric information side panel in [Data Explorer](/managed/analyze-explore-automate/explorer#metric-name "Query for metrics and transform results to gain desired insights.").
+* The metric information side panel in [Data Explorer](/managed/analyze-explore-automate/explorer#metric-name "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
   ![Metric entity type in Data Explorer](https://dt-cdn.net/images/data-explorer-entity-type-1122-6a93ade8f2.png)
 

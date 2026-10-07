@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 * 1-min read
 * Updated on Feb 21, 2023
 
-With USQL metric events, you can extract business-level KPI metrics from your user session and user action data and store these metrics as time series. You can then use the stored metrics in [custom charts](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), [alerting mechanisms](/managed/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace"), or [Metrics API](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.").
+With USQL metric events, you can extract business-level KPI metrics from your user session and user action data and store these metrics as time series. You can then use the stored metrics in [custom charts](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues."), [alerting mechanisms](/managed/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace"), or [Metrics API](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.").
 
 USQL metric events are available as:
 
@@ -41,7 +41,7 @@ User session metric events page in the Dynatrace web UI
 
 1. Go to **Settings** > **Web and mobile monitoring** > **User session metric events** or **User action metric events**.
 2. Select **Add item**.
-3. Enter the **Metric key** that should be used when ingesting the metric. You'll use this key when requesting the metric data via [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+3. Enter the **Metric key** that should be used when ingesting the metric. You'll use this key when requesting the metric data via [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
    * For user session metric events, start the metric key with the `uscm.` prefix.
    * For user action metric events, start the metric key with the `uacm.` prefix.
@@ -333,7 +333,7 @@ The table below explains all configuration properties required to create or upda
 | Property | Description | Possible values |
 | --- | --- | --- |
 | `enabled` | Defines if the USQL custom metric is enabled or not. Set to `false` to temporarily disable the metric. | `true` or `false` |
-| `metricKey` | The metric key used when ingesting the metric. Use this key when requesting the metric data via [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").  * For user session metric events, the metric key must start with the `uscm.` prefix. * For user action metric events, the metric key must start with the `uacm.` prefix. |  |
+| `metricKey` | The metric key used when ingesting the metric. Use this key when requesting the metric data via [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").  * For user session metric events, the metric key must start with the `uscm.` prefix. * For user action metric events, the metric key must start with the `uacm.` prefix. |  |
 | `value` | The source of the metric value. |  |
 | `value.type` | * To count the number of user sessions or user actions, which is similar to `COUNT(*)` when using [USQL](/managed/observe/digital-experience/rum-classic/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more."), set to `COUNTER`. * To extract a value of a user session or user action field, set to `FIELD`. | `COUNTER` or `FIELD` |
 | `value.fieldName` | If `value.type`=`FIELD`, specifies the name of the user session or user action field. | See [Values for user session metric events](#values-uscm) and [Values for user action metric events](#values-uacm). |
@@ -815,7 +815,7 @@ Now let's create a chart based on the `uscm.average_duration_of_sessions_by_brow
    ![Creating a chart in Data Explorer based on user sessions metric](https://dt-cdn.net/images/data-explorer-custom-metric-1221-7d8891ede4.png)
 
    Creating a chart in Data Explorer based on user sessions metric
-3. Using [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), split the collected data to see the user session data partitioned based on `browserMajorVersion`, `browserFamily`, or both.
+3. Using [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues."), split the collected data to see the user session data partitioned based on `browserMajorVersion`, `browserFamily`, or both.
 4. Filter user session data based on `browserMajorVersion` or `browserFamily` to focus on the user session data that interests you.
 5. Once you create a chart presenting your data, you can pin the chart to a classic dashboard: select **Pin to dashboard**, select one of your dashboards, and enter the tile name.
 

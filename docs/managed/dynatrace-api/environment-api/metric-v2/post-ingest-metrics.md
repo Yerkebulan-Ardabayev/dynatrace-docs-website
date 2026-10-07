@@ -14,10 +14,10 @@ Pushes custom data points to Dynatrace.
 
 You can access the ingested datapoints via:
 
-* [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.")
+* [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.")
 * [GET metric data points](/managed/dynatrace-api/environment-api/metric-v2/get-data-points "Read data points of one or multiple metrics via Metrics v2 API.") request of the Metric v2 API.
 
-Provided data points must follow the [Metrics ingestion protocol](/managed/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Learn how the data ingestion protocol for Dynatrace Metrics API works."). You don't have to register the metric first. After Dynatrace has ingested and processed the data, you can use it just like any other metrics in Dynatrace, such as in [charts](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") or [metric events](/managed/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace"). You can also provide [metadata](/managed/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata "Provide metadata for your custom metric.") for the ingested metric via the Settings API.
+Provided data points must follow the [Metrics ingestion protocol](/managed/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Learn how the data ingestion protocol for Dynatrace Metrics API works."). You don't have to register the metric first. After Dynatrace has ingested and processed the data, you can use it just like any other metrics in Dynatrace, such as in [charts](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") or [metric events](/managed/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace"). You can also provide [metadata](/managed/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata "Provide metadata for your custom metric.") for the ingested metric via the Settings API.
 
 Prefer to ingest metrics right on the host?
 

@@ -336,7 +336,7 @@ Create a metric visualization tile
 6. Select a dashboard for which you have edit permission.
 7. Select **Pin**.
 
-For details, see [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+For details, see [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
 Add a tile
 

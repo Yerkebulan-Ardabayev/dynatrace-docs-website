@@ -56,7 +56,7 @@ Editing tips
 
 ## Visualizations
 
-Use visualization tiles to create visual representations of [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") queries that you can pin to your dashboards.
+Use visualization tiles to create visual representations of [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") queries that you can pin to your dashboards.
 
 ### Visualization types
 
@@ -81,7 +81,7 @@ Interactivity of visualization tiles varies according to the type of visualizati
 * The legend is active: select a legend entry to show or hide the corresponding element on the visualization.
 * All tiles have a tile menu in the upper-right corner:
 
-  + **Configure tile in Data Explorer** opens the tile in [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), where you can configure the query and visualization.
+  + **Configure tile in Data Explorer** opens the tile in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues."), where you can configure the query and visualization.
   + **Edit tile** (if you have edit rights) opens the dashboard in edit mode with the current tile selected.
 
 #### Configuration
@@ -90,7 +90,7 @@ To configure a visualization tile from the dashboard editor
 
 1. Display your dashboard and select **Edit**.
 2. Drag a visualization tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard.
-3. Select **Configure tile** to open your tile in [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+3. Select **Configure tile** to open your tile in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 4. Configure the query for the tile. You don't have to create the final version all at once; you can build your query iteratively.
 
    * Select **Run query** after you make a query change to see the results of the change.

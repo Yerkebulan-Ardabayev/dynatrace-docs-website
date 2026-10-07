@@ -1007,7 +1007,7 @@ This feature is only available when using Advanced .NET Instrumentation Mode.
 | Go toolchains | Versions | Platforms |
 | --- | --- | --- |
 | [Golang toolchain with FIPS (openssl-fips) modifications﻿](https://dt-url.net/golang-fips) | 1.24.4, 1.24.6, 1.25.3, 1.25.5, 1.25.7, 1.25.9, 1.25.10, 1.26.2, 1.26.3, 1.26.4, 1.26.5 | Alpine Linux 64-bit (x86-64), Linux (x86-64) |
-| [Official Golang toolchain﻿](https://dt-url.net/go) | 1.24, 1.25, 1.26 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
+| [Official Golang toolchain﻿](https://dt-url.net/go) | 1.24, 1.25, 1.26 | Alpine Linux 64-bit (x86-64, ARM64 (AArch64)), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
 
 | Web framework | Versions |
 | --- | --- |

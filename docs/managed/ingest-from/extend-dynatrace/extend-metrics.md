@@ -66,7 +66,7 @@ Use the [GET metric data points](/managed/dynatrace-api/environment-api/metric-v
 
 ### Data Explorer
 
-Select **Create custom chart** and then select **Try it out** in the top banner. For more information, see [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+Select **Create custom chart** and then select **Try it out** in the top banner. For more information, see [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
 You can search the metric keys of all available metrics, select the metrics you want to chart, define how you’d like to analyze and chart them, and then pin your charts to a dashboard.
 

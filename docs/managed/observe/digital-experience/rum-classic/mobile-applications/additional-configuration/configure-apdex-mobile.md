@@ -13,7 +13,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 [Apdex](/managed/observe/digital-experience/rum-classic/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.") is an important score that measures your application performance. You can adjust the Apdex thresholds (Satisfactory, Tolerable, and Frustrating) for your application and for its [key user actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions#key-user-actions "Learn what user actions are and how they help you understand what users do with your application.") to refine the Apdex calculations.
 
-The Apdex rating that is displayed for your application for a certain period of time in Applications may differ from what is displayed for the same application and the same period of time in [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") with the selected `Apdex (by geolocation, user type) [web]` metric.
+The Apdex rating that is displayed for your application for a certain period of time in Applications may differ from what is displayed for the same application and the same period of time in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") with the selected `Apdex (by geolocation, user type) [web]` metric.
 
 As a workaround, you can manually implement the standard Apdex calculation using the formula:
 

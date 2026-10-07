@@ -43,8 +43,8 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Stage configuration type `type` | enum | The element has these enums * `include` * `exclude` * `includeAll` | Required |
-| include stages `include` | Set<[StageType](#StageType)> | The element has these enums * `processing` * `securityContext` * `costAllocation` * `productAllocation` * `storage` * `smartscapeNodeExtraction` * `smartscapeEdgeExtraction` * `metricExtraction` * `davis` * `dataExtraction` | Required |
-| exclude stages `exclude` | Set<[StageType](#StageType)> | The element has these enums * `processing` * `securityContext` * `costAllocation` * `productAllocation` * `storage` * `smartscapeNodeExtraction` * `smartscapeEdgeExtraction` * `metricExtraction` * `davis` * `dataExtraction` | Required |
+| include stages `include` | Set<[StageType](#StageType)> | The element has these enums * `processing` * `securityContext` * `security` * `costAllocation` * `productAllocation` * `storage` * `smartscapeNodeExtraction` * `smartscapeEdgeExtraction` * `metricExtraction` * `davis` * `dataExtraction` | Required |
+| exclude stages `exclude` | Set<[StageType](#StageType)> | The element has these enums * `processing` * `securityContext` * `security` * `costAllocation` * `productAllocation` * `storage` * `smartscapeNodeExtraction` * `smartscapeEdgeExtraction` * `metricExtraction` * `davis` * `dataExtraction` | Required |
 
 ##### The `PipelineGroupComposition` object
 

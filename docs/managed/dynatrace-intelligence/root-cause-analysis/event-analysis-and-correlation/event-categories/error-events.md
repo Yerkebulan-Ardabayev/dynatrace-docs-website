@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-ana
 
 * Explanation
 * 5-min read
-* Published Dec 28, 2018
+* Updated on Oct 05, 2026
 
 This page provides information about supported error events and the logic behind raising them.
 
@@ -44,6 +44,8 @@ The following Dynatrace entities apply to this event:
 `HIGH_DROPPED_PACKETS_RATE`
 
 By default, Dynatrace alerts if the percentage of dropped packets on the TCP network level is higher than 10% and the total number of dropped packets is higher than 10 packets/s in 3 of 5 one-minute observation intervals. Navigate to your infrastructure anomaly detection settings at **Settings** > **Anomaly detection** > **Host** to adapt the alerting sensitivity.
+
+On Windows hosts with a Nutanix VirtIO (NetKVM) Ethernet adapter, you may receive false-positive alerts. The NetKVM driver registers non-critical discards—such as protocol filtering or hardware offloading discards—in the Windows `PacketsReceivedDiscarded` counter even when no actual network packets are lost. To reduce false positives, increase the alert threshold or disable the alert for affected hosts.
 
 ### Applicable Dynatrace entities
 

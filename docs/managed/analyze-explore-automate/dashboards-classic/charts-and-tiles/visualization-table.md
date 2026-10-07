@@ -273,7 +273,7 @@ Delete threshold settings
 Why am I not seeing all series of my metric?
 
 * The *default* number of displayed series per metric is `20`. Consequently, some series might be missing in Data Explorer. To ensure the series data you're looking for is displayed, provide more specific filters such as a management zone or an entity name filter.
-* The *maximum* number of displayed series per metric is `100`. Note that this limit applies even if you remove the [**limit** transformation](/managed/dynatrace-api/environment-api/metric-v2/metric-selector#limit "Configure the metric selector for the Metric v2 API.") from the metric selector on the [**Code** tab](/managed/analyze-explore-automate/explorer/explorer-advanced-query-editor "Build advanced queries using the Data Explorer advanced mode.").
+* The *maximum* number of displayed series per metric is `100`. Note that this limit applies even if you remove the [**limit** transformation](/managed/dynatrace-api/environment-api/metric-v2/metric-selector#limit "Configure the metric selector for the Metric v2 API.") from the metric selector on the [**Code** tab](/managed/analyze-explore-automate/explorer/explorer-advanced-query-editor "Learn how to build and edit advanced Data Explorer queries, use metric transformations and expressions, and compare metrics across timeframes.").
 
 If series data is absent for a metric expression, see [Why is the result of my metric expression empty?](/managed/dynatrace-api/environment-api/metric-v2/metric-faq#empty-result-metric-expression "Frequently asked questions about the Metrics API v2.").
 

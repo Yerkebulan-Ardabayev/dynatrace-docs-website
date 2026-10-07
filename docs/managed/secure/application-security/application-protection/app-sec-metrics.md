@@ -48,7 +48,7 @@ To view Application Security metrics
 You can use Application Security metrics to
 
 * [Create charts and pin them to your dashboards](/managed/analyze-explore-automate/metrics-browser/metrics-browser-filters-and-fields#chart "Look up Metrics browser filters, sorting options, metric details, and custom metadata fields before creating charts or editing custom metrics.")
-* [Query data in Data Explorer](/managed/analyze-explore-automate/explorer#query-components-and-concepts "Query for metrics and transform results to gain desired insights.")
+* [Query data in Data Explorer](/managed/analyze-explore-automate/explorer#query-components-and-concepts "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.")
 
 ### Example
 
@@ -58,9 +58,9 @@ To keep an eye on the number of attacks over time, create a chart for the `New a
 
 Once you run a query in Data Explorer, you can
 
-* [Share metrics results](/managed/analyze-explore-automate/explorer#share "Query for metrics and transform results to gain desired insights.")
-* [Export metric results](/managed/analyze-explore-automate/explorer#csv "Query for metrics and transform results to gain desired insights.")
-* [Use metric results in API requests](/managed/analyze-explore-automate/explorer#api "Query for metrics and transform results to gain desired insights.")
+* [Share metrics results](/managed/analyze-explore-automate/explorer#share "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.")
+* [Export metric results](/managed/analyze-explore-automate/explorer#csv "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.")
+* [Use metric results in API requests](/managed/analyze-explore-automate/explorer#api "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.")
 
 ## Related topics
 

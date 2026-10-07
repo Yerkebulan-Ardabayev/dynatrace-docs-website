@@ -196,7 +196,7 @@ Included metrics are bound to individual hosts.
 
 Reported DDUs are defined as all DDUs before any host-included considerations are performed. Consumed DDUs reflect the total "billable" DDUs that get subtracted from your DDU balance.
 
-You can compare the reported DDUs for a specific host with the number of [host-included metrics](#metrics-per-host-unit) by creating a chart with [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") using the following metrics. This allows you to gain insights into the number of available vs. consumed DDUs for a specific host.
+You can compare the reported DDUs for a specific host with the number of [host-included metrics](#metrics-per-host-unit) by creating a chart with [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") using the following metrics. This allows you to gain insights into the number of available vs. consumed DDUs for a specific host.
 
 * `builtin:billing.ddu.includedMetricDduPerHost`
   This metric is split by host ID. It shows you the host-included DDUs. For example, if a host has 1,000 [included metrics](#metrics-per-host-unit), this metric will have a value of 1 (in other words, 1,000 × 0.001)

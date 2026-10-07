@@ -38,7 +38,7 @@ Example order-of-magnitude values in the metrics browser.
 
 ### Data Explorer and dashboard tiles
 
-In [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), Dynatrace can automatically select an order of magnitude as it does in the **Metrics browser**. Data Explorer also lets you specify an order of magnitude that overrides the automatic selection: set **Unit** to display a metric's values in a specific order of magnitude.
+In [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues."), Dynatrace can automatically select an order of magnitude as it does in the **Metrics browser**. Data Explorer also lets you specify an order of magnitude that overrides the automatic selection: set **Unit** to display a metric's values in a specific order of magnitude.
 
 ![Data Explorer Unit setting](https://dt-cdn.net/images/explorer-set-unit-296-7dfcc5b953.png)
 

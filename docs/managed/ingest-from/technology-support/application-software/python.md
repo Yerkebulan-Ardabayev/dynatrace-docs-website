@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/applic
 
 * Reference
 * 2-min read
-* Updated on Nov 05, 2025
+* Updated on Oct 05, 2026
 
 You can send data from your [Python﻿](https://python.org) application to Dynatrace. Python is a versatile, high-level programming language known for its readability and simplicity, often used for web development, data analysis, artificial intelligence, and scientific computing due to its extensive libraries and community support.
 
@@ -133,6 +133,7 @@ When the monitored application fails to meet the requirements for a feature acro
 ## Limitations
 
 * Only the standard CPython interpreter is supported (the implementation from [Python.org﻿](https://python.org)).
+* Embedded Python interpreters are not supported. Dynatrace injects the Python agent only when the started process's executable is detected as `python`, `python3`, or `python3.x`. If an application embeds a Python interpreter inside another host process (for example, a Java, C, or C++ application), Dynatrace can't inject the Python agent into that embedded interpreter.
 * No-GIL (nogil) builds are not supported. The binary names of the nogil version have the `t` suffix, for example, `Python3.13t`.
 * [PEP 703 - Making the Global Interpreter Lock Optional in Python﻿](https://peps.python.org/pep-0703/) is not supported.
 * Monitoring of processes with [Gevent﻿](https://www.gevent.org/) package installed in versions lower than 20.9.0 is not supported.

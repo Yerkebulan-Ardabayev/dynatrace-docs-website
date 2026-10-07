@@ -72,7 +72,7 @@ In Dynatrace, go to **Service-Level Objectives**, select **Add new SLO**, and st
   + SLO normalized error budget, for example, `func:slo.normalizedErrorBudget.my_new_slo`.
   + SLO error budget burn rate, for example, `func:slo.errorBudgetBurnRate.my_new_slo`.
 
-  You can chart these metric keys on all pages that allow using metrics, such as [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+  You can chart these metric keys on all pages that allow using metrics, such as [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
   After creating the SLO:
 
@@ -147,7 +147,7 @@ After you set up the error budget burn rate, there are several places in your en
 
   If burn rate visualization is enabled, but no icon is displayed, the burn rate is below `1`.
 * In the details of an SLO.
-* In [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+* In [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 * On your dashboard, if you [pin your SLO to your dashboard](#dash).
 
 ## Set up alerts
@@ -304,7 +304,7 @@ To clone an SLO
 
 ## Show metrics in Data Explorer
 
-To query and chart metrics, go to the service-level objective you want and select **Actions** > **View in Data Explorer**. For more information, see [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+To query and chart metrics, go to the service-level objective you want and select **Actions** > **View in Data Explorer**. For more information, see [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
 ### Limitations
 

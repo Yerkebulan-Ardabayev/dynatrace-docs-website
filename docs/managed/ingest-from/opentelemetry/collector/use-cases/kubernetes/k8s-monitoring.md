@@ -13,13 +13,13 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/u
 
 The OTel Collector provides extensive support for Kubernetes cluster and workload monitoring. It supports various receivers to collect critical metrics about the Kubernetes cluster, nodes, and objects.
 
-This use case explains how to set up your Collector to get full visibility into your Kubernetes clusters through [**Data Explorer**](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") or custom dashboards in Dashboards Classic.
+This use case explains how to set up your Collector to get full visibility into your Kubernetes clusters through [**Data Explorer**](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") or custom dashboards in Dashboards Classic.
 
 Dynatrace Operator
 
 Dynatrace recommends using the [Dynatrace Operator for Kubernetes monitoring](/managed/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes").
 However, this use case is designed specifically for OpenTelemetry users who choose not to deploy the Dynatrace Operator.
-Setting up the Collector as described below will make Kubernetes monitoring data available to be used in [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") and [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
+Setting up the Collector as described below will make Kubernetes monitoring data available to be used in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") and [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
 
 ## Prerequisites
 
@@ -1876,7 +1876,7 @@ Under `service`, we assemble our receiver, processor, and exporter objects into 
 ## Use Data Explorer
 
 Data Explorer greatly enhances your abilities to query and visualize metrics.
-For more information, see [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+For more information, see [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
 ## Use custom dashboards
 

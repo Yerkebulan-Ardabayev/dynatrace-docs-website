@@ -93,7 +93,7 @@ Here are some sample queries you may want to leverage:
 
 For web, mobile, and custom applications, you can [create a query](#usql) with action and session properties and then pin the resulting chart to one of your dashboards.
 
-For web applications, you can additionally create calculated metrics based on custom properties, use these metrics to create a chart and then pin this chart to your dashboards. This can be done in [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+For web applications, you can additionally create calculated metrics based on custom properties, use these metrics to create a chart and then pin this chart to your dashboards. This can be done in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
 The generic **Web property pack** is used in the following example to track the marketing campaigns on [Dynatrace.com﻿](https://www.dynatrace.com/) to view the following:
 

@@ -39,7 +39,7 @@ See [Enable the integration of Dynatrace﻿](https://documentation.tricentis.com
 
 ## Analyze results in Dynatrace
 
-The traffic created by NeoLoad is identified by NeoLoad-added `X-Dynatrace-Test` header, so that you can easily isolate the traffic coming from NeoLoad. You can search for NeoLoad metrics in [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") by filtering for `custom:neoload`.
+The traffic created by NeoLoad is identified by NeoLoad-added `X-Dynatrace-Test` header, so that you can easily isolate the traffic coming from NeoLoad. You can search for NeoLoad metrics in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") by filtering for `custom:neoload`.
 
 ## Related topics
 

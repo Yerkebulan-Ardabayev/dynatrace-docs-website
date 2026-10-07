@@ -167,7 +167,7 @@ We recommend creating a calculated metric for those metrics that are not already
 
 We recommend that your metric name reflect any splits and filters so it's easy to differentiate from similar metrics.
 
-You then have the option of configuring a chart with [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") or a [custom alert](/managed/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace") for the calculated metric. Select **Manage this metric** to go to the **Metrics** tab of monitor settings, from where you can disable/enable, delete, or create charts and alerts based on the calculated metrics for the given monitor.
+You then have the option of configuring a chart with [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") or a [custom alert](/managed/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace") for the calculated metric. Select **Manage this metric** to go to the **Metrics** tab of monitor settings, from where you can disable/enable, delete, or create charts and alerts based on the calculated metrics for the given monitor.
 
 ![Calculated metric created](https://dt-cdn.net/images/calculatedmetriccreated-328-109d3aab05.png)
 

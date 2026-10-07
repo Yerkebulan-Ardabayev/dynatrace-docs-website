@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/oneage
 # OneAgent platform and capability support matrix
 
 * 13-min read
-* Updated on Sep 23, 2026
+* Updated on Sep 28, 2026
 
 This page describes which capabilities are supported by OneAgent on different operating systems and platforms.
 

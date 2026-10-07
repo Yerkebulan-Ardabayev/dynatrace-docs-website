@@ -107,7 +107,7 @@ Install the Disk Analytics extension to gain more detailed visibility into local
 1. On the **Host settings** page, select **Disk Analytics Extension**.
 2. Turn **Enable Disk Analytics data collection** on or off to determine whether Disk Analytics data is collected on the selected host.
 
-   If you enable data collection without adding the extension, the data is visible only in [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+   If you enable data collection without adding the extension, the data is visible only in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
 ## NetTracer traffic
 

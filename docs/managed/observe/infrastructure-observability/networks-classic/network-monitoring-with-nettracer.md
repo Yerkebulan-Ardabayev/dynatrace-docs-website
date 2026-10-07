@@ -131,7 +131,7 @@ Additional container dimensions are added depending on the deployment type.
 
 After it's collected, NetTracer data is available as metrics throughout Dynatrace.
 
-* **Data Explorer**: You can use the metrics in [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") to create charts and dashboards that display data that interests you.
+* **Data Explorer**: You can use the metrics in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") to create charts and dashboards that display data that interests you.
 * **Process group instance page**: Go to process group instance page and select **Networking** tab.
 
   ![Process group instance page - Networking details](https://dt-cdn.net/images/pgi-page-networking-details-2172-bcb6d64191.png)

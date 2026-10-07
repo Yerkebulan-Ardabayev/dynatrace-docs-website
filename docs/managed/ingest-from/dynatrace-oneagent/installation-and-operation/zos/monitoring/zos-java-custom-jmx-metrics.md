@@ -360,7 +360,7 @@ will result in a single metric in Dynatrace with two dimensions:
 
 ## Monitoring
 
-Go to [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") to analyze and chart your custom JMX metrics. If needed, you can pin your charts to a dashboard. In the following example, you can see the `java.lang.MemoryPoolUsage` metric split by the dimension `memory_type`:
+Go to [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") to analyze and chart your custom JMX metrics. If needed, you can pin your charts to a dashboard. In the following example, you can see the `java.lang.MemoryPoolUsage` metric split by the dimension `memory_type`:
 
 ![Data Explorer with z/OS JMX metrics](https://dt-cdn.net/images/data-explorer-1643-7696285fbf.png)
 
@@ -375,4 +375,4 @@ Metrics browser with z/OS JMX metrics
 ## Related topics
 
 * [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics.")
-* [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.")
+* [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.")

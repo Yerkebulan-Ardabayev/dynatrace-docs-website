@@ -24,7 +24,7 @@ If you use **Custom charts** in your dashboards, you need to read the following 
   + Custom charts no longer receive fixes and enhancements.
   + Custom charts are no longer editable.
 
-  When you upgrade your custom charts to [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") charts, you can edit your charts benefit from fixes and enhancements to Data Explorer features, and be ready to upgrade to the new platform.
+  When you upgrade your custom charts to [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") charts, you can edit your charts benefit from fixes and enhancements to Data Explorer features, and be ready to upgrade to the new platform.
 * **When:**
 
   + Dynatrace version 1.265 was the last Dynatrace release to support custom charts

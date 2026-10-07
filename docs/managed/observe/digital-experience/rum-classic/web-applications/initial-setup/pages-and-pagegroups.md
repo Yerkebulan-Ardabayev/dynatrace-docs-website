@@ -155,7 +155,7 @@ Page group overview page
 
 ## Chart page and page group performance
 
-To chart the performance of a page or page group, create a [calculated metric](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.") for the page or page group in the existing multidimensional analysis. You can then use [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") to chart the metric on a dashboard of your choice.
+To chart the performance of a page or page group, create a [calculated metric](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.") for the page or page group in the existing multidimensional analysis. You can then use [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") to chart the metric on a dashboard of your choice.
 
 To create a calculated metric for a page or page group
 

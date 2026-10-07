@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integ
 
 * How-to guide
 * 9-min read
-* Updated on Aug 24, 2023
+* Updated on Oct 02, 2026
 
 Dynatrace uses [OpenTelemetry﻿](https://dt-url.net/y903u4j) to monitor AWS Lambda invocations.
 
@@ -175,6 +175,11 @@ TracerProvider = Sdk.CreateTracerProviderBuilder()
 
 * Setting the option `DisableAwsXRayContextExtraction` to `true` is required to skip Amazon X-Ray parent extraction, which may conflict with the Dynatrace propagation.
 * If the option `SuppressDownstreamInstrumentation` is set to `true`, HTTP child nodes will not be shown under AWS SDK calls.
+* Call `AddDynatrace()` before you add any other instrumentation to the `TracerProviderBuilder`, such as `AddAWSLambdaConfigurations()` or `AddAWSInstrumentation()`.
+* When you use the `OpenTelemetry.Instrumentation.AWSLambda` package, don't set `span.kind` or attributes such as `faas.name`, `faas.trigger`, and `cloud.account.id` manually.
+* If you need additional resource attributes, add them with the `ConfigureResource` API (available since OpenTelemetry SDK version 1.9). Don't use `SetResourceBuilder`, because it removes the attributes set by `AddDynatrace()` and `AddAWSLambdaConfigurations()`, and the service is then detected as `default web request`.
+
+Custom service naming isn't supported when you use the `Dynatrace.OpenTelemetry` package. The `service.name` resource attribute and the `DT_SERVICE_NAME` environment variable have no effect. Dynatrace calculates the service name from the name of the Lambda function.
 
 ## Tracing incoming AWS Lambda calls
 

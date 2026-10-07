@@ -44,7 +44,7 @@ Outages that occur within such excluded maintenance windows are shown, for examp
 
 This setting also applies to retroactive maintenance windows. That is, you can exclude a retroactive maintenance window from synthetic availability calculations for the same period. Note, however, that maintenance windows are not retroactively excluded from any reports that were generated before the maintenance windows were created.
 
-[Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") charts and the [Metrics API](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.") provide availability metrics with the option of including or excluding maintenance windows.
+[Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") charts and the [Metrics API](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.") provide availability metrics with the option of including or excluding maintenance windows.
 
 ## Retries
 

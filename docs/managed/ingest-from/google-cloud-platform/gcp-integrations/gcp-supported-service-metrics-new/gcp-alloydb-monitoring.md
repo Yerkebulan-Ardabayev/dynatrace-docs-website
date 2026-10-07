@@ -25,7 +25,7 @@ For a list of feature sets available for this service, see [Metric table](#table
 
 ## View metrics
 
-After deploying the integration, you can see metrics from monitored services in the [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics."), [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), and your dashboard tiles.
+After deploying the integration, you can see metrics from monitored services in the [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics."), [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues."), and your dashboard tiles.
 
 ## Metric table
 

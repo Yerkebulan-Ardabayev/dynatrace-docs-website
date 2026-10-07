@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 * 1-min read
 * Updated on May 10, 2024
 
-In Dynatrace, you can create calculated metrics to make your current analysis available for [charting](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") and [API usage](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API."). You can also leverage calculated metrics to add custom alerts.
+In Dynatrace, you can create calculated metrics to make your current analysis available for [charting](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") and [API usage](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API."). You can also leverage calculated metrics to add custom alerts.
 
 Once you select the application you're interested in, you can use **Multidimensional Analysis** to select aspects of your user actions and create a calculated metric. You can choose if you want to split your selected performance metrics by another dimension, such as geolocation, browser, and error type, or only use single dimensions, such as [user action properties](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/define-user-action-and-session-properties "Define custom string, numeric, and date properties for your monitored web applications.").
 
@@ -67,7 +67,7 @@ Example - Create a metric
 
 Creating charts can help you to analyze combinations of application metrics directly on your dashboard. You can split and filter available entities to fine-tune the metric dimensions that appear in your charts and filter out entities that are relevant to you.
 
-For details on creating charts and pinning them to your dashboards, see [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+For details on creating charts and pinning them to your dashboards, see [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
 ## Manage metrics
 
@@ -83,7 +83,7 @@ Once a metric has been created, you can't change its properties.
 
    * **Enable or disable** ![Toggle icon](https://dt-cdn.net/images/icon-toggle-barista-701-35879d6adf.png "Toggle icon") the metric
    * **Copy** the API URL for the metric
-   * **Create a chart** with [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.")
+   * **Create a chart** with [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.")
    * **Create alert** to create a [metric event](/managed/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace")
    * **Delete metric**
 

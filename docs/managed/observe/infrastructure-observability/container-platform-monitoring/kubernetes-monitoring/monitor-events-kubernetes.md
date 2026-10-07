@@ -165,7 +165,7 @@ To enable monitoring of important events, when event filtering is turned on
 
 Kubernetes events are made available in the **Kubernetes: Event count** (`builtin:kubernetes.events`) metric. To filter the events count metric for the relevant events, use the `k8s.event.reason` and `k8s.event.type` dimensions.
 
-* To help you understand the distribution and development of Kubernetes events over time, use [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") to create charts. You can use the charts to compare different timeframes, different entities, event filters, and the use of complex expressions.
+* To help you understand the distribution and development of Kubernetes events over time, use [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") to create charts. You can use the charts to compare different timeframes, different entities, event filters, and the use of complex expressions.
 * To trigger alerts whenever Kubernetes events occur (for example, always alert in case of an `Evicted` event), define [Metric events](/managed/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace") based on the **Kubernetes: Event count** metric.
 
 ## Licensing

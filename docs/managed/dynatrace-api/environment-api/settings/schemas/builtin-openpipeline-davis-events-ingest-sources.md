@@ -69,7 +69,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Processor identifier `id` | text | - | Required |
-| Type `type` | enum | Processor type The element has these enums * `fieldsAdd` * `fieldsRemove` * `fieldsRename` * `dql` * `technology` * `drop` * `bucketAssignment` * `noStorage` * `securityContext` * `counterMetric` * `samplingAwareCounterMetric` * `valueMetric` * `histogramMetric` * `samplingAwareValueMetric` * `samplingAwareHistogramMetric` * `davis` * `bizevent` * `sdlcEvent` * `azureLogForwarding` * `securityEvent` * `costAllocation` * `productAllocation` * `smartscapeNode` * `smartscapeEdge` * `geoLookup` * `dataMasking` * `inlineLookup` | Required |
+| Type `type` | enum | Processor type The element has these enums * `fieldsAdd` * `fieldsRemove` * `fieldsRename` * `dql` * `technology` * `drop` * `bucketAssignment` * `noStorage` * `securityContext` * `counterMetric` * `samplingAwareCounterMetric` * `valueMetric` * `histogramMetric` * `samplingAwareValueMetric` * `samplingAwareHistogramMetric` * `davis` * `bizevent` * `sdlcEvent` * `azureLogForwarding` * `securityEvent` * `costAllocation` * `productAllocation` * `smartscapeNode` * `smartscapeEdge` * `geoLookup` * `dataMasking` * `inlineLookup` * `securityProblemExtraction` | Required |
 | Matcher (DQL) `matcher` | text | [See our documentation﻿](https://dt-url.net/bp234rv) | Required |
 | Description `description` | text | - | Required |
 | Sample data `sampleData` | text | - | Optional |
@@ -99,6 +99,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Geo lookup processor attributes `geoLookup` | [GeoLookupAttributes](#GeoLookupAttributes) | - | Required |
 | Data masking processor attributes `dataMasking` | [DataMaskingAttributes](#DataMaskingAttributes) | - | Required |
 | Inline lookup processor attributes `inlineLookup` | [InlineLookupAttributes](#InlineLookupAttributes) | - | Required |
+| Security problem extraction processor attributes `securityProblemExtraction` | [SecurityProblemExtractionAttributes](#SecurityProblemExtractionAttributes) | - | Required |
 
 ##### The `DqlAttributes` object
 
@@ -296,12 +297,21 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Lookup entries `inlineLookupTable` | text | The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]]. | Required |
 | Default value `defaultValue` | text | The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches. | Optional |
 
+##### The `SecurityProblemExtractionAttributes` object
+
+| Property | Type | Description | Required |
+| --- | --- | --- | --- |
+| ID components `idComponents` | [SmartscapeIdComponentsEntry](#SmartscapeIdComponentsEntry)[] | - | Required |
+| Node name `nodeName` | [GenericValueAssignment](#GenericValueAssignment) | - | Optional |
+| Category `category` | text | - | Required |
+
 ##### The `FieldsAddAttributesEntry` object
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Fields's name `name` | text | - | Required |
 | Field's value `value` | text | - | Required |
+| Field value type `valueType` | enum | The element has these enums * `string` * `boolean` * `long` * `double` | Optional |
 
 ##### The `FieldsRenameAttributesEntry` object
 

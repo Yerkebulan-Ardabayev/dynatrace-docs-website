@@ -36,7 +36,7 @@ Advanced alerting provides access to the service status and the service availabi
 
 #### Example
 
-You can set advanced alerting in **Data Explorer** by selecting the desired components. For more details, refer to [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+You can set advanced alerting in **Data Explorer** by selecting the desired components. For more details, refer to [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
 ![Set an advanced alerting in Data explorer for Managed.](https://dt-cdn.net/images/managed-data-explorer-advanced-alerting-1311-bdd58c8b3b.png)
 

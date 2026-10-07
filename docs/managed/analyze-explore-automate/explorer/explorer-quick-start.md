@@ -1,31 +1,30 @@
 ---
-title: Data Explorer quick start
+title: Get started with Data Explorer
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/explorer/explorer-quick-start
 ---
 
-# Data Explorer quick start
+# Get started with Data Explorer
 
-# Data Explorer quick start
+# Get started with Data Explorer
 
+* Tutorial
 * 6-min read
-* Published Oct 28, 2021
+* Updated on Oct 01, 2026
 
-You're in the right place if you want to see what Data Explorer can do and learn a little about writing your own queries.
+In this tutorial, you build a metric visualization in Data Explorer and pin it to a dashboard, and you learn how to define, run, and save a query.
 
 You have two options here:
 
-* [Start with a template](#templates)—An easy intro
-* [Start from scratch](#from-scratch)—A little harder
+* [Start with a template](#templates): Begin with a predefined query
+* [Start from scratch](#from-scratch): Create a query without a template
 
 ## Start with a template
 
-Starting with Dynatrace version 1.251, Data Explorer opens with a **Start with a template** section. This is the fastest and easiest way to get up and running with Data Explorer.
+Data Explorer opens with a **Start with a template** section. Use this section to begin working with Data Explorer.
 
-Don't be afraid to experiment. You can't break anything.
+To start again, select another app, then reopen Data Explorer to display the **Start with a template** section.
 
-If you need to start again, navigate away from Data Explorer (select another app) and then go back to display the **Start with a template** section again.
-
-To get started with a template
+To get started with a template, complete the following steps.
 
 1. Go to **Data Explorer**.
 2. In the **Start with a template** section, select a template.
@@ -35,14 +34,16 @@ To get started with a template
 4. Select visualization elements to access drilldown actions.
 5. Experiment with the query definition. After you make a change, select **Run query** to see what happens.
 6. Experiment with the **Settings** panel on the right. Tweak some settings and see what happens.
-7. Optional [Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic."): When you come up with something you like, select **Pin to dashboard** to add the query to a dashboard. The list of dashboards is searchable: select in the list and start typing to filter the list, and then select the dashboard from the filtered list.
+7. Optional [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic."): When you come up with something you like, select **Pin to dashboard** to add the query to a dashboard. Select the list, enter text to filter it, and then select the dashboard from the filtered list.
 
-   * If you don't have a dashboard, just select **Create new dashboard** when the **Where do you want to pin to?** message pops up.
+   * If you don't have a dashboard, select **Create new dashboard** when the **Where do you want to pin to?** message appears.
    * You can pin multiple versions of your work to your dashboard so you can see them side by side.
 
 ![Data Explorer - templates](https://dt-cdn.net/images/sample-templates-section-1285-7b25cb25e5.png)
 
 Data Explorer - templates
+
+The **Start with a template** section lets you begin a query from a predefined template.
 
 If you're ready to start exploring a little more, try starting from scratch.
 
@@ -63,40 +64,45 @@ In this walkthrough, you'll:
 
    * Select a metric such as `CPU usage %` (`builtin:host.cpu.usage`).
 
-     How to select a metric
+   When you browse the list of metrics:
 
-     When you browse the list of metrics
+   * Enter a metric name into the box to find matching metrics. When multiple matches appear, select the metric in the Host category to add it to your query.
 
-     + You can type or paste a metric name directly into the box to find all matching metrics. In this example, there are multiple matches. We select the metric in the Host category to add it to our query.
+     ![Data Explorer: metric selector: enter and select](https://dt-cdn.net/images/metric-selector-metric-type-471-10a8a83a2e.png)
 
-       ![Data Explorer: metric selector: type and select](https://dt-cdn.net/images/metric-selector-metric-type-471-10a8a83a2e.png)
+     Data Explorer: metric selector: enter and select
 
-       Data Explorer: metric selector: type and select
+     Enter a metric name and select the matching metric from the metric selector.
+   * Find metrics that you favorited in [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics.") at the top of the metric-selector list.
 
-     + If you have favorited any metrics in the [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics.") browser, those metrics are displayed at the top of the list in the metric selector.
+     ![Data Explorer: metric selector: favorites](https://dt-cdn.net/images/metric-selector-favorites-475-665c98b195.png)
 
-       ![Data Explorer: metric selector: favorites](https://dt-cdn.net/images/metric-selector-favorites-475-665c98b195.png)
+     Data Explorer: metric selector: favorites
 
-       Data Explorer: metric selector: favorites
-     + You can select a metric category to focus the list of metrics.
+     Favorited metrics appear at the top of the metric-selector list.
+   * Select a metric category to focus the list of metrics.
 
-       ![Data Explorer: metric selector: categories](https://dt-cdn.net/images/metric-selector-categories-476-5cbd27551a.png)
+     ![Data Explorer: metric selector: categories](https://dt-cdn.net/images/metric-selector-categories-476-5cbd27551a.png)
 
-       Data Explorer: metric selector: categories
+     Data Explorer: metric selector: categories
 
-     + When you hover over any metric in the list, a side panel displays details about that metric.
+     Select a metric category to focus the list of available metrics.
+   * When you hover over any metric in the list, a side panel displays details about that metric.
 
-       ![Data Explorer: metric selector: metric details](https://dt-cdn.net/images/metric-selector-metric-details-964-cd2f59a371.png)
+     ![Data Explorer: metric selector: metric details](https://dt-cdn.net/images/metric-selector-metric-details-964-cd2f59a371.png)
 
-       Data Explorer: metric selector: metric details
+     Data Explorer: metric selector: metric details
 
-       To see more information about that metric, select **View all metric information**. This opens the [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics.") in a new tab (so you don't lose your work in Data Explorer) with lots of useful details about the selected metric.
+     The metric-details panel shows information about the selected metric.
+
+   To see more information about that metric, select **View all metric information**. Selecting **View all metric information** opens [Metrics browser](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics.") in a new tab, where you can view details about the selected metric without losing your work in Data Explorer.
+
    * Choose an aggregation (for example, `Average`, `Minimum`, or `Maximum`)
-   * Select **Split by** dimensions. In this example (`CPU usage %`), we split by host to see CPU usage per host.
-   * Specify **Filter by** criteria as needed. In this example, we leave it empty.
+   * Select **Split by** dimensions. For example, select host for `CPU usage %` to view CPU usage per host.
+   * Select **Filter by** criteria as needed. Leave the criteria empty in this example.
 
-   For details on building a query, see [Query components and concepts](/managed/analyze-explore-automate/explorer#query-components-and-concepts "Query for metrics and transform results to gain desired insights.") and [Examples](/managed/analyze-explore-automate/explorer#examples "Query for metrics and transform results to gain desired insights.").
-3. Optional To review or edit the code for your query, turn on **Advanced mode**, which is the [advanced query editor](/managed/analyze-explore-automate/explorer/explorer-advanced-query-editor "Build advanced queries using the Data Explorer advanced mode.").
+   For details on building a query, see [Query components and concepts](/managed/analyze-explore-automate/explorer/metric-query-components#query-components-and-concepts "Look up Data Explorer query components, query editor commands, auto-extended filters, query examples, and query limits.") and [Examples](/managed/analyze-explore-automate/explorer/metric-query-components#examples "Look up Data Explorer query components, query editor commands, auto-extended filters, query examples, and query limits.").
+3. Optional To review or edit the code for your query, turn on **Advanced mode**, which is the [advanced query editor](/managed/analyze-explore-automate/explorer/explorer-advanced-query-editor "Learn how to build and edit advanced Data Explorer queries, use metric transformations and expressions, and compare metrics across timeframes.").
 4. Add and delete metrics as needed.
 
    * A query can have up to 10 rows.
@@ -107,78 +113,79 @@ In this walkthrough, you'll:
 
      Drag metric to reorder list
 
-     + A query's metrics are rendered in order from top to bottom, so the last one is rendered on top of the others.
-     + Note that the order of the metrics is also updated in the **Settings** section in the side panel.
-     + Rerun the query to see your changes.
+     Drag a metric to change its position in the query.
+
+     Metrics render from top to bottom, with the last metric on top. Rerun the query to view the reordered metrics.
    * To make a copy of a metric that you have already added to the query, select  > **Duplicate** and then edit the copy as needed.
 
-     ![Metric More menu ](https://dt-cdn.net/images/data-explorer-metric-more-menu-74-1b3f17af8b.png)
+     ![More menu for a metric, showing Duplicate and Delete actions](https://dt-cdn.net/images/data-explorer-metric-more-menu-74-1b3f17af8b.png)
 
-     Metric More menu
+     More menu for a metric, showing Duplicate and Delete actions
+
+     Use the More menu to duplicate or delete a metric.
    * To enable or disable a metric, select the eye button .
 
      ![Data Explorer: enable or disable a metric](https://dt-cdn.net/images/data-explorer-metric-enable-disable-80-d4980f418d.png)
 
      Data Explorer: enable or disable a metric
+
+     Select the eye button to enable or disable a metric.
    * To delete a metric, select  > **Delete**.
 5. Optional To add or remove metric transformations for a row, select the transformations (**+**) button and then select or clear checkboxes as needed.
 
-   ![Metric Plus button](https://dt-cdn.net/images/data-explorer-metric-plus-button-46-3104fd992d.png)
+   ![Transformations button for a metric row](https://dt-cdn.net/images/data-explorer-metric-plus-button-46-3104fd992d.png)
 
-   Metric Plus button
+   Transformations button for a metric row
+
+   Select the transformations button to add or remove transformations for a metric row.
 6. Select **Run query** to take a first look at the visualization. The **Run query** button displays the status of the displayed results:
 
    ![Data Explorer: Run query button: last run time](https://dt-cdn.net/images/data-explorer-run-button-last-run-293-a37ea8a71f.png)
 
    Data Explorer: Run query button: last run time
 
+   The **Run query** button shows the time when the displayed results last ran.
+
    ![Data Explorer: Run query button: unapplied changes](https://dt-cdn.net/images/data-explorer-run-button-unapplied-472-7f10360ebb.png)
 
    Data Explorer: Run query button: unapplied changes
+
+   The **Run query** button indicates when the query has unapplied changes.
 7. Use the **Settings** panel to configure your visualization.
 
-   * The visualization is updated with each change.
-   * Choose from several visualization types:
+   * Each settings change updates the visualization.
+   * For an overview of visualization types, see [Visualizations and tiles](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles "Learn how to configure and use visualizations in Data Explorer and display them as tiles to your dashboards.").
 
-     + [Graph](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-graph "Configure and use a graph visualization in Data Explorer and pin it to your dashboards as a graph tile.")
-     + [Stacked column](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-column "Configure and use a stacked column visualization in Data Explorer and display it on your dashboards.")
-     + [Stacked area](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-area "Configure and use a stacked area visualization in Data Explorer and display it on your dashboards.")
-     + [Pie](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-pie "Configure and use a pie/doughnut visualization in Data Explorer and display it on your dashboards.")
-     + [Single value](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-single-value "Configure and use a single-value visualization in Data Explorer and display it on your dashboards.")
-     + [Table](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-table "Configure and use a table visualization in Data Explorer and display it on your dashboards.")
-     + [Top list](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-top-list "Configure a top-list visualization in Data Explorer and display it on your dashboards.")
-     + [Heatmap](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-heatmap "Configure and use a heatmap visualization in Data Explorer and pin it to your dashboards as a heatmap tile.")
-     + [Honeycomb](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-honeycomb "Configure and use a honeycomb visualization in Data Explorer and display it on your dashboards.")
-
-When you are satisfied with your visualization, you can use it within Data Explorer immediately or pin it to a dashboard for future use.
+After you finish the visualization, use it within Data Explorer or pin it to a dashboard for future use.
 
 ### Use the visualization in Data Explorer
 
 Visualization elements are active. For example:
 
-* To see details in tooltips, hover over visualization elements
+* To see details in tooltips, hover over visualization elements.
 * To drill down from a problematic (red) element, select it.
-* To hide or show a visualization element, select the corresponding label in the visualization legend
+* To hide or show a visualization element, select the corresponding label in the visualization legend.
 
 When you're done using your visualization (for now, anyway), you need to decide whether to discard it or save it.
 
-* To discard your visualization (and the query that generated it), just navigate away from Data Explorer.
+* To discard your visualization and its query, navigate away from Data Explorer.
 * To save your visualization and query for future use, you need to pin the visualization to a dashboard. See below.
 
 ### Pin the visualization to a dashboard
 
 To save the visualization as a dashboard tile, select **Pin to dashboard**.
 
-To return from the dashboard to Data Explorer with the visualization open for viewing and editing, open the menu in the upper-right corner of the tile and select **Configure tile in Data Explorer**. Now two buttons are displayed in the **Results** section of Data Explorer:
+To return to Data Explorer with the visualization open, open the tile menu and select **Configure tile in Data Explorer**. Two buttons then appear in the **Results** section.
 
-* **Save changes to dashboard**—saves the visualization to the same tile and dashboard you used to open Data Explorer. If you have made any changes, they will update the tile on your dashboard.
-* **Pin to dashboard**—saves the visualization as a tile on a different dashboard. You might want to pin the same visualization (perhaps with filtering differences) to various dashboards.
+* **Save changes to dashboard** saves the visualization to the same tile and dashboard you used to open Data Explorer. If you have made any changes, they will update the tile on your dashboard.
+* **Pin to dashboard** saves the visualization as a tile on a different dashboard. You might want to pin the same visualization (perhaps with filtering differences) to various dashboards.
 
-For details about pinning tiles to dashboards, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+For instructions, go to [Pin a tile to a dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
 
-## What's next?
+## What's next
 
-If you're ready for the technical details, see:
+To write queries directly in the metric selector syntax, see [Write queries in advanced mode](/managed/analyze-explore-automate/explorer/explorer-advanced-query-editor "Learn how to build and edit advanced Data Explorer queries, use metric transformations and expressions, and compare metrics across timeframes.").
 
-* [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.")—learn the details of query construction
-* [Data Explorer Advanced mode query editor](/managed/analyze-explore-automate/explorer/explorer-advanced-query-editor "Build advanced queries using the Data Explorer advanced mode.")—learn how to edit queries om **Advanced mode**
+## Related topics
+
+* [Data Explorer query reference](/managed/analyze-explore-automate/explorer/metric-query-components "Look up Data Explorer query components, query editor commands, auto-extended filters, query examples, and query limits.")

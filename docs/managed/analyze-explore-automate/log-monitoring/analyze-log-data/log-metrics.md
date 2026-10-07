@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitori
 
 * Tutorial
 * 7-min read
-* Updated on Jan 18, 2023
+* Updated on Oct 01, 2026
 
 Log Monitoring Classic
 
@@ -22,7 +22,7 @@ Depending on the options you select during log metric creation, the new metric v
 * **Occurrence of log records** (available in Dynatrace version 1.206+)  
   The metric value will represent a count of occurrences of log records that match the query.
 * **Attribute value** (available in Dynatrace version 1.229+)  
-  The metric value can represent one of the aggregations that you can specify in [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+  The metric value can represent one of the aggregations that you can specify in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
 When Dynatrace ingests log data, it applies the defined query to the log data and, based on your log metric **Measure** selection, the metric value will therefore represent either a count of the log records that match the query or one of the following values for the specified attribute: `Average`, `Count`, `Maximum`, `Minimum`, `Sum`, `Median`, `Percentile 10th`, `Percentile 75th`, or `Percentile 90th`. The specified attribute must be of numeric type. Dynatrace will attempt to convert string type attributes to numbers as long as they match the following pattern:  
 `123`  

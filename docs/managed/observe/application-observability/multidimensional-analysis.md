@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/application-observability/mul
 
 * How-to guide
 * 4-min read
-* Updated on Aug 05, 2026
+* Updated on Oct 01, 2026
 
 The **Multidimensional analysis** view enables you to analyze web requests of your services with fine-tuned filtering, so you can focus your analysis on the dimensions that matter most. This view is easily configurable and serves as a convenient entry point for in-depth analysis of your services.
 
@@ -41,7 +41,7 @@ Multidimensional analysis uses trace and request data as its data source, which 
 
 Multidimensional analysis vs charts
 
-Unlike [Data Explorer](/managed/analyze-explore-automate/explorer#limitations "Query for metrics and transform results to gain desired insights."), multidimensional analysis uses trace and request data, not metric data, so values on multidimensional analysis charts might differ from values on custom charts.
+Unlike [Data Explorer](/managed/analyze-explore-automate/explorer/metric-query-components#notes-and-limitations "Look up Data Explorer query components, query editor commands, auto-extended filters, query examples, and query limits."), multidimensional analysis uses trace and request data, not metric data, so values on multidimensional analysis charts might differ from values on custom charts.
 
 ## Configure view
 
@@ -91,7 +91,7 @@ Dynatrace provides several views out of the box:
 
 ## Calculated service metric
 
-You can save the configured view as a calculated service metric, which you can use just like any other Dynatrace metric, for example for [charting](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") or [data export via API](/managed/dynatrace-api/environment-api/metric-v2/get-data-points "Read data points of one or multiple metrics via Metrics v2 API.").
+You can save the configured view as a calculated service metric, which you can use just like any other Dynatrace metric, for example for [charting](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") or [data export via API](/managed/dynatrace-api/environment-api/metric-v2/get-data-points "Read data points of one or multiple metrics via Metrics v2 API.").
 
 Only new data is written to calculated metrics; retrospective data is not included.
 

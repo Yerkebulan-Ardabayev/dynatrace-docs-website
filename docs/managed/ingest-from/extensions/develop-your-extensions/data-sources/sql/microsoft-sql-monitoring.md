@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-e
 
 * Reference
 * 3-min read
-* Updated on Aug 04, 2026
+* Updated on Sep 11, 2026
 
 After you define the scope of your configuration, you need to identify the following:
 
@@ -204,7 +204,7 @@ To define a Microsoft SQL Server, add the following details in the `endpoints` s
 
 ### Authentication
 
-Authentication details passed to the Dynatrace API when activating a monitoring configuration are obfuscated and it's impossible to retrieve them.
+Authentication details passed to the Dynatrace API when activating a monitoring configuration are obfuscated and can't be retrieved.
 
 #### Basic
 
@@ -232,7 +232,9 @@ Basic authentication requires only a username and password.
 
 #### Kerberos
 
-Requires Active Directory domain set up. Allows you to connect to a database by providing a domain username, password, Key Distribution Center (KDC), and realm.
+Kerberos authentication enables connectivity to self-hosted databases. It requires an Active Directory domain setup and allows you to connect to a database by providing a domain username, password, Key Distribution Center (KDC), and realm.
+
+Kerberos authentication targets self-hosted, domain-joined databases only.
 
 ```
 "authentication": {
@@ -266,7 +268,7 @@ Requires Active Directory domain set up. Allows you to connect to a database by 
 
 The `realm` and `kdc` fields map to the JVM-wide system properties `java.security.krb5.realm` and `java.security.krb5.kdc`. All SQL Server Kerberos endpoints that run inside the same ActiveGate task or the same Kubernetes executor pod share these values. Only one realm and one KDC can be active per JVM process at a time.
 
-If two or more endpoints in the same process require different `realm` or `kdc` values, only the first endpoint's configuration takes effect; all subsequent endpoints requiring different `kdc` and/or `realm` properties values fail to start. No configuration validation error is raised.
+If two or more endpoints in the same process require different `realm` or `kdc` values, only the first endpoint's configuration takes effect. All subsequent endpoints that require different `realm` or `kdc` values fail to start. No configuration validation error is raised.
 
 The datasource emits an SFM ERROR event when it detects that a property already set by a previous endpoint differs from the value required by the current endpoint. The event names the conflicting property and both values, so operators can identify the affected endpoints.
 
@@ -277,9 +279,9 @@ To work around this constraint:
 
 #### NTLM
 
-Windows only
+NTLM authentication enables connectivity to self-hosted databases. It requires an Active Directory domain setup and allows you to connect to a database by providing a domain username, a domain password, and, optionally, the domain.
 
-Requires Active Directory domain set up. Allows you to connect to a database by providing a domain username, a domain password, and, optionally, the domain.
+NTLM authentication targets self-hosted, domain-joined databases only.
 
 ```
 "authentication": {
@@ -309,8 +311,8 @@ Requires Active Directory domain set up. Allows you to connect to a database by 
 
 The credential vault authentication type provides a more secure approach to using extensions by securely storing and managing user credentials. To use this, you must be the owner of the credentials and have a credential vault that meets the following criteria:
 
-* **Credential type**—User and password in case of Basic Authentication, and username and Programmatic Access Token (PAT) in case of Programmatic Access Token (PAT) authentication
-* **Credential scope**—Synthetic (in case of external vault usage) and Extension authentication scopes enabled
+* **Credential type**: User and password in case of Basic Authentication, and username and Programmatic Access Token (PAT) in case of Programmatic Access Token (PAT) authentication
+* **Credential scope**: Synthetic (in case of external vault usage) and Extension authentication scopes enabled
 * **Owner access only** is enabled only for credential owners
 
 ```
@@ -345,9 +347,9 @@ Enable SSL to make the data source verify the server certificate and use SSL enc
 
 #### Enable SSL without a local truststore
 
-When SSL is enabled and the server's certificate chain is publicly verifiable (for example, issued by Azure or other well-known CAs), there's no need to manually create a truststore. The system will automatically trust the server's certificate based on the trusted CAs in the environment.
+When SSL is enabled and the server's certificate chain is publicly verifiable (for example, issued by Azure or other well-known CAs), there's no need to manually create a truststore. The system automatically trusts the server's certificate based on the trusted CAs in the environment.
 
-However, if you need to use a local truststore for certificates not globally recognized or for additional security measures
+However, if you need to use a local truststore for certificates not globally recognized or for additional security measures:
 
 1. In the `userdata` directory on the ActiveGates running the SQL data source, manually create a PKCS12 truststore with the name `sqlds_truststore` and password `sqlds_truststore`.
 
@@ -387,7 +389,7 @@ Client certificates are not supported for SQL data sources. To authenticate secu
 
 Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](/managed/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension, upload certificates and custom extensions, and configure certificate permissions using the Dynatrace Extensions Framework.").
 
-The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](/managed/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+The scope is an ActiveGate group that executes the extension. Only one ActiveGate from the group runs this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](/managed/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
 
 Use the following format when defining the ActiveGate group:
 

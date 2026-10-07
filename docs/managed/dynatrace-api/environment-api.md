@@ -121,6 +121,8 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api
 
 [Monitored entities](/managed/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.")
 
+[Monitoring state](/managed/dynatrace-api/environment-api/monitoring-state "Query the monitoring state of process group instances in your environment via the Dynatrace API, including request parameters and response fields.")
+
 ### Network zones
 
 [Network zones](/managed/dynatrace-api/environment-api/network-zones "Manage network zones via the Dynatrace API.")

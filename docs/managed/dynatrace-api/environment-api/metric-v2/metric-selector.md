@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-
 * Reference
 * Updated on Oct 31, 2025
 
-The metric selector is a powerful instrument for specifying which metrics you want to read via the [GET metric data points](/managed/dynatrace-api/environment-api/metric-v2/get-data-points "Read data points of one or multiple metrics via Metrics v2 API.") request or in the [**Advanced mode** of Data Explorer](/managed/analyze-explore-automate/explorer/explorer-advanced-query-editor "Build advanced queries using the Data Explorer advanced mode.").
+The metric selector is a powerful instrument for specifying which metrics you want to read via the [GET metric data points](/managed/dynatrace-api/environment-api/metric-v2/get-data-points "Read data points of one or multiple metrics via Metrics v2 API.") request or in the [**Advanced mode** of Data Explorer](/managed/analyze-explore-automate/explorer/explorer-advanced-query-editor "Learn how to build and edit advanced Data Explorer queries, use metric transformations and expressions, and compare metrics across timeframes.").
 
 In addition, you can transform the resulting set of data points. These transformations modify the plain metric data.
 
@@ -768,7 +768,7 @@ in(
 
 You need to specify a metric key to get the timeseries for it. You can also specify multiple metric keys separated by commas (for example, `metrickey1,metrickey2`).
 
-When using the [data explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), metric key sections beginning with special characters need to be escaped with quotes (`""`). For example,
+When using the [data explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues."), metric key sections beginning with special characters need to be escaped with quotes (`""`). For example,
 
 | Ingested Metric | Sample Metric Selector |
 | --- | --- |
@@ -4095,6 +4095,6 @@ You must apply an [aggregation transformation](#aggregation) before using the un
 
 ## Related topics
 
-* [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.")
+* [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.")
 * [Environment API v2 - Entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.")
 * [[GitHub] Examples of metric selector queries﻿](https://dt-url.net/metric-selector-by-example)

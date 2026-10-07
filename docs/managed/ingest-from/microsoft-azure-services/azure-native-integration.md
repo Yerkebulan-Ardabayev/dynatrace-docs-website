@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/
 * 17-min read
 * Updated on Jun 23, 2026
 
-Azure Native Dynatrace service is an Azure Native Integration available in [Azure Marketplace﻿](https://dt-url.net/9n039mv). It allows you to purchase, set up, and manage Dynatrace directly in the Azure portal. After integration deployment, you'll see Dynatrace as **Azure Native Dynatrace Service**, and you can manage its configuration from the Azure portal.
+Azure Native Dynatrace service is an Azure Native Integration available in [Azure Marketplace﻿](https://marketplace.microsoft.com/en-us/product/dynatrace.dynatrace_liftr_integration). It allows you to purchase, set up, and manage Dynatrace directly in the Azure portal. After integration deployment, you'll see Dynatrace as **Azure Native Dynatrace Service**, and you can manage its configuration from the Azure portal.
 
 This integration has been developed and is managed by both Microsoft and Dynatrace.
 
