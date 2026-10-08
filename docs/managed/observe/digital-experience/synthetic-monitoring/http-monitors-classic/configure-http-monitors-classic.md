@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-
 
 * How-to guide
 * 16-min read
-* Updated on Apr 01, 2026
+* Updated on Oct 05, 2026
 
 Dynatrace allows you to easily configure your HTTP monitors when first setting them up and at any time thereafter.
 
@@ -93,7 +93,10 @@ These settings are available for [OAuth2 authorization requests](/managed/observ
 
 * **HTTP request URL**
 
-  To enhance synthetic monitor security, Dynatrace blocks monitors from sending requests to a local host (for example, `localhost` or `127.0.0.1`).
+  Dynatrace improves synthetic monitor security by blocking requests to local hosts (such as `localhost` or `127.0.0.1`) and cloud metadata APIs.
+  Protection levels for metadata APIs vary by location type and are stricter for public locations.
+  For private locations, these measures don’t replace network controls. Restrict network access to the ActiveGate host before using the location in production.
+  See [Secure network access of your private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#secure-private-location-classic "Learn how to create a private location for synthetic monitoring.")
 
   You can add [token credentials](/managed/manage/credential-vault#token "Store and manage credentials in the credential vault.") to the **HTTP request URL**—begin by typing `{cr` to view a list of autocomplete credential suggestions. This list only has credentials that you have permission to use, that is, public credentials or owner-only credentials that you created.
 

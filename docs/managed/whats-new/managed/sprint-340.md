@@ -9,14 +9,14 @@ source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-340
 
 * Release notes
 * 4-min read
-* Updated on Jun 10, 2026
+* Updated on Oct 07, 2026
 * Rollout start on Jun 08, 2026
 
 This page showcases new features, changes, and bug fixes in Dynatrace Managed version 1.340. It contains:
 
 * [Feature updates](#updates): 4
 * [Breaking changes](#breaking): 2
-* [Fixes and maintenance](#fixes): 6
+* [Fixes and maintenance](#fixes): 7
 
 Infrastructure Observability
 
@@ -84,6 +84,7 @@ The [ActiveGate auto-update configuration API](/managed/dynatrace-api/environmen
 * Fixed an issue causing the RUM JavaScript to add headers to cross-origin requests if the `base` tag points to a different origin, which triggered potentially broken preflight requests. (DEM-26180)
 * Fixed an issue that resulted in consecutive visit generation if cookies cannot be set. (DEM-25392)
 * Fixed the issue where the infographic on the Technology & Processes custom device subpage occasionally failed to render due to missing data not being handled correctly. (DAQ-24380)
+* Fixed an issue that caused data points from `calc:` calculated metrics to be dropped every two hours. (PRISM-15432)
 
 ## Operating systems support
 

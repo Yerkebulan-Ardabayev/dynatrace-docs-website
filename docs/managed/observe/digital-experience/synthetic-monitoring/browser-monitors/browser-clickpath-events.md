@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-
 
 * Explanation
 * 18-min read
-* Updated on Feb 11, 2026
+* Updated on Oct 05, 2026
 
 When you record a [browser clickpath](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath "Learn how to record a browser clickpath to monitor the availability and performance of your application."), your interactions with your web application are captured as a series of events. There are different event types to simulate interaction and control the clickpath, for instance, navigating to a URL, a click, selecting an option, entering information, or a JavaScript snippet. Besides the type, events have different properties, like the target (consisting of locators to identify web elements on a page) and the wait strategy.
 
@@ -31,7 +31,10 @@ The Navigate event simulates entering a **URL** in the address bar of a browser 
 
 Single-URL browser monitors comprise a single Navigate event. However, note that opting for web form authentication automatically sets up your single-URL monitor with two script events: Navigate, and noneditable AutoLogin event.
 
-To enhance synthetic monitor security, Dynatrace blocks monitors from sending requests to a local host (for example, `localhost` or `127.0.0.1`).
+Dynatrace improves synthetic monitor security by blocking requests to local hosts (such as `localhost` or `127.0.0.1`) and cloud metadata APIs.
+Protection levels for metadata APIs vary by location type and are stricter for public locations.
+For private locations, these measures don’t replace network controls. Restrict network access to the ActiveGate host before using the location in production.
+See [Secure network access of your private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#secure-private-location-classic "Learn how to create a private location for synthetic monitoring.")
 
 In [recorded clickpaths](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath "Learn how to record a browser clickpath to monitor the availability and performance of your application."), the first event is automatically created as a Navigate event. However, when adding events manually or editing a clickpath, you can add a [JavaScript event](#javascript) as the first event of the monitor. Navigate events can be preceded only by one or more JavaScript events. A clickpath requires at least one Navigate event.
 

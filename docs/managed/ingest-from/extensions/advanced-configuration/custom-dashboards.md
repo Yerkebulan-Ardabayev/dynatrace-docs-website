@@ -15,16 +15,16 @@ After your extension starts sending data to Dynatrace, you can create a custom d
 
 ## Dashboards Classic
 
-If you're using [Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic."), follow these procedures.
+If you're using [Dashboards Classic](/managed/analyze-explore-automate/dashboards "Learn how to build, share, and organize Dynatrace dashboards, and how dashboards scope data, which settings apply, and which tiles are available."), follow these procedures.
 
-After your extension starts sending data to Dynatrace, you can [create a custom dashboard](/managed/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.") and then export its definition to a JSON file and add it to your extension archive. You can export a dashboard definition through the Dynatrace web UI or Dynatrace API.
+After your extension starts sending data to Dynatrace, you can [create a custom dashboard](/managed/analyze-explore-automate/dashboards/create-a-dashboard "Create an empty, cloned, or imported dashboard, then add and configure tiles, set dashboard defaults, edit the dashboard JSON, and print it to PDF.") and then export its definition to a JSON file and add it to your extension archive. You can export a dashboard definition through the Dynatrace web UI or Dynatrace API.
 
 ### Export dashboard JSON in web UI
 
 1. Go to **Dashboards**.
 2. In the row for the dashboard you want to export, select **More** (**…**) > **Export**.  
    A JSON file with the dashboard's name is downloaded to your local machine.
-   For more information, see [Edit Dynatrace dashboard JSON](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json "Learn how to export, edit, and import the JSON for a Dynatrace dashboard.").
+   For more information, see [Create a dashboard](/managed/analyze-explore-automate/dashboards/create-a-dashboard "Create an empty, cloned, or imported dashboard, then add and configure tiles, set dashboard defaults, edit the dashboard JSON, and print it to PDF.").
 
 ### Export dashboard JSON using API
 

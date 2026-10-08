@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-
 
 * How-to guide
 * 7-min read
-* Updated on Nov 01, 2022
+* Updated on Oct 05, 2026
 
 Your web application provides certain key functionality to your customers that is critical to the success of your business. Monitoring your application via browser clickpaths ensures that this functionality is available to your customers 24/7.
 
@@ -42,7 +42,10 @@ After installing the Dynatrace Synthetic Recorder extension, you need to enable 
 2. Select **Create a synthetic monitor** > **Create a browser monitor**.
 3. Enter a valid **URL** and check the default **Name** for your clickpath on the Create synthetic monitor page.
 
-   To enhance synthetic monitor security, Dynatrace blocks monitors from sending requests to a local host (for example, `localhost` or `127.0.0.1`).
+   Dynatrace improves synthetic monitor security by blocking requests to local hosts (such as `localhost` or `127.0.0.1`) and cloud metadata APIs.
+   Protection levels for metadata APIs vary by location type and are stricter for public locations.
+   For private locations, these measures don’t replace network controls. Restrict network access to the ActiveGate host before using the location in production.
+   See [Secure network access of your private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#secure-private-location-classic "Learn how to create a private location for synthetic monitoring.")
 4. Select **Add tag** to apply manually created tags to the monitor. You can choose from autocomplete suggestions as you type or create your own. (After the monitor has been created, you can manage tags from the [Synthetic details page](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors "Analyze browser monitor and clickpath results on the Synthetic details page.").
 5. Continue on to [configure the monitor](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")—device profile and additional options such as cookies and authentication.
 

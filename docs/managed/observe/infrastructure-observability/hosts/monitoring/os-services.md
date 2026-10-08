@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 
 * How-to guide
 * 14-min read
-* Updated on May 26, 2026
+* Updated on Sep 30, 2026
 
 Dynatrace monitors OS service availability without additional configuration.
 
@@ -44,9 +44,7 @@ Set an advanced alerting in Data explorer for Managed.
 
 ## Monitor a service
 
-To monitor an OS service, perform the following steps.
-
-### 1. Access OS services monitoring
+### Access OS services monitoring
 
 In Dynatrace, go to **OS services monitoring** for the level you are configuring.
 
@@ -62,7 +60,7 @@ Host-group level
 
 Host level
 
-Go to **Settings** > **Collect and capture** > **Infrastructure** > **OS** > **OS services monitoring**.
+Go to **Settings** > **Monitoring** > **OS services monitoring**.
 
 1. Go to **Deployment Status** > **OneAgents**.
 2. On the **OneAgent deployment** page, turn off **Show new OneAgent deployments**.
@@ -83,7 +81,7 @@ Go to **Settings** > **Collect and capture** > **Infrastructure** > **OS** > **O
 
 4. In the host settings, select **OS services monitoring**.
 
-### 2. Add service monitoring policy
+### Add service monitoring policy
 
 Based on the service state and the rules, the service monitoring policy defines how Dynatrace monitors your service. By default, Dynatrace comes with `Auto-start Windows OS Services` and `Auto-start Linux OS Services` policies for auto-started Windows and Linux services with failed status.
 
@@ -98,8 +96,7 @@ The order of service monitoring policies is important. Policies that are higher 
 1. On **OS services monitoring** for the level you are configuring based on your OS, select **Add policy** and define the policy, which is a collection of rules.
 2. **System**: Select your operating system.
 3. **Rule name**: Enter the name that will be displayed in the **Summary** field.
-4. **Monitor**: Decide whether to monitor service availability using the **OS service availability** (`builtin:osservice.availability`) metric. If available, the metric sends the service status every ten seconds. The [**Service status**](#service-status) (`dt.osservice.status`) dimension carries the status.  
-   Note that the metric consumes data points. For more information, see [Metrics powered by Grail](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+4. **Monitor**: Decide whether to monitor service availability using the **OS service availability** (`builtin:osservice.availability`) metric. If available, the metric sends the service status every ten seconds. The [**Service status**](#service-status) (`dt.osservice.status`) dimension carries the status.
 5. **Alert**: Decide whether you want alerting for your policy.
 6. OneAgent version 1.257+ **Alert if service is not installed**: Whether you want to receive alerts about OS services that are not installed on the host.
 7. **Service status**: Set the service status for which an alert should be triggered.
@@ -142,9 +139,7 @@ The order of service monitoring policies is important. Policies that are higher 
    * `active`
 8. Optional OneAgent version 1.257+ **Alerting delay**: The number of 10-second measurement cycles for a service to be in configured state before an event is generated. This doesn't apply to alerts for services that are not installed.
 
-Next, you need to select which services you want to monitor based on service properties.
-
-### 3. Select services you want to monitor
+### Select services you want to monitor
 
 1. Select **Add rule**.
 2. Optional **Rule scope**: Select either **OS Service** or **Host**. By default, the **OS Service** option is selected.
@@ -188,7 +183,7 @@ Linux
 
 A monitoring rule may consist of multiple detection rules. All detection rules must be satisfied for the OS Service to match, as a logical `AND` operation is applied across all specified conditions.
 
-Additional information on Display name, Path, Manufacturer, and Service Name
+#### Additional information on Display name, Path, Manufacturer, and Service Name
 
 Use these properties to define the services to monitor based on:
 
@@ -214,7 +209,7 @@ Use these properties to define the services to monitor based on:
 
   Conditions are case insensitive.
 
-Additional information on Startup Type
+#### Additional information on Startup Type
 
 With this property we define the services to be monitored based on their startup type.
 
@@ -242,7 +237,7 @@ With this property we define the services to be monitored based on their startup
 * **Service Name**
 * **Startup Type**
 
-Additional information on Service Name
+#### Additional information on Service Name
 
 Use this property to define which services to monitor based on the service name.
 
@@ -260,7 +255,7 @@ Available logic operations:
 * `$and($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` and ends with `hd`.
 * `$or($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` or ends with `hd`.
 
-Additional information on Startup Type
+#### Additional information on Startup Type
 
 Use this property to define which services to monitor based on their startup type.
 
@@ -284,7 +279,7 @@ Use one of the following values as a parameter for this condition:
 | `indirect` | The unit file is not enabled directly, but it can be enabled indirectly through aliases or as a dependency of another unit. Typically, such units define an `Also=` or `Alias=` directive in the `[Install]` section, allowing them to be pulled in when enabling related units. |
 | `linked`, `linked-runtime` | The unit file is linked into the systemd configuration from outside the standard unit file directories (for example, using `systemctl link`).  * `linked` indicates a persistent link stored on disk * `linked-runtime` indicates a temporary link that exists only for the current runtime (for example, created with `--runtime`) |
 
-### 4. Add custom properties
+### Add custom properties
 
 OneAgent version 1.247+
 
@@ -294,7 +289,7 @@ Optional
 
 1. Select **Add property** to specify a custom key-value property for the policy.
 
-   Custom message in the Event details
+   #### Custom message in the Event details
 
    For example, a property with a **Key** set to `custom.message` and **Value** set to `The {dt.osservice.name} is with status {dt.osservice.status}` (including placeholders `{dt.osservice.name}` and `{dt.osservice.status}`) will extract the OS service name and status values once the rule is triggered. If the placeholder substitution fails, both the key and the value will be unavailable.
 

@@ -43,7 +43,7 @@ After receiving customer feedback, the first important step is to check the prob
 To view problematic user sessions of a particular user
 
 1. In Dynatrace, go to **Session Segmentation**.
-2. Use the [timeframe selector](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.") in the upper-right corner of the page to set the analysis timeframe to the date and time when the issue occurred.
+2. Use the [timeframe selector](/managed/analyze-explore-automate/dashboards/how-dashboards-scope-and-refresh-data "Learn how timeframe, management zone, and dynamic filter settings decide which data dashboard tiles show, and how often each tile refreshes.") in the upper-right corner of the page to set the analysis timeframe to the date and time when the issue occurred.
 3. Select the **Filter by** box at the top of the page, and set the following [filtering attributes](/managed/observe/digital-experience/rum-classic/session-segmentation/user-sessions#session-segmentation-filters "Learn about user session segmentation and filtering attributes."). Once you select an attribute, the possible values for that attribute are displayed.
 
    * **Application**: **<your application name>**

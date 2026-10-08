@@ -144,52 +144,29 @@ For more information, see [Overview (Dynatrace Platform Subscription)](/managed/
 
 Diagram - Example usage for Real User Monitoring visible in Account Management
 
-### Insights via billing usage events
+## Optimize your consumption
 
-Billing usage events (BUEs, `billing_usage_event`) are system events emitted by Dynatrace into the `dt.system.events` data space.
-You can use DQL to query BUEs, and analyze usage and cost for Real User Monitoring capabilities without re-applying billing rules or session-counting logic.
+You can reduce consumption and optimize cost by adjusting when and how synthetic actions run.
 
-BUEs represent already-calculated, billable usage for DPS capabilities (not any configuration or potential usage), and are aligned with what is shown in Account Management and on invoices.
-Therefore, they're the recommended data source for understanding related consumption.
+* Tune execution frequency.
 
-Billing usage events contain:
+  Executing tests less frequently, for example running every 10 minutes instead of every 5, directly reduces action volume.
+* Limit monitored locations.
 
-* Which DPS capability was consumed.
-* The usage amount that contributes to billing.
-* The time window the usage belongs to.
-* The entity context the usage is attributed to (for example, an application).
+  Use the minimum number of locations needed to meet your monitoring objectives.
+* Streamline your script.
 
-#### Query billing usage events with DQL
+  Remove unnecessary steps, minimize redirects or repeated page loads, and combine related checks into a single action when possible.
+* Disable monitors you no longer need.
 
-You can use billing usage events as the authoritative source when building cost allocation, usage analysis, or cost transparency views.
+  Disabling a monitor pauses all executions and stops further consumption for that monitor.
+* Address monitor failures promptly.
 
-For example, aggregate by application to understand which applications contribute most to usage and cost.
+  Frequent failures may prevent some steps from running.
+  This reduces consumption, but hides the underlying issues.
+  Address failures promptly to ensure accurate monitoring.
 
-Here are some example DQL queries for various use cases.
-You can use these queries as-is, or modify them to meet your needs.
-
-1. Total usage over time
-
-   ```
-   fetch dt.system.events
-
-
-
-   | filter event.kind == "BILLING_USAGE_EVENT" and event.type == "Browser Monitor and Clickpath"
-
-
-
-   | dedup event.id
-
-
-
-   | summarize totalUsage = sum(billed_sessions), by:{bin(timestamp, 1d)}
-   ```
-
-### Insights via API
-
-You can query insights via the [Environment API – Grail Query﻿](https://developer.dynatrace.com/develop/platform-services/services/grail-service/#grail-query-api).
-Example DQL queries are provided in [Query billing usage events with DQL](#rum-dql-query).
+–>
 
 ## FAQs
 

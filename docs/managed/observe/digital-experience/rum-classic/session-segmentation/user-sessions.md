@@ -91,7 +91,7 @@ To analyze a user session
 
 User sessions page
 
-Use the [timeframe selector](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.") in the menu bar to adjust the analysis timeframe of your user session analysis.
+Use the [timeframe selector](/managed/analyze-explore-automate/dashboards/how-dashboards-scope-and-refresh-data "Learn how timeframe, management zone, and dynamic filter settings decide which data dashboard tiles show, and how often each tile refreshes.") in the menu bar to adjust the analysis timeframe of your user session analysis.
 
 ![Timeframe selector: menu bar](https://dt-cdn.net/images/timeframe-selector-menu-bar-264-8193110c8c.png)
 

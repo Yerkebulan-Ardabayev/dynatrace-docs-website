@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-
 
 * How-to guide
 * 24-min read
-* Updated on Sep 28, 2026
+* Updated on Oct 05, 2026
 
 You can run your Dynatrace synthetic monitors from a private Synthetic location, which is a location in your private network infrastructure where you install one or more Synthetic-enabled ActiveGate instances.
 
@@ -83,6 +83,29 @@ If this web UI-guided installation fails, or you prefer to prepare the host for 
 
     Commands to install ActiveGate on Red Hat 9
 13. Verify the ActiveGate installation (**Show deployment status**).
+
+## Secure network access of your private Synthetic location
+
+Monitors on a private Synthetic location can reach every destination that the ActiveGate host can reach.
+This lets you monitor internal applications, but it also means that anyone who can create or edit monitors for the location can send requests to those same destinations.
+
+The Synthetic engine partially blocks potentially harmful requests, such as those to cloud metadata APIs, for HTTP monitors.
+This protection doesn't apply to browser monitors due to how they handle network traffic. In either case, it's not a substitute for network controls.
+
+Before you use the location in production, restrict network access for the ActiveGate host (for example, with firewall rules or egress filtering) so that it can reach only the destinations your monitors need.
+
+Examples of destinations to consider:
+
+* Hosts, services, and management interfaces on your internal network
+* Cloud instance metadata APIs, such as `169.254.169.254`, which can expose credentials that grant access to your cloud resources
+* Services on the ActiveGate host itself, such as `localhost` and link-local addresses (`169.254.0.0/16`)
+
+### Recommendations
+
+To restrict network access of your private location, apply the following measures.
+
+* Restrict outbound traffic of the ActiveGate at the network level. Use an egress firewall, a security group, or a forward proxy to allow only the targets that your monitors need. Filter by IP address, not only by hostname. For a proxy setup, see [Set up a proxy for private synthetic monitoring](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.").
+* Block access to cloud metadata APIs for traffic from synthetic monitors. The IP addresses to block depend on the cloud platform that hosts the ActiveGate, so check the documentation of your cloud provider. Don't forget IPv6. Don't block the metadata service for the entire host, because some services on the machine might need it for their own credentials.
 
 ## Add a private location
 

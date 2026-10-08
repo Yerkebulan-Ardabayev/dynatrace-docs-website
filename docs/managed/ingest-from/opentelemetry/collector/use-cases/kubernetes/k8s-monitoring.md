@@ -19,7 +19,7 @@ Dynatrace Operator
 
 Dynatrace recommends using the [Dynatrace Operator for Kubernetes monitoring](/managed/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes").
 However, this use case is designed specifically for OpenTelemetry users who choose not to deploy the Dynatrace Operator.
-Setting up the Collector as described below will make Kubernetes monitoring data available to be used in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") and [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
+Setting up the Collector as described below will make Kubernetes monitoring data available to be used in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") and [Dashboards](/managed/analyze-explore-automate/dashboards "Learn how to build, share, and organize Dynatrace dashboards, and how dashboards scope data, which settings apply, and which tiles are available.").
 
 ## Prerequisites
 
@@ -1880,7 +1880,7 @@ For more information, see [Data Explorer](/managed/analyze-explore-automate/expl
 
 ## Use custom dashboards
 
-To set up custom dashboards, see [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
+To set up custom dashboards, see [Dashboards](/managed/analyze-explore-automate/dashboards "Learn how to build, share, and organize Dynatrace dashboards, and how dashboards scope data, which settings apply, and which tiles are available.").
 
 ## Limits and limitations
 

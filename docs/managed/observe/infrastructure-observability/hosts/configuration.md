@@ -275,7 +275,7 @@ Use **OS services monitoring** to set up alerts for OS services in undesirable s
 5. Define the alerting conditions.
 6. Select **Save changes**.
 
-For details, see [OS services monitoring](/managed/observe/infrastructure-observability/hosts/monitoring/os-services "Monitor the availability of operating system services on your hosts to improve infrastructure visibility and detect failures in real time.").
+For details, see [OS services monitoring in Dynatrace Classic](/managed/observe/infrastructure-observability/hosts/monitoring/os-services-classic "Monitor the availability of operating system services on your hosts in Dynatrace Classic environments.").
 
 ## Extension Execution Controller
 

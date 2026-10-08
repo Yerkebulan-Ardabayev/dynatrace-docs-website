@@ -122,7 +122,7 @@ Migrating configuration data such as dashboards, applications, and tags is impor
 
 Due to technical constraints, it's not possible to move any historical monitoring data (such as metrics, traces, problems, events, and logs) from one environment to another environment. However, data can still be accessed in your Dynatrace Managed Cluster. Dynatrace Managed Clusters can be operated in parallel if access to historical data is required. This may require running dual Dynatrace Managed and SaaS licenses.
 
-You may also find it helpful to set up [Set up cross-environment tracing](/managed/observe/application-observability/distributed-traces/analysis/connect-environments "Analyze requests across environment boundaries.") and [Create remote/multi-environment Dynatrace dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment "Create dashboards that display data from multiple Dynatrace environments.") to connect your Dynatrace Managed and SaaS environments for data access.
+You may also find it helpful to set up [Set up cross-environment tracing](/managed/observe/application-observability/distributed-traces/analysis/connect-environments "Analyze requests across environment boundaries.") and [Create multi-environment dashboards](/managed/analyze-explore-automate/dashboards/create-multi-environment-dashboards "Connect a remote Dynatrace environment with an access token and point dashboard tiles to it, so one dashboard shows data from several environments.") to connect your Dynatrace Managed and SaaS environments for data access.
 
 ### Running concurrent Dynatrace Managed and SaaS licenses
 

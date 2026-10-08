@@ -23,7 +23,7 @@ Network monitoring of all hosts in your environment is enabled by default. You c
 
 ## Analyzing network health
 
-To monitor your network health, you can create a custom dashboard and add the [**Network status**](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles#network-status "Find out how to configure your dashboard to track business-critical user-actions and conversion goals.").
+To monitor your network health, you can create a custom dashboard and add the [**Network status**](/managed/analyze-explore-automate/dashboards/available-tiles#network-status "Look up every tile you can add to a dashboard, with what each tile displays, where it drills down to, and the settings it offers.").
 
 ![Network status tile](https://dt-cdn.net/images/network-status-tile-307-33845c0c76.png)
 

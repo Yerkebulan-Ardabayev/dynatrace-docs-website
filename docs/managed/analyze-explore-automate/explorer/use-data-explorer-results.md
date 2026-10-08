@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/explorer/use
 
 * How-to guide
 * 12-min read
-* Updated on Oct 02, 2026
+* Updated on Oct 05, 2026
 
 After you run a Data Explorer query, use the result visualization to investigate its data, save it to a dashboard, or share and export the query results.
 
@@ -202,7 +202,7 @@ If `No connected signals found` is displayed, possibilities include:
 
 ## Pin to dashboard
 
-To save the visualization as a dashboard tile, select **Pin to dashboard**. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+To save the visualization as a dashboard tile, select **Pin to dashboard**. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
 
 ## Share your results
 
@@ -222,7 +222,7 @@ To export to a comma-separated values (CSV) file
 
 1. Go to **Data Explorer** and, in the **Result** section, select  > **Export CSV**.
 
-   * CSV export is available for all visualizations except [honeycomb](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-honeycomb "Configure and use a honeycomb visualization in Data Explorer and display it on your dashboards.") and [single value](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-single-value "Configure and use a single-value visualization in Data Explorer and display it on your dashboards.")
+   * CSV export is available for all visualizations except [honeycomb](/managed/analyze-explore-automate/explorer/visualization-settings "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.") and [single value](/managed/analyze-explore-automate/explorer/visualization-settings "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.")
    * Values exported to a CSV file reflect the formatting specified with the **Unit** and **Format** settings in the **Settings** section.
 2. A CSV file of the results is saved to your local machine.
 
@@ -289,4 +289,4 @@ To set the adjusted timeframe as the default for a dashboard:
 
 For a discussion of this behavior, see [Correction required on Dashboard Charts showing dip at current time﻿](https://community.dynatrace.com/t5/Dynatrace-product-ideas/RFE-Correction-required-onDashboard-Charts-showing-dip-at/idi-p/144070) in the Dynatrace Community.
 
-For more information, see [timeframes](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.").
+For more information, see [timeframes](/managed/analyze-explore-automate/dashboards/how-dashboards-scope-and-refresh-data "Learn how timeframe, management zone, and dynamic filter settings decide which data dashboard tiles show, and how often each tile refreshes.").

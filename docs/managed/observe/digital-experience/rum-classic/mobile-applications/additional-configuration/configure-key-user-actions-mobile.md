@@ -30,14 +30,14 @@ When you reach the maximum key user action limit, consider using calculated metr
 
 ## Pin a key user action to dashboard
 
-[Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+[Dashboards Classic](/managed/analyze-explore-automate/dashboards "Learn how to build, share, and organize Dynatrace dashboards, and how dashboards scope data, which settings apply, and which tiles are available.")
 
 1. Go to **Frontend**.
 2. Select the application and scroll down to **Top 3 user actions** or **Top 3 actions**.
 3. Select **View full details** or **Analyze performance**.
 4. Search for the required key user action and select it.  
    The user action detail page opens.
-5. In the upper part of the user action detail page, select **Pin to dashboard**. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+5. In the upper part of the user action detail page, select **Pin to dashboard**. For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
 
 ## Customize Apdex rating for a key user action
 

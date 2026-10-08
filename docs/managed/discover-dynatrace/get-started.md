@@ -40,7 +40,7 @@ Dynatrace Managed is an on-premises observability platform that enables you to a
 
 ### Step 6 Visualize data
 
-* Start building your own [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
+* Start building your own [Dashboards](/managed/analyze-explore-automate/dashboards "Learn how to build, share, and organize Dynatrace dashboards, and how dashboards scope data, which settings apply, and which tiles are available.").
 
 ### Step 7 Set up notifications
 

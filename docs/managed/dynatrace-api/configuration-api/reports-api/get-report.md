@@ -232,4 +232,4 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/reports/0b2e3121-4f8d-4b08-
 
 ## Related topics
 
-* [Subscribe to Dynatrace dashboard reports](/managed/analyze-explore-automate/dashboards-classic/dashboards/subscribe-to-dashboard-reports "Learn how to subscribe to reports generated from Dynatrace dashboards.")
+* [Share a dashboard](/managed/analyze-explore-automate/dashboards/share-a-dashboard "Share a dashboard with specific users, groups, anyone with the link, or anonymous viewers, and subscribe people to weekly or monthly email reports.")

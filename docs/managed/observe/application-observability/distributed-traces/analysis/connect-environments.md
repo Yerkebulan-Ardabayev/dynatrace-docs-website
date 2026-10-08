@@ -168,5 +168,5 @@ Davis AI problem analysis of remote environment service
 ## Related topics
 
 * [What's a monitoring environment?](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.")
-* [Create remote/multi-environment Dynatrace dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment "Create dashboards that display data from multiple Dynatrace environments.")
+* [Create multi-environment dashboards](/managed/analyze-explore-automate/dashboards/create-multi-environment-dashboards "Connect a remote Dynatrace environment with an access token and point dashboard tiles to it, so one dashboard shows data from several environments.")
 * [Remote environments API](/managed/dynatrace-api/configuration-api/remote-environments "Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.")

@@ -98,7 +98,7 @@ For details, see [Host availability](/managed/observe/infrastructure-observabili
 * In **Actions**, select
 
   + **View in Data Explorer** to [see SLO metrics in Data Explorer](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#explorer "Create, configure, and monitor service-level objectives with Dynatrace.").
-  + **Pin to Dashboard** to [pin the SLO to your dashboard](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#dash "Create, configure, and monitor service-level objectives with Dynatrace."). For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+  + **Pin to Dashboard** to [pin the SLO to your dashboard](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#dash "Create, configure, and monitor service-level objectives with Dynatrace."). For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
   + **SLO definition** to edit the SLO in **Service-level objective definitions**.
   + **Clone** to [clone the SLO](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#clone "Create, configure, and monitor service-level objectives with Dynatrace.").
   + **Create alert** to [create an alert for the SLO](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#alerts "Create, configure, and monitor service-level objectives with Dynatrace.").
@@ -147,7 +147,7 @@ Leverage these charts
 Select  in the upper-right corner of a chart to:
 
 * **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
-* **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
 
 ![Host overview: host performance](https://dt-cdn.net/images/host-performance-1597-05b7f2365c.png)
 
@@ -162,7 +162,7 @@ Leverage these charts
 Select  in the upper-right corner of a chart to:
 
 * **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
-* **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
 
 ![Host overview: process analysis](https://dt-cdn.net/images/process-analysis-1599-d637b524c6.png)
 
@@ -172,12 +172,12 @@ Host overview: process analysis
 
 This feature is available for Linux and Windows operating systems only.
 
-The **OS services analysis** section lists the operating system services monitored for availability. For a service to be monitored, you need at least one policy with rules matching the properties of the service. For more information on creating monitoring policies for OS services, see [OS services monitoring](/managed/observe/infrastructure-observability/hosts/monitoring/os-services "Monitor the availability of operating system services on your hosts to improve infrastructure visibility and detect failures in real time.").
+The **OS services analysis** section lists the operating system services monitored for availability. For a service to be monitored, you need at least one policy with rules matching the properties of the service. For more information on creating monitoring policies for OS services, see [OS services monitoring in Dynatrace Classic](/managed/observe/infrastructure-observability/hosts/monitoring/os-services-classic "Monitor the availability of operating system services on your hosts in Dynatrace Classic environments.").
 
 * Select any host to go to its overview page, then go to the **OS services analysis** section.
 * Select a service name from the list to open the **Service overview** page, which displays the selected service's properties and a service availability chart.
 
-To set up policies for OS services for Windows and Linux operating systems, select  > **OS services monitoring settings** to display the [OS services monitoring](/managed/observe/infrastructure-observability/hosts/monitoring/os-services "Monitor the availability of operating system services on your hosts to improve infrastructure visibility and detect failures in real time.") page.
+To set up policies for OS services for Windows and Linux operating systems, select  > **OS services monitoring settings** to display the [OS services monitoring in Dynatrace Classic](/managed/observe/infrastructure-observability/hosts/monitoring/os-services-classic "Monitor the availability of operating system services on your hosts in Dynatrace Classic environments.") page.
 
 ### Process instance snapshots
 
@@ -219,7 +219,7 @@ Leverage these charts
 Select  in the upper-right corner of a chart to:
 
 * **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
-* **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
 
 ![Host overview: disk analysis](https://dt-cdn.net/images/disk-analysis-1599-236d782165.png)
 
@@ -355,7 +355,7 @@ Leverage these charts
 Select  in the upper-right corner of a chart to:
 
 * **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
-* **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
 
 ![Host overview: network analysis](https://dt-cdn.net/images/network-analysis-1597-a3306f3237.png)
 
@@ -374,7 +374,7 @@ Leverage these charts
 Select  in the upper-right corner of a chart to:
 
 * **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
-* **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
 
 ### Events
 

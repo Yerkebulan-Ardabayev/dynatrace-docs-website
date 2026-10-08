@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-
 
 * How-to guide
 * 3-min read
-* Updated on Aug 19, 2025
+* Updated on Oct 05, 2026
 
 Synthetic Monitoring Classic gives you the option of creating two kinds of browser monitors—single-URL and clickpaths—to check the availability and performance of your web application at regular intervals. Single-URL browser monitors conduct availability tests of a single page of your website or web application. You also have the option of checking performance.
 
@@ -19,7 +19,10 @@ Synthetic Monitoring Classic gives you the option of creating two kinds of brows
 2. Select **Create a synthetic monitor** at top right > **Create a browser monitor**.
 3. On the Configure a browser monitor page, type in the **URL** you want to monitor and either use the default **Name** or provide your own.
 
-   To enhance synthetic monitor security, Dynatrace blocks monitors from sending requests to a local host (for example, `localhost` or `127.0.0.1`).
+   Dynatrace improves synthetic monitor security by blocking requests to local hosts (such as `localhost` or `127.0.0.1`) and cloud metadata APIs.
+   Protection levels for metadata APIs vary by location type and are stricter for public locations.
+   For private locations, these measures don’t replace network controls. Restrict network access to the ActiveGate host before using the location in production.
+   See [Secure network access of your private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#secure-private-location-classic "Learn how to create a private location for synthetic monitoring.")
 4. Select **Add tag** to apply manually created tags to the monitor. You can choose from autocomplete suggestions as you type or create your own. (After the monitor has been created, you can manage tags from the [Synthetic details page](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors "Analyze browser monitor and clickpath results on the Synthetic details page.").
 5. [Configure your monitor](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.") appropriately, including selecting the profile of your emulated device, authentication, and other settings.
 

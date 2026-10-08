@@ -37,7 +37,7 @@ The **Environments** table lists Dynatrace environments you can access.
 * **Friendly name**—optional human-friendly name of the environment
 * **Time zone**—required time zone to associate with the environment
 
-  The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for [dashboard subscriptions in Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic/dashboards/subscribe-to-dashboard-reports "Learn how to subscribe to reports generated from Dynatrace dashboards.").
+  The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for [dashboard subscriptions in Dashboards Classic](/managed/analyze-explore-automate/dashboards/share-a-dashboard "Share a dashboard with specific users, groups, anyone with the link, or anonymous viewers, and subscribe people to weekly or monthly email reports.").
 
 To update an environment's settings, select **Action** > **[Edit environment](#edit-environment)**.
 
@@ -56,4 +56,4 @@ Use the **General** tab to set:
   For example, you might have two environments with automatically assigned environment IDs `abc12345` and `xyz54321`. To help you remember which is which, you can add explanatory names such as `Production` and `dev 1` to those environments.
 * Required **Time zone**—You can associate a time zone with each environment.
 
-  The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for [dashboard subscriptions in Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic/dashboards/subscribe-to-dashboard-reports "Learn how to subscribe to reports generated from Dynatrace dashboards.").
+  The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for [dashboard subscriptions in Dashboards Classic](/managed/analyze-explore-automate/dashboards/share-a-dashboard "Share a dashboard with specific users, groups, anyone with the link, or anonymous viewers, and subscribe people to weekly or monthly email reports.").

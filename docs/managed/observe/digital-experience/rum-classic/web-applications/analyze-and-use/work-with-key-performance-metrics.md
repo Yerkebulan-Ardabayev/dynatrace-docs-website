@@ -52,7 +52,7 @@ To select key performance metrics for key user actions
 
 ## See key performance metrics information
 
-Several [dashboard tiles](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles "Find out how to configure your dashboard to track business-critical user-actions and conversion goals.") such as the **World map** and **Key user actions** are affected based on the selected key performance metrics. The metrics are also available for custom charting.
+Several [dashboard tiles](/managed/analyze-explore-automate/dashboards/available-tiles "Look up every tile you can add to a dashboard, with what each tile displays, where it drills down to, and the settings it offers.") such as the **World map** and **Key user actions** are affected based on the selected key performance metrics. The metrics are also available for custom charting.
 
 ![Key performance metrics in dashboard tiles](https://dt-cdn.net/images/keyperformance-metric-dashboardtiles-1773-83fec3bb1d.png)
 

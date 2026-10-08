@@ -706,7 +706,7 @@ To view metrics on the AWS account page
 
 ### View metrics on the Dashboard
 
-You can also create your own dashboard. For more information on how to create dashboards, go to [Create and edit Dynatrace dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.")
+You can also create your own dashboard. For more information on how to create dashboards, go to [Create and edit Dynatrace dashboards](/managed/analyze-explore-automate/dashboards/create-a-dashboard "Create an empty, cloned, or imported dashboard, then add and configure tiles, set dashboard defaults, edit the dashboard JSON, and print it to PDF.")
 
 Built-in services specifics
 

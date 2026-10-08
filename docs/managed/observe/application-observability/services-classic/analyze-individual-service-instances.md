@@ -27,7 +27,7 @@ Instances 1
 
 ## Analyze service-instance metrics
 
-The **Service instances** section includes an entry for each instance of this service that currently exists (or that did exist during the [analysis timeframe](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.")). For each instance, you can see the cluster node that the instance runs on (included beneath the service instance name), the instance's **Total time consumption**, as well as the **Median response time**.
+The **Service instances** section includes an entry for each instance of this service that currently exists (or that did exist during the [analysis timeframe](/managed/analyze-explore-automate/dashboards/how-dashboards-scope-and-refresh-data "Learn how timeframe, management zone, and dynamic filter settings decide which data dashboard tiles show, and how often each tile refreshes.")). For each instance, you can see the cluster node that the instance runs on (included beneath the service instance name), the instance's **Total time consumption**, as well as the **Median response time**.
 
 ![Instances 2](https://dt-cdn.net/images/instances2-1607-eadbcf75cd.png)
 

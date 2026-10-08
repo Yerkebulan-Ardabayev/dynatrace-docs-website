@@ -9,14 +9,14 @@ source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-342
 
 * Release notes
 * 5-min read
-* Updated on Jul 16, 2026
+* Updated on Oct 07, 2026
 * Rollout start on Jul 06, 2026
 
 This page showcases new features, changes, and bug fixes in Dynatrace Managed version 1.342. It contains:
 
 * [Feature updates](#updates): 3
 * [Breaking changes](#breaking): 1
-* [Fixes and maintenance](#fixes): 6
+* [Fixes and maintenance](#fixes): 7
 
 ## Feature updates
 
@@ -64,6 +64,7 @@ For details, see [End-of-life announcements](/managed/whats-new/technology/end-o
 * Fixed repeated `WARNING` logs from `DavisGenericEventBuilder` about `smartscape.rootcause_entity` not being part of the `davis.event` Semantic Dictionary model during problem update ingestion. (DI-28569)
 * Fixed various charts which lead to crashes in the UI (DEM-28819)
 * The extensions `/monitoring-configurations` endpoint now accepts only fully-formed semver version properties when creating a new monitoring configuration. (DAQ-24971)
+* Fixed an issue that caused data points from `calc:` calculated metrics to be dropped every two hours. (PRISM-15432)
 
 ## Operating systems support
 

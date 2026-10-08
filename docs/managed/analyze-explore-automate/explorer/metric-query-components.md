@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/explorer/met
 
 * Reference
 * 12-min read
-* Updated on Oct 02, 2026
+* Updated on Oct 05, 2026
 
 Use this reference to look up the components of a Data Explorer metric query, the commands of the query editor, and the limits that apply to query results.
 
@@ -192,7 +192,7 @@ Metric More menu
 
 | Command | Effect |
 | --- | --- |
-| Visualization list | Selects how results are displayed; the default is a graph. For the available types, see [Visualization types](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles#visualization-types "Find out how to configure your dashboard to track business-critical user-actions and conversion goals."). |
+| Visualization list | Selects how results are displayed; the default is a graph. For the available types, see [Visualization types](/managed/analyze-explore-automate/dashboards/available-tiles#visualization-types "Look up every tile you can add to a dashboard, with what each tile displays, where it drills down to, and the settings it offers."). |
 |  | Adds or removes transformations for a metric row: [Default](#default-by), [Filter by](#filter-by), [Limit](#limit), [Rate](#rate), [Sort by](#sort-by), [Split by](#split-by), and [Timeshift](#timeshift). **All** shows every available field. |
 | **Add metric** | Adds an empty metric row to the query. |
 | > **Duplicate** | Copies a metric row so you can edit the copy. |

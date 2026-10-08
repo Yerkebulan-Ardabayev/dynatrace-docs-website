@@ -9,14 +9,14 @@ source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-346
 
 * Release notes
 * 5-min read
-* Published Aug 25, 2026
+* Updated on Oct 07, 2026
 * Rollout start on Aug 31, 2026
 
 This page showcases new features, changes, and bug fixes in Dynatrace Managed version 1.346. It contains:
 
 * [Feature updates](#updates): 9
 * [Breaking changes](#breaking): 3
-* [Fixes and maintenance](#fixes): 5
+* [Fixes and maintenance](#fixes): 6
 
 ## Feature updates
 
@@ -120,6 +120,7 @@ The built-in cluster container registry will be shut down on January 1, 2028, an
 * Fixed a pin-to-dashboard issue that caused HTTP 400 errors. (PRISM-13091)
 * Fixed an error that occurred when filtering problems using a search string that contained many special characters. (DI-30187)
 * Fixed an issue where named-target `POST` forms failed to submit when the target window was already open, causing the action to time out. If you applied the `disableNewWindowPostFormsHandling` experimental property as a workaround, you can now remove it. (DEM-28422)
+* Fixed an issue that caused data points from `calc:` calculated metrics to be dropped every two hours. (PRISM-15432)
 
 ## Operating systems support
 

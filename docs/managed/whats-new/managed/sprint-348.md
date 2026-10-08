@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-348
 
 * Release notes
 * 7-min read
-* Published Sep 23, 2026
+* Updated on Oct 07, 2026
 * Rollout start on Sep 28, 2026 (planned)
 
 Pre-release information
@@ -20,7 +20,7 @@ This page showcases new features, changes, and bug fixes in Dynatrace Managed ve
 
 * [Feature updates](#updates): 10
 * [Breaking changes](#breaking): 3
-* [Fixes and maintenance](#fixes): 12
+* [Fixes and maintenance](#fixes): 13
 
 ## Feature updates
 
@@ -143,6 +143,7 @@ The **Dynatrace Self-Monitoring (Managed)** extension will be removed from ![Hub
 * Fixed a bug that caused Synthetic private node creation to fail for Alibaba Cloud environments. Nodes can now be created and configured for Alibaba Cloud without errors. (DEM-29065)
 * Fixed an issue in hybrid mobile sessions with WebView correlation enabled where JavaScript errors were not recognized correctly. The Analyze JavaScript errors option is now available for WebView JavaScript errors, restoring access to detailed error analysis, including stack traces and source maps. (DEM-28346)
 * Fixed an issue where a malfunctioning primary tags selection was shown when creating or modifying the monitoring configuration of a JMX or PMI-based extension. The selection is now hidden. (DAQ-28744)
+* Fixed an issue that caused data points from `calc:` calculated metrics to be dropped every two hours. (PRISM-15432)
 
 ## Operating systems support
 

@@ -103,7 +103,7 @@ You can configure the **Database service overview** section to focus on various 
 
 * Show in data explorer
 * Create a metric event.
-* Pin the metric to a classic dashboard. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* Pin the metric to a classic dashboard. For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
 
 ### Topology
 

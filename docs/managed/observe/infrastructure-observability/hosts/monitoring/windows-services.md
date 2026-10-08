@@ -13,7 +13,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 
 Deprecated
 
-The Classic Windows services feature described below is deprecated. Instead, use [OS services monitoring](/managed/observe/infrastructure-observability/hosts/monitoring/os-services "Monitor the availability of operating system services on your hosts to improve infrastructure visibility and detect failures in real time.").
+The Classic Windows services feature described below is deprecated. Instead, use [OS services monitoring in Dynatrace Classic](/managed/observe/infrastructure-observability/hosts/monitoring/os-services-classic "Monitor the availability of operating system services on your hosts in Dynatrace Classic environments.").
 
 Dynatrace provides out-of-the-box availability monitoring of Windows services.
 

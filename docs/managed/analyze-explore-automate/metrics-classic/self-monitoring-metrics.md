@@ -62,7 +62,7 @@ To view the self-monitoring data use the following metrics:
 
 ### Example environment insights dashboard
 
-You can create a Dynatrace dashboard for quick, focused access to the self-monitoring data. Create tiles by selecting the self-monitoring metrics in Data Explorer, configuring a visualization for each of them, and pinning them to your dashboards. For more information, see [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
+You can create a Dynatrace dashboard for quick, focused access to the self-monitoring data. Create tiles by selecting the self-monitoring metrics in Data Explorer, configuring a visualization for each of them, and pinning them to your dashboards. For more information, see [Dashboards](/managed/analyze-explore-automate/dashboards "Learn how to build, share, and organize Dynatrace dashboards, and how dashboards scope data, which settings apply, and which tiles are available.").
 
 The following screenshot shows a dashboard that uses the above metrics to monitor the operation of a Dynatrace environment over time.
 

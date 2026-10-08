@@ -221,7 +221,7 @@ See the [supported configuration API types](/managed/deliver/configuration-as-co
 * [Multi-dimensional analysis](/managed/observe/application-observability/multidimensional-analysis "Configure a multidimensional analysis view and save it as a calculated metric.") saved views
 * [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") saved queries
 * [Custom service rules](/managed/observe/application-observability/services/service-detection/service-detection-v1/customize-service-detection "Use detection rules to customize and enhance the automated detection of your services.") order
-* [Remote environments](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment "Create dashboards that display data from multiple Dynatrace environments.")
+* [Remote environments](/managed/analyze-explore-automate/dashboards/create-multi-environment-dashboards "Connect a remote Dynatrace environment with an access token and point dashboard tiles to it, so one dashboard shows data from several environments.")
 * [Account management](/managed/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.") - users, groups, permissions, and IAM policies
 * Custom devices
 * Tags manually applied to entities

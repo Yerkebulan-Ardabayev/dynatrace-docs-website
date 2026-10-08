@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/explorer/exp
 
 * Tutorial
 * 6-min read
-* Updated on Oct 01, 2026
+* Updated on Oct 05, 2026
 
 In this tutorial, you build a metric visualization in Data Explorer and pin it to a dashboard, and you learn how to define, run, and save a query.
 
@@ -34,7 +34,7 @@ To get started with a template, complete the following steps.
 4. Select visualization elements to access drilldown actions.
 5. Experiment with the query definition. After you make a change, select **Run query** to see what happens.
 6. Experiment with the **Settings** panel on the right. Tweak some settings and see what happens.
-7. Optional [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic."): When you come up with something you like, select **Pin to dashboard** to add the query to a dashboard. Select the list, enter text to filter it, and then select the dashboard from the filtered list.
+7. Optional [Dashboards](/managed/analyze-explore-automate/dashboards "Learn how to build, share, and organize Dynatrace dashboards, and how dashboards scope data, which settings apply, and which tiles are available."): When you come up with something you like, select **Pin to dashboard** to add the query to a dashboard. Select the list, enter text to filter it, and then select the dashboard from the filtered list.
 
    * If you don't have a dashboard, select **Create new dashboard** when the **Where do you want to pin to?** message appears.
    * You can pin multiple versions of your work to your dashboard so you can see them side by side.
@@ -154,7 +154,7 @@ In this walkthrough, you'll:
 7. Use the **Settings** panel to configure your visualization.
 
    * Each settings change updates the visualization.
-   * For an overview of visualization types, see [Visualizations and tiles](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles "Learn how to configure and use visualizations in Data Explorer and display them as tiles to your dashboards.").
+   * For an overview of visualization types, see [Visualization settings](/managed/analyze-explore-automate/explorer/visualization-settings "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
 
 After you finish the visualization, use it within Data Explorer or pin it to a dashboard for future use.
 
@@ -180,7 +180,7 @@ To return to Data Explorer with the visualization open, open the tile menu and s
 * **Save changes to dashboard** saves the visualization to the same tile and dashboard you used to open Data Explorer. If you have made any changes, they will update the tile on your dashboard.
 * **Pin to dashboard** saves the visualization as a tile on a different dashboard. You might want to pin the same visualization (perhaps with filtering differences) to various dashboards.
 
-For instructions, go to [Pin a tile to a dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+For instructions, go to [Pin a tile to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
 
 ## What's next
 

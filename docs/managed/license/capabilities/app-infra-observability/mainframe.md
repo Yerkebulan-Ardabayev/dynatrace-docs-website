@@ -57,7 +57,6 @@ Each MSU hour of Mainframe Monitoring includes:
 * Distributed tracing and code-level insight for [30+ supported z/OS technologies](/managed/ingest-from/technology-support/mainframe-technology-support "Learn which technologies Dynatrace supports for Mainframe monitoring.").
 * Application performance monitoring metrics and service metrics.
 * Topology and dependency mapping for mainframe transactions and services.
-* Query consumption generated from within ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing** and  **Services** is included with Dynatrace; no additional query charges apply for these apps.
 
 MSU hours do not include custom metrics, such as [custom JMX metrics](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics "Learn how to set up JMX metrics monitoring for your Java applications on z/OS.").
 Custom metrics are measured in metric data points and billed as [Custom Metrics Classic](/managed/license/capabilities/platform-extensions/custom-metrics-classic "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
@@ -118,71 +117,8 @@ MSU Usage Summary
 3. From this screen, you can also drill down into usage detail on the capability and environment level.
 
    * Capability level: Select **View Details** next to the capability you want to explore.
-   * Environment level: In the **Environments** table, select **…** > **Open details with Notebooks**.
-     The notebook provides DQL queries to see total MSUs billed, total MSUs billed per day, and total usage per host.
 
 For more information, see [Overview (Dynatrace Platform Subscription)](/managed/manage/account-management/license-subscription/subscription-overview-dps "View your Dynatrace Platform Subscription (DPS) budget summary and cost analysis.").
-
-### Insights via billing usage events
-
-Billing usage events (`billing_usage_event`) are system events emitted by Dynatrace that represent the authoritative record of billable usage.
-Use them to build reliable cost dashboards and chargeback reports.
-
-Each billing usage event for Mainframe Monitoring contains:
-
-* The DPS capability consumed (Mainframe Monitoring).
-* The usage amount in MSU hours that contributes to billing.
-* The time window the usage belongs to.
-* The entity context (LPAR) the usage is attributed to.
-
-#### Query billing usage events with DQL
-
-* Total Mainframe Monitoring MSU hours over time:
-
-  ```
-  fetch dt.system.events
-
-
-
-  | filter event.kind == "BILLING_USAGE_EVENT"
-
-
-
-  and event.type == "Mainframe Monitoring"
-
-
-
-  | dedup event.id
-
-
-
-  | summarize totalMSUHours = sum(usage), by:{bin(timestamp, 1d)}
-  ```
-* Mainframe Monitoring MSU hours by LPAR (top consumers):
-
-  ```
-  fetch dt.system.events
-
-
-
-  | filter event.kind == "BILLING_USAGE_EVENT"
-
-
-
-  and event.type == "Mainframe Monitoring"
-
-
-
-  | dedup event.id
-
-
-
-  | summarize totalMSUHours = sum(usage), by:{dt.entity.host}
-
-
-
-  | sort totalMSUHours desc
-  ```
 
 ### Insights via Account Management API
 

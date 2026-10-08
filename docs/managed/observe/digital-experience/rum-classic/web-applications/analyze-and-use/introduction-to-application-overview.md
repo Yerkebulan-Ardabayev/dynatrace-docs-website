@@ -48,9 +48,9 @@ Select **Analyze user sessions** in the upper-right corner to thoroughly [analyz
 
 ## Pin to dashboard
 
-[Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+[Dashboards Classic](/managed/analyze-explore-automate/dashboards "Learn how to build, share, and organize Dynatrace dashboards, and how dashboards scope data, which settings apply, and which tiles are available.")
 
-Select **Pin to dashboard** in the upper-right corner to add a tile for performance or user behavior analysis (based on which part has been expanded) to the classic dashboard of your preference for a quick analysis view. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+Select **Pin to dashboard** in the upper-right corner to add a tile for performance or user behavior analysis (based on which part has been expanded) to the classic dashboard of your preference for a quick analysis view. For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
 
 ## Application settings
 

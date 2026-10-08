@@ -20,7 +20,7 @@ Annual commitment
 :   An annual commitment is the minimum amount of money you agree to spend each year as part of your DPS contract. DPS agreements are typically signed for 1–3 years.
 
 Billing usage events
-:   The usage of Dynatrace capabilities are recorded as Billing Usage Events (BUEs) in Grail. Further usage details are stored there as BUE attributes. You can access those via Account Management, or by building your own dashboards that have DQL queries.
+:   The usage of Dynatrace capabilities are recorded as Billing Usage Events (BUEs). Further usage details are stored there as BUE attributes. You can access those via Account Management.
 
 Capability
 :   Dynatrace calculates licensing costs based on an environment's consumption of Dynatrace capabilities. For example, the Application & Infrastructure Observability category includes four capabilities: Full-Stack Monitoring, Infrastructure Monitoring, Mainframe Monitoring, and Foundation & Discovery. You can find them on your rate card.

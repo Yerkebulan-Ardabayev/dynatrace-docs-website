@@ -33,7 +33,7 @@ When a service or an application in a backtrace hierarchy is selected, you can a
 
 Service-level backtrace
 
-In the first section, in the case of an application, you can view the list of [user actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.") of this specific application that occurred within the [selected timeframe](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings."). In the case of services, you can view the types of requests that were made by that particular service to the next service in the backtrace flow.
+In the first section, in the case of an application, you can view the list of [user actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.") of this specific application that occurred within the [selected timeframe](/managed/analyze-explore-automate/dashboards/how-dashboards-scope-and-refresh-data "Learn how timeframe, management zone, and dynamic filter settings decide which data dashboard tiles show, and how often each tile refreshes."). In the case of services, you can view the types of requests that were made by that particular service to the next service in the backtrace flow.
 
 The next section includes analysis data regarding the number of requests and any failures that may have occurred. Further information can be accessed by selecting the tabs:
 

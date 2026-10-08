@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-
 
 * How-to guide
 * 6-min read
-* Published Aug 20, 2018
+* Updated on Oct 05, 2026
 
 You can create synthetic HTTP monitors to check the availability of your resources—websites or API endpoints. Because HTTP monitors can be executed by an Environment ActiveGate, you can use them to check the availability of internal resources that are inaccessible from outside your network.
 
@@ -29,7 +29,10 @@ See [Create a private Synthetic location](/managed/observe/digital-experience/sy
 
       * **HTTP request**—Enter the **request URL**, enter the request **Name** (if the default is insufficient), and select an **HTTP method**. Next, select **Add HTTP request** to create the request and display expanded settings.
 
-        To enhance synthetic monitor security, Dynatrace blocks monitors from sending requests to a local host (for example, `localhost` or `127.0.0.1`).
+        Dynatrace improves synthetic monitor security by blocking requests to local hosts (such as `localhost` or `127.0.0.1`) and cloud metadata APIs.
+        Protection levels for metadata APIs vary by location type and are stricter for public locations.
+        For private locations, these measures don’t replace network controls. Restrict network access to the ActiveGate host before using the location in production.
+        See [Secure network access of your private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#secure-private-location-classic "Learn how to create a private location for synthetic monitoring.")
       * **OAuth2 authorization request**—Enter the **Access token URL** and give the request a **Name** (if the default is insufficient). Next, select **Add OAuth2 authorization request** to create the request and display expanded settings.
 
         See [Supported authentication methods in Synthetic Monitoring Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication#oauth2 "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring Classic.") for more on using OAuth 2.0 authentication.

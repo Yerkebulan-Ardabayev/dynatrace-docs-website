@@ -280,4 +280,4 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/dashboards
 
 ## Related topics
 
-* [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+* [Dashboards](/managed/analyze-explore-automate/dashboards "Learn how to build, share, and organize Dynatrace dashboards, and how dashboards scope data, which settings apply, and which tiles are available.")

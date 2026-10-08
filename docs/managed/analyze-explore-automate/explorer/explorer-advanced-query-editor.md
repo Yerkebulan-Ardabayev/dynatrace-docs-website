@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/explorer/exp
 
 * How-to guide
 * 10-min read
-* Updated on Oct 01, 2026
+* Updated on Oct 05, 2026
 
 To write [Metrics API v2](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.") queries in Data Explorer, turn on **Advanced mode** and follow the steps below.
 

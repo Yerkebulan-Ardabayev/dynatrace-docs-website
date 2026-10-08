@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-
 
 * Explanation
 * 3-min read
-* Published Oct 06, 2017
+* Updated on Oct 05, 2026
 
 Synthetic Monitoring Classic is about proactively simulating user visits, regardless of whether or not real users are currently visiting your site. Dynatrace Synthetic Monitoring Classic provides you with 24x7 global visibility into your applications. An HTTP monitor uses simple HTTP requests. A browser monitor involves much more—it drives real web browser sessions with full HTML5/AJAX support.
 
@@ -51,6 +51,9 @@ See [Browser monitors in private locations](/managed/observe/digital-experience/
 
 ## Synthetic monitor security
 
-To enhance synthetic monitor security, Dynatrace blocks monitors from sending requests to a local host (for example, `localhost` or `127.0.0.1`).
+Dynatrace improves synthetic monitor security by blocking requests to local hosts (such as `localhost` or `127.0.0.1`) and cloud metadata APIs.
+Protection levels for metadata APIs vary by location type and are stricter for public locations.
+For private locations, these measures don’t replace network controls. Restrict network access to the ActiveGate host before using the location in production.
+See [Secure network access of your private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#secure-private-location-classic "Learn how to create a private location for synthetic monitoring.")
 
 Additionally, you can read about [credential vault security architecture](/managed/manage/credential-vault#security "Store and manage credentials in the credential vault.") for synthetic monitoring credentials.

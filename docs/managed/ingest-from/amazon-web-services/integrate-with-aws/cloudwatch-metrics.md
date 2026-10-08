@@ -1000,7 +1000,7 @@ To see the core measurements per each of the AWS connections
 1. Go to **AWS**.
 2. Select the connection for which you want to see an overview of the AWS infrastructure.
 
-You can also build your own dashboard from the metrics collected for your AWS instances. For details on building dashboards, see [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
+You can also build your own dashboard from the metrics collected for your AWS instances. For details on building dashboards, see [Dashboards](/managed/analyze-explore-automate/dashboards "Learn how to build, share, and organize Dynatrace dashboards, and how dashboards scope data, which settings apply, and which tiles are available.").
 
 Virtual Machines, containers, and deep code monitoring with Dynatrace OneAgent
 

@@ -39,7 +39,7 @@ Request attributes
   ![Multidimensional analysis filtered by request attribute value](https://dt-cdn.net/images/request-attribute-filter-2-1423-91835f8d9f.png)
 
   Multidimensional analysis filtered by request attribute value
-* To filter [custom charts](/managed/analyze-explore-automate/dashboards-classic/dashboards-upgrade "Upgrade your Dynatrace custom charts to Data Explorer visualizations now.") by request attribute or request attribute value, create a [custom metric](/managed/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests.") based on these conditions.
+* To filter [custom charts](/managed/analyze-explore-automate/explorer/visualization-settings "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.") by request attribute or request attribute value, create a [custom metric](/managed/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests.") based on these conditions.
 
   Without a custom metric, if a request attribute is detected for a service, all data points for the service metric are displayed in the custom charts.
 

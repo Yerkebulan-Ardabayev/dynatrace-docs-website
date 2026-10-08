@@ -9,14 +9,14 @@ source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-344
 
 * Release notes
 * 8-min read
-* Updated on Sep 17, 2026
+* Updated on Oct 07, 2026
 * Rollout start on Aug 03, 2026
 
 This page showcases new features, changes, and bug fixes in Dynatrace Managed version 1.344. It contains:
 
 * [Feature updates](#updates): 15
 * [Breaking changes](#breaking): 1
-* [Fixes and maintenance](#fixes): 22
+* [Fixes and maintenance](#fixes): 23
 
 Software Delivery
 
@@ -155,6 +155,7 @@ Resolved closed problems remain closed even after related events are detected. I
 * We’ve changed the error message when cluster upgrades cannot be started because not all nodes are up. (MGD-12678)
 * Fixed an issue where the **Explorer** table records for services displayed incorrect stats. The service’s entity details displayed the correct stats. (ICP-6867)
 * Fixed an issue where duplicate endpoints in a sufficiently big monitoring configuration of an extension sometimes broke parts of the configuration, until the extension was disabled and re-enabled. (DAQ-24689)
+* Fixed an issue that caused data points from `calc:` calculated metrics to be dropped every two hours. (PRISM-15432)
 
 ## Operating systems support
 

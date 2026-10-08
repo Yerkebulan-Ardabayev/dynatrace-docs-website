@@ -212,7 +212,7 @@ An SLO dashboard tile displays the **Status**, the **Error budget**, and the **T
 * If [problems](#problems) are associated with the SLO,  a red exclamation mark is shown on the bottom left of the tile.
 * If the [error budget burn rate](#burn-rate) is enabled and the burn rate is higher than one, a status indicator icon  is displayed before the error budget value. The color of the status indicator icon depends on the SLO threshold.
 
-An SLO tile is refreshed automatically. The [refresh rate](/managed/analyze-explore-automate/dashboards-classic#dashboardrefreshrates "Learn how to create, manage, and use Dynatrace Dashboards Classic.") of the tile depends on the applied timeframe.
+An SLO tile is refreshed automatically. The [refresh rate](/managed/analyze-explore-automate/dashboards#dashboardrefreshrates "Learn how to build, share, and organize Dynatrace dashboards, and how dashboards scope data, which settings apply, and which tiles are available.") of the tile depends on the applied timeframe.
 
 If you reduce the size, the SLO tile will display less information. Selecting an SLO tile forwards to the SLO overview, filtered by the selected SLO.
 
@@ -247,9 +247,9 @@ You can use the following filters to override dashboard settings for the selecte
 * **Custom timeframe**: it's **Last 1 week** by default.
 * **Custom management zone**: it's **All** by default.
 
-Both the **Custom timeframe** and **Custom management zone** can be set in the global selectors, inside the dashboard **Tile filters** in the sidebar, or in **Edit tile**. For more information, see [Dynatrace dashboard timeframe and management zone settings](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.").
+Both the **Custom timeframe** and **Custom management zone** can be set in the global selectors, inside the dashboard **Tile filters** in the sidebar, or in **Edit tile**. For more information, see [How dashboards scope and refresh data](/managed/analyze-explore-automate/dashboards/how-dashboards-scope-and-refresh-data "Learn how timeframe, management zone, and dynamic filter settings decide which data dashboard tiles show, and how often each tile refreshes.").
 
-You can set your tile to query a remote environment. For more information, see [Create remote/multi-environment Dynatrace dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment "Create dashboards that display data from multiple Dynatrace environments.").
+You can set your tile to query a remote environment. For more information, see [Create multi-environment dashboards](/managed/analyze-explore-automate/dashboards/create-multi-environment-dashboards "Connect a remote Dynatrace environment with an access token and point dashboard tiles to it, so one dashboard shows data from several environments.").
 
 If a tile has custom filters, a filter  icon is displayed. Hover over the icon to list the filters, which can include **Timeframe**, **Management zone**, and remote environment settings.
 
@@ -269,7 +269,7 @@ You can also see the SLOs you have permission to access.
 * When you edit an SLO, if you don't have access to a given management zone, SLOs in that management zone are not displayed in the **Select an SLO** list.
 * If you open an existing dashboard that contains SLOs to which you don't have access, the SLO tiles display a message saying that permission is denied.
 
-If the dashboard has an [anonymous access link](/managed/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards#access-anonymous "Learn how to share your Dynatrace dashboards with others."), the user who created the link sets the permissions. Anyone can see the linked dashboard the same way the creator of the link can.
+If the dashboard has an [anonymous access link](/managed/analyze-explore-automate/dashboards/share-a-dashboard#access-anonymous "Share a dashboard with specific users, groups, anyone with the link, or anonymous viewers, and subscribe people to weekly or monthly email reports."), the user who created the link sets the permissions. Anyone can see the linked dashboard the same way the creator of the link can.
 
 ## Visualize SLO status by color
 

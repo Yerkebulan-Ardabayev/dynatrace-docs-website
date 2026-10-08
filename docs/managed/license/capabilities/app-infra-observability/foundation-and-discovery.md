@@ -36,7 +36,7 @@ With Foundation & Discovery, you can ingest:
 
 * Basic built-in metrics, which are included in your host-hour consumption.
 * Logs.
-  These consume [Log Management and Analytics](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."). For more information about how OneAgent ingests logs, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+  These consume [Log Monitoring Classic](/managed/license/capabilities/platform-extensions/log-monitoring-classic "Learn how your consumption of the Dynatrace Log Monitoring Classic DPS capability is billed and charged.").
 
 Unlike Infrastructure Monitoring and Full-Stack Monitoring, Foundation & Discovery does not include the ability to ingest custom metrics.
 For more information about ingesting custom metrics, see [OneAgent monitoring modes](/managed/platform/oneagent/monitoring-modes/monitoring-modes#discovery "Find out more about the available monitoring modes when using OneAgent.").
@@ -87,67 +87,6 @@ For more information, see [Overview (Dynatrace Platform Subscription)](/managed/
 
 You can also configure budget alerts at 75%, 90%, and 100% thresholds via Account Management. For more information, see [Budget alerts](/managed/manage-your-costs/control/budgets "Learn how to configure budgets in Dynatrace.").
 
-### Insights via billing usage events
-
-Billing usage events (`billing_usage_event`) are system events emitted by Dynatrace that represent the authoritative record of billable usage.
-Use them to build reliable cost dashboards and chargeback reports.
-
-Each billing usage event for Foundation & Discovery contains:
-
-* The DPS capability consumed (Foundation & Discovery).
-* The usage amount in host hours that contributes to billing.
-* The time window the usage belongs to.
-* The entity context (host) the usage is attributed to.
-
-#### Query billing usage events with DQL
-
-* Total Foundation & Discovery usage over time:
-
-  ```
-  fetch dt.system.events
-
-
-
-  | filter event.kind == "BILLING_USAGE_EVENT"
-
-
-
-  and event.type == "Foundation & Discovery"
-
-
-
-  | dedup event.id
-
-
-
-  | summarize totalUsage = sum(usage), by:{bin(timestamp, 1d)}
-  ```
-* Foundation & Discovery usage per host (top consumers):
-
-  ```
-  fetch dt.system.events
-
-
-
-  | filter event.kind == "BILLING_USAGE_EVENT"
-
-
-
-  and event.type == "Foundation & Discovery"
-
-
-
-  | dedup event.id
-
-
-
-  | summarize totalUsage = sum(usage), by:{dt.entity.host}
-
-
-
-  | sort totalUsage desc
-  ```
-
 ### Insights via Account Management API
 
 Query Foundation & Discovery consumption programmatically via the [Account Management API](/managed/dynatrace-api/account-management-api "Explore endpoints of the Account Management API.") for integration with external reporting or cost allocation systems.
@@ -176,8 +115,6 @@ You can use Dynatrace to automate some of your optimization efforts.
 | Automation | Description | How |
 | --- | --- | --- |
 | Anomaly alerts | Get notified of unexpected spikes in Foundation & Discovery host-hour consumption. | [Cost Monitors](/managed/manage-your-costs/control/cost-monitors "Learn how to use the Cost Monitors feature to make forecasts and cost events.") in **Account Management**. |
-| Scheduled reports | Deliver automated consumption reports to stakeholders on a regular cadence. | Notebooks **Notebooks** and Workflows **Workflows** |
-| Remediation workflows | Automatically respond to cost threshold events, for example, disabling non-critical hosts when a budget limit is reached. | [AutomationEngine](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") |
 
 ## FAQs
 
@@ -204,7 +141,7 @@ The right choice depends on how critical a host is and how much observability de
 ### Does Foundation & Discovery include log ingestion?
 
 Automated log ingestion is available with all OneAgent monitoring modes, including Foundation & Discovery.
-However, log ingestion does not consume Foundation & Discovery host hours. It is billed separately as [Log Management and Analytics](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+However, log ingestion does not consume Foundation & Discovery host hours. It is billed separately as [Log Monitoring Classic](/managed/license/capabilities/platform-extensions/log-monitoring-classic "Learn how your consumption of the Dynatrace Log Monitoring Classic DPS capability is billed and charged.").
 
 ### Does Foundation & Discovery include custom metrics?
 

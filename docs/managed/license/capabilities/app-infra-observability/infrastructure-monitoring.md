@@ -144,8 +144,6 @@ For more information, see [Overview (Dynatrace Platform Subscription)](/managed/
 You can use Dynatrace to automate some of your optimization efforts:
 
 * Anomaly alerts: Get notified of unexpected spikes in Infrastructure Monitoring host-hour consumption. To do this, set up [Cost Monitors](/managed/manage-your-costs/control/cost-monitors "Learn how to use the Cost Monitors feature to make forecasts and cost events.") in [**Account Management**﻿](https://myaccount.dynatrace.com/).
-* Scheduled reports: Deliver automated consumption reports to stakeholders on a regular cadence. To do this, use ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
-* Remediation workflows: Automatically respond to cost threshold events, such as disabling non-critical hosts when a budget limit is reached. To do this, use [AutomationEngine](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 
 ## FAQs
 
@@ -173,7 +171,7 @@ Consumption is calculated in 15-minute intervals. If a host is monitored for few
 
 ### Does Infrastructure Monitoring include log ingestion?
 
-OneAgent automatically ingests logs in all monitoring modes, including Infrastructure Monitoring. However, log ingestion doesn't consume Infrastructure Monitoring host hours; it is billed separately as [Log Management and Analytics](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+OneAgent automatically ingests logs in all monitoring modes, including Infrastructure Monitoring. However, log ingestion doesn't consume Infrastructure Monitoring host hours; it is billed separately as [Log Monitoring Classic](/managed/license/capabilities/platform-extensions/log-monitoring-classic "Learn how your consumption of the Dynatrace Log Monitoring Classic DPS capability is billed and charged.").
 
 ### Can I run Dynatrace Extensions with Infrastructure Monitoring?
 

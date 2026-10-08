@@ -331,7 +331,7 @@ You can use tags to narrow the focus of your analysis to a specific set of servi
 
 Once you've selected a tagged group of related services, it's easy to focus your analysis on those services. For example:
 
-[Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+[Dashboards Classic](/managed/analyze-explore-automate/dashboards "Learn how to build, share, and organize Dynatrace dashboards, and how dashboards scope data, which settings apply, and which tiles are available.")
 
 1. Filter the **Services** page by one or more tags.
 2. Select the **Pin to dashboard** button to add a health monitoring tile to a dashboard for the services matching the selected tags.
@@ -356,5 +356,5 @@ The next time a problem notification is sent out, Dynatrace will check to see if
 
 ## Related topics
 
-* [Filter tiles](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/filter-charts "Learn how to use powerful filtering options to set up dashboards in support of the unique monitoring needs of each of your organization's teams.")
+* [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.")
 * [Implicit propagation of tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/implicit-propagation-of-tagging-and-management-zone-rules "Learn which entity types automatically inherit tags and management zones through implicit propagation, and what to watch out for.")

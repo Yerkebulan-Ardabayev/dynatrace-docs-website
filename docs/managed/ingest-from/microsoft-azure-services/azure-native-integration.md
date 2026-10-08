@@ -169,7 +169,7 @@ After you set up the integration, you can access your Dynatrace environment dire
 
 In the Azure portal, go to your Dynatrace resource and select **Overview**. All details of your Dynatrace environment will appear there, including direct links to the following web UI pages:
 
-* **Dashboards** - For details, see [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
+* **Dashboards** - For details, see [Dashboards](/managed/analyze-explore-automate/dashboards "Learn how to build, share, and organize Dynatrace dashboards, and how dashboards scope data, which settings apply, and which tiles are available.").
 * **Log Viewer** - For details, see [Log viewer (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.").
 * **Smartscape topology** - For details, see [Visualize your environment through Smartscape](/managed/analyze-explore-automate/smartscape-classic "Learn how Smartscape visualizes all the entities and dependencies in your environment.").
 

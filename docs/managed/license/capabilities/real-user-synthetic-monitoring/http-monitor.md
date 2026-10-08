@@ -123,85 +123,17 @@ For more information, see [Overview (Dynatrace Platform Subscription)](/managed/
 
 Diagram - Example usage for Real User Monitoring visible in Account Management
 
-### Insights via billing usage events
+## Optimize your consumption
 
-Billing usage events (BUEs, `billing_usage_event`) are system events emitted by Dynatrace into the `dt.system.events` data space.
-You can use DQL to query BUEs, and analyze usage and cost for Real User Monitoring capabilities without re-applying billing rules or session-counting logic.
+Ways to reduce and manage HTTP Monitor usage include:
 
-BUEs represent already-calculated, billable usage for DPS capabilities (not any configuration or potential usage), and are aligned with what is shown in Account Management and on invoices.
-Therefore, they're the recommended data source for understanding related consumption.
+* Reduce request count by combining checks into fewer HTTP requests
+* Adjust frequency so monitors run less often
+* Limit execution locations to only those required
+* Disable unused monitors to stop consumption entirely
+* Use scripting efficiently so unnecessary requests are skipped when conditions allow
 
-Billing usage events contain:
-
-* Which DPS capability was consumed.
-* The usage amount that contributes to billing.
-* The time window the usage belongs to.
-* The entity context the usage is attributed to (for example, an application).
-
-#### Query billing usage events with DQL
-
-You can use billing usage events as the authoritative source when building cost allocation, usage analysis, or cost transparency views.
-
-For example, aggregate by application to understand which applications contribute most to usage and cost.
-
-Here are some example DQL queries for various use cases.
-You can use these queries as-is, or modify them to meet your needs.
-
-1. Total usage over time
-
-   ```
-   fetch dt.system.events
-
-
-
-   | filter event.kind == "BILLING_USAGE_EVENT" and event.type == "HTTP Monitor"
-
-
-
-   | dedup event.id
-
-
-
-   | summarize totalUsage = sum(billed_sessions), by:{bin(timestamp, 1d)}
-   ```
-2. HTTP session usage by application (in the last seven days)
-
-   ```
-   fetch dt.system.events, from: -7d
-
-
-
-   | filter event.kind == "BILLING_USAGE_EVENT"
-
-
-
-   | filter event.type == "HTTP Monitor"
-
-
-
-   | dedup event.id
-
-
-
-   | summarize total_sessions = sum(billed_http_request_count), by: {dt.entity.http_check}
-
-
-
-   | fieldsAdd app_name = entityName(dt.entity.http_check)
-
-
-
-   | sort total_sessions desc
-
-
-
-   | limit 20
-   ```
-
-### Insights via API
-
-You can query insights via the [Environment API – Grail Query﻿](https://developer.dynatrace.com/develop/platform-services/services/grail-service/#grail-query-api).
-Example DQL queries are provided in [Query billing usage events with DQL](#rum-dql-query).
+–>
 
 ## FAQs
 

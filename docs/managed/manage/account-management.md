@@ -62,7 +62,7 @@ Use the **My profile** tab to update your user profile and notification options.
 
 * **My profile**—information about you, such as your name, job title, and location.
 
-  The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for [dashboard subscriptions in Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic/dashboards/subscribe-to-dashboard-reports "Learn how to subscribe to reports generated from Dynatrace dashboards.").
+  The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for [dashboard subscriptions in Dashboards Classic](/managed/analyze-explore-automate/dashboards/share-a-dashboard "Share a dashboard with specific users, groups, anyone with the link, or anonymous viewers, and subscribe people to weekly or monthly email reports.").
 * **Environment notifications**—lists environments for which you can enable email-based notification for outages.
 
 To return to the **My profile** tab later, open  in the upper-right corner and select you account name.
@@ -200,7 +200,7 @@ Use **Settings** > **Contact information** to specify account contact, billing, 
 
 Use **Settings** > **Environments** to list environments and, with **Action** > **Edit environment**, change the selected environment's name or time zone.
 
-The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for [dashboard subscriptions in Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic/dashboards/subscribe-to-dashboard-reports "Learn how to subscribe to reports generated from Dynatrace dashboards.").
+The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for [dashboard subscriptions in Dashboards Classic](/managed/analyze-explore-automate/dashboards/share-a-dashboard "Share a dashboard with specific users, groups, anyone with the link, or anonymous viewers, and subscribe people to weekly or monthly email reports.").
 
 ## Back to Account Settings
 

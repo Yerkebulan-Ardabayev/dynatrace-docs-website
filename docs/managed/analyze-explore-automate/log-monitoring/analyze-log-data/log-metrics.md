@@ -136,5 +136,5 @@ In this example, we create and chart a log metric, save it to a dashboard, and c
 Now that you have defined the metric, you can chart it, pin it to a dashboard, and even create an alert based on it.
 
 * **Chart:** Go to **Data Explorer**, set **Select metric…** to `log.error_PGI`, and select **Run query**.
-* **Dashboard:** After you create a chart, select **Pin to dashboard** to add the chart to one of your classic dashboards. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* **Dashboard:** After you create a chart, select **Pin to dashboard** to add the chart to one of your classic dashboards. For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
 * **Alert:** Go to **Settings** > **Anomaly detection** > **Metric events**, select **Add metric event**, and create a custom event based on `log.error_PGI`.

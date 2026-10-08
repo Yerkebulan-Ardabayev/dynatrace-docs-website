@@ -18,7 +18,7 @@ Application performance monitoring includes: distributed tracing, code-level vis
 
   + Consumption is based on host memory, see [GiB-hours](#gib-hour).
   + Additionally offers all features of [Infrastructure Monitoring](/managed/license/capabilities/app-infra-observability/infrastructure-monitoring "Learn how Infrastructure Monitoring consumption is calculated, how to track and analyze your usage, and how to optimize your spend.").
-  + Dynatrace Extensions can be enabled on hosts with host-based Full-Stack Monitoring and may consume [Full-Stack custom metric data points](#full-stack-metrics) and [Log Analytics](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+  + Dynatrace Extensions can be enabled on hosts with host-based Full-Stack Monitoring and may consume [Full-Stack custom metric data points](#full-stack-metrics) and [Log Monitoring Classic](/managed/license/capabilities/platform-extensions/log-monitoring-classic "Learn how your consumption of the Dynatrace Log Monitoring Classic DPS capability is billed and charged.").
 * Container-based application-only Full-Stack Monitoring: Consumption is based on container memory, see [GiB-hour calculation for application-only container monitoring](#app-only-gib-hour)[1](#fn-1-1-def).
 
 To learn more about supported platforms, see [OneAgent platform and capability support matrix](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.").
@@ -110,7 +110,7 @@ Included metric data points that are not consumed within the 15-minute interval 
 Your environment's included metric data points are applied automatically to metrics that originate at hosts and containers that are monitored by OneAgent in Full-Stack Monitoring mode.
 
 All metric keys starting with `dt.service.*` are for [service monitoring](/managed/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.") and consume included Full-Stack metric data points if the span data itself originate at hosts and containers that are monitored by OneAgent in Full-Stack Monitoring mode.
-If the span data originates at any other source, these metrics are charged as [Metrics powered by Grail](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+If the span data originates at any other source, these metrics are charged as [Custom Metrics Classic](/managed/license/capabilities/platform-extensions/custom-metrics-classic "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
 Such metric keys include, for example:
 
 * `dt.service.request.count`
