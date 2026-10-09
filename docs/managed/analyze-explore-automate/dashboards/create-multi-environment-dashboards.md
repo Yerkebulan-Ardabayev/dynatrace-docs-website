@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards/c
 
 * How-to guide
 * 4-min read
-* Updated on Oct 05, 2026
+* Updated on Oct 06, 2026
 
 To show monitoring data from a remote Dynatrace environment, such as metrics, logs, events, user sessions, and server-side traces, on your dashboard tiles, follow the steps below. Tiles that support a custom management zone can also use a remote management zone.
 
@@ -81,7 +81,7 @@ Configure a dashboard tile to query the remote environment.
 
    Example: display tile filters to see remote environment selection
 
-   Selecting a tile that shows remote data opens a view of the remote environment, where you can continue your analysis.
+   Selecting a tile that shows remote data opens a view of the remote environment, where you can continue your analysis. If you filtered the dashboard by one or more management zones, the filter carries over to the remote environment and replaces the remote dashboard's default management zone. The filter applies only to management zones whose names match exactly in both environments.
 
 ## What's next
 

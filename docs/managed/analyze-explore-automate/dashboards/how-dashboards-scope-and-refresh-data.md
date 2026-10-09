@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards/h
 
 * Explanation
 * 4-min read
-* Updated on Oct 05, 2026
+* Updated on Oct 06, 2026
 
 Every dashboard tile shows data for a timeframe and a management zone, optionally narrowed by dynamic filters, and refreshes on a schedule that depends on its timeframe. Knowing which setting wins helps you read a dashboard correctly and share it with the view you intend.
 
@@ -17,9 +17,9 @@ Every dashboard tile shows data for a timeframe and a management zone, optionall
 
 The global selectors for timeframe and management zone are available across all pages and views, in the upper-right corner. For the selector controls and the timeframe expressions they accept, see [Timeframe selector](/managed/discover-dynatrace/get-started/dynatrace-ui/ui-timeframe-selector "Learn how the timeframe selector works in Dynatrace Managed, including presets, absolute time, relative time, rounded time, and regional format settings.").
 
-Timeframe and management zone selections are sticky: they carry over to every page you visit. For example, after you change the timeframe and management zone on a dashboard, the selections stay in place as you drill down from the **Applications** tile to individual application pages. The timeframe selector remembers up to 10 recently used timeframes.
+Timeframe and management zone selections are sticky: they carry over to every page you visit. For example, after you change the timeframe and management zone on a dashboard, the selections stay in place as you drill down from the **Applications** tile to individual application pages. When you drill down into a remote environment, the management zone carries over only if a management zone with exactly the same name exists there. For details, see [Create multi-environment dashboards](/managed/analyze-explore-automate/dashboards/create-multi-environment-dashboards "Connect a remote Dynatrace environment with an access token and point dashboard tiles to it, so one dashboard shows data from several environments."). The timeframe selector remembers up to 10 recently used timeframes.
 
-Opening a new dashboard resets the timeframe and management zone to the dashboard's [defaults](#default). So does returning to the current dashboard by selecting **Dashboard** in the upper-left corner of the page.
+Opening a new dashboard resets the timeframe and management zone to the dashboard's [defaults](#default). So does returning to the current dashboard by selecting **Dashboard** in the upper-left corner of the page. The exception is a drilldown into a dashboard in a remote environment: the management zone you carried over replaces that dashboard's default management zone.
 
 ## Dashboard defaults and tile overrides
 

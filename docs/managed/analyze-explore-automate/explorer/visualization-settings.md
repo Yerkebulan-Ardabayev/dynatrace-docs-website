@@ -9,9 +9,9 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/explorer/vis
 
 * Reference
 * 10-min read
-* Updated on Oct 05, 2026
+* Updated on Oct 06, 2026
 
-Data Explorer offers nine visualization types. You select and configure a visualization here, and a visualization you pin to a dashboard keeps its settings as a dashboard tile.
+Data Explorer offers ten visualization types. You select and configure a visualization here, and a visualization you pin to a dashboard keeps its settings as a dashboard tile.
 
 ## Visualization types
 
@@ -33,7 +33,9 @@ One metric as a ranked list of results.](/managed/analyze-explore-automate/explo
 
 One metric as a value distribution in buckets.](/managed/analyze-explore-automate/explorer/visualization-settings#heatmap "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.")[### Honeycomb
 
-One cell per result, colored by threshold.](/managed/analyze-explore-automate/explorer/visualization-settings#honeycomb "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.")
+One cell per result, colored by threshold.](/managed/analyze-explore-automate/explorer/visualization-settings#honeycomb "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.")[### Histogram
+
+A histogram metric's values as counts per bucket.](/managed/analyze-explore-automate/explorer/visualization-settings#histogram "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.")
 
 Select a visualization from the list in the upper-left corner of Data Explorer. When you switch visualizations, settings that don't apply to the new visualization are ignored, and an information icon in the list warns you. If you switch back, you might need to reconfigure them.
 
@@ -49,7 +51,7 @@ A graph shows metric values over time as lines, columns, or areas. A graph can s
 
 Graph with an area metric and a line metric in Data Explorer
 
-**Chart mode** sets each metric to `Line`, `Column`, or `Area`.
+**Chart mode** is a dropdown next to the color palette of each metric, and sets the metric to `Line`, `Column chart`, `Area`, `Stacked column`, or `Stacked area`.
 
 Baselines, correlated metrics, and focus are graph actions rather than settings. See [Add a baseline](/managed/analyze-explore-automate/explorer/use-data-explorer-results#baselines "Interact with Data Explorer results, pin them to a dashboard, share them, export them, copy API requests, and resolve common result issues."), [Add correlated metrics](/managed/analyze-explore-automate/explorer/use-data-explorer-results#correlated-metrics "Interact with Data Explorer results, pin them to a dashboard, share them, export them, copy API requests, and resolve common result issues."), and [Focus on a metric series](/managed/analyze-explore-automate/explorer/use-data-explorer-results#focus "Interact with Data Explorer results, pin them to a dashboard, share them, export them, copy API requests, and resolve common result issues.").
 
@@ -64,8 +66,6 @@ A stacked column chart shows metric values over time as stacked columns. Your me
 ![Stacked column chart of several metrics in Data Explorer](https://dt-cdn.net/images/visualization-example-stacked-column-1586-a2237bad33.png)
 
 Stacked column chart of several metrics in Data Explorer
-
-**Chart mode** sets each metric to `Line`, `Column`, or `Area`.
 
 For how the tile looks, see [Stacked column tiles](/managed/analyze-explore-automate/dashboards/visualizations#stacked-column "Look up how each Data Explorer visualization looks as a dashboard tile, which tile behavior it supports, and where to find its settings.").
 
@@ -194,26 +194,40 @@ For how the tile looks, see [Honeycomb tiles](/managed/analyze-explore-automate/
 
 Shared settings that apply: Unit and format, legend, show labels, fold transformation, rename, color palette, and thresholds. See [Shared settings](#shared-settings).
 
+## Histogram
+
+A histogram shows the value distribution of a histogram metric, such as response times or request sizes, so you can see value distributions, percentiles, and outliers at a glance. The visualization requires a [histogram metric](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#histograms "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply."), whose metric key ends in `.histogram`.
+
+The chart shows one bar per bucket, labeled by its value range. The first and last buckets are open-ended. Each bar shows the count of that bucket alone, not the cumulative counts that the `:histogram` transformation returns. For the transformation and for percentiles, see [Analyze an explicit histogram](/managed/analyze-explore-automate/explorer/explorer-advanced-query-editor#example-histogram "Learn how to build and edit advanced Data Explorer queries, use metric transformations and expressions, and compare metrics across timeframes.").
+
+![Histogram visualization in Data Explorer](https://dt-cdn.net/images/data-explorer-1590-1be3bb1b48.png)
+
+Histogram visualization in Data Explorer
+
+For how the tile looks, see [Histogram tiles](/managed/analyze-explore-automate/dashboards/visualizations#histogram "Look up how each Data Explorer visualization looks as a dashboard tile, which tile behavior it supports, and where to find its settings.").
+
+Shared settings that apply: Unit and format, resolution, legend, rename, color palette, color override, and thresholds. See [Shared settings](#shared-settings).
+
 ## Shared settings
 
 These options appear in the **Settings** section. Its contents depend on the selected visualization.
 
 | Setting | Visualizations | Description |
 | --- | --- | --- |
-| **Resolution** | Graph, Stacked column, Stacked area, Heatmap | X axis (time) granularity; `Auto` or a value from the list |
-| **Show legend** | Graph, Stacked column, Stacked area, Pie, Heatmap, Honeycomb | Shows a legend; in a heatmap, the legend matches colors to the value range |
+| **Resolution** | Graph, Stacked column, Stacked area, Heatmap, Histogram | X axis (time) granularity; `Auto` or a value from the list |
+| **Show legend** | Graph, Stacked column, Stacked area, Pie, Heatmap, Honeycomb, Histogram | Shows a legend; in a heatmap, the legend matches colors to the value range |
 | **Show labels** | Heatmap, Honeycomb | Shows a count for each heatmap bucket, or a label and value in each honeycomb cell |
-| **Connect gaps** | Graph, Stacked column, Stacked area | Connects gaps in the chart when turned on |
+| **Connect gaps** | Graph, Stacked column, Stacked area | Connects gaps in the chart when turned on (off by default) |
 | **Fold transformation** | Pie, Single value, Table, Top list, Honeycomb | Combines a timeseries into a single data point; default `Auto` |
 
 The **Settings** section also lists options for each metric in the query.
 
 | Setting | Visualizations | Description |
 | --- | --- | --- |
-| **Rename** | All | Display name on the chart and in the legend, or the column heading in a table; the query keeps the original metric name |
-| **Chart mode** | Graph, Stacked column | `Line`, `Column`, or `Area` |
-| **Color palette** | Graph, Stacked column, Stacked area, Pie, Heatmap, Honeycomb | Color palette for the metric |
-| **Color override** | Graph, Stacked column, Stacked area, Pie, Top list | Fixed color for one series, such as a selected host, that overrides the palette |
+| **Rename** | All | Display name on the chart and in the legend, or the column heading in a table; the query keeps the original metric name. Set it with the pencil icon next to the metric name. |
+| **Chart mode** | Graph | Dropdown next to the color palette with `Line`, `Column chart`, `Area`, `Stacked column`, or `Stacked area` |
+| **Color palette** | Graph, Stacked column, Stacked area, Pie, Heatmap, Honeycomb, Histogram | Color palette for the metric |
+| **Color override** | Graph, Stacked column, Stacked area, Pie, Top list, Histogram | Fixed color for one series, such as a selected host, that overrides the palette |
 
 ### Resolution
 
@@ -244,7 +258,7 @@ All metric selectors use the same total value mechanism, `fold` or `Inf`, so add
 
 ### Unit and format
 
-**Unit** and **Format** set how values are displayed, and also apply to values you export to a CSV file.
+You set **Unit** and **Format** for each metric. These settings control how values are displayed, and also apply to values you export to a CSV file.
 
 | Setting | Values | Description |
 | --- | --- | --- |
@@ -274,11 +288,12 @@ The **Axes** section is available for Graph, Stacked column, and Stacked area. T
 
 | Setting | Values | Description |
 | --- | --- | --- |
-| Name | Text | Axis name, shown vertically next to a Y axis and horizontally under the X axis; the X axis has no name by default |
+| Name | Text | Axis name, shown vertically next to a Y axis and horizontally under the X axis; the X axis has no name by default. Set it with the pencil icon next to the axis. |
+| **Axis metric** | Metrics | Metrics plotted on that Y axis |
 | Visibility |  | Hides or shows the axis |
 | **Position** | `Left`, `Right` | Side of the chart for a Y axis; default `Left` for the first Y axis |
-| **Min, Max** | `Auto, Auto` or two comma-separated numbers | Range of the axis; default `Auto, Auto` |
-| **Add Y axis** | Metric | Adds a Y axis for a metric; only the first two metrics get a Y axis automatically |
+| **Min, Max** | `Auto, Auto` or two comma-separated numbers | Range of a Y axis (default `Auto, Auto`); the X axis has only a name and visibility |
+| **Add Y axis** | Button | Adds a Y axis for a metric, unavailable when every metric already has an axis; only the first two metrics get a Y axis automatically |
 
 ### Thresholds
 

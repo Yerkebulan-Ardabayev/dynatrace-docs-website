@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards/a
 
 * Reference
 * 13-min read
-* Updated on Oct 05, 2026
+* Updated on Oct 06, 2026
 
 The following sections list the tiles you can add to your dashboards, grouped by category, with what each tile displays, where it drills down to, and its tile-specific settings.
 
@@ -59,6 +59,7 @@ Visualization tiles come in the following kinds. For how each one looks as a til
 * Top list
 * Heatmap
 * Honeycomb
+* Histogram
 
 Some visualizations, such as heatmaps, can display only one metric. Others, such as tables, can display more than one metric.
 

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards/v
 
 * Reference
 * 3-min read
-* Updated on Oct 05, 2026
+* Updated on Oct 06, 2026
 
 A visualization you create in Data Explorer becomes a dashboard tile when you [pin it](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards."), and you configure it in [Visualization settings](/managed/analyze-explore-automate/explorer/visualization-settings "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.") in the Data Explorer section.
 
@@ -33,7 +33,9 @@ One metric as a ranked list of results.](/managed/analyze-explore-automate/dashb
 
 One metric as a value distribution in buckets.](/managed/analyze-explore-automate/dashboards/visualizations#heatmap "Look up how each Data Explorer visualization looks as a dashboard tile, which tile behavior it supports, and where to find its settings.")[### Honeycomb
 
-One cell per result, colored by threshold.](/managed/analyze-explore-automate/dashboards/visualizations#honeycomb "Look up how each Data Explorer visualization looks as a dashboard tile, which tile behavior it supports, and where to find its settings.")
+One cell per result, colored by threshold.](/managed/analyze-explore-automate/dashboards/visualizations#honeycomb "Look up how each Data Explorer visualization looks as a dashboard tile, which tile behavior it supports, and where to find its settings.")[### Histogram
+
+A histogram metric's values as counts per bucket.](/managed/analyze-explore-automate/dashboards/visualizations#histogram "Look up how each Data Explorer visualization looks as a dashboard tile, which tile behavior it supports, and where to find its settings.")
 
 ## Graph
 
@@ -139,6 +141,16 @@ A honeycomb tile shows one cell per result, colored by threshold, for example gr
 Honeycomb pinned to a dashboard as a tile
 
 For settings, see [Honeycomb settings](/managed/analyze-explore-automate/explorer/visualization-settings#honeycomb "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
+
+## Histogram
+
+A histogram tile shows the value distribution of a histogram metric, with one bar per bucket.
+
+![Histogram pinned to a dashboard as a tile](https://dt-cdn.net/images/dashboard-1260-3a410212b9.png)
+
+Histogram pinned to a dashboard as a tile
+
+For settings, see [Histogram settings](/managed/analyze-explore-automate/explorer/visualization-settings#histogram "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
 
 ## Tile behavior
 

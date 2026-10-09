@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp
 
 * How-to guide
 * 15-min read
-* Updated on Sep 08, 2026
+* Updated on Oct 02, 2026
 
 Dynatrace version 1.230+
 
@@ -625,6 +625,117 @@ To investigate potential deployment and connectivity issues
 
     - For issues during installation, check the `version.txt` file.
     - For issues during runtime, [check container logs](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp "Determine if your self-monitoring function is properly processing and sending logs to Dynatrace.").
+
+## Deployment considerations
+
+### Running multiple deployments
+
+When running multiple GCP Monitor deployments or replicas, ensure that each GCP project is covered by exactly one active instance. Because the GCP Monitor collects metrics independently per instance, a project monitored by more than one instance will have its metrics ingested multiple times—one set per instance—which will appear as higher-than-expected values in Dynatrace compared to the GCP console.
+
+Before increasing your replica count or adding a new deployment, verify the following:
+
+* Check the `gcpProjectId` configured for each active deployment. Each GCP project should appear in only one deployment's configuration.
+* If `scopingProjectSupportEnabled` is active, review the Metrics Scope for each queried project (**Monitoring** > **Settings** > **Metrics Scope** in the GCP console). A deployment querying a central project whose scope includes additional projects can inadvertently collect metrics for those projects as well.
+
+To distribute monitoring across multiple deployments, assign a distinct set of GCP projects to each deployment and use `excludedProjects` where needed to keep each project's coverage to a single instance.
+
+```
+┌──────────────────────────────────────────┐   ┌──────────────────────────────────────────┐
+
+
+
+│  GCP Monitor — Deployment 1              │   │  GCP Monitor — Deployment 2              │
+
+
+
+│  gcpProjectId:     project-A             │   │  gcpProjectId:     project-C             │
+
+
+
+│  excludedProjects: project-C, project-D  │   │  excludedProjects: project-A, project-B  │
+
+
+
+│                                          │   │                                          │
+
+
+
+│  Monitored projects                      │   │  Monitored projects                      │
+
+
+
+│  ┌──────────────┬──────────────┐         │   │  ┌──────────────┬──────────────┐         │
+
+
+
+│  │   Project A  │   Project B  │         │   │  │   Project C  │   Project D  │         │
+
+
+
+│  └──────────────┴──────────────┘         │   │  └──────────────┴──────────────┘         │
+
+
+
+└──────────────────────────────────────────┘   └──────────────────────────────────────────┘
+```
+
+Each GCP project is covered by exactly one deployment. No project appears in more than one deployment's effective monitoring scope.
+
+### Separating metric and log collection
+
+For environments that require both high log throughput and reliable metric collection, consider splitting responsibilities across two dedicated deployments using `deploymentType`:
+
+* **Metrics deployment**—`deploymentType: metrics`, single replica per project scope. Ensures exactly-one-instance discipline for metric collection.
+* **Logs deployment**—`deploymentType: logs`, horizontally scaled out (1–n replicas). Pub/Sub guarantees each log message is delivered once regardless of replica count, so scaling replicas for throughput is safe. For sizing and autoscaling guidance, see [Scaling guide for logs](#scalingguide) and [Autoscaling guide for logs](#autoscaling).
+
+This separation decouples the scaling concerns:
+
+* The logs deployment scales independently for throughput without affecting metric accuracy.
+* The metrics deployment remains predictable with a single active replica per project.
+
+```
+┌────────────────────────────────────────┐   ┌────────────────────────────────────────┐
+
+
+
+│  GCP Monitor — Metrics deployment      │   │  GCP Monitor — Logs deployment         │
+
+
+
+│  deploymentType: metrics               │   │  deploymentType: logs                  │
+
+
+
+│  gcpProjectId:   project-A             │   │  gcpProjectId:   project-A             │
+
+
+
+│  replicas:       1                     │   │  replicas:       1–n (scale out)       │
+
+
+
+│                                        │   │                                        │
+
+
+
+│  Collects                              │   │  Collects                              │
+
+
+
+│  ┌──────────────────────────────────┐  │   │  ┌──────────────────────────────────┐  │
+
+
+
+│  │  Cloud Monitoring (metrics)      │  │   │  │  Cloud Logging via Pub/Sub       │  │
+
+
+
+│  └──────────────────────────────────┘  │   │  └──────────────────────────────────┘  │
+
+
+
+└────────────────────────────────────────┘   └────────────────────────────────────────┘
+```
 
 ## Scaling guide for logs
 

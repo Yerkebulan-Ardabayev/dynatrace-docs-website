@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/explorer/exp
 
 * How-to guide
 * 10-min read
-* Updated on Oct 05, 2026
+* Updated on Oct 06, 2026
 
 To write [Metrics API v2](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.") queries in Data Explorer, turn on **Advanced mode** and follow the steps below.
 
@@ -367,6 +367,10 @@ Histogram transformation in Data Explorer
 
 The value of the 'le' dimension denotes the upper boundary (less than or equal to) of each bucket. In this example, the upper boundary of bucket `55` is `5`.
 
+The `histogram` transformation returns cumulative bucket counts, which only increase from one bucket to the next. To get the count of a single bucket, subtract the cumulative count at the next-lower boundary from the cumulative count at its own boundary.
+
+In a graph, the `histogram` transformation draws one series per `le` value, and the `+Inf` series is the total count, so a graph of the transformation is hard to read.
+
 Limitations
 
 * Only 12 buckets per histogram datapoint are stored.
@@ -385,3 +389,5 @@ _cws.otlp.metrics.generic.histogram1.histogram:filter(eq("dt.kubernetes.cluster.
 ![Percentile transformation in the Data Explorer](https://dt-cdn.net/images/histogram-percentile-1514-33827a5e8f.png)
 
 Percentile transformation in the Data Explorer
+
+To see the distribution per bucket directly, select the [Histogram visualization](/managed/analyze-explore-automate/explorer/visualization-settings#histogram "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles."), which does this subtraction for you.

@@ -18,6 +18,8 @@ There are two methods for monitoring multiple Google Cloud projects, depending o
 * Large environments—suggested multiproject method
 * Standard environments—alternative method
 
+Make sure each Google Cloud project is monitored by exactly one active deployment. Otherwise, its metrics are ingested more than once and appear higher in Dynatrace than in the Google Cloud console. For details, see [Running multiple deployments](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#multiple-deployments "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+
 ## Large environments
 
 To monitor large environments, you can make use of Google's metrics scope feature. You need to select the main scoping project (where the Google Cloud integration will be deployed) and configure the rest of the projects as monitored projects. See below for instructions.
