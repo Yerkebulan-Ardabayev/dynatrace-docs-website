@@ -144,7 +144,7 @@ You can delete OneAgent or ActiveGate diagnostics issues at any time. If you del
 
 ### Vulnerabilities
 
-Dynatrace retains open [third-party vulnerabilities](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.") and [code-level vulnerabilities](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities "Monitor, visualize, and analyze code-level vulnerabilities.") as long as they're open, regardless of the timeframe.
+Dynatrace retains open [third-party vulnerabilities](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/index-classic "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.") and [code-level vulnerabilities](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities "Monitor, visualize, and analyze code-level vulnerabilities.") as long as they're open, regardless of the timeframe.
 
 The storage time for resolved third-party and code-level vulnerabilities depends on when vulnerabilities are resolved:
 

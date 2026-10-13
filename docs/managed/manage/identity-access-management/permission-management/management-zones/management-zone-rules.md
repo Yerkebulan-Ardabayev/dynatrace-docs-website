@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/identity-access-management/per
 
 * How-to guide
 * 16-min read
-* Updated on May 18, 2026
+* Updated on Oct 08, 2026
 
 Management zones comprise one or more rules that define and limit the entities or dimensional data (such as logs and metrics) that can be accessed within the management zone.
 
@@ -94,7 +94,7 @@ See [Examples](#examples) for different rule types and implementations.
    * You need to define at least one condition per rule.
    * Conditions are applied using the `AND` logic—all conditions need to be met for the rule to apply to an entity.
    * There's no limit on the number of conditions per rule. However, there's a limit of 100,000 conditions for all rules taken together per environment.
-9. Select **Preview** to see entities matching the rule that were active and online in the last 72 hours. Of course, when you actually apply the management zone, all entities matching the rules for the given timeframe will be displayed. Note that **Preview** is only available for entity-based rules.
+9. Select **Preview** to see entities matching the rule that were active and online in the last 72 hours. Preview is an on-demand check and doesn't apply the management zone. For how saved rules are applied, see [When rules are evaluated](/managed/manage/tags-and-metadata/basic-concepts/implicit-propagation-of-tagging-and-management-zone-rules#evaluation "Learn which entity types automatically inherit tags and management zones through implicit propagation, and what to watch out for."). Note that **Preview** is only available for entity-based rules.
 
    ![Rule preview](https://dt-cdn.net/images/mz-rules-5a-957-2b8d1b7d14.png)
 
@@ -167,7 +167,7 @@ See [Examples](#examples) for different rule types and implementations.
      + A `toRelationship` implies that the direction of the relationship is from a related entity **to the given entity** (that is, the entity being queried). When you query all the services that call service A, this relationship is “to (service A).”
 
      You can run the [GET entity type API call](/managed/dynatrace-api/environment-api/entity-v2/get-entity-type "View the details of a monitored entity type via Dynatrace API.") on any entity type to get a list of the entity's from/to relationships and the related entity types. You can also run the [GET entities list](/managed/dynatrace-api/environment-api/entity-v2/get-entities-list "View a list of monitored entities via Dynatrace API.") API call to get a list of the actual entities in your environment along with their relationship values (for example, a `service` entity type can have a `calls` "from relationship" to another `service`).
-4. Select **Preview** to see entities matching the rule that were active and online in the last 72 hours. (Of course, when you actually apply the management zone, all entities matching the rules for the given timeframe will be displayed.)
+4. Select **Preview** to see entities matching the rule that were active and online in the last 72 hours. Preview is an on-demand check and doesn't apply the management zone. For how saved rules are applied, see [When rules are evaluated](/managed/manage/tags-and-metadata/basic-concepts/implicit-propagation-of-tagging-and-management-zone-rules#evaluation "Learn which entity types automatically inherit tags and management zones through implicit propagation, and what to watch out for.").
 
    ![Entity-selector rule preview](https://dt-cdn.net/images/mz-rules-6a-998-ebeb2f11bd.png)
 

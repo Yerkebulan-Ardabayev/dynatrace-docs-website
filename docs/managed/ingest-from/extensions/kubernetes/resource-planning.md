@@ -192,7 +192,7 @@ The following values represent the absolute maximum ingest throughput of a singl
 | Metrics | 8.5 million | 3 cores | 750 MiB |
 | Logs | 1.5 million | 1.5 cores | 700 MiB |
 
-To estimate the metric ingest rate your extensions will generate, see the licensing cost sections of the [Oracle Database extension](/managed/observe/infrastructure-observability/databases/extensions/oracle-database#licensing-costs "Collect Oracle Database metrics and audit logs to monitor performance and security.") and [PostgreSQL extension](/managed/observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring#licensing-costs "Collect PostgreSQL database performance metrics and query logs via remote ActiveGate monitoring to detect anomalies, blocking queries, and performance issues.") documentation.
+To estimate the metric ingest rate your extensions will generate, see the licensing cost sections of the [Oracle Database extension](/managed/observe/infrastructure-observability/databases/extensions/oracle-database#licensing-costs "Monitor Oracle Database performance, availability, and security by collecting server metrics, SQL query insights, and audit logs via ActiveGate.") and [PostgreSQL extension](/managed/observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring#licensing-costs "Collect PostgreSQL database performance metrics and query logs via remote ActiveGate monitoring to detect anomalies, blocking queries, and performance issues.") documentation.
 
 ### Monitor EEC utilization
 

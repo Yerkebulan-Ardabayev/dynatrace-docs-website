@@ -1,11 +1,11 @@
 ---
-title: Memory profiling
+title: Memory profiling in Profiling & Optimization
 source: https://docs.dynatrace.com/managed/observe/application-observability/profiling-and-optimization/memory-profiling
 ---
 
-# Memory profiling
+# Memory profiling in Profiling & Optimization
 
-# Memory profiling
+# Memory profiling in Profiling & Optimization
 
 * How-to guide
 * 7-min read

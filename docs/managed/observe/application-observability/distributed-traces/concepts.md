@@ -1,11 +1,11 @@
 ---
-title: Distributed traces concepts
+title: Concepts for Distributed Traces Classic
 source: https://docs.dynatrace.com/managed/observe/application-observability/distributed-traces/concepts
 ---
 
-# Distributed traces concepts
+# Concepts for Distributed Traces Classic
 
-# Distributed traces concepts
+# Concepts for Distributed Traces Classic
 
 * Explanation
 * 1-min read
@@ -62,7 +62,7 @@ Services are traversed by distributed traces. On horizontally scaled services, s
 
 #### Use cases
 
-* [Segment requests to improve response time degradation](/managed/observe/application-observability/distributed-traces/use-cases/segment-request "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.").
+* [Segment requests to improve response time degradation in Distributed Traces Classic](/managed/observe/application-observability/distributed-traces/use-cases/segment-request "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.").
 
 ### Data collection and context propagation
 

@@ -29,7 +29,7 @@ Configure a multidimensional analysis view and save it as a calculated metric.
 
 * How-to guide
 
-Read this guide](/managed/observe/application-observability/multidimensional-analysis)[#### Profiling and optimization
+Read this guide](/managed/observe/application-observability/multidimensional-analysis)[#### Profiling & Optimization
 
 Learn how to use Dynatrace diagnostic tools for crash analysis, memory dump analysis, and more.
 

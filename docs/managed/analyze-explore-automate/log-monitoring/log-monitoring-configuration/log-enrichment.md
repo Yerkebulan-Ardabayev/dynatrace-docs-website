@@ -1176,4 +1176,4 @@ For details on configuration, see [Instrument your Python application with OpenT
 
 ## Related topics
 
-* [Leverage log enrichment for traces to resolve problems](/managed/observe/application-observability/distributed-traces/use-cases/problems-logs-traces "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.")
+* [Leverage log enrichment for traces to resolve problems in Distributed Traces Classic](/managed/observe/application-observability/distributed-traces/use-cases/problems-logs-traces "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.")

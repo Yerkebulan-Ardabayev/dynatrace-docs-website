@@ -1,11 +1,11 @@
 ---
-title: Always-on app profiling
+title: Always-on app profiling in Services
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/always-on-app-profiling
 ---
 
-# Always-on app profiling
+# Always-on app profiling in Services
 
-# Always-on app profiling
+# Always-on app profiling in Services
 
 * Tutorial
 * 3-min read
@@ -95,4 +95,4 @@ Diagnostics tips with Josef Schiessl
 
 ## Related topics
 
-* [Profiling and optimization](/managed/observe/application-observability/profiling-and-optimization "Learn how to use Dynatrace diagnostic tools for crash analysis, memory dump analysis, and more.")
+* [Profiling & Optimization](/managed/observe/application-observability/profiling-and-optimization "Learn how to use Dynatrace diagnostic tools for crash analysis, memory dump analysis, and more.")

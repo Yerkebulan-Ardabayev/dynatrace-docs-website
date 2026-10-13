@@ -1,11 +1,11 @@
 ---
-title: Get started with Distributed Traces
+title: Get started with Distributed Traces Classic
 source: https://docs.dynatrace.com/managed/observe/application-observability/distributed-traces/analysis/get-started
 ---
 
-# Get started with Distributed Traces
+# Get started with Distributed Traces Classic
 
-# Get started with Distributed Traces
+# Get started with Distributed Traces Classic
 
 * How-to guide
 * 6-min read
@@ -138,7 +138,7 @@ To access the single trace view
    | --- | --- |
    | Availability | Log enrichment required depends on data input[1](#fn-2-1-def) |
    | Content | Log records in the full context of the transaction. All available span IDs are included by default.  * To filter by logs relevant to the selected waterfall node, turn on **Strict span filter**. * To see all the logs for a trace, select **View logs for this trace**. |
-   | Example | [Leverage log enrichment for traces to resolve problems](/managed/observe/application-observability/distributed-traces/use-cases/problems-logs-traces "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.") |
+   | Example | [Leverage log enrichment for traces to resolve problems in Distributed Traces Classic](/managed/observe/application-observability/distributed-traces/use-cases/problems-logs-traces "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.") |
 
    1
 
@@ -150,7 +150,7 @@ To access the single trace view
    | --- | --- |
    | Availability | depends on data input |
    | Content | Occurring exceptions for failed requests. |
-   | Example | [Drill-down to service failure causes](/managed/observe/application-observability/distributed-traces/use-cases/error-analysis "Resolve errors via distributed traces.") |
+   | Example | [Drill-down to service failure causes in Distributed Traces Classic](/managed/observe/application-observability/distributed-traces/use-cases/error-analysis "Resolve errors via distributed traces.") |
 
    Threads
 

@@ -26,7 +26,7 @@ Budgets complement the existing [Cost monitors](/managed/manage-your-costs/contr
 
 To access **Budgets**, go to **Account Management** > **Subscription** > **Cost management** and select the **Budgets** tab.
 
-Budget alerts are not available for trial licenses or Proofs-of-Concept.
+Budget alerts are not available for trial licenses.
 
 ![Budget Alerts overview page in Account Management](https://dt-cdn.net/images/budgets-overview-5760-88cc7aab8c.png)
 
@@ -118,7 +118,7 @@ Select **View your account** in any email notification to go to the Account Mana
 
 ## Related topics
 
-* [Where to view your costs](/managed/manage-your-costs/view/where-to-look "View Dynatrace consumption and costs in Account Management, query billing events directly with DQL, or ask Dynatrace Intelligence in natural language.")
+* [Where to view your costs](/managed/manage-your-costs/view/where-to-look "View Dynatrace consumption and costs in Account Management, download billing reports, and export cost data through the Account Management API.")
 * [Account Management](/managed/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
 * [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)
 * [Cost monitors](/managed/manage-your-costs/control/cost-monitors "Learn how to use the Cost Monitors feature to make forecasts and cost events.")

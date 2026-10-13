@@ -79,7 +79,5 @@ API notifications are available for cost monitor events. For details, see [Notif
 
 ## Related topics
 
-* [Budget alerts](/managed/manage-your-costs/control/budgets "Learn how to configure budgets in Dynatrace.")
-* [Cost monitors](/managed/manage-your-costs/control/cost-monitors "Learn how to use the Cost Monitors feature to make forecasts and cost events.")
 * [Notifications API - POST filter notifications](/managed/dynatrace-api/account-management-api/post-notifications "List notifications for your account.")
 * [Account Management](/managed/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")

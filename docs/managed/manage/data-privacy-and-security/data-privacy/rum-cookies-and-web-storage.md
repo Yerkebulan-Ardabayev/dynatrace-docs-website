@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/manage/data-privacy-and-security/data
 # Cookies and client-side storage for RUM and Session Replay
 
 * Reference
-* Updated on Aug 20, 2026
+* Updated on Oct 08, 2026
 
 Dynatrace Real User Monitoring (RUM) relies on HTTP headers, cookies, web storage, and IndexedDB. The headers used are listed in [Infrastructure pass-through requirements for RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/infrastructure-pass-through-requirements-classic "Learn which requests, headers, and cookies must pass through your infrastructure for RUM Classic to work as expected."). This page describes the cookies, web storage, and IndexedDB entries used.
 
@@ -92,7 +92,7 @@ If you need the full cookie names to configure your firewalls and other infrastr
 3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Injection** > **Cookie**.
 
-5. The cookie names are displayed on the top of the page.
+5. Find the cookie names at the top of the page.
 
 ## Allow users to opt in to cookies, web storage, and IndexedDB
 

@@ -1,15 +1,15 @@
 ---
-title: Backstage integration
+title: Backstage integration in Dynatrace
 source: https://docs.dynatrace.com/managed/deliver/backstage-integration
 ---
 
-# Backstage integration
+# Backstage integration in Dynatrace
 
-# Backstage integration
+# Backstage integration in Dynatrace
 
 * Tutorial
 * 4-min read
-* Updated on Nov 17, 2025
+* Published Apr 09, 2024
 
 Integrate Dynatrace into Backstage to level up developer experience.
 

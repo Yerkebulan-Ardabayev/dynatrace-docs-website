@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/tags-and-metadata/basic-concep
 
 * Explanation
 * 5-min read
-* Published May 18, 2026
+* Updated on Oct 08, 2026
 
 When you define an [auto-tagging rule](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.") or a [management-zone rule](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules "Define rules to limit the entities accessible within a management zone.") targeting a specific entity type, Dynatrace can automatically extend that rule's effect to related entity types through implicit propagation. These propagation paths are fixed and built into the Dynatrace rule engine; no additional configuration is required.
 
@@ -32,6 +32,14 @@ The following table lists all implicit propagation paths, the target entity type
 | AWS credentials | AWS availability zone, AWS Lambda function, AWS application load balancer, AWS network load balancer, EC2 instance, Custom device, Custom device group, Auto scaling group, Relational database service | Management zones | Credential-level tags and labels propagate broadly across all AWS resource types discovered using those credentials. Expect wide propagation scope when targeting credential-level entities. |
 | Cloud application | Cloud application instance | Management zones | Cloud-application metadata flows to its concrete running instances. |
 | Synthetic test | Application | Management zones | Metadata on a synthetic test can flow to the application that the test targets. |
+
+## When rules are evaluated
+
+Auto-tagging, management-zone, and service naming rules are evaluated asynchronously against recently observed entities. During regular processing, rules that use standard conditions evaluate entities observed within the previous 2 hours, while entity-selector-based rules evaluate entities observed within the previous 6 hours. When a rule is created or changed, Dynatrace re-evaluates that rule for entities observed within the previous 7 days. The rule preview is different: it checks a specific rule on demand against entities observed within the previous 72 hours, but it doesn't apply tags or management zones.
+
+An entity matches only when the entity and all attributes, relationships, and related entities required by the rule are available within the applicable evaluation timeframe. For example, a recently active entity might not match when the rule requires a related entity or relationship that wasn't observed within that timeframe.
+
+You can't force a rule to evaluate inactive entities or configure a longer inactivity window. Dynatrace evaluates those entities again once they report data and the required rule data is available.
 
 ## Important considerations
 

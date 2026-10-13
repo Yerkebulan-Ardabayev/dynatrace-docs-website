@@ -1,11 +1,11 @@
 ---
-title: Exception analysis
+title: Exception analysis in Multidimensional analysis
 source: https://docs.dynatrace.com/managed/observe/application-observability/multidimensional-analysis/exception-analysis
 ---
 
-# Exception analysis
+# Exception analysis in Multidimensional analysis
 
-# Exception analysis
+# Exception analysis in Multidimensional analysis
 
 * Explanation
 * 4-min read

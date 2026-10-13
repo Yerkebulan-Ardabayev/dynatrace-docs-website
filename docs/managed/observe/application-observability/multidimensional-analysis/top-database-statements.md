@@ -1,11 +1,11 @@
 ---
-title: Top database statements
+title: Top database statements in Multidimensional analysis
 source: https://docs.dynatrace.com/managed/observe/application-observability/multidimensional-analysis/top-database-statements
 ---
 
-# Top database statements
+# Top database statements in Multidimensional analysis
 
-# Top database statements
+# Top database statements in Multidimensional analysis
 
 * How-to guide
 * 4-min read
@@ -15,7 +15,7 @@ The **Top database statements** view enables you to understand the overall datab
 
 To access the **Top database statements** page
 
-1. Go to **Multidimensional Analysis** or **Database Services**.
+1. Go to **Multidimensional Analysis**.
 2. Select **Top database statements**.
 
 ## Analyze database statements

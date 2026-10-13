@@ -33,7 +33,7 @@ Python
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-java/) | 1.0 - 1.3[1](#fn-monitoring-framework-1-def), 1.4 - 1.54[1](#fn-monitoring-framework-1-def), 1.55 - 1.60, 1.61 - 1.64 |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-java/) | 1.0 - 1.3[1](#fn-monitoring-framework-1-1-def), 1.4 - 1.54[1](#fn-monitoring-framework-1-1-def), 1.55 - 1.60, 1.61 - 1.64 |
 | [OpenTracing﻿](https://opentracing.io/guides/java/) | 0.33, 0.32, 0.31 |
 
 1
@@ -50,7 +50,7 @@ Existing tracers are replaced and will no longer work after you enable OpenTelem
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7[1](#fn-monitoring-framework-1-def), 1.8 - 1.11.0[1](#fn-monitoring-framework-1-def), 1.11.1 - 1.27[1](#fn-monitoring-framework-1-def), 1.28 - 1.46[1](#fn-monitoring-framework-1-def) |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7[1](#fn-monitoring-framework-2-1-def), 1.8 - 1.11.0[1](#fn-monitoring-framework-2-1-def), 1.11.1 - 1.27[1](#fn-monitoring-framework-2-1-def), 1.28 - 1.46[1](#fn-monitoring-framework-2-1-def) |
 
 1
 
@@ -73,8 +73,8 @@ OneAgent version 1.217 and earlier The OpenTelemetry Go Sensor propagates Dynatr
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetry API for JavaScript﻿](https://www.npmjs.com/package/@opentelemetry/api) | 1[1](#fn-monitoring-framework-1-def) |
-| [OpenTelemetry SDK for JavaScript﻿](https://www.npmjs.com/package/@opentelemetry/core) | 1[1](#fn-monitoring-framework-1-def), 2.0-2.8[1](#fn-monitoring-framework-1-def), 2.9+[1](#fn-monitoring-framework-1-def) |
+| [OpenTelemetry API for JavaScript﻿](https://www.npmjs.com/package/@opentelemetry/api) | 1[1](#fn-monitoring-framework-3-1-def) |
+| [OpenTelemetry SDK for JavaScript﻿](https://www.npmjs.com/package/@opentelemetry/core) | 1[1](#fn-monitoring-framework-3-1-def), 2.0-2.8[1](#fn-monitoring-framework-3-1-def), 2.9+[1](#fn-monitoring-framework-3-1-def) |
 
 1
 
@@ -104,7 +104,7 @@ Existing tracers are not affected by OneAgent OpenTelemetry for PHP support.
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-dotnet) | 1.0.1+[1](#fn-monitoring-framework-1-def), 1.1+[1](#fn-monitoring-framework-1-def) |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-dotnet) | 1.0.1+[1](#fn-monitoring-framework-5-1-def), 1.1+[1](#fn-monitoring-framework-5-1-def) |
 
 1
 

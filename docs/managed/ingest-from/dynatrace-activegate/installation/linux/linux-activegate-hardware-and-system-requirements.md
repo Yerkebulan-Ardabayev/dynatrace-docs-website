@@ -97,7 +97,7 @@ Linux configuration file: `/var/lib/dynatrace/remotepluginmodule/agent/conf/exte
 
 | Linux distribution | Versions | CPU architectures |
 | --- | --- | --- |
-| Amazon Linux | 2, 2023[1](#fn-linux-distribution-1-def) | ARM64 (AArch64), x86-64 |
+| Amazon Linux | 2, 2023[1](#fn-linux-distribution-1-1-def) | ARM64 (AArch64), x86-64 |
 | Oracle Linux | 8.10, 9.7, 9.8, 10.1, 10.2 | ARM64 (AArch64), x86-64 |
 | Red Hat Enterprise Linux | 8.10, 9.4, 9.6, 9.7, 9.8, 10.0, 10.1, 10.2 | ARM64 (AArch64), s390, x86-64 |
 | Rocky Linux | 8.10, 9.7, 9.8, 10.1, 10.2 | ARM64 (AArch64), x86-64 |

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platfo
 # Deploy OneAgent on Cloud Foundry for application-only monitoring
 
 * 2-min read
-* Updated on May 13, 2026
+* Updated on Oct 06, 2026
 
 Applications deployed on Cloud Foundry are usually run through technology-specific buildpacks that provide framework and runtime support for applications running on the Cloud Foundry platform. For complete details, see [how buildpacks work﻿](https://docs.cloudfoundry.org/buildpacks/understand-buildpacks.html).
 
@@ -138,7 +138,23 @@ When deployed in application-only mode, OneAgent monitors the memory, disk, CPU,
 
    * Setting unsupported values will break the deployment, since this directly affects the download instructions.
    * Adding code modules will increase the disk space requirements.
-7. Optional Configure a custom OneAgent download location
+7. Optional Remove/deactivate specific code modules
+
+   You can configure the Dynatrace service to remove specific code modules:
+
+   ```
+   cf cups dynatrace-service -p "environmentid, apitoken, removetechnologies"
+   ```
+
+   The `removetechnologies` parameter accepts a comma-separated list (without whitespaces).
+   For supported values, see the "include" row in [OneAgent version API parameters](/managed/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-version#parameters "Download the OneAgent installer of the specific version via Dynatrace API.").
+   The `process` code module is exempt from removal to prevent undesired misconfigurations.
+   Removal of code modules happens before the handling of the (optional) `addtechnologies` parameter.
+
+   **Important**:
+
+   * Removing a given code module will deactivate the monitoring of this technology for all Cloud Foundry apps using this service.
+8. Optional Configure a custom OneAgent download location
 
    Use `customoneagenturl` to fetch the OneAgent installer from a location you host yourself instead of from the Dynatrace API. This is intended for environments that can't reach the Dynatrace API during staging—for example, where policy restricts outbound access from the Cloud Foundry foundation—so you mirror the installer to an internal location and the buildpack downloads it from there.
 

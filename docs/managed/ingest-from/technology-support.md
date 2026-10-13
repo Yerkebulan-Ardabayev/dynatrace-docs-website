@@ -58,17 +58,17 @@ Supported CPU architectures
 | Supported OS | Versions | CPU architectures |
 | --- | --- | --- |
 | [AlmaLinux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 8, 9, 10 | ARM64 (AArch64), PPCLE, s390, x86-64 |
-| [Alpine Linux (musl libc) for containers](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") | 3.10 - 3.23[1](#fn-supported-os-1-def) | ARM64 (AArch64), x86-64 |
+| [Alpine Linux (musl libc) for containers](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") | 3.10 - 3.23[1](#fn-supported-os-3-1-def) | ARM64 (AArch64), x86-64 |
 | [Amazon Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 2, 2023 | ARM64 (AArch64), x86-64 |
 | [Azure Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 2, 3 | x86-64 |
-| [Bottlerocket](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") | 1[2](#fn-supported-os-2-def) | ARM64 (AArch64), x86-64 |
+| [Bottlerocket](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") | 1[2](#fn-supported-os-3-2-def) | ARM64 (AArch64), x86-64 |
 | [CentOS Stream](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 9, 10 | ARM64 (AArch64), PPCLE, x86-64 |
 | [Debian](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 11, 12, 13 | ARM64 (AArch64), x86-64 |
 | [Fedora](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 42, 43, 44 | x86-64 |
 | [Fedora](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 44 | ARM64 (AArch64) |
 | [Oracle Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 7, 8, 9, 10 | x86-64 |
 | [Red Hat Enterprise Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 7, 8, 9, 10 | ARM64 (AArch64), PPCLE, s390, x86-64 |
-| [Red Hat Enterprise Linux CoreOS](/managed/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes") | 4.14[3](#fn-supported-os-3-def), 4.15[3](#fn-supported-os-3-def), 4.16[3](#fn-supported-os-3-def) | x86-64 |
+| [Red Hat Enterprise Linux CoreOS](/managed/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes") | 4.14[3](#fn-supported-os-3-3-def), 4.15[3](#fn-supported-os-3-3-def), 4.16[3](#fn-supported-os-3-3-def) | x86-64 |
 | [Rocky Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 8, 9, 10 | ARM64 (AArch64), x86-64 |
 | [SUSE Linux Enterprise Server](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 12.5, 15.4, 15.5, 15.6, 15.7, 16.0 | x86-64 |
 | [SUSE Linux Enterprise Server](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 12.5, 15.4, 15.5, 15.6, 15.7 | PPCLE, s390 |
@@ -108,7 +108,7 @@ Supported CPU architectures
 
 | UNIX System | Versions | CPU architectures |
 | --- | --- | --- |
-| [IBM AIX](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix "Learn how to install OneAgent on AIX, how to customize installation, and more.") | 7.2 TL5[1](#fn-unix-system-1-def), 7.3 TL2[1](#fn-unix-system-1-def), 7.3 TL3[1](#fn-unix-system-1-def), 7.3 TL4[1](#fn-unix-system-1-def) | POWER10, POWER8, POWER9 |
+| [IBM AIX](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix "Learn how to install OneAgent on AIX, how to customize installation, and more.") | 7.2 TL5[1](#fn-unix-system-4-1-def), 7.3 TL2[1](#fn-unix-system-4-1-def), 7.3 TL3[1](#fn-unix-system-4-1-def), 7.3 TL4[1](#fn-unix-system-4-1-def) | POWER10, POWER8, POWER9 |
 | [Solaris](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/solaris "Learn how to install, update and troubleshoot OneAgent on Solaris.") | 11.4 | SPARC, x86-64 |
 
 1
@@ -125,10 +125,10 @@ Supported CPU architectures
 
 | Windows OS | Versions | CPU architectures |
 | --- | --- | --- |
-| [Windows Desktop 10](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows "Learn how to install OneAgent on Windows, how to customize installation, and more.") | 22H2[1](#fn-windows-os-1-def), 1607[2](#fn-windows-os-2-def), 1809[2](#fn-windows-os-2-def), 21H2[2](#fn-windows-os-2-def) | x86-64 |
+| [Windows Desktop 10](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows "Learn how to install OneAgent on Windows, how to customize installation, and more.") | 22H2[1](#fn-windows-os-5-1-def), 1607[2](#fn-windows-os-5-2-def), 1809[2](#fn-windows-os-5-2-def), 21H2[2](#fn-windows-os-5-2-def) | x86-64 |
 | [Windows Desktop 11](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows "Learn how to install OneAgent on Windows, how to customize installation, and more.") | 23H2, 24H2, 25H2 | x86-64 |
-| [Windows Server](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows "Learn how to install OneAgent on Windows, how to customize installation, and more.") | 2012 R2[3](#fn-windows-os-3-def), 2016[4](#fn-windows-os-4-def), 2019[4](#fn-windows-os-4-def), 2022[4](#fn-windows-os-4-def), 2025[4](#fn-windows-os-4-def) | x86-64 |
-| [Windows Server - Nano](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows "Learn how to install OneAgent on Windows, how to customize installation, and more.") | All versions supported[5](#fn-windows-os-5-def) | x86-64 |
+| [Windows Server](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows "Learn how to install OneAgent on Windows, how to customize installation, and more.") | 2012 R2[3](#fn-windows-os-5-3-def), 2016[4](#fn-windows-os-5-4-def), 2019[4](#fn-windows-os-5-4-def), 2022[4](#fn-windows-os-5-4-def), 2025[4](#fn-windows-os-5-4-def) | x86-64 |
+| [Windows Server - Nano](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows "Learn how to install OneAgent on Windows, how to customize installation, and more.") | All versions supported[5](#fn-windows-os-5-5-def) | x86-64 |
 
 1
 
@@ -455,11 +455,11 @@ See [Dynatrace support/desupport for Java versions](/managed/ingest-from/technol
 | --- | --- | --- |
 | Amazon Corretto | 8 LTS, 11 LTS, 17 LTS, 21 LTS, 24, 25 LTS, 26, 27 | Linux (x86-64, ARM64 (AArch64)) |
 | Azul Platform Core (Zulu) | 7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 24, 25 LTS, 26, 27 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
-| Azul Platform Prime (Zing) | 6[2](#fn-virtual-machines-2-def), 7[2](#fn-virtual-machines-2-def), 8 LTS[2](#fn-virtual-machines-2-def), 11 LTS[2](#fn-virtual-machines-2-def) | Alpine Linux 64-bit (x86-64), Linux (x86-64), Windows (x86-64) |
-| Bellsoft Liberica | 8 LTS, 11 LTS, 17 LTS, 21 LTS[3](#fn-virtual-machines-3-def), 24, 25 LTS, 26, 27 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64), PPCLE), Solaris (SPARC, x86-64), Windows (x86-64) |
+| Azul Platform Prime (Zing) | 6[2](#fn-virtual-machines-1-2-def), 7[2](#fn-virtual-machines-1-2-def), 8 LTS[2](#fn-virtual-machines-1-2-def), 11 LTS[2](#fn-virtual-machines-1-2-def) | Alpine Linux 64-bit (x86-64), Linux (x86-64), Windows (x86-64) |
+| Bellsoft Liberica | 8 LTS, 11 LTS, 17 LTS, 21 LTS[3](#fn-virtual-machines-1-3-def), 24, 25 LTS, 26, 27 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64), PPCLE), Solaris (SPARC, x86-64), Windows (x86-64) |
 | Eclipse Temurin (a.k.a. 'Adoptium') | 8 LTS, 11 LTS, 17 LTS, 21 LTS, 24, 25 LTS, 26, 27 | AIX (POWER8, POWER9, POWER10), Linux (x86-64, ARM64 (AArch64), PPCLE, s390), Windows (x86-64) |
 | Fujitsu | 5, 6, 8 | Linux (x86-64), Windows (x86-64) |
-| GraalVM | 17 LTS[1](#fn-virtual-machines-1-def), 21[1](#fn-virtual-machines-1-def), 24[1](#fn-virtual-machines-1-def), 25 LTS[1](#fn-virtual-machines-1-def) | Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
+| GraalVM | 17 LTS[1](#fn-virtual-machines-1-1-def), 21[1](#fn-virtual-machines-1-1-def), 24[1](#fn-virtual-machines-1-1-def), 25 LTS[1](#fn-virtual-machines-1-1-def) | Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
 | GraalVM Mandrel | 11 LTS, 17 LTS, 21 LTS, 24, 25 LTS | Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
 | Hitachi | 5 | Windows (x86-64) |
 | Huawei | 8 | Linux (ARM64 (AArch64)) |
@@ -486,12 +486,12 @@ Bellsoft Liberica v21+ 32-bit are not supported
 | Application servers | Versions |
 | --- | --- |
 | [Apache TomEE﻿](https://tomee.apache.org/) | 1, 7 - 10 |
-| [Apache Tomcat﻿](https://tomcat.apache.org/) | 6, 7, 8, 8.5, 9, 10[1](#fn-application-servers-1-def), 11[1](#fn-application-servers-1-def) |
-| [Fujitsu Interstage﻿](https://www.fujitsu.com/global/products/software/middleware/application-infrastructure/interstage/) | 12.0[2](#fn-application-servers-2-def) |
-| [IBM WebSphere Application Server﻿](https://www.ibm.com/products/software) | 8.5.5, 9.0, 8.5[3](#fn-application-servers-3-def) |
-| [IBM WebSphere Liberty﻿](https://developer.ibm.com/wasdev/websphere-liberty/) | 8.5 - 26[4](#fn-application-servers-4-def) |
+| [Apache Tomcat﻿](https://tomcat.apache.org/) | 6, 7, 8, 8.5, 9, 10[1](#fn-application-servers-2-1-def), 11[1](#fn-application-servers-2-1-def) |
+| [Fujitsu Interstage﻿](https://www.fujitsu.com/global/products/software/middleware/application-infrastructure/interstage/) | 12.0[2](#fn-application-servers-2-2-def) |
+| [IBM WebSphere Application Server﻿](https://www.ibm.com/products/software) | 8.5.5, 9.0, 8.5[3](#fn-application-servers-2-3-def) |
+| [IBM WebSphere Liberty﻿](https://developer.ibm.com/wasdev/websphere-liberty/) | 8.5 - 26[4](#fn-application-servers-2-4-def) |
 | [JBoss Enterprise Application Platform﻿](https://developers.redhat.com/products/eap/overview) | 7, 8 |
-| [Oracle WebLogic﻿](https://www.oracle.com/middleware/technologies/weblogic.html) | 11g[5](#fn-application-servers-5-def), 12c, 14c, 15.1.1[6](#fn-application-servers-6-def) |
+| [Oracle WebLogic﻿](https://www.oracle.com/middleware/technologies/weblogic.html) | 11g[5](#fn-application-servers-2-5-def), 12c, 14c, 15.1.1[6](#fn-application-servers-2-6-def) |
 | [Payara﻿](https://www.payara.fish/) | 5, 6, 7 |
 | [WildFly﻿](https://wildfly.org/) | 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 - 26, 27 - 41 |
 
@@ -521,12 +521,12 @@ WebLogic thin client jar (wlthint3client.jar) is not supported. IIOP has known v
 
 | ESBs and SOA | Versions |
 | --- | --- |
-| [Apache Camel﻿](https://www.dynatrace.com/hub/detail/apache-camel/) | 2.21+, 3+, 4+[1](#fn-esbs-and-soa-1-def) |
+| [Apache Camel﻿](https://www.dynatrace.com/hub/detail/apache-camel/) | 2.21+, 3+, 4+[1](#fn-esbs-and-soa-3-1-def) |
 | Apache OpenEJB | 3.1 |
 | Mule (HTTP Listener) | 3.5, 3.6, 3.7, 3.8, 3.9, 4.1 - 4.9 |
-| [Red Hat Fuse Standalone﻿](https://www.dynatrace.com/hub/detail/red-hat-fuse/) | 7.0+[1](#fn-esbs-and-soa-1-def) |
-| [Red Hat Fuse on OpenShift﻿](https://www.dynatrace.com/hub/detail/red-hat-fuse/) | 7.0+[1](#fn-esbs-and-soa-1-def) |
-| TIBCO ActiveMatrix BusinessWorks | 5.8.2 - 5.14[2](#fn-esbs-and-soa-2-def), 6.4[2](#fn-esbs-and-soa-2-def), 6.5[2](#fn-esbs-and-soa-2-def), 6.6 - 6.8[2](#fn-esbs-and-soa-2-def) |
+| [Red Hat Fuse Standalone﻿](https://www.dynatrace.com/hub/detail/red-hat-fuse/) | 7.0+[1](#fn-esbs-and-soa-3-1-def) |
+| [Red Hat Fuse on OpenShift﻿](https://www.dynatrace.com/hub/detail/red-hat-fuse/) | 7.0+[1](#fn-esbs-and-soa-3-1-def) |
+| TIBCO ActiveMatrix BusinessWorks | 5.8.2 - 5.14[2](#fn-esbs-and-soa-3-2-def), 6.4[2](#fn-esbs-and-soa-3-2-def), 6.5[2](#fn-esbs-and-soa-3-2-def), 6.6 - 6.8[2](#fn-esbs-and-soa-3-2-def) |
 
 1
 
@@ -538,34 +538,34 @@ Only TIBCO workflows that are triggered by an incoming web service request, HTTP
 
 | Web framework | Versions |
 | --- | --- |
-| [Akka HTTP client﻿](https://doc.akka.io/docs/akka-http/current/client-side/index.html) | 10.1[2](#fn-web-framework-2-def), 10.0[2](#fn-web-framework-2-def), 10.2[2](#fn-web-framework-2-def), 10.4[2](#fn-web-framework-2-def), 10.5[2](#fn-web-framework-2-def), 10.6[2](#fn-web-framework-2-def), 10.7[2](#fn-web-framework-2-def) |
-| [Akka HTTP server﻿](https://doc.akka.io/docs/akka-http/current/index.html) | 10.1, 10.2[1](#fn-web-framework-1-def), 10.4[1](#fn-web-framework-1-def), 10.5[1](#fn-web-framework-1-def), 10.6[1](#fn-web-framework-1-def), 10.7[1](#fn-web-framework-1-def) |
-| [Apache HttpAsyncClient﻿](https://hc.apache.org/httpcomponents-asyncclient-ga/) | 4.0[2](#fn-web-framework-2-def), 4.1[2](#fn-web-framework-2-def) |
-| [Apache HttpClient﻿](https://hc.apache.org/httpcomponents-client-ga/) | 3.1[2](#fn-web-framework-2-def), 4[2](#fn-web-framework-2-def), 5.0[2](#fn-web-framework-2-def), 5.1[2](#fn-web-framework-2-def), 5.2[2](#fn-web-framework-2-def) |
-| [Apache HttpCore﻿](https://hc.apache.org/httpcomponents-core-ga/) | 4[3](#fn-web-framework-3-def), 5[4](#fn-web-framework-4-def) |
-| [Apache Pekko HTTP client﻿](https://pekko.apache.org/docs/pekko-http/current/client-side/index.html) | 1.0.0 - 1.2.0[2](#fn-web-framework-2-def) |
-| [Apache Pekko HTTP server﻿](https://pekko.apache.org/docs/pekko-http/current/server-side/index.html) | 1.0.0 - 1.6.0[10](#fn-web-framework-10-def) |
-| Elasticsearch | 1.7[5](#fn-web-framework-5-def), 2.0-2.4[5](#fn-web-framework-5-def), 5.0-5.3[5](#fn-web-framework-5-def), 5.5-5.6[5](#fn-web-framework-5-def), 6.2[5](#fn-web-framework-5-def), 6.8[5](#fn-web-framework-5-def), 7.1[5](#fn-web-framework-5-def), 7.8-7.10[5](#fn-web-framework-5-def), 7.17[5](#fn-web-framework-5-def), 8.9-8.16[5](#fn-web-framework-5-def), 8.18-8.19[5](#fn-web-framework-5-def), 9.0-9.5[5](#fn-web-framework-5-def) |
-| Grails | 3[6](#fn-web-framework-6-def) |
+| [Akka HTTP client﻿](https://doc.akka.io/docs/akka-http/current/client-side/index.html) | 10.1[2](#fn-web-framework-4-2-def), 10.0[2](#fn-web-framework-4-2-def), 10.2[2](#fn-web-framework-4-2-def), 10.4[2](#fn-web-framework-4-2-def), 10.5[2](#fn-web-framework-4-2-def), 10.6[2](#fn-web-framework-4-2-def), 10.7[2](#fn-web-framework-4-2-def) |
+| [Akka HTTP server﻿](https://doc.akka.io/docs/akka-http/current/index.html) | 10.1, 10.2[1](#fn-web-framework-4-1-def), 10.4[1](#fn-web-framework-4-1-def), 10.5[1](#fn-web-framework-4-1-def), 10.6[1](#fn-web-framework-4-1-def), 10.7[1](#fn-web-framework-4-1-def) |
+| [Apache HttpAsyncClient﻿](https://hc.apache.org/httpcomponents-asyncclient-ga/) | 4.0[2](#fn-web-framework-4-2-def), 4.1[2](#fn-web-framework-4-2-def) |
+| [Apache HttpClient﻿](https://hc.apache.org/httpcomponents-client-ga/) | 3.1[2](#fn-web-framework-4-2-def), 4[2](#fn-web-framework-4-2-def), 5.0[2](#fn-web-framework-4-2-def), 5.1[2](#fn-web-framework-4-2-def), 5.2[2](#fn-web-framework-4-2-def) |
+| [Apache HttpCore﻿](https://hc.apache.org/httpcomponents-core-ga/) | 4[3](#fn-web-framework-4-3-def), 5[4](#fn-web-framework-4-4-def) |
+| [Apache Pekko HTTP client﻿](https://pekko.apache.org/docs/pekko-http/current/client-side/index.html) | 1.0.0 - 1.2.0[2](#fn-web-framework-4-2-def) |
+| [Apache Pekko HTTP server﻿](https://pekko.apache.org/docs/pekko-http/current/server-side/index.html) | 1.0.0 - 1.6.0[10](#fn-web-framework-4-10-def) |
+| Elasticsearch | 1.7[5](#fn-web-framework-4-5-def), 2.0-2.4[5](#fn-web-framework-4-5-def), 5.0-5.3[5](#fn-web-framework-4-5-def), 5.5-5.6[5](#fn-web-framework-4-5-def), 6.2[5](#fn-web-framework-4-5-def), 6.8[5](#fn-web-framework-4-5-def), 7.1[5](#fn-web-framework-4-5-def), 7.8-7.10[5](#fn-web-framework-4-5-def), 7.17[5](#fn-web-framework-4-5-def), 8.9-8.16[5](#fn-web-framework-4-5-def), 8.18-8.19[5](#fn-web-framework-4-5-def), 9.0-9.5[5](#fn-web-framework-4-5-def) |
+| Grails | 3[6](#fn-web-framework-4-6-def) |
 | Jakarta Servlet | 2.5, 3.0, 3.1, 4, 5, 6 |
-| Java HttpUrlConnection | All versions supported[2](#fn-web-framework-2-def) |
+| Java HttpUrlConnection | All versions supported[2](#fn-web-framework-4-2-def) |
 | [Java IMS Soap Gateway client﻿](https://www.ibm.com/support/knowledgecenter/en/SS9NWR_3.2.0/com.ibm.ims.iconapij32.doc/icon_home_java.htm) | 3.2 |
-| Jetty HTTP client | 7[2](#fn-web-framework-2-def), 8[2](#fn-web-framework-2-def), 9[2](#fn-web-framework-2-def), 10[2](#fn-web-framework-2-def), 11[2](#fn-web-framework-2-def), 12[2](#fn-web-framework-2-def) |
+| Jetty HTTP client | 7[2](#fn-web-framework-4-2-def), 8[2](#fn-web-framework-4-2-def), 9[2](#fn-web-framework-4-2-def), 10[2](#fn-web-framework-4-2-def), 11[2](#fn-web-framework-4-2-def), 12[2](#fn-web-framework-4-2-def) |
 | [Jetty HTTP server﻿](https://www.eclipse.org/jetty/) | 7, 8, 9, 10, 11, 12 |
 | LinkerdD | 1 |
-| [Netty﻿](https://netty.io/) | 3.10[7](#fn-web-framework-7-def), 4[7](#fn-web-framework-7-def) |
+| [Netty﻿](https://netty.io/) | 3.10[7](#fn-web-framework-4-7-def), 4[7](#fn-web-framework-4-7-def) |
 | [Ning Asynchronous HTTP Client﻿](https://github.com/AsyncHttpClient/async-http-client) | 1.8, 1.9, 2, 3 |
-| OkHttp | 3[2](#fn-web-framework-2-def), 4.0 - 4.3[2](#fn-web-framework-2-def), 4.4 - 4.12[2](#fn-web-framework-2-def), 5.+[2](#fn-web-framework-2-def) |
-| [Play Framework﻿](https://www.playframework.com/) | 2.2 - 2.6, 2.7, 2.8 |
-| [Reactor Netty HTTP Client﻿](https://github.com/reactor/reactor-netty) | 0.8[2](#fn-web-framework-2-def), 0.9[2](#fn-web-framework-2-def), 1.0[2](#fn-web-framework-2-def), 1.1[2](#fn-web-framework-2-def), 1.2[2](#fn-web-framework-2-def), 1.3[2](#fn-web-framework-2-def) |
+| OkHttp | 3[2](#fn-web-framework-4-2-def), 4.0 - 4.3[2](#fn-web-framework-4-2-def), 4.4 - 4.12[2](#fn-web-framework-4-2-def), 5.+[2](#fn-web-framework-4-2-def) |
+| [Play Framework﻿](https://www.playframework.com/) | 2.2 - 2.6, 2.7, 2.8, 2.9, 3.0 |
+| [Reactor Netty HTTP Client﻿](https://github.com/reactor/reactor-netty) | 0.8[2](#fn-web-framework-4-2-def), 0.9[2](#fn-web-framework-4-2-def), 1.0[2](#fn-web-framework-4-2-def), 1.1[2](#fn-web-framework-4-2-def), 1.2[2](#fn-web-framework-4-2-def), 1.3[2](#fn-web-framework-4-2-def) |
 | [Reactor Netty HTTP Server﻿](https://github.com/reactor/reactor-netty) | 0.6, 0.7, 0.8, 0.9, 1.0 - 1.3 |
 | [RxJava﻿](https://github.com/ReactiveX/RxJava) | 3+ |
-| Software AG WebMethods Integration Server | 9.0[8](#fn-web-framework-8-def), 9.5 - 9.12[8](#fn-web-framework-8-def), 10.0 - 10.15[8](#fn-web-framework-8-def), 10.7[8](#fn-web-framework-8-def), 10.11[8](#fn-web-framework-8-def), 10.15[8](#fn-web-framework-8-def) |
+| Software AG WebMethods Integration Server | 9.0[8](#fn-web-framework-4-8-def), 9.5 - 9.12[8](#fn-web-framework-4-8-def), 10.0 - 10.15[8](#fn-web-framework-4-8-def), 10.7[8](#fn-web-framework-4-8-def), 10.11[8](#fn-web-framework-4-8-def), 10.15[8](#fn-web-framework-4-8-def) |
 | [Spring WebFlux﻿](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html) | 5, 6, 7 |
 | [Spring WebFlux WebClient﻿](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-client) | 5, 6, 7 |
-| [Undertow﻿](https://undertow.io/) | 1[9](#fn-web-framework-9-def), 2.0 - 2.2[9](#fn-web-framework-9-def), 2.3+ |
-| [Vert.x HttpClient﻿](https://github.com/eclipse-vertx/vert.x) | 3.6+[2](#fn-web-framework-2-def), 4.x[2](#fn-web-framework-2-def), 5.x[2](#fn-web-framework-2-def) |
-| [Vert.x WebClient﻿](https://github.com/vert-x3/vertx-web) | 3.6+[2](#fn-web-framework-2-def), 4.x[2](#fn-web-framework-2-def), 5.x[2](#fn-web-framework-2-def) |
+| [Undertow﻿](https://undertow.io/) | 1[9](#fn-web-framework-4-9-def), 2.0 - 2.2[9](#fn-web-framework-4-9-def), 2.3+ |
+| [Vert.x HttpClient﻿](https://github.com/eclipse-vertx/vert.x) | 3.6+[2](#fn-web-framework-4-2-def), 4.x[2](#fn-web-framework-4-2-def), 5.x[2](#fn-web-framework-4-2-def) |
+| [Vert.x WebClient﻿](https://github.com/vert-x3/vertx-web) | 3.6+[2](#fn-web-framework-4-2-def), 4.x[2](#fn-web-framework-4-2-def), 5.x[2](#fn-web-framework-4-2-def) |
 
 1
 
@@ -609,11 +609,11 @@ Java and Scala 2 bindings are supported.
 
 | Threading | Versions |
 | --- | --- |
-| CompletableFuture | All versions supported[1](#fn-threading-1-def) |
-| [Java ForkJoin﻿](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html) | All versions supported[1](#fn-threading-1-def) |
+| CompletableFuture | All versions supported[1](#fn-threading-5-1-def) |
+| [Java ForkJoin﻿](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html) | All versions supported[1](#fn-threading-5-1-def) |
 | Kotlin Coroutines | 1.10.2 - 2.1 |
-| Spring Integration | 2[1](#fn-threading-1-def), 3[1](#fn-threading-1-def), 4[1](#fn-threading-1-def), 5[1](#fn-threading-1-def), 6[1](#fn-threading-1-def), 7[1](#fn-threading-1-def) |
-| [reactor-core﻿](https://github.com/reactor/reactor-core) | 3[1](#fn-threading-1-def) |
+| Spring Integration | 2[1](#fn-threading-5-1-def), 3[1](#fn-threading-5-1-def), 4[1](#fn-threading-5-1-def), 5[1](#fn-threading-5-1-def), 6[1](#fn-threading-5-1-def), 7[1](#fn-threading-5-1-def) |
+| [reactor-core﻿](https://github.com/reactor/reactor-core) | 3[1](#fn-threading-5-1-def) |
 
 1
 
@@ -626,7 +626,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | Hessian Web Services | 2.1, 3.1, 4.0 |
 | JAX-WS | 2 |
 | [JBoss RESTEasy﻿](https://resteasy.dev/) | 3, 4, 5, 6, 7 |
-| JBossWS (Wildfly) | 4[1](#fn-web-services-1-def), 5[2](#fn-web-services-2-def), 6[3](#fn-web-services-3-def) |
+| JBossWS (Wildfly) | 4[1](#fn-web-services-6-1-def), 5[2](#fn-web-services-6-2-def), 6[3](#fn-web-services-6-3-def) |
 | Jakarta RESTful Web Services | 2.1+ |
 | Jersey | 1, 2, 3 |
 | Play WS API | 2.2 - 2.4 |
@@ -647,15 +647,15 @@ Wildfly 27 - 41.
 
 | Database frameworks | Versions |
 | --- | --- |
-| Amazon DynamoDB | 1[1](#fn-database-frameworks-1-def), 2[1](#fn-database-frameworks-1-def) |
+| Amazon DynamoDB | 1[1](#fn-database-frameworks-7-1-def), 2[1](#fn-database-frameworks-7-1-def) |
 | Apache Thrift | 2 |
-| DataStax client for Apache Cassandra | 2.1[1](#fn-database-frameworks-1-def), 3[1](#fn-database-frameworks-1-def), 4[1](#fn-database-frameworks-1-def) |
-| JDBC | 4+[1](#fn-database-frameworks-1-def) |
-| [Jedis Redis﻿](https://github.com/xetorthio/jedis) | 2, 3[1](#fn-database-frameworks-1-def), 4[1](#fn-database-frameworks-1-def), 5[1](#fn-database-frameworks-1-def), 6[1](#fn-database-frameworks-1-def), 7[1](#fn-database-frameworks-1-def) |
-| [Lettuce﻿](https://lettuce.io/) | 5.1 - 5.3[1](#fn-database-frameworks-1-def), 6.0.3 - 6.1.6[1](#fn-database-frameworks-1-def), 6.1.8 - 6.8[1](#fn-database-frameworks-1-def), 7.0 - 7.5[1](#fn-database-frameworks-1-def) |
-| [MongoDB Reactive Streams driver﻿](https://www.mongodb.com/docs/languages/java/reactive-streams-driver/current/) | 4.10+[1](#fn-database-frameworks-1-def), 5.0+[1](#fn-database-frameworks-1-def) |
-| [MongoDB asynchronous driver﻿](https://mongodb.github.io/mongo-java-driver/3.0/driver-async/) | 3.0 - 3.6.4[1](#fn-database-frameworks-1-def) |
-| [MongoDB synchronous driver ﻿](https://docs.mongodb.com/ecosystem/drivers/java/) | 2[1](#fn-database-frameworks-1-def), 3.0 - 3.6[1](#fn-database-frameworks-1-def), 3.7 - 3.11[1](#fn-database-frameworks-1-def), 3.12 - 4.11[1](#fn-database-frameworks-1-def), 5.0[1](#fn-database-frameworks-1-def) |
+| DataStax client for Apache Cassandra | 2.1[1](#fn-database-frameworks-7-1-def), 3[1](#fn-database-frameworks-7-1-def), 4[1](#fn-database-frameworks-7-1-def) |
+| JDBC | 4+[1](#fn-database-frameworks-7-1-def) |
+| [Jedis Redis﻿](https://github.com/xetorthio/jedis) | 2, 3[1](#fn-database-frameworks-7-1-def), 4[1](#fn-database-frameworks-7-1-def), 5[1](#fn-database-frameworks-7-1-def), 6[1](#fn-database-frameworks-7-1-def), 7[1](#fn-database-frameworks-7-1-def) |
+| [Lettuce﻿](https://lettuce.io/) | 5.1 - 5.3[1](#fn-database-frameworks-7-1-def), 6.0.3 - 6.1.6[1](#fn-database-frameworks-7-1-def), 6.1.8 - 6.8[1](#fn-database-frameworks-7-1-def), 7.0 - 7.5[1](#fn-database-frameworks-7-1-def) |
+| [MongoDB Reactive Streams driver﻿](https://www.mongodb.com/docs/languages/java/reactive-streams-driver/current/) | 4.10+[1](#fn-database-frameworks-7-1-def), 5.0+[1](#fn-database-frameworks-7-1-def) |
+| [MongoDB asynchronous driver﻿](https://mongodb.github.io/mongo-java-driver/3.0/driver-async/) | 3.0 - 3.6.4[1](#fn-database-frameworks-7-1-def) |
+| [MongoDB synchronous driver ﻿](https://docs.mongodb.com/ecosystem/drivers/java/) | 2[1](#fn-database-frameworks-7-1-def), 3.0 - 3.6[1](#fn-database-frameworks-7-1-def), 3.7 - 3.11[1](#fn-database-frameworks-7-1-def), 3.12 - 4.11[1](#fn-database-frameworks-7-1-def), 5.0[1](#fn-database-frameworks-7-1-def) |
 | [Redisson﻿](https://redisson.pro/) | 3+ |
 | Spring Boot Starter Data MongoDB | 2, 3, 4 |
 | Spring Boot Starter Data Redis | 2.1+ |
@@ -666,22 +666,22 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Messaging clients | Versions |
 | --- | --- |
-| [ActiveMQ﻿](https://activemq.apache.org) | 4[1](#fn-messaging-clients-1-def), 5[1](#fn-messaging-clients-1-def) |
-| [ActiveMQ Artemis﻿](https://activemq.apache.org/components/artemis/) | 1[1](#fn-messaging-clients-1-def), 2[1](#fn-messaging-clients-1-def) |
-| Amazon EventBridge | 1[1](#fn-messaging-clients-1-def), 2[1](#fn-messaging-clients-1-def) |
-| Amazon SNS | 1[1](#fn-messaging-clients-1-def), 2[1](#fn-messaging-clients-1-def) |
-| Amazon SQS | 1[1](#fn-messaging-clients-1-def), 2[1](#fn-messaging-clients-1-def) |
-| [Azure SDK EventHub﻿](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/eventhubs/azure-messaging-eventhubs) | 5.18.6+[2](#fn-messaging-clients-2-def), 1.2.26+ (Azure SDK BOM)[2](#fn-messaging-clients-2-def) |
-| [Azure SDK ServiceBus﻿](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/servicebus/azure-messaging-servicebus) | 7.17.8+[3](#fn-messaging-clients-3-def), 1.2.31+ (Azure SDK BOM)[3](#fn-messaging-clients-3-def) |
-| HornetQ | 2.2[1](#fn-messaging-clients-1-def), 2.3[1](#fn-messaging-clients-1-def), 2.4[1](#fn-messaging-clients-1-def) |
-| [IBM MQ client﻿](https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_9.1.0/com.ibm.mq.dev.doc/q118320_.htm) | 8[1](#fn-messaging-clients-1-def), 9[1](#fn-messaging-clients-1-def) |
-| JMS | 1.1[1](#fn-messaging-clients-1-def), 2.0[1](#fn-messaging-clients-1-def), 3.0[1](#fn-messaging-clients-1-def) |
-| [Kafka﻿](https://kafka.apache.org/documentation/) | 1.0 - 1.1[1](#fn-messaging-clients-1-def), 2.0 - 2.3[1](#fn-messaging-clients-1-def), 2.4 - 2.7[1](#fn-messaging-clients-1-def), 2.8[1](#fn-messaging-clients-1-def), 3.0 - 3.6[1](#fn-messaging-clients-1-def), 3.7 - 3.9[1](#fn-messaging-clients-1-def), 4.0 - 4.3[1](#fn-messaging-clients-1-def) |
-| [RabbitMQ﻿](https://www.rabbitmq.com/java-client.html) | 3[1](#fn-messaging-clients-1-def), 4.0.0 - 5.30.0[1](#fn-messaging-clients-1-def) |
+| [ActiveMQ﻿](https://activemq.apache.org) | 4 - 6[1](#fn-messaging-clients-8-1-def) |
+| [ActiveMQ Artemis﻿](https://activemq.apache.org/components/artemis/) | 1[1](#fn-messaging-clients-8-1-def), 2[1](#fn-messaging-clients-8-1-def) |
+| Amazon EventBridge | 1[1](#fn-messaging-clients-8-1-def), 2[1](#fn-messaging-clients-8-1-def) |
+| Amazon SNS | 1[1](#fn-messaging-clients-8-1-def), 2[1](#fn-messaging-clients-8-1-def) |
+| Amazon SQS | 1[1](#fn-messaging-clients-8-1-def), 2[1](#fn-messaging-clients-8-1-def) |
+| [Azure SDK EventHub﻿](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/eventhubs/azure-messaging-eventhubs) | 5.18.6+[2](#fn-messaging-clients-8-2-def), 1.2.26+ (Azure SDK BOM)[2](#fn-messaging-clients-8-2-def) |
+| [Azure SDK ServiceBus﻿](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/servicebus/azure-messaging-servicebus) | 7.17.8+[3](#fn-messaging-clients-8-3-def), 1.2.31+ (Azure SDK BOM)[3](#fn-messaging-clients-8-3-def) |
+| HornetQ | 2.2[1](#fn-messaging-clients-8-1-def), 2.3[1](#fn-messaging-clients-8-1-def), 2.4[1](#fn-messaging-clients-8-1-def) |
+| [IBM MQ client﻿](https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_9.1.0/com.ibm.mq.dev.doc/q118320_.htm) | 8[1](#fn-messaging-clients-8-1-def), 9[1](#fn-messaging-clients-8-1-def) |
+| JMS | 1.1[1](#fn-messaging-clients-8-1-def), 2.0[1](#fn-messaging-clients-8-1-def), 3.0[1](#fn-messaging-clients-8-1-def) |
+| [Kafka﻿](https://kafka.apache.org/documentation/) | 1.0 - 1.1[1](#fn-messaging-clients-8-1-def), 2.0 - 2.3[1](#fn-messaging-clients-8-1-def), 2.4 - 2.7[1](#fn-messaging-clients-8-1-def), 2.8[1](#fn-messaging-clients-8-1-def), 3.0 - 3.6[1](#fn-messaging-clients-8-1-def), 3.7 - 3.9[1](#fn-messaging-clients-8-1-def), 4.0 - 4.3[1](#fn-messaging-clients-8-1-def) |
+| [RabbitMQ﻿](https://www.rabbitmq.com/java-client.html) | 3[1](#fn-messaging-clients-8-1-def), 4.0.0 - 5.30.0[1](#fn-messaging-clients-8-1-def) |
 | Software AG WebMethod Broker and Universal messaging via JMS | All versions supported |
 | [Spring AMQP﻿](https://spring.io/projects/spring-amqp) | 1.5, 2.0, 2.1, 2.2, 2.3 |
 | Spring Cloud Stream Kafka Binder | 3+ |
-| Tibco EMS | All versions supported[4](#fn-messaging-clients-4-def) |
+| Tibco EMS | All versions supported[4](#fn-messaging-clients-8-4-def) |
 
 1
 
@@ -701,10 +701,10 @@ Tracing is only supported via JMS.
 
 | Remoting frameworks | Versions |
 | --- | --- |
-| [Akka Remoting﻿](https://doc.akka.io/docs/akka/2.5/remoting.html) | 2.4[1](#fn-remoting-frameworks-1-def), 2.5[1](#fn-remoting-frameworks-1-def), 2.3[3](#fn-remoting-frameworks-3-def), 2.6[3](#fn-remoting-frameworks-3-def), 2.7[3](#fn-remoting-frameworks-3-def) |
-| [Amazon AWS Lambda SDK﻿](https://aws.amazon.com/en/sdk-for-java/) | 1[1](#fn-remoting-frameworks-1-def), 2[1](#fn-remoting-frameworks-1-def) |
-| Amazon AWS SDK | 1[2](#fn-remoting-frameworks-2-def), 2[2](#fn-remoting-frameworks-2-def) |
-| [Apache Pekko Remoting﻿](https://pekko.apache.org/docs/pekko/current/remoting.html#classic-remoting-deprecated-) | 1.0.0 - 1.2.0[6](#fn-remoting-frameworks-6-def) |
+| [Akka Remoting﻿](https://doc.akka.io/docs/akka/2.5/remoting.html) | 2.4[1](#fn-remoting-frameworks-9-1-def), 2.5[1](#fn-remoting-frameworks-9-1-def), 2.3[3](#fn-remoting-frameworks-9-3-def), 2.6[3](#fn-remoting-frameworks-9-3-def), 2.7[3](#fn-remoting-frameworks-9-3-def) |
+| [Amazon AWS Lambda SDK﻿](https://aws.amazon.com/en/sdk-for-java/) | 1[1](#fn-remoting-frameworks-9-1-def), 2[1](#fn-remoting-frameworks-9-1-def) |
+| Amazon AWS SDK | 1[2](#fn-remoting-frameworks-9-2-def), 2[2](#fn-remoting-frameworks-9-2-def) |
+| [Apache Pekko Remoting﻿](https://pekko.apache.org/docs/pekko/current/remoting.html#classic-remoting-deprecated-) | 1.0.0 - 1.2.0[6](#fn-remoting-frameworks-9-6-def) |
 | [Apache Thrift﻿](https://thrift.apache.org/) | 0.7 - 0.24 |
 | [Azure SDK﻿](https://github.com/Azure/azure-sdk-for-java) | 1.2.9+ (Azure SDK BOM) |
 | [Azure SDK Blob Storage﻿](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/storage/azure-storage-blob) | 12.14.3+, 1.1.0+ (Azure SDK BOM) |
@@ -716,10 +716,10 @@ Tracing is only supported via JMS.
 | Java IMS TM Resource Adapter | All versions supported |
 | Java RMI-JRMP | All versions supported |
 | OpenJDK/Oracle JVM RMI-IIOP | All versions supported |
-| WebLogic RMI-IIOP | All versions supported[5](#fn-remoting-frameworks-5-def) |
+| WebLogic RMI-IIOP | All versions supported[5](#fn-remoting-frameworks-9-5-def) |
 | WebSphere Liberty RMI-IIOP | All versions supported |
 | WebSphere RMI-IIOP | All versions supported |
-| [gRPC﻿](https://grpc.github.io/grpc-java/javadoc/index.html) | 1.18 - 1.84[4](#fn-remoting-frameworks-4-def) |
+| [gRPC﻿](https://grpc.github.io/grpc-java/javadoc/index.html) | 1.18 - 1.84[4](#fn-remoting-frameworks-9-4-def) |
 
 1
 
@@ -747,7 +747,7 @@ Only supported when classic-remoting is used; not supported when using Artery. S
 
 | Monitoring frameworks | Versions |
 | --- | --- |
-| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-java/) | 1.0 - 1.3[1](#fn-monitoring-frameworks-1-def), 1.4 - 1.54[1](#fn-monitoring-frameworks-1-def), 1.55 - 1.60, 1.61 - 1.64 |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-java/) | 1.0 - 1.3[1](#fn-monitoring-frameworks-10-1-def), 1.4 - 1.54[1](#fn-monitoring-frameworks-10-1-def), 1.55 - 1.60, 1.61 - 1.64 |
 | [OpenTracing﻿](https://opentracing.io/guides/java/) | 0.33, 0.32, 0.31 |
 
 1
@@ -768,7 +768,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Application framework | Versions |
 | --- | --- |
-| [Spring Cloud Function﻿](https://spring.io/projects/spring-cloud-function) | 3[1](#fn-application-framework-1-def), 4[1](#fn-application-framework-1-def), 5[1](#fn-application-framework-1-def) |
+| [Spring Cloud Function﻿](https://spring.io/projects/spring-cloud-function) | 3[1](#fn-application-framework-13-1-def), 4[1](#fn-application-framework-13-1-def), 5[1](#fn-application-framework-13-1-def) |
 
 1
 
@@ -780,7 +780,7 @@ See also [OneAgent SDK for Java](/managed/ingest-from/extend-dynatrace/extend-tr
 
 | Virtual machine | Versions | Platforms |
 | --- | --- | --- |
-| [GraalVM Native Image](/managed/ingest-from/technology-support/application-software/java/graalvm-native-image "Install, configure, and manage Dynatrace GraalVM Native Image module.") | GraalVM for JDK 17 version 23[1](#fn-virtual-machine-1-def), GraalVM for JDK 21 version 23[1](#fn-virtual-machine-1-def), GraalVM for JDK 23[1](#fn-virtual-machine-1-def), GraalVM for JDK 24[1](#fn-virtual-machine-1-def), GraalVM 25[1](#fn-virtual-machine-1-def) | Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
+| [GraalVM Native Image](/managed/ingest-from/technology-support/application-software/java/graalvm-native-image "Install, configure, and manage Dynatrace GraalVM Native Image module.") | GraalVM for JDK 17 version 23[1](#fn-virtual-machine-2-1-def), GraalVM for JDK 21 version 23[1](#fn-virtual-machine-2-1-def), GraalVM for JDK 23[1](#fn-virtual-machine-2-1-def), GraalVM for JDK 24[1](#fn-virtual-machine-2-1-def), GraalVM 25[1](#fn-virtual-machine-2-1-def) | Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
 
 1
 
@@ -788,9 +788,9 @@ Binaries running on Alpine-based Linux systems are not supported
 
 | Application framework | Versions |
 | --- | --- |
-| [Micronaut﻿](https://micronaut.io) | 3.9+[1](#fn-application-framework-1-def) |
-| [Quarkus﻿](https://quarkus.io) | 3.8+[1](#fn-application-framework-1-def) |
-| [Spring Boot﻿](https://spring.io/projects/spring-boot) | 3.0+[1](#fn-application-framework-1-def), 4.0+[1](#fn-application-framework-1-def) |
+| [Micronaut﻿](https://micronaut.io) | 3.9+[1](#fn-application-framework-14-1-def) |
+| [Quarkus﻿](https://quarkus.io) | 3.8+[1](#fn-application-framework-14-1-def) |
+| [Spring Boot﻿](https://spring.io/projects/spring-boot) | 3.0+[1](#fn-application-framework-14-1-def), 4.0+[1](#fn-application-framework-14-1-def) |
 
 1
 
@@ -799,7 +799,7 @@ Supported in regard to building native images. This doesn't mean that all techno
 | Web framework | Versions |
 | --- | --- |
 | [Apache HttpClient﻿](https://hc.apache.org/httpcomponents-client-ga/) | 5.2+ |
-| [Netty﻿](https://netty.io/) | 4[1](#fn-web-framework-1-def) |
+| [Netty﻿](https://netty.io/) | 4[1](#fn-web-framework-15-1-def) |
 | [Spring WebFlux WebClient﻿](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-client) | 6, 7 |
 
 1
@@ -827,7 +827,7 @@ Dynatrace supports .NET applications written in C#. Limited support for .NET app
 | --- | --- |
 | ASP.NET Core | All versions supported |
 | ASP.NET Owin/Katana | 3.0.0+ |
-| [HttpClient﻿](https://docs.microsoft.com/en-us/previous-versions/visualstudio/hh193681(v=vs.118)) | All versions supported[1](#fn-web-framework-1-def) |
+| [HttpClient﻿](https://docs.microsoft.com/en-us/previous-versions/visualstudio/hh193681(v=vs.118)) | All versions supported[1](#fn-web-framework-18-1-def) |
 | [HttpListener﻿](https://docs.microsoft.com/en-us/dotnet/framework/network-programming/httplistener) | All versions supported |
 | [HttpWebRequest﻿](https://docs.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest?view=netframework-4.8) | All versions supported |
 
@@ -841,9 +841,9 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Remoting framework | Versions |
 | --- | --- |
-| Amazon AWS Lambda SDK | 3.5.0+[1](#fn-remoting-framework-1-def) |
-| Amazon AWS SDK | 3.5.0+[1](#fn-remoting-framework-1-def) |
-| [gRPC﻿](https://www.nuget.org/packages/Grpc.AspNetCore) | 2.23.2+[2](#fn-remoting-framework-2-def) |
+| Amazon AWS Lambda SDK | 3.5.0+[1](#fn-remoting-framework-20-1-def) |
+| Amazon AWS SDK | 3.5.0+[1](#fn-remoting-framework-20-1-def) |
+| [gRPC﻿](https://www.nuget.org/packages/Grpc.AspNetCore) | 2.23.2+[2](#fn-remoting-framework-20-2-def) |
 
 1
 
@@ -855,10 +855,10 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Database framework | Versions |
 | --- | --- |
-| ADO.NET | SQL Server[1](#fn-database-framework-1-def), SQL CE[1](#fn-database-framework-1-def), Oracle using Oracle.DataAccess.dll[1](#fn-database-framework-1-def) |
-| Amazon DynamoDB | 3.5.0+[1](#fn-database-framework-1-def) |
-| Azure Cosmos DB | 3.18+[2](#fn-database-framework-2-def) |
-| [MongoDB .NET driver﻿](https://mongodb.github.io/mongo-csharp-driver/) | 2.3 - 2.7[2](#fn-database-framework-2-def), 2.8+[2](#fn-database-framework-2-def) |
+| ADO.NET | SQL Server[1](#fn-database-framework-21-1-def), SQL CE[1](#fn-database-framework-21-1-def), Oracle using Oracle.DataAccess.dll[1](#fn-database-framework-21-1-def) |
+| Amazon DynamoDB | 3.5.0+[1](#fn-database-framework-21-1-def) |
+| Azure Cosmos DB | 3.18+[2](#fn-database-framework-21-2-def) |
+| [MongoDB .NET driver﻿](https://mongodb.github.io/mongo-csharp-driver/) | 2.3 - 2.7[2](#fn-database-framework-21-2-def), 2.8+[2](#fn-database-framework-21-2-def) |
 | [ServiceStack.Redis﻿](https://github.com/ServiceStack/ServiceStack/tree/main/ServiceStack.Redis) | 5.0.0+ |
 | [StackExchange.Redis﻿](https://github.com/StackExchange/StackExchange.Redis) | 2.0.0+ |
 
@@ -872,15 +872,15 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Messaging client | Versions |
 | --- | --- |
-| Amazon EventBridge | 3.5.0+[1](#fn-messaging-client-1-def) |
-| Amazon SNS | 3.5.0+[1](#fn-messaging-client-1-def) |
-| Amazon SQS | 3.5.0+[1](#fn-messaging-client-1-def) |
-| [Azure Messaging Service Bus﻿](https://www.nuget.org/packages/Azure.Messaging.ServiceBus) | 7+[3](#fn-messaging-client-3-def) |
-| [Confluent Kafka client library﻿](https://www.nuget.org/packages/Confluent.Kafka/) | 1.4.0+[2](#fn-messaging-client-2-def) |
-| [IBM MQ client﻿](https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_9.1.0/com.ibm.mq.dev.doc/q029250_.htm) | 8.0 - 9.1[2](#fn-messaging-client-2-def) |
-| [MassTransit﻿](https://www.nuget.org/packages/MassTransit) | 7.0 - 8.3.1[3](#fn-messaging-client-3-def), 8.3.2+[3](#fn-messaging-client-3-def) |
-| [Microsoft Azure Service Bus client for .NET﻿](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/) | 2.0.0 - 5.2.0[3](#fn-messaging-client-3-def) |
-| [RabbitMQ client﻿](https://www.nuget.org/packages/RabbitMQ.Client) | 4.1 - 6.x[3](#fn-messaging-client-3-def), 7.x+[3](#fn-messaging-client-3-def) |
+| Amazon EventBridge | 3.5.0+[1](#fn-messaging-client-22-1-def) |
+| Amazon SNS | 3.5.0+[1](#fn-messaging-client-22-1-def) |
+| Amazon SQS | 3.5.0+[1](#fn-messaging-client-22-1-def) |
+| [Azure Messaging Service Bus﻿](https://www.nuget.org/packages/Azure.Messaging.ServiceBus) | 7+[3](#fn-messaging-client-22-3-def) |
+| [Confluent Kafka client library﻿](https://www.nuget.org/packages/Confluent.Kafka/) | 1.4.0+[2](#fn-messaging-client-22-2-def) |
+| [IBM MQ client﻿](https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_9.1.0/com.ibm.mq.dev.doc/q029250_.htm) | 8.0 - 9.1[2](#fn-messaging-client-22-2-def) |
+| [MassTransit﻿](https://www.nuget.org/packages/MassTransit) | 7.0 - 8.3.1[3](#fn-messaging-client-22-3-def), 8.3.2+[3](#fn-messaging-client-22-3-def) |
+| [Microsoft Azure Service Bus client for .NET﻿](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/) | 2.0.0 - 5.2.0[3](#fn-messaging-client-22-3-def) |
+| [RabbitMQ client﻿](https://www.nuget.org/packages/RabbitMQ.Client) | 4.1 - 6.x[3](#fn-messaging-client-22-3-def), 7.x+[3](#fn-messaging-client-22-3-def) |
 
 1
 
@@ -896,7 +896,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-dotnet) | 1.0.1+[1](#fn-monitoring-framework-1-def), 1.1+[1](#fn-monitoring-framework-1-def) |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-dotnet) | 1.0.1+[1](#fn-monitoring-framework-23-1-def), 1.1+[1](#fn-monitoring-framework-23-1-def) |
 
 1
 
@@ -904,10 +904,10 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Logging framework | Versions |
 | --- | --- |
-| [Microsoft Logging Extensions﻿](https://docs.microsoft.com/en-us/dotnet/core/extensions/logging) | 3.0.0+[1](#fn-logging-framework-1-def) |
-| [NLog﻿](https://nlog-project.org/) | 4.5.11+[2](#fn-logging-framework-2-def) |
-| [Serilog﻿](https://serilog.net/) | 2.9+[1](#fn-logging-framework-1-def) |
-| [log4net﻿](https://logging.apache.org/log4net/) | 2.0.6+[1](#fn-logging-framework-1-def) |
+| [Microsoft Logging Extensions﻿](https://docs.microsoft.com/en-us/dotnet/core/extensions/logging) | 3.0.0+[1](#fn-logging-framework-24-1-def) |
+| [NLog﻿](https://nlog-project.org/) | 4.5.11+[2](#fn-logging-framework-24-2-def) |
+| [Serilog﻿](https://serilog.net/) | 2.9+[1](#fn-logging-framework-24-1-def) |
+| [log4net﻿](https://logging.apache.org/log4net/) | 2.0.6+[1](#fn-logging-framework-24-1-def) |
 
 1
 
@@ -925,7 +925,7 @@ Dynatrace supports .NET applications written in C#. Limited support for .NET app
 
 | Runtime | Versions | Platforms |
 | --- | --- | --- |
-| [.NET Framework](/managed/ingest-from/technology-support/application-software/dotnet "Learn about all aspects of Dynatrace support for .NET application monitoring.") | 3.5 SP1, 4[1](#fn-runtime-1-def), 4.5[1](#fn-runtime-1-def), 4.5.1[1](#fn-runtime-1-def), 4.5.2 - 4.8 | Windows (x86-64) |
+| [.NET Framework](/managed/ingest-from/technology-support/application-software/dotnet "Learn about all aspects of Dynatrace support for .NET application monitoring.") | 3.5 SP1, 4[1](#fn-runtime-4-1-def), 4.5[1](#fn-runtime-4-1-def), 4.5.1[1](#fn-runtime-4-1-def), 4.5.2 - 4.8 | Windows (x86-64) |
 
 1
 
@@ -943,8 +943,8 @@ Limited support: Dynatrace can only solve problems that can be reproduced on sup
 | Remoting framework | Versions |
 | --- | --- |
 | [.NET Remoting﻿](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)) | All versions supported |
-| Amazon AWS Lambda SDK | 3.5.0+[1](#fn-remoting-framework-1-def) |
-| Amazon AWS SDK | 3.5.0+[1](#fn-remoting-framework-1-def) |
+| Amazon AWS Lambda SDK | 3.5.0+[1](#fn-remoting-framework-26-1-def) |
+| Amazon AWS SDK | 3.5.0+[1](#fn-remoting-framework-26-1-def) |
 | WCF | All versions supported |
 
 1
@@ -954,7 +954,7 @@ The IAsyncResult pattern (APM) for .NET Framework 3.5 is supported in version 1.
 | Database framework | Versions |
 | --- | --- |
 | ADO.NET | SQL Server, SQL CE, ODBC, OLEDB, Oracle using Oracle.DataAccess.dll |
-| Amazon DynamoDB | 3.5.0+[1](#fn-database-framework-1-def) |
+| Amazon DynamoDB | 3.5.0+[1](#fn-database-framework-27-1-def) |
 | Azure Cosmos DB | 3.18+ |
 | [MongoDB .NET driver﻿](https://mongodb.github.io/mongo-csharp-driver/) | 2.3 - 2.7, 2.8+ |
 | [ServiceStack.Redis﻿](https://github.com/ServiceStack/ServiceStack/tree/main/ServiceStack.Redis) | 5.0.0+ |
@@ -965,9 +965,9 @@ The IAsyncResult pattern (APM) for .NET Framework 3.5 is supported in version 1.
 
 | Messaging client | Versions |
 | --- | --- |
-| Amazon EventBridge | 3.5.0+[1](#fn-messaging-client-1-def) |
-| Amazon SNS | 3.5.0+[1](#fn-messaging-client-1-def) |
-| Amazon SQS | 3.5.0+[1](#fn-messaging-client-1-def) |
+| Amazon EventBridge | 3.5.0+[1](#fn-messaging-client-28-1-def) |
+| Amazon SNS | 3.5.0+[1](#fn-messaging-client-28-1-def) |
+| Amazon SQS | 3.5.0+[1](#fn-messaging-client-28-1-def) |
 | [Azure Messaging Service Bus﻿](https://www.nuget.org/packages/Azure.Messaging.ServiceBus) | 7+ |
 | [Confluent Kafka client library﻿](https://www.nuget.org/packages/Confluent.Kafka/) | 1.4.0+ |
 | [IBM MQ client﻿](https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_9.1.0/com.ibm.mq.dev.doc/q029250_.htm) | 8.0 - 9.1 |
@@ -987,7 +987,7 @@ The IAsyncResult pattern (APM) for .NET Framework 3.5 is supported in version 1.
 | Logging framework | Versions |
 | --- | --- |
 | [Microsoft Logging Extensions﻿](https://docs.microsoft.com/en-us/dotnet/core/extensions/logging) | 3.0.0+ |
-| [NLog﻿](https://nlog-project.org/) | 4.5.11+[1](#fn-logging-framework-1-def) |
+| [NLog﻿](https://nlog-project.org/) | 4.5.11+[1](#fn-logging-framework-30-1-def) |
 | [Serilog﻿](https://serilog.net/) | 2.9+ |
 | [log4net﻿](https://logging.apache.org/log4net/) | 2.0.6+ |
 
@@ -1011,7 +1011,7 @@ This feature is only available when using Advanced .NET Instrumentation Mode.
 
 | Web framework | Versions |
 | --- | --- |
-| net/http | All versions supported[1](#fn-web-framework-1-def) |
+| net/http | All versions supported[1](#fn-web-framework-31-1-def) |
 
 1
 
@@ -1019,16 +1019,16 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Database frameworks | Versions |
 | --- | --- |
-| [Amazon DynamoDB﻿](https://github.com/aws/aws-sdk-go-v2/tree/main/service/dynamodb) | 1.13.0-1.54.0[1](#fn-database-frameworks-1-def), 1.55.0 - 1.57.4[1](#fn-database-frameworks-1-def), 1.57.5 - 1.59.0[1](#fn-database-frameworks-1-def), 1.59.1 - 1.60.1[1](#fn-database-frameworks-1-def) |
-| [Cassandra client (cassandra-gocql-driver/v2)﻿](https://github.com/apache/cassandra-gocql-driver) | 2.0.0 - 2.1.0[1](#fn-database-frameworks-1-def), 2.1.1[1](#fn-database-frameworks-1-def), 2.1.2[1](#fn-database-frameworks-1-def) |
-| [Cassandra client (gocql/gocql)﻿](https://github.com/gocql/gocql) | 1.0 - 1.7[1](#fn-database-frameworks-1-def) |
-| [Microsoft SQL Server (denisenkom/go-mssqldb)﻿](https://github.com/denisenkom/go-mssqldb) | 0.11 - 0.12[1](#fn-database-frameworks-1-def) |
-| [Microsoft SQL Server (microsoft/go-mssqldb)﻿](https://github.com/microsoft/go-mssqldb) | 0.11 - 0.21[1](#fn-database-frameworks-1-def), 1.0 - 1.10[1](#fn-database-frameworks-1-def) |
-| [MongoDB Go driver (mongo-go-driver)﻿](https://github.com/mongodb/mongo-go-driver) | 1.3 - 1.17[1](#fn-database-frameworks-1-def), 2.0.0 - 2.4.+[1](#fn-database-frameworks-1-def), 2.5.0 - 2.7.+[1](#fn-database-frameworks-1-def), 2.8+[1](#fn-database-frameworks-1-def) |
-| [MySQL﻿](https://github.com/go-sql-driver/mysql/) | 1.4.1[1](#fn-database-frameworks-1-def), 1.5.0[1](#fn-database-frameworks-1-def), 1.6.0[1](#fn-database-frameworks-1-def), 1.7[1](#fn-database-frameworks-1-def), 1.8 - 1.10[1](#fn-database-frameworks-1-def) |
-| [PostgreSQL (jackc/pgx)﻿](https://github.com/jackc/pgx) | 4.7 - 4.18[1](#fn-database-frameworks-1-def), 5.0 - 5.11[1](#fn-database-frameworks-1-def) |
-| [PostgreSQL (lib/pq)﻿](https://github.com/lib/pq/) | 1.2.0[1](#fn-database-frameworks-1-def), 1.3.0[1](#fn-database-frameworks-1-def), 1.4.0 - 1.10.9[1](#fn-database-frameworks-1-def) |
-| [go-redis﻿](https://github.com/redis/go-redis) | 7[1](#fn-database-frameworks-1-def), 8.8.0 - 8.11.5[1](#fn-database-frameworks-1-def), 9[1](#fn-database-frameworks-1-def) |
+| [Amazon DynamoDB﻿](https://github.com/aws/aws-sdk-go-v2/tree/main/service/dynamodb) | 1.13.0-1.54.0[1](#fn-database-frameworks-32-1-def), 1.55.0 - 1.57.4[1](#fn-database-frameworks-32-1-def), 1.57.5 - 1.59.0[1](#fn-database-frameworks-32-1-def), 1.59.1 - 1.60.1[1](#fn-database-frameworks-32-1-def) |
+| [Cassandra client (cassandra-gocql-driver/v2)﻿](https://github.com/apache/cassandra-gocql-driver) | 2.0.0 - 2.1.0[1](#fn-database-frameworks-32-1-def), 2.1.1[1](#fn-database-frameworks-32-1-def), 2.1.2[1](#fn-database-frameworks-32-1-def) |
+| [Cassandra client (gocql/gocql)﻿](https://github.com/gocql/gocql) | 1.0 - 1.7[1](#fn-database-frameworks-32-1-def) |
+| [Microsoft SQL Server (denisenkom/go-mssqldb)﻿](https://github.com/denisenkom/go-mssqldb) | 0.11 - 0.12[1](#fn-database-frameworks-32-1-def) |
+| [Microsoft SQL Server (microsoft/go-mssqldb)﻿](https://github.com/microsoft/go-mssqldb) | 0.11 - 0.21[1](#fn-database-frameworks-32-1-def), 1.0 - 1.10[1](#fn-database-frameworks-32-1-def) |
+| [MongoDB Go driver (mongo-go-driver)﻿](https://github.com/mongodb/mongo-go-driver) | 1.3 - 1.17[1](#fn-database-frameworks-32-1-def), 2.0.0 - 2.4.+[1](#fn-database-frameworks-32-1-def), 2.5.0 - 2.7.+[1](#fn-database-frameworks-32-1-def), 2.8+[1](#fn-database-frameworks-32-1-def) |
+| [MySQL﻿](https://github.com/go-sql-driver/mysql/) | 1.4.1[1](#fn-database-frameworks-32-1-def), 1.5.0[1](#fn-database-frameworks-32-1-def), 1.6.0[1](#fn-database-frameworks-32-1-def), 1.7[1](#fn-database-frameworks-32-1-def), 1.8 - 1.10[1](#fn-database-frameworks-32-1-def) |
+| [PostgreSQL (jackc/pgx)﻿](https://github.com/jackc/pgx) | 4.7 - 4.18[1](#fn-database-frameworks-32-1-def), 5.0 - 5.11[1](#fn-database-frameworks-32-1-def) |
+| [PostgreSQL (lib/pq)﻿](https://github.com/lib/pq/) | 1.2.0[1](#fn-database-frameworks-32-1-def), 1.3.0[1](#fn-database-frameworks-32-1-def), 1.4.0 - 1.10.9[1](#fn-database-frameworks-32-1-def) |
+| [go-redis﻿](https://github.com/redis/go-redis) | 7[1](#fn-database-frameworks-32-1-def), 8.8.0 - 8.11.5[1](#fn-database-frameworks-32-1-def), 9[1](#fn-database-frameworks-32-1-def) |
 
 1
 
@@ -1036,12 +1036,12 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Messaging clients | Versions |
 | --- | --- |
-| [Amazon EventBridge﻿](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/eventbridge) | 1.13.0 - 1.45.25[1](#fn-messaging-clients-1-def) |
-| [Amazon SNS﻿](https://github.com/aws/aws-sdk-go-v2/tree/main/service/sns) | 1.15.0 - 1.38.0[1](#fn-messaging-clients-1-def), 1.38.1 - 1.39.17[1](#fn-messaging-clients-1-def), 1.39.18 - 1.40.1[1](#fn-messaging-clients-1-def), 1.40.2 - 1.41.1[1](#fn-messaging-clients-1-def), 1.41.2 - 1.42.6[1](#fn-messaging-clients-1-def) |
-| [Amazon SQS﻿](https://github.com/aws/aws-sdk-go-v2/tree/main/service/sqs) | 1.16.0-1.42.27[1](#fn-messaging-clients-1-def), 1.42.28 - 1.44.0[1](#fn-messaging-clients-1-def), 1.44.1 - 1.45.1[1](#fn-messaging-clients-1-def) |
-| [Kafka (IBM/sarama)﻿](https://github.com/IBM/sarama) | 1.40+[1](#fn-messaging-clients-1-def) |
-| [Kafka (Shopify/sarama)﻿](https://github.com/Shopify/sarama) | 1.18 - 1.48[1](#fn-messaging-clients-1-def) |
-| [Kafka (confluentinc/confluent-kafka-go)﻿](https://github.com/confluentinc/confluent-kafka-go) | 1.9 - 2.8[1](#fn-messaging-clients-1-def), 2.10[1](#fn-messaging-clients-1-def), 2.11[1](#fn-messaging-clients-1-def), 2.12[1](#fn-messaging-clients-1-def), 2.13.0[1](#fn-messaging-clients-1-def), 2.14.0[1](#fn-messaging-clients-1-def), 2.14.1[1](#fn-messaging-clients-1-def), 2.14.2[1](#fn-messaging-clients-1-def), 2.15.0[1](#fn-messaging-clients-1-def) |
+| [Amazon EventBridge﻿](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/eventbridge) | 1.13.0 - 1.45.25[1](#fn-messaging-clients-33-1-def) |
+| [Amazon SNS﻿](https://github.com/aws/aws-sdk-go-v2/tree/main/service/sns) | 1.15.0 - 1.38.0[1](#fn-messaging-clients-33-1-def), 1.38.1 - 1.39.17[1](#fn-messaging-clients-33-1-def), 1.39.18 - 1.40.1[1](#fn-messaging-clients-33-1-def), 1.40.2 - 1.41.1[1](#fn-messaging-clients-33-1-def) |
+| [Amazon SQS﻿](https://github.com/aws/aws-sdk-go-v2/tree/main/service/sqs) | 1.16.0-1.42.27[1](#fn-messaging-clients-33-1-def), 1.42.28 - 1.44.0[1](#fn-messaging-clients-33-1-def), 1.44.1 - 1.45.1[1](#fn-messaging-clients-33-1-def) |
+| [Kafka (IBM/sarama)﻿](https://github.com/IBM/sarama) | 1.40+[1](#fn-messaging-clients-33-1-def) |
+| [Kafka (Shopify/sarama)﻿](https://github.com/Shopify/sarama) | 1.18 - 1.48[1](#fn-messaging-clients-33-1-def) |
+| [Kafka (confluentinc/confluent-kafka-go)﻿](https://github.com/confluentinc/confluent-kafka-go) | 1.9 - 2.8[1](#fn-messaging-clients-33-1-def), 2.10[1](#fn-messaging-clients-33-1-def), 2.11[1](#fn-messaging-clients-33-1-def), 2.12[1](#fn-messaging-clients-33-1-def), 2.13.0[1](#fn-messaging-clients-33-1-def), 2.14.0[1](#fn-messaging-clients-33-1-def), 2.14.1[1](#fn-messaging-clients-33-1-def), 2.14.2[1](#fn-messaging-clients-33-1-def), 2.15.0[1](#fn-messaging-clients-33-1-def) |
 
 1
 
@@ -1049,9 +1049,9 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Remoting frameworks | Versions |
 | --- | --- |
-| [Amazon AWS Lambda SDK﻿](https://github.com/aws/aws-lambda-go) | 1.18.0-1.54.0[1](#fn-remoting-frameworks-1-def) |
-| [Amazon AWS SDK﻿](https://github.com/aws/aws-sdk-go-v2) | 1.13.0 - 1.39.0[2](#fn-remoting-frameworks-2-def), 1.39.1 - 1.41.1[2](#fn-remoting-frameworks-2-def), 1.41.2 - 1.41.7[2](#fn-remoting-frameworks-2-def), 1.41.8 - 1.42.0[2](#fn-remoting-frameworks-2-def), 1.42.1[2](#fn-remoting-frameworks-2-def), 1.42.2 - 1.43.6[2](#fn-remoting-frameworks-2-def) |
-| [gRPC﻿](https://godoc.org/google.golang.org/grpc) | 1.17 - 1.28[1](#fn-remoting-frameworks-1-def), 1.29[1](#fn-remoting-frameworks-1-def), 1.30 - 1.39[1](#fn-remoting-frameworks-1-def), 1.40 - 1.59[1](#fn-remoting-frameworks-1-def), 1.60 - 1.68[1](#fn-remoting-frameworks-1-def), 1.69 - 1.76[1](#fn-remoting-frameworks-1-def), 1.78 - 1.83[1](#fn-remoting-frameworks-1-def) |
+| [Amazon AWS Lambda SDK﻿](https://github.com/aws/aws-lambda-go) | 1.18.0-1.54.0[1](#fn-remoting-frameworks-34-1-def) |
+| [Amazon AWS SDK﻿](https://github.com/aws/aws-sdk-go-v2) | 1.13.0 - 1.39.0[2](#fn-remoting-frameworks-34-2-def), 1.39.1 - 1.41.1[2](#fn-remoting-frameworks-34-2-def), 1.41.2 - 1.41.7[2](#fn-remoting-frameworks-34-2-def), 1.41.8 - 1.42.0[2](#fn-remoting-frameworks-34-2-def), 1.42.1[2](#fn-remoting-frameworks-34-2-def), 1.42.2 - 1.43.6[2](#fn-remoting-frameworks-34-2-def) |
+| [gRPC﻿](https://godoc.org/google.golang.org/grpc) | 1.17 - 1.28[1](#fn-remoting-frameworks-34-1-def), 1.29[1](#fn-remoting-frameworks-34-1-def), 1.30 - 1.39[1](#fn-remoting-frameworks-34-1-def), 1.40 - 1.59[1](#fn-remoting-frameworks-34-1-def), 1.60 - 1.68[1](#fn-remoting-frameworks-34-1-def), 1.69 - 1.76[1](#fn-remoting-frameworks-34-1-def), 1.78 - 1.83[1](#fn-remoting-frameworks-34-1-def) |
 
 1
 
@@ -1063,7 +1063,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Monitoring frameworks | Versions |
 | --- | --- |
-| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7[1](#fn-monitoring-frameworks-1-def), 1.8 - 1.11.0[1](#fn-monitoring-frameworks-1-def), 1.11.1 - 1.27[1](#fn-monitoring-frameworks-1-def), 1.28 - 1.46[1](#fn-monitoring-frameworks-1-def) |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7[1](#fn-monitoring-frameworks-35-1-def), 1.8 - 1.11.0[1](#fn-monitoring-frameworks-35-1-def), 1.11.1 - 1.27[1](#fn-monitoring-frameworks-35-1-def), 1.28 - 1.46[1](#fn-monitoring-frameworks-35-1-def) |
 
 1
 
@@ -1071,9 +1071,9 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Logging frameworks | Versions |
 | --- | --- |
-| [Logrus﻿](https://github.com/sirupsen/logrus) | 1.7.1 - 1.9[1](#fn-logging-frameworks-1-def) |
-| [Zap﻿](https://github.com/uber-go/zap) | 1.10 - 1.28[2](#fn-logging-frameworks-2-def) |
-| log/slog | All versions supported[2](#fn-logging-frameworks-2-def) |
+| [Logrus﻿](https://github.com/sirupsen/logrus) | 1.7.1 - 1.9[1](#fn-logging-frameworks-36-1-def) |
+| [Zap﻿](https://github.com/uber-go/zap) | 1.10 - 1.28[2](#fn-logging-frameworks-36-2-def) |
+| log/slog | All versions supported[2](#fn-logging-frameworks-36-2-def) |
 
 1
 
@@ -1100,12 +1100,12 @@ Node.js follows a Long Term Support (LTS) release schedule. The following table 
 | [Express﻿](https://expressjs.com/) | 3, 4, 5 |
 | [Fastify﻿](https://fastify.dev/) | >=3.3.0 |
 | [Koa﻿](https://www.npmjs.com/package/koa-router) | >=7.0.0 |
-| [Nest﻿](https://nestjs.com/) | >=6.0.0[2](#fn-web-frameworks-2-def) |
+| [Nest﻿](https://nestjs.com/) | >=6.0.0[2](#fn-web-frameworks-37-2-def) |
 | [Node.js built-in HTTP/2 module﻿](https://nodejs.org/api/http2.html) | All versions supported |
-| [Node.js built-in HTTP/HTTPS modules﻿](https://nodejs.org/api/http.html) | All versions supported[1](#fn-web-frameworks-1-def) |
+| [Node.js built-in HTTP/HTTPS modules﻿](https://nodejs.org/api/http.html) | All versions supported[1](#fn-web-frameworks-37-1-def) |
 | [hapi﻿](https://hapijs.com/) | 17+ |
-| [restify﻿](https://www.npmjs.com/package/restify) | >=4.1[1](#fn-web-frameworks-1-def) |
-| [router﻿](https://www.npmjs.com/package/router) | >=1.0.0[1](#fn-web-frameworks-1-def) |
+| [restify﻿](https://www.npmjs.com/package/restify) | >=4.1[1](#fn-web-frameworks-37-1-def) |
+| [router﻿](https://www.npmjs.com/package/router) | >=1.0.0[1](#fn-web-frameworks-37-1-def) |
 
 1
 
@@ -1117,9 +1117,9 @@ Nest is supported implicitly via underlying Express or Fastify platforms.
 
 | HTTP libraries | Versions |
 | --- | --- |
-| [Node.js built-in HTTP/HTTPS modules﻿](https://nodejs.org/api/http.html) | All versions supported[1](#fn-http-libraries-1-def) |
-| [Node.js built-in fetch API﻿](https://nodejs.org/api/globals.html#fetch) | >=18.0.0[1](#fn-http-libraries-1-def) |
-| [Undici HTTP client﻿](https://www.npmjs.com/package/undici) | All versions supported[1](#fn-http-libraries-1-def) |
+| [Node.js built-in HTTP/HTTPS modules﻿](https://nodejs.org/api/http.html) | All versions supported[1](#fn-http-libraries-38-1-def) |
+| [Node.js built-in fetch API﻿](https://nodejs.org/api/globals.html#fetch) | >=18.0.0[1](#fn-http-libraries-38-1-def) |
+| [Undici HTTP client﻿](https://www.npmjs.com/package/undici) | All versions supported[1](#fn-http-libraries-38-1-def) |
 
 1
 
@@ -1127,17 +1127,17 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Database frameworks | Versions |
 | --- | --- |
-| Amazon DynamoDB | 2[1](#fn-database-frameworks-1-def), 3.0-3.901[1](#fn-database-frameworks-1-def), 3.902+[1](#fn-database-frameworks-1-def) |
-| [Couchbase﻿](https://www.npmjs.com/package/couchbase) | 2.4[1](#fn-database-frameworks-1-def), 2.5[1](#fn-database-frameworks-1-def), 2.6[1](#fn-database-frameworks-1-def), 3[1](#fn-database-frameworks-1-def), 4[1](#fn-database-frameworks-1-def) |
-| [IOredis﻿](https://www.npmjs.com/package/ioredis) | 4[1](#fn-database-frameworks-1-def), 5[1](#fn-database-frameworks-1-def) |
-| [MongoDB﻿](https://www.npmjs.com/package/mongodb) | 2[1](#fn-database-frameworks-1-def), 3[1](#fn-database-frameworks-1-def), >=4[1](#fn-database-frameworks-1-def) |
-| [MySQL﻿](https://www.npmjs.com/package/mysql) | 2[1](#fn-database-frameworks-1-def) |
-| [MySQL2﻿](https://www.npmjs.com/package/mysql2) | 1.6[1](#fn-database-frameworks-1-def), 1.7[1](#fn-database-frameworks-1-def), 2[1](#fn-database-frameworks-1-def), 3[1](#fn-database-frameworks-1-def) |
-| [PostgreSQL﻿](https://www.npmjs.com/package/pg) | 5[1](#fn-database-frameworks-1-def), 6[1](#fn-database-frameworks-1-def), 7[1](#fn-database-frameworks-1-def), 8[1](#fn-database-frameworks-1-def) |
-| [Redis﻿](https://www.npmjs.com/package/redis) | 0.10[1](#fn-database-frameworks-1-def), 0.12[1](#fn-database-frameworks-1-def), 1.0[1](#fn-database-frameworks-1-def), 2.5[1](#fn-database-frameworks-1-def), 3[1](#fn-database-frameworks-1-def), 4[1](#fn-database-frameworks-1-def), 5[1](#fn-database-frameworks-1-def), 4[1](#fn-database-frameworks-1-def) |
-| [SQLite3 (context passing only)﻿](https://www.npmjs.com/package/sqlite3) | <5, 5.1+[3](#fn-database-frameworks-3-def) |
-| [mssql﻿](https://www.npmjs.com/package/mssql) | 5+[1](#fn-database-frameworks-1-def) |
-| [oracledb﻿](https://www.npmjs.com/package/oracledb) | 5+[2](#fn-database-frameworks-2-def) |
+| Amazon DynamoDB | 2[1](#fn-database-frameworks-39-1-def), 3.0-3.901[1](#fn-database-frameworks-39-1-def), 3.902+[1](#fn-database-frameworks-39-1-def) |
+| [Couchbase﻿](https://www.npmjs.com/package/couchbase) | 2.4[1](#fn-database-frameworks-39-1-def), 2.5[1](#fn-database-frameworks-39-1-def), 2.6[1](#fn-database-frameworks-39-1-def), 3[1](#fn-database-frameworks-39-1-def), 4[1](#fn-database-frameworks-39-1-def) |
+| [IOredis﻿](https://www.npmjs.com/package/ioredis) | 4[1](#fn-database-frameworks-39-1-def), 5[1](#fn-database-frameworks-39-1-def) |
+| [MongoDB﻿](https://www.npmjs.com/package/mongodb) | 2[1](#fn-database-frameworks-39-1-def), 3[1](#fn-database-frameworks-39-1-def), >=4[1](#fn-database-frameworks-39-1-def) |
+| [MySQL﻿](https://www.npmjs.com/package/mysql) | 2[1](#fn-database-frameworks-39-1-def) |
+| [MySQL2﻿](https://www.npmjs.com/package/mysql2) | 1.6[1](#fn-database-frameworks-39-1-def), 1.7[1](#fn-database-frameworks-39-1-def), 2[1](#fn-database-frameworks-39-1-def), 3[1](#fn-database-frameworks-39-1-def) |
+| [PostgreSQL﻿](https://www.npmjs.com/package/pg) | 5[1](#fn-database-frameworks-39-1-def), 6[1](#fn-database-frameworks-39-1-def), 7[1](#fn-database-frameworks-39-1-def), 8[1](#fn-database-frameworks-39-1-def) |
+| [Redis﻿](https://www.npmjs.com/package/redis) | 0.10[1](#fn-database-frameworks-39-1-def), 0.12[1](#fn-database-frameworks-39-1-def), 1.0[1](#fn-database-frameworks-39-1-def), 2.5[1](#fn-database-frameworks-39-1-def), 3[1](#fn-database-frameworks-39-1-def), 4[1](#fn-database-frameworks-39-1-def), 5[1](#fn-database-frameworks-39-1-def), 4[1](#fn-database-frameworks-39-1-def) |
+| [SQLite3 (context passing only)﻿](https://www.npmjs.com/package/sqlite3) | <5, 5.1+[3](#fn-database-frameworks-39-3-def) |
+| [mssql﻿](https://www.npmjs.com/package/mssql) | 5+[1](#fn-database-frameworks-39-1-def) |
+| [oracledb﻿](https://www.npmjs.com/package/oracledb) | 5+[2](#fn-database-frameworks-39-2-def) |
 
 1
 
@@ -1153,8 +1153,8 @@ Note that 5.0 versions are not supported.
 
 | API Querying frameworks | Versions |
 | --- | --- |
-| [GraphQL﻿](https://www.dynatrace.com/hub/detail/graphql/) | 15+[1](#fn-api-querying-frameworks-1-def) |
-| [GraphQL Yoga﻿](https://www.npmjs.com/package/graphql-yoga) | 5.7+[2](#fn-api-querying-frameworks-2-def) |
+| [GraphQL﻿](https://www.dynatrace.com/hub/detail/graphql/) | 15+[1](#fn-api-querying-frameworks-40-1-def) |
+| [GraphQL Yoga﻿](https://www.npmjs.com/package/graphql-yoga) | 5.7+[2](#fn-api-querying-frameworks-40-2-def) |
 
 1
 
@@ -1166,11 +1166,11 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Messaging clients | Versions |
 | --- | --- |
-| Amazon EventBridge | 2[1](#fn-messaging-clients-1-def), 3.0-3.901[1](#fn-messaging-clients-1-def), 3.902+[1](#fn-messaging-clients-1-def) |
-| Amazon SNS | 2[1](#fn-messaging-clients-1-def), 3.0-3.901[1](#fn-messaging-clients-1-def), 3.902+[1](#fn-messaging-clients-1-def) |
-| Amazon SQS | 2[1](#fn-messaging-clients-1-def), 3.0-3.901[1](#fn-messaging-clients-1-def), 3.902+[1](#fn-messaging-clients-1-def) |
-| [KafkaJs client library﻿](https://www.npmjs.com/package/kafkajs) | 1.11+[1](#fn-messaging-clients-1-def), 2[1](#fn-messaging-clients-1-def) |
-| [RabbitMQ﻿](https://www.npmjs.com/package/amqplib) | 0.2[2](#fn-messaging-clients-2-def), 0.3.2[2](#fn-messaging-clients-2-def), 0.4.2[2](#fn-messaging-clients-2-def), 0.5[2](#fn-messaging-clients-2-def), 0.6[2](#fn-messaging-clients-2-def), 0.7[2](#fn-messaging-clients-2-def), 0.8[2](#fn-messaging-clients-2-def), 0.9[2](#fn-messaging-clients-2-def), 0.10[2](#fn-messaging-clients-2-def), 0.9[2](#fn-messaging-clients-2-def), 0.10[2](#fn-messaging-clients-2-def) |
+| Amazon EventBridge | 2[1](#fn-messaging-clients-41-1-def), 3.0-3.901[1](#fn-messaging-clients-41-1-def), 3.902+[1](#fn-messaging-clients-41-1-def) |
+| Amazon SNS | 2[1](#fn-messaging-clients-41-1-def), 3.0-3.901[1](#fn-messaging-clients-41-1-def), 3.902+[1](#fn-messaging-clients-41-1-def) |
+| Amazon SQS | 2[1](#fn-messaging-clients-41-1-def), 3.0-3.901[1](#fn-messaging-clients-41-1-def), 3.902+[1](#fn-messaging-clients-41-1-def) |
+| [KafkaJs client library﻿](https://www.npmjs.com/package/kafkajs) | 1.11+[1](#fn-messaging-clients-41-1-def), 2[1](#fn-messaging-clients-41-1-def) |
+| [RabbitMQ﻿](https://www.npmjs.com/package/amqplib) | 0.2[2](#fn-messaging-clients-41-2-def), 0.3.2[2](#fn-messaging-clients-41-2-def), 0.4.2[2](#fn-messaging-clients-41-2-def), 0.5[2](#fn-messaging-clients-41-2-def), 0.6[2](#fn-messaging-clients-41-2-def), 0.7[2](#fn-messaging-clients-41-2-def), 0.8[2](#fn-messaging-clients-41-2-def), 0.9[2](#fn-messaging-clients-41-2-def), 0.10[2](#fn-messaging-clients-41-2-def), 0.9[2](#fn-messaging-clients-41-2-def), 0.10[2](#fn-messaging-clients-41-2-def) |
 
 1
 
@@ -1182,10 +1182,10 @@ RabbitMQ publishers supported in [AWS Lambda](/managed/ingest-from/amazon-web-se
 
 | Remoting frameworks | Versions |
 | --- | --- |
-| [Amazon AWS Lambda SDK﻿](https://aws.amazon.com/sdk-for-javascript/) | 2[1](#fn-remoting-frameworks-1-def), 3.0-3.901[1](#fn-remoting-frameworks-1-def), 3.902+[1](#fn-remoting-frameworks-1-def) |
-| Amazon AWS SDK | 2[2](#fn-remoting-frameworks-2-def), 3.0-3.901[2](#fn-remoting-frameworks-2-def), 3.902+[2](#fn-remoting-frameworks-2-def) |
+| [Amazon AWS Lambda SDK﻿](https://aws.amazon.com/sdk-for-javascript/) | 2[1](#fn-remoting-frameworks-42-1-def), 3.0-3.901[1](#fn-remoting-frameworks-42-1-def), 3.902+[1](#fn-remoting-frameworks-42-1-def) |
+| Amazon AWS SDK | 2[2](#fn-remoting-frameworks-42-2-def), 3.0-3.901[2](#fn-remoting-frameworks-42-2-def), 3.902+[2](#fn-remoting-frameworks-42-2-def) |
 | [gRPC﻿](https://grpc.github.io/grpc/node/) | 1.10 - 1.24 |
-| [grpc-js﻿](https://www.npmjs.com/package/@grpc/grpc-js) | 1[3](#fn-remoting-frameworks-3-def) |
+| [grpc-js﻿](https://www.npmjs.com/package/@grpc/grpc-js) | 1[3](#fn-remoting-frameworks-42-3-def) |
 
 1
 
@@ -1201,8 +1201,8 @@ gRPC client calls supported in [AWS Lambda](/managed/ingest-from/amazon-web-serv
 
 | Monitoring frameworks | Versions |
 | --- | --- |
-| [OpenTelemetry API for JavaScript﻿](https://www.npmjs.com/package/@opentelemetry/api) | 1[1](#fn-monitoring-frameworks-1-def) |
-| [OpenTelemetry SDK for JavaScript﻿](https://www.npmjs.com/package/@opentelemetry/core) | 1[1](#fn-monitoring-frameworks-1-def), 2.0-2.8[1](#fn-monitoring-frameworks-1-def), 2.9+[1](#fn-monitoring-frameworks-1-def) |
+| [OpenTelemetry API for JavaScript﻿](https://www.npmjs.com/package/@opentelemetry/api) | 1[1](#fn-monitoring-frameworks-43-1-def) |
+| [OpenTelemetry SDK for JavaScript﻿](https://www.npmjs.com/package/@opentelemetry/core) | 1[1](#fn-monitoring-frameworks-43-1-def), 2.0-2.8[1](#fn-monitoring-frameworks-43-1-def), 2.9+[1](#fn-monitoring-frameworks-43-1-def) |
 
 1
 
@@ -1210,7 +1210,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Cache | Versions |
 | --- | --- |
-| [Memcached﻿](https://www.npmjs.com/package/memcached) | 2.2[1](#fn-cache-1-def) |
+| [Memcached﻿](https://www.npmjs.com/package/memcached) | 2.2[1](#fn-cache-44-1-def) |
 
 1
 
@@ -1218,10 +1218,10 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Logging frameworks | Versions |
 | --- | --- |
-| [Bunyan﻿](https://www.npmjs.com/package/bunyan) | 1+[1](#fn-logging-frameworks-1-def) |
-| [log4js﻿](https://www.npmjs.com/package/log4js) | >=6.0.0[1](#fn-logging-frameworks-1-def) |
-| [pino﻿](https://www.npmjs.com/package/pino) | 5.14+[1](#fn-logging-frameworks-1-def), >=6[1](#fn-logging-frameworks-1-def) |
-| [winston﻿](https://www.npmjs.com/package/winston) | 3[1](#fn-logging-frameworks-1-def) |
+| [Bunyan﻿](https://www.npmjs.com/package/bunyan) | 1+[1](#fn-logging-frameworks-45-1-def) |
+| [log4js﻿](https://www.npmjs.com/package/log4js) | >=6.0.0[1](#fn-logging-frameworks-45-1-def) |
+| [pino﻿](https://www.npmjs.com/package/pino) | 5.14+[1](#fn-logging-frameworks-45-1-def), >=6[1](#fn-logging-frameworks-45-1-def) |
+| [winston﻿](https://www.npmjs.com/package/winston) | 3[1](#fn-logging-frameworks-45-1-def) |
 
 1
 
@@ -1239,7 +1239,7 @@ See also [OneAgent SDK for Node.js](/managed/ingest-from/extend-dynatrace/extend
 | --- | --- |
 | [Azure Functions﻿](https://pypi.org/project/azure-functions/) | 1.21+ |
 | [Bottle﻿](https://github.com/bottlepy/bottle) | 0.11+ |
-| [Django﻿](https://github.com/django/django) | 1.8+[1](#fn-web-frameworks-1-def) |
+| [Django﻿](https://github.com/django/django) | 1.8+[1](#fn-web-frameworks-46-1-def) |
 | [Falcon﻿](https://falconframework.org/) | 4.0+ |
 | [FastAPI﻿](https://github.com/tiangolo/fastapi) | 0.44+ |
 | [Flask﻿](https://github.com/pallets/flask) | 1.1.2+ |
@@ -1254,10 +1254,10 @@ Including Django REST framework based on supported Django versions.
 
 | HTTP libraries | Versions |
 | --- | --- |
-| [Requests﻿](https://github.com/psf/requests) | 2[1](#fn-http-libraries-1-def) |
-| [aiohttp Client﻿](https://docs.aiohttp.org/en/stable/client.html#aiohttp-client) | 3.0+[1](#fn-http-libraries-1-def) |
+| [Requests﻿](https://github.com/psf/requests) | 2[1](#fn-http-libraries-47-1-def) |
+| [aiohttp Client﻿](https://docs.aiohttp.org/en/stable/client.html#aiohttp-client) | 3.0+[1](#fn-http-libraries-47-1-def) |
 | [httpx﻿](https://www.python-httpx.org/) | 0.20.0+ |
-| [urllib3﻿](https://github.com/urllib3/urllib3) | 2.0+[1](#fn-http-libraries-1-def) |
+| [urllib3﻿](https://github.com/urllib3/urllib3) | 2.0+[1](#fn-http-libraries-47-1-def) |
 
 1
 
@@ -1265,14 +1265,14 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Database frameworks | Versions |
 | --- | --- |
-| Amazon DynamoDB | 1.11+[1](#fn-database-frameworks-1-def) |
+| Amazon DynamoDB | 1.11+[1](#fn-database-frameworks-48-1-def) |
 | [PyMongo﻿](https://pymongo.readthedocs.io/en/stable/) | 3.10+ |
 | [SQL Alchemy﻿](https://github.com/sqlalchemy/sqlalchemy) | 1.1+ |
 | [azure-cosmos﻿](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/cosmos/azure-cosmos) | 4.0.0+ |
 | [mysqlclient﻿](https://pypi.org/project/mysqlclient/) | 2.0+ |
 | [psycopg2﻿](https://github.com/psycopg/psycopg2) | 2.8.4+ |
 | [python-oracledb﻿](https://github.com/oracle/python-oracledb) | 1.0.1+ |
-| [redis-py﻿](https://github.com/redis/redis-py) | 3.4+[1](#fn-database-frameworks-1-def) |
+| [redis-py﻿](https://github.com/redis/redis-py) | 3.4+[1](#fn-database-frameworks-48-1-def) |
 
 1
 
@@ -1280,15 +1280,15 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Messaging libraries | Versions |
 | --- | --- |
-| Amazon EventBridge | 1.11+[1](#fn-messaging-libraries-1-def) |
-| Amazon SNS | 1.11+[1](#fn-messaging-libraries-1-def) |
-| Amazon SQS | 1.11+[1](#fn-messaging-libraries-1-def) |
+| Amazon EventBridge | 1.11+[1](#fn-messaging-libraries-49-1-def) |
+| Amazon SNS | 1.11+[1](#fn-messaging-libraries-49-1-def) |
+| Amazon SQS | 1.11+[1](#fn-messaging-libraries-49-1-def) |
 | [Azure SDK EventHub﻿](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/eventhub/azure-eventhub) | 5.12+ |
 | [Azure SDK ServiceBus﻿](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/servicebus/azure-servicebus) | 7.10+ |
 | [Celery﻿](https://github.com/celery/celery) | 5.3+ |
-| [Confluent Kafka Python client library﻿](https://github.com/confluentinc/confluent-kafka-python) | 2.0.2+[1](#fn-messaging-libraries-1-def) |
+| [Confluent Kafka Python client library﻿](https://github.com/confluentinc/confluent-kafka-python) | 2.0.2+[1](#fn-messaging-libraries-49-1-def) |
 | [Kombu﻿](https://github.com/celery/kombu) | 4.6.7+ |
-| [kafka-python client library﻿](https://github.com/dpkp/kafka-python) | 1.4+[1](#fn-messaging-libraries-1-def) |
+| [kafka-python client library﻿](https://github.com/dpkp/kafka-python) | 1.4+[1](#fn-messaging-libraries-49-1-def) |
 | [pika﻿](https://github.com/pika/pika) | 1.0.0+ |
 
 1
@@ -1297,9 +1297,9 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Remoting frameworks | Versions |
 | --- | --- |
-| [Amazon AWS SDK﻿](https://github.com/boto/boto3) | 1.11+[1](#fn-remoting-frameworks-1-def) |
-| [Azure SDK﻿](https://github.com/Azure/azure-sdk-for-python) | 1.0+[2](#fn-remoting-frameworks-2-def) |
-| [gRPC﻿](https://pypi.org/project/grpcio/) | 1.26+[3](#fn-remoting-frameworks-3-def) |
+| [Amazon AWS SDK﻿](https://github.com/boto/boto3) | 1.11+[1](#fn-remoting-frameworks-50-1-def) |
+| [Azure SDK﻿](https://github.com/Azure/azure-sdk-for-python) | 1.0+[2](#fn-remoting-frameworks-50-2-def) |
+| [gRPC﻿](https://pypi.org/project/grpcio/) | 1.26+[3](#fn-remoting-frameworks-50-3-def) |
 
 1
 
@@ -1325,7 +1325,7 @@ Async calls supported since version 1.331.
 | Logging libraries | Versions |
 | --- | --- |
 | [Python standard library: logging﻿](https://docs.python.org/3/library/logging.html) | All versions supported |
-| [Structlog﻿](https://github.com/hynek/structlog) | 19.0+[1](#fn-logging-libraries-1-def) |
+| [Structlog﻿](https://github.com/hynek/structlog) | 19.0+[1](#fn-logging-libraries-52-1-def) |
 
 1
 
@@ -1333,21 +1333,21 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Generative AI Application frameworks | Versions |
 | --- | --- |
-| [Amazon Bedrock Runtime﻿](https://github.com/boto/boto3) | 1.14+[1](#fn-generative-ai-application-frameworks-1-def) |
-| [Anthropic﻿](https://github.com/anthropics/anthropic-sdk-python) | 0.43.0+[2](#fn-generative-ai-application-frameworks-2-def) |
-| [Cohere﻿](https://github.com/cohere-ai/cohere-python) | 5.0.0+[3](#fn-generative-ai-application-frameworks-3-def) |
-| [CrewAI﻿](https://github.com/crewAIInc/crewAI) | 1.9.0+[3](#fn-generative-ai-application-frameworks-3-def) |
-| [Google Agent Development Kit﻿](https://github.com/google/adk-python) | 1.10.0+[3](#fn-generative-ai-application-frameworks-3-def) |
-| [Google GenAI﻿](https://github.com/googleapis/python-genai) | 1.10.0+[3](#fn-generative-ai-application-frameworks-3-def) |
-| [Groq﻿](https://github.com/groq/groq-python) | 0.9.0+[3](#fn-generative-ai-application-frameworks-3-def) |
-| [Haystack﻿](https://github.com/deepset-ai/haystack) | 2.0.0+[3](#fn-generative-ai-application-frameworks-3-def) |
+| [Amazon Bedrock Runtime﻿](https://github.com/boto/boto3) | 1.14+[1](#fn-generative-ai-application-frameworks-53-1-def) |
+| [Anthropic﻿](https://github.com/anthropics/anthropic-sdk-python) | 0.43.0+[2](#fn-generative-ai-application-frameworks-53-2-def) |
+| [Cohere﻿](https://github.com/cohere-ai/cohere-python) | 5.0.0+[3](#fn-generative-ai-application-frameworks-53-3-def) |
+| [CrewAI﻿](https://github.com/crewAIInc/crewAI) | 1.9.0+[3](#fn-generative-ai-application-frameworks-53-3-def) |
+| [Google Agent Development Kit﻿](https://github.com/google/adk-python) | 1.10.0+[3](#fn-generative-ai-application-frameworks-53-3-def) |
+| [Google GenAI﻿](https://github.com/googleapis/python-genai) | 1.10.0+[3](#fn-generative-ai-application-frameworks-53-3-def) |
+| [Groq﻿](https://github.com/groq/groq-python) | 0.9.0+[3](#fn-generative-ai-application-frameworks-53-3-def) |
+| [Haystack﻿](https://github.com/deepset-ai/haystack) | 2.0.0+[3](#fn-generative-ai-application-frameworks-53-3-def) |
 | [LangChain﻿](https://github.com/langchain-ai/langchain) | 1.0+ |
-| [LangGraph﻿](https://github.com/langchain-ai/langgraph) | 1.0.0+[3](#fn-generative-ai-application-frameworks-3-def) |
-| [Mistral AI﻿](https://github.com/mistralai/client-python) | 2.0.0+[3](#fn-generative-ai-application-frameworks-3-def) |
-| [Ollama﻿](https://github.com/ollama/ollama-python) | 0.1.0+[3](#fn-generative-ai-application-frameworks-3-def) |
-| [OpenAI﻿](https://github.com/openai/openai-python) | 1.54.0+[1](#fn-generative-ai-application-frameworks-1-def) |
-| [OpenAI Agents﻿](https://github.com/openai/openai-agents-python) | 0.10.0+[3](#fn-generative-ai-application-frameworks-3-def) |
-| [Pydantic AI﻿](https://github.com/pydantic/pydantic-ai) | 1.1.0+[3](#fn-generative-ai-application-frameworks-3-def) |
+| [LangGraph﻿](https://github.com/langchain-ai/langgraph) | 1.0.0+[3](#fn-generative-ai-application-frameworks-53-3-def) |
+| [Mistral AI﻿](https://github.com/mistralai/client-python) | 2.0.0+[3](#fn-generative-ai-application-frameworks-53-3-def) |
+| [Ollama﻿](https://github.com/ollama/ollama-python) | 0.1.0+[3](#fn-generative-ai-application-frameworks-53-3-def) |
+| [OpenAI﻿](https://github.com/openai/openai-python) | 1.54.0+[1](#fn-generative-ai-application-frameworks-53-1-def) |
+| [OpenAI Agents﻿](https://github.com/openai/openai-agents-python) | 0.10.0+[3](#fn-generative-ai-application-frameworks-53-3-def) |
+| [Pydantic AI﻿](https://github.com/pydantic/pydantic-ai) | 1.1.0+[3](#fn-generative-ai-application-frameworks-53-3-def) |
 
 1
 
@@ -1371,7 +1371,7 @@ Experimental.
 
 | PHP versions | Versions | Platforms |
 | --- | --- | --- |
-| [PHP](/managed/ingest-from/technology-support/application-software/php "Read about Dynatrace support for PHP applications.") | 7.1 (Zend Engine 3.1), 7.2 (Zend Engine 3.2), 7.3 (Zend Engine 3.3), 7.4 (Zend Engine 3.4), 8.0 (Zend Engine 4.0), 8.1 (Zend Engine 4.1)[1](#fn-php-versions-1-def), 8.2 (Zend Engine 4.2)[2](#fn-php-versions-2-def), 8.3 (Zend Engine 4.3)[3](#fn-php-versions-3-def), 8.4 (Zend Engine 4.4)[4](#fn-php-versions-4-def), 8.5 (Zend Engine 4.5)[5](#fn-php-versions-5-def) | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
+| [PHP](/managed/ingest-from/technology-support/application-software/php "Read about Dynatrace support for PHP applications.") | 7.1 (Zend Engine 3.1), 7.2 (Zend Engine 3.2), 7.3 (Zend Engine 3.3), 7.4 (Zend Engine 3.4), 8.0 (Zend Engine 4.0), 8.1 (Zend Engine 4.1)[1](#fn-php-versions-8-1-def), 8.2 (Zend Engine 4.2)[2](#fn-php-versions-8-2-def), 8.3 (Zend Engine 4.3)[3](#fn-php-versions-8-3-def), 8.4 (Zend Engine 4.4)[4](#fn-php-versions-8-4-def), 8.5 (Zend Engine 4.5)[5](#fn-php-versions-8-5-def) | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
 
 1
 
@@ -1397,14 +1397,14 @@ See [Dynatrace support model for PHP applications](/managed/ingest-from/technolo
 
 | Database frameworks | Versions |
 | --- | --- |
-| [Microsoft Driver for PHP for SQL Server﻿](https://docs.microsoft.com/en-us/sql/connect/php/system-requirements-for-the-php-sql-driver?view=sql-server-2017) | 4.0-5.6[1](#fn-database-frameworks-1-def) |
+| [Microsoft Driver for PHP for SQL Server﻿](https://docs.microsoft.com/en-us/sql/connect/php/system-requirements-for-the-php-sql-driver?view=sql-server-2017) | 4.0-5.6[1](#fn-database-frameworks-54-1-def) |
 | [MongoDB PHP for Linux﻿](https://www.php.net/manual/en/set.mongodb.php) | 1.3+ |
 | [MongoDB PHP for Windows﻿](https://www.php.net/manual/en/set.mongodb.php) | 1.3+ |
 | [Oracle Database﻿](https://php.net/manual/en/book.oci8.php) | All versions supported |
 | [PDO﻿](https://php.net/manual/en/book.pdo.php) | All versions supported |
 | PostgreSQL | All versions supported |
 | [mysql, mysqli﻿](https://php.net/manual/en/set.mysqlinfo.php) | All versions supported |
-| [phpredis﻿](https://github.com/phpredis/phpredis) | 4.0.0+[2](#fn-database-frameworks-2-def) |
+| [phpredis﻿](https://github.com/phpredis/phpredis) | 4.0.0+[2](#fn-database-frameworks-54-2-def) |
 | [predis﻿](https://github.com/predis/predis) | 1.1.2+ |
 
 1
@@ -1439,7 +1439,7 @@ Supported only for PHP NG Monitoring. The implementation using phpredis cluster 
 
 | Cache | Versions |
 | --- | --- |
-| [Memcached﻿](https://www.php.net/manual/en/book.memcached.php) | 3.0.0+[1](#fn-cache-1-def) |
+| [Memcached﻿](https://www.php.net/manual/en/book.memcached.php) | 3.0.0+[1](#fn-cache-58-1-def) |
 
 1
 
@@ -1506,7 +1506,7 @@ See [Instrument your Rust application with OpenTelemetry](/managed/ingest-from/o
 | --- | --- | --- |
 | Apache HTTP Server | 2.0, 2.2 | Alpine Linux 64-bit (x86-64), Linux (PPCLE, x86-64, ARM64 (AArch64)), Solaris (SPARC), Windows (x86-64) |
 | Apache HTTP Server | 2.4 | Alpine Linux 64-bit (x86-64), Linux (PPCLE, x86-64, ARM64 (AArch64)), Solaris (SPARC, x86-64), Windows (x86-64) |
-| Fujitsu Interstage IHS | 12[1](#fn-servers-1-def), 13[1](#fn-servers-1-def) | Linux (x86-64), Windows (x86-64) |
+| Fujitsu Interstage IHS | 12[1](#fn-servers-10-1-def), 13[1](#fn-servers-10-1-def) | Linux (x86-64), Windows (x86-64) |
 | IBM HTTP Server | 7, 8 | AIX (POWER8, POWER9, POWER10), Linux (PPCLE, x86-64), Solaris (SPARC), Windows (x86-64) |
 | IBM HTTP Server | 8.5 | AIX (POWER8, POWER9, POWER10), Linux (PPCBE), Linux (PPCLE, x86-64), Linux (s390), Solaris (SPARC), Windows (x86-64) |
 | IBM HTTP Server | 9 | AIX (POWER8, POWER9, POWER10), Linux (PPCLE, x86-64), Linux (s390), Solaris (SPARC), Windows (x86-64) |
@@ -1531,7 +1531,7 @@ Only Apache versions 2.2 and 2.4 are supported.
 
 | Servers | Versions | Platforms |
 | --- | --- | --- |
-| [Envoy﻿](https://www.envoyproxy.io/) | 1.30+[1](#fn-servers-1-def) | Linux (x86-64) |
+| [Envoy﻿](https://www.envoyproxy.io/) | 1.30+[1](#fn-servers-12-1-def) | Linux (x86-64) |
 
 1
 
@@ -1541,9 +1541,9 @@ As of version 1.29, Envoy exports data using [OpenTelemetry](opentelemetry). See
 
 | Servers | Versions | Platforms |
 | --- | --- | --- |
-| [Kong Gateway](/managed/ingest-from/technology-support/application-software/nginx/kong-gateway "Learn how to monitor the Kong Gateway with Dynatrace.") | 2.8 - 3.6[3](#fn-servers-3-def), 3.7 - 3.9[4](#fn-servers-4-def), 3.10 - 3.14[3](#fn-servers-3-def), 3.15[3](#fn-servers-3-def), 3.16[3](#fn-servers-3-def) | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64) |
-| [NGINX](/managed/ingest-from/technology-support/application-software/nginx#nginx-versions "Learn the details of Dynatrace support for NGINX.") | 1.11.5 - 1.13.8[1](#fn-servers-1-def), 1.13.9 - 1.14.0[1](#fn-servers-1-def), 1.14.1 - 1.15.8[1](#fn-servers-1-def), 1.15.9 - 1.15.10[1](#fn-servers-1-def), 1.15.11 - 1.16.0[1](#fn-servers-1-def), 1.16.1 - 1.17.3[1](#fn-servers-1-def), 1.17.4 - 1.17.6[1](#fn-servers-1-def), 1.17.7[1](#fn-servers-1-def), 1.17.8[1](#fn-servers-1-def), 1.17.9[1](#fn-servers-1-def), 1.17.10 - 1.18.0, 1.19.0, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.19.5, 1.19.6, 1.19.7, 1.19.8, 1.19.9, 1.19.10, 1.20.0, 1.20.1, 1.20.2, 1.21.0, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.22.0, 1.22.1, 1.23.0, 1.23.1, 1.23.2, 1.23.3, 1.23.4, 1.24.0, 1.25.0, 1.25.1, 1.25.2, 1.25.3, 1.25.4, 1.25.5, 1.26.0, 1.26.1, 1.26.2, 1.26.3, 1.27.0, 1.27.1, 1.27.2, 1.27.3, 1.27.4, 1.27.5, 1.28.0, 1.28.1, 1.28.2, 1.28.3, 1.29.0, 1.29.1, 1.29.2, 1.29.3, 1.29.4, 1.29.5, 1.29.6[2](#fn-servers-2-def), 1.29.7[2](#fn-servers-2-def), 1.29.8[2](#fn-servers-2-def), 1.30.0[2](#fn-servers-2-def), 1.30.1[2](#fn-servers-2-def), 1.30.2[2](#fn-servers-2-def), 1.30.3[2](#fn-servers-2-def), 1.30.4, 1.31.0[2](#fn-servers-2-def), 1.31.1[2](#fn-servers-2-def), 1.31.2[2](#fn-servers-2-def), 1.31.3 | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64, PPCLE) |
-| [NGINX Plus](/managed/ingest-from/technology-support/application-software/nginx#nginx-plus-versions "Learn the details of Dynatrace support for NGINX.") | R11 - R14[1](#fn-servers-1-def), R15[1](#fn-servers-1-def), R16 - R17[1](#fn-servers-1-def), R18[1](#fn-servers-1-def), R19[1](#fn-servers-1-def), R20[1](#fn-servers-1-def), R21[1](#fn-servers-1-def), R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64), PPCLE) |
+| [Kong Gateway](/managed/ingest-from/technology-support/application-software/nginx/kong-gateway "Learn how to monitor the Kong Gateway with Dynatrace.") | 2.8 - 3.6[3](#fn-servers-13-3-def), 3.7 - 3.9[4](#fn-servers-13-4-def), 3.10 - 3.14[3](#fn-servers-13-3-def), 3.15[3](#fn-servers-13-3-def), 3.16[3](#fn-servers-13-3-def) | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64) |
+| [NGINX](/managed/ingest-from/technology-support/application-software/nginx#nginx-versions "Learn the details of Dynatrace support for NGINX.") | 1.11.5 - 1.13.8[1](#fn-servers-13-1-def), 1.13.9 - 1.14.0[1](#fn-servers-13-1-def), 1.14.1 - 1.15.8[1](#fn-servers-13-1-def), 1.15.9 - 1.15.10[1](#fn-servers-13-1-def), 1.15.11 - 1.16.0[1](#fn-servers-13-1-def), 1.16.1 - 1.17.3[1](#fn-servers-13-1-def), 1.17.4 - 1.17.6[1](#fn-servers-13-1-def), 1.17.7[1](#fn-servers-13-1-def), 1.17.8[1](#fn-servers-13-1-def), 1.17.9[1](#fn-servers-13-1-def), 1.17.10 - 1.18.0, 1.19.0, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.19.5, 1.19.6, 1.19.7, 1.19.8, 1.19.9, 1.19.10, 1.20.0, 1.20.1, 1.20.2, 1.21.0, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.22.0, 1.22.1, 1.23.0, 1.23.1, 1.23.2, 1.23.3, 1.23.4, 1.24.0, 1.25.0, 1.25.1, 1.25.2, 1.25.3, 1.25.4, 1.25.5, 1.26.0, 1.26.1, 1.26.2, 1.26.3, 1.27.0, 1.27.1, 1.27.2, 1.27.3, 1.27.4, 1.27.5, 1.28.0, 1.28.1, 1.28.2, 1.28.3, 1.29.0, 1.29.1, 1.29.2, 1.29.3, 1.29.4, 1.29.5, 1.29.6[2](#fn-servers-13-2-def), 1.29.7[2](#fn-servers-13-2-def), 1.29.8[2](#fn-servers-13-2-def), 1.30.0[2](#fn-servers-13-2-def), 1.30.1[2](#fn-servers-13-2-def), 1.30.2[2](#fn-servers-13-2-def), 1.30.3[2](#fn-servers-13-2-def), 1.30.4, 1.31.0[2](#fn-servers-13-2-def), 1.31.1[2](#fn-servers-13-2-def), 1.31.2[2](#fn-servers-13-2-def), 1.31.3 | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64, PPCLE) |
+| [NGINX Plus](/managed/ingest-from/technology-support/application-software/nginx#nginx-plus-versions "Learn the details of Dynatrace support for NGINX.") | R11 - R14[1](#fn-servers-13-1-def), R15[1](#fn-servers-13-1-def), R16 - R17[1](#fn-servers-13-1-def), R18[1](#fn-servers-13-1-def), R19[1](#fn-servers-13-1-def), R20[1](#fn-servers-13-1-def), R21[1](#fn-servers-13-1-def), R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64), PPCLE) |
 | [OpenResty](/managed/ingest-from/technology-support/application-software/nginx#openresty-versions "Learn the details of Dynatrace support for NGINX.") | 1.13.6, 1.15.8, 1.17.8, 1.19.3, 1.19.9, 1.21.4.1, 1.21.4.2, 1.21.4.3, 1.25.3.1, 1.25.3.2, 1.27.1.1, 1.27.1.2, 1.29.2.1, 1.29.2.3 | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64) |
 | [Tengine](/managed/ingest-from/technology-support/application-software/nginx#tengineversions "Learn the details of Dynatrace support for NGINX.") | 1.4.2 - 2.2.3, 2.3.0 - 2.3.3, 2.3.4, 2.4.0, 2.4.1 | Alpine Linux 64-bit (x86-64), Linux (x86-64) |
 
@@ -1744,7 +1744,7 @@ See [Dynatrace Hub﻿](https://www.dynatrace.com/hub/?filter=all&type=extension&
 
 | Technologies | Versions |
 | --- | --- |
-| [StatsD](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd "Ingest metrics into Dynatrace using OneAgent and the ActiveGate StatsD client.") | All versions supported[1](#fn-technologies-1-def) |
+| [StatsD](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd "Ingest metrics into Dynatrace using OneAgent and the ActiveGate StatsD client.") | All versions supported[1](#fn-technologies-62-1-def) |
 
 1
 

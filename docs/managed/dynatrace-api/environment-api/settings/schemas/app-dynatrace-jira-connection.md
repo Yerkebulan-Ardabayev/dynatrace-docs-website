@@ -35,7 +35,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Connection name `name` | text | The name of the Jira connection | Required |
 | Jira URL `url` | text | URL of the Jira server | Required |
-| Type `type` | enum | Type of authentication method that should be used The element has these enums * `basic` * `pat` * `cloud-token` | Required |
+| Type `type` | enum | Type of authentication method that should be used The element has these enums * `basic` * `pat` * `cloud-token` * `cloud-scoped-token` | Required |
 | User `user` | text | Username or E-Mail address | Required |
 | Password `password` | secret | Password of the Jira user | Required |
 | Token `token` | secret | Token for the selected authentication type | Required |

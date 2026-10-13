@@ -98,8 +98,8 @@ The time when the attack happened.
 
 Expand  attack rows for details, or to perform the following actions:
 
-* Select **Add to allowlist** if you want to add and configure a new exception rule for the attack. For details, see [Define exception rules](/managed/secure/application-security/application-protection/application-protection-rules#exception-rules "Create, modify, and delete rules for specific attacks.").
-* Select **Block attack** if you want to add and define a new rule to block the attack. For details, see [Define specific attack control rules](/managed/secure/application-security/application-protection/application-protection-rules#handling-rules "Create, modify, and delete rules for specific attacks.").
+* Select **Add to allowlist** if you want to add and configure a new exception rule for the attack. For details, see [Define exception rules](/managed/secure/application-security/application-protection/application-protection-rules-classic#exception-rules "Create, modify, and delete rules for specific attacks.").
+* Select **Block attack** if you want to add and define a new rule to block the attack. For details, see [Define specific attack control rules](/managed/secure/application-security/application-protection/application-protection-rules-classic#handling-rules "Create, modify, and delete rules for specific attacks.").
 * Select **View attack details** to go to the [attack details page](#details).
 
 ## Attack details
@@ -143,8 +143,8 @@ infographic-attack-details
 
 The following actions are available:
 
-* Select **Add to allowlist** to [add the attack to the allowlist](/managed/secure/application-security/application-protection/application-protection-rules#exception-rules "Create, modify, and delete rules for specific attacks.").
-* Select **Block attack** to [block the attack](/managed/secure/application-security/application-protection/application-protection-rules#handling-rules "Create, modify, and delete rules for specific attacks.").
+* Select **Add to allowlist** to [add the attack to the allowlist](/managed/secure/application-security/application-protection/application-protection-rules-classic#exception-rules "Create, modify, and delete rules for specific attacks.").
+* Select **Block attack** to [block the attack](/managed/secure/application-security/application-protection/application-protection-rules-classic#handling-rules "Create, modify, and delete rules for specific attacks.").
 
 ### Attack path
 

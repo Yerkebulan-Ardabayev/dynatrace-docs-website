@@ -1,11 +1,11 @@
 ---
-title: Analyze memory dumps
+title: Analyze memory dumps in Profiling & Optimization
 source: https://docs.dynatrace.com/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis
 ---
 
-# Analyze memory dumps
+# Analyze memory dumps in Profiling & Optimization
 
-# Analyze memory dumps
+# Analyze memory dumps in Profiling & Optimization
 
 * How-to guide
 * 5-min read

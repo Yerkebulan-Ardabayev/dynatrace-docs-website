@@ -182,7 +182,6 @@ For a release to be discovered, the following requirements must be fulfilled:
 Dynatrace supports ingesting release metadata via OpenTelemetry resource attributes, allowing you to propagate version information through telemetry data.
 
 To use this method, define the `OTEL_RESOURCE_ATTRIBUTES` environment variable in your application and set key-value pairs that represent release metadata.
-Refer to the [Semantic Dictionary](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") for the complete list of supported [attributes](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."), called deployment attributes.
 While Dynatrace enriches telemetry data with these attributes, they're not propagated to process group instance entities.
 As a result, releases defined via OpenTelemetry resource attributes won't appear in the [release inventory](/managed/deliver/release-monitoring-classic/monitor-releases-with-dynatrace#release-inventory "Analyze data related to each release version of your software.").
 

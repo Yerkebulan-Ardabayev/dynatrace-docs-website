@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitori
 
 * Explanation
 * 5-min read
-* Published Jan 30, 2026
+* Updated on Sep 03, 2026
 
 Log Monitoring Classic
 
@@ -124,6 +124,7 @@ Supported semantic attribute keys in Log Monitoring Classic:
 * `dt.source_entity_name`
 * `dt.source_entity_type`
 * `dt.source_entity`
+* `event.kind`
 * `event.unique_identifier`
 * `faas.id`
 * `faas.instance`

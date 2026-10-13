@@ -142,7 +142,7 @@ The actual zRemote log should contain the following messages:
 
 ## Update and maintenance
 
-To stay current, you can update the zRemote module automatically to a newer version by using the [ActiveGate auto-update procedure](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.").
+To stay current, you can update the zRemote module automatically to a newer version by using the [ActiveGate auto-update procedure](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates (update mode, target version, and update windows) and download or install manually.").
 
 To manually update the zRemote module
 

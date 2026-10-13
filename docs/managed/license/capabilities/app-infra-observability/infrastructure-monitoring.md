@@ -141,9 +141,7 @@ For more information, see [Overview (Dynatrace Platform Subscription)](/managed/
 
 ### Automation
 
-You can use Dynatrace to automate some of your optimization efforts:
-
-* Anomaly alerts: Get notified of unexpected spikes in Infrastructure Monitoring host-hour consumption. To do this, set up [Cost Monitors](/managed/manage-your-costs/control/cost-monitors "Learn how to use the Cost Monitors feature to make forecasts and cost events.") in [**Account Management**﻿](https://myaccount.dynatrace.com/).
+To get notified of unexpected spikes in Infrastructure Monitoring host-hour consumption, set up [Cost Monitors](/managed/manage-your-costs/control/cost-monitors "Learn how to use the Cost Monitors feature to make forecasts and cost events.") in [**Account Management**﻿](https://myaccount.dynatrace.com/).
 
 ## FAQs
 

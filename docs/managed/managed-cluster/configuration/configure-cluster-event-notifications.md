@@ -22,7 +22,7 @@ You can manage the following notifications in a Managed Cluster:
 * **Transaction storage retention period truncation**  
   Triggered when data retention has been automatically reduced to store new data. In that case, Dynatrace recommends that you adjust the target retention time, review monitoring settings, or extend a disk.
 * **Adaptive Load Reduction activity**  
-  Triggered when a node is considered overloaded and unable to keep up with processing incoming requests. In that case, you need to review monitoring settings or increase CPU cores and RAM on the node. For details, see [Adaptive Load Reduction](/managed/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-managed#alr "Improve your Dynatrace Managed environment health and performance with the adaptive features of traffic management, load reduction, and capture control.").
+  Triggered when a node is considered overloaded and unable to keep up with processing incoming requests. In that case, you need to review monitoring settings or increase CPU cores and RAM on the node. For details, see [Adaptive Load Reduction](/managed/ingest-from/dynatrace-oneagent/adaptive-traffic-management-managed#alr "Improve your Dynatrace Managed environment health and performance with the adaptive features of traffic management, load reduction, and capture control.").
 
 ## UI workflows
 

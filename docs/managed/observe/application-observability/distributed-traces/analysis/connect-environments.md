@@ -1,11 +1,11 @@
 ---
-title: Set up cross-environment tracing
+title: Set up cross-environment tracing in Distributed Traces Classic
 source: https://docs.dynatrace.com/managed/observe/application-observability/distributed-traces/analysis/connect-environments
 ---
 
-# Set up cross-environment tracing
+# Set up cross-environment tracing in Distributed Traces Classic
 
-# Set up cross-environment tracing
+# Set up cross-environment tracing in Distributed Traces Classic
 
 * How-to guide
 * 6-min read

@@ -157,7 +157,7 @@ Kyverno
 
 The BACK stack includes the artifact delivery and security as well as the configuration and developer portal, but that’s not all it takes. Observing the workloads is equally important and must be included in a minimum viable platform.
 
-To feed the observability and security data back to the developers, we offer a [Backstage integration](/managed/deliver/backstage-integration "Learn how to integrate Dynatrace into Backstage") with Kubernetes support by default and customizable queries.
+To feed the observability and security data back to the developers, we offer a [Backstage integration in Dynatrace](/managed/deliver/backstage-integration "Learn how to integrate Dynatrace into Backstage") with Kubernetes support by default and customizable queries.
 
 OpenTelemetry offers open-source observability, and Dynatrace can be used for observability either out of the box with our proprietary OneAgent or by easily ingesting and using the data provided through OpenTelemetry.
 
@@ -480,7 +480,7 @@ Goal
 
 With observability data around CPU, thread, and memory usage, it's easy to quickly identify the biggest performance bottlenecks and flag them for improvement. Such bottlenecks could manifest themselves as inefficient string operations leading to high memory allocation and pressure on the garbage collector, which can, in turn, lead to scalability and performance issues.
 
-Try it yourself: [Always-on app profiling](/managed/observe/application-observability/services/always-on-app-profiling "Optimize your code and find performance problems").
+Try it yourself: [Always-on app profiling in Services](/managed/observe/application-observability/services/always-on-app-profiling "Optimize your code and find performance problems").
 
 #### Kubernetes utilization improvement Kubernetes utilization improvement
 

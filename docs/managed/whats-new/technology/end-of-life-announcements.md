@@ -112,7 +112,7 @@ For assistance with transitioning or setting up integrations, please see the Doc
 
 The legacy, cron-based **Update now** action for Environment ActiveGate, which force-updates an ActiveGate immediately without version selection or update window support, is deprecated.
 
-This action is superseded by Environment ActiveGate auto-update, which now supports selecting a target version and choosing an update mode, including scheduling updates to run only during configured update windows. See [Update now to target version](/managed/ingest-from/dynatrace-activegate/operation/update-activegate#update-now-to-target-version "Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.").
+This action is superseded by Environment ActiveGate auto-update, which now supports selecting a target version and choosing an update mode, including scheduling updates to run only during configured update windows. See [Update now to target version](/managed/ingest-from/dynatrace-activegate/operation/update-activegate#update-now-to-target-version "Configure Environment ActiveGate automatic updates (update mode, target version, and update windows) and download or install manually.").
 
 ### Key dates
 
@@ -125,7 +125,7 @@ This action is superseded by Environment ActiveGate auto-update, which now suppo
 
 ### Recommended actions
 
-* Configure a target version, update mode, and update windows for your Environment ActiveGates in [Update ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.").
+* Configure a target version, update mode, and update windows for your Environment ActiveGates in [Update ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates (update mode, target version, and update windows) and download or install manually.").
 
 ## Built-in cluster container registry
 

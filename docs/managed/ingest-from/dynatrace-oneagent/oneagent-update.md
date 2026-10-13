@@ -246,7 +246,7 @@ If you select an older version than a currently deployed version, you won't be a
 Use update windows to schedule automatic OneAgent and Environment ActiveGate updates. They apply when you select **Automatic updates during update windows** for OneAgent (at the global, host group, or host level) or **Automatic (during update window)** for ActiveGate (at the environment or per-ActiveGate level). The same windows govern both products, so configuring a window once applies it to every host and Environment ActiveGate that opts in.
 
 * For procedures to list, create, edit, turn on, turn off, delete, and apply windows, see below.
-* For ActiveGate-specific update mode, target version, and concurrency rules, see [Update ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.").
+* For ActiveGate-specific update mode, target version, and concurrency rules, see [Update ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates (update mode, target version, and update windows) and download or install manually.").
 
 Update windows are shared with Environment ActiveGate. Creating, editing, turning off, or deleting a window also affects the ActiveGate updates that use it.
 

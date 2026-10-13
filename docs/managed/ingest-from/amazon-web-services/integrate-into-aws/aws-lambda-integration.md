@@ -23,7 +23,7 @@ Read this guide](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws
 
 [#### Collect logs from AWS Lambda functions
 
-Collect logs from AWS Lambda functions using the Dynatrace Lambda extension---a lower-latency, lower-cost alternative to the CloudWatch log forwarder.
+Collect logs from AWS Lambda functions using the Dynatrace Lambda extension, a lower-latency and lower-cost alternative to the CloudWatch log forwarder.
 
 * How-to guide
 

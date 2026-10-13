@@ -131,8 +131,6 @@ Metric key: `builtin:tech.generic.handles.fileDescriptorsPercentUsed`
 
 ## Operating systems support
 
-* Added support for [Oracle Linux](/managed/managed-cluster/installation/operating-system-requirements "Review the operating system, host, and network requirements you need to meet before installing Dynatrace Managed on a Linux host.") 10.1
-
 ### Future Dynatrace Managed operating systems support changes
 
 ##### The following operating systems will no longer be supported starting 01 November 2026

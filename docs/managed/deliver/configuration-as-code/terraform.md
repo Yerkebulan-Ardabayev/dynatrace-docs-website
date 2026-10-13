@@ -35,7 +35,6 @@ The Dynatrace Terraform provider allows you to pull information from these data 
 ## Steps
 
 * To install Terraform CLI, see [Install Terraform CLI and set up Configuration as Code via Terraform](/managed/deliver/configuration-as-code/terraform/terraform-cli "Install the Terraform CLI and set up Dynatrace Configuration as Code via Terraform.").
-
 * Check the [Terraform basic example](/managed/deliver/configuration-as-code/terraform/tutorials/teraform-basic-example "Simple example of creating a management zone with Dynatrace Configuration as Code via Terraform.").
 * Check the [Terraform advanced example](/managed/deliver/configuration-as-code/terraform/tutorials/terraform-advanced-example "Advanced example of creating a management zone with Dynatrace Configuration as Code via Terraform.").
 

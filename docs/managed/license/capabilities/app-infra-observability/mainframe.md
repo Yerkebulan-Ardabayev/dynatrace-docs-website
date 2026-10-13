@@ -124,7 +124,7 @@ For more information, see [Overview (Dynatrace Platform Subscription)](/managed/
 
 Query Mainframe Monitoring MSU-hour consumption programmatically via the [Account Management API](/managed/dynatrace-api/account-management-api "Explore endpoints of the Account Management API.") for integration with external reporting systems.
 
-For more information, see [APIs for cost data integration](/managed/manage-your-costs/view/where-to-look#apis-for-cost-data-integration "View Dynatrace consumption and costs in Account Management, query billing events directly with DQL, or ask Dynatrace Intelligence in natural language.").
+For more information, see [APIs for cost data integration](/managed/manage-your-costs/view/where-to-look#apis-for-cost-data-integration "View Dynatrace consumption and costs in Account Management, download billing reports, and export cost data through the Account Management API.").
 
 ## Optimize your consumption
 

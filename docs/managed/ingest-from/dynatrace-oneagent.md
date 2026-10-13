@@ -22,7 +22,7 @@ OneAgent is comprised of several code modules that enable OneAgent to work for m
 
 ### See also
 
-[Adaptive Traffic Management](/managed/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-managed "Improve your Dynatrace Managed environment health and performance with the adaptive features of traffic management, load reduction, and capture control.")
+[Adaptive Traffic Management](/managed/ingest-from/dynatrace-oneagent/adaptive-traffic-management-managed "Improve your Dynatrace Managed environment health and performance with the adaptive features of traffic management, load reduction, and capture control.")
 
 ### Installation and operation
 

@@ -78,7 +78,7 @@ Not supported: Instrumentation is deprecated off by default on OneAgent version 
 
 Node.js version 12+ OneAgent version 1.251+ Dynatrace version 1.256+
 
-[Continuous thread analysis](/managed/observe/application-observability/profiling-and-optimization/continuous-thread-analysis "Continuously analyze the state of your threads and their development to quickly identify and solve performance issues in Java and Node.js processes.") for [worker threads﻿](https://nodejs.org/api/worker_threads.html#worker-thread) can automatically identify CPU-intensive threads and pinpoint scalability issues when work is distributed across many threads so that you can solve performance bottlenecks before your end users are impacted.
+[Continuous thread analysis in Profiling & Optimization](/managed/observe/application-observability/profiling-and-optimization/continuous-thread-analysis "Continuously analyze the state of your threads and their development to quickly identify and solve performance issues in Java and Node.js processes.") for [worker threads﻿](https://nodejs.org/api/worker_threads.html#worker-thread) can automatically identify CPU-intensive threads and pinpoint scalability issues when work is distributed across many threads so that you can solve performance bottlenecks before your end users are impacted.
 
 Continuous thread analysis in action
 

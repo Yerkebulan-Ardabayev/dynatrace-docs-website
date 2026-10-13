@@ -9,24 +9,18 @@ source: https://docs.dynatrace.com/managed/manage-your-costs/view/where-to-look
 
 * Explanation
 * 6-min read
-* Updated on May 26, 2026
+* Updated on Oct 05, 2026
 
-Dynatrace exposes the same underlying cost and usage data through several surfaces. Choose the one that fits your task:
-
-* Account Management: The front door for subscription totals, capability and environment breakdowns, billing reports, and the APIs that expose this same data programmatically.
-
-* DQL: When you need granular analysis, use DQL to query billing events.
+Account Management is the front door for subscription totals, capability and environment breakdowns, billing reports, and the APIs that expose this same data programmatically.
 
 ## Overview
 
-Dynatrace records every metered usage record to Grail as a billing event. Account Management surfaces this data as ready-made summaries, breakdowns, and reports. The same data is queryable directly with DQL , and exportable for finance integrations.
+Account Management surfaces your metered usage as ready-made summaries, breakdowns, and reports, and the same data is exportable for finance integrations.
 
 ## Use cases
 
 * Check your current subscription consumption against your annual commitment.
 * Compare cost across environments, capabilities, or time periods.
-* Build a custom DQL query for a cost question Account Management doesn't answer.
-
 * Pull billing data into Excel, Power BI, or another finance tool.
 
 ## Account Management

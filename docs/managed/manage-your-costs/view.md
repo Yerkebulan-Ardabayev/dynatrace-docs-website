@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage-your-costs/view
 
 * Explanation
 * 1-min read
-* Published May 26, 2026
+* Updated on Oct 05, 2026
 
 Before you can control or optimize cost, you need to see it. This subsection covers every way Dynatrace lets you view and export your consumption data.
 
@@ -21,7 +21,7 @@ Dynatrace exposes the same underlying cost and usage data through several surfac
 
 [### Where to view your costs
 
-Find your costs in Account Management.](/managed/manage-your-costs/view/where-to-look "View Dynatrace consumption and costs in Account Management, query billing events directly with DQL, or ask Dynatrace Intelligence in natural language.")[### Billing report
+Find your costs in Account Management.](/managed/manage-your-costs/view/where-to-look "View Dynatrace consumption and costs in Account Management, download billing reports, and export cost data through the Account Management API.")[### Billing report
 
 Read the daily billing report and the difference between consumption and booking dates.](/managed/manage-your-costs/view/billing-report "View your billing to see details about accrued costs per booking date. Use this view to determine which Dynatrace monitoring costs were recognized and booked on which day.")
 

@@ -14,7 +14,6 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/metrics-clas
 In Dynatrace, you have various types of metrics at your disposal:
 
 * Built-in metrics provided by OneAgent. These have the `builtin:` prefix in the metric key.
-
 * Extension metrics provided by OneAgent or ActiveGate extensions. These have the `ext:` prefix in the metric key.
 
   The `ext:` prefix is used by metrics from [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") and [ActiveGate extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace."), and also by [classic metrics for AWS integration](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.").

@@ -1,11 +1,11 @@
 ---
-title: CPU profiling
+title: CPU profiling in Profiling & Optimization
 source: https://docs.dynatrace.com/managed/observe/application-observability/profiling-and-optimization/cpu-profiling
 ---
 
-# CPU profiling
+# CPU profiling in Profiling & Optimization
 
-# CPU profiling
+# CPU profiling in Profiling & Optimization
 
 * How-to guide
 * 2-min read

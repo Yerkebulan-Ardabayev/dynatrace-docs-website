@@ -1,11 +1,11 @@
 ---
-title: Continuous thread analysis
+title: Continuous thread analysis in Profiling & Optimization
 source: https://docs.dynatrace.com/managed/observe/application-observability/profiling-and-optimization/continuous-thread-analysis
 ---
 
-# Continuous thread analysis
+# Continuous thread analysis in Profiling & Optimization
 
-# Continuous thread analysis
+# Continuous thread analysis in Profiling & Optimization
 
 * How-to guide
 * 5-min read

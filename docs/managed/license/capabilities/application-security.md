@@ -28,7 +28,7 @@ For information about how usage of a specific capability translates to consumpti
 
 These vulnerabilities include
 
-* [Third-party vulnerabilities](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules."), which can arise when your application uses a specific library or language runtime containing vulnerabilities.
+* [Third-party vulnerabilities](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/index-classic "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules."), which can arise when your application uses a specific library or language runtime containing vulnerabilities.
 * [Code-level vulnerabilities](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities "Monitor, visualize, and analyze code-level vulnerabilities."), which can arise when Dynatrace Application Security detects a vulnerability in your code by evaluating the requests passing through your applications.
 
 ## Runtime Application Protection (RAP)

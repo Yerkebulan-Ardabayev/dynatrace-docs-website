@@ -157,7 +157,7 @@ In the **Distributed traces** list view, select a resource/request and drill dow
 
 Traces accessed from Synthetic waterfall
 
-* For processes that are under heavy load, Dynatrace OneAgent automatically adjusts the data sent. Therefore, certain distributed traces may not be available. In such cases, you'll see a message about [Adaptive Traffic Management](/managed/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-managed "Improve your Dynatrace Managed environment health and performance with the adaptive features of traffic management, load reduction, and capture control.") in the **Traces** finding.
+* For processes that are under heavy load, Dynatrace OneAgent automatically adjusts the data sent. Therefore, certain distributed traces may not be available. In such cases, you'll see a message about [Adaptive Traffic Management](/managed/ingest-from/dynatrace-oneagent/adaptive-traffic-management-managed "Improve your Dynatrace Managed environment health and performance with the adaptive features of traffic management, load reduction, and capture control.") in the **Traces** finding.
 
 * Drilling down from an individual resource (based on W3C resource timings) to a distributed trace (captured by OneAgent) is enabled by comparing URLs. If there are any rewrite rules or if parts of the URL aren’t identical on the client and server sides, the **View trace** button for the resource won’t be displayed. In such cases, you can get to all your distributed traces from the **Traces** finding.
 

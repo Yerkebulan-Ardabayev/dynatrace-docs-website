@@ -52,7 +52,7 @@ Other container platforms
 
 ---
 
-[Infrastructure Observability](/managed/observe/infrastructure-observability) [Application Observability](/managed/observe/application-observability) [Digital Experience](/managed/observe/digital-experience) [Application Security](/managed/secure/application-security) [Automations](/managed/deliver) 
+[Infrastructure Observability](/managed/observe/infrastructure-observability) [Application Observability](/managed/observe/application-observability) [Digital Experience](/managed/observe/digital-experience) [Application Security](/managed/secure/application-security) [Automations](/managed/upgrade/unavailable-in-managed) 
 
 ## Observe and explore
 

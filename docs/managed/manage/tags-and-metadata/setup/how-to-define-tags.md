@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/tags-and-metadata/setup/how-to
 
 * How-to guide
 * 14-min read
-* Updated on May 18, 2026
+* Updated on Oct 08, 2026
 
 Use tags to organize monitoring data and analysis based on related entities in all environments. Tags simplify searches for related services, process groups, and hosts. They also facilitate the collection of related metrics into meaningful groups for analysis. Tags can also be used for all types of entities across your environment for the purpose of alerting, charting and window maintenance. For more details on defining maintenance windows via tags, see [How to define a maintenance window](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window "Create maintenance windows and define their scope.").
 
@@ -127,6 +127,7 @@ For example, to tag a single host manually
 Automatic tagging is rule based:
 
 * Tags are applied automatically to new entities that match rules you've defined.
+* Rules are evaluated asynchronously against recently observed entities. For timeframes and how inactive entities are handled, see [When rules are evaluated](/managed/manage/tags-and-metadata/basic-concepts/implicit-propagation-of-tagging-and-management-zone-rules#evaluation "Learn which entity types automatically inherit tags and management zones through implicit propagation, and what to watch out for.").
 * Automatically applied tags can’t be removed manually from individual services, process groups, process group instances, applications, or hosts.
 
 You can also set up automated tagging of the entities in your environment using:

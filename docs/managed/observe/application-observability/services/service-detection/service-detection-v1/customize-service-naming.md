@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/application-observability/ser
 
 * How-to guide
 * 4-min read
-* Updated on Apr 09, 2026
+* Updated on Oct 08, 2026
 
 Dynatrace [automatically detects and names your applications’ server-side services](/managed/observe/application-observability/services/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.") based on basic properties of your application deployment and configuration. Built-in rules define these names. These properties and the resulting service names should be intuitive to you because they reflect your service landscape. Still, you might want to customize these names. Custom service naming rules enable you to enhance automated service naming.
 
@@ -22,6 +22,8 @@ Built-in service naming rules define how the service naming works out of the box
 Custom service naming rules override built-in rules enabling you to create your own naming standards. To access custom rules, go to **Settings** > **Server-side service monitoring** > **Service naming rules**.
 
 Custom rules are evaluated from top to bottom, and the first matching rule applies, so be sure to place your rule in the correct position on the list.
+
+Naming rules are evaluated asynchronously against recently observed entities, so changes might not apply to inactive services right away. For details, see [When rules are evaluated](/managed/manage/tags-and-metadata/basic-concepts/implicit-propagation-of-tagging-and-management-zone-rules#evaluation "Learn which entity types automatically inherit tags and management zones through implicit propagation, and what to watch out for.").
 
 To define a custom service naming rule
 

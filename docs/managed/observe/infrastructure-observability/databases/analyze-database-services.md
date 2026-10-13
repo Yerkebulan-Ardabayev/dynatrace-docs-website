@@ -168,5 +168,5 @@ As you can see, Dynatrace database-statement analysis views provide powerful dat
 
 ## Related topics
 
-* [Top database statements](/managed/observe/application-observability/multidimensional-analysis/top-database-statements "Understand the database activity across your environment with Dynatrace.")
+* [Top database statements in Multidimensional analysis](/managed/observe/application-observability/multidimensional-analysis/top-database-statements "Understand the database activity across your environment with Dynatrace.")
 * [Service backtrace](/managed/observe/application-observability/services-classic/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.")

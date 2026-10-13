@@ -144,7 +144,7 @@ This displays the power of Go templating to dynamically generate content. In the
 
 There are several examples of setting schema/APIs where a parameter in the JSON object expects a list of key-value pairs.
 
-For example, the schema `builtin:failure-detection.service.general-parameters` manages the **General failure detection parameters** page (**Services** > [service] > **Settings** > **Failure detection** > **General parameters**).
+For example, the schema `builtin:failure-detection.service.general-parameters` manages the **General failure detection parameters** page ( **Services Classic** > [service] > **Settings** > **Failure detection** > **General parameters**).
 
 ### JSON
 

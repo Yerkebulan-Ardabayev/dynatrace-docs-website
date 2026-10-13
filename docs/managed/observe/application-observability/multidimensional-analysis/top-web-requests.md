@@ -1,11 +1,11 @@
 ---
-title: Top web requests
+title: Top web requests in Multidimensional analysis
 source: https://docs.dynatrace.com/managed/observe/application-observability/multidimensional-analysis/top-web-requests
 ---
 
-# Top web requests
+# Top web requests in Multidimensional analysis
 
-# Top web requests
+# Top web requests in Multidimensional analysis
 
 * How-to guide
 * 4-min read

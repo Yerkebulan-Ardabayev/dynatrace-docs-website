@@ -22,7 +22,6 @@ The Billing report is a daily-cadence view of booked costs across your DPS perio
 * Reconcile booked costs against your subscription commitment by day.
 * Identify daily variations in booked cost.
 * Pull billing report data programmatically for finance workflows.
-
 * Confirm which clusters reported usage on a given day.
 
 ## Access the billing report
@@ -39,7 +38,6 @@ The Billing report consists of the following charts:
 
 * **Booked costs to date:** This chart displays the accumulated costs per booking day. It also shows the annual minimum commitment of your subscription.
 * **Booked costs per day:** This chart shows the costs booked for each individual day. It does not contain the accumulated budget state. This chart helps you identify variations in daily costs.
-
 * **Number of reporting clusters:** This chart displays the number of distinct clusters reporting usage on each day. In this chart, you can identify periods during which some clusters were offline. When clusters are temporarily offline, the daily cost typically drops.
 
 ## API access
@@ -49,5 +47,5 @@ Billing information is also available via API. For more information, see [Dynatr
 ## Related topics
 
 * [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.")
-* [Where to view your costs](/managed/manage-your-costs/view/where-to-look "View Dynatrace consumption and costs in Account Management, query billing events directly with DQL, or ask Dynatrace Intelligence in natural language.")
+* [Where to view your costs](/managed/manage-your-costs/view/where-to-look "View Dynatrace consumption and costs in Account Management, download billing reports, and export cost data through the Account Management API.")
 * [Account Management](/managed/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")

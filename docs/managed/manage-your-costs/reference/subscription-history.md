@@ -22,7 +22,6 @@ Subscription history lets you review consumption from previous DPS subscription 
 
 * Compare actual end-of-period consumption against last year's commitment.
 * Pull historical capability breakdowns for budgeting or renewal negotiations.
-* Audit how cost allocation changed across periods.
 
 ## Requirements
 
@@ -82,5 +81,5 @@ The Account Management portal offers a view on all past, active, and pending sub
 
 * [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.")
 * [Account Management](/managed/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
-* [Where to view your costs](/managed/manage-your-costs/view/where-to-look "View Dynatrace consumption and costs in Account Management, query billing events directly with DQL, or ask Dynatrace Intelligence in natural language.")
+* [Where to view your costs](/managed/manage-your-costs/view/where-to-look "View Dynatrace consumption and costs in Account Management, download billing reports, and export cost data through the Account Management API.")
 * [Billing report](/managed/manage-your-costs/view/billing-report "View your billing to see details about accrued costs per booking date. Use this view to determine which Dynatrace monitoring costs were recognized and booked on which day.")

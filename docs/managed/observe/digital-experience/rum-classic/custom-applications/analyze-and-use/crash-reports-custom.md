@@ -90,6 +90,6 @@ Session information for a crash occurrence
 
 ## Related topics
 
-* [Crash analysis](/managed/observe/application-observability/profiling-and-optimization/crash-analysis "Learn how Dynatrace can help you gain insight into process crashes.")
+* [Crash analysis in Profiling & Optimization](/managed/observe/application-observability/profiling-and-optimization/crash-analysis "Learn how Dynatrace can help you gain insight into process crashes.")
 * [User and error events in RUM Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events "Learn about user and error events and the types of user and error events captured by Dynatrace.")
 * [User session analysis in RUM Classic](/managed/observe/digital-experience/rum-classic/session-segmentation/user-sessions "Learn about user session segmentation and filtering attributes.")

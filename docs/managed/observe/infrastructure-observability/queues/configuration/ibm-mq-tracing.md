@@ -40,7 +40,7 @@ We recommend that you create the `MQRFH2` header for IBM MQ messages. The presen
 
 Benefits of creating the `MQRFH2` header for IBM MQ messages include:
 
-* Consistent [Adaptive Traffic Management](/managed/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-managed "Improve your Dynatrace Managed environment health and performance with the adaptive features of traffic management, load reduction, and capture control.") across your monitoring environment, lowering the volume on IBM MQ traces.
+* Consistent [Adaptive Traffic Management](/managed/ingest-from/dynatrace-oneagent/adaptive-traffic-management-managed "Improve your Dynatrace Managed environment health and performance with the adaptive features of traffic management, load reduction, and capture control.") across your monitoring environment, lowering the volume on IBM MQ traces.
 * An accurate and continuous service flow without the need to configure IBM MQ mapping when the messages are solely processed by IBM App Connect Enterprise and IBM Integration Bus.
 
 How can I create the MQRFH2 header when it is not present in my IBM MQ messages?

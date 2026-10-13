@@ -1,11 +1,11 @@
 ---
-title: Crash analysis
+title: Crash analysis in Profiling & Optimization
 source: https://docs.dynatrace.com/managed/observe/application-observability/profiling-and-optimization/crash-analysis
 ---
 
-# Crash analysis
+# Crash analysis in Profiling & Optimization
 
-# Crash analysis
+# Crash analysis in Profiling & Optimization
 
 * How-to guide
 * 7-min read

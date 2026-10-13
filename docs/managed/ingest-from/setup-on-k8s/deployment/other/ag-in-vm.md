@@ -673,4 +673,4 @@ Disabling certificate validation isn't recommended because it imposes security r
 
 11. Select **Save changes** to save your configuration.
 
-To update ActiveGate, see [Update ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.").
+To update ActiveGate, see [Update ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates (update mode, target version, and update windows) and download or install manually.").
