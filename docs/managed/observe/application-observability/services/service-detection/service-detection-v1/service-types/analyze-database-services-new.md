@@ -53,7 +53,7 @@ Select **Properties and tags** on the notifications bar to display the **Propert
 
 #### Directly connected SLOs
 
-* An SLO is directly connected to a service when the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") of an SLO meets the following criteria:
+* An SLO is directly connected to a service when the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") of an SLO meets the following criteria:
 
   + The entity type is set to `"DATABASE"`.
   + The entity ID is set to the database ID.
@@ -61,7 +61,7 @@ Select **Properties and tags** on the notifications bar to display the **Propert
 
 #### Indirectly connected SLOs
 
-* An SLO isn't directly connected to a database when, in the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") of an SLO, no entity ID is provided.
+* An SLO isn't directly connected to a database when, in the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") of an SLO, no entity ID is provided.
 
   Example: When generic values such as `type("DATABASE"),tag("slo")` are provided, the query results in all SLOs for all databases, including the current database.
 * To see SLOs that are not directly connected to the database, turn off **Show only directly connected SLOs**.

@@ -8,9 +8,9 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/entity-
 # Environment API v2 - Entity selector
 
 * Reference
-* Updated on Jan 27, 2026
+* Updated on Oct 02, 2026
 
-The entity selector is a powerful instrument for specifying which entities you want to include to the scope of your Environment v2 API calls. It is used in several APIs, so you only have to learn the syntax once and then reuse it for multiple use cases.
+The entity selector is a powerful instrument for specifying which entities you want to include in the scope of your Environment API v2 calls. It is used in several APIs, so you only have to learn the syntax once and then reuse it for multiple use cases.
 
 You must specify one of following criteria:
 
@@ -22,6 +22,7 @@ Additionally you can provide the following criteria in any combination:
 * [Entity name](#name)
 * [Entity attribute](#attribute)
 * [Tag](#tag)
+* [Resource attributes](#resourceattributes)
 * [Management zone ID](#mzid)
 * [Management zone name](#mzname)
 * [Health state](#health)
@@ -151,7 +152,7 @@ Changes the operator of the entity attribute criterion to `EXISTS`. In this case
 
 The tag of the requested entities. Tags in `[context]key:value`, `key:value`, and `value` formats are detected and parsed automatically. If a value-only tag has a colon (`:`) in it, you must escape the colon with a backslash(`\`). Otherwise, the tag will be parsed as a `key:value` tag.
 
-To specify several tags, separate them by a comma (`,`). An entity with **any** of the specified tags is included to the response.
+To specify several tags, separate them by a comma (`,`). An entity with **any** of the specified tags is included in the response.
 
 You can fetch the list of available tags with the [GET custom tags](/managed/dynatrace-api/environment-api/custom-tags/get-tags "View custom tags of monitored entities via Dynatrace API.") and the [GET auto-tags](/managed/dynatrace-api/configuration-api/automatically-applied-tags-api/get-all "View all automatically applied tags of your environment via the Dynatrace API.") calls.
 
@@ -161,6 +162,23 @@ You can fetch the list of available tags with the [GET custom tags](/managed/dyn
 | Multiple values | Applicable |
 | Value operator | `EQUALS` |
 | Case-sensitive value | Applicable |
+
+## Resource attributes
+
+The resource attributes of the requested entities. Use `resourceAttributes("<key>")` to select entities that report an attribute regardless of its value, or `resourceAttributes("<key>:<value>")` to select entities that report the attribute with a specific value.
+
+To specify several attributes, separate them by a comma (`,`). An entity with **any** of the specified attributes is included in the response. You can specify up to 10 values in one `resourceAttributes` criterion, which is separate from the limit on how many resource attributes Dynatrace stores per entity—see [Resource attribute limits and excluded keys](/managed/ingest-from/dynatrace-oneagent/resource-attributes#ra-limits "Understand the resource attributes stored on Dynatrace Managed hosts, processes, and containers, including configuration, filtering, and storage limits.").
+
+Resource attribute keys depend on what OneAgent, Dynatrace Operator, and your own configuration report for an entity, so they vary by environment. To read the keys and values of a specific entity, use the [GET an entity](/managed/dynatrace-api/environment-api/entity-v2/get-entity "View parameters of a monitored entity via Dynatrace API.") request; the [GET entity type](/managed/dynatrace-api/environment-api/entity-v2/get-entity-type "View the details of a monitored entity type via Dynatrace API.") request lists `resourceAttributes` among the properties an entity of that type can have, but not the keys themselves. You can also check the **Properties** section of the entity page, as described in [Where to see resource attributes](/managed/ingest-from/dynatrace-oneagent/resource-attributes#where-to-see "Understand the resource attributes stored on Dynatrace Managed hosts, processes, and containers, including configuration, filtering, and storage limits.").
+
+|  |  |
+| --- | --- |
+| Syntax | `resourceAttributes("key-1","key-2:value-2")` |
+| Multiple values | Applicable |
+| Value operator | `EQUALS` |
+| Case-sensitive value | Applicable |
+
+A colon (`:`) separates the key from the value and can't be escaped inside a value. Only the text between the first and the second colon is matched, so you can't match a value that itself contains a colon—unlike the [Tag](#tag) criterion, where you escape a colon in a value with a backslash (`\`). To select entities by such an attribute, omit the value and match on the key alone.
 
 ## Management zone ID
 
@@ -234,7 +252,7 @@ Include or exclude entities marked as deleted. Those are limited to the followin
 | Operator | * `include`: include deleted entities * `exclude`: exclude deleted entities |
 | Values | Not applicable |
 | Example | `type(HTTP_CHECK), deletedEntities.include()`: Select all entities of type `HTTP_CHECK` and include the ones marked as deleted. |
-| Note | * By default, deleted entities are excluded from all results. * This is not supported in [management zone rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules#text "Define rules to limit the entities accessible within a management zone.") and [automatic tagging](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically."). |
+| Note | * By default, deleted entities are excluded from all results. * This is not supported in [management zone rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules#text "Define management-zone rules to control access to monitored entities, logs, and metrics using entity conditions, dimensional data, and entity selectors.") and [automatic tagging](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions."). |
 
 ## Relationships
 

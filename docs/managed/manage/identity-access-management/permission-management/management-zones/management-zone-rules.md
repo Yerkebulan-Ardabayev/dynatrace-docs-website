@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/manage/identity-access-management/per
 # Management-zone rules
 
 * How-to guide
-* 16-min read
+* 17-min read
 * Updated on Oct 08, 2026
 
 Management zones comprise one or more rules that define and limit the entities or dimensional data (such as logs and metrics) that can be accessed within the management zone.
@@ -47,7 +47,7 @@ Use the powerful [metric selector](/managed/dynatrace-api/environment-api/metric
 
 Note that users automatically get access to logs and metrics associated with entities that are included within their assigned management zones.
 
-**[Text-based rules](#text)** leverage the powerful [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") for v2 Environment APIs to define entities. Text-based rules enable you to define entity access based on all the entity types, properties, values, and relationships exposed by the [Monitored entities API v2](/managed/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.").
+**[Text-based rules](#text)** use the powerful [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") for the Environment API v2 to define entities. Text-based rules enable you to define entity access based on all the entity types, properties, values, and relationships exposed by the [Monitored entities API v2](/managed/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.").
 
 There are several advantages of text-based rules.
 
@@ -61,7 +61,7 @@ Per monitoring environment, you can add:
 * 300 UI-based management-zone rules for entities (150 for Dynatrace versions 1.323 and earlier).
 * 300 UI-based management-zone rules for dimensional data (150 for Dynatrace versions 1.323 and earlier).
 * 300 text-based entity selector rules for management zones (150 for Dynatrace versions 1.323 and earlier).
-* 100,000 conditions for all management-zone rules taken together (does not apply to [entity selector rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules#text "Define rules to limit the entities accessible within a management zone.")).
+* 100,000 conditions for all management-zone rules taken together (does not apply to [entity selector rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules#text "Define management-zone rules to control access to monitored entities, logs, and metrics using entity conditions, dimensional data, and entity selectors.")).
 * Any individual entity to a maximum of 200 management zones (run the [GET an entity](/managed/dynatrace-api/environment-api/entity-v2/get-entity "View parameters of a monitored entity via Dynatrace API.") API call to see an entity's management zones).
 
 Check our documentation on [how to optimize management-zone rule performance at scale](/managed/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
@@ -79,6 +79,8 @@ See [Examples](#examples) for different rule types and implementations.
    Select an entity type
 4. Each entity can be defined and limited by several different conditions. Select **Add condition**.
 5. Choose the condition **Property**, **Operator**, and **Value** (where relevant). For example, you can specify that the **Web application name begins with** a specified string. You can enter up to 80 characters; wildcard characters are not allowed; regular expressions are allowed in the **contains regex** and **does not contain regex** condition operators.
+
+   For hosts, process groups, and container groups, the **Property** list also offers the resource attributes reported for the entity. See [Resource attribute conditions](#resource-attribute-conditions).
 6. If you enter a text string, specify whether it is **Case sensitive**.
 
    ![Rule conditions](https://dt-cdn.net/images/mz-rules-3a-958-3a6e99d6a0.png)
@@ -100,6 +102,24 @@ See [Examples](#examples) for different rule types and implementations.
 
    Rule preview
 10. **Save changes**.
+
+#### Resource attribute conditions
+
+Hosts, process groups, and container groups can also be matched on the [resource attributes](/managed/ingest-from/dynatrace-oneagent/resource-attributes "Understand the resource attributes stored on Dynatrace Managed hosts, processes, and containers, including configuration, filtering, and storage limits.") that Dynatrace stores for the monitored entity—the attributes that OneAgent and Dynatrace Operator report for a host, process, or container. These are not the resource attributes of an individual OpenTelemetry signal.
+
+In step 5 above, select **Resource attributes** as the condition **Property**. Enter the attribute key in **Dynamic key**, choose an **Operator**, and enter the **Value** you want to match. The property is offered when **Rule applies to** is set to hosts, process groups, or container groups.
+
+![Management zone rule builder with Resource attributes selected as the condition property](https://dt-cdn.net/images/t3-01-mz-rule-builder-618-67691d26a2.png)
+
+Management zone rule builder with Resource attributes selected as the condition property
+
+The finished rule shows the condition on the management zone.
+
+![Management zone rule for hosts with a resource attribute condition](https://dt-cdn.net/images/t4-02-rule-condition-summary-1221-7fb88d430e.png)
+
+Management zone rule for hosts with a resource attribute condition
+
+Resource attribute conditions aren't available for an individual process or container, even though both report resource attributes of their own, and services don't support these conditions. You don't need an instance-level condition: define the condition on the host, process group, or container group, and the resulting management-zone assignment propagates from there—from a host to its Kubernetes node, EC2 instance, and container group instances, and from a process group to its process group instances, container groups, and container group instances. A container group has no outbound propagation path, so the assignment stays on the container group. For the full set of paths, see [Implicit propagation of tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/implicit-propagation-of-tagging-and-management-zone-rules "Learn which entity types automatically inherit tags and management zones through implicit propagation, and what to watch out for.").
 
 ### Add a UI-based rule for dimensional data
 
@@ -146,7 +166,7 @@ See [Examples](#examples) for different rule types and implementations.
 
 1. [Select/create a management zone](/managed/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.") and then select **Add a new rule**.
 2. In **Rule type**, select **Entity selector**.
-3. To fill out the **Entity Selector** text string, you might need to run [Monitored entities API v2 calls](/managed/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.") to fetch entity types, properties, values, and relationships. Consult [entity selector documentation](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") for details on how to construct an entity definition. See [Examples](#examples) for different rule types and implementations.
+3. To fill out the **Entity Selector** text string, you might need to run [Monitored entities API v2 calls](/managed/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.") to fetch entity types, properties, values, and relationships. Consult [entity selector documentation](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") for details on how to construct an entity definition. See [Examples](#examples) for different rule types and implementations.
 
    **Important parts of the entity selector string**
 
@@ -318,7 +338,7 @@ Entity-selector rule based on relationships
 ## Related topics
 
 * [Monitored entities API](/managed/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.")
-* [Environment API v2 - Entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.")
+* [Environment API v2 - Entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.")
 * [Metrics API v2](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.")
 * [Metrics API - Metric selector](/managed/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API.")
 * [Management zones and ingested log data (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring "Find out how ingested log data is assigned to management zones.")

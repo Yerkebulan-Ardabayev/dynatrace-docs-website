@@ -18,7 +18,7 @@ What you’ll find on this page
 
 Dynatrace Runtime Application Protection rules allow you to
 
-* [Set up fine-grained monitoring rules to block, monitor, or ignore future attacks](#handling-rules), based on [resource attributes](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields."), and define multiple conditions for one rule. When creating a rule, you can check if conditions apply and how many process groups are affected.
+* [Set up fine-grained monitoring rules to block, monitor, or ignore future attacks](#handling-rules), based on [resource attributes](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files."), and define multiple conditions for one rule. When creating a rule, you can check if conditions apply and how many process groups are affected.
   The rules you create override the global attack control settings for the selected technology.
 * [Add attacks that you don't consider harmful to the allowlist](#exception-rules), by source IPs or attack patterns.
 
@@ -33,7 +33,7 @@ Dynatrace Runtime Application Protection rules allow you to
    * `Monitor; incoming attacks detected only.`
    * `Block; incoming attacks detected and blocked.`
 5. For **Attack type**, select the attack type to which current configuration applies.
-6. Optional If you want the rule to apply only to a subset of your environment, for **Specify where the rule is applied**, select **Add new condition** and provide the resource attributes that should be used to identify that part of the environment (for example, `dt.entity.process_group`, `aws.region`). For details, see [Enrich ingested data with Dynatrace-specific fields](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+6. Optional If you want the rule to apply only to a subset of your environment, for **Specify where the rule is applied**, select **Add new condition** and provide the resource attributes that should be used to identify that part of the environment (for example, `dt.entity.process_group`, `aws.region`). For details, see [Enrich ingested data with Dynatrace-specific fields](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.").
 7. Optional To check if a rule applies, select **Preview matching process group instances**. This lists process group instances that currently match the criteria.
 8. Select **Save changes**.
 9. Restart processes.
@@ -57,7 +57,7 @@ You can edit, disable, enable, or remove rules at any time.
    * key: `actor.ip`, matcher: `is part of IP CIDR`
 
    To fully benefit from this functionality, make sure you're using the latest OneAgent version.
-4. Optional If you want the rule to apply only to a subset of your environment, for **Specify where the rule is applied**, select **Add new condition** and provide the resource attributes that should be used to identify that part of the environment (for example, `dt.entity.process_group`, `aws.region`). For details, see [Enrich ingested data with Dynatrace-specific fields](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+4. Optional If you want the rule to apply only to a subset of your environment, for **Specify where the rule is applied**, select **Add new condition** and provide the resource attributes that should be used to identify that part of the environment (for example, `dt.entity.process_group`, `aws.region`). For details, see [Enrich ingested data with Dynatrace-specific fields](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.").
 5. Optional To check if a rule applies, select **Preview matching process group instances**. This lists process group instances that currently match the criteria.
 6. Select **Save changes**.
 

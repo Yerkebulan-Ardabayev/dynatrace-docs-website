@@ -15,7 +15,7 @@ This walkthrough shows how to add observability to your Python application using
 
 Enrichment with OneAgent
 
-It is currently not possible to [enrich](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") automatically instrumented services with host-relevant information. To achieve this, you'd need to switch to manual instrumentation.
+It is currently not possible to [enrich](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.") automatically instrumented services with host-relevant information. To achieve this, you'd need to switch to manual instrumentation.
 
 ## Step 1 Get the Dynatrace access details
 
@@ -115,4 +115,4 @@ For metrics and logs, go to **Metrics** or **Logs**.
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific fields](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
+* [Enrich ingested data with Dynatrace-specific fields](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.")

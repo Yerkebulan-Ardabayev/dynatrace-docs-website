@@ -171,7 +171,7 @@ management.dynatrace.metrics.export.v2.default-dimensions.region=us-east-1
 ```
 
 Dynatrace Operator configures Dynatrace Micrometer registry by providing ingest URL, credentials and Kubernetes metadata. For configuration examples, see our [Dynakube examples﻿](https://github.com/Dynatrace/dynatrace-operator/tree/main/assets/samples/dynakube).
-For more information about metadata enrichment, see [the documentation on enrichment files](/managed/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+For more information about metadata enrichment, see [the documentation on enrichment files](/managed/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.").
 
 * This feature is available when using Dynatrace Micrometer registry versions 1.9.0 and above.
 * An app using the Dynatrace Micrometer registry and running in Kubernetes with a Dynatrace Operator does not require any explicit configuration. Dynatrace Operator and the registry will work together and automatically export Micrometer metrics to Dynatrace.
@@ -354,7 +354,7 @@ DynatraceMeterRegistry registry = DynatraceMeterRegistry.builder(config).build()
 ```
 
 Dynatrace Operator configures Dynatrace Micrometer registry by providing ingest URL, credentials and Kubernetes metadata. For configuration examples, see our [Dynakube examples﻿](https://github.com/Dynatrace/dynatrace-operator/tree/main/assets/samples/dynakube).
-For more information about metadata enrichment, see [the documentation on enrichment files](/managed/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+For more information about metadata enrichment, see [the documentation on enrichment files](/managed/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.").
 
 * This feature is available when using Dynatrace Micrometer registry versions 1.9.0 and above.
 * An app using the Dynatrace Micrometer registry and running in Kubernetes with a Dynatrace Operator does not require any explicit configuration. Dynatrace Operator and the registry will work together and automatically export Micrometer metrics to Dynatrace.
@@ -543,7 +543,7 @@ When using Spring Boot, entries in your `application.properties` or `application
 | api-version | The version of the Dynatrace API to ingest data to Dynatrace:  * `V2` (default): [Metrics API v2](/managed/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API."). * `V1`: [Timeseries API v1](/managed/dynatrace-api/environment-api/metric-v1/custom-metrics "Manage custom metrics via the Timeseries v1 API.") | Optional |
 | uri | The ingestion endpoint of the API. | Optional |
 | metric-key-prefix | The prefix to be added to all ingested metric keys (for example, a namespace). | Optional |
-| enrich-with-dynatrace-metadata | [Enrich](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") (`true`) or do not enrich (`false`) ingested metrics with additional metadata.  If not set, `true` is used. | Optional |
+| enrich-with-dynatrace-metadata | [Enrich](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.") (`true`) or do not enrich (`false`) ingested metrics with additional metadata.  If not set, `true` is used. | Optional |
 | default-dimensions | A list of dimensions to be added to the ingested metrics.  Dimensions are defined as key-value pairs. | Optional |
 | use-dynatrace-summary-instruments | Micrometer versions 1.9.x+ Ignore the Dynatrace-specific implementation for summary instruments (`Timer` and `DistributionSummary`).  The default (`true`) uses the new Instruments. Use `false` to fall back to 1.8.x behavior. | Optional |
 | export-meter-metadata | Micrometer versions 1.12.x+ Turn meter metadata export (unit & description) on or off.  The default (`true`) configures the registry to export meter metadata. Use `false` to turn off metadata exporting. | Optional |
@@ -553,7 +553,7 @@ When using Spring Boot, entries in your `application.properties` or `application
 | apiVersion | The version of the Dynatrace API to ingest data to Dynatrace:  * `V2` (default): [Metrics API v2](/managed/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API."). * `V1`: [Timeseries API v1](/managed/dynatrace-api/environment-api/metric-v1/custom-metrics "Manage custom metrics via the Timeseries v1 API.") | Optional |
 | uri | The ingestion endpoint of the API. | Optional |
 | metricKeyPrefix | The prefix to be added to all ingested metric keys (for example, a namespace). | Optional |
-| enrichWithDynatraceMetadata | [Enrich](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") (`true`) or do not enrich (`false`) ingested metrics with additional metadata.  If not set, `true` is used. | Optional |
+| enrichWithDynatraceMetadata | [Enrich](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.") (`true`) or do not enrich (`false`) ingested metrics with additional metadata.  If not set, `true` is used. | Optional |
 | defaultDimensions | A list of dimensions to be added to the ingested metrics.  Dimensions are defined as key-value pairs. | Optional |
 | useDynatraceSummaryInstruments | Micrometer versions 1.9.x+ Ignore the Dynatrace-specific implementation for summary instruments (`Timer` and `DistributionSummary`).  The default (`true`) uses the new Instruments. Use `false` to fall back to 1.8.x behavior. | Optional |
 | exportMeterMetadata | Micrometer versions 1.12.x+ Turn meter metadata export (unit & description) on or off.  The default (`true`) configures the registry to export meter metadata. Use `false` to turn off metadata exporting. | Optional |

@@ -73,7 +73,7 @@ The following options are available for a card supplied by your extension:
 
 * `type`: Card type available to be supplied to a unified analysis page. Supported types include `CHART_GROUP`, `ENTITIES_LIST`, `EVENTS`, `LOGS`, and `MESSAGE`.
 * `key`: Unique card key used to reference the desired card configuration. Use a well-specified key prefix to ensure that related cards are placed properly on a page. Cards are sorted alphabetically based on key.
-* `entitySelectorTemplate`: An entity selector that is used to reference cards from another monitored entity type. For more information, see [Environment API v2 - Entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.").
+* `entitySelectorTemplate`: An entity selector that is used to reference cards from another monitored entity type. For more information, see [Environment API v2 - Entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.").
 
   Details
 

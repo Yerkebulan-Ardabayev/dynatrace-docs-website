@@ -17,7 +17,7 @@ After [setting up management zones](/managed/manage/identity-access-management/p
 
 These high-level steps take you through the process of assigning a management zone to a user via group settings.
 
-1. [Set up a management zone](/managed/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.") (**Settings** > **Preferences** > **Management zones**) or check the management zone name and [rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules "Define rules to limit the entities accessible within a management zone.") defining which entities and data is accessible within the zone.
+1. [Set up a management zone](/managed/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.") (**Settings** > **Preferences** > **Management zones**) or check the management zone name and [rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules "Define management-zone rules to control access to monitored entities, logs, and metrics using entity conditions, dimensional data, and entity selectors.") defining which entities and data is accessible within the zone.
 2. In the Cluster Management Console, go to **User authentication** > **User groups**.
 3. Create or select a group to which you want to add the user.
 

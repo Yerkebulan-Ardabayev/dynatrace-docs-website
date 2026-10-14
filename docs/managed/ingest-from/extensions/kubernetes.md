@@ -27,12 +27,12 @@ The following database types are supported, both as official Dynatrace Hub exten
 
 ## Prerequisites
 
-* A DynaKube with SQL extensions enabled (`.spec.extensions.databases`) and all pods in a healthy state. For setup instructions, see [Enable Dynatrace SQL database extensions](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/sql-database-extensions "Enable SQL database monitoring in Kubernetes by configuring Dynatrace Operator to deploy SQL Extension Executor pods that collect metrics from SQL databases inside or outside your cluster.").
+* A DynaKube with SQL extensions enabled (`.spec.extensions.databases`) and all pods in a healthy state. For setup instructions, see [Enable Dynatrace SQL database extensions](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/sql-database-extensions "Enable SQL database monitoring in Kubernetes by deploying SQL Extension Executor pods that connect to databases inside or outside your cluster.").
 * Dynatrace version 1.346+.
 * [SQL Extension Executor﻿](https://gallery.ecr.aws/dynatrace/dynatrace-sql-extension-executor) 1.345+.
 * [Extension Execution Controller﻿](https://gallery.ecr.aws/dynatrace/dynatrace-eec) 1.345+.
 * If you deploy a custom extension signed with your own certificate, configure the signing certificate in DynaKube before deploying the extension.  
-  See [Custom extension signing certificates](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/sql-database-extensions#custom-extension-certs "Enable SQL database monitoring in Kubernetes by configuring Dynatrace Operator to deploy SQL Extension Executor pods that collect metrics from SQL databases inside or outside your cluster.") and [`customExtensionCertificates`](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters#extension-execution-controller-template "List the available parameters for setting up Dynatrace Operator on Kubernetes.") in the DynaKube parameters reference.
+  See [Custom extension signing certificates](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/sql-database-extensions#custom-extension-certs "Enable SQL database monitoring in Kubernetes by deploying SQL Extension Executor pods that connect to databases inside or outside your cluster.") and [`customExtensionCertificates`](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters#extension-execution-controller-template "List the available parameters for setting up Dynatrace Operator on Kubernetes.") in the DynaKube parameters reference.
 
 ## Create monitoring configuration
 

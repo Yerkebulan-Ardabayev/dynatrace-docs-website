@@ -18,7 +18,7 @@ In **Advanced mode**, you can:
 * Inspect and edit the query you created through the Dynatrace web UI selections (with **Advanced mode** off).
 * Use [metric selectors](/managed/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API.") to apply transformations that aren't otherwise available, such as timeframe shifts.
 * Use [metric expressions](/managed/dynatrace-api/environment-api/metric-v2/metric-expressions "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.") to create simple arithmetic operations with multiple different metric values. For example, `metric A` + `metric B`.
-* Work with [entity selectors](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") to apply more advanced filters to your metrics. For example, to filter a Kubernetes node metric for a certain Kubernetes cluster.
+* Work with [entity selectors](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") to apply more advanced filters to your metrics. For example, to filter a Kubernetes node metric for a certain Kubernetes cluster.
 
 ## Step 1 Turn on advanced mode
 
@@ -317,7 +317,7 @@ builtin:apps.web.largestContentfulPaint.load.browser:timeshift(-1w):splitBy():pe
 
 ## Filter a metric by a related entity
 
-Learn how to use the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") and relationships to filter a metric by the values of a related entity.
+Learn how to use the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") and relationships to filter a metric by the values of a related entity.
 
 In this example, you:
 

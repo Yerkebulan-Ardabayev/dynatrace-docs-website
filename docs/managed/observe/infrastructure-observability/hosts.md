@@ -25,7 +25,7 @@ Dynatrace tells you how the virtual machines in your environment affect the perf
 
 ### Tags in a host-based configuration file
 
-Within dynamic or large environments, manual host tagging can be impractical. For dynamic deployments that include frequently changing host instances and names (for example, AWS or MS Azure), you can [use a dedicated configuration file to programmatically apply tags to your hosts](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.").
+Within dynamic or large environments, manual host tagging can be impractical. For dynamic deployments that include frequently changing host instances and names (for example, AWS or MS Azure), you can [use a dedicated configuration file to programmatically apply tags to your hosts](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.").
 
 ### Custom host names
 
@@ -39,7 +39,7 @@ Find out what's included and how to enable Infrastructure and Discovery monitori
 
 Configure host anomaly detection, including problem and event thresholds.](/managed/observe/infrastructure-observability/hosts/configuration/anomaly-detection "Configure host anomaly detection, including problem and event thresholds.")[### Define tags and metadata for hosts
 
-Tag and set additional properties for a monitored host.](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.")[### Exclude disks and network traffic from host monitoring
+Tag and set additional properties for a monitored host.](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.")[### Exclude disks and network traffic from host monitoring
 
 Exclude selected disks and network traffic from host monitoring.](/managed/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic "Learn how to exclude selected disks and network traffic from host monitoring.")[### Organize your environment using host groups
 

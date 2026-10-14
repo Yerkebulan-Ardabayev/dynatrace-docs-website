@@ -79,7 +79,7 @@ For details, see [Host availability](/managed/observe/infrastructure-observabili
 
 #### Directly connected SLOs
 
-* An SLO is directly connected to a host when the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") of an SLO meets the following criteria:
+* An SLO is directly connected to a host when the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") of an SLO meets the following criteria:
 
   + The entity type is set to `"HOST"`.
   + The entity ID is set to the host ID.
@@ -87,7 +87,7 @@ For details, see [Host availability](/managed/observe/infrastructure-observabili
 
 #### Indirectly connected SLOs
 
-* An SLO isn't directly connected to a host when, in the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") of an SLO, no entity ID is provided.
+* An SLO isn't directly connected to a host when, in the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") of an SLO, no entity ID is provided.
 
   Example: When generic values, such as `type("HOST"),tag("slo")` are provided, the query results in all SLOs for all hosts, including the current host.
 * To see SLOs that are not directly connected to the host, turn off **Show only directly connected SLOs**.
@@ -318,7 +318,7 @@ You can define policies on the host, host group, and environment levels.
    * **Operating system**: Detection rules can be specified for selected OS systems (if none are selected, settings will not be matched).
    * **Alerts**: One rule can have up to seven alerts, one for each of the event types. See the table below.
    * **Disk name filters**: Rules can be filtered by disk name.
-   * **Host custom metadata conditions**: Rules can be filtered by [host custom metadata](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#host-metadata "Learn how to tag and set additional properties for a monitored host.").
+   * **Host custom metadata conditions**: Rules can be filtered by [host custom metadata](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#host-metadata "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.").
    * **Properties**: Properties can be added to the sent event using the supported placeholders:
 
      + `disk.all_mountpoints`

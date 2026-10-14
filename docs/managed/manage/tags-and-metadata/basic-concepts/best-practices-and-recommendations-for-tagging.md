@@ -11,13 +11,13 @@ source: https://docs.dynatrace.com/managed/manage/tags-and-metadata/basic-concep
 * 5-min read
 * Published May 03, 2018
 
-Tagging is a powerful mechanism. However, to reap its benefits, tagging should be used carefully and in a meaningful way. To guide you towards this end, we provide you with specific recommendations and best practices, which are described below. With [auto-tagging based on metadata](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically."), tags can be generated automatically and assigned to monitored entities with the specific metadata values that Dynatrace detects automatically.
+Tagging is a powerful mechanism. However, to reap its benefits, tagging should be used carefully and in a meaningful way. To guide you towards this end, we provide you with specific recommendations and best practices, which are described below. With [auto-tagging based on metadata](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions."), tags can be generated automatically and assigned to monitored entities with the specific metadata values that Dynatrace detects automatically.
 
 In addition to automatic tagging rules, Dynatrace supports definition of tags through system environment variables and manual tagging. For manual tagging the [POST tags request](/managed/dynatrace-api/environment-api/custom-tags/post-tags "Assign custom tags to monitored entities via Dynatrace API.") of the Custom tags API comes handy, as it enables you to assign a tag to a large set of entities.
 
 ## Host metadata and tagging
 
-It's possible to [define tags](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#edit-the-host-tag-configuration-file "Learn how to tag and set additional properties for a monitored host.") as well as [additional metadata](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#edit-the-host-metadata-configuration-file "Learn how to tag and set additional properties for a monitored host.") for each of the hosts.
+It's possible to [define tags](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#edit-the-host-tag-configuration-file "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.") as well as [additional metadata](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#edit-the-host-metadata-configuration-file "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.") for each of the hosts.
 
 It's recommended that you define additional metadata at the deployed system of a host. You should send as much extra metadata as you can. This extra data can be used by Dynatrace to define tags, management zones, or dynamically within charts, dashboards, and more. It's recommended also that you standardize some metadata about your organization. You can save them into the respective config file in an automated fashion during the deployment procedure.
 
@@ -42,7 +42,7 @@ To define [Dynatrace tags for Cloud Foundry](/managed/observe/infrastructure-obs
 
 ## Automated tagging
 
-It's recommended that you configure [automated tagging rules](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically."), based on existing or custom metadata, to define your filter sets for charts, alerting, and more. These tags and rules can be changed and adapted any time and will apply almost immediately without any change to the monitored environment or applications.
+It's recommended that you configure [automated tagging rules](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions."), based on existing or custom metadata, to define your filter sets for charts, alerting, and more. These tags and rules can be changed and adapted any time and will apply almost immediately without any change to the monitored environment or applications.
 
 ## CMDB, API and automation
 

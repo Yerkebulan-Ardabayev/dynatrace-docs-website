@@ -11,18 +11,18 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 * 2-min read
 * Published May 16, 2022
 
-You can use tags and management zones to organize queue entities in your environment and simplify searches for them. Tags and management zones are applied to queue entities just as they are for other entities, but they must be applied via the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.").
+You can use tags and management zones to organize queue entities in your environment and simplify searches for them. Tags and management zones are applied to queue entities just as they are for other entities, but they must be applied via the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.").
 
 ## Define an automatically applied tag
 
-Follow the steps below to automatically apply a tag to queue entities. To learn more about tags, see [Define and apply tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.").
+Follow the steps below to automatically apply a tag to queue entities. To learn more about tags, see [Define and apply tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.").
 
 1. Go to **Settings** > **Tags** > **Automatically applied tags**.
 2. Select **Create tag** and type a name for the new tag in the **Tag name** field.
 3. Select **Add a new rule**.
 4. Optional Specify an **Optional tag value**. This value will appear next to the tag name after a `:` and is used to provide more precise information about the queue entity.
 5. From the **Rule type** list, choose the **Entity selector** type.
-6. Use one of the following code snippets to apply tags from a service, process group, host, or host group entity to a queue entity via the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector#tag "Configure the entity selector for Environment API endpoints."). Replace `yourKey:yourValue` with your own tag values.
+6. Use one of the following code snippets to apply tags from a service, process group, host, or host group entity to a queue entity via the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector#tag "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state."). Replace `yourKey:yourValue` with your own tag values.
 
    Producer services
 
@@ -69,7 +69,7 @@ Follow the steps below to add queue entities to existing management zones. To le
 1. Go to **Settings** > **Preferences** > **Management zones**.
 2. Edit an existing management zone and select **Add a new rule**.
 3. In the **Rule applies to** list, choose the **Entity selector**.
-4. Use one of the following code snippets to add a queue entity based on tags from a service, process group, host, or host group entity to a management zone via the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector#tag "Configure the entity selector for Environment API endpoints."). Replace `yourKey:yourValue` with your own tag values.
+4. Use one of the following code snippets to add a queue entity based on tags from a service, process group, host, or host group entity to a management zone via the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector#tag "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state."). Replace `yourKey:yourValue` with your own tag values.
 
 Producer services
 
@@ -112,5 +112,5 @@ Management zone for queues
 
 ## Related topics
 
-* [Define and apply tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.")
+* [Define and apply tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.")
 * [Set up management zones](/managed/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.")

@@ -61,7 +61,7 @@ The tool location depends on whether or not you've customized the OneAgent insta
 
 ## Topology awareness
 
-Using the `dynatrace_ingest` based scripting integration, the host ID and host name context are added to each metric as dimensions automatically. Learn how to [enrich your metrics with other Dynatrace-specific dimensions](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") and apply Dynatrace-AI causation details to your ingested data.
+Using the `dynatrace_ingest` based scripting integration, the host ID and host name context are added to each metric as dimensions automatically. Learn how to [enrich your metrics with other Dynatrace-specific dimensions](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.") and apply Dynatrace-AI causation details to your ingested data.
 
 ## Metric format
 

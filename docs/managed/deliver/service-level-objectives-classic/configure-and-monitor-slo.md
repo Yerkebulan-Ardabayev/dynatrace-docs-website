@@ -87,7 +87,7 @@ In the timeframe selector, scroll down to select a timeframe value for your SLO.
 * To choose one of the existing values, select **Presets**.
 * To create your own timeframe value, select **Custom**.
 
-The [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") is consistent with the [Dynatrace REST API query syntax](/managed/dynatrace-api/environment-api/metric-v2/get-data-points "Read data points of one or multiple metrics via Metrics v2 API."). You can use filters on management zone ID/name, tags, entity name/ID/type, health state, or a combination of these. For management zones, you can choose from the list of accessible management zones.
+The [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") is consistent with the [Dynatrace REST API query syntax](/managed/dynatrace-api/environment-api/metric-v2/get-data-points "Read data points of one or multiple metrics via Metrics v2 API."). You can use filters on management zone ID/name, tags, entity name/ID/type, health state, or a combination of these. For management zones, you can choose from the list of accessible management zones.
 
 After entering the entity selectors you want, you can test whether there aren't any mistakes by selecting **Preview** next to the entity selector bar.
 
@@ -184,7 +184,7 @@ SLOs that don't belong to any [management zone](/managed/manage/identity-access-
 1. Go to **Settings**.
 2. Select **Cloud Automation** > **Definition**.
 3. Select **Add new SLO**.
-4. In the **Entity selector** field, add the management zone [name](/managed/dynatrace-api/environment-api/entity-v2/entity-selector#mzname "Configure the entity selector for Environment API endpoints.") or [ID](/managed/dynatrace-api/environment-api/entity-v2/entity-selector#mzid "Configure the entity selector for Environment API endpoints.").
+4. In the **Entity selector** field, add the management zone [name](/managed/dynatrace-api/environment-api/entity-v2/entity-selector#mzname "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") or [ID](/managed/dynatrace-api/environment-api/entity-v2/entity-selector#mzid "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.").
 5. After entering all SLO details, select **Save changes** to save your configuration.
 
 * To add an existing SLO to a management zone, see [Edit SLOs](#edit).

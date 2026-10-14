@@ -651,7 +651,7 @@ Wildfly 27 - 41.
 | Apache Thrift | 2 |
 | DataStax client for Apache Cassandra | 2.1[1](#fn-database-frameworks-7-1-def), 3[1](#fn-database-frameworks-7-1-def), 4[1](#fn-database-frameworks-7-1-def) |
 | JDBC | 4+[1](#fn-database-frameworks-7-1-def) |
-| [Jedis Redis﻿](https://github.com/xetorthio/jedis) | 2, 3[1](#fn-database-frameworks-7-1-def), 4[1](#fn-database-frameworks-7-1-def), 5[1](#fn-database-frameworks-7-1-def), 6[1](#fn-database-frameworks-7-1-def), 7[1](#fn-database-frameworks-7-1-def) |
+| [Jedis Redis﻿](https://github.com/xetorthio/jedis) | 2, 3[1](#fn-database-frameworks-7-1-def), 4[1](#fn-database-frameworks-7-1-def), 5[1](#fn-database-frameworks-7-1-def), 6 - 8[1](#fn-database-frameworks-7-1-def) |
 | [Lettuce﻿](https://lettuce.io/) | 5.1 - 5.3[1](#fn-database-frameworks-7-1-def), 6.0.3 - 6.1.6[1](#fn-database-frameworks-7-1-def), 6.1.8 - 6.8[1](#fn-database-frameworks-7-1-def), 7.0 - 7.5[1](#fn-database-frameworks-7-1-def) |
 | [MongoDB Reactive Streams driver﻿](https://www.mongodb.com/docs/languages/java/reactive-streams-driver/current/) | 4.10+[1](#fn-database-frameworks-7-1-def), 5.0+[1](#fn-database-frameworks-7-1-def) |
 | [MongoDB asynchronous driver﻿](https://mongodb.github.io/mongo-java-driver/3.0/driver-async/) | 3.0 - 3.6.4[1](#fn-database-frameworks-7-1-def) |

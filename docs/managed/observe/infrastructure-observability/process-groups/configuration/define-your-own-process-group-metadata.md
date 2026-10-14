@@ -21,7 +21,7 @@ Metadata 1
 
 Metadata 2
 
-Dynatrace enables you to use these metadata values to [automate tagging](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.") as well as to use [environment variables to supply tags](/managed/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables."). Dynatrace even allows you to define your own metadata based on your organization’s or environment’s unique needs.
+Dynatrace enables you to use these metadata values to [automate tagging](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.") as well as to use [environment variables to supply tags](/managed/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables."). Dynatrace even allows you to define your own metadata based on your organization’s or environment’s unique needs.
 
 ## Define metadata via environment variables
 

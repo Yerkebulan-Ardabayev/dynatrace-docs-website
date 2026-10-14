@@ -7,8 +7,9 @@ source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-d
 
 # Enrich ingested data with Dynatrace-specific fields
 
-* 4-min read
-* Published Apr 26, 2021
+* Reference
+* 5-min read
+* Updated on Oct 02, 2026
 
 Unlike automatic ingestion using OneAgent, data sent directly to an ActiveGate (for example, ingest APIs) is not automatically enriched with host-related information. This may incur additional charges, as it would not take into account possibly included [DDU quotas](/managed/license/classic-licensing/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
 
@@ -28,9 +29,11 @@ A standard OneAgent setup provides the following files with host-specific detail
 * `dt_host_metadata.json`
 * `dt_host_metadata.properties`
 
-Both files contain the same collection of host-level resource attributes that OneAgent uses to enrich monitoring artifacts for a given host. This also includes key-value tags and properties set via [oneagentctl](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.") or through [Remote configuration management](/managed/ingest-from/bulk-configuration "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.").
+Both files contain the same collection of host-level resource attributes that OneAgent uses to enrich monitoring artifacts for a given host. This also includes key-value tags and properties set via [oneagentctl](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.") or through [Remote configuration management](/managed/ingest-from/bulk-configuration "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.").
 
 If you supply telemetry data via different channels than OneAgent (for example, using OpenTelemetry), it is important you enrich your telemetry data manually with these attributes to ensure the proper host association.
+
+For more information, see [Host-level resource attributes](/managed/ingest-from/dynatrace-oneagent/resource-attributes "Understand the resource attributes stored on Dynatrace Managed hosts, processes, and containers, including configuration, filtering, and storage limits.").
 
 For an example of how to load the JSON file, see the [Python example](#python-example) below.
 
@@ -131,6 +134,8 @@ When `metadataEnrichment` is enabled in your DynaKube, the Dynatrace Operator in
 * `dt_metadata.properties`
 
 Both files contain the same Kubernetes metadata in different formats. For an example of how to load the JSON file, see the [Python example](#python-example) above. With OneAgent enabled, these files are applied automatically; without OneAgent, load and apply them manually.
+
+The resource attributes you declare in your DynaKube also land in these files. See [Set resource attributes in the DynaKube](/managed/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment#resource-attributes "Configure metadata enrichment in Dynatrace Operator to attach Kubernetes metadata to telemetry signals using OneAgent, OTLP exporter, or standalone enrichment.").
 
 `metadataEnrichment` is automatically enabled — no explicit DynaKube configuration required — when using [OneAgent injection](/managed/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack "In-depth description of full-stack observability using Dynatrace Operator.") (`cloudNativeFullStack` or `applicationMonitoring`) or [OTLP exporter auto-configuration](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/otlp-auto-config "Automatically configure the OTLP exporter in applications instrumented with OpenTelemetry SDKs using Dynatrace Operator.").
 
@@ -241,3 +246,16 @@ Both files expose the following attributes:
 ```
 
 Confirm enrichment is working by inspecting `/var/lib/dynatrace/enrichment` inside an injected pod and verifying both files are present.
+
+## Resource attributes in the enrichment files
+
+The `dt_host_metadata.json` and `dt_host_metadata.properties` files contain the host-level resource attributes that OneAgent reports for the host entity. The `dt_metadata.json` and `dt_metadata.properties` files are a separate set, reported for the processes and containers on the host and propagated up to their process groups and container groups. The two sets don't mix: an attribute in the host files isn't reported for a process, and the other way around. You can filter entities by most of what you read from these files, using the [resource attributes criterion](/managed/dynatrace-api/environment-api/entity-v2/entity-selector#resourceattributes "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") of the Environment API v2 entity selector. You can also match those values in [management-zone rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules#resource-attribute-conditions "Define management-zone rules to control access to monitored entities, logs, and metrics using entity conditions, dimensional data, and entity selectors.") and in [automatically applied tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags#resource-attribute-conditions "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.").
+
+Two kinds of entry in these files are an exception, because Dynatrace doesn't store them on the entity: keys that start with `dt.`, and any attributes beyond the number Dynatrace stores per entity. See [Resource attribute limits and excluded keys](/managed/ingest-from/dynatrace-oneagent/resource-attributes#ra-limits "Understand the resource attributes stored on Dynatrace Managed hosts, processes, and containers, including configuration, filtering, and storage limits.").
+
+Dynatrace writes these files, and you read them—they aren't a configuration input. Editing them has no effect, because Dynatrace overwrites them.
+
+To add your own resource attributes, use one of these routes instead:
+
+* On a host, set host tags whose keys use the `primary_tags.` prefix, with `oneagentctl`. See [Custom resource attributes](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#custom-resource-attributes "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.").
+* In Kubernetes, declare the attributes in your DynaKube, or annotate your pods and namespaces. See [Set resource attributes in the DynaKube](/managed/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment#resource-attributes "Configure metadata enrichment in Dynatrace Operator to attach Kubernetes metadata to telemetry signals using OneAgent, OTLP exporter, or standalone enrichment.").

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/metad
 
 * How-to guide
 * 3-min read
-* Updated on Sep 30, 2026
+* Updated on Oct 02, 2026
 
 Metadata enrichment attaches Kubernetes metadata—cluster, namespace, workload, pod, and container identifiers—to telemetry signals. The mechanism differs by mode:
 
@@ -286,7 +286,7 @@ k8s.workload.name=<workload-name>
 }
 ```
 
-For code examples on reading these files, see [Enrich ingested data with Dynatrace-specific dimensions](/managed/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+For code examples on reading these files, see [Enrich ingested data with Dynatrace-specific dimensions](/managed/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.").
 
 ## Set resource attributes in the DynaKube
 
@@ -412,6 +412,8 @@ Dynatrace Operator propagates the merged attributes as follows:
 
 A soft limit of 10 attributes applies across `.spec.resourceAttributes` and `additionalResourceAttributes` combined—Dynatrace Operator logs a warning when you exceed this limit.
 
+This limit is about how many attributes you define in the DynaKube; a separate limit governs how many resource attributes Dynatrace stores on each entity—see [Resource attribute limits and excluded keys](/managed/ingest-from/dynatrace-oneagent/resource-attributes#ra-limits "Understand the resource attributes stored on Dynatrace Managed hosts, processes, and containers, including configuration, filtering, and storage limits.").
+
 Conflicting keys with concurrent OneAgent and OTLP injection
 
 When both OneAgent injection and OTLP exporter injection are active on the same pod, both write to the shared `metadata.dynatrace.com` JSON annotation. Having the same key defined in both sections will result in undefined behavior. You must use distinct keys across OneAgent and OTLP `additionalResourceAttributes` when both are active on the same pod to avoid unpredictable behavior.
@@ -429,6 +431,18 @@ Dynatrace Operator validates attribute keys and reports the following:
 
 For the full parameter reference, see the [DynaKube API reference](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
 
+Dynatrace Operator writes these attributes into each injected pod, so Dynatrace reports them for the monitored processes and containers there, not for the host. After they reach a process group or container group entity, you can also use them as rule conditions.
+
+Fewer keys reach the entity than enrich your telemetry. Dynatrace stores keys that use the `primary_tags.` prefix, such as `primary_tags.team`. Dynatrace also stores recognized primary Grail fields that don't start with `dt.`, such as `aws.account.id`, `azure.subscription`, or `k8s.cluster.name`.
+
+Keys that start with `dt.`, including `dt.host_group.id`, still enrich telemetry but are never stored as resource attributes on the entity. You can't match these keys in resource-attribute rules or the entity selector.
+
+Any other key—`my.team` in the example above, for instance—still enriches the telemetry the pod sends, but isn't stored on the process or container entity, so you can't match it in a rule or filter by it in the entity selector. The same applies to the keys you set through pod, workload, and namespace annotations: write the attribute key after the annotation prefix, as in `metadata.dynatrace.com/primary_tags.team`. You can restrict a management zone to the entities that report a given attribute, and you can apply tags to them automatically—see [management-zone rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules#resource-attribute-conditions "Define management-zone rules to control access to monitored entities, logs, and metrics using entity conditions, dimensional data, and entity selectors.") and [automatically applied tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags#resource-attribute-conditions "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.").
+
 ## Learn more
 
-* [Enrich ingested data with Dynatrace-specific dimensions](/managed/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
+* [Enrich ingested data with Dynatrace-specific dimensions](/managed/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.")
+
+* [Resource attributes](/managed/ingest-from/dynatrace-oneagent/resource-attributes "Understand the resource attributes stored on Dynatrace Managed hosts, processes, and containers, including configuration, filtering, and storage limits.")
+* [Management-zone rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules#resource-attribute-conditions "Define management-zone rules to control access to monitored entities, logs, and metrics using entity conditions, dimensional data, and entity selectors.")
+* [Define and apply tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags#resource-attribute-conditions "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.")

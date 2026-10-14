@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/manage/tags-and-metadata/setup/how-to
 # Define and apply tags
 
 * How-to guide
-* 14-min read
+* 15-min read
 * Updated on Oct 08, 2026
 
 Use tags to organize monitoring data and analysis based on related entities in all environments. Tags simplify searches for related services, process groups, and hosts. They also facilitate the collection of related metrics into meaningful groups for analysis. Tags can also be used for all types of entities across your environment for the purpose of alerting, charting and window maintenance. For more details on defining maintenance windows via tags, see [How to define a maintenance window](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window "Create maintenance windows and define their scope.").
@@ -134,7 +134,7 @@ You can also set up automated tagging of the entities in your environment using:
 
 * [Topology and Smartscape API](/managed/dynatrace-api/environment-api/topology-and-smartscape "Learn about the Dynatrace Topology and Smartscape API.")
 * [Environment variables](/managed/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.")
-* [Host autotag configuration file](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.") (for hosts only)
+* [Host autotag configuration file](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.") (for hosts only)
 
 ### How to define an automatically applied tag
 
@@ -152,6 +152,8 @@ To automatically apply a tag
    ![Page showing how to create rule for a new tag.](https://dt-cdn.net/images/tagging-rules-689-87fc41a18f.png)
 
    Page showing how to create rule for a new tag.
+
+   For hosts, process groups, and container groups, the **Conditions** drop list also offers the resource attributes reported for the entity. See [Resource attribute conditions](#resource-attribute-conditions).
 9. You can also propagate a rule to the underlying entities (such as process groups and hosts in the case of services, or hosts in the case of process groups) by selecting the corresponding check boxes at the bottom of the rule (see image above).
 
    Some entity types additionally inherit tags through fixed, built-in propagation paths that don't require any UI configuration. For details, see [Implicit propagation of tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/implicit-propagation-of-tagging-and-management-zone-rules "Learn which entity types automatically inherit tags and management zones through implicit propagation, and what to watch out for.").
@@ -166,6 +168,16 @@ When you select a tag, you can see the rules currently defined for the tag as we
 Tagging example
 
 Each tagging rule is self-contained and evaluated independently of any other existing rules.
+
+#### Resource attribute conditions
+
+For hosts, process groups, and container groups, you can create conditions based on the [resource attributes](/managed/ingest-from/dynatrace-oneagent/resource-attributes "Understand the resource attributes stored on Dynatrace Managed hosts, processes, and containers, including configuration, filtering, and storage limits.") that Dynatrace stores for the monitored entity—the attributes that OneAgent and Dynatrace Operator report for a host, process, or container. In step 8 above, select **Resource attributes** from the **Conditions** drop list. Enter the attribute key in **Dynamic key**, choose an **Operator**, and enter the **Value** you want to match. The property is offered when **Rule applies to** is set to hosts, process groups, or container groups. Dynatrace registers resource attribute keys as it observes them in your environment and suggests matching keys as you type, so you can select an existing key instead of typing it in full.
+
+![Auto-tagging rule for hosts with Resource attributes selected as the condition property, a dynamic key, an operator, and a value](https://dt-cdn.net/images/t4-01-autotag-key-autocomplete-1299-078d910b28.png)
+
+Auto-tagging rule for hosts with Resource attributes selected as the condition property, a dynamic key, an operator, and a value
+
+Resource attribute conditions aren't available for an individual process or container, even though both report resource attributes of their own, and services don't support these conditions. You don't need an instance-level condition: define the condition on the host, process group, or container group, and the resulting tag propagates from there—from a host to its Kubernetes node, and from a process group to its process group instances. A container group has no outbound propagation path, so the tag stays on the container group. Auto-tagging rules propagate along narrower paths than management-zone rules do. For the full set of paths, see [Implicit propagation of tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/implicit-propagation-of-tagging-and-management-zone-rules "Learn which entity types automatically inherit tags and management zones through implicit propagation, and what to watch out for.").
 
 #### Regular expressions
 
@@ -286,6 +298,8 @@ Host properties
 * OS version
 * PaaS type
 * Public EC2 host name
+
+Resource attributes aren't in these lists. Their keys depend on what OneAgent, Dynatrace Operator, and your own configuration report for an entity, so the set differs per environment instead of being a fixed property such as **Detected host name**. To build a condition on them, select **Resource attributes** from the **Conditions** drop list, as described in [Resource attribute conditions](#resource-attribute-conditions).
 
 ### Rule examples for defining automatically applied tags
 

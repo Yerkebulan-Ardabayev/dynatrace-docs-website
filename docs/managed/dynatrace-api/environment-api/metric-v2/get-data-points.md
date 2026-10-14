@@ -20,7 +20,7 @@ The following limits apply:
 * The number of tuples is limited to 100,000.  
   If exceeded, only the first 100,000 tuples (a `:sort` transformation doesn't affect these) are processed and the rest are ignored.
 * The number of data points per tuple is limited to 10,080.
-* The number of monitored entities is limited to 5,000 per each [**entitySelector**](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") in the query.
+* The number of monitored entities is limited to 5,000 per each [**entitySelector**](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") in the query.
 
 These limits apply to the datapoints that the query reads in the database. The amount of datapoints in the final result might be different. For example, if the `:fold` transformation is used, the query reads multiple data points but returns just one aggregated data point per tuple.
 

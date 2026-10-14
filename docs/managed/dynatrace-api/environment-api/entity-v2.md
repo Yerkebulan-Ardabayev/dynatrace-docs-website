@@ -18,7 +18,7 @@ Get an overview of entities you're monitoring with Dynatrace.](/managed/dynatrac
 
 Get the properties of a particular entity.](/managed/dynatrace-api/environment-api/entity-v2/get-entity "View parameters of a monitored entity via Dynatrace API.")[### Select the data you need
 
-Learn how to use entity selector to fine-tune the entity scope of your query.](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.")[### List entity types
+Learn how to use entity selector to fine-tune the entity scope of your query.](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.")[### List entity types
 
 Get an overview of entity types you're monitoring with Dynatrace.](/managed/dynatrace-api/environment-api/entity-v2/get-all-entity-types "View all types of monitored entities in your environment via Dynatrace API.")[### View an entity type
 

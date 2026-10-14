@@ -41,7 +41,7 @@ Read this explanation](/managed/manage/tags-and-metadata/basic-concepts/best-pra
 
 [#### Define and apply tags
 
-Find out how to define and apply tags manually and automatically.
+Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.
 
 * How-to guide
 
@@ -85,7 +85,7 @@ Organize and filter your monitored applications by importing labels and annotati
 
 Read this guide](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments)[#### Define tags and metadata for hosts
 
-Learn how to tag and set additional properties for a monitored host.
+Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.
 
 * How-to guide
 

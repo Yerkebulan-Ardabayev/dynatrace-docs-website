@@ -18,7 +18,7 @@ See the [`.spec.oneAgent.cloudNativeFullStack`](/managed/ingest-from/setup-on-k8
 
 * Offers similar functionality to the classic full-stack injection.
 * Uses mutating webhooks to inject code modules into application Pods.
-* Enables data enrichment for Kubernetes environments via [enrichment files](/managed/ingest-from/extend-dynatrace/extend-data#dynatrace-kubernetes-operator "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+* Enables data enrichment for Kubernetes environments via [enrichment files](/managed/ingest-from/extend-dynatrace/extend-data#dynatrace-kubernetes-operator "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.").
 
 ### Current limitations
 

@@ -27,8 +27,8 @@ With remote configuration management, you can use a single command to carry out 
 | --- | --- | --- |
 | [Host group](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") assignment | 1.252+ | 1.237+ |
 | [Network zone](/managed/manage/network-zones/oneagent-connectivity "Find out how network zones prioritize ActiveGates for OneAgent connectivity.") assignment | 1.252+ | 1.237+ |
-| [Tag](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#tags "Learn how to tag and set additional properties for a monitored host.") assignment | 1.268+ | 1.263+ |
-| [Property](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#host-metadata "Learn how to tag and set additional properties for a monitored host.") assignment | 1.268+ | 1.263+ |
+| [Tag](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#tags "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.") assignment | 1.268+ | 1.263+ |
+| [Property](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#host-metadata "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.") assignment | 1.268+ | 1.263+ |
 | Communication settings assignment | 1.294+ | 1.285+ |
 
 ### ActiveGate

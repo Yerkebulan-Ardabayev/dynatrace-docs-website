@@ -168,7 +168,7 @@ Automatic telemetry enrichment is enabled for:
 
 * Custom metrics that originate from any:
 
-  + Full-Stack monitored host or container, when you use OneAgent or follow the steps described in [Enrich ingested data with Dynatrace-specific fields](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+  + Full-Stack monitored host or container, when you use OneAgent or follow the steps described in [Enrich ingested data with Dynatrace-specific fields](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.").
   + Full-Stack monitored Kubernetes container, when you use Dynatrace Operator and [metadata enrichment is enabled](/managed/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Configure metadata enrichment in Dynatrace Operator to attach Kubernetes metadata to telemetry signals using OneAgent, OTLP exporter, or standalone enrichment.").
   + Cloud-native Full-Stack monitored Kubernetes node, when you use Dynatrace Operator and [metadata enrichment is enabled](/managed/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Configure metadata enrichment in Dynatrace Operator to attach Kubernetes metadata to telemetry signals using OneAgent, OTLP exporter, or standalone enrichment.").
     This includes any containers running on the monitored Kubernetes node.

@@ -85,7 +85,7 @@ metrics:
 
 An entity list is a list of entities that are somehow related to the currently viewed entity. Additional metrics can be charted in the details of each returned entity and will show as a single value in the list view.
 
-Entity lists rely on [entity selectors](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") to correctly list related entities.
+Entity lists rely on [entity selectors](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") to correctly list related entities.
 
 Simple entity list example:
 

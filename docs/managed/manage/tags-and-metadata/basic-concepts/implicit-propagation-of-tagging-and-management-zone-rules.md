@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/manage/tags-and-metadata/basic-concep
 * 5-min read
 * Updated on Oct 08, 2026
 
-When you define an [auto-tagging rule](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.") or a [management-zone rule](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules "Define rules to limit the entities accessible within a management zone.") targeting a specific entity type, Dynatrace can automatically extend that rule's effect to related entity types through implicit propagation. These propagation paths are fixed and built into the Dynatrace rule engine; no additional configuration is required.
+When you define an [auto-tagging rule](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.") or a [management-zone rule](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules "Define management-zone rules to control access to monitored entities, logs, and metrics using entity conditions, dimensional data, and entity selectors.") targeting a specific entity type, Dynatrace can automatically extend that rule's effect to related entity types through implicit propagation. These propagation paths are fixed and built into the Dynatrace rule engine; no additional configuration is required.
 
 Implicit propagation means that metadata applied by a rule to a source entity type is automatically inherited by one or more target entity types, without any additional rule configuration. Propagation applies to newly created entities as well, so a child entity that appears after a rule is already active immediately inherits its parent's assignments.
 
@@ -51,7 +51,7 @@ You can't force a rule to evaluate inactive entities or configure a longer inact
 
 ## Related topics
 
-* [Define and apply tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.")
-* [Management-zone rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules "Define rules to limit the entities accessible within a management zone.")
+* [Define and apply tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.")
+* [Management-zone rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules "Define management-zone rules to control access to monitored entities, logs, and metrics using entity conditions, dimensional data, and entity selectors.")
 * [Management zones](/managed/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.")
 * [Best practices and recommendations for tagging](/managed/manage/tags-and-metadata/basic-concepts/best-practices-and-recommendations-for-tagging "Learn when it's recommended to use tags that leverage auto-detected metadata, as well as best practices for enriching Dynatrace monitoring with additional metadata.")

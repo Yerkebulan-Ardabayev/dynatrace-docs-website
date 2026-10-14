@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent
 # Dynatrace OneAgent
 
 * 2-min read
-* Published Oct 09, 2018
+* Updated on Oct 05, 2026
 
 OneAgent is responsible for collecting all monitoring data within your monitored environment. A single OneAgent per host is required to collect all relevant monitoring data—even if your hosts are deployed within Docker containers, microservices architectures, or cloud-based infrastructure.
 
@@ -23,6 +23,8 @@ OneAgent is comprised of several code modules that enable OneAgent to work for m
 ### See also
 
 [Adaptive Traffic Management](/managed/ingest-from/dynatrace-oneagent/adaptive-traffic-management-managed "Improve your Dynatrace Managed environment health and performance with the adaptive features of traffic management, load reduction, and capture control.")
+
+[Resource attributes](/managed/ingest-from/dynatrace-oneagent/resource-attributes "Understand the resource attributes stored on Dynatrace Managed hosts, processes, and containers, including configuration, filtering, and storage limits.")
 
 ### Installation and operation
 

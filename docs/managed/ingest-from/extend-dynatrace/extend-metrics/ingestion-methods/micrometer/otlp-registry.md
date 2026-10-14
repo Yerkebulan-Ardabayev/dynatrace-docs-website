@@ -97,7 +97,7 @@ The Dynatrace Operator automatically configures the OTLP exporter by injecting t
 For the full list of supported environment variables, see the [Spring Boot OpenTelemetry environment variables reference﻿](https://docs.spring.io/spring-boot/reference/actuator/observability.html#actuator.observability.opentelemetry.environment-variables).
 
 For configuration examples, see [Dynakube examples﻿](https://github.com/Dynatrace/dynatrace-operator/tree/main/assets/samples/dynakube).
-For more information about metadata enrichment, see [the documentation on enrichment files](/managed/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+For more information about metadata enrichment, see [the documentation on enrichment files](/managed/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.").
 
 Dynatrace Operator's environment variable injection is all-or-nothing per pod. If **any** `OTEL_EXPORTER_OTLP_*` variable is already present in your container spec (regardless of which signal it targets: `_METRICS_*`, `_LOGS_*`, `_TRACES_*`), the Operator skips injecting all signal-specific OTLP variables. Only `OTEL_RESOURCE_ATTRIBUTES` continues to be injected in that case.
 
@@ -560,7 +560,7 @@ If you export your metrics to an OpenTelemetry Collector, enrich them at the Col
 
 ### Enrich manually with OneAgent metadata
 
-When OneAgent runs on the host but you export metrics directly to Dynatrace (the **Standalone** setup), the OTLP registry does not read OneAgent enrichment data automatically. Add custom code that reads the [OneAgent metadata enrichment file](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") and adds the attributes to your meter registry.
+When OneAgent runs on the host but you export metrics directly to Dynatrace (the **Standalone** setup), the OTLP registry does not read OneAgent enrichment data automatically. Add custom code that reads the [OneAgent metadata enrichment file](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.") and adds the attributes to your meter registry.
 
 Spring Boot
 

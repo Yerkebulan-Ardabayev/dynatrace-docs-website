@@ -166,7 +166,7 @@ You can define policies on the host, host group, and environment levels.
    * **Operating system**: Detection rules can be specified for selected OS systems (if none are selected, settings will not be matched).
    * **Alerts**: One rule can have up to seven alerts, one for each of the event types. See the table below.
    * **Disk name filters**: Rules can be filtered by disk name.
-   * **Host custom metadata conditions**: Rules can be filtered by [host custom metadata](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#host-metadata "Learn how to tag and set additional properties for a monitored host.").
+   * **Host custom metadata conditions**: Rules can be filtered by [host custom metadata](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#host-metadata "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.").
    * **Properties**: Properties can be added to the sent event using the supported placeholders:
 
      + `disk.all_mountpoints`

@@ -18,7 +18,7 @@ The following pages describe the previous documentation for Kubernetes metadata 
 
 [### Configure enrichment directory
 
-Enrich your metrics with additional metadata, enhancing the depth and usefulness of your data analysis.](/managed/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")[### Configure metadata enrichment
+Enrich your metrics with additional metadata, enhancing the depth and usefulness of your data analysis.](/managed/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.")[### Configure metadata enrichment
 
 Configure Dynatrace Operator to attach Kubernetes metadata to telemetry signals across OneAgent injection, OTLP exporter injection, and standalone enrichment modes.](/managed/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Configure metadata enrichment in Dynatrace Operator to attach Kubernetes metadata to telemetry signals using OneAgent, OTLP exporter, or standalone enrichment.")[### Configure build label propagation
 

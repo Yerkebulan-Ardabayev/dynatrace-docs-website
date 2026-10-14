@@ -16,7 +16,7 @@ You can keep track of current [service-level objectives](/managed/deliver/servic
 
 ## Directly connected SLOs
 
-* An SLO is directly connected to a workload when the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") of an SLO meets the following criteria:
+* An SLO is directly connected to a workload when the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") of an SLO meets the following criteria:
 
   + The entity type is set to `"CLOUD_APPLICATION"`.
   + The entity ID is set to the workload ID.
@@ -24,7 +24,7 @@ You can keep track of current [service-level objectives](/managed/deliver/servic
 
 ## Indirectly connected SLOs
 
-* An SLO isn't directly connected to a workload when, in the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") of an SLO, no entity ID is provided.
+* An SLO isn't directly connected to a workload when, in the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") of an SLO, no entity ID is provided.
 
   Example: When generic values such as `type("CLOUD_APPLICATION"),tag("slo")` are provided, the query results in all SLOs for all workloads, including the current workload.
 * To see SLOs that are not directly connected to the workload, turn off **Show only directly connected SLOs**.

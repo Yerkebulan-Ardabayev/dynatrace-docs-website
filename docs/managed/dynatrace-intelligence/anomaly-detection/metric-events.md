@@ -51,7 +51,7 @@ If you have management-zone-level permissions, you can create metric event confi
 
 To create metric events without management zone scopes, you need admin access.
 
-Management zones set up via [dimensional data rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules#logs-metrics "Define rules to limit the entities accessible within a management zone.") are not supported for metric events.
+Management zones set up via [dimensional data rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules#logs-metrics "Define management-zone rules to control access to monitored entities, logs, and metrics using entity conditions, dimensional data, and entity selectors.") are not supported for metric events.
 
 ## Topology awareness
 

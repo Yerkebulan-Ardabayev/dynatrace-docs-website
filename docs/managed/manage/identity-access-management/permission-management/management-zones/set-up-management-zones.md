@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/manage/identity-access-management/per
 * 2-min read
 * Updated on Jan 29, 2023
 
-Management zones are comprised of rules that define which entities and dimensional data (such as logs and metrics) can be accessed within each management zone. Management-zone rules (as well as [automatic tagging rules](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.")) are based on the same powerful Dynatrace conditional decision engine. In combination with [user and group permissions](/managed/manage/identity-access-management/user-and-group-management "User and group management"), you can set up management zones to create multiple overlapping partitions in your environment to promote observability, collaboration, and security.
+Management zones are comprised of rules that define which entities and dimensional data (such as logs and metrics) can be accessed within each management zone. Management-zone rules (as well as [automatic tagging rules](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.")) are based on the same powerful Dynatrace conditional decision engine. In combination with [user and group permissions](/managed/manage/identity-access-management/user-and-group-management "User and group management"), you can set up management zones to create multiple overlapping partitions in your environment to promote observability, collaboration, and security.
 
 ## Create a management zone
 
@@ -24,7 +24,7 @@ You can create up to 5,000 management zones by default in your Dynatrace monitor
    Management zones
 2. Select **Add new management zone**.
 3. Provide a **Management zone name** and **Description**.
-4. Create [management-zone rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules "Define rules to limit the entities accessible within a management zone.") governing which entities and data are part of and accessible within the management zone. These rules for entities and dimensional data are based on two approaches: a UI-based approach and a text-based approach leveraging the powerful [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") of the Environment API v2.
+4. Create [management-zone rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules "Define management-zone rules to control access to monitored entities, logs, and metrics using entity conditions, dimensional data, and entity selectors.") governing which entities and data are part of and accessible within the management zone. These rules for entities and dimensional data are based on two approaches: a UI-based approach and a text-based approach leveraging the powerful [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") of the Environment API v2.
 
    ![Management zone rules](https://dt-cdn.net/images/mz-rules-1a-1227-bcb209a202.png)
 

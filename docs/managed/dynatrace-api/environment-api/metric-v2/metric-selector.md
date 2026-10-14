@@ -1354,7 +1354,7 @@ The `:filter` transformation supports the following conditions.
 | `contains("<dimension>","<expected contained>")` | Matches if the value of the specified dimension contains the expected value. |
 | `eq("<dimension>","<expected value>")` | Matches if the value of the specified dimension equals the expected value. |
 | `ne("<dimension>","<value to be excluded>")` | The reverse of the `eq` condition. The dimension with the specified name is *excluded* from the response. |
-| `in("<dimension>",entitySelector("<selector>")` | Matches if the value of the specified dimension equals *any* of the expected values provided by the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints."). |
+| `in("<dimension>",entitySelector("<selector>")` | Matches if the value of the specified dimension equals *any* of the expected values provided by the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state."). |
 | `existsKey("<dimension>")` | Matches if the specified dimension exists. |
 | `remainder("<dimension>")` | Matches if the specified dimension is part of the [remainder](#remainder). |
 | `series(<aggregation>,<operator>(<reference value>))` | The response contains only series with data points matching the provided criterion. |
@@ -4096,5 +4096,5 @@ You must apply an [aggregation transformation](#aggregation) before using the un
 ## Related topics
 
 * [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.")
-* [Environment API v2 - Entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.")
+* [Environment API v2 - Entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.")
 * [[GitHub] Examples of metric selector queries﻿](https://dt-url.net/metric-selector-by-example)

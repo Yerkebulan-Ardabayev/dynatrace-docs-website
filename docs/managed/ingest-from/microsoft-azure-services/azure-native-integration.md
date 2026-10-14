@@ -300,7 +300,7 @@ Azure Native Dynatrace Service uses a Dynatrace access token called `azure-nativ
 
 ## Create tags
 
-* You can create [tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.") either [during the Azure integration deployment](#setup) or [after deployment](#how-to-tags).
+* You can create [tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.") either [during the Azure integration deployment](#setup) or [after deployment](#how-to-tags).
 
 You can apply tags to your Azure resources, resource groups, and subscriptions to logically organize them into a taxonomy. You can specify tags for the new Dynatrace resource in Azure by adding custom key/value pairs:
 

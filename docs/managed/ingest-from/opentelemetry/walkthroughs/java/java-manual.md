@@ -189,7 +189,7 @@ Without SDK auto-configuration
    }
    ```
 
-   The file read operations, parsing the `dt_metadata` files in the example code, attempt to read the [OneAgent data files](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.
+   The file read operations, parsing the `dt_metadata` files in the example code, attempt to read the [OneAgent data files](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.") to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.
 
 1. Add the current versions of the following packages to your package configuration (e.g, Maven, Gradle).
 
@@ -623,7 +623,7 @@ Without SDK auto-configuration
    }
    ```
 
-   The file read operations, parsing the `dt_metadata` files in the example code, attempt to read the [OneAgent data files](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.
+   The file read operations, parsing the `dt_metadata` files in the example code, attempt to read the [OneAgent data files](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.") to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.
 
 ## Step 3 optional Add telemetry signals manually Optional
 
@@ -1109,4 +1109,4 @@ For metrics and logs, go to **Metrics** or **Logs**.
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific fields](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
+* [Enrich ingested data with Dynatrace-specific fields](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.")

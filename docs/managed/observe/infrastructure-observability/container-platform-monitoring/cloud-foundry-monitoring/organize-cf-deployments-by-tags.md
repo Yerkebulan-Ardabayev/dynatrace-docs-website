@@ -19,7 +19,7 @@ Defining tags in the environment itself has its uses. However, we don't recommen
 
 We recommend that you define additional metadata at the deployed system. For CloudFoundry apps this can also be done via a user-provided Dynatrace [Cloud Foundry service﻿](https://docs.run.pivotal.io/devguide/services/) that’s bound to your application.
 
-This enables you to use [automated tagging rules](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically."), based on existing or custom metadata, to define your filter sets for charts, alerting, and more. These tags and rules can be changed and adapted any time and will apply almost immediately without any change to the monitored environment or applications.
+This enables you to use [automated tagging rules](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions."), based on existing or custom metadata, to define your filter sets for charts, alerting, and more. These tags and rules can be changed and adapted any time and will apply almost immediately without any change to the monitored environment or applications.
 
 ## Define Cloud Foundry service tags for multiple applications
 

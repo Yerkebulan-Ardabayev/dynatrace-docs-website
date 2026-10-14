@@ -125,7 +125,7 @@ Platform
 
 ### Metric queries can include values from deleted entities
 
-When querying a metric retrospectively, certain monitored entities may no longer be available and are therefore excluded from the result. This can lead to an incomplete result, especially for billing metrics. You can now use the entity selector to specify that deleted entities should be included. For details, see [Entity selector - Inclusion of deleted entities](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.").
+When querying a metric retrospectively, certain monitored entities may no longer be available and are therefore excluded from the result. This can lead to an incomplete result, especially for billing metrics. You can now use the entity selector to specify that deleted entities should be included. For details, see [Entity selector - Inclusion of deleted entities](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.").
 
 Platform
 

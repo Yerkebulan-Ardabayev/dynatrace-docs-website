@@ -8,8 +8,8 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 # Define tags and metadata for hosts
 
 * How-to guide
-* 4-min read
-* Updated on Aug 20, 2026
+* 5-min read
+* Updated on Oct 02, 2026
 
 Within dynamic or large environments, manual host tagging can be impractical. For dynamic deployments that include frequently changing host instances and names (for example, AWS or MS Azure), you should automate adding tags and metadata to your hosts.
 
@@ -51,7 +51,7 @@ TestHost Gdansk role=fallback
 
 After you configure them, the tags are displayed at the top of the **Properties and tags** section of the host overview page.
 
-Tags created using `oneagentctl` behave similarly to [automated, rule-based tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically.") and [environment variable-based tags](/managed/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.").
+Tags created using `oneagentctl` behave similarly to [automated, rule-based tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.") and [environment variable-based tags](/managed/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.").
 
 They are prefixed with the `[Environment]` string and can't be removed manually from a host. They can only be removed through a `oneagentctl` command. To remove a tag, run the following command:
 
@@ -68,7 +68,7 @@ Tags configured with `--set-host-tag` are reported to Dynatrace as part of the a
 
 You can also set up automated tagging of the hosts in your environment using:
 
-* [Automated rules](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically.")
+* [Automated rules](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.")
 * [Environment variables](/managed/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.")
 * [Smartscape and topology API](/managed/dynatrace-api/environment-api/topology-and-smartscape "Learn about the Dynatrace Topology and Smartscape API.")
 
@@ -119,7 +119,30 @@ The process of configuring properties is similar to the one for tags, but here t
 
 ### Result
 
-After you configure them, custom properties are displayed in the **Environment custom meta data** section of **Properties and tags** on the host overview page. You can then set up [automatic tagging rules](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically.") to enable tagging of these properties.
+After you configure them, custom properties are displayed in the **Environment custom meta data** section of **Properties and tags** on the host overview page. You can then set up [automatic tagging rules](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.") to enable tagging of these properties.
+
+## Custom resource attributes
+
+To report your own [resource attributes](/managed/ingest-from/dynatrace-oneagent/resource-attributes#host-level-resource-attributes "Understand the resource attributes stored on Dynatrace Managed hosts, processes, and containers, including configuration, filtering, and storage limits.") for a host, set host tags whose keys use the `primary_tags.` prefix.
+
+* **Linux** and **AIX**
+  `/opt/dynatrace/oneagent/agent/tools/oneagentctl --set-host-tag="primary_tags.environment=production"`
+* **Windows**
+  `"%PROGRAMFILES%\dynatrace\oneagent\agent\tools\oneagentctl.exe" --set-host-tag="primary_tags.environment=production"`
+
+The key is stored, and matched, in full, including the prefix.
+
+OneAgent reports these attributes for the host entity. The processes and containers running on the host don't inherit them; those get their resource attributes from the `dt_metadata` enrichment files instead.
+
+You can then filter entities by these attributes with the [resource attributes criterion](/managed/dynatrace-api/environment-api/entity-v2/entity-selector#resourceattributes "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") of the Environment API v2 entity selector, and match them in [management-zone rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules#resource-attribute-conditions "Define management-zone rules to control access to monitored entities, logs, and metrics using entity conditions, dimensional data, and entity selectors.") and in [automatically applied tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags#resource-attribute-conditions "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.").
+
+Host properties set with `--set-host-property` or `hostcustomproperties.conf`, and host tags whose keys don't use the `primary_tags.` prefix, are not reported as resource attributes on the host entity. They still appear on the host overview page—tags at the top of the **Properties and tags** section, custom properties in its **Environment custom meta data** section—but you can't match them in resource-attribute rules or the entity selector.
+
+For the full `--set-host-tag` syntax, see [Set host tags](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#host-tags "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+
+The `dt.` prefix is reserved at both ends of this path. OneAgent drops any `dt.`-prefixed tag or property other than the three allowed keys when you set it, as noted under [Host metadata](#host-metadata), and Dynatrace never stores a `dt.`-prefixed key on the entity, so you can't match one in a rule or filter by it in the entity selector. Note the difference from the `dt_` prefix—with an underscore instead of a dot—which is not reserved and whose keys are the first to be kept when a host reports more resource attributes than Dynatrace stores.
+
+The number of resource attributes Dynatrace stores per host, and their maximum key and value lengths, are limited. See [Resource attribute limits and excluded keys](/managed/ingest-from/dynatrace-oneagent/resource-attributes#ra-limits "Understand the resource attributes stored on Dynatrace Managed hosts, processes, and containers, including configuration, filtering, and storage limits.").
 
 ## Related topics
 

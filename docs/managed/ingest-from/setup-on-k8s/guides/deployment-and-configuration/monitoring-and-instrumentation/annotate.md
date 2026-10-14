@@ -387,7 +387,7 @@ oneagent.dynatrace.com/inject: "false"
 Annotations available for fine-grained control include.
 
 * `dynatrace.com/inject`: Disables all injection when set to `false`. However, setting it to `true` will have no effect; the annotation can only be used to exclude pods from injection.
-* `metadata-enrichment.dynatrace.com/inject`: Prevents [metric enrichment file](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") addition when `false`.
+* `metadata-enrichment.dynatrace.com/inject`: Prevents [metric enrichment file](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.") addition when `false`.
 * `oneagent.dynatrace.com/inject`: Disables OneAgent modifications when set to `false`.
 * `otlp-exporter-configuration.dynatrace.com/inject`: Disables [OTLP exporter auto-configuration](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/otlp-auto-config "Automatically configure the OTLP exporter in applications instrumented with OpenTelemetry SDKs using Dynatrace Operator.") when set to `false`.
 

@@ -298,7 +298,7 @@ This is mainly for demonstration purposes. You can specify any other valid recei
 
 Under `processors`, we specify the [`resource_detection` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.160.0/processor/resourcedetectionprocessor) and configure it with the [Dynatrace-specific detector `dynatrace`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.160.0/processor/resourcedetectionprocessor/README.md#dynatrace).
 
-With this configuration, the resource detector processor will attempt to load the following three attributes from the [OneAgent enrichment file](/managed/ingest-from/extend-dynatrace/extend-data#dynatrace-oneagent "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields."):
+With this configuration, the resource detector processor will attempt to load the following three attributes from the [OneAgent enrichment file](/managed/ingest-from/extend-dynatrace/extend-data#dynatrace-oneagent "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files."):
 
 * `dt.entity.host`
 * `host.name`

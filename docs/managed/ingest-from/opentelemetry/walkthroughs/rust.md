@@ -432,7 +432,7 @@ To authenticate with Dynatrace, use a [platform token](/managed/upgrade/unavaila
    }
    ```
 
-   The file read operations, parsing the `dt_metadata` files in the example code, attempt to read the [OneAgent data files](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.
+   The file read operations, parsing the `dt_metadata` files in the example code, attempt to read the [OneAgent data files](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.") to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.
 4. Configure the environment variables `DT_API_URL` and `DT_API_TOKEN`:
 
    * **Platform token**: Set `DT_API_TOKEN` to your platform token and replace `"Api-Token "` with `"Bearer "` in the `map.insert("Authorization"...)` line.
@@ -723,4 +723,4 @@ For metrics and logs, go to **Metrics** or **Logs**.
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific fields](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
+* [Enrich ingested data with Dynatrace-specific fields](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.")

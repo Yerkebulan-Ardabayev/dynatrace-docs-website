@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-e
 
 * Reference
 * 3-min read
-* Updated on Sep 11, 2026
+* Updated on Oct 08, 2026
 
 After you define the scope of your configuration, you need to identify the following:
 
@@ -128,7 +128,7 @@ A human-readable description of the specifics of this monitoring configuration.
 
 ### Version
 
-The version of this monitoring configuration. Note that a single extension can run multiple monitoring configurations.
+The version of this monitoring configuration. A single extension can run multiple monitoring configurations.
 
 ### Endpoints
 
@@ -204,7 +204,7 @@ To define a Microsoft SQL Server, add the following details in the `endpoints` s
 
 ### Authentication
 
-Authentication details passed to the Dynatrace API when activating a monitoring configuration are obfuscated and can't be retrieved.
+Dynatrace obfuscates authentication details passed to the API when you activate a monitoring configuration, and you can't retrieve them.
 
 #### Basic
 
@@ -307,6 +307,32 @@ NTLM authentication targets self-hosted, domain-joined databases only.
 }
 ```
 
+#### Azure Active Directory managed identity
+
+ActiveGate version 1.351+
+
+Allows connection to Azure SQL Database, Azure SQL Managed Instance, or SQL Server on an Azure virtual machine using an Azure Active Directory (Microsoft Entra ID) managed identity. The target database must be configured for Microsoft Entra authentication. Requires a managed identity available to the ActiveGate host and mapped to a database user.
+
+ActiveGate uses the assigned managed identity to authenticate, so there's no need to store a database password. The `azureManagedIdentityClientId` field is optional—provide the client ID of the managed identity only when the ActiveGate host has multiple user-assigned managed identities attached, so that Dynatrace can select the correct one.
+
+```
+"authentication": {
+
+
+
+"scheme": "ad_managed_identity",
+
+
+
+"azureManagedIdentityClientId": "<managed-identity-client-id>"
+
+
+
+}
+```
+
+The managed identity, database user mapping, and any Azure-specific configuration required to enable managed identity authentication are your responsibility. Consult the Azure documentation for the setup details specific to your database service.
+
 #### Credential vault
 
 The credential vault authentication type provides a more secure approach to using extensions by securely storing and managing user credentials. To use this, you must be the owner of the credentials and have a credential vault that meets the following criteria:
@@ -387,9 +413,9 @@ Client certificates are not supported for SQL data sources. To authenticate secu
 
 ### Scope
 
-Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](/managed/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension, upload certificates and custom extensions, and configure certificate permissions using the Dynatrace Extensions Framework.").
+Each ActiveGate host running your extension needs the root certificate to verify its authenticity. For details, see [Sign extension](/managed/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension, upload certificates and custom extensions, and configure certificate permissions using the Dynatrace Extensions Framework.").
 
-The scope is an ActiveGate group that executes the extension. Only one ActiveGate from the group runs this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](/managed/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+The scope is an ActiveGate group that executes the extension. Only one ActiveGate from the group runs this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For details, see [ActiveGate group](/managed/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
 
 Use the following format when defining the ActiveGate group:
 

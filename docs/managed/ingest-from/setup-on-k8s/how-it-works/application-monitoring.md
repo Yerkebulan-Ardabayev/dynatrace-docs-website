@@ -23,7 +23,7 @@ You can use the automatic injection strategy for application Pods. Dynatrace inj
 * Dynatrace injects code modules into Pods using the Kubernetes admission controller.
 * Get granular control over the instrumented Pods using namespaces and annotations.
 * Route Pod metrics to different Dynatrace environments within the same Kubernetes cluster.
-* [Enable data enrichment for Kubernetes environments](/managed/ingest-from/extend-dynatrace/extend-data#dynatrace-kubernetes-operator "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+* [Enable data enrichment for Kubernetes environments](/managed/ingest-from/extend-dynatrace/extend-data#dynatrace-kubernetes-operator "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.").
 
 ### Current limitations
 

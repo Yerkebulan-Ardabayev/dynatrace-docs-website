@@ -77,7 +77,7 @@ Information enrichment
 
 Vanilla OTLP exports to ActiveGate require manual enrichment of Dynatrace host information to have the proper topology information.
 
-To do so, make sure your traces have the correct mapping resource attributes set. The list of applicable attributes can be found in (or imported from) the [enrichment files](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+To do so, make sure your traces have the correct mapping resource attributes set. The list of applicable attributes can be found in (or imported from) the [enrichment files](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.").
 
 ### API limitations
 

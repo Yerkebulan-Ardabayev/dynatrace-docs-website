@@ -73,7 +73,7 @@ Platform | Tags
 
 We have updated the web UI and Monitored entities API to provide information about which specific rule caused a tag being applied to a monitored entity.
 
-In the web UI, you can select a tag to go directly to the source rule in Settings UI for [Automatically applied tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.") or [Manually applied tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically."). See for example this web UI display:
+In the web UI, you can select a tag to go directly to the source rule in Settings UI for [Automatically applied tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.") or [Manually applied tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions."). See for example this web UI display:
 
 ![Example of tagging info displayed in web UI](https://dt-cdn.net/images/screenshot-2025-07-31-at-15-23-13-914-d2778ef664.png)
 

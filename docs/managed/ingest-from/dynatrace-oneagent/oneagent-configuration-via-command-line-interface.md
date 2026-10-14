@@ -493,7 +493,7 @@ When custom host metadata is used to enrich metrics and other telemetry, the key
 
 Alternatively, to modify host metadata centrally from the Dynatrace Cluster, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host properties** action).
 
-For versions earlier than 1.189, use a [host metadata configuration file](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#edit-the-host-metadata-configuration-file "Learn how to tag and set additional properties for a monitored host.").
+For versions earlier than 1.189, use a [host metadata configuration file](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#edit-the-host-metadata-configuration-file "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.").
 
 To **add or change host properties**, run the following command:
 
