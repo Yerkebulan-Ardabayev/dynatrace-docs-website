@@ -26,5 +26,5 @@ For more control and configuration options, check out our [open-source project R
 
 * [Application Security﻿](https://www.dynatrace.com/platform/application-security/)
 * [Cloud Application Security eBook﻿](https://www.dynatrace.com/resources/ebooks/cloud-application-security/)
-* [Security notifications for vulnerabilities](/managed/secure/application-security/vulnerability-analytics/security-notifications-rva "Integrate security notifications for vulnerabilities with Dynatrace.")
+* [Security notifications for vulnerabilities](/managed/secure/application-security-classic/vulnerability-analytics/security-notifications-rva "Integrate security notifications for vulnerabilities with Dynatrace.")
 * [Application Security FAQ](/managed/secure/faq "Frequently asked questions about Dynatrace Application Security.")

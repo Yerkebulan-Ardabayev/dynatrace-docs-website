@@ -15,55 +15,55 @@ The **Services** page is an overview page displaying all services that Dynatrace
 
 Use the guides and references below to gain more insight about monitoring and analyzing these services.
 
-[#### Service analysis
+[#### Service analysis in Services Classic
 
 Learn about all the service monitoring details that Dynatrace can provide.
 
 * How-to guide
 
-Read this guide](/managed/observe/application-observability/services-classic/service-analysis-new)[#### Context-specific drill-down
+Read this guide](/managed/observe/application-observability/services-classic/service-analysis-new)[#### Context-specific drill-down in Services Classic
 
 Learn about easy navigation and filtering for services analysis.
 
 * Reference
 
-Read this reference](/managed/observe/application-observability/services-classic/context-specific-drill-down)[#### Analyze individual service instances
+Read this reference](/managed/observe/application-observability/services-classic/context-specific-drill-down)[#### Analyze individual service instances in Services Classic
 
 Find out how you can perform a service-instance analysis.
 
 * How-to guide
 
-Read this guide](/managed/observe/application-observability/services-classic/analyze-individual-service-instances)[#### Service analysis timings
+Read this guide](/managed/observe/application-observability/services-classic/analyze-individual-service-instances)[#### Service analysis timings in Services Classic
 
 Find out what each time in service analysis means.
 
 * Reference
 
-Read this reference](/managed/observe/application-observability/services-classic/service-analysis-timing)[#### Response time distribution and outlier analysis
+Read this reference](/managed/observe/application-observability/services-classic/service-analysis-timing)[#### Response time distribution and outlier analysis in Services Classic
 
 Gain insights into the distribution of response times across all requests, including those that are either unusually high or unusually low.
 
 * How-to guide
 
-Read this guide](/managed/observe/application-observability/services-classic/response-time-distribution-and-outlier-analysis)[#### Service response time hotspots
+Read this guide](/managed/observe/application-observability/services-classic/response-time-distribution-and-outlier-analysis)[#### Service response time hotspots in Services Classic
 
 Identify the activities that consume the most response time for each service.
 
 * How-to guide
 
-Read this guide](/managed/observe/application-observability/services-classic/service-response-time-hotspots)[#### Service flow
+Read this guide](/managed/observe/application-observability/services-classic/service-response-time-hotspots)[#### Service flow in Services Classic
 
 Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.
 
 * How-to guide
 
-Read this guide](/managed/observe/application-observability/services-classic/service-flow)[#### Monitor key requests
+Read this guide](/managed/observe/application-observability/services-classic/service-flow)[#### Monitor key requests in Services Classic
 
 Discover how to closely monitor requests that are critical to your business.
 
 * How-to guide
 
-Read this guide](/managed/observe/application-observability/services-classic/monitor-key-requests)[#### Service backtrace
+Read this guide](/managed/observe/application-observability/services-classic/monitor-key-requests)[#### Service backtrace in Services Classic
 
 Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.
 

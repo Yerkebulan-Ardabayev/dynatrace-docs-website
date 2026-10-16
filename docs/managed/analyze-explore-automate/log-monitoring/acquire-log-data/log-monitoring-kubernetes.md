@@ -15,7 +15,7 @@ Log Monitoring Classic
 
 Dynatrace Log Monitoring supports collecting logs from Kubernetes container orchestration systems via OneAgent.
 
-As an alternative to OneAgent-based log collection, you can stream logs to Dynatrace via the [logs ingest API](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") with an integration such as [Fluent Bit](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."), [Fluentd](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."), [Logstash](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."), or [Dynatrace Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.").
+As an alternative to OneAgent-based log collection, you can stream logs to Dynatrace via the [logs ingest API](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") with an integration such as [Fluent Bit](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-with-fluent-bit "Integrate Fluent Bit to stream logs to Dynatrace."), [Fluentd](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-fluentd-k8s "Integrate Fluentd with Dynatrace to stream logs."), [Logstash](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-to-dynatrace-with-logstash "Integrate Logstash to stream logs from nodes and pods to Dynatrace."), or [Dynatrace Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.").
 
 ## Supported features
 
@@ -109,7 +109,7 @@ Log ingest rules can be defined on environment scope but also on host or host gr
 
 Matching occurs in a predefined hierarchy and rules are executed from top to bottom. This means that if a rule above on the list matches certain log data, then the lower ones will be omitted. Items matched in the higher-level configurations are overwritten in the lower-level configurations if they match the same log data. If no rule is matched, the file is not sent.
 
-Consult the [Configuration scopes](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") for the four scopes of the configuration hierarchy.
+Consult [Log ingest rules](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/log-storage "Configure storage of log files that are already known to OneAgent.") for the four scopes of the configuration hierarchy.
 
 ## Use cases
 
@@ -678,7 +678,7 @@ Is it possible to decorate logs with Kubernetes labels and annotations?
 
 No, OneAgent doesn't offer such a functionality yet, although it is planned in future releases.
 
-For more ingest related FAQ, please consult the [Log ingest rules](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") page.
+For more ingest related FAQ, please consult the [Log ingest rules](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/log-storage#faq "Configure storage of log files that are already known to OneAgent.") page.
 
 ## Troubleshooting
 

@@ -1022,7 +1022,7 @@ You can also build your own dashboard from the metrics collected for your Azure 
 
 Virtual Machines, containers, and deep code monitoring with Dynatrace OneAgent
 
-Dynatrace OneAgent offers unparalleled depth of insight into hosts, containers, and code. To learn more, see [Microsoft Azure Integrations](/managed/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.").
+Dynatrace OneAgent offers unparalleled depth of insight into hosts, containers, and code. To learn more, see [Microsoft Azure Integrations](/managed/ingest-from/microsoft-azure-services/integrations "Monitor Azure services with Dynatrace using OneAgent for deep code-level visibility on AKS, App Service, Arc-enabled servers, Azure Functions, and more.").
 
 Further configuration for notifications and alerts
 

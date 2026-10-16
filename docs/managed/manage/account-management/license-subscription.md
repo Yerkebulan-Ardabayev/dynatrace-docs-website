@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/account-management/license-sub
 
 * Explanation
 * 1-min read
-* Updated on Jun 24, 2026
+* Updated on Oct 08, 2026
 
 Account Management lets license administrators view details about their Dynatrace subscription or license usage, such as consumption, budgets, cost analysis, and historical usage.
 

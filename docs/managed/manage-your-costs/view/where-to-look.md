@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/manage-your-costs/view/where-to-look
 * 6-min read
 * Published Feb 01, 2022
 
-Account Management is the front door for subscription totals, capability and environment breakdowns, billing reports, and the APIs that expose this same data programmatically.
+Dynatrace exposes cost and usage detail through **Account Management**, the front door for subscription totals, capability and environment breakdowns, billing reports, and the APIs that expose this same data programmatically.
 
 ## Overview
 

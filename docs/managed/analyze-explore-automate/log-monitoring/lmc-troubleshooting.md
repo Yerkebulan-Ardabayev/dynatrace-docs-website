@@ -24,7 +24,6 @@ If you've encountered an issue related to Log Monitoring, check one of the follo
 * [Syslog Ingestion via ActiveGate Troubleshooting Guide﻿](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-via-ActiveGate-Troubleshooting-Guide/ta-p/282718)
 * [Syslog Ingestion Troubleshooting﻿](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-Troubleshooting/ta-p/264112)
 * [Troubleshooting log Ingestion via API - POST ingest logs﻿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
-
 * [Log events are missing in Dynatrace Managed﻿](https://dt-url.net/le438g6)
 * ["Ingested log data is trimmed" message in Dynatrace Managed﻿](https://dt-url.net/fy238ty)
 * ["Log ingest queue is full" message in Dynatrace Managed﻿](https://dt-url.net/mi0385y)

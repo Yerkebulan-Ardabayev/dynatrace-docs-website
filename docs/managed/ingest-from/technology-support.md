@@ -292,7 +292,7 @@ Dynatrace detects the hypervisor, but no dedicated logic is applied.
 | [Relational Database Service (RDS)](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/view-aws-monitoring-results#relational-database-service-page "Display AWS monitoring results in Dynatrace on your home dashboard, AWS account page, host page, and more.") |
 | [Simple Storage Service (S3)](/managed/ingest-from/amazon-web-services/aws-platform/set-up-cors-in-amazon-s3 "Integrate CORS in Amazon Web Services for buckets within Amazon S3.") |
 
-### [Microsoft Azure](/managed/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")
+### [Microsoft Azure](/managed/ingest-from/microsoft-azure-services/integrations "Monitor Azure services with Dynatrace using OneAgent for deep code-level visibility on AKS, App Service, Arc-enabled servers, Azure Functions, and more.")
 
 | Compute service | Extension for deploying OneAgent | Integration of Dynatrace with Azure Monitor |
 | --- | --- | --- |
@@ -1015,7 +1015,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | [Cassandra client (cassandra-gocql-driver/v2)﻿](https://github.com/apache/cassandra-gocql-driver) | 2.0.0 - 2.1.0[1](#fn-database-frameworks-32-1-def), 2.1.1[1](#fn-database-frameworks-32-1-def), 2.1.2[1](#fn-database-frameworks-32-1-def) |
 | [Cassandra client (gocql/gocql)﻿](https://github.com/gocql/gocql) | 1.0 - 1.7[1](#fn-database-frameworks-32-1-def) |
 | [Microsoft SQL Server (denisenkom/go-mssqldb)﻿](https://github.com/denisenkom/go-mssqldb) | 0.11 - 0.12[1](#fn-database-frameworks-32-1-def) |
-| [Microsoft SQL Server (microsoft/go-mssqldb)﻿](https://github.com/microsoft/go-mssqldb) | 0.11 - 0.21[1](#fn-database-frameworks-32-1-def), 1.0 - 1.10[1](#fn-database-frameworks-32-1-def) |
+| [Microsoft SQL Server (microsoft/go-mssqldb)﻿](https://github.com/microsoft/go-mssqldb) | 0.11 - 0.21[1](#fn-database-frameworks-32-1-def), 1.0 - 1.11[1](#fn-database-frameworks-32-1-def) |
 | [MongoDB Go driver (mongo-go-driver)﻿](https://github.com/mongodb/mongo-go-driver) | 1.3 - 1.17[1](#fn-database-frameworks-32-1-def), 2.0.0 - 2.4.+[1](#fn-database-frameworks-32-1-def), 2.5.0 - 2.7.+[1](#fn-database-frameworks-32-1-def), 2.8+[1](#fn-database-frameworks-32-1-def) |
 | [MySQL﻿](https://github.com/go-sql-driver/mysql/) | 1.4.1[1](#fn-database-frameworks-32-1-def), 1.5.0[1](#fn-database-frameworks-32-1-def), 1.6.0[1](#fn-database-frameworks-32-1-def), 1.7[1](#fn-database-frameworks-32-1-def), 1.8 - 1.10[1](#fn-database-frameworks-32-1-def) |
 | [PostgreSQL (jackc/pgx)﻿](https://github.com/jackc/pgx) | 4.7 - 4.18[1](#fn-database-frameworks-32-1-def), 5.0 - 5.11[1](#fn-database-frameworks-32-1-def) |
@@ -1055,7 +1055,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 | Monitoring frameworks | Versions |
 | --- | --- |
-| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7[1](#fn-monitoring-frameworks-35-1-def), 1.8 - 1.11.0[1](#fn-monitoring-frameworks-35-1-def), 1.11.1 - 1.27[1](#fn-monitoring-frameworks-35-1-def), 1.28 - 1.46[1](#fn-monitoring-frameworks-35-1-def) |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7[1](#fn-monitoring-frameworks-35-1-def), 1.8 - 1.11.0[1](#fn-monitoring-frameworks-35-1-def), 1.11.1 - 1.27[1](#fn-monitoring-frameworks-35-1-def), 1.28 - 1.47[1](#fn-monitoring-frameworks-35-1-def) |
 
 1
 

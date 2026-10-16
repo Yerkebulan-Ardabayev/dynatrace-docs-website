@@ -16,7 +16,7 @@ Timestamp—including date, time, timezone, and offset—is searched for in the 
 
 During log processing, each line where a supported timestamp is detected starts a new log record. A line without a timestamp is considered to be a continuation of an existing log record and appended to a line that contains a timestamp.  
 If no timestamp is present in a log file or a timestamp is not recognized due to unsupported format, each line not starting with whitespace characters, such as `space` or `tab`, starts a new log record. Each line starting with whitespace characters, such as `space` or `tab`, is treated as a log record continuation.  
-Due to multiple formats of incoming log data, Log Monitoring also enables you to define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record. For more details on defining date format, see [Log timestamp configuration](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+Due to multiple formats of incoming log data, Log Monitoring also enables you to define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record. For more details on defining date format, see [Log timestamp configuration](/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-configuration "Define log monitoring rules that control log data timestamps.").
 
 The supported [timestamp formats﻿](https://dt-url.net/6e034iy) include:
 
@@ -112,7 +112,7 @@ If no time zone indicator is found in the log line, the time zone used when pars
 
 ### Override the timezone
 
-In case automatic timezone format detection fails, you can add a rule overriding time zone in the [Log timestamp configuration page](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+In case automatic timezone format detection fails, you can add a rule overriding time zone in the [Log timestamp configuration page](/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-configuration "Define log monitoring rules that control log data timestamps.").
 
 ## Default used timezone
 

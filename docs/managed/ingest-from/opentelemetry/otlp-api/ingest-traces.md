@@ -48,6 +48,4 @@ Dynatrace supports all OTLP attribute value types in trace ingest, including all
 | `kvlist` | Key-value list (map), where each key is a string and each value can be any attribute value type, including nested `kvlist` values. |
 | `null` | Empty (null) value. |
 
-Once ingested, all attribute value types, including complex ones, are preserved and available for querying with [Dynatrace Query Language (DQL)](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
-
-Complex attributes are only supported in Latest Dynatrace.
+Complex attribute value types (`array` and `kvlist`) aren't supported in Dynatrace Managed.

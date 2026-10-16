@@ -290,6 +290,4 @@ return func.HttpResponse("Hello world", status_code=200)
 
 ## Related topics
 
-* [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Learn how to monitor Azure Functions with Dynatrace OneAgent, including automatic instrumentation, distributed tracing, and hosting-plan-aware modes.")
-* [Set up Dynatrace on Microsoft Azure](/managed/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
 * [Azure monitoring﻿](https://www.dynatrace.com/technologies/azure-monitoring/)

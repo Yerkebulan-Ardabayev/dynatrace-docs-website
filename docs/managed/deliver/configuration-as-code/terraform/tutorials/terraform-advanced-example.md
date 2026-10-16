@@ -283,7 +283,7 @@ In this example, we'll utilize a JSON input file to automate the creation of a m
 
    * `host-group`: Refers to the [host group](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups#assign-a-host-to-a-host-group "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") associated with the application. Used for management zone rule.
    * `delay-in-minutes`: Specifies the duration (in minutes) that the monitoring unavailable event remains open before triggering an alert. For more information, see [alerting profile](/managed/analyze-explore-automate/alerting-and-notifications-classic/alerting-profiles "Learn how to create and manage alerting profiles.").
-   * `notify`: Lists the recipients of the [email notification](/managed/analyze-explore-automate/alerting-and-notifications-classic/problem-notifications/email-integration "Get email whenever Dynatrace detects a problem in your environment that affects real users.").
+   * `notify`: Lists the recipients of the [email notification](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration "Get email whenever Dynatrace detects a problem in your environment that affects real users.").
 3. Open a terminal window and set the tenant URL and API token environment variables. This is the tenant on which we want to push the configuration.
 
    SaaS

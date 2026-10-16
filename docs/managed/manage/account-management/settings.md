@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/manage/account-management/settings
 # Settings
 
 * 2-min read
-* Updated on Jun 24, 2025
+* Updated on Oct 06, 2026
 
 Use **Settings** to specify general account information.
 

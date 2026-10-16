@@ -15,7 +15,7 @@ Log Monitoring Classic
 
 Dynatrace version 1.252+ OneAgent version 1.243+
 
-If you use a OneAgent version earlier than 1.243 and Dynatrace Cluster version earlier than 1.252, go to [Log Sources and Storage](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+If you use a OneAgent version earlier than 1.243 and Dynatrace Cluster version earlier than 1.252, go to [Log sources and storage](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/add-log-files-sources-v2 "Learn how to include and exclude log sources for analysis.").
 
 Dynatrace allows you to include and exclude specific log sources for your analysis. Using [Dynatrace identity and access management (IAM) framework](/managed/manage/identity-access-management-classic/permission-management/manage-user-permissions-policies "Working with policies"), you can control which user can change configurations on which scope.
 

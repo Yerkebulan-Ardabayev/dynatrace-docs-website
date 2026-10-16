@@ -1,17 +1,15 @@
 ---
-title: Service analysis
+title: Service analysis in Services Classic
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic/service-analysis-new
 ---
 
-# Service analysis
+# Service analysis in Services Classic
 
-# Service analysis
+# Service analysis in Services Classic
 
 * How-to guide
 * 6-min read
-* Updated on Jun 13, 2025
-
-This topic is about the **Services** page and is a redesign of the classic page.
+* Updated on Jul 17, 2023
 
 All services detected by Dynatrace in your environment are displayed on the **Services** page. You can analyze each service and drill down to code-level information.
 
@@ -19,7 +17,7 @@ All services detected by Dynatrace in your environment are displayed on the **Se
 
 Services list
 
-How to get there:
+To get there
 
 1. Go to **Services**.
 2. Select a service name in the list to go to that service's overview page.

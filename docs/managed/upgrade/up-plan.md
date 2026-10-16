@@ -122,7 +122,7 @@ Migrating configuration data such as dashboards, applications, and tags is impor
 
 Due to technical constraints, it's not possible to move any historical monitoring data (such as metrics, traces, problems, events, and logs) from one environment to another environment. However, data can still be accessed in your Dynatrace Managed Cluster. Dynatrace Managed Clusters can be operated in parallel if access to historical data is required. This may require running dual Dynatrace Managed and SaaS licenses.
 
-You may also find it helpful to set up [Set up cross-environment tracing in Distributed Traces Classic](/managed/observe/application-observability/distributed-traces/analysis/connect-environments "Analyze requests across environment boundaries.") and [Create multi-environment dashboards](/managed/analyze-explore-automate/dashboards/create-multi-environment-dashboards "Connect a remote Dynatrace environment with an access token and point dashboard tiles to it, so one dashboard shows data from several environments.") to connect your Dynatrace Managed and SaaS environments for data access.
+You may also find it helpful to set up [Set up cross-environment tracing in Distributed Traces](/managed/observe/application-observability/distributed-traces/analysis/connect-environments "Analyze requests across environment boundaries.") and [Create multi-environment dashboards](/managed/analyze-explore-automate/dashboards/create-multi-environment-dashboards "Connect a remote Dynatrace environment with an access token and point dashboard tiles to it, so one dashboard shows data from several environments.") to connect your Dynatrace Managed and SaaS environments for data access.
 
 ### Running concurrent Dynatrace Managed and SaaS licenses
 
@@ -351,7 +351,7 @@ When sizing the ActiveGates, please ensure that you have sufficient capacity for
 
 ### Review dependencies and constraints that might impact the upgrade
 
-Moving from Dynatrace Managed to a SaaS deployment might require changes to your networking setup, as well as a re-examination and reconfiguration of external systems integrated with Dynatrace (for example, for problem notifications, see [Problem notifications](/managed/analyze-explore-automate/alerting-and-notifications-classic/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.")). Reviewing the current networking setup and the integrated systems forms the basis for further architecture considerations; review and design your Dynatrace components (ActiveGate) using network zones.
+Moving from Dynatrace Managed to a SaaS deployment might require changes to your networking setup, as well as a re-examination and reconfiguration of external systems integrated with Dynatrace (for example, for problem notifications, see [Problem notifications](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.")). Reviewing the current networking setup and the integrated systems forms the basis for further architecture considerations; review and design your Dynatrace components (ActiveGate) using network zones.
 
 ### Define the target architecture
 

@@ -58,7 +58,7 @@ The best way to create management zones is to define rules based on your entitie
 
 ## Problems, management zones, and tags
 
-[Problems](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.") can also be filtered by tags. This basically means that one can focus on problems related to entities with a specific tag. This is also how notification integration can leverage tags. One can define to only send problems that concern entities with a certain tag to a specific [notification integration](/managed/analyze-explore-automate/alerting-and-notifications-classic/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.").
+[Problems](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.") can also be filtered by tags. This basically means that one can focus on problems related to entities with a specific tag. This is also how notification integration can leverage tags. One can define to only send problems that concern entities with a certain tag to a specific [notification integration](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.").
 
 ## Naming rules and naming conventions
 

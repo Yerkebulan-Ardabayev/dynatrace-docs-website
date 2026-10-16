@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services
 
 * Overview
 * 1-min read
-* Updated on Feb 20, 2026
+* Published Aug 12, 2021
 
 Dynatrace automatically discovers, baselines, and intelligently monitors Microsoft Azure cloud environments to provide fault domain isolation and infrastructure and end-user visibility in real time.
 
@@ -21,7 +21,7 @@ Learn how to integrate Dynatrace for full-stack monitoring of your Azure service
 
 [### Deep monitoring of Azure compute services
 
-Set up full-stack monitoring of Azure services by instrumenting them with our OneAgent technology.](/managed/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")[### Monitor Azure Functions
+Set up full-stack monitoring of Azure services by instrumenting them with our OneAgent technology.](/managed/ingest-from/microsoft-azure-services/integrations "Monitor Azure services with Dynatrace using OneAgent for deep code-level visibility on AKS, App Service, Arc-enabled servers, Azure Functions, and more.")[### Monitor Azure Functions
 
 Monitor serverless Azure Function applications.](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Learn how to monitor Azure Functions with Dynatrace OneAgent, including automatic instrumentation, distributed tracing, and hosting-plan-aware modes.")
 

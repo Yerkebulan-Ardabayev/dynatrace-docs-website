@@ -16,7 +16,7 @@ Short-lived problems
 
 Short-lived problems do not generate open problem notifications. For such problems, Dynatrace sends out only resolved problem notifications to inform you that such a problem occurred.
 
-You can customize the subject line of problem-notification emails by defining a text template that includes placeholders that are dynamically populated with relevant problem details, such as problem ID, problem impact, or problem state. By default, the body of email notifications contain an HTML-formatted description of the detected problem and a direct link to the corresponding [problem details](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.") page in Dynatrace.
+You can customize the subject line of problem-notification emails by defining a text template that includes placeholders that are dynamically populated with relevant problem details, such as problem ID, problem impact, or problem state. By default, the body of email notifications contain an HTML-formatted description of the detected problem and a direct link to the corresponding [problem details](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Learn the core Davis AI root cause analysis concepts, including incidents, problems, fault tree analysis, impact analysis, and the problem lifecycle.") page in Dynatrace.
 
 To set up email-based problem notifications
 
@@ -35,6 +35,6 @@ To set up email-based problem notifications
      Placeholders
 
      The **Available placeholders** section of the configuration page lists placeholders you can use for this integration. Placeholders are automatically replaced with actual values in the message.
-   * Select an [alerting profile](/managed/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.") to filter the problem feed.
+   * Select an [alerting profile](/managed/analyze-explore-automate/alerting-and-notifications-classic/alerting-profiles "Learn how to create and manage alerting profiles.") to filter the problem feed.
 5. Select **Send test notification** to make sure your email integration is working.
 6. **Save changes**.

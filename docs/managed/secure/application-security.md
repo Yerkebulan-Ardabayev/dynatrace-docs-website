@@ -78,7 +78,7 @@ Code-level vulnerabilities
 
 Attacks
 
-* In an Infrastructure Monitoring deployment, Davis® AI cannot [adapt the Davis Security Score](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-score#score "Calculate the Davis Security Score and predict potential vulnerability risks with Davis AI."). In this case, the vulnerability's risk value can't be reevaluated, as this can only happen based on the topology information extracted from your environment, and the DSS will be the same as the CVSS base score.
+* In an Infrastructure Monitoring deployment, Davis® AI cannot [adapt the Davis Security Score](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/davis-security-score#score "Calculate the Davis Security Score and predict potential vulnerability risks with Davis AI."). In this case, the vulnerability's risk value can't be reevaluated, as this can only happen based on the topology information extracted from your environment, and the DSS will be the same as the CVSS base score.
 * Infrastructure Monitoring mode lacks environmental information, such as reachable data assets or public internet exposure, and limits information on related entities, such as databases and services. A full assessment can be performed only on vulnerabilities that have all related hosts under Full-Stack Monitoring.
 
   + If related hosts are running in Infrastructure Monitoring mode, there's not enough data sent by OneAgents to examine whether there's exposure or sensitive data affected, therefore the values for **public internet exposure** and **reachable data assets** are set to `Not available`.
@@ -122,7 +122,7 @@ Code-level vulnerabilities
 
 Attacks
 
-* In a Discovery mode deployment, Davis AI cannot [adapt the Davis Security Score](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-score#score "Calculate the Davis Security Score and predict potential vulnerability risks with Davis AI."). In this case, the vulnerability's risk value can't be reevaluated, as this can only happen based on the topology information extracted from your environment, and the DSS will be the same as the CVSS base score.
+* In a Discovery mode deployment, Davis AI cannot [adapt the Davis Security Score](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/davis-security-score#score "Calculate the Davis Security Score and predict potential vulnerability risks with Davis AI."). In this case, the vulnerability's risk value can't be reevaluated, as this can only happen based on the topology information extracted from your environment, and the DSS will be the same as the CVSS base score.
 * Discovery mode lacks environmental information, such as reachable data assets or public internet exposure, and limits information on related entities, such as databases and services. A full assessment can be performed only on vulnerabilities that have all related hosts under Full-Stack Monitoring.
 
   + If related hosts are running in Discovery mode, not enough data is sent by OneAgents to examine whether there's exposure or sensitive data affected, so the values for **public internet exposure** and **reachable data assets** are set to `Not available`.

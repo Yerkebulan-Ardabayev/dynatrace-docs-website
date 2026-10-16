@@ -1,11 +1,11 @@
 ---
-title: Request attributes
+title: Request attributes in Services
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/request-attributes
 ---
 
-# Request attributes
+# Request attributes in Services
 
-# Request attributes
+# Request attributes in Services
 
 * 3-min read
 * Updated on Aug 02, 2024
@@ -70,5 +70,5 @@ The maximum number of request attributes that can be captured by OneAgent for a 
 ## Related topics
 
 * [Request attributes API](/managed/dynatrace-api/configuration-api/service-api/request-attributes-api "Learn what the Dynatrace request attribute config API offers.")
-* [Service flow filtering](/managed/observe/application-observability/services-classic/service-flow/service-flow-filtering "Understand how service filtering works and how it can be exploited.")
+* [Service flow filtering in Services Classic](/managed/observe/application-observability/services-classic/service-flow/service-flow-filtering "Understand how service filtering works and how it can be exploited.")
 * [Set up request naming](/managed/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.")

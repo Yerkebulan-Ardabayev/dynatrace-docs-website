@@ -725,7 +725,3 @@ The ID of the IMS bridge schema is `builtin:ibmmq.ims-bridges`.
      }
      ```
 3. Use the [PUT an object](/managed/dynatrace-api/environment-api/settings/objects/put-object "Edit a settings object via the Dynatrace API.") endpoint to send your configuration.
-
-## Related topics
-
-* [Set up IBM MQ tracing on z/OS](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/ibm-mq-monitoring "Trace IBM MQ messages with Dynatrace on z/OS.")

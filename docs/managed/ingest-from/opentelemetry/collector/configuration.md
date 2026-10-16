@@ -150,7 +150,7 @@ In this YAML file, we configure the following components:
 * An OTLP HTTP exporter (`otlp_http`) configured with:
 
   + The Dynatrace endpoint, see [Base URLs](/managed/ingest-from/opentelemetry/otlp-api#base-url "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
-  + An API token, see [Authentication](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+  + A Classic access token, see [Authentication](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
 
 As part of the `otlp_http` exporter configuration, you can also set the `logs_endpoint` to control how Dynatrace processes structured log data: keep the original nested structure (raw), or flatten it into key paths (flattened).
 For more information, see [Configure structured logs processing](#structured-logs).

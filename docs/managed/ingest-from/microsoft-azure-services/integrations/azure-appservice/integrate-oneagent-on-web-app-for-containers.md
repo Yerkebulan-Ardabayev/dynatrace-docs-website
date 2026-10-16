@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/
 
 * How-to guide
 * 11-min read
-* Updated on May 20, 2026
+* Published Sep 24, 2020
 
 Linux only
 

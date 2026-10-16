@@ -172,4 +172,4 @@ Example JSON
 
 ## Related topics
 
-* [Monitor key requests](/managed/observe/application-observability/services-classic/monitor-key-requests "Discover how to closely monitor requests that are critical to your business.")
+* [Monitor key requests in Services Classic](/managed/observe/application-observability/services-classic/monitor-key-requests "Discover how to closely monitor requests that are critical to your business.")

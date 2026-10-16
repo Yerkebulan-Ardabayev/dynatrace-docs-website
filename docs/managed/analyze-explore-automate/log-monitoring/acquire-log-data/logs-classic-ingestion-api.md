@@ -18,7 +18,6 @@ Dynatrace automatically collects log and event data from a vast array of technol
 The Log ingestion API allows you to stream log records to the system. It is available via [Ingest JSON and TXT logs (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api/log-classic-ingest-json-txt-logs "Understand how JSON and TXT logs are processed.") or via [Ingest OTLP logs](/managed/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
 
 * For Dynatrace Managed, the Log ingestion endpoint is available on your nodes since Dynatrace version 1.292.
-
 * If the Environment ActiveGate is your choice for an endpoint in your local environmentor your Managed cluster is on version lower than 1.292, install an ActiveGate instance:
 
 1. Go to **Deploy Dynatrace**.
@@ -30,7 +29,6 @@ The Log ingestion API v2 is automatically enabled on ActiveGate. ActiveGate is r
 
   + `https://{your-domain}/e/{your-environment-id}/api/v2/logs/ingest`
   + `https://{your-domain}/e/{your-environment-id}/api/v2/otlp/v1/logs`
-
 * Environment ActiveGate endpoints:
 
   + `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/logs/ingest`

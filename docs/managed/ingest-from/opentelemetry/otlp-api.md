@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/otlp-api
 
 * Explanation
 * 8-min read
-* Updated on Aug 04, 2026
+* Updated on Jan 09, 2026
 
 The [OpenTelemetry Protocol (OTLP)﻿](https://opentelemetry.io/docs/specs/otlp/) is the principal network protocol for the exchange of telemetry data between OpenTelemetry-backed services and applications.
 
@@ -93,24 +93,6 @@ Calls to Dynatrace API endpoints have the following limitations.
 
 When you configure your application to export to Dynatrace, one way is to configure certain environment variables as described below.
 
-Platform token
-
-Classic access token
-
-```
-OTEL_EXPORTER_OTLP_ENDPOINT=[YOUR_BASE_URL]
-
-
-
-OTEL_EXPORTER_OTLP_HEADERS="Authorization=Bearer [YOUR_PLATFORM_TOKEN]"
-
-
-
-OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf
-```
-
-The required scopes are `openpipeline:logs:ingest`, `openpipeline:metrics:ingest`, and `openpipeline:traces:ingest`.
-
 ```
 OTEL_EXPORTER_OTLP_ENDPOINT=[YOUR_BASE_URL]
 
@@ -127,17 +109,17 @@ For more information about language-specific configuration, see [Instrument your
 
 ### Authentication and access tokens
 
-For exports to ActiveGate, authentication is handled using an API access token and the `Authorization` HTTP header.
+For exports to ActiveGate, authentication is handled using a Classic access token and the `Authorization` HTTP header.
 For more information on authentication, see [Dynatrace API - Tokens and authentication](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
 
-To authenticate, use one of the following token types in the `Authorization` HTTP header:
+To authenticate, use a Classic access token with `Api-Token` in the `Authorization` HTTP header.
+For details, see [Access tokens](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.").
 
-* **Platform token**: Use `Bearer` in the Authorization header. The required scopes are `openpipeline:logs:ingest`, `openpipeline:metrics:ingest`, and `openpipeline:traces:ingest`. See [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
-* **Classic access token**: Use `Api-Token` in the Authorization header. See [Access tokens](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.").
+The token needs the following scopes:
 
-  + Traces: `openTelemetryTrace.ingest`
-  + Metrics: `metrics.ingest`
-  + Logs: `logs.ingest`
+* Traces: `openTelemetryTrace.ingest`
+* Metrics: `metrics.ingest`
+* Logs: `logs.ingest`
 
 ### Network requirements
 

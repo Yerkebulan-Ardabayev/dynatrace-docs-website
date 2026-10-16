@@ -31,7 +31,7 @@ Host detail - process details
 
 ## Vulnerabilities
 
-The **Vulnerabilities** section on the details page of a process shows the five most severe [third-party vulnerabilities](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Monitor the security issues of your third-party libraries.") and [code-level vulnerabilities](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/manage-code-level-vulnerabilities "Monitor the code-level vulnerabilities in your environment.") related to this process.
+The **Vulnerabilities** section on the details page of a process shows the five most severe [third-party vulnerabilities](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Monitor the security issues of your third-party libraries.") and [code-level vulnerabilities](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/manage-code-level-vulnerabilities "Monitor the code-level vulnerabilities in your environment.") related to this process.
 
 To view this section, [activate and enable Application Security](/managed/secure/application-security "Access the Dynatrace Application Security functionalities.").
 

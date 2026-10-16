@@ -13,14 +13,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/
 
 ## Prerequisites
 
-* Create a token to download and setup OneAgent:
-
-  + [Platform tokens](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."). Use Platform tokens to access the for following services:
-
-    - fleet-management:oneagents:download
-    - fleet-management:cluster-id:read
-    - fleet-management:oneagent.tokens:read
-  + [API Tokens](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas "Learn the concept of an access token and its scopes.")
+* Create a [PaaS token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas "Learn the concept of an access token and its scopes.") to download and set up OneAgent.
 * Determine your [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 * Determine your server URL if required.
 

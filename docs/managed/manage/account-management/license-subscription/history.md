@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/account-management/license-sub
 
 * Explanation
 * 3-min read
-* Published Jun 09, 2026
+* Updated on Oct 06, 2026
 
 The Account Management **History** view shows historical data for all your Dynatrace subscriptions and contracts at a glance.
 

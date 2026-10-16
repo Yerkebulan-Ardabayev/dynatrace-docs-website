@@ -50,7 +50,7 @@ Existing tracers are replaced and will no longer work after you enable OpenTelem
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7[1](#fn-monitoring-framework-2-1-def), 1.8 - 1.11.0[1](#fn-monitoring-framework-2-1-def), 1.11.1 - 1.27[1](#fn-monitoring-framework-2-1-def), 1.28 - 1.46[1](#fn-monitoring-framework-2-1-def) |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7[1](#fn-monitoring-framework-2-1-def), 1.8 - 1.11.0[1](#fn-monitoring-framework-2-1-def), 1.11.1 - 1.27[1](#fn-monitoring-framework-2-1-def), 1.28 - 1.47[1](#fn-monitoring-framework-2-1-def) |
 
 1
 
@@ -157,7 +157,6 @@ By omitting attributes containing personal data, you can meet your organization'
 To configure attribute storage and masking settings for your environment
 
 1. Go to **Settings** > **Preferences** > **OneAgent network modules & integrations**.
-
 2. Select **Server-side service monitoring** > **Attribute capturing**.
 3. optional To change the default OpenTelemetry attribute persistence, go to **Preferences**.
 

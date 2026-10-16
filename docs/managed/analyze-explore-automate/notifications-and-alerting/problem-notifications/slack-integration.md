@@ -33,7 +33,7 @@ With a Slack problem-notification integration, your teams will always be aware o
      Placeholders
 
      The **Available placeholders** section of the configuration page lists placeholders you can use for this integration. Placeholders are automatically replaced with actual values.
-7. Assign an [Alerting profile](/managed/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.").
+7. Assign an [Alerting profile](/managed/analyze-explore-automate/alerting-and-notifications-classic/alerting-profiles "Learn how to create and manage alerting profiles.").
 8. Select **Send test notification** to make sure your Slack integration is working.
 9. **Save changes**.
 

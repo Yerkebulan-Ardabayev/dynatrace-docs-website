@@ -1,11 +1,11 @@
 ---
-title: Context-specific drill-down
+title: Context-specific drill-down in Services Classic
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic/context-specific-drill-down
 ---
 
-# Context-specific drill-down
+# Context-specific drill-down in Services Classic
 
-# Context-specific drill-down
+# Context-specific drill-down in Services Classic
 
 * Reference
 * 4-min read
@@ -104,5 +104,5 @@ The **Analyze** menus, available for all services, reveal all possible drill-dow
 ## Related topics
 
 * [Distributed Traces](/managed/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.")
-* [Service flow](/managed/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.")
+* [Service flow in Services Classic](/managed/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.")
 * [Multidimensional analysis](/managed/observe/application-observability/multidimensional-analysis "Configure a multidimensional analysis view and save it as a calculated metric.")

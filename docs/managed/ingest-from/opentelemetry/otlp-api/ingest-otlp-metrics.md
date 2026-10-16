@@ -16,9 +16,9 @@ Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.
 
 * Explanation
 
-Read this explanation](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest)[#### Configure OTLP metrics ingestion (Dynatrace Classic)
+Read this explanation](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest)[#### Configure OTLP metrics ingestion
 
-Learn how to configure OpenTelemetry metrics ingestion in Dynatrace Classic.
+Learn how to configure OpenTelemetry metrics ingestion in Dynatrace Managed.
 
 * Explanation
 

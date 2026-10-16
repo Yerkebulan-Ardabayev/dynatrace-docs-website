@@ -14,8 +14,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | --- | --- | --- |
 | [Cloud SRE Agents](/managed/dynatrace-api/environment-api/settings/schemas/app-community-cloudsreagents-cloudsreagent-agent) | `app:community.cloudsreagents:cloudsreagent-agent` | `environment` |
 | [Cloud SRE Interaction Profiles](/managed/dynatrace-api/environment-api/settings/schemas/app-community-cloudsreagents-cloudsreagent-interactionprofile) | `app:community.cloudsreagents:cloudsreagent-interactionprofile` | `environment` |
-| [Amazon ECR](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-amazon-ecr-connections) | `app:dynatrace.amazon.ecr:connections` | `environment` |
-| [Amazon GuardDuty](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-amazon-guardduty-connections) | `app:dynatrace.amazon.guardduty:connections` | `environment` |
 | [Microsoft Entra ID](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-azure-connector-microsoft-entra-identity-developer-connection) | `app:dynatrace.azure.connector:microsoft-entra-identity-developer-connection` | `environment` |
 | [Cost & Carbon Optimization](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-biz-carbon-cost-and-carbon-settings) | `app:dynatrace.biz.carbon:cost-and-carbon-settings` | `environment` |
 | [Business flow](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-biz-flow-biz-flow-settings) | `app:dynatrace.biz.flow:biz-flow-settings` | `environment` |
@@ -35,8 +33,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Jira Service Management connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-jsm-connector-connection) | `app:dynatrace.jsm.connector:connection` | `environment` |
 | [Kubernetes Connector](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-kubernetes-connector-connection) | `app:dynatrace.kubernetes.connector:connection` | `environment` |
 | [Launcher](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-launcher-home-launchpad) | `app:dynatrace.launcher:home.launchpad` | `environment` |
-| [Microsoft Defender for Cloud](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-microsoft-defender-cloud-connections) | `app:dynatrace.microsoft.defender.cloud:connections` | `environment` |
-| [Microsoft Sentinel](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-microsoft-sentinel-connections) | `app:dynatrace.microsoft.sentinel:connections` | `environment` |
 | [Microsoft 365 Email Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-microsoft365-connector-mail-connection) | `app:dynatrace.microsoft365.connector:mail.connection` | `environment` |
 | [Microsoft Teams](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-msteams-connection) | `app:dynatrace.msteams:connection` | `environment` |
 | [PagerDuty Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-pagerduty-connection) | `app:dynatrace.pagerduty:connection` | `environment` |

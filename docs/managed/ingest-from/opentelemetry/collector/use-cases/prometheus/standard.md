@@ -49,7 +49,7 @@ You don't need to install everything below up front. The [Deploy the tiered arch
   + The [Dynatrace Target Allocator﻿](https://github.com/Dynatrace/otel-target-allocator)
   + The [upstream OpenTelemetry Target Allocator﻿](https://opentelemetry.io/docs/platforms/kubernetes/operator/target-allocator/)
 * The [Dynatrace API endpoint URL](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported.
-* An [API token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope (only required for SaaS and ActiveGate).
+* A [Classic access token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope (only required for SaaS and ActiveGate).
 
 ## Architecture overview
 

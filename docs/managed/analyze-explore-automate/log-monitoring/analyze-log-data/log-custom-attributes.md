@@ -13,7 +13,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitori
 
 Log Monitoring Classic
 
-Dynatrace [automatically detects attributes](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") of ingested log data. **Available attributes** quickly filter the result table data for a specific log data attribute.
+Dynatrace [automatically detects attributes](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/lm-log-data-transformation#autoattributes "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") of ingested log data. **Available attributes** quickly filter the result table data for a specific log data attribute.
 
 You can also define your own custom log data attributes that suits your particular log data format. Similarly to the automatically detected log attributes, your custom log attributes are extracted from the log data during ingestion and become available within Dynatrace.
 

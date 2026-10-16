@@ -406,7 +406,3 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/azure/credentials/AZURE_CRE
 #### Response code
 
 200
-
-## Related topics
-
-* [Microsoft Azure Integrations](/managed/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")

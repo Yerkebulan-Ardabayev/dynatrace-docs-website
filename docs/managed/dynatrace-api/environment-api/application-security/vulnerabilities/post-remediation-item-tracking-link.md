@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/applica
 * Reference
 * Updated on Sep 25, 2024
 
-Adds, edits, or deletes the tracking links of [remediation tracking](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") process groups of a third-party vulnerability (or, in the case of Kubernetes vulnerabilities, of remediation tracking Kubernetes nodes).
+Adds, edits, or deletes the tracking links of [remediation tracking](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") process groups of a third-party vulnerability (or, in the case of Kubernetes vulnerabilities, of remediation tracking Kubernetes nodes).
 
 The request produces an `application/json` payload.
 
@@ -383,4 +383,4 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 ## Related topics
 
 * [Application Security](/managed/secure/application-security "Access the Dynatrace Application Security functionalities.")
-* [Remediation tracking](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
+* [Remediation tracking](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")

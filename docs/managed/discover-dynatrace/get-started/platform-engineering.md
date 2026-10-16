@@ -480,7 +480,7 @@ Goal
 
 With observability data around CPU, thread, and memory usage, it's easy to quickly identify the biggest performance bottlenecks and flag them for improvement. Such bottlenecks could manifest themselves as inefficient string operations leading to high memory allocation and pressure on the garbage collector, which can, in turn, lead to scalability and performance issues.
 
-Try it yourself: [Always-on app profiling in Services](/managed/observe/application-observability/services/always-on-app-profiling "Optimize your code and find performance problems").
+Try it yourself: [Always-on app profiling in Services Classic](/managed/observe/application-observability/services-classic/always-on-app-profiling "Optimize your code and find performance problems").
 
 #### Kubernetes utilization improvement Kubernetes utilization improvement
 

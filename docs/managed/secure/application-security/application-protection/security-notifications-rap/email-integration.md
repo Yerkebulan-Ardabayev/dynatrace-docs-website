@@ -20,9 +20,9 @@ To set up notifications for attacks
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Create an alerting profile**](/managed/secure/application-security/vulnerability-analytics/security-notifications-rva/email-integration#profile "Integrate security notifications for vulnerabilities via email.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Create an alerting profile**](/managed/secure/application-security-classic/vulnerability-analytics/security-notifications-rva/email-integration#profile "Integrate security notifications for vulnerabilities via email.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Link the alerting profile**](/managed/secure/application-security/vulnerability-analytics/security-notifications-rva/email-integration#link "Integrate security notifications for vulnerabilities via email.")
+**Link the alerting profile**](/managed/secure/application-security-classic/vulnerability-analytics/security-notifications-rva/email-integration#link "Integrate security notifications for vulnerabilities via email.")
 
 ### Step 1 Create an alerting profile
 
@@ -73,5 +73,5 @@ To verify that your integration is set up correctly
 
 ## Related topics
 
-* [Email integration for security notifications](/managed/secure/application-security/vulnerability-analytics/security-notifications-rva/email-integration "Integrate security notifications for vulnerabilities via email.")
+* [Email integration for security notifications](/managed/secure/application-security-classic/vulnerability-analytics/security-notifications-rva/email-integration "Integrate security notifications for vulnerabilities via email.")
 * [Application Security FAQ](/managed/secure/faq "Frequently asked questions about Dynatrace Application Security.")

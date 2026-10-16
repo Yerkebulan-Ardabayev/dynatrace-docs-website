@@ -37,6 +37,6 @@ To set up Trello problem-notification integration
 
      The **Available placeholders** section of the configuration page lists placeholders you can use for this integration. Placeholders are automatically replaced with actual values in the card text.
    * Enter the card description.
-   * Assign an [Alerting profile](/managed/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.").
+   * Assign an [Alerting profile](/managed/analyze-explore-automate/alerting-and-notifications-classic/alerting-profiles "Learn how to create and manage alerting profiles.").
 5. Select **Send test notification** to make sure your Trello integration is working. It should send a test notification to Trello.
 6. If the test was successful, **Save changes**.

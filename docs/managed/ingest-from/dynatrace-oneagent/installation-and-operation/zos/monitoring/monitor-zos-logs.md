@@ -96,12 +96,6 @@ z/OS logs in Log viewer
 
 z/OS logs on Host page
 
-You can also perform advanced queries in **Notebooks** with the Dynatrace Query Language (DQL). For example, with DQL, you can quickly query all abends or drill down into specific job statistics.
-
-![DQL query for z/OS logs](https://dt-cdn.net/images/zos-log-dql-1630-0cc40d3a7d.png)
-
-DQL query for z/OS logs
-
 ## FAQ
 
 Which metadata is added to the ingested z/OS logs?

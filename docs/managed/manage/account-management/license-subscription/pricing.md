@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/account-management/license-sub
 
 * Explanation
 * 3-min read
-* Published Jun 09, 2026
+* Updated on Oct 06, 2026
 
 The Account Management **Pricing** view shows all current price points for DPS capabilities included with your active subscription.
 Expand any row to view pricing across different timeframes.
@@ -29,7 +29,7 @@ The table provides information about:
 * Quoted list price: Your actual cost for the capability, according to the described unit of measure.
 * Quote number: An internal number for your contract.
 * Unit of measure: How consumption of the quoted list price is measured.
-* Deployment type: Whether SaaS or Managed.
+* Deployment type: Managed.
 
 The view includes historical pricing context.
 When a capability price changes, the new price displays prominently and previous price points remain accessible in expandable rows.

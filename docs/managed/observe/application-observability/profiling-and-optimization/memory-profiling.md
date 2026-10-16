@@ -159,4 +159,4 @@ The **Called method** page is configured to display all methods, including third
 
 ## Related topics
 
-* [Custom API definitions](/managed/observe/application-observability/services/customize-api-definitions "Set detection rules to customize APIs in your environment.")
+* [Customize API definitions for Services](/managed/observe/application-observability/services/customize-api-definitions "Set detection rules to customize APIs in your environment.")

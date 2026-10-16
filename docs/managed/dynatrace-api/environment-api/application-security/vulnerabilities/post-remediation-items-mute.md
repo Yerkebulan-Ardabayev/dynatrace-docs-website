@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/applica
 * Reference
 * Updated on Sep 25, 2024
 
-Mutes multiple [remediation tracking](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") process groups or, in the case of Kubernetes vulnerabilities, multiple remediation tracking Kubernetes nodes.
+Mutes multiple [remediation tracking](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") process groups or, in the case of Kubernetes vulnerabilities, multiple remediation tracking Kubernetes nodes.
 
 The request consumes an `application/json` payload.
 
@@ -357,4 +357,4 @@ If the request was successful, you'll see `muteStateChangeTriggered` per entity.
 
 * [Application Security](/managed/secure/application-security "Access the Dynatrace Application Security functionalities.")
 * [Davis Security Advisor API](/managed/dynatrace-api/environment-api/application-security/davis-security-advice "View the Davis Security Advisor recommendations via Dynatrace API.")
-* [Remediation tracking](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
+* [Remediation tracking](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")

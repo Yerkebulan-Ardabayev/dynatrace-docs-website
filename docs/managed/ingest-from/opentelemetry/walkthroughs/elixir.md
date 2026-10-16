@@ -25,10 +25,7 @@ This walkthrough shows how to add observability to your Elixir application using
 * Dynatrace version 1.222+
 * For tracing, W3C Trace Context is enabled
 
-  1. Go to the appropriate configuration page:
-
-     + In Latest Dynatrace, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **General monitoring settings** > **OneAgent features**.
-     + In Dynatrace Classic, go to **Settings** > **Preferences** > **OneAgent features**.
+  1. Go to **Settings** > **Preferences** > **OneAgent features**.
   2. Turn on **Send W3C Trace Context HTTP headers**.
 
 ## Step 1 Get the Dynatrace access details
@@ -39,20 +36,13 @@ For details on how to assemble the base OTLP endpoint URL, see [Dynatrace OTLP A
 
 ### Get an authentication token
 
-To authenticate with Dynatrace, use a [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") or a [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.").
+To authenticate with Dynatrace, use a [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.").
 
-* **Platform token**:
+1. Go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
+2. Generate a token with the scope matching your signal type: `logs.ingest` for logs, `metrics.ingest` for metrics, or `openTelemetryTrace.ingest` for traces.
+3. Use `Authorization: Api-Token <your-classic-access-token>` as the header value.
 
-  1. Go to [My platform tokens﻿](https://myaccount.dynatrace.com/platformTokens).
-  2. Create a platform token with the scope matching your signal type: `openpipeline:logs:ingest` for logs, `openpipeline:metrics:ingest` for metrics, or `openpipeline:traces:ingest` for traces.
-  3. Use `Authorization: Bearer <your-platform-token>` as the header value.
-* **Classic access token**:
-
-  1. Go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
-  2. Generate a token with the scope matching your signal type: `logs.ingest` for logs, `metrics.ingest` for metrics, or `openTelemetryTrace.ingest` for traces.
-  3. Use `Authorization: Api-Token <your-classic-access-token>` as the header value.
-
-[Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api#authentication "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") has more details on authentication formats and the required scopes.
+[Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") has more details on authentication formats and the required scopes.
 
 ## Step 2 Set up OpenTelemetry
 
@@ -135,71 +125,7 @@ To authenticate with Dynatrace, use a [platform token](/managed/upgrade/unavaila
    ```
    text_map_propagators: [:baggage, :trace_context],
    ```
-4. Add the following configuration to `config/runtime.exs` and replace `[URL]` and `[TOKEN]` with the respective values for the [Dynatrace URL](#base-url) and [access token](#access-token).
-
-   Platform token
-
-   Classic access token
-
-   ```
-   import Config
-
-
-
-   config :opentelemetry,
-
-
-
-   resource: [service: %{name: "elixir-quickstart", version: "1.0.1"}], #TODO Replace with the name and version of your application
-
-
-
-   span_processor: :batch,
-
-
-
-   traces_exporter: :otlp,
-
-
-
-   # Add your text map propagator from previous step here
-
-
-
-   resource_detectors: [
-
-
-
-   :otel_resource_app_env,
-
-
-
-   :otel_resource_env_var,
-
-
-
-   ExtraMetadata
-
-
-
-   ]
-
-
-
-   config :opentelemetry_exporter,
-
-
-
-   otlp_protocol: :http_protobuf,
-
-
-
-   otlp_traces_endpoint: "[URL]", #TODO Replace [URL] to your SaaS/Managed URL as mentioned in the next step
-
-
-
-   otlp_traces_headers: [{"Authorization", "Bearer [TOKEN]"}] #TODO Replace [TOKEN] with your API Token as mentioned in the next step
-   ```
+4. Add the following configuration to `config/runtime.exs` and replace `[URL]` and `[TOKEN]` with the respective values for the [Dynatrace URL](#base-url) and [Classic access token](#authentication-token).
 
    ```
    import Config

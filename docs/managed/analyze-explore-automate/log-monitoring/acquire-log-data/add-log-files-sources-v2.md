@@ -14,7 +14,7 @@ Log Monitoring Classic
 
 Starting with OneAgent version 1.243 and Dynatrace Cluster version 1.252, we strongly encourage you to switch to [Log Storage](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/log-storage "Configure storage of log files that are already known to OneAgent.").
 
-With the release of Dynatrace version 1.285 (March 2024), Dynatrace will automatically convert your [log source](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") and [log storage](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") configurations to the latest version.
+With the release of Dynatrace version 1.285 (March 2024), Dynatrace will automatically convert your log source and log storage configurations to the latest version.
 
 You can also upgrade to the new configuration by selecting **Upgrade configuration**. All of your current settings will be fully upgraded.
 

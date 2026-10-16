@@ -483,4 +483,4 @@ To restrict a custom service:
 ## Related topics
 
 * [Custom services API](/managed/dynatrace-api/configuration-api/service-api/custom-services-api "Learn what the Dynatrace custom services config API offers.")
-* [Custom API definitions](/managed/observe/application-observability/services/customize-api-definitions "Set detection rules to customize APIs in your environment.")
+* [Customize API definitions for Services](/managed/observe/application-observability/services/customize-api-definitions "Set detection rules to customize APIs in your environment.")

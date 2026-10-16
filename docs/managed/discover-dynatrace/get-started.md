@@ -44,7 +44,7 @@ Dynatrace Managed is an on-premises observability platform that enables you to a
 
 ### Step 7 Set up notifications
 
-* Set up your first [notifications](/managed/analyze-explore-automate/alerting-and-notifications-classic/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.").
+* Set up your first [notifications](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.").
 
 ## Additional resources
 

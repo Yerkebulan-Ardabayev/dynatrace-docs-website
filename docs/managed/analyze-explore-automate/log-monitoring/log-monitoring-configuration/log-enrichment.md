@@ -1168,7 +1168,7 @@ endpoint="http://localhost:14499/otlp/v1/traces"
 )))
 ```
 
-When using OneAgent, make sure to enable the public [Extension Execution Controller](/managed/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.") in your Dynatrace Settings, otherwise no data will be sent.
+When using OneAgent, make sure to enable the public Extension Execution Controller in your Dynatrace Settings, otherwise no data will be sent.
 
 Go to **Settings** > **Preferences** > **Extension Execution Controller**. The toggles **Enable Extension Execution Controller** and **Enable local PIPE/HTTP metric and Log Ingest API** should be active.
 
@@ -1176,4 +1176,4 @@ For details on configuration, see [Instrument your Python application with OpenT
 
 ## Related topics
 
-* [Leverage log enrichment for traces to resolve problems in Distributed Traces Classic](/managed/observe/application-observability/distributed-traces/use-cases/problems-logs-traces "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.")
+* [Leverage log enrichment for traces to resolve problems in Distributed Traces](/managed/observe/application-observability/distributed-traces/use-cases/problems-logs-traces "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.")

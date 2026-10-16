@@ -1,11 +1,11 @@
 ---
-title: Analyze individual service instances
+title: Analyze individual service instances in Services Classic
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic/analyze-individual-service-instances
 ---
 
-# Analyze individual service instances
+# Analyze individual service instances in Services Classic
 
-# Analyze individual service instances
+# Analyze individual service instances in Services Classic
 
 * How-to guide
 * 2-min read
@@ -57,4 +57,4 @@ Instances 4
 
 ## Related topics
 
-* [Service analysis timings](/managed/observe/application-observability/services-classic/service-analysis-timing "Find out what each time in service analysis means.")
+* [Service analysis timings in Services Classic](/managed/observe/application-observability/services-classic/service-analysis-timing "Find out what each time in service analysis means.")

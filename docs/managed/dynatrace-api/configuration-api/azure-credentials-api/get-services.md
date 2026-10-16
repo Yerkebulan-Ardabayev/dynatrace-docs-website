@@ -183,7 +183,3 @@ A metric of service to be monitored.
 
 }
 ```
-
-## Related topics
-
-* [Microsoft Azure Integrations](/managed/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")

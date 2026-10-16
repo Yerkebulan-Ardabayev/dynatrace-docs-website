@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/manage/account-management/notificatio
 # Notification center
 
 * Explanation
-* Published May 29, 2026
+* Updated on Oct 06, 2026
 
 Account Management sends notifications when spending thresholds are approached or when unexpected consumption changes are detected.
 This page describes how notifications work across [Budget alerts](/managed/manage-your-costs/control/budgets "Learn how to configure budgets in Dynatrace.") and [Cost monitors](/managed/manage-your-costs/control/cost-monitors "Learn how to use the Cost Monitors feature to make forecasts and cost events.").
@@ -79,5 +79,7 @@ API notifications are available for cost monitor events. For details, see [Notif
 
 ## Related topics
 
+* [Budget alerts](/managed/manage-your-costs/control/budgets "Learn how to configure budgets in Dynatrace.")
+* [Cost monitors](/managed/manage-your-costs/control/cost-monitors "Learn how to use the Cost Monitors feature to make forecasts and cost events.")
 * [Notifications API - POST filter notifications](/managed/dynatrace-api/account-management-api/post-notifications "List notifications for your account.")
 * [Account Management](/managed/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")

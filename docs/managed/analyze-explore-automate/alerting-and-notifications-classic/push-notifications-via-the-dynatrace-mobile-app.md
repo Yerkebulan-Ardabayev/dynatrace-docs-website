@@ -41,7 +41,7 @@ Push notifications will now be delivered through third-party integrations such a
 * Set up your preferred notification integrations via:
 
   + Dynatrace SaaS: [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
-  + Dynatrace Managed: [Problem notifications](/managed/analyze-explore-automate/alerting-and-notifications-classic/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.")
+  + Dynatrace Managed: [Problem notifications](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.")
 * Remove the native app from your devices after the sunset date.
 
 #### Need help?
@@ -160,7 +160,7 @@ Dynatrace mobile app problem details
 
 The list of vulnerabilities within the app allows your security team to quickly review all the detected security vulnerabilities within your environments.
 
-Each of these vulnerabilities shows its [Dynatrace Security Score (DSS)](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-score "Calculate the Davis Security Score and predict potential vulnerability risks with Davis AI.") along with the number of affected entities and its Common Vulnerabilities and Exposures (CVE) number.
+Each of these vulnerabilities shows its [Dynatrace Security Score (DSS)](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/davis-security-score "Calculate the Davis Security Score and predict potential vulnerability risks with Davis AI.") along with the number of affected entities and its Common Vulnerabilities and Exposures (CVE) number.
 
 * To search, select **CVE ID**, **External ID**, or **Component** and then enter the search string.
 * To change the sort order, select **Sorted by time** or **Sorted by DSS**.

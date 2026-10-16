@@ -109,7 +109,7 @@ To define the global attack control for all process groups
    * **Monitor; incoming attacks detected only.**—Monitoring is enabled; no attacks in the selected technology are blocked.
    * **Block; incoming attacks detected and blocked.**—Monitoring is enabled; attacks in the selected technology are blocked at runtime.
 
-If you define [custom monitoring rules](/managed/secure/application-security/application-protection/application-protection-rules-classic#handling-rules "Create, modify, and delete rules for specific attacks.") based on certain process groups or vulnerability types, the custom rules override the global attack control for the selected technology, and Runtime Application Protection continues to monitor the attacks based on your rules.
+If you define [custom monitoring rules](/managed/secure/application-security-classic/application-protection/application-protection-rules-classic#handling-rules "Create, modify, and delete rules for specific attacks.") based on certain process groups or vulnerability types, the custom rules override the global attack control for the selected technology, and Runtime Application Protection continues to monitor the attacks based on your rules.
 
 3. Select **Save**.
 
@@ -132,7 +132,7 @@ OneAgent version 1.309 To detect SSRF attacks, you also need to enable SSRF atta
 After you set up Runtime Application Protection, you can
 
 * [Monitor attacks](/managed/secure/application-security/application-protection/manage-attacks "Monitor the attacks on your application code.")
-* [Set up attack-protection rules](/managed/secure/application-security/application-protection/application-protection-rules-classic "Create, modify, and delete rules for specific attacks.")
+* [Set up attack-protection rules](/managed/secure/application-security-classic/application-protection/application-protection-rules-classic "Create, modify, and delete rules for specific attacks.")
 * [Create security notifications](/managed/secure/application-security/application-protection/security-notifications-rap "Integrate security notifications for attacks with Dynatrace.")
 * [Use available vulnerability metrics](/managed/secure/application-security/application-protection/app-sec-metrics "View available Application Security metrics for Dynatrace Runtime Application Protection.")
 

@@ -1,11 +1,11 @@
 ---
-title: Service analysis timings
+title: Service analysis timings in Services Classic
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic/service-analysis-timing
 ---
 
-# Service analysis timings
+# Service analysis timings in Services Classic
 
-# Service analysis timings
+# Service analysis timings in Services Classic
 
 * Reference
 * 5-min read
@@ -48,5 +48,5 @@ Regardless of which analysis you're running, it is not guaranteed that you'll se
 ## Related topics
 
 * [Distributed Traces](/managed/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.")
-* [Service flow](/managed/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.")
+* [Service flow in Services Classic](/managed/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.")
 * [Multidimensional analysis](/managed/observe/application-observability/multidimensional-analysis "Configure a multidimensional analysis view and save it as a calculated metric.")

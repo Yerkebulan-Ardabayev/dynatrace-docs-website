@@ -221,7 +221,3 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/azure/supportedServices
 #### Response code
 
 200
-
-## Related topics
-
-* [All Azure cloud services](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics "Monitor Azure services with Dynatrace and view available metrics.")

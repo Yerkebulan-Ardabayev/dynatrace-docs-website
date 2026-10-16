@@ -64,7 +64,3 @@ For more details, see [Technology support](/managed/ingest-from/technology-suppo
 ## Monitoring consumption
 
 For AWS Lambda, monitoring consumption is based on Davis data units. See [Serverless monitoring](/managed/license/classic-licensing/davis-data-units/serverless-monitoring "Understand how serverless monitoring consumption is calculated.") for details.
-
-## Related topics
-
-* [Dynatrace OneAgent](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")

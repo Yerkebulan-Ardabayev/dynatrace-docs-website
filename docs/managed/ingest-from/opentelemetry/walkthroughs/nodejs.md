@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthrough
 
 * How-to guide
 * 5-min read
-* Updated on Aug 04, 2026
+* Updated on May 11, 2026
 
 This walkthrough shows how to add observability to your JavaScript application using the OpenTelemetry JavaScript libraries and tools.
 
@@ -25,10 +25,7 @@ This walkthrough shows how to add observability to your JavaScript application u
 * Dynatrace version 1.222+
 * For tracing, W3C Trace Context is enabled
 
-  1. Go to the appropriate configuration page:
-
-     + In Latest Dynatrace, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **General monitoring settings** > **OneAgent features**.
-     + In Dynatrace Classic, go to **Settings** > **Preferences** > **OneAgent features**.
+  1. Go to **Settings** > **Preferences** > **OneAgent features**.
   2. Turn on **Send W3C Trace Context HTTP headers**.
 
 ## Step 1 Get the Dynatrace access details
@@ -39,20 +36,13 @@ For details on how to assemble the base OTLP endpoint URL, see [Dynatrace OTLP A
 
 ### Get an authentication token
 
-To authenticate with Dynatrace, use a [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") or a [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.").
+To authenticate with Dynatrace, use a [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.").
 
-* **Platform token**:
+1. Go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
+2. Generate a token with the scope matching your signal type: `logs.ingest` for logs, `metrics.ingest` for metrics, or `openTelemetryTrace.ingest` for traces.
+3. Use `Authorization: Api-Token <your-classic-access-token>` as the header value.
 
-  1. Go to [My platform tokens﻿](https://myaccount.dynatrace.com/platformTokens).
-  2. Create a platform token with the scope matching your signal type: `openpipeline:logs:ingest` for logs, `openpipeline:metrics:ingest` for metrics, or `openpipeline:traces:ingest` for traces.
-  3. Use `Authorization: Bearer <your-platform-token>` as the header value.
-* **Classic access token**:
-
-  1. Go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
-  2. Generate a token with the scope matching your signal type: `logs.ingest` for logs, `metrics.ingest` for metrics, or `openTelemetryTrace.ingest` for traces.
-  3. Use `Authorization: Api-Token <your-classic-access-token>` as the header value.
-
-[Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api#authentication "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") has more details on authentication formats and the required scopes.
+[Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") has more details on authentication formats and the required scopes.
 
 ## Step 2 Initialize OpenTelemetry
 
@@ -334,10 +324,7 @@ To authenticate with Dynatrace, use a [platform token](/managed/upgrade/unavaila
    ```
 
    The file read operations, parsing the `dt_metadata` files in the example code, attempt to read the [OneAgent data files](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.") to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.
-3. If you export using OTLP, configure the two variables `DT_API_URL` and `DT_API_TOKEN` in `otel.js`:
-
-   * **Platform token**: Set `DT_API_TOKEN` to your platform token and replace `'Api-Token '` with `'Bearer '` in the Authorization headers.
-   * **Classic access token**: Set `DT_API_TOKEN` to your Classic access token. The code uses `Api-Token` format.
+3. If you export using OTLP, configure the two variables `DT_API_URL` and `DT_API_TOKEN` in `otel.js`. Set `DT_API_TOKEN` to your Classic access token. The code uses `Api-Token` format.
 
    Value injection
 

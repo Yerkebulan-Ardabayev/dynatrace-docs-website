@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/u
 
 * How-to guide
 * 2-min read
-* Updated on Aug 04, 2026
+* Updated on Dec 17, 2025
 
 The following configuration example shows how you configure a Collector instance to enrich OpenTelemetry data with OneAgent host entities.
 
@@ -28,137 +28,11 @@ Enrichment is specific to non-container OneAgent environments. Configuring a con
   + A [custom Builder version](/managed/ingest-from/opentelemetry/collector#collector-builder "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
 * A OneAgent running on the same host as the OTel Collector, where the OneAgent monitors in either Full-Stack, Infrastructure, or Foundation & Discovery mode.
 * The [Dynatrace API endpoint URL](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported, configured as system environment variable
-* An [API token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope (only required for SaaS and ActiveGate), configured as system environment variable
+* A [Classic access token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope (only required for SaaS and ActiveGate), configured as system environment variable
 
 See [Collector Deployment](/managed/ingest-from/opentelemetry/collector/deployment "How to deploy the Dynatrace OpenTelemetry Collector.") and [Collector Configuration](/managed/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
 
 ## Demo configuration
-
-Platform token
-
-Classic access token
-
-```
-receivers:
-
-
-
-otlp:
-
-
-
-protocols:
-
-
-
-grpc:
-
-
-
-endpoint: 0.0.0.0:4317
-
-
-
-http:
-
-
-
-endpoint: 0.0.0.0:4318
-
-
-
-processors:
-
-
-
-resource_detection/dynatrace:
-
-
-
-detectors: [dynatrace]
-
-
-
-override: false
-
-
-
-exporters:
-
-
-
-otlp_http:
-
-
-
-endpoint: ${env:DT_ENDPOINT}
-
-
-
-headers:
-
-
-
-Authorization: "Bearer ${env:DT_PLATFORM_TOKEN}"
-
-
-
-service:
-
-
-
-pipelines:
-
-
-
-traces:
-
-
-
-receivers: [otlp]
-
-
-
-processors: [resource_detection/dynatrace]
-
-
-
-exporters: [otlp_http]
-
-
-
-metrics:
-
-
-
-receivers: [otlp]
-
-
-
-processors: [resource_detection/dynatrace]
-
-
-
-exporters: [otlp_http]
-
-
-
-logs:
-
-
-
-receivers: [otlp]
-
-
-
-processors: [resource_detection/dynatrace]
-
-
-
-exporters: [otlp_http]
-```
-
-Assign the scope that matches your signal type: `openpipeline:logs:ingest` for logs, `openpipeline:metrics:ingest` for metrics, or `openpipeline:traces:ingest` for traces.
 
 ```
 receivers:
@@ -298,11 +172,10 @@ This is mainly for demonstration purposes. You can specify any other valid recei
 
 Under `processors`, we specify the [`resource_detection` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.160.0/processor/resourcedetectionprocessor) and configure it with the [Dynatrace-specific detector `dynatrace`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.160.0/processor/resourcedetectionprocessor/README.md#dynatrace).
 
-With this configuration, the resource detector processor will attempt to load the following three attributes from the [OneAgent enrichment file](/managed/ingest-from/extend-dynatrace/extend-data#dynatrace-oneagent "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files."):
+With this configuration, the resource detector processor will attempt to load the following two attributes from the [OneAgent enrichment file](/managed/ingest-from/extend-dynatrace/extend-data#dynatrace-oneagent "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files."):
 
 * `dt.entity.host`
 * `host.name`
-* `dt.smartscape.host`
 
 If the resource detector could load these values successfully, it will add them as resource attributes to the OTLP request. No additional processor configuration is necessary.
 
@@ -313,10 +186,7 @@ Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://gith
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `headers`.
 
 * `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`).
-* One token variable, depending on the token type you use:
-
-  + **Platform token**: `DT_PLATFORM_TOKEN` contains your [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") with the `openpipeline:logs:ingest`, `openpipeline:metrics:ingest`, and `openpipeline:traces:ingest` scopes.
-  + **Classic access token**: `DT_API_TOKEN` contains your [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") with the **Ingest logs** (`logs.ingest`), **Ingest metrics** (`metrics.ingest`), and **Ingest OpenTelemetry traces** (`openTelemetryTrace.ingest`) scopes.
+* `DT_API_TOKEN` contains your [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") with the **Ingest logs** (`logs.ingest`), **Ingest metrics** (`metrics.ingest`), and **Ingest OpenTelemetry traces** (`openTelemetryTrace.ingest`) scopes.
 
 ### Service pipeline
 

@@ -1,11 +1,11 @@
 ---
-title: Identity and access management (IAM) (Dynatrace Classic)
+title: Identity and access management (IAM)
 source: https://docs.dynatrace.com/managed/manage/identity-access-management-classic
 ---
 
-# Identity and access management (IAM) (Dynatrace Classic)
+# Identity and access management (IAM)
 
-# Identity and access management (IAM) (Dynatrace Classic)
+# Identity and access management (IAM)
 
 * Overview
 * 1-min read

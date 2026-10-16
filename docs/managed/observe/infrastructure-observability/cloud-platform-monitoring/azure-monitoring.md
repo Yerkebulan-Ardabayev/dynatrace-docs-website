@@ -36,7 +36,3 @@ It is possible to choose monitoring metrics for each of the supporting services.
 ## Hybrid environments
 
 Tracking of services and dependencies is not limited to Azure. Thanks to Davis® and its ability to process data from all types of environments, Dynatrace is optimized for monitoring hybrid environments, including business applications spanning across multiple cloud and virtualization platforms such as AWS, Google Cloud, VMware, Kubernetes, Openshift, and on-premises infrastructure.
-
-## Related topics
-
-* [Set up Dynatrace on Microsoft Azure](/managed/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")

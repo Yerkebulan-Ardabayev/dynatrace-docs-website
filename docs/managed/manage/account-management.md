@@ -9,12 +9,11 @@ source: https://docs.dynatrace.com/managed/manage/account-management
 
 * Explanation
 * 5-min read
-* Updated on Jun 24, 2025
+* Updated on Oct 08, 2026
 
 Dynatrace Account Management provides a single place to:
 
 * Manage Dynatrace license and subscriptions.
-
 * Monitor Dynatrace platform adoption and environment health.
 
 ## Access
@@ -67,16 +66,6 @@ Use the **My profile** tab to update your user profile and notification options.
 
 To return to the **My profile** tab later, open  in the upper-right corner and select you account name.
 
-### My platform tokens
-
-![Account Management: My platform tokens](https://dt-cdn.net/images/account-management-my-platform-tokens-578-bcbc9af2e1.png)
-
-Account Management: My platform tokens
-
-Platform tokens allow to interact with the Dynatrace platform via API for external integrations or scripting. For details, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
-
-To return to the **My platform tokens** tab later, open  in the upper-right corner and select **Platform tokens**.
-
 ## Account-level navigation
 
 After you select an account on the **My accounts** tab, **Account Management** shows a menu bar on a large display.
@@ -105,8 +94,7 @@ Open the **License** or **Subscription** menu to:
 
 * View license/subscription usage and consumption history
 * View a forecast of future usage
-
-* View all license quota notifications for SaaS and Managed licenses
+* View all license quota notifications
 
 #### Overview
 
@@ -119,42 +107,7 @@ Open the **License** or **Subscription** menu to:
 
 ### Identity & access management
 
-For Dynatrace SaaS customers, and for Dynatrace Platform Subscription deployments using the SaaS model, open the **Identity & access management** (IAM) menu to manage:
-
-* User groups and permissions
-* Users and groups with SAML in Dynatrace SaaS
-* Users and groups with SCIM in Dynatrace SaaS
-* API OAuth tokens for the Account Management API
-
 IAM for Dynatrace Managed deployments is managed within each cluster. For details, see [User groups, permissions, and policies](/managed/manage/identity-access-management/user-and-group-management/user-groups-and-permissions "Learn about the supported permissions and policies, how you can assign them to groups, and how you can manage your users and groups.").
-
-#### People
-
-Use **Identity & access management** > **People** to invite and assign users to groups to manage Dynatrace permissions and access.
-
-#### Groups
-
-Use **Identity & access management** > **Group management** to create user groups to manage Dynatrace permissions and access for users assigned to those groups.
-
-#### Policies
-
-Use **Identity & access management** > **Policy management** to manage Dynatrace policies.
-
-#### Domain verification
-
-Use **Identity & access management** > **Domain verification** to create verify account domains for use in SSO configurations like SAML or SCIM.
-
-#### SAML configuration
-
-Use **Identity & access management** > **SAML configuration** to configure user authentication for multiple domains. If you want to use your corporate credentials for authentication in Dynatrace SaaS, you can set up SAML to delegate the authentication to your identity provider. As a prerequisite, you need to verify ownership of your domain by adding a resource record to your domain.
-
-#### SCIM configuration
-
-Use **Identity & access management** > **SCIM configuration** to manage user identities in cloud-based applications and services. SCIM is used to automate the exchange of user identities between different domains and systems. You need to add and verify ownership of the domain to which your users belong before generating tokens and completing SCIM configuration.
-
-#### API OAuth clients
-
-Use **Identity & access management** > **OAuth clients** to configure and manage account API OAuth clients. The Account Management API helps you manage your account and its users. For example, you can manage access to Dynatrace environments by creating groups with various access levels and then associating these groups with users.
 
 ### Lens
 
@@ -228,4 +181,4 @@ Select  **Chat** to contact a product specialist.
 
 ## Profile
 
-Select  **Profile** to verify the account you're signed in under, list your accounts, list your platform tokens, or sign out.
+Select  **Profile** to verify the account you're signed in under, list your accounts, or sign out.

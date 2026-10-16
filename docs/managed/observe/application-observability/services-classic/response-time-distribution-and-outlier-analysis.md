@@ -1,11 +1,11 @@
 ---
-title: Response time distribution and outlier analysis
+title: Response time distribution and outlier analysis in Services Classic
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic/response-time-distribution-and-outlier-analysis
 ---
 
-# Response time distribution and outlier analysis
+# Response time distribution and outlier analysis in Services Classic
 
-# Response time distribution and outlier analysis
+# Response time distribution and outlier analysis in Services Classic
 
 * How-to guide
 * 5-min read
@@ -112,5 +112,5 @@ As you can see, outlier analysis, enabled by Dynatrace response-time distributio
 
 ## Related topics
 
-* [Service analysis timings](/managed/observe/application-observability/services-classic/service-analysis-timing "Find out what each time in service analysis means.")
+* [Service analysis timings in Services Classic](/managed/observe/application-observability/services-classic/service-analysis-timing "Find out what each time in service analysis means.")
 * [[Blog] Better understand response time differences over time using compare mode﻿](https://www.dynatrace.com/news/blog/better-understand-response-time-differences-over-time-using-compare-mode/)

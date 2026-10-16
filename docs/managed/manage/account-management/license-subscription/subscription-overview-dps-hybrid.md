@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/account-management/license-sub
 
 * Explanation
 * 3-min read
-* Published Nov 24, 2025
+* Updated on Oct 06, 2026
 * Preview
 
 This page is specifically for customers with a DPS for Hybrid setup, see [DPS for Hybrid](/managed/license/dps-for-hybrid "DPS for Hybrid lets you share one subscription across multiple accounts.").

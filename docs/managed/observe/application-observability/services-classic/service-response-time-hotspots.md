@@ -1,11 +1,11 @@
 ---
-title: Service response time hotspots
+title: Service response time hotspots in Services Classic
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic/service-response-time-hotspots
 ---
 
-# Service response time hotspots
+# Service response time hotspots in Services Classic
 
-# Service response time hotspots
+# Service response time hotspots in Services Classic
 
 * How-to guide
 * 5-min read
@@ -141,4 +141,4 @@ Typically, web-request services have a wide range of response times. Analyzing a
 
 ## Related topics
 
-* [Service analysis timings](/managed/observe/application-observability/services-classic/service-analysis-timing "Find out what each time in service analysis means.")
+* [Service analysis timings in Services Classic](/managed/observe/application-observability/services-classic/service-analysis-timing "Find out what each time in service analysis means.")

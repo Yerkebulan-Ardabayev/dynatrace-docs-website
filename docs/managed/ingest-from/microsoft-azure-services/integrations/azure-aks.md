@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/
 
 * Overview
 * 1-min read
-* Updated on Feb 09, 2026
+* Published May 04, 2020
 
 Dynatrace OneAgent provides extensive monitoring of **Azure Kubernetes Service** pods, nodes, and clusters. The OneAgent deployment process is consistent with other distributions.
 

@@ -144,7 +144,7 @@ You can delete OneAgent or ActiveGate diagnostics issues at any time. If you del
 
 ### Vulnerabilities
 
-Dynatrace retains open [third-party vulnerabilities](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/index-classic "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.") and [code-level vulnerabilities](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities "Monitor, visualize, and analyze code-level vulnerabilities.") as long as they're open, regardless of the timeframe.
+Dynatrace retains open [third-party vulnerabilities](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.") and [code-level vulnerabilities](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities "Monitor, visualize, and analyze code-level vulnerabilities.") as long as they're open, regardless of the timeframe.
 
 The storage time for resolved third-party and code-level vulnerabilities depends on when vulnerabilities are resolved:
 
@@ -161,7 +161,7 @@ Examples:
 
 ### Events
 
-[Third-party vulnerability evolution events](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities#evolution "Monitor the security issues of your third-party libraries.") and [code-level vulnerability evolution events](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/manage-code-level-vulnerabilities#evolution "Monitor the code-level vulnerabilities in your environment.") are stored for 365 days. You can only query them up to the timestamp of when the vulnerability was first detected.
+[Third-party vulnerability evolution events](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities#evolution "Monitor the security issues of your third-party libraries.") and [code-level vulnerability evolution events](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/manage-code-level-vulnerabilities#evolution "Monitor the code-level vulnerabilities in your environment.") are stored for 365 days. You can only query them up to the timestamp of when the vulnerability was first detected.
 
 ![First detected timestamp](https://dt-cdn.net/images/2023-12-13-09-27-13-602-340a8dff4a.png)
 

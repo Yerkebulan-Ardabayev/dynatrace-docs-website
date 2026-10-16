@@ -67,5 +67,4 @@ The Dynatrace OneAgent SDK is published directly to GitHub together with the tec
 
 * [Instrumentation via OneAgent SDK for Android in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android "Learn how to enrich mobile user experience monitoring in Android using OneAgent SDK.")
 * [OneAgent SDK for iOS in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios "Enrich mobile user experience monitoring using OneAgent SDK for iOS.")
-* [OneAgent](/managed/platform/oneagent "Learn the monitoring capabilities of OneAgent.")
 * [Dynatrace OneAgent](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")

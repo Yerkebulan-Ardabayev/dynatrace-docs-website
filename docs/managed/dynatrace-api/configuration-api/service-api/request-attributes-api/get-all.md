@@ -127,4 +127,4 @@ The short representation of a Dynatrace entity.
 
 ## Related topics
 
-* [Request attributes](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.")
+* [Request attributes in Services](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.")

@@ -1,0 +1,38 @@
+---
+title: Microsoft Azure Integrations
+source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/integrations
+---
+
+# Microsoft Azure Integrations
+
+# Microsoft Azure Integrations
+
+* Overview
+* 1-min read
+* Published Jul 29, 2026
+
+Dynatrace provides comprehensive monitoring support for Azure services, by integration with both OneAgent and Azure Monitor.
+
+## Integrate on Azure compute- and serverless services
+
+[Monitor Azure App Service](/managed/ingest-from/microsoft-azure-services/integrations/azure-appservice "Monitor Azure App Service")
+
+[Microsoft Azure Arc-enabled servers](/managed/ingest-from/microsoft-azure-services/integrations/azure-arc-enabled-servers "Azure integration with ARC servers")
+
+[Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Learn how to monitor Azure Functions with Dynatrace OneAgent, including automatic instrumentation, distributed tracing, and hosting-plan-aware modes.")
+
+[Monitor Azure Spring Apps](/managed/ingest-from/microsoft-azure-services/integrations/azure-spring "Learn how to configure OneAgent for monitoring Azure Spring Apps.")
+
+[Azure Kubernetes Service (AKS)](/managed/ingest-from/microsoft-azure-services/integrations/azure-aks "Learn how to deploy, operate, and maintain OneAgent on Azure Kubernetes Service.")
+
+[Monitor Azure Service Fabric](/managed/ingest-from/microsoft-azure-services/integrations/azure-servicefabric "Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure Service Fabric using a VM extension.")
+
+[Monitor Azure Virtual Machines](/managed/ingest-from/microsoft-azure-services/integrations/azure-vm "Learn how to install and configure OneAgent for monitoring Azure Virtual Machines using a VM extension.")
+
+[Monitor Azure Virtual Machine Scale Set (VMSS)](/managed/ingest-from/microsoft-azure-services/integrations/azure-vmss "Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure VM Scale Set using a VM extension.")
+
+## Azure Monitor integration
+
+In addition to monitoring your Azure workloads using OneAgent, you can integrate Dynatrace with Azure Monitor to monitor infrastructure and gain insight even in serverless application scenarios.
+
+For more information, see [Monitor Azure services with Azure Monitor metrics](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Set up and configure Azure monitoring in Dynatrace.")

@@ -25,9 +25,9 @@ To get started
 1. [Activate and enable Application Security](/managed/secure/application-security "Access the Dynatrace Application Security functionalities.").
 2. Select any of the options below:
 
-* To detect and monitor third-party vulnerabilities, [enable third-party vulnerability detection](/managed/secure/application-security/vulnerability-analytics#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."), then go to [**Third-Party Vulnerabilities**](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Monitor the security issues of your third-party libraries.").
+* To detect and monitor third-party vulnerabilities, [enable third-party vulnerability detection](/managed/secure/application-security/vulnerability-analytics#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."), then go to [**Third-Party Vulnerabilities**](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Monitor the security issues of your third-party libraries.").
 * To detect and monitor code-level vulnerabilities, [enable code-level vulnerability detection](/managed/secure/application-security/vulnerability-analytics#clv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."), then go to [**Code-Level Vulnerabilities**](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/manage-code-level-vulnerabilities "Monitor the code-level vulnerabilities in your environment.").
-* For a unified view of third-party and code-level vulnerabilities and information about host coverage, [enable Runtime Vulnerability Analytics](/managed/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."), then go to [**Security Overview**](/managed/secure/application-security/vulnerability-analytics/application-security-overview "Get an overview of the security issues of your third-party libraries.").
+* For a unified view of third-party and code-level vulnerabilities and information about host coverage, [enable Runtime Vulnerability Analytics](/managed/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."), then go to [**Security Overview**](/managed/secure/application-security-classic/vulnerability-analytics/application-security-overview "Get an overview of the security issues of your third-party libraries.").
 * To detect and monitor attacks on vulnerabilities, [enable Runtime Application Protection](/managed/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities."), then go to [Attacks](/managed/secure/application-security/application-protection/manage-attacks "Monitor the attacks on your application code.").
 
 ### What's the difference between the classic monitoring rules and the new monitoring rules?
@@ -88,8 +88,8 @@ Dynatrace does not remediate vulnerabilities. It identifies and monitors vulnera
 
 Once the root cause is gone, the vulnerability is automatically resolved. For more information about vulnerability resolution, see:
 
-* [Third-party vulnerabilities: Resolution](/managed/secure/application-security/vulnerability-analytics/vulnerability-evaluation-classic#tpv-resolution "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
-* [Code-level vulnerabilities: Resolution](/managed/secure/application-security/vulnerability-analytics/vulnerability-evaluation-classic#clv-resolution "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
+* [Third-party vulnerabilities: Resolution](/managed/secure/application-security-classic/vulnerability-analytics/vulnerability-evaluation-classic#tpv-resolution "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
+* [Code-level vulnerabilities: Resolution](/managed/secure/application-security-classic/vulnerability-analytics/vulnerability-evaluation-classic#clv-resolution "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
 
 ### How do I fix detected vulnerabilities?
 
@@ -97,8 +97,8 @@ The rich and precise context and details provided on the vulnerabilities pages h
 
 For example, for third-party vulnerabilities, you can
 
-* Use the recommended fixes from [Davis Security Advisor](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor "Get recommendations for security fixes from Davis Security Advisor.") to upgrade to a non-vulnerable version of the vulnerable component
-* [Set up tracking links for affected entities and follow up with their remediation progress](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
+* Use the recommended fixes from [Davis Security Advisor](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor "Get recommendations for security fixes from Davis Security Advisor.") to upgrade to a non-vulnerable version of the vulnerable component
+* [Set up tracking links for affected entities and follow up with their remediation progress](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
 
 ### When is a vulnerability marked as resolved?
 
@@ -125,8 +125,8 @@ No. A vulnerability is resolved if there are no longer any affected entities.
 
 A vulnerability is resolved automatically if the root cause is no longer present. To learn more, see
 
-* [Third-party vulnerability resolution](/managed/secure/application-security/vulnerability-analytics/vulnerability-evaluation-classic#tpv-resolution "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
-* [Code-level vulnerability resolution](/managed/secure/application-security/vulnerability-analytics/vulnerability-evaluation-classic#clv-resolution "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
+* [Third-party vulnerability resolution](/managed/secure/application-security-classic/vulnerability-analytics/vulnerability-evaluation-classic#tpv-resolution "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
+* [Code-level vulnerability resolution](/managed/secure/application-security-classic/vulnerability-analytics/vulnerability-evaluation-classic#clv-resolution "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
 
 ### Why do some vulnerabilities keep being resolved and reopened?
 
@@ -135,9 +135,9 @@ A vulnerability keeps being resolved and reopened when a process using the vulne
 * When the process is terminated, the vulnerability is resolved.
 * When the process is restarted, the vulnerability is reopened.
 
-For details about the reasons why vulnerabilities are resolved and reopened, see [Resolution](/managed/secure/application-security/vulnerability-analytics/vulnerability-evaluation-classic#tpv-resolution "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.").
+For details about the reasons why vulnerabilities are resolved and reopened, see [Resolution](/managed/secure/application-security-classic/vulnerability-analytics/vulnerability-evaluation-classic#tpv-resolution "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.").
 
-To determine which processes are affected, access the [remediation tracking for processes](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#process "Track the remediation progress of vulnerabilities.").
+To determine which processes are affected, access the [remediation tracking for processes](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#process "Track the remediation progress of vulnerabilities.").
 
 ### Why do resolved vulnerabilities show up in every management zone?
 
@@ -167,7 +167,7 @@ See below the restart requirements by functionality.
     - Enable Code-level Vulnerability Analytics
     - Configure the global code-level vulnerability detection control per technology
     - Enable OneAgent monitoring
-  + After you enable a [monitoring rule](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/define-monitoring-rules-clv-classic "Define rules based on specific process groups")
+  + After you enable a [monitoring rule](/managed/secure/application-security-classic/vulnerability-analytics/code-level-vulnerabilities/define-monitoring-rules-clv-classic "Define rules based on specific process groups")
 * **Attacks**: An application process restart is required in the following cases:
 
   + After each step in [Get started with Runtime Application Protection](/managed/secure/application-security/application-protection#start "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities."):
@@ -175,7 +175,7 @@ See below the restart requirements by functionality.
     - Enable Runtime Application Protection
     - Define the global attack control per technology
     - Enable OneAgent monitoring
-  + After you enable a [monitoring rule](/managed/secure/application-security/application-protection/application-protection-rules-classic "Create, modify, and delete rules for specific attacks.")
+  + After you enable a [monitoring rule](/managed/secure/application-security-classic/application-protection/application-protection-rules-classic "Create, modify, and delete rules for specific attacks.")
 
 ### Why is there a "Restart required" notification on some Application Security pages?
 
@@ -187,7 +187,7 @@ See [How can I know if information about vulnerable functions is outdated and wh
 
 ### How can I get notifications for vulnerabilities?
 
-You can [set up notifications](/managed/secure/application-security/vulnerability-analytics/security-notifications-rva "Integrate security notifications for vulnerabilities with Dynatrace.") through your preferred channels.
+You can [set up notifications](/managed/secure/application-security-classic/vulnerability-analytics/security-notifications-rva "Integrate security notifications for vulnerabilities with Dynatrace.") through your preferred channels.
 
 * For example, you can trigger alerts
 
@@ -207,8 +207,8 @@ You can [set up notifications](/managed/secure/application-security/application-
 
 If you think a vulnerability or an entity isn't relevant or is a false positive, you can:
 
-* Mute (silence) the vulnerability. For details, see [Change the third-party vulnerability status](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/filter-third-party-vulnerabilities#mute "Organize third-party vulnerabilities for easy management and to prioritize issues.") and [Change the code-level vulnerability status](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/filter-clv-vulnerabilities#mute "Organize code-level vulnerabilities for easy management and to prioritize issues.")
-* Mute (silence) the entity. For details, see [Change vulnerability status of process groups](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#status-pg "Track the remediation progress of vulnerabilities.") and [Change vulnerability status of nodes](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#status-node "Track the remediation progress of vulnerabilities.").
+* Mute (silence) the vulnerability. For details, see [Change the third-party vulnerability status](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/filter-third-party-vulnerabilities#mute "Organize third-party vulnerabilities for easy management and to prioritize issues.") and [Change the code-level vulnerability status](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/filter-clv-vulnerabilities#mute "Organize code-level vulnerabilities for easy management and to prioritize issues.")
+* Mute (silence) the entity. For details, see [Change vulnerability status of process groups](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#status-pg "Track the remediation progress of vulnerabilities.") and [Change vulnerability status of nodes](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#status-node "Track the remediation progress of vulnerabilities.").
 
 ### Why do we keep receiving notifications for the same vulnerability?
 
@@ -217,8 +217,8 @@ If you think a vulnerability or an entity isn't relevant or is a false positive,
 A process that does not run all the time might be using a vulnerable library. For details, see [Why do some vulnerabilities keep being resolved and reopened?](#reopen).
 To stop receiving notifications for this vulnerability, you can:
 
-* Exclude the respective process from Application Security monitoring by setting up a [third-party monitoring rule](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.")/[code-level monitoring rule](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/define-monitoring-rules-clv-classic "Define rules based on specific process groups").
-* [Mute the third-party vulnerability](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/filter-third-party-vulnerabilities#mute "Organize third-party vulnerabilities for easy management and to prioritize issues.")/[mute the code-level vulnerability](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/filter-clv-vulnerabilities#mute "Organize code-level vulnerabilities for easy management and to prioritize issues.").
+* Exclude the respective process from Application Security monitoring by setting up a [third-party monitoring rule](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.")/[code-level monitoring rule](/managed/secure/application-security-classic/vulnerability-analytics/code-level-vulnerabilities/define-monitoring-rules-clv-classic "Define rules based on specific process groups").
+* [Mute the third-party vulnerability](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/filter-third-party-vulnerabilities#mute "Organize third-party vulnerabilities for easy management and to prioritize issues.")/[mute the code-level vulnerability](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/filter-clv-vulnerabilities#mute "Organize code-level vulnerabilities for easy management and to prioritize issues.").
 
 ### How can I fetch fix recommendation information for vulnerabilities?
 
@@ -230,7 +230,7 @@ For details, see [Vulnerabilities API - GET vulnerability details](/managed/dyna
 
 ### How can I see which hosts are covered by Application Security?
 
-Go to **Security Overview**. In the **Host coverage** section, select **Monitored hosts** to go to the **Hosts** page filtered by monitored hosts. For details, see [Application Security overview: Host coverage](/managed/secure/application-security/vulnerability-analytics/application-security-overview#host-coverage "Get an overview of the security issues of your third-party libraries.").
+Go to **Security Overview**. In the **Host coverage** section, select **Monitored hosts** to go to the **Hosts** page filtered by monitored hosts. For details, see [Application Security overview: Host coverage](/managed/secure/application-security-classic/vulnerability-analytics/application-security-overview#host-coverage "Get an overview of the security issues of your third-party libraries.").
 
 ### Why do I see a vulnerability on one host but not on another?
 
@@ -243,7 +243,7 @@ Vulnerability detection depends on the data Dynatrace receives from each host. I
 You can:
 
 * [Create monitoring rules for third-party vulnerabilities](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.")
-* [Create monitoring rules for code-level vulnerabilities](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/define-monitoring-rules-clv-classic "Define rules based on specific process groups")
+* [Create monitoring rules for code-level vulnerabilities](/managed/secure/application-security-classic/vulnerability-analytics/code-level-vulnerabilities/define-monitoring-rules-clv-classic "Define rules based on specific process groups")
 
 Your custom rules override the global third-party vulnerability detection control setting. Any entity that doesn't match one of your rules will follow the global third‑party vulnerability detection setting.
 
@@ -431,7 +431,7 @@ Example:
 
 load-origins-pg
 
-For information on how to navigate there, see [Remediation tracking](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.").
+For information on how to navigate there, see [Remediation tracking](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.").
 
 ## Vulnerable functions
 
@@ -440,7 +440,7 @@ For information on how to navigate there, see [Remediation tracking](/managed/se
 * If the Dynatrace Vulnerability feed provides information about the vulnerable function, and OneAgent monitoring for Java vulnerable functions is enabled, OneAgent determines whether the vulnerable function is in use.
 * If the Dynatrace Vulnerability feed provides information about the vulnerable function, but the OneAgent feature is disabled, the number of vulnerable functions is displayed as **Not available**.
 
-For more information about the Dynatrace Vulnerability feed, see [Third-party vulnerability feeds](/managed/secure/application-security/vulnerability-analytics/vulnerability-evaluation-classic#vulnerability-feeds "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.").
+For more information about the Dynatrace Vulnerability feed, see [Third-party vulnerability feeds](/managed/secure/application-security-classic/vulnerability-analytics/vulnerability-evaluation-classic#vulnerability-feeds "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.").
 
 ### Why is there no information on vulnerable functions?
 
@@ -463,7 +463,7 @@ There are two cases when information about vulnerable functions is not available
 
 If you see the **Restart required** notification on the details page of a vulnerability, follow the steps below to determine which processes you need to restart:
 
-1. On the [**Process group overview**](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities#pg "Monitor the security issues of your third-party libraries.") card, select **View all process groups**.
+1. On the [**Process group overview**](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities#pg "Monitor the security issues of your third-party libraries.") card, select **View all process groups**.
 2. Filter by `Vulnerable functions: Restart required`.
 3. For each of the resulting process groups, select **Details**, then select the link provided in the **Restart required** notification to navigate to the list of processes that require a restart.
 
@@ -494,17 +494,17 @@ OneAgent version 1.279+
 If new information about a vulnerability's vulnerable functions is available, a process restart is required so that OneAgent can pick up and use the new data.
 In this case, a **Restart required** notification or symbol is displayed on
 
-* A vulnerability's details page (in [**Vulnerability details**](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities#vulnerability-details "Monitor the security issues of your third-party libraries.") > **Vulnerable functions**)
+* A vulnerability's details page (in [**Vulnerability details**](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities#vulnerability-details "Monitor the security issues of your third-party libraries.") > **Vulnerable functions**)
 
   ![Restart required on a vulnerability details page](https://dt-cdn.net/images/2023-12-18-12-45-12-776-d39b330fe4.png)
 
   Restart required on a vulnerability details page
-* The [process groups overview related to a vulnerability](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#pg "Track the remediation progress of vulnerabilities.") (in [**Details**](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#details "Track the remediation progress of vulnerabilities.") > **Risk assessment**)
+* The [process groups overview related to a vulnerability](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#pg "Track the remediation progress of vulnerabilities.") (in [**Details**](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#details "Track the remediation progress of vulnerabilities.") > **Risk assessment**)
 
   ![Restart required on the process groups overview related to a vulnerability](https://dt-cdn.net/images/2023-12-18-12-41-00-1597-34af91fcf3.png)
 
   Restart required on the process groups overview related to a vulnerability
-* The [process list related to a vulnerability](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#process "Track the remediation progress of vulnerabilities.") (in **Vulnerable functions** and **Details**).
+* The [process list related to a vulnerability](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#process "Track the remediation progress of vulnerabilities.") (in **Vulnerable functions** and **Details**).
 
   ![Restart required on the process list related to a vulnerability](https://dt-cdn.net/images/2023-12-18-12-37-41-1570-47da22adc2.png)
 
@@ -516,7 +516,7 @@ In this case, a **Restart required** notification or symbol is displayed on
 
 To fetch data about vulnerabilities, Dynatrace Application Security uses either the [Dynatrace Vulnerability feed﻿](https://dt-url.net/o303679) or [NVD﻿](https://nvd.nist.gov/vuln), depending on the vulnerable component. Malicious code in packages is exclusively sourced from the [Dynatrace Vulnerability feed﻿](https://dt-url.net/o303679).
 
-For more information, see [Third-party vulnerability feeds](/managed/secure/application-security/vulnerability-analytics/vulnerability-evaluation-classic#vulnerability-feeds "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.").
+For more information, see [Third-party vulnerability feeds](/managed/secure/application-security-classic/vulnerability-analytics/vulnerability-evaluation-classic#vulnerability-feeds "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.").
 
 ## Attack blocking mechanism
 
@@ -563,7 +563,7 @@ For information about how security-related data is stored in Dynatrace, see [Dat
 * If you're using [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace classic monitoring consumption is calculated, including host units, DDUs, DEM units, and Application Security units."), see [How capabilities affect monitoring consumption](/managed/license/classic-licensing/application-security-units#how-capabilities-affect-monitoring-consumption "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.").
 
 To see which hosts consume DPS/ASUs, in **Security Overview**, go to the **Host coverage** section for third-party and code-level vulnerabilities and select **Monitored hosts**. The resulting list of hosts are the hosts in your environment which consume DPS/ASUs.
-For more information, see [Host coverage](/managed/secure/application-security/vulnerability-analytics/application-security-overview#host-coverage "Get an overview of the security issues of your third-party libraries.").
+For more information, see [Host coverage](/managed/secure/application-security-classic/vulnerability-analytics/application-security-overview#host-coverage "Get an overview of the security issues of your third-party libraries.").
 
 ### Why is Application Security still showing usage even though I disabled RVA?
 

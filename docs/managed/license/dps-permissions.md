@@ -47,8 +47,3 @@ To do this, create an OAuth client with the **Allow read access for usage and co
 
 To create an OAuth client, go to **Account Management** > **Identity & access management** > **OAuth clients**.
 For more information, see [Dynatrace Platform Subscription API - GET usage](/managed/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/usage/get-usage "Check how your Dynatrace Platform Subscription is used via the Account Management API.").
-
-## Related topics
-
-* [About Dynatrace licenses, accounts, environments, and users](/managed/manage/account-management/accounts-environments "Key concepts to understand your Dynatrace user, account, its associated environments, and how it consumes from a Dynatrace subscription or license.")
-* [Account Management](/managed/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")

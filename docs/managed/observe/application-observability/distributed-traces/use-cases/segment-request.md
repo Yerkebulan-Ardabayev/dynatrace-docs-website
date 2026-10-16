@@ -1,11 +1,11 @@
 ---
-title: Segment requests to improve response time degradation in Distributed Traces Classic
+title: Segment requests to improve response time degradation in Distributed Traces
 source: https://docs.dynatrace.com/managed/observe/application-observability/distributed-traces/use-cases/segment-request
 ---
 
-# Segment requests to improve response time degradation in Distributed Traces Classic
+# Segment requests to improve response time degradation in Distributed Traces
 
-# Segment requests to improve response time degradation in Distributed Traces Classic
+# Segment requests to improve response time degradation in Distributed Traces
 
 * Tutorial
 * 3-min read

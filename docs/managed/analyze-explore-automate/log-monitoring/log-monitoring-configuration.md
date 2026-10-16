@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitori
 # Log Monitoring configuration (Logs Classic)
 
 * 5-min read
-* Updated on Sep 28, 2026
+* Updated on Aug 05, 2026
 
 Log Monitoring Classic
 
@@ -128,28 +128,6 @@ You can adjust:
 1
 
 The matcher "Deployment name" in the log sources configuration will be ignored and needs to be replaced with "Workload name". Requires Dynatrace Operator 1.4.2 or later.
-
-## CPU quota
-
-Log Monitoring Classic
-
-OneAgent version 1.349+
-
-You can limit the CPU usage of the Log module by configuring a CPU quota. When the quota is reached, the OS Agent's Watchdog component throttles the Log module.
-
-CPU quota limiting applies only to the OneAgent Log module running on **Linux with cgroup v2**. It isn't supported on:
-
-* Windows or AIX.
-* Linux systems using cgroup v1 or a hybrid cgroup v1/v2 configuration.
-* The Kubernetes Log module (use Kubernetes-native resource controls instead).
-
-To configure a global CPU quota:
-
-1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Log Monitoring** > **Log agent CPU limit**.
-2. Enter a CPU quota value as a percentage.
-3. Select **Save changes**.
-
-The percentage is relative to total available CPU capacity. On a host with multiple CPU cores, 100% means the Log module can use the full capacity of all cores combined. For example, 50% on a two-core host limits the Log module to the equivalent of one full core. If you leave the field empty, the Log module runs without a CPU limit.
 
 ## Configuration file Optional
 

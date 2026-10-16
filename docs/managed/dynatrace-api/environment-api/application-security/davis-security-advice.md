@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/applica
 * Reference
 * Updated on May 03, 2022
 
-The **Davis Security Advisor** API lists [Davis recommendations](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor "Get recommendations for security fixes from Davis Security Advisor.") related to open and unmuted [vulnerabilities](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Monitor the security issues of your third-party libraries.").
+The **Davis Security Advisor** API lists [Davis recommendations](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor "Get recommendations for security fixes from Davis Security Advisor.") related to open and unmuted [vulnerabilities](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Monitor the security issues of your third-party libraries.").
 
 You can limit the output by using the pagination:
 

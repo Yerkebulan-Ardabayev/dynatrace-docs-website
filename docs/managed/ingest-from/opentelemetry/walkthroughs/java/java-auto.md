@@ -27,45 +27,18 @@ The URL should end in `/api/v2/otlp`.
 
 ### Get an authentication token
 
-To authenticate with Dynatrace, use a [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") or a [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.").
+To authenticate with Dynatrace, use a [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.").
 
-* **Platform token**:
+1. Go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
+2. Generate a token with the scope matching your signal type: `logs.ingest` for logs, `metrics.ingest` for metrics, or `openTelemetryTrace.ingest` for traces.
+3. Use `Authorization: Api-Token <your-classic-access-token>` as the header value.
 
-  1. Go to [My platform tokens﻿](https://myaccount.dynatrace.com/platformTokens).
-  2. Create a platform token with the scope matching your signal type: `openpipeline:logs:ingest` for logs, `openpipeline:metrics:ingest` for metrics, or `openpipeline:traces:ingest` for traces.
-  3. Use `Authorization: Bearer <your-platform-token>` as the header value.
-* **Classic access token**:
-
-  1. Go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
-  2. Generate a token with the scope matching your signal type: `logs.ingest` for logs, `metrics.ingest` for metrics, or `openTelemetryTrace.ingest` for traces.
-  3. Use `Authorization: Api-Token <your-classic-access-token>` as the header value.
-
-[Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api#authentication "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") has more details on authentication formats and the required scopes.
+[Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") has more details on authentication formats and the required scopes.
 
 ## Step 2 Instrument your application
 
 1. Download the [latest `opentelemetry-javaagent.jar`﻿](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar) agent file and save it to a directory accessible to your application (for example, `libs`).
 2. Configure the following environment variables to set the service and protocol details. If you export using OTLP, also set the URL and token variables to [the respective values](#dynatrace-docs--otlp-export).
-
-   Platform token
-
-   Classic access token
-
-   ```
-   OTEL_EXPORTER_OTLP_ENDPOINT=[URL]
-
-
-
-   OTEL_EXPORTER_OTLP_HEADERS="Authorization=Bearer [TOKEN]"
-
-
-
-   OTEL_RESOURCE_ATTRIBUTES="service.name=java-quickstart,service.version=1.0.1"
-
-
-
-   OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE=delta
-   ```
 
    ```
    OTEL_EXPORTER_OTLP_ENDPOINT=[URL]

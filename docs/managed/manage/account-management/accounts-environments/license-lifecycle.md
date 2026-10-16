@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/account-management/accounts-en
 
 * Explanation
 * 3-min read
-* Updated on Oct 19, 2025
+* Updated on Oct 08, 2026
 
 This page describes the lifecycle of Dynatrace Managed licenses.
 It explains how licenses affect your consumption of Dynatrace services.

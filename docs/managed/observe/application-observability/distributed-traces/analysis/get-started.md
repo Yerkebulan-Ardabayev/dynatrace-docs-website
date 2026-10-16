@@ -1,17 +1,17 @@
 ---
-title: Get started with Distributed Traces Classic
+title: Get started with Distributed Traces
 source: https://docs.dynatrace.com/managed/observe/application-observability/distributed-traces/analysis/get-started
 ---
 
-# Get started with Distributed Traces Classic
+# Get started with Distributed Traces
 
-# Get started with Distributed Traces Classic
+# Get started with Distributed Traces
 
 * How-to guide
 * 6-min read
 * Updated on Aug 04, 2026
 
-Distributed Traces Classic provides you with a combination of analysis tools to gain insight into your environment's transactions. It combines code-level visibility, topology information, and metadata with the highest level of data granularity and fidelity. In this article, you'll explore the Distributed Traces Classic functionalities and how to leverage them to analyze requests in your environment.
+Distributed Traces provides you with a combination of analysis tools to gain insight into your environment's transactions. It combines code-level visibility, topology information, and metadata with the highest level of data granularity and fidelity. In this article, you'll explore the Distributed Traces functionalities and how to leverage them to analyze requests in your environment.
 
 ## Quick start
 
@@ -138,7 +138,7 @@ To access the single trace view
    | --- | --- |
    | Availability | Log enrichment required depends on data input[1](#fn-2-1-def) |
    | Content | Log records in the full context of the transaction. All available span IDs are included by default.  * To filter by logs relevant to the selected waterfall node, turn on **Strict span filter**. * To see all the logs for a trace, select **View logs for this trace**. |
-   | Example | [Leverage log enrichment for traces to resolve problems in Distributed Traces Classic](/managed/observe/application-observability/distributed-traces/use-cases/problems-logs-traces "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.") |
+   | Example | [Leverage log enrichment for traces to resolve problems in Distributed Traces](/managed/observe/application-observability/distributed-traces/use-cases/problems-logs-traces "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.") |
 
    1
 
@@ -150,7 +150,7 @@ To access the single trace view
    | --- | --- |
    | Availability | depends on data input |
    | Content | Occurring exceptions for failed requests. |
-   | Example | [Drill-down to service failure causes in Distributed Traces Classic](/managed/observe/application-observability/distributed-traces/use-cases/error-analysis "Resolve errors via distributed traces.") |
+   | Example | [Drill-down to service failure causes in Distributed Traces](/managed/observe/application-observability/distributed-traces/use-cases/error-analysis "Resolve errors via distributed traces.") |
 
    Threads
 
@@ -173,5 +173,5 @@ What does `[declared unavailable by agent]` mean?
 ## Related topics
 
 * [Services page](/managed/observe/application-observability/services-classic "Learn about Dynatrace's classic service monitoring")
-* [Service flow](/managed/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.")
-* [Service analysis timings](/managed/observe/application-observability/services-classic/service-analysis-timing "Find out what each time in service analysis means.")
+* [Service flow in Services Classic](/managed/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.")
+* [Service analysis timings in Services Classic](/managed/observe/application-observability/services-classic/service-analysis-timing "Find out what each time in service analysis means.")

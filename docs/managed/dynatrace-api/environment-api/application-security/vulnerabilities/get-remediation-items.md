@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/applica
 * Reference
 * Updated on Jul 15, 2026
 
-Lists the [remediation tracking](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") process groups of a third-party vulnerability (or, in the case of Kubernetes vulnerabilities, the remediation tracking Kubernetes nodes).
+Lists the [remediation tracking](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") process groups of a third-party vulnerability (or, in the case of Kubernetes vulnerabilities, the remediation tracking Kubernetes nodes).
 
 The request produces an `application/json` payload.
 
@@ -998,4 +998,4 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/87886434718422029
 
 * [Application Security](/managed/secure/application-security "Access the Dynatrace Application Security functionalities.")
 * [Davis Security Advisor API](/managed/dynatrace-api/environment-api/application-security/davis-security-advice "View the Davis Security Advisor recommendations via Dynatrace API.")
-* [Remediation tracking](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
+* [Remediation tracking](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")

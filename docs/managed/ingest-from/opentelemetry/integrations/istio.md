@@ -29,8 +29,7 @@ This page describes how to use Istio version 1.22+ with the [Istio OpenTelemetry
 
      + For the entire environment:
 
-       - In Latest Dynatrace, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **General monitoring settings** > **Monitored technologies**.
-       - In Dynatrace Classic, go to **Settings** > **Monitoring** > **Monitored technologies**.
+       - Go to **Settings** > **Monitoring** > **Monitored technologies**.
      + For a particular host, go to **Your host** > **Host settings** > **General**.
   2. Find **Envoy** in the list of monitored technologies and select  **Edit**.
   3. Select the **Monitor Envoy** toggle, as appropriate, to turn off the OneAgent Envoy code module.

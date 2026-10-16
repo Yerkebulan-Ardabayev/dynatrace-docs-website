@@ -1,15 +1,15 @@
 ---
-title: Monitor key requests
+title: Monitor key requests in Services Classic
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic/monitor-key-requests
 ---
 
-# Monitor key requests
+# Monitor key requests in Services Classic
 
-# Monitor key requests
+# Monitor key requests in Services Classic
 
 * How-to guide
 * 5-min read
-* Updated on Jan 21, 2026
+* Updated on Dec 01, 2022
 
 *Key requests* are requests that need special attention, either because they're a critical measure of the success of your business (for example, a login request or a shopping-cart checkout request) or because they provide vital technical functionality that your application relies on.
 
@@ -191,6 +191,6 @@ Follow the steps below to create a new key request configuration. Note that this
 
 ## Related topics
 
-* [Service analysis timings](/managed/observe/application-observability/services-classic/service-analysis-timing "Find out what each time in service analysis means.")
-* [Calculated metrics for services](/managed/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests.")
+* [Service analysis timings in Services Classic](/managed/observe/application-observability/services-classic/service-analysis-timing "Find out what each time in service analysis means.")
+* [Calculated metrics for Services](/managed/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests.")
 * [Mute monitoring of service requests](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-monitoring-mute "Mute the monitoring of certain service requests so that you can focus on the performance of requests that affect your customers.")

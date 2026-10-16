@@ -19,26 +19,20 @@ This page offers guidance for properly configuring and troubleshooting your Open
 Dynatrace provides the following built-in metrics for the ingestion of OpenTelemetry signals.
 In case of missing data, these can be useful in further analyzing possible ingestion issues.
 
-In Dynatrace Classic, ingest monitoring metrics are prefixed with `dsfm:` instead of `dt.sfm.`
-
 ### Metrics for logs ingest
-
-Latest Dynatrace
 
 | Name | Description |
 | --- | --- |
-| `dt.sfm.active_gate.event_ingest.event_incoming_count` | Number of ingested log records |
-| `dt.sfm.active_gate.event_ingest.drop_count` | Number of dropped log records |
-| `dt.sfm.active_gate.event_ingest.event_otlp_size` | Payload size of received log requests |
+| `dsfm:active_gate.event_ingest.event_incoming_count` | Number of ingested log records |
+| `dsfm:active_gate.event_ingest.drop_count` | Number of dropped log records |
+| `dsfm:active_gate.event_ingest.event_otlp_size` | Payload size of received log requests |
 
 ### Metrics for metrics ingest
 
-Latest Dynatrace
-
 | Name | Description |
 | --- | --- |
-| `dt.sfm.active_gate.metrics.ingest.otlp.datapoints.accepted` | Number of accepted data points |
-| `dt.sfm.active_gate.metrics.ingest.otlp.datapoints.rejected` | Number of rejected data points |
+| `dsfm:active_gate.metrics.ingest.otlp.datapoints.accepted` | Number of accepted data points |
+| `dsfm:active_gate.metrics.ingest.otlp.datapoints.rejected` | Number of rejected data points |
 
 Rejected metrics come with a `reason` dimension, which provides additional details on why a data point was rejected.
 In Dynatrace, you can filter, sort, and split by that dimension.
@@ -47,13 +41,11 @@ A typical reason is when metrics are sent with cumulative aggregation temporalit
 
 ### Metrics for traces ingest
 
-Latest Dynatrace
-
 | Name | Description |
 | --- | --- |
-| `dt.sfm.server.spans.received` | Number of OpenTelemetry spans ingested via the OLTP trace endpoint (ActiveGate or OneAgent) that were successfully received by Dynatrace |
-| `dt.sfm.server.spans.persisted` | Number of OpenTelemetry spans preserved by Dynatrace; only preserved spans are available for distributed traces analysis |
-| `dt.sfm.server.spans.dropped` | Number of OpenTelemetry spans that were not preserved by Dynatrace because of the indicated reason (for example, span end time out of range) |
+| `dsfm:server.spans.received` | Number of OpenTelemetry spans ingested via the OLTP trace endpoint (ActiveGate or OneAgent) that were successfully received by Dynatrace |
+| `dsfm:server.spans.persisted` | Number of OpenTelemetry spans preserved by Dynatrace; only preserved spans are available for distributed traces analysis |
+| `dsfm:server.spans.dropped` | Number of OpenTelemetry spans that were not preserved by Dynatrace because of the indicated reason (for example, span end time out of range) |
 
 ## Common issues and solutions
 

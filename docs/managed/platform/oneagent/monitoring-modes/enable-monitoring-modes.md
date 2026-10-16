@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/platform/oneagent/monitoring-modes/en
 
 * How-to guide
 * 8-min read
-* Updated on Aug 05, 2026
+* Updated on May 20, 2026
 
 By default, [OneAgent](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") runs in Full-Stack monitoring mode, giving you complete visibility across hosts, processes, and services. If you prefer a lighter approach, you can switch to one of the two alternative modes that focus on essential infrastructure metrics:
 
@@ -23,7 +23,6 @@ You can define a default monitoring mode before installing OneAgent. This will c
 To define a default monitoring mode
 
 1. Go to **Settings** > **General** > **Versions and updates** > **OneAgent default mode**.
-
 2. Select a **OneAgent default monitoring mode** from the dropdown list.
 3. Select **Save changes**.
 
@@ -73,7 +72,7 @@ Additionally, with process injection, Infrastructure monitoring mode provides ru
 
 ### Disable process auto-injection
 
-We don't recommend turning off auto-injection, but if you're required to do so due to strict security requirements, you can choose among various options. Turning off auto-injection also prevents Dynatrace from discovering vulnerabilities or live debugging in your environment, even if you enable [Application Security](/managed/secure/application-security "Access the Dynatrace Application Security functionalities.") or [Live Debugger](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."). You can turn off automatic injection at the host or environment level.
+We don't recommend turning off auto-injection, but if you're required to do so due to strict security requirements, you can choose among various options. Turning off auto-injection also prevents Dynatrace from discovering vulnerabilities in your environment, even if you enable [Application Security](/managed/secure/application-security "Access the Dynatrace Application Security functionalities."). You can turn off automatic injection at the host or environment level.
 
 #### Disable auto-injection for a single host
 
@@ -185,7 +184,7 @@ To turn on Discovery mode after OneAgent installation, use one of these options:
 
 ### Code-module injection
 
-For [Application Security](/managed/secure/application-security "Access the Dynatrace Application Security functionalities.") and [Live Debugger](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") to work in Discovery mode, code-module injection is required. Code-module injection is disabled by default.
+For [Application Security](/managed/secure/application-security "Access the Dynatrace Application Security functionalities.") to work in Discovery mode, code-module injection is required. Code-module injection is disabled by default.
 
 After [turning on Discovery mode](#enable-discovery-mode), you can turn on the code-module injection for a single host.
 

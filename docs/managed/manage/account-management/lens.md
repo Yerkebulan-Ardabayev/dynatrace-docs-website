@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/manage/account-management/lens
 # Lens
 
 * 5-min read
-* Updated on Oct 24, 2025
+* Updated on Oct 06, 2026
 
 The **Lens** feature of Account Management provides you with insights into platform adoption and health, helping you to understand how Dynatrace is used within your organization and recommend areas for optimization.
 
@@ -49,11 +49,10 @@ Feature usage example
 Data for these charts is powered by the automated self-management capabilities of Dynatrace.
 This includes collecting real-user monitoring (powered by Dynatrace) from your Dynatrace platform.
 
-* For Dynatrace SaaS customers, this is done automatically
-* For Dynatrace Managed customers, Dynatrace requires [pro-active support to be enabled](/managed/managed-cluster/basics/mission-control-proactive-support "Mission Control proactively monitors your Managed Cluster, provides software updates, and keeps your installation secure and reliable.").
+Dynatrace requires [pro-active support to be enabled](/managed/managed-cluster/basics/mission-control-proactive-support "Mission Control proactively monitors your Managed Cluster, provides software updates, and keeps your installation secure and reliable.").
 
-  + If no data is shown, please contact a Dynatrace product expert via live chat to help you check your self-monitoring configuration.
-  + To learn more about Dynatrace self-monitoring for Dynatrace Managed customers, see the **Pro-active support** section of [Mission Control data exchange](/managed/managed-cluster/basics/mission-control-data-exchange "Review the data your Managed Cluster exchanges with Mission Control and the available opt-out options for each data category.").
+* If no data is shown, please contact a Dynatrace product expert via live chat to help you check your self-monitoring configuration.
+* To learn more about Dynatrace self-monitoring, see the **Pro-active support** section of [Mission Control data exchange](/managed/managed-cluster/basics/mission-control-data-exchange "Review the data your Managed Cluster exchanges with Mission Control and the available opt-out options for each data category.").
 
 ## Environments
 

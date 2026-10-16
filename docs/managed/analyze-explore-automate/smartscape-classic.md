@@ -177,7 +177,7 @@ To see vulnerabilities for affected entities, switch to the **Processes** or **H
 * To view the name of an entity, hover your cursor over the entity's symbol. While the name is displayed, you can select the arrow next to the entity name to go to that entity's overview page.
 * To view cross-tier connections, select any entity. The panel on the left expands to display the vertical dependencies of the entity.
 
-For more information on managing third-party vulnerabilities, see [Third-party vulnerabilities (Dynatrace Classic)](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/index-classic "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.").
+For more information on managing third-party vulnerabilities, see [Third-party vulnerabilities (Dynatrace Classic)](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.").
 
 ## Related topics
 
@@ -185,4 +185,4 @@ For more information on managing third-party vulnerabilities, see [Third-party v
 * [Topology and Smartscape API](/managed/dynatrace-api/environment-api/topology-and-smartscape "Learn about the Dynatrace Topology and Smartscape API.")
 * [Performance analysis in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/performance-analysis "Understand the available types of performance analysis that are provided by Dynatrace.")
 * [Root cause analysis concepts](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Learn the core Davis AI root cause analysis concepts, including incidents, problems, fault tree analysis, impact analysis, and the problem lifecycle.")
-* [Third-party vulnerabilities (Dynatrace Classic)](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/index-classic "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.")
+* [Third-party vulnerabilities (Dynatrace Classic)](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.")

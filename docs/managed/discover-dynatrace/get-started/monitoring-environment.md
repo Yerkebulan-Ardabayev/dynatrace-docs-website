@@ -72,5 +72,5 @@ With multiple environments, Dynatrace keeps monitoring data isolated by design. 
 
 In some scenarios, however, you might need to connect your environments. For example:
 
-* To trace calls between services monitored in different Dynatrace environments, you can configure cross-environment tracing. For details, see [Set up cross-environment tracing in Distributed Traces Classic](/managed/observe/application-observability/distributed-traces/analysis/connect-environments "Analyze requests across environment boundaries.").
+* To trace calls between services monitored in different Dynatrace environments, you can configure cross-environment tracing. For details, see [Set up cross-environment tracing in Distributed Traces](/managed/observe/application-observability/distributed-traces/analysis/connect-environments "Analyze requests across environment boundaries.").
 * To display metrics from remote environments on your local environment's dashboards, you can set up cross-environment dashboard tiles. For details, see [Create multi-environment dashboards](/managed/analyze-explore-automate/dashboards/create-multi-environment-dashboards "Connect a remote Dynatrace environment with an access token and point dashboard tiles to it, so one dashboard shows data from several environments.").

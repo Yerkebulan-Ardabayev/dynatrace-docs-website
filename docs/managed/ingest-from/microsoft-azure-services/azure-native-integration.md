@@ -409,5 +409,4 @@ If you have a feature request, use the [Microsoft Developer Community﻿](https:
 
 ## Related topics
 
-* [Microsoft Azure Integrations](/managed/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")
 * [Microsoft Azure Native Dynatrace Service﻿](https://learn.microsoft.com/en-us/azure/partner-solutions/dynatrace/)

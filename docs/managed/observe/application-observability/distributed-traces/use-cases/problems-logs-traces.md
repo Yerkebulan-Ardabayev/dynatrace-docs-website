@@ -1,11 +1,11 @@
 ---
-title: Leverage log enrichment for traces to resolve problems in Distributed Traces Classic
+title: Leverage log enrichment for traces to resolve problems in Distributed Traces
 source: https://docs.dynatrace.com/managed/observe/application-observability/distributed-traces/use-cases/problems-logs-traces
 ---
 
-# Leverage log enrichment for traces to resolve problems in Distributed Traces Classic
+# Leverage log enrichment for traces to resolve problems in Distributed Traces
 
-# Leverage log enrichment for traces to resolve problems in Distributed Traces Classic
+# Leverage log enrichment for traces to resolve problems in Distributed Traces
 
 * Tutorial
 * 8-min read
@@ -15,7 +15,7 @@ Logs are a crucial component for understanding the behavior of your environment.
 
 ## Before you begin
 
-Connect log data to traces for [Logs Classic](/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment "Learn how you can connect your incoming log data to traces for more precise Dynatrace analysis."),
+Connect log data to traces for [Logs](/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment "Learn how you can connect your incoming log data to traces for more precise Dynatrace analysis."),
 
 * Automatically via OneAgent features, for supported logging frameworks.
 * Manually via open standards corresponding context information, for technologies that are not monitored by OneAgent or not supported out of the box yet.
@@ -184,10 +184,9 @@ You need both log monitoring and trace pricing and packaging.
 
 | Your technology is monitored via OneAgent | Learn more about pricing and packaging |
 | --- | --- |
-| Applicable | * For logs, see [Log Monitoring Classic](/managed/license/classic-licensing/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic."). * For traces (Full-Stack Monitoring), see [Application and Infrastructure Monitoring (Host Units)](/managed/license/classic-licensing/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") |
-| Not applicable | * For logs, see [Log Monitoring Classic](/managed/license/classic-licensing/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic."). * For traces (open trace ingestion with OpenTelemetry), see [DDUs for serverless functions](/managed/license/classic-licensing/davis-data-units/serverless-monitoring "Understand how serverless monitoring consumption is calculated.") and [DDUs for custom traces (Trace API)](/managed/license/classic-licensing/davis-data-units/custom-traces "Understand how DDU consumption is calculated for spans ingested via the Trace API.") |
+| Applicable | * For logs, see [Log Monitoring](/managed/license/classic-licensing/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic."). * For traces (Full-Stack Monitoring), see [Application and Infrastructure Monitoring (Host Units)](/managed/license/classic-licensing/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") |
+| Not applicable | * For logs, see [Log Monitoring](/managed/license/classic-licensing/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic."). * For traces (open trace ingestion with OpenTelemetry), see [DDUs for serverless functions](/managed/license/classic-licensing/davis-data-units/serverless-monitoring "Understand how serverless monitoring consumption is calculated.") and [DDUs for custom traces (Trace API)](/managed/license/classic-licensing/davis-data-units/custom-traces "Understand how DDU consumption is calculated for spans ingested via the Trace API.") |
 
 ## Related topics
 
-* [Log viewer (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.")
 * [[Blog] Automatic connection of logs and traces accelerates AI-driven cloud analytics﻿](https://www.dynatrace.com/news/blog/automatic-connection-of-logs-and-traces-accelerates-ai-driven-cloud-analytics/)

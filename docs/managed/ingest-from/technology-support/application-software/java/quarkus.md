@@ -753,7 +753,7 @@ For the procedure below, we assume your application writes logs to the `/var/log
 3. Scroll down to the **Process analysis** section and, in the list of processes, select the process of your Quarkus native application.
 4. On the right side of the **Process** panel, select  > **Settings**.
 5. In the process group settings, select **Log monitoring** > **Add new log for monitoring**.
-6. Enter the full path of your log file. Be sure to follow the [log path requirements](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/add-log-files-manually-v2#considerations-for-adding-text-log-files-manually "Learn how to manually add log files for analysis.").
+6. Enter the full path of your log file. Be sure to follow the [log path requirements](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/add-log-files-manually-v2#logfilesmanual "Learn how to manually add log files for analysis.").
 7. Select **Save changes**.
 8. [Include the added log files](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/add-log-files-sources-v2 "Learn how to include and exclude log sources for analysis.") in your log storage.
 

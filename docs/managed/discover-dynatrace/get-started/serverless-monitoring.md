@@ -80,7 +80,7 @@ Visit Dynatrace Hub to see all services with a [cloud-native integration﻿](htt
 For instructions on integrating Dynatrace into your container image, or using OpenTelemetry or advanced visibility to get additional details via logs and other telemetry events, see the service-specific tutorials:
 
 * [Amazon Web Services](/managed/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services.")
-* [Azure Services](/managed/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")
+* [Azure Services](/managed/ingest-from/microsoft-azure-services/integrations "Monitor Azure services with Dynatrace using OneAgent for deep code-level visibility on AKS, App Service, Arc-enabled servers, Azure Functions, and more.")
 * [Google Cloud Services](/managed/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
 
 Check the recommendations in the Dynatrace web UI to enable additional telemetry sources that improve the observability of your services. For example:

@@ -17,10 +17,10 @@ If you believe you've identified a security problem in a Dynatrace product or se
 1. See if someone else has already reported the problem.
 
    Check the **Dynatrace Security Advisories Portal** at [security.dynatrace.com﻿](https://security.dynatrace.com/advisories) for advisories of known vulnerabilities and exposures in Dynatrace components. Dynatrace sign-in is required.
-2. If no one else has reported the problem, create a support ticket.
+2. If no one else has reported the problem, create a support case.
 
-   * To see what information you and your security team need to create a ticket, see [Report a security vulnerability﻿](https://dt-url.net/gc035ip) in the Dynatrace Community.
-   * To create a ticket, go to the [**Create a security request**﻿](https://dt-url.net/jt039kg) page, select **Add**, complete the form, and submit the ticket.
+   * To see what information you and your security team need to create a case, see [Report a security vulnerability﻿](https://dt-url.net/gc035ip) in the Dynatrace Community.
+   * To create a case, go to the [**Create a security request**﻿](https://dt-url.net/jt039kg) page, select **Add**, complete the form, and submit the case.
 3. Next, join our bug bounty program. We need people like you. Sign up on [HackerOne﻿](https://dt-url.net/l7038f0) to participate in our bug bounty program.
 
 ## Report a vulnerability

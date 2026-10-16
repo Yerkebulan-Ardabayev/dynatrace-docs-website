@@ -619,7 +619,7 @@ Inputs starting with `primary_tags.` are matched against the primary tags on the
 
 ## Related topics
 
-* [Request attributes](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.")
+* [Request attributes in Services](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.")
 * [Failure detection API](/managed/dynatrace-api/configuration-api/service-api/failure-detection "Learn what the Dynatrace failure detection config API offers.")
 * [Settings API - Failure detection parameters schema table](/managed/dynatrace-api/environment-api/settings/schemas/builtin-failure-detection-environment-parameters "View builtin:failure-detection.environment.parameters settings schema table of your monitoring environment via the Dynatrace API.")
 * [Settings API - Failure detection rules schema table](/managed/dynatrace-api/environment-api/settings/schemas/builtin-failure-detection-environment-rules "View builtin:failure-detection.environment.rules settings schema table of your monitoring environment via the Dynatrace API.")

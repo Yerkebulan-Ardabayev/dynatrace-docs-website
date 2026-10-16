@@ -122,4 +122,4 @@ To create a calculated service metric from a multidimensional analysis view
 ## Related topics
 
 * [Service metrics API](/managed/dynatrace-api/configuration-api/calculated-metrics/service-metrics "Manage calculated service metrics via the Dynatrace configuration API.")
-* [Calculated metrics for services](/managed/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests.")
+* [Calculated metrics for Services](/managed/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests.")

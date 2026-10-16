@@ -144,7 +144,3 @@ If you disable any or all of the alerting rules, you can always re-enable them.
 ![Enable rules](https://dt-cdn.net/images/2020-11-30-19-21-05-1110-6b33994c7a.png)
 
 Enable rules
-
-## Related topics
-
-* [Microsoft Azure Integrations](/managed/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")

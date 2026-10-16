@@ -1,11 +1,11 @@
 ---
-title: Drill-down to service failure causes in Distributed Traces Classic
+title: Drill-down to service failure causes in Distributed Traces
 source: https://docs.dynatrace.com/managed/observe/application-observability/distributed-traces/use-cases/error-analysis
 ---
 
-# Drill-down to service failure causes in Distributed Traces Classic
+# Drill-down to service failure causes in Distributed Traces
 
-# Drill-down to service failure causes in Distributed Traces Classic
+# Drill-down to service failure causes in Distributed Traces
 
 * Tutorial
 * 1-min read

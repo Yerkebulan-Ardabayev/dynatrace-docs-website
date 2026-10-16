@@ -1,11 +1,11 @@
 ---
-title: Concepts for Distributed Traces Classic
+title: Concepts for Distributed Traces
 source: https://docs.dynatrace.com/managed/observe/application-observability/distributed-traces/concepts
 ---
 
-# Concepts for Distributed Traces Classic
+# Concepts for Distributed Traces
 
-# Concepts for Distributed Traces Classic
+# Concepts for Distributed Traces
 
 * Explanation
 * 1-min read
@@ -34,7 +34,7 @@ A span represents a single operation within a distributed trace, capturing the d
 
 Within a trace, when the activity—*parent span*—is completed, the next activity passes to its *child span*. A span without a parent span is called a trace *root span* and indicates the start of a trace.
 
-The span context allows a child span to relate to the trace and its parent span. Therefore, the context needs to be propagated within a service (across different threads) but also across services and process boundaries. This typically happens via HTTP headers (like the [W3C trace context﻿](https://www.w3.org/TR/trace-context/)) or via unique IDs in messaging systems. To learn more about context propagation, see [Span and trace context propagation in Distributed Traces Classic](/managed/observe/application-observability/distributed-traces/context-propagation "Understand span and trace context propagation in Dynatrace and how to set them up.").
+The span context allows a child span to relate to the trace and its parent span. Therefore, the context needs to be propagated within a service (across different threads) but also across services and process boundaries. This typically happens via HTTP headers (like the [W3C trace context﻿](https://www.w3.org/TR/trace-context/)) or via unique IDs in messaging systems. To learn more about context propagation, see [Span and trace context propagation in Distributed Traces](/managed/observe/application-observability/distributed-traces/context-propagation "Understand span and trace context propagation in Dynatrace and how to set them up.").
 
 ### Attribute
 
@@ -46,7 +46,7 @@ Dynatrace uses attribute metadata to
 
 * [Detect and name services](/managed/observe/application-observability/services/service-detection "Understand the two approaches that Dynatrace uses for service detection.").
 * Gather data on the trace context and relationships with other entities for [Smartscape topology](/managed/analyze-explore-automate/smartscape-classic "Learn how Smartscape visualizes all the entities and dependencies in your environment.").
-* Connect log data to traces for [Logs Classic](/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment "Learn how you can connect your incoming log data to traces for more precise Dynatrace analysis.").
+* Connect log data to traces for [Logs](/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment "Learn how you can connect your incoming log data to traces for more precise Dynatrace analysis.").
 * Understand how the duration of a span is affected by [service timings](/managed/observe/application-observability/services-classic/service-analysis-timing "Find out what each time in service analysis means.") (for example, CPU time, network time, or just waiting for other threads) and analyze which code was executed in the context of the span.
 
 #### Best practices
@@ -62,7 +62,7 @@ Services are traversed by distributed traces. On horizontally scaled services, s
 
 #### Use cases
 
-* [Segment requests to improve response time degradation in Distributed Traces Classic](/managed/observe/application-observability/distributed-traces/use-cases/segment-request "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.").
+* [Segment requests to improve response time degradation in Distributed Traces](/managed/observe/application-observability/distributed-traces/use-cases/segment-request "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.").
 
 ### Data collection and context propagation
 

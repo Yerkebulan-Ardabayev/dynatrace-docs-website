@@ -601,8 +601,3 @@ Supported [Azure Functions programming model﻿](https://learn.microsoft.com/en-
   + Note that async functions were introduced in ECMAScript 2017. No span will be created if an earlier version of ECMAScript is used. In case TypeScript is used, make sure [compilation target﻿](https://dt-url.net/df02zbc) is set to ECMAScript 2017 or higher.
 * The package supports only the [Consumption plan﻿](https://dt-url.net/ck022yx). While it may work on other plans, we cannot guarantee compatibility or performance.
 * Signaling function completion using the deprecated [`context.done()`﻿](https://dt-url.net/0l23xfy) or [`context.res.send()`﻿](https://dt-url.net/dj43xgq) calls is not supported. Either use a `$return` binding and return the result from the function handler, or use a named `out` binding and set `context.binding.<name>`. For HTTP triggers, setting `context.res` is also supported.
-
-## Related topics
-
-* [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Learn how to monitor Azure Functions with Dynatrace OneAgent, including automatic instrumentation, distributed tracing, and hosting-plan-aware modes.")
-* [Set up Dynatrace on Microsoft Azure](/managed/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")

@@ -1,15 +1,15 @@
 ---
-title: Configure OTLP metrics ingestion (Dynatrace Classic)
+title: Configure OTLP metrics ingestion
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/configure-otlp-metrics-classic
 ---
 
-# Configure OTLP metrics ingestion (Dynatrace Classic)
+# Configure OTLP metrics ingestion
 
-# Configure OTLP metrics ingestion (Dynatrace Classic)
+# Configure OTLP metrics ingestion
 
 * Explanation
 * 3-min read
-* Published May 11, 2026
+* Updated on Oct 15, 2026
 
 To make these configuration changes, go to **Settings** > **Metrics** > **OpenTelemetry metrics**.
 
@@ -37,13 +37,3 @@ Dynatrace defines a set of default attributes that we consider relevant and bene
 Name conflicts
 
 See [Attribute ingestion](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#attribute-ingestion "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.") for details on how Dynatrace ingests data of different attributes sharing the same name.
-
-### Ingest complete explicit bucket histograms
-
-By default, Dynatrace ingests the histogram's `min|max|sum|count` values and drops the buckets. However, you can opt in to also ingest the buckets from explicit histograms.
-
-Go to **Settings** > **Metrics** > **Histograms** and turn on **Ingest complete explicit bucket histograms**,
-
-The setting applies to all explicit bucket histogram metrics in your environment. After you turn it on or off, it may take a few minutes for the settings to be applied.
-
-Once buckets are ingested, they can be found by appending the suffix `_bucket` to the histogram's metric name. For example, `http.server.request.duration_bucket` for a histogram metric named `http.server.request.duration`.

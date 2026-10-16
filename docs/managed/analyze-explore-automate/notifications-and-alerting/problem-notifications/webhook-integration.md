@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/notification
 # Send Dynatrace notifications via webhooks
 
 * 3-min read
-* Updated on Sep 11, 2024
+* Updated on Oct 06, 2026
 
 Dynatrace offers several out-of-the-box integrations that automatically push problem notifications to third-party incident-management and ChatOps systems.
 If however your third-party system isn't supported with an out-of-the-box integration, you can easily set up a customizable webhook integration. Using this approach, whenever Dynatrace detects a problem in your environment that affects real users, a webhook triggers an `HTTP POST` request to a target URL that you specify.
@@ -30,6 +30,7 @@ To integrate problem-notifications using a custom webhook:
      Turn on this option to obfuscate the webhook URL (the webhook endpoint) in the notification settings, providing an additional layer of security by hiding sensitive information from display.
    * **Webhook URL**  
      Target URL where the **HTTP POST** should push the payload. This URL can contain HTTP parameters such as an authentication token, in case the destination system works with authentication tokens instead of basic authentication.
+     Dynatrace Managed version 1.346+ The URL can target an IPv6 endpoint in bracket notation, for example `https://[2001:db8::1]:8443/webhook`. To use IPv6 endpoints, set the installer parameter `--enable-ipv6-webhooks on` on every cluster node. For details, see [Customize Managed Cluster installation](/managed/managed-cluster/installation/customize-managed-cluster-install "Use command line parameters to customize or automate a Managed Cluster installation, with options for datastores, system users, and SSL certificates."). Each node requires outbound IPv6 connectivity to the endpoint. IPv4 webhook URLs continue to work without changes.
    * Optional **Additional HTTP headers**  
      Specify additional HTTP header fields, such as 'Content-Type' or 'Authorization'. These custom HTTP header fields can be used if the target endpoint needs an authentication token within the HTTP header or if you would like to send different content type such as 'text/plain' or 'application/xml'.
    * **Custom payload**  
@@ -40,7 +41,7 @@ To integrate problem-notifications using a custom webhook:
      The **Available placeholders** section of the configuration page lists placeholders you can use for this integration. Placeholders are automatically replaced with problem-related information such as problem state or title.
    * Optional Turn on **Accept any SSL certificate**.
    * Optional Turn on **Call webhook if new events merge into existing problems**.
-   * Assign an [Alerting profile](/managed/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.").
+   * Assign an [Alerting profile](/managed/analyze-explore-automate/alerting-and-notifications-classic/alerting-profiles "Learn how to create and manage alerting profiles.").
 5. Select **Send test notification** to make sure your webhook integration is working.
 6. **Save changes**.
 

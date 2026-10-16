@@ -101,7 +101,7 @@ Push notifications will now be delivered through third-party integrations such a
 * Set up your preferred notification integrations via:
 
   + Dynatrace SaaS: [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
-  + Dynatrace Managed: [Problem notifications](/managed/analyze-explore-automate/alerting-and-notifications-classic/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.")
+  + Dynatrace Managed: [Problem notifications](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.")
 * Remove the native app from your devices after the sunset date.
 
 ### Need help?

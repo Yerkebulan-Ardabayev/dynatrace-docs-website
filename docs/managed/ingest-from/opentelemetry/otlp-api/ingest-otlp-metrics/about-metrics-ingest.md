@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/otlp-api/in
 
 * Explanation
 * 2-min read
-* Updated on Sep 21, 2026
+* Updated on Oct 07, 2026
 
 This page provides information about how Dynatrace ingests and enriches OpenTelemetry metrics.
 
@@ -40,6 +40,8 @@ Explicit bucket histograms are supported with Dynatrace Managed version 1.324+ a
 ## API limits and validations
 
 When ingesting OpenTelemetry metrics, limits and validations apply as described in the table below.
+
+When [Custom Metrics Classic (DPS)](/managed/license/capabilities/platform-extensions/custom-metrics-classic "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.") is on your rate card, the limits in the **Default limit** column apply.
 
 | Entity | Default limit | Description |
 | --- | --- | --- |

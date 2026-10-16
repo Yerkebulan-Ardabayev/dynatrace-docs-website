@@ -1016,8 +1016,3 @@ op.FilterHttpRequestMessage = req => Activity.Current?.Parent != null;
 Because of an [Azure Functions runtime issue﻿](https://github.com/Azure/azure-functions-host/issues/7278), the HTTP instrumentation won't work on Azure Functions in-process version 3.x.
 
 The underlying issue can also affect other instrumentations. Therefore, we do not recommend using in-process version 3 functions.
-
-## Related topics
-
-* [Monitor Azure Functions](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions "Learn how to monitor Azure Functions with Dynatrace OneAgent, including automatic instrumentation, distributed tracing, and hosting-plan-aware modes.")
-* [Set up Dynatrace on Microsoft Azure](/managed/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")

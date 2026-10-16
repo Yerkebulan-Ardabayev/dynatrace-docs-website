@@ -13,7 +13,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitori
 
 Log Monitoring Classic
 
-Log and event processing commands represent DQL statements and clauses. A **Rule definition** makes it possible to define a sequence of commands to achieve the desired goal of the processing rule.
+Log and event processing commands represent statements and clauses. A **Rule definition** makes it possible to define a sequence of commands to achieve the desired goal of the processing rule.
 
 A processing **Rule definition** consists of a left-to-right sequence of processing commands chained together using the pipe character (`|`). Conceptually, this is similar to Unix command pipelining, where the output of the command to the left of the pipe becomes the input of the command to the right of the pipe. The pipeline must always start with a command producing a structured data stream for subsequent commands.
 

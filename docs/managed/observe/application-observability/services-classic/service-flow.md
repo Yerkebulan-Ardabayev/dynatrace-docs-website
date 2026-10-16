@@ -1,11 +1,11 @@
 ---
-title: Service flow
+title: Service flow in Services Classic
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic/service-flow
 ---
 
-# Service flow
+# Service flow in Services Classic
 
-# Service flow
+# Service flow in Services Classic
 
 * How-to guide
 * 2-min read

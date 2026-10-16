@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/applica
 * Reference
 * Updated on May 03, 2022
 
-Set the mute status of a [remediation tracking](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") process group or, in the case of Kubernetes vulnerabilities, of a remediation tracking Kubernetes node, to `mute` or `unmute`.
+Set the mute status of a [remediation tracking](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") process group or, in the case of Kubernetes vulnerabilities, of a remediation tracking Kubernetes node, to `mute` or `unmute`.
 
 The request consumes an `application/json` payload.
 
@@ -249,4 +249,4 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/87886434718422029
 
 * [Application Security](/managed/secure/application-security "Access the Dynatrace Application Security functionalities.")
 * [Davis Security Advisor API](/managed/dynatrace-api/environment-api/application-security/davis-security-advice "View the Davis Security Advisor recommendations via Dynatrace API.")
-* [Remediation tracking](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
+* [Remediation tracking](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")

@@ -16,7 +16,7 @@ Log Monitoring can read and analyze:
 
 ## Windows event logs
 
-System, Security, and Application logs are automatically discovered on hosts. Other custom event-log format logs can be added [manually on the environment level](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."). The timestamp is sourced from an event's attribute, `Event.System.TimeCreated.<xmlattr>.SystemTime`.
+System, Security, and Application logs are automatically discovered on hosts. Other custom event-log format logs can be added [manually on the environment level](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/log-custom-source#mainclscuipage "Configure custom log sources that have not been autodetected."). The timestamp is sourced from an event's attribute, `Event.System.TimeCreated.<xmlattr>.SystemTime`.
 
 ## Plain-text logs
 

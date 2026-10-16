@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/account-management/license-sub
 
 * Explanation
 * 3-min read
-* Published Nov 24, 2025
+* Updated on Oct 06, 2026
 
 The Account Management **Overview** view provides three key analyses of your DPS subscription.
 

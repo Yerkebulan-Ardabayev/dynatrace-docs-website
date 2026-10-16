@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthrough
 
 * How-to guide
 * 7-min read
-* Updated on Aug 04, 2026
+* Updated on May 11, 2026
 
 This walkthrough shows how to add observability to your .NET application using the OpenTelemetry .NET libraries and tools.
 
@@ -25,10 +25,7 @@ This walkthrough shows how to add observability to your .NET application using t
 * Dynatrace version 1.254+
 * For tracing, W3C Trace Context is enabled
 
-  1. Go to the appropriate configuration page:
-
-     + In Latest Dynatrace, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **General monitoring settings** > **OneAgent features**.
-     + In Dynatrace Classic, go to **Settings** > **Preferences** > **OneAgent features**.
+  1. Go to **Settings** > **Preferences** > **OneAgent features**.
   2. Turn on **Send W3C Trace Context HTTP headers**.
 
 ## Step 1 Get the Dynatrace access details
@@ -39,20 +36,13 @@ For details on how to assemble the base OTLP endpoint URL, see [Dynatrace OTLP A
 
 ### Get an authentication token
 
-To authenticate with Dynatrace, use a [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") or a [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.").
+To authenticate with Dynatrace, use a [Classic access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.").
 
-* **Platform token**:
+1. Go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
+2. Generate a token with the scope matching your signal type: `logs.ingest` for logs, `metrics.ingest` for metrics, or `openTelemetryTrace.ingest` for traces.
+3. Use `Authorization: Api-Token <your-classic-access-token>` as the header value.
 
-  1. Go to [My platform tokens﻿](https://myaccount.dynatrace.com/platformTokens).
-  2. Create a platform token with the scope matching your signal type: `openpipeline:logs:ingest` for logs, `openpipeline:metrics:ingest` for metrics, or `openpipeline:traces:ingest` for traces.
-  3. Use `Authorization: Bearer <your-platform-token>` as the header value.
-* **Classic access token**:
-
-  1. Go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
-  2. Generate a token with the scope matching your signal type: `logs.ingest` for logs, `metrics.ingest` for metrics, or `openTelemetryTrace.ingest` for traces.
-  3. Use `Authorization: Api-Token <your-classic-access-token>` as the header value.
-
-[Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api#authentication "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") has more details on authentication formats and the required scopes.
+[Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") has more details on authentication formats and the required scopes.
 
 ## Step 2 Choose how you want to instrument your application
 
@@ -90,22 +80,6 @@ After deployment
 3. Run your application.
 
 In addition to the instrumentation setup above, you also need to configure the relevant export parameters with environment variables. This includes the [endpoint URL](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."), the [authentication token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."), and the [temporality preference for metrics](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#aggregation-temporality "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.").
-
-Platform token
-
-Classic access token
-
-```
-OTEL_EXPORTER_OTLP_ENDPOINT=[URL]
-
-
-
-OTEL_EXPORTER_OTLP_HEADERS="Authorization=Bearer [TOKEN]"
-
-
-
-OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE=delta
-```
 
 ```
 OTEL_EXPORTER_OTLP_ENDPOINT=[URL]

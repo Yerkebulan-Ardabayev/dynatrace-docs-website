@@ -25,7 +25,7 @@ The **Vulnerabilities** section is displayed on the Kubernetes
 * Cluster details page
 * Workloads page
 
-It shows the five most severe related [third-party vulnerabilities](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Monitor the security issues of your third-party libraries.") and [code-level vulnerabilities](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/manage-code-level-vulnerabilities "Monitor the code-level vulnerabilities in your environment.").
+It shows the five most severe related [third-party vulnerabilities](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Monitor the security issues of your third-party libraries.") and [code-level vulnerabilities](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/manage-code-level-vulnerabilities "Monitor the code-level vulnerabilities in your environment.").
 
 * Select a vulnerability to view the details and understand the severity and impact of a vulnerability within your environment.
 * For a complete list of the detected vulnerabilities for your Kubernetes environment, select **Show all third-party vulnerabilities**/**Show all code-level vulnerabilities**.

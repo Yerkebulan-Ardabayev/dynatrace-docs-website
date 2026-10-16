@@ -136,7 +136,7 @@ To add a rule (on the host, host group, or environment level) that interprets th
    Rules without a pattern can override the timezone only for default supported timestamps.
 4. **Timestamp search limit**
 
-   Use this field to define the number of characters in every log line where timestamp is searched. If you want to ignore timestamps and split logs using the [default rules](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."), set this value to `0`. Use this field to overwrite the global [timestamp search limit](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") (default 64 bytes).
+   Use this field to define the number of characters in every log line where timestamp is searched. If you want to ignore timestamps and split logs using the [default rules](/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-data-format "This topic lists all the log formats supported by Log Monitoring."), set this value to `0`. Use this field to overwrite the global [timestamp search limit](#timestamp-search-limit) (default 64 bytes).
 5. **Time zone**
 
    Select the time zone to apply to this pattern.  
