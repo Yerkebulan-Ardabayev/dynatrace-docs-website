@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detect
 
 * Explanation
 * 3-min read
-* Updated on Jan 28, 2026
+* Published May 04, 2020
 
 Auto-adaptive thresholds are a dynamic approach to baselining where the reference value for detecting anomalies changes over time. The main advantage over a [static threshold](/managed/dynatrace-intelligence/anomaly-detection/static-thresholds "When to use a static threshold for your anomaly detection.") is that the reference value dynamically adapts over time, and you don't have to know the threshold upfront. You also don't have to manually adapt multiple static thresholds for metrics whose behavior changes over time.
 

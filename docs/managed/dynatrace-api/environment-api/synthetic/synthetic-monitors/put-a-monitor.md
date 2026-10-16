@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 # Synthetic monitors API - PUT a monitor
 
 * Reference
-* Published Sep 24, 2018
+* Updated on May 25, 2026
 
 Updates the specified monitor.
 

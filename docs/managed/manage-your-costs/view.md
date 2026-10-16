@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage-your-costs/view
 
 * Explanation
 * 1-min read
-* Updated on Oct 05, 2026
+* Published May 26, 2026
 
 Before you can control or optimize cost, you need to see it. This subsection covers every way Dynatrace lets you view and export your consumption data.
 

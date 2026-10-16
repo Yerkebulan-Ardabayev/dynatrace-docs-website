@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/c
 # Content resources API - GET configuration
 
 * Reference
-* Published Sep 23, 2020
+* Updated on Apr 24, 2026
 
 Gets the configuration of content providers in your Dynatrace environment.
 

@@ -40,7 +40,7 @@ The **OneAgent health overview** comprises
 
   Above the data table, the lowest and highest compatible OneAgent versions for this Dynatrace cluster are displayed.
 
-  The environment permission [Install OneAgent](/managed/manage/identity-access-management/permission-management/role-based-permissions#environment "Role-based permissions") is required to visualize data in this table.
+  The environment permission [Install OneAgent](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions#environment "Role-based permissions") is required to visualize data in this table.
 
 Select a specific data point in the area chart to see the contributing OneAgent modules in the data table.
 

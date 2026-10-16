@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneag
 # OneAgent in a host group API
 
 * Reference
-* Published Feb 03, 2020
+* Updated on Apr 24, 2026
 
 [### View configuration
 

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 # Synthetic monitors API - GET all monitors
 
 * Reference
-* Published Jul 25, 2019
+* Updated on May 25, 2026
 
 Lists all synthetic monitors in your environment. The list contains only the names and IDs of monitors. To retrieve details, use the [**GET a monitor**](/managed/dynatrace-api/environment-api/synthetic/synthetic-monitors/get-a-monitor "View a synthetic monitor via the Synthetic v1 API.") call.
 

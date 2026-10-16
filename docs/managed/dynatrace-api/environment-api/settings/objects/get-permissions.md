@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 # Settings API - GET object permissions
 
 * Reference
-* Published Jul 09, 2026
+* Updated on Mar 11, 2025
 
 Gets all current permissions on the specified settings object.
 

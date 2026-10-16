@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 # Synthetic nodes API v2 - GET all nodes
 
 * Reference
-* Updated on Oct 17, 2022
+* Updated on Dec 30, 2025
 
 Lists all synthetic nodes (and their parameters) available for your environment.
 

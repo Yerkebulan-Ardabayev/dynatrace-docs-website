@@ -114,7 +114,7 @@ Hdinsights azure
 
 ### Set up a management zone
 
-To import a dashboard for Azure HDInsight, you need to [set up a management zone](/managed/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.") to limit the entities displayed on the dashboard to cluster nodes only and exclude other hosts not relevant to the service.
+To import a dashboard for Azure HDInsight, you need to [set up a management zone](/managed/manage/identity-access-management-classic/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.") to limit the entities displayed on the dashboard to cluster nodes only and exclude other hosts not relevant to the service.
 
 When you create a management zone for this dashboard:
 

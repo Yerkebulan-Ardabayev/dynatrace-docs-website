@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calcu
 # Service metrics API - GET a metric
 
 * Reference
-* Published Dec 16, 2019
+* Updated on May 25, 2026
 
 Gets the descriptor of the specified calculated service metric.
 

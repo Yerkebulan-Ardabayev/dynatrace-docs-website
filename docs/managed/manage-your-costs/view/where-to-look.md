@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage-your-costs/view/where-to-look
 
 * Explanation
 * 6-min read
-* Updated on Oct 05, 2026
+* Published Feb 01, 2022
 
 Account Management is the front door for subscription totals, capability and environment breakdowns, billing reports, and the APIs that expose this same data programmatically.
 

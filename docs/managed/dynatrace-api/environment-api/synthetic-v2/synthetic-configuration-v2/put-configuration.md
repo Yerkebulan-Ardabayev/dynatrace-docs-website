@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 # Synthetic configuration API v2 - PUT configuration
 
 * Reference
-* Updated on Sep 28, 2022
+* Updated on Sep 09, 2026
 
 Updates the configuration of Synthetic monitoring in your environment.
 

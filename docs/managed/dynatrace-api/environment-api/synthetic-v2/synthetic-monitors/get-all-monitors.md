@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 # Synthetic monitors API v2 - GET all Synthetic monitors
 
 * Reference
-* Updated on Aug 27, 2026
+* Updated on Sep 09, 2026
 
 Lists all Synthetic monitors in your environment.
 

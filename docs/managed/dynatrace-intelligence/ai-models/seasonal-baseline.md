@@ -19,17 +19,9 @@ When the configuration of a metric event includes multiple entities, each entity
 
 This example uses the number of user actions in an application. Real user interactions often follow the seasonality of business hours and weekends, and the time series also shows daily peaks.
 
-When evaluated by a static threshold, those daily peaks result in false-positive alarms (red annotation within the chart).
+When evaluated by a static threshold, those daily peaks result in false-positive alarms.
 
-![Static threshold based anomaly detection producing false-positive alarms in case of seasonal timeseries behavior.](https://dt-cdn.net/images/notebook-static-threshold-anomalies-1920-b17476b1bd.png)
-
-Static threshold based anomaly detection producing false-positive alarms in case of seasonal timeseries behavior.
-
-Davis AI automatically detects seasonal behavior in the time series and creates a confidence band based on that pattern. As you can see on the chart below, the model recognizes seasonality and doesn't generate false alarms on the peaks. However, it will still trigger an alert should a spike occur at a different time.
-
-![Seasonal anomaly detection model correctly follows the seasonal behavior of a timeseries and avoids false-positive alarms.](https://dt-cdn.net/images/notebooks-seasonal-baseline-1920-c6aa3be336.png)
-
-Seasonal anomaly detection model correctly follows the seasonal behavior of a timeseries and avoids false-positive alarms.
+Davis AI automatically detects seasonal behavior in the time series and creates a confidence band based on that pattern. The model recognizes seasonality and doesn't generate false alarms on the peaks. However, it will still trigger an alert should a spike occur at a different time.
 
 ## Parameters of the baseline model
 

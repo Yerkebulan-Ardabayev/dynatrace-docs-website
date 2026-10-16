@@ -28,7 +28,7 @@ Subscription history lets you review consumption from previous DPS subscription 
 To view subscription history, you need:
 
 * An active Dynatrace Platform Subscription that was signed after April 26, 2023.
-* A Dynatrace user account with one or both of these [Account Management permissions](/managed/manage/identity-access-management/permission-management/account-management-permissions "Dynatrace permissions required to access Account Management"):
+* A Dynatrace user account with one or both of these [Account Management permissions (Dynatrace Classic)](/managed/manage/identity-access-management-classic/permission-management/account-management-permissions-classic "Dynatrace permissions required to access Account Management"):
 
   + **View account**
   + **View and manage account and billing information**

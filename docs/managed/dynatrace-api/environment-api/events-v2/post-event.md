@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/events-
 # Events API v2 - POST an event
 
 * Reference
-* Published Nov 05, 2021
+* Updated on Sep 30, 2025
 
 Ingests a custom event to Dynatrace.
 
@@ -745,8 +745,3 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 #### Response code
 
 201
-
-## Related topics
-
-* [Event categories](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.")
-* [Event analysis and correlation](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation "Gain an understanding of the Events section on each host, process, and service overview page.")

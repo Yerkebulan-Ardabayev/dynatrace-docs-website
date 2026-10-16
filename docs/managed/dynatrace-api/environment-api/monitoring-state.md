@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/monitor
 # Monitoring state API
 
 * Reference
-* Published Oct 01, 2026
+* Updated on Jul 16, 2025
 
 The **Monitoring state** API enables you to query the monitoring state of process group instances in your environment. Only process group instances are supported.
 

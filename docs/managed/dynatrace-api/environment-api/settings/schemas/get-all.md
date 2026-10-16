@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 # Settings API - GET all schemas
 
 * Reference
-* Published Feb 24, 2021
+* Updated on Nov 12, 2025
 
 Lists all settings schemas available in your environment.
 

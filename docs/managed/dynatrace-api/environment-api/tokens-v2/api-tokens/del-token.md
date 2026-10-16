@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-
 # Access tokens API - DELETE a token
 
 * Reference
-* Published Mar 15, 2021
+* Updated on Sep 09, 2026
 
 Deletes the specified Dynatrace API authentication token.
 

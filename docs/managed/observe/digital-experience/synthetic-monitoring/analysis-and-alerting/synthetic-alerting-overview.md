@@ -20,8 +20,8 @@ You can set up problem notification as follows:
 3. Define [integrations](#integrations) for alert delivery, for example, via email.
 4. Optional Define [maintenance windows](#maintenance-windows).
 
-* Even if you do not set up any integrations, problems are automatically displayed on the **Problems** page, the [Synthetic details page](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors "Analyze browser monitor and clickpath results on the Synthetic details page.") for the affected monitor, and in the [Dynatrace mobile app](/managed/analyze-explore-automate/notifications-and-alerting/push-notifications-via-the-dynatrace-mobile-app "Learn how you can connect your Dynatrace environments with the Dynatrace mobile app to receive problem alerts.").
-* Whether or not you see problems and receive alert notifications during maintenance windows depends on how you [configure the maintenance windows](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window "Create maintenance windows and define their scope.").
+* Even if you do not set up any integrations, problems are automatically displayed on the **Problems** page, the [Synthetic details page](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors "Analyze browser monitor and clickpath results on the Synthetic details page.") for the affected monitor, and in the [Dynatrace mobile app](/managed/analyze-explore-automate/alerting-and-notifications-classic/push-notifications-via-the-dynatrace-mobile-app "Learn how you can connect your Dynatrace environments with the Dynatrace mobile app to receive problem alerts.").
+* Whether or not you see problems and receive alert notifications during maintenance windows depends on how you [configure the maintenance windows](/managed/analyze-explore-automate/alerting-and-notifications-classic/maintenance-windows/define-maintenance-window "Create maintenance windows and define their scope.").
 * You can apply a [global setting to always exclude maintenance windows from synthetic availability calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring Classic metric calculations.") for the maintenance periods.
 
 The alerting potential of Dynatrace Synthetic Monitoring Classic is fully realized when combined with [Real User Monitoring](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.")—not only are you notified that there is a problem, but you can also see which real users are impacted and where the root cause of the issue is in your application stack.
@@ -100,7 +100,7 @@ Performance problem
 
 Local availability problem
 
-Simply sign in with your credentials to receive push notifications for the environments you have access to in the [Dynatrace mobile app](/managed/analyze-explore-automate/notifications-and-alerting/push-notifications-via-the-dynatrace-mobile-app "Learn how you can connect your Dynatrace environments with the Dynatrace mobile app to receive problem alerts.") for iOS and Android.
+Simply sign in with your credentials to receive push notifications for the environments you have access to in the [Dynatrace mobile app](/managed/analyze-explore-automate/alerting-and-notifications-classic/push-notifications-via-the-dynatrace-mobile-app "Learn how you can connect your Dynatrace environments with the Dynatrace mobile app to receive problem alerts.") for iOS and Android.
 
 ![Dynatrace mobile app notifications](https://dt-cdn.net/images/mobileappnotifications-324-abecfcbd89.png)
 
@@ -162,7 +162,7 @@ Select an alerting profile
 
 ## Maintenance windows
 
-[Maintenance windows](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows "Understand when to use a maintenance window. Read about the supported maintenance window types.") are one-time or recurring time periods during which problem detection and, optionally, alerting are suspended. You can also opt to continue with problem detection and alerting during a maintenance window.
+[Maintenance windows](/managed/analyze-explore-automate/alerting-and-notifications-classic/maintenance-windows "Understand when to use a maintenance window. Read about the supported maintenance window types.") are one-time or recurring time periods during which problem detection and, optionally, alerting are suspended. You can also opt to continue with problem detection and alerting during a maintenance window.
 
 Set up maintenance windows by navigating to **Settings** > **Maintenance windows** > **Monitoring, alerting and availability**. In particular, the setting below allows you to suspend problem detection and alerting. It is best to **Disable problem detection during maintenance** so that no notifications are pushed to system dashboards or through your third-party tools.
 

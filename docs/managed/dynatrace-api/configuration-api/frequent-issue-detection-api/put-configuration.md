@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/frequ
 # Frequent issue detection API - PUT configuration
 
 * Reference
-* Published Jun 28, 2019
+* Updated on Jan 15, 2025
 
 This API is deprecated. Use the [Settings API](/managed/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") instead. Look for the **Frequent issue detection** (`builtin:anomaly-detection.frequent-issues`) schema.
 
@@ -375,7 +375,3 @@ The updated configuration has the following parameters:
 ![Anomaly detection configuration - updated](https://dt-cdn.net/images/put-frequent-issue-703-b57d1c1c38.png)
 
 Anomaly detection configuration - updated
-
-## Related topics
-
-* [Detection of frequent issues](/managed/dynatrace-intelligence/root-cause-analysis/detection-of-frequent-issues "Understand how Dynatrace detects and manages recurring problem patterns as frequent issues.")

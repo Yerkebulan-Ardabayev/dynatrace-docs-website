@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/w
 # Web application configuration API - PUT a web application
 
 * Reference
-* Published Sep 03, 2019
+* Updated on Mar 03, 2025
 
 Updates the specified web application.
 

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/entity-
 # Monitored entities API - GET entities list
 
 * Reference
-* Published May 28, 2020
+* Updated on Sep 05, 2025
 
 Lists entities observed within the specified timeframe along with their properties. When you query entities of the `SERVICE_METHOD` type, only the following requests are returned:
 

@@ -239,4 +239,4 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/maintenanceWindows
 
 ## Related topics
 
-* [Maintenance windows](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows "Understand when to use a maintenance window. Read about the supported maintenance window types.")
+* [Maintenance windows](/managed/analyze-explore-automate/alerting-and-notifications-classic/maintenance-windows "Understand when to use a maintenance window. Read about the supported maintenance window types.")

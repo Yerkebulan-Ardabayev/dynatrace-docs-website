@@ -190,5 +190,4 @@ You need both log monitoring and trace pricing and packaging.
 ## Related topics
 
 * [Log viewer (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.")
-* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")
 * [[Blog] Automatic connection of logs and traces accelerates AI-driven cloud analytics﻿](https://www.dynatrace.com/news/blog/automatic-connection-of-logs-and-traces-accelerates-ai-driven-cloud-analytics/)

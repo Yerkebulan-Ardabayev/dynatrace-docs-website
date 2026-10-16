@@ -69,7 +69,7 @@ Shows a summary of captured metadata (process group name, version, stage, produc
 * **Throughput** shows how much traffic is routed to the selected release.
 * **Problems** shows the number of open impacted problems related to the process group instance of the release.
 
-  If Dynatrace detects problems in the release, **Problems** is displayed in red. Select it to display the **Problems** page and gather more information. See [Problem overview](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.") for details.
+  If Dynatrace detects problems in the release, **Problems** is displayed in red. Select it to display the **Problems** page and gather more information. See [Problem overview](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Learn the core Davis AI root cause analysis concepts, including incidents, problems, fault tree analysis, impact analysis, and the problem lifecycle.") for details.
 * **Third-party vulnerabilities** shows the number of third-party vulnerabilities related to the selected release. This helps you check if, for example, a new release would introduce a known vulnerability and, based on this, decide on its impact on and relevance to your release schedule.
 
   If Dynatrace detects vulnerabilities in the release, **Third-party vulnerabilities** is displayed in red. Select it to display the **Security** page and gather more information. See [Application Security monitoring](/managed/secure/application-security "Access the Dynatrace Application Security functionalities.") for details.

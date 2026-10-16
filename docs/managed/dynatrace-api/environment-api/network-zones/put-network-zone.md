@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/network
 # Network zones API - PUT a network zone
 
 * Reference
-* Published Apr 08, 2020
+* Updated on May 25, 2026
 
 This API is deprecated. Use the [Settings API](/managed/dynatrace-api/environment-api/settings/schemas/builtin-networkzones-zones "View builtin:networkzones.zones settings schema table of your monitoring environment via the Dynatrace API.") instead.
 

@@ -37,7 +37,7 @@ Additionally Dynatrace detects the following properties that can be used for [au
 
 ## Leverage Kubernetes labels in Dynatrace
 
-Kubernetes-based tags are searchable via Dynatrace search. This allows you to easily find and inspect the monitoring results of related processes running in your Kubernetes or OpenShift environment. You can also leverage Kubernetes tags to set up fine-grained [problem alerting profiles](/managed/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles."). Kubernetes tags also integrate perfectly with [Dynatrace filters](/managed/observe/application-observability/services-classic/service-flow/service-flow-filtering "Understand how service filtering works and how it can be exploited.").
+Kubernetes-based tags are searchable via Dynatrace search. This allows you to easily find and inspect the monitoring results of related processes running in your Kubernetes or OpenShift environment. You can also leverage Kubernetes tags to set up fine-grained [problem alerting profiles](/managed/analyze-explore-automate/alerting-and-notifications-classic/alerting-profiles "Learn how to create and manage alerting profiles."). Kubernetes tags also integrate perfectly with [Dynatrace filters](/managed/observe/application-observability/services-classic/service-flow/service-flow-filtering "Understand how service filtering works and how it can be exploited.").
 
 ## Import your labels and annotations
 

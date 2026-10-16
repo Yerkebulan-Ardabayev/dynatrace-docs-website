@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detect
 
 * Explanation
 * 10-min read
-* Updated on Jun 09, 2026
+* Published May 20, 2019
 
 Context-rich data collection and baselining are the two fundamental pillars that anomaly detection is built on. A huge amount of high-quality and accurate data is necessary to determine baselines that can effectively be used to distinguish between normal and anomalous situations. This distinction however is often blurred due to high data fluctuation or simply because the definition of “normal” is very much context-specific and changes as applications, platforms, infrastructure, and algorithms evolve. This makes the generation of accurate alerts a real challenge.
 
@@ -99,7 +99,7 @@ Dynatrace application traffic anomaly detection is based on the assumption that 
 
 Following the learning period, Dynatrace forecasts the next week’s traffic and then compares the actual incoming application traffic with the prediction. If Dynatrace detects a statistically significant deviation from forecasted traffic levels, it raises either an `Unexpected low traffic` or `Unexpected high traffic` problem.
 
-In general, newly detected anomalous events in an environment won't necessarily result in the immediate raising of an alert. Raised alerts always provide insight into the underlying root cause. To identify the root causes of problems, Dynatrace follows [a context-aware approach to detect interdependent events](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.") across time, processes, hosts, services, applications, and both vertical and horizontal topological monitoring perspectives. By taking into account all these monitoring perspectives, Dynatrace pinpoints the root causes of problems. And only then will alerts be generated for a detected problem.
+In general, newly detected anomalous events in an environment won't necessarily result in the immediate raising of an alert. Raised alerts always provide insight into the underlying root cause. To identify the root causes of problems, Dynatrace follows [a context-aware approach to detect interdependent events](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Learn the core Davis AI root cause analysis concepts, including incidents, problems, fault tree analysis, impact analysis, and the problem lifecycle.") across time, processes, hosts, services, applications, and both vertical and horizontal topological monitoring perspectives. By taking into account all these monitoring perspectives, Dynatrace pinpoints the root causes of problems. And only then will alerts be generated for a detected problem.
 
 ### Default baseline event timeouts
 

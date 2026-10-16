@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/a
 # Applications detection rules API - GET host detection headers
 
 * Reference
-* Published Sep 24, 2020
+* Updated on Apr 24, 2026
 
 Gets the list of the host detection headers.
 

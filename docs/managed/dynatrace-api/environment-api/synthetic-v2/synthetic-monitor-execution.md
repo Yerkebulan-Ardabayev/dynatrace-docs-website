@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 # Synthetic monitor executions API v2
 
 * Reference
-* Published Apr 20, 2021
+* Updated on Apr 24, 2026
 
 [### HTTP monitor
 

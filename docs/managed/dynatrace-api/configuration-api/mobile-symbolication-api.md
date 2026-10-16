@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/mobil
 # Mobile Symbolication API
 
 * Reference
-* Published Dec 05, 2018
+* Updated on Oct 13, 2026
 
 The Symbolication Service (also known as DSS, or Deobfuscation and Symbolication Service) enables you to symbolicate (iOS and tvOS) or deobfuscate (Android) mobile application crash reports or handled exceptions. This allows you to view the classes and methods in the stack trace in plain text.
 

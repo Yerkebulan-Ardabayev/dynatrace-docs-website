@@ -225,4 +225,4 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/managementZones
 
 ## Related topics
 
-* [Management zones](/managed/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.")
+* [Management zones (Dynatrace Classic)](/managed/manage/identity-access-management-classic/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.")

@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/manage/tags-and-metadata/setup/how-to
 * 15-min read
 * Updated on Oct 08, 2026
 
-Use tags to organize monitoring data and analysis based on related entities in all environments. Tags simplify searches for related services, process groups, and hosts. They also facilitate the collection of related metrics into meaningful groups for analysis. Tags can also be used for all types of entities across your environment for the purpose of alerting, charting and window maintenance. For more details on defining maintenance windows via tags, see [How to define a maintenance window](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window "Create maintenance windows and define their scope.").
+Use tags to organize monitoring data and analysis based on related entities in all environments. Tags simplify searches for related services, process groups, and hosts. They also facilitate the collection of related metrics into meaningful groups for analysis. Tags can also be used for all types of entities across your environment for the purpose of alerting, charting and window maintenance. For more details on defining maintenance windows via tags, see [How to define a maintenance window](/managed/analyze-explore-automate/alerting-and-notifications-classic/maintenance-windows/define-maintenance-window "Create maintenance windows and define their scope.").
 
 You can apply tags manually or automatically.
 
@@ -361,7 +361,7 @@ You can also use tags for efficient routing of problem notifications to responsi
 
 For example, assuming that you've defined a tag, `TeamBoston`, to tag all entities that this team is in charge of. To make sure the team members receive problem notifications
 
-1. Use this tag to define an [alerting profile](/managed/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.").
+1. Use this tag to define an [alerting profile](/managed/analyze-explore-automate/alerting-and-notifications-classic/alerting-profiles "Learn how to create and manage alerting profiles.").
 2. Go to **Settings** and select **Integration** > **Problem notifications**.
 3. Select **Set up notifications**.
 4. Select the appropriate incident-management system or team-collaboration channel.

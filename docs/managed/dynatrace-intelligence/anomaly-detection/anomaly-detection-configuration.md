@@ -9,11 +9,11 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detect
 
 * Explanation
 * 7-min read
-* Updated on Sep 07, 2026
+* Published May 15, 2024
 
 An anomaly detection configuration relies on several components:
 
-* Data source—a time series that is evaluated. For example, a specific metric.
+* Data source: a time series that is evaluated. For example, a specific metric.
 * Analyzer type and parameters: how the data is evaluated.
 * Sliding window: a period over which the data is evaluated.
 * Event template: what kind of template is triggered by the configuration.
@@ -34,9 +34,9 @@ If your data has a latency, you need to offset it in your configuration via the 
 
 Analyzer parameters define how Davis evaluates the data provided by the data source. The exact set of parameters depends on the type of the analysis:
 
-* [Auto-adaptive threshold](/managed/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.")—Dynatrace calculates the threshold automatically and adapts it dynamically to your data's behavior.
-* [Seasonal baseline](/managed/dynatrace-intelligence/ai-models/seasonal-baseline "How Davis suggests Seasonal baseline thresholds for a scope of entities.")—Dynatrace creates a confidence band for data with seasonal patterns.
-* [Static threshold](/managed/dynatrace-intelligence/anomaly-detection/static-thresholds "When to use a static threshold for your anomaly detection.")—the threshold that doesn't change over time.
+* [Auto-adaptive threshold](/managed/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration."): Dynatrace calculates the threshold automatically and adapts it dynamically to your data's behavior.
+* [Seasonal baseline](/managed/dynatrace-intelligence/ai-models/seasonal-baseline "How Davis suggests Seasonal baseline thresholds for a scope of entities."): Dynatrace creates a confidence band for data with seasonal patterns.
+* [Static threshold](/managed/dynatrace-intelligence/anomaly-detection/static-thresholds "When to use a static threshold for your anomaly detection."): a threshold that doesn't change over time.
 
 | Parameter | Description |
 | --- | --- |
@@ -48,7 +48,7 @@ Analyzer parameters define how Davis evaluates the data provided by the data sou
 
 ## Missing data alert
 
-Dynatrace provides you the ability to set an alert on missing data in a metric or a DQL query. If the alert is active, Dynatrace regularly checks whether the sliding window of the anomaly detection configuration contains any measurements. For example, if the sliding window is set to **3 violating samples during any 5 minutes**, Dynatrace triggers an alert if there's no data within a 3-minute period.
+Dynatrace provides you the ability to set an alert on missing data in a metric. If the alert is active, Dynatrace regularly checks whether the sliding window of the anomaly detection configuration contains any measurements. For example, if the sliding window is set to **3 violating samples during any 5 minutes**, Dynatrace triggers an alert if there's no data within a 3-minute period.
 
 The missing data condition and threshold condition are combined by the **OR** logic.
 
@@ -93,28 +93,28 @@ The event template defines characteristics of an event triggered by threshold vi
 * For quick understanding of the event, the name should be a short, easy-to-read description of the situation, such as `High network activity` or `CPU saturation`.
 * The name can include placeholders such as `{threshold}` or `{alert_condition}`. Placeholders are replaced with real values in the actual event. To see available placeholders, type `{` in the input field. There are several available thresholds:
 
-  + `{alert_condition}` - the condition of the alert (above/below the threshold).
+  + `{alert_condition}`: the condition of the alert (above/below the threshold).
 
     If you set the **Alert condition** to `Alert if the metric is outside`, `{threshold}`, `{severity}` and `{baseline}` placeholders will not be available.
-  + `{baseline}` - the violated value of the baseline.
-  + `{dims}` - a list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the GET metric descriptor request.
-  + `{entityname}` - the name of the affected entity.
-  + `{metricname}` - the name of the metric that violated the threshold.
-  + `{missing_data_samples}` - the number of samples with missing data. Only available if missing data alert is enabled.
+  + `{baseline}`: the violated value of the baseline.
+  + `{dims}`: a list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the GET metric descriptor request.
+  + `{entityname}`: the name of the affected entity.
+  + `{metricname}`: the name of the metric that violated the threshold.
+  + `{missing_data_samples}`: the number of samples with missing data. Only available if missing data alert is enabled.
 
     `{missing_data_samples}` in the event description
 
     We recommend including the `{missing_data_samples}` placeholder in the event description to see whether the problem is raised due to missing data samples or threshold violations.
-  + `{severity}` - the severity of the event.
-  + `{threshold}` - the violated value of the threshold.
+  + `{severity}`: the severity of the event.
+  + `{threshold}`: the violated value of the threshold.
 
 Avoid exposing PII data through alert placeholders
 
-Placeholders such as `{dims}` inject dimension values directly from your DQL query result into the event title and description. If your query returns fields that contain personally identifiable information (PII), such as user names, email addresses, or customer IDs, these values become part of the event text.
+Placeholders such as `{dims}` inject dimension values directly from your metric into the event title and description. If your metric dimensions contain personally identifiable information (PII), such as user names, email addresses, or customer IDs, these values become part of the event text.
 
-Since events can be forwarded to third-party notification channels, such as email or Slack integrations, we highly recommend avoiding placeholders that reference PII-containing fields. To prevent accidental PII exposure, exclude sensitive fields from your DQL query before they are added to the event template. You can do so by adding `fieldsRemove` or `fieldsKeep` commands to your query.
+Since events can be forwarded to third-party notification channels, such as email or Slack integrations, we highly recommend avoiding placeholders that reference PII-containing fields.
 
-You can provide additional parameters as key-value pairs. For a list of possible event properties, see [Semantic Dictionary](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+You can provide additional parameters as key-value pairs.
 
 ## Related topics
 

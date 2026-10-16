@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneag
 # OneAgent on a host API - Technology monitoring configuration
 
 * Reference
-* Published Feb 03, 2020
+* Updated on Apr 24, 2026
 
 Gets the configuration of monitored technologies on the specified host.
 

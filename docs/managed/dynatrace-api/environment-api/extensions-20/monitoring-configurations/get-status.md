@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/extensi
 # Extensions 2.0 API - GET the status of a monitoring configuration
 
 * Reference
-* Published Jun 29, 2021
+* Updated on Jun 24, 2025
 
 Gets the most recent execution of a monitoring configuration.
 

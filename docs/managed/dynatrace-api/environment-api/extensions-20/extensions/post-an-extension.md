@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/extensi
 # Extensions 2.0 API - POST an extension file
 
 * Reference
-* Published Jan 22, 2021
+* Updated on Apr 08, 2025
 
 Uploads an Extensions 2.0 extension file to your Dynatrace environment.
 
@@ -42,7 +42,7 @@ To learn how to obtain and use it, see [Platform tokens﻿](https://docs.dynatra
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| validateOnly | boolean | Validate and store (`false`) or just validate (`true`) the uploaded extension file.  If not set, `false` is used. | query | Optional |
+| validateOnly | boolean | Validate and store (`false`) or just validate (`true`) the uploaded extension file.If not set, `false` is used. | query | Optional |
 
 ### Request body
 

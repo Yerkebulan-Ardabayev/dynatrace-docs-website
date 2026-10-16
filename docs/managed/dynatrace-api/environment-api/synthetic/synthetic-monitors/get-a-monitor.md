@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 # Synthetic monitors API - GET a monitor
 
 * Reference
-* Published Jul 25, 2019
+* Updated on May 25, 2026
 
 Gets the properties of the specified monitor, including its JSON script.
 

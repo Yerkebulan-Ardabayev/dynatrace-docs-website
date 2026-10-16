@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/rea
 # Real User Monitoring JavaScript API
 
 * Reference
-* Updated on Sep 18, 2025
+* Updated on Oct 08, 2025
 
 The **Real User Monitoring JavaScript API** helps you to set up and maintain your manually injected applications.
 

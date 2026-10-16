@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/condi
 # Conditional naming API - GET a naming rule
 
 * Reference
-* Published Apr 23, 2020
+* Updated on Sep 09, 2026
 
 Gets parameters of the specified conditional naming rule.
 

@@ -22,9 +22,9 @@ Ownership information attached to monitored entities aids in mapping your Dynatr
 You need **any** of the following permissions to create, edit, or delete a team via API.
 
 * The `settings.write` [token permission](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.")
-* The [IAM policy](/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies") `ALLOW settings:objects:write, settings:schemas:read WHERE settings:schemaId = "builtin:ownership.teams";`
+* The [IAM policy](/managed/manage/identity-access-management-classic/permission-management/manage-user-permissions-policies "Working with policies") `ALLOW settings:objects:write, settings:schemas:read WHERE settings:schemaId = "builtin:ownership.teams";`
 
-You need the **Manage monitoring settings** [permission](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions") at the environment or management-zone level to create teams via the web UI.
+You need the **Manage monitoring settings** [permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions") at the environment or management-zone level to create teams via the web UI.
 
 ## Create a team via web UI
 

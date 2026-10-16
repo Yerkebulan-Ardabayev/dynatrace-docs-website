@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-ana
 
 * Explanation
 * 2-min read
-* Updated on Feb 27, 2026
+* Published Sep 07, 2021
 
 A `monitoring unavailable` event indicates a widespread monitoring interruption, where the majority of your installed OneAgents lose their connection with the Dynatrace server.
 

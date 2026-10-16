@@ -44,7 +44,7 @@ For error drill-down, you don't need to have all sessions recorded. You can use 
 
 The default [data retention](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.") timeframe is applied to these sessions.
 
-The ability to play back recorded user sessions with or without playback [masking](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-masking "Configure monitoring consumption and data privacy settings for Session Replay Classic.") settings is permission controlled. Permissions are available at the environment level as well as the management-zone level. Read more in [Manage user groups and permissions](/managed/manage/identity-access-management/permission-management/role-based-permissions#permissions "Role-based permissions").
+The ability to play back recorded user sessions with or without playback [masking](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-masking "Configure monitoring consumption and data privacy settings for Session Replay Classic.") settings is permission controlled. Permissions are available at the environment level as well as the management-zone level. Read more in [Manage user groups and permissions](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions#permissions "Role-based permissions").
 
 ### Complaint resolution
 

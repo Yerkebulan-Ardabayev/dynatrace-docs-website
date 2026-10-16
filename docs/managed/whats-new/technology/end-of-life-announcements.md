@@ -74,7 +74,7 @@ To remain supported, [update your OneAgent](/managed/ingest-from/dynatrace-oneag
 
 ## Native mobile applications for iOS and Android
 
-As part of our ongoing commitment to delivering a streamlined and consistent user experience, Dynatrace is retiring its [native mobile applications for iOS and Android](/managed/analyze-explore-automate/notifications-and-alerting/push-notifications-via-the-dynatrace-mobile-app "Learn how you can connect your Dynatrace environments with the Dynatrace mobile app to receive problem alerts."). This change aligns with our strategy to provide a unified, responsive web interface and leverage modern, flexible notification channels.
+As part of our ongoing commitment to delivering a streamlined and consistent user experience, Dynatrace is retiring its [native mobile applications for iOS and Android](/managed/analyze-explore-automate/alerting-and-notifications-classic/push-notifications-via-the-dynatrace-mobile-app "Learn how you can connect your Dynatrace environments with the Dynatrace mobile app to receive problem alerts."). This change aligns with our strategy to provide a unified, responsive web interface and leverage modern, flexible notification channels.
 
 ### Key dates
 
@@ -101,7 +101,7 @@ Push notifications will now be delivered through third-party integrations such a
 * Set up your preferred notification integrations via:
 
   + Dynatrace SaaS: [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
-  + Dynatrace Managed: [Problem notifications](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.")
+  + Dynatrace Managed: [Problem notifications](/managed/analyze-explore-automate/alerting-and-notifications-classic/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.")
 * Remove the native app from your devices after the sunset date.
 
 ### Need help?

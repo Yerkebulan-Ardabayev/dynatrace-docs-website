@@ -217,7 +217,7 @@ To connect your Cloud Foundry foundation to Dynatrace
 
 ## Manage permissions and configuration
 
-* For fine-grained user permissions, see [IAM policies](/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+* For fine-grained user permissions, see [IAM policies](/managed/manage/identity-access-management-classic/permission-management/manage-user-permissions-policies "Working with policies").
 * For easy configuration, use [Settings API](/managed/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.").
 
 The schemaID for Cloud Foundry is `builtin:cloud.cloudfoundry`.

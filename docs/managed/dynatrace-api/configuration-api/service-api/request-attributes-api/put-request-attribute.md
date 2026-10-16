@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/servi
 # Request attributes API - PUT a request attribute
 
 * Reference
-* Published Sep 03, 2019
+* Updated on Aug 25, 2026
 
 Updates the specified request attribute.
 

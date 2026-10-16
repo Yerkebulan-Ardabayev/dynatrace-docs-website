@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-
 # ActiveGate tokens API - GET a token
 
 * Reference
-* Published Dec 02, 2021
+* Updated on Apr 24, 2026
 
 Gets metadata of the ActiveGate token by its ID.
 

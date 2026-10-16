@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/data-privacy-and-security/conf
 
 * How-to guide
 * 1-min read
-* Updated on Apr 22, 2024
+* Updated on Oct 14, 2026
 
 Audit logs are crucial for tracking changes and security-relevant events. Dynatrace can log such events so that you can review important changes: when the change was made, by whom, and what was changed.
 
@@ -20,7 +20,9 @@ The following events are logged:
 * Logins to Dynatrace
 * Logouts from Dynatrace
 
-Audit logs don't include changes to OAuth tokens or changes to Account Management configuration, such as SSO.
+The environment audit log records configuration changes and API requests. Ingested records are not audit events, whether the data arrives through the REST ingest endpoints (for example, `/api/v2/metrics/ingest`, `/api/v2/logs/ingest`, and OTLP endpoints), through OneAgent, or through an ActiveGate. Changes to the ingest configuration are recorded as configuration changes.
+
+Changes to OAuth tokens and changes to Account Management configuration, such as SSO, are outside the scope of the environment audit log.
 
 Audit logs include personal identifiable information (PII) such as email addresses and IP addresses of Dynatrace users.
 

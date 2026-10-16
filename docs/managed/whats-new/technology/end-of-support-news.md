@@ -7,7 +7,7 @@ source: https://docs.dynatrace.com/managed/whats-new/technology/end-of-support-n
 
 # End-of-support announcements
 
-* Updated on Sep 02, 2026
+* Updated on Oct 07, 2026
 
 Dynatrace OneAgent
 
@@ -54,8 +54,105 @@ Definition of the end of support version schema with examples:
 
   + All major, minor, and patch versions starting from version 5 are end of support like 5, 5.1, 5.1.1, and 6
 
+### 2027-12-31 End of Support
+
+* Fedora 44 (OS module)
+
+  + Vendor end of support: 2027-06-02
+
+### 2027-11-30 End of Support
+
+* Red Hat Enterprise Linux 9.6 (zRemote module)
+
+  + Vendor end of support: 2027-05-31
+* CentOS Stream 9 (OS module)
+
+  + Vendor end of support: 2027-05-31
+
+### 2027-09-30 End of Support
+
+* Red Hat Enterprise Linux CoreOS 4.16 (OS module)
+
+  + Vendor end of support: 2025-12-27
+  + Last supported OneAgent version: 1.379
+
+### 2027-08-31 End of Support
+
+* Go 1.25
+
+  + Vendor end of support: 2026-08-12
+* Golang toolchain with FIPS 1.25.3 - 1.25.10 (openssl-fips)
+
+  + Vendor end of support: 2026-08-12
+
+### 2027-07-31 End of Support
+
+* Windows Server 2016 (zRemote module)
+
+  + Vendor end of support: 2027-01-12
+* Windows Desktop 10 21H2 (OS module)
+
+  + Vendor end of support: 2027-01-13
+  + Last supported OneAgent version: 1.367
+
+### 2027-06-30 End of Support
+
+* Fedora 43 (OS module)
+
+  + Vendor end of support: 2026-12-09
+  + Last supported OneAgent version: 1.363
+* SUSE Linux Enterprise Server 15.4 (OS module)
+
+  + Vendor end of support: 2026-12-31
+  + Last supported OneAgent version: 1.363
+
+### 2027-05-31 End of Support
+
+* IBM AIX 7.3 TL2 (OS module)
+
+  + Vendor end of support: 2026-11-30
+  + Last supported OneAgent version: 1.361
+* IBM AIX VIOS 4.1.0 (OS module)
+
+  + Vendor end of support: 2026-11-30
+  + Last supported OneAgent version: 1.361
+* Windows Desktop 11 23H2 (OS module)
+
+  + Vendor end of support: 2026-11-10
+  + Last supported OneAgent version: 1.361
+
+### 2027-04-30 End of Support
+
+* Node.js 20
+
+  + Vendor end of support: 2026-04-30
+* Windows Desktop 10 1607 (OS module)
+
+  + Vendor end of support: 2026-10-13
+  + Last supported OneAgent version: 1.359
+* Windows Server 2012 R2 (OS module)
+
+  + Vendor end of support: 2026-10-13
+  + Last supported OneAgent version: 1.359
+
+### 2027-02-28 End of Support
+
+* Go 1.24
+
+  + Vendor end of support: 2026-02-11
+* Golang toolchain with FIPS 1.24.4 - 1.24.6 (openssl-fips)
+
+  + Vendor end of support: 2026-02-11
+* Debian 11 (OS module)
+
+  + Vendor end of support: 2026-08-31
+  + Last supported OneAgent version: 1.355
+
 ### 2026-12-31 End of Support
 
+* Node.js 25
+
+  + Vendor end of support: 2026-06-01
 * .NET Core 3.1
 
   + Vendor end of support: 2022-12-13
@@ -72,20 +169,47 @@ Definition of the end of support version schema with examples:
 
   + Vendor end of support: 2024-05-14
   + Last supported OneAgent version: 1.353
+* Amazon Linux 2 (OS module)
+
+  + Vendor end of support: 2026-06-30
+  + Last supported OneAgent version: 1.351
 
 ### 2026-11-30 End of Support
 
+* Red Hat Enterprise Linux CoreOS 4.14 (OS module)
+
+  + Vendor end of support: 2025-05-01
+  + Last supported OneAgent version: 1.357
+* Red Hat Enterprise Linux CoreOS 4.15 (OS module)
+
+  + Vendor end of support: 2025-08-27
+  + Last supported OneAgent version: 1.357
 * OneAgent Feature: Azure Functions .NET In-Process Model
 
   + Vendor end of support: 2026-11-10
   + Last supported OneAgent version: 1.351
   + For more details, see [Deprecation Notice: .NET In-Process Model Azure Functions Monitoring﻿](https://community.dynatrace.com/t5/Product-news/Deprecation-Notice-Azure-Functions-NET-In-Process-Model/ba-p/302232)
+* Fedora 42 (OS module)
+
+  + Vendor end of support: 2026-05-13
+  + Last supported OneAgent version: 1.351
 
 ### 2026-10-31 End of Support
 
+* Red Hat Enterprise Linux 9.4 (zRemote module)
+
+  + Vendor end of support: 2026-04-30
+* Ubuntu 16.04 (OS module and zRemote module)
+
+  + Vendor end of support: 2026-04-30
+  + Last supported OneAgent version: 1.349
 * IBM App Connect Enterprise 11
 
   + Vendor end of support: [2026-04-30﻿](https://www.ibm.com/support/pages/ibm-app-connect-enterprise110x-withdrawal-notification)
+  + Last supported OneAgent version: 1.349
+* openSUSE 15.6 (OS module)
+
+  + Vendor end of support: 2026-04-30
   + Last supported OneAgent version: 1.349
 
 ### 2026-09-30 End of Support
@@ -159,6 +283,21 @@ Definition of the end of support version schema with examples:
   + Vendor end of support: 2020-03-03
   + Last supported OneAgent version: 1.343
 
+### 2026-06-30 End of Support
+
+* Fedora 41 (OS module)
+
+  + Vendor end of support: 2025-12-15
+  + Last supported OneAgent version: 1.341
+* SUSE Linux Enterprise Server 15.3 (OS module)
+
+  + Vendor end of support: 2025-12-31
+  + Last supported OneAgent version: 1.341
+* IBM AIX 7.3 TL1 (OS module)
+
+  + Vendor end of support: 2025-12-31
+  + Last supported OneAgent version: 1.341
+
 ### 2026-05-31 End of Support
 
 * IBM Integration Bus 10
@@ -171,15 +310,40 @@ Definition of the end of support version schema with examples:
 * Java 22
 
   + Vendor end of support: 2022-09-30
+* Oracle Linux 9.6 (zRemote module)
 
-### 2026-04-31 End of Support
+  + Vendor end of support: 2025-11-30
+* Rocky Linux 9.6 (zRemote module)
+
+  + Vendor end of support: 2025-11-30
+
+### 2026-04-30 End of Support
 
 * Node.js 18
 
   + Vendor end of support: 2025-04-30
+* Windows 10 (zRemote module)
+
+  + Vendor end of support: 2025-10-14
+* Windows Desktop 10 1507 (OS module)
+
+  + Vendor end of support: 2025-10-14
+  + Last supported OneAgent version: 1.335
+* Windows Desktop 11 22H2 (OS module)
+
+  + Vendor end of support: 2025-10-14
+  + Last supported OneAgent version: 1.335
 
 ### 2026-02-28 End of Support
 
+* Red Hat Enterprise Linux CoreOS 4.12 (OS module)
+
+  + Vendor end of support: 2024-07-17
+  + Last supported OneAgent version: 1.338
+* Red Hat Enterprise Linux CoreOS 4.13 (OS module)
+
+  + Vendor end of support: 2024-11-17
+  + Last supported OneAgent version: 1.338
 * Go 1.22
 
   + Vendor end of support: 2025-02-06
@@ -215,6 +379,9 @@ For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability 
   + Vendor end of support: 2025-05-31
   + Last supported zRemote version: 1.273+
 * Oracle Linux 9.5 (zRemote module)
+
+  + Vendor end of support: 2025-05-31
+* Rocky Linux 9.5 (zRemote module)
 
   + Vendor end of support: 2025-05-31
 * Fedora 40 (OS module)
@@ -254,17 +421,23 @@ For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability 
 * SUSE Enterprise Linux 15.5 (zRemote module)
 
   + Vendor end of support: 2024-12-31
+* openSUSE 15.5 (OS module)
 
-### 2025-05-31 End of support
-
+  + Vendor end of support: 2024-12-31
 * SUSE Linux Enterprise Server 15.2 (OS module)
 
   + Vendor end of support: 2024-12-31
+
+### 2025-05-31 End of support
+
 * Fedora 39 (OS module)
 
   + Vendor end of support: 2024-11-12
   + Last supported OneAgent version: 1.325
 * Oracle Linux 9.4 (zRemote module)
+
+  + Vendor end of support: 2024-11-30
+* Rocky Linux 9.4 (zRemote module)
 
   + Vendor end of support: 2024-11-30
 
@@ -276,6 +449,7 @@ For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability 
 
 ### 2025-03-31 End of support
 
+* Java 20
 * Red Hat Enterprise Linux CoreOS 4.11 (OS module)
 
   + Vendor end of support: 2024-02-10
@@ -284,7 +458,7 @@ For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability 
 
   + Vendor end of support: 2023-09-10
   + Last supported OneAgent version: 1.314
-* IBM AIX VIOS
+* IBM AIX VIOS 3.1 (OS module)
 
   + Vendor end of support: 2024-09-30
   + Last supported OneAgent version: 1.309

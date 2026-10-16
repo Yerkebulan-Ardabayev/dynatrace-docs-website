@@ -9,39 +9,47 @@ source: https://docs.dynatrace.com/managed/managed-cluster/installation/managed-
 
 * Reference
 * 6-min read
-* Updated on Jun 16, 2026
+* Updated on Sep 30, 2026
 
 Review the hardware requirements before installing Dynatrace Managed. Exact sizing of a Managed Cluster isn't always possible, especially in environments with growing traffic. While upfront analysis is useful, it's more important to be able to add capacity as your monitoring needs increase. Plan to scale along these dimensions:
 
-* **Horizontal scaling**: Add more nodes. Dynatrace Managed supports up to 30 Managed Cluster nodes.
+* **Horizontal scaling**: Add more nodes. Dynatrace Managed supports up to 42 Managed Cluster nodes.
 * **Vertical scaling**: Add more RAM or CPU per node.
 * **Storage scaling**: Use resizable disk volumes. For details, see [Storage requirements](#storage).
+
+Adding nodes increases how much your Managed Cluster can monitor. Keep in mind that a larger Managed Cluster also holds and processes more data. Cluster updates and other maintenance operations need more time to complete, and backups grow along with it. Plan for somewhat longer maintenance windows as your Managed Cluster grows, and scale out to gain monitoring capacity rather than to speed up existing operations.
 
 Production environments require a minimum 3-node Managed Cluster for reliability and data redundancy. For details, see [Multi-node installations](#multi-node-install).
 
 ## Hardware requirements
 
-The hardware requirements in the following tables are estimates based on typical environments and load patterns. Individual environments may vary. Column definitions:
+The hardware requirements in the following tables are estimates based on typical environments and load patterns. Individual environments may vary. All values are per node. The storage columns show the disk space to provision: Transaction Storage covers 10 days of code visibility, and Elasticsearch covers 35 days of retention. Column definitions:
 
+* **Max host units**: The host units that one node serves. Multiply this figure by the number of nodes to get an initial estimate for your Managed Cluster.
+* **Max Full-Stack OneAgents**: The Full-Stack OneAgents that one node serves. Both columns are limits, so check which one your environment reaches first. Hosts with a lot of memory usually reach the host units limit first, while many small hosts usually reach the OneAgent limit first.
 * **Minimum node specifications**: CPU and RAM must be exclusively available for Dynatrace. Turn off CPU power-saving mode. CPUs must run at 2 GHz or faster. Hosts must have at least 32 GB RAM.
 * **Transaction Storage**: Dynatrace Managed distributes transaction storage across all nodes and doesn't store it redundantly. In multi-node Managed Clusters, Dynatrace Managed divides the total transaction storage by the number of nodes.
 * **Long-term Metrics Store**: In multi-node installations, Dynatrace Managed stores three copies of the metrics store. For four or more nodes, the per-node storage requirement decreases.
 
-  Keep the Long-term Metrics Store below 2 TB per node. Dynatrace supports stability and operational resilience up to 4 TB per node. Persistent storage growth degrades Managed Cluster performance, resilience, and availability, and causes issues when adding nodes. If you need more storage, add another node to reduce the per-node requirement.
+  Keep the Long-term Metrics Store data below 2 TB per node. The disk sizes in the following tables include free space that Cassandra needs for compaction. Dynatrace Managed raises a warning cluster event when the data on a node exceeds 2 TB, and a severe cluster event when it exceeds 4 TB. Persistent storage growth degrades Managed Cluster performance, resilience, and availability, and causes issues when adding nodes. If you need more storage, add another node to reduce the per-node requirement.
+
+Host units measure the RAM of your monitored hosts, not the amount of data those hosts produce. Two hosts of the same size can place different loads on your Managed Cluster, depending on how many processes, services, and requests run on them. Use the following tables for your initial sizing, then monitor your Managed Cluster and add nodes as your load grows.
+
+A node can reach the recommended 2 TB of Long-term Metrics Store data before it reaches the host units listed here, so check both.
 
 ### Dynatrace Managed
 
-| **Node size** | **Max host units[1](#fn-1-1-def) monitored** (per node) | **Peak user** **actions/min** (per node) | **Min node specifications** | **Disk IOPS** (per node) | **Transaction Storage** (10 days code visibility) | **Long-term Metrics Store** (per node) | **Elasticsearch** (per node) (35 days retention) |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Micro | 50 | 1000 | 4 vCPUs, 32 GB RAM[2](#fn-1-2-def) | 500 | 50 GB | 100 GB | 50 GB |
-| Small | 300 | 10000 | 8 vCPUs, 64 GB RAM | 3000 | 300 GB | 500 GB | 500 GB |
-| Medium | 600 | 25000 | 16 vCPUs, 128 GB RAM | 5000 | 600 GB | 1 TB | 1.5 TB |
-| Large | 1250 | 50000 | 32 vCPUs, 256 GB RAM | 7500 | 1 TB | 2 TB | 1.5 TB |
-| XLarge[3](#fn-1-3-def) | 2500 | 100000 | 64 vCPUs, 512 GB RAM | 10000 | 2 TB | 4 TB | 3 TB |
+| **Node size** | **Max host units[1](#fn-1-1-def)** | **Max Full-Stack OneAgents** | **Peak user actions/min** | **Min node specifications** | **Disk IOPS** | **Transaction Storage** | **Long-term Metrics Store** | **Elasticsearch** |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Micro | 50 | 25 | 1000 | 4 vCPUs, 32 GB RAM[2](#fn-1-2-def) | 500 | 50 GB | 100 GB | 50 GB |
+| Small | 300 | 100 | 10000 | 8 vCPUs, 64 GB RAM | 3000 | 300 GB | 500 GB | 500 GB |
+| Medium | 600 | 250 | 25000 | 16 vCPUs, 128 GB RAM | 5000 | 600 GB | 1 TB | 1.5 TB |
+| Large | 1250 | 500 | 50000 | 32 vCPUs, 256 GB RAM | 7500 | 1 TB | 2 TB | 1.5 TB |
+| XLarge[3](#fn-1-3-def) | 2500 | 800 | 100000 | 64 vCPUs, 512 GB RAM | 10000 | 2 TB | 4 TB | 3 TB |
 
 1
 
-The host size for licensing purposes depends on the amount of RAM provided by a host. The number of **host units** that a host uses for consumption calculations depends on the number of GBs of RAM available on the host server. This approach is simple because technology-specific factors don't affect the calculation. For example, the number of JVMs or microservices hosted on a server doesn't affect the amount of monitoring that an environment consumes. For full details, see [Application and Infrastructure Monitoring](/managed/license/classic-licensing/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
+The number of **host units** a monitored host consumes depends on the amount of RAM available on that host. A host with 16 GiB RAM consumes 1 host unit in Full-Stack mode, and a host with 64 GiB RAM consumes 4 host units. Because RAM is the only factor, a host unit doesn't tell you how much monitoring data a host produces. For full details, see [Application and Infrastructure Monitoring](/managed/license/classic-licensing/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units."). If you license Dynatrace through the Dynatrace Platform Subscription (DPS), Full-Stack Monitoring consumption is also based on host memory, measured in [GiB-hours](/managed/license/capabilities/app-infra-observability/full-stack-monitoring#gib-hour "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged."). To estimate host units, divide the total memory of all Full-Stack monitored hosts by 16 GiB. For example, 100 hosts with 32 GiB RAM each, monitored around the clock, consume about 28 million GiB-hours per year and correspond to about 200 host units.
 
 2
 
@@ -53,15 +61,18 @@ Dynatrace Managed runs resiliently on instances with 1 TB+ RAM/128 cores (2XLarg
 
 #### Examples
 
-* To monitor up to 7,500 host units with a peak load of 300,000 user actions per minute, you need 3 XLarge nodes with 9 TB storage each, split across storage types.
-* To monitor 500 host units with a peak load of 25,000 user actions per minute, you need 3 Small nodes with 1.3 TB storage each, split across storage types.
+* To monitor up to 7,500 host units and up to 2,400 Full-Stack OneAgents with a peak load of 300,000 user actions per minute, you need 3 XLarge nodes with 9 TB storage each, split across storage types.
+* To monitor 500 host units and up to 300 Full-Stack OneAgents with a peak load of 25,000 user actions per minute, you need 3 Small nodes with 1.3 TB storage each, split across storage types.
+* To monitor 900 hosts with 8 GiB RAM each (450 host units, 900 Full-Stack OneAgents) with a peak load of 25,000 user actions per minute, you need 4 Medium nodes with 3.1 TB storage each, split across storage types. Based on host units alone, 3 Small nodes would be enough, but they serve only 300 Full-Stack OneAgents.
 
 ### Dynatrace Managed Premium High Availability
 
-| **Node size** | **Max host units** **monitored** (per node) | **Peak user** **actions/min** (per node) | **Min node specifications** | **Disk IOPS** (per node) | **Transaction Storage** (10 days code visibility) | **Long-term Metrics Store** (per node) | **Elasticsearch** (per node) (35 days retention) |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Large | 600 | 25000 | 32 vCPUs, 256 GB RAM | 7500 | 1 TB | 2 TB | 1.5 TB |
-| XLarge[1](#fn-2-1-def) | 1250 | 50000 | 64 vCPUs, 512 GB RAM | 10000 | 2 TB | 4 TB | 3 TB |
+In a Premium High Availability deployment, the node limit counts all nodes across both data centers: a 42-node Managed Cluster runs 21 nodes in each data center. Size both data centers symmetrically, with the same number of nodes and the same hardware, including disk storage, in each. For details, see [Premium High Availability](/managed/managed-cluster/high-availability/multi-data-centers "Understand how Dynatrace Managed Premium High Availability provides failover, data resilience, and data routing across data centers."). The second data center holds a copy of the data. As a result, a node of a given size serves fewer host units than the same node size in a Managed Cluster with one data center. The following table accounts for this, which is why its figures are lower than in the Dynatrace Managed table. Multiply them by the total number of nodes, not by the nodes in one data center.
+
+| **Node size** | **Max host units** | **Max Full-Stack OneAgents** | **Peak user actions/min** | **Min node specifications** | **Disk IOPS** | **Transaction Storage** | **Long-term Metrics Store** | **Elasticsearch** |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Large | 600 | 350 | 25000 | 32 vCPUs, 256 GB RAM | 7500 | 1 TB | 2 TB | 1.5 TB |
+| XLarge[1](#fn-2-1-def) | 1250 | 700 | 50000 | 64 vCPUs, 512 GB RAM | 10000 | 2 TB | 4 TB | 3 TB |
 
 1
 
@@ -69,7 +80,7 @@ While Dynatrace Managed runs resiliently on instances with 1 TB+ RAM/128 cores (
 
 #### Example
 
-To monitor 7,500 host units with a peak load of 300,000 user actions per minute in a Premium High Availability deployment, you need 6 XLarge nodes. Place 3 nodes in one data center and 3 nodes in a second data center, each with 9 TB storage split across storage types.
+To monitor 7,500 host units and up to 4,200 Full-Stack OneAgents with a peak load of 300,000 user actions per minute in a Premium High Availability deployment, you need 6 XLarge nodes. Place 3 nodes in one data center and 3 nodes in a second data center, each with 9 TB storage split across storage types.
 
 ## Storage requirements
 

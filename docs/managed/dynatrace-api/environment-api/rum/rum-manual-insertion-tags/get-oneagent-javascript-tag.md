@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/rum
 # GET OneAgent JavaScript tag
 
 * Reference
-* Updated on Sep 18, 2025
+* Updated on Oct 08, 2025
 
 Returns the most recent [OneAgent JavaScript tag](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#oneagent-js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes configuration and a reference to the monitoring code.
 

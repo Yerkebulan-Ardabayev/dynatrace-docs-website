@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/applica
 # Vulnerabilities API
 
 * Reference
-* Updated on Nov 24, 2022
+* Updated on Jan 22, 2026
 
 [### List all vulnerabilities](/managed/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerabilities "View the list of vulnerabilities via Dynatrace API.")[### List vulnerability details](/managed/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerability-details "View details of a vulnerability via Dynatrace API.")[### List vulnerability events](/managed/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerability-events "View a list of vulnerability events via Dynatrace API.")[### Mute a vulnerability](/managed/dynatrace-api/environment-api/application-security/vulnerabilities/post-mute-vulnerability "Mute a vulnerability via Dynatrace API.")[### Unmute a vulnerability](/managed/dynatrace-api/environment-api/application-security/vulnerabilities/post-unmute-vulnerability "Unmute a vulnerability via Dynatrace API.")[### Mute multiple vulnerabilities](/managed/dynatrace-api/environment-api/application-security/vulnerabilities/post-mute-vulnerabilities "Mute multiple vulnerabilities via Dynatrace API.")[### Unmute multiple vulnerabilities](/managed/dynatrace-api/environment-api/application-security/vulnerabilities/post-problems-unmute "Unmute multiple vulnerabilities via Dynatrace API.")[### List vulnerable functions](/managed/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerable-functions "View the vulnerable functions of a vulnerability via Dynatrace API.")
 

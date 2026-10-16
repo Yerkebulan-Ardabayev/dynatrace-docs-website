@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/remote-
 # OneAgent remote configuration management API
 
 * Reference
-* Published Jun 01, 2022
+* Updated on Sep 30, 2025
 
 [### Start a job
 

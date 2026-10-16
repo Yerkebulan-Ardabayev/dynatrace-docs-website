@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activeg
 # ActiveGate API - GET an ActiveGate
 
 * Reference
-* Published Jul 02, 2020
+* Updated on Jun 18, 2026
 
 Gets the information about the specified ActiveGate.
 

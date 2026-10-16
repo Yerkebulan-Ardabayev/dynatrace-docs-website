@@ -62,7 +62,7 @@ Once any one of these limits is consumed, the respective monitoring will no long
 ### Assign environment permissions to user groups
 
 Use these controls to assign environment permissions to defined user groups.  
-For details, see [Manage user groups and permissions](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions").
+For details, see [Manage user groups and permissions](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions").
 
 ## Rename an environment
 

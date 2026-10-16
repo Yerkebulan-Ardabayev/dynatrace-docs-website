@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-
 # Tenant tokens API
 
 * Reference
-* Published Feb 23, 2021
+* Updated on Jul 15, 2026
 
 [### Start rotation
 

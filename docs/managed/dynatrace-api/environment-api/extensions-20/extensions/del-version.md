@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/extensi
 # Extensions 2.0 API - DELETE an extension version
 
 * Reference
-* Published Jan 22, 2021
+* Updated on Apr 08, 2025
 
 Deletes the specified version of an Extensions 2.0 extension.
 

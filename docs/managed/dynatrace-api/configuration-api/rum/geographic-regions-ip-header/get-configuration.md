@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/g
 # IP mapping header rules - GET configuration
 
 * Reference
-* Published Sep 24, 2020
+* Updated on Apr 24, 2026
 
 Gets the list of IP detection headers.
 

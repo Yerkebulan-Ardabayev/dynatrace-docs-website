@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-ana
 
 * Explanation
 * 2-min read
-* Updated on Feb 25, 2026
+* Published Jul 19, 2017
 
 Dynatrace supports different categories of Davis events, where each Davis event comes with an event type and a severity (significance) level.
 

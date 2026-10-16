@@ -12,7 +12,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/maint
 
 This API is deprecated. Use the [Settings API](/managed/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") with the **Maintenance windows** (`builtin:alerting.maintenance-window`) schema instead.
 
-Dynatrace uses [maintenance windows](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows "Understand when to use a maintenance window. Read about the supported maintenance window types.") to ensure accurate monitoring data during planned maintenance of your systems.
+Dynatrace uses [maintenance windows](/managed/analyze-explore-automate/alerting-and-notifications-classic/maintenance-windows "Understand when to use a maintenance window. Read about the supported maintenance window types.") to ensure accurate monitoring data during planned maintenance of your systems.
 
 The **Maintenance windows** configuration API enables you to use 3rd party tools to manage maintenance windows and downtimes within a monitored environment.
 
@@ -38,4 +38,4 @@ The **Maintenance windows** configuration API enables you to use 3rd party tools
 
 ## Related topics
 
-* [Maintenance windows](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows "Understand when to use a maintenance window. Read about the supported maintenance window types.")
+* [Maintenance windows](/managed/analyze-explore-automate/alerting-and-notifications-classic/maintenance-windows "Understand when to use a maintenance window. Read about the supported maintenance window types.")

@@ -17,7 +17,7 @@ Dynatrace version 1.252+ OneAgent version 1.243+
 
 If you use a OneAgent version earlier than 1.243 and Dynatrace Cluster version earlier than 1.252, go to [Log Sources and Storage](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 
-Dynatrace allows you to include and exclude specific log sources for your analysis. Using [Dynatrace identity and access management (IAM) framework](/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies"), you can control which user can change configurations on which scope.
+Dynatrace allows you to include and exclude specific log sources for your analysis. Using [Dynatrace identity and access management (IAM) framework](/managed/manage/identity-access-management-classic/permission-management/manage-user-permissions-policies "Working with policies"), you can control which user can change configurations on which scope.
 
 The configuration is based on rules that use matchers for hierarchy, log path, and process groups. These rules determine which log files among those detected by OneAgent, either automatically or defined as custom log sources, are ingested.
 

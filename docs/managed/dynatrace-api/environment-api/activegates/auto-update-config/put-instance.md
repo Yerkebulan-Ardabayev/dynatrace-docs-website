@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activeg
 # ActiveGate auto-update configuration API - PUT an ActiveGate
 
 * Reference
-* Published Mar 15, 2021
+* Updated on May 25, 2026
 
 Edits the auto-update configuration of the specified Environment ActiveGate.
 

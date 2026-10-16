@@ -341,8 +341,3 @@ https://mySampleEnv.live.dynatrace.com/api/v2/eventTypes?pageSize=3
 #### Response code
 
 200
-
-## Related topics
-
-* [Event categories](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.")
-* [Event analysis and correlation](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation "Gain an understanding of the Events section on each host, process, and service overview page.")

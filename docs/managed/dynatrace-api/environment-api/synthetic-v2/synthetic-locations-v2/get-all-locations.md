@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 # Synthetic locations API v2 - GET all locations
 
 * Reference
-* Published Jul 25, 2019
+* Updated on Jun 04, 2025
 
 Lists all locations, public and private, and their parameters available for your environment.
 

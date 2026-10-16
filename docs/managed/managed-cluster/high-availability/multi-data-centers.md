@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/mul
 
 * Explanation
 * 5-min read
-* Updated on Sep 18, 2026
+* Updated on Oct 02, 2026
 
 Premium High Availability (PHA) extends Dynatrace Managed high availability across two data centers (DC). PHA is a self-contained solution that keeps monitoring running with no data loss and minimal downtime when a DC fails.
 
@@ -22,7 +22,7 @@ Before you plan a PHA deployment, review the following requirements and limitati
 * Use a license model that supports PHA, either [Dynatrace Classic](/managed/license/monitoring-consumption-classic "Understand how Dynatrace classic monitoring consumption is calculated, including host units, DDUs, DEM units, and Application Security units.") or [Dynatrace Platform Subscription](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.").
 * Connect the Managed Cluster to [Dynatrace Mission Control](/managed/managed-cluster/basics/mission-control-proactive-support "Mission Control proactively monitors your Managed Cluster, provides software updates, and keeps your installation secure and reliable."). PHA is available only for online Managed Clusters.
 * Deploy at least six nodes, with three nodes per DC. In a rack-aware PHA deployment, six nodes leave one node per rack, where rack awareness gains no failover tolerance.
-* Deploy no more than 30 nodes, with no more than 15 nodes per DC.
+* Deploy no more than 42 nodes, with no more than 21 nodes per DC.
 * Size both DCs symmetrically.
 * Plan the migration. You cannot reverse a migration to PHA.
 * Use an operating system that supports `cgroups` version 1.0 and `systemd` version 219 or later, for example Red Hat Enterprise Linux 7 or CentOS 7.

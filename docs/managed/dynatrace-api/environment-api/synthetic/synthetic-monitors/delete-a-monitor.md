@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 # Synthetic monitors API - DELETE a monitor
 
 * Reference
-* Published Jul 26, 2019
+* Updated on May 25, 2026
 
 Deletes the specified monitor.
 

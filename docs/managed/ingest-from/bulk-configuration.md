@@ -71,7 +71,7 @@ Users performing remote configuration management need to belong to a group bound
 
 With IAM permissions, you can limit a user's activities down to a single configuration action, such as changing only the OneAgent host group assignment.
 
-For more information on Dynatrace IAM permissions, see [Working with policies](/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+For more information on Dynatrace IAM permissions, see [Working with policies (Dynatrace Classic)](/managed/manage/identity-access-management-classic/permission-management/manage-user-permissions-policies "Working with policies").
 
 ### Access tokens
 

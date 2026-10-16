@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/network
 # Network zones API - GET a network zone
 
 * Reference
-* Published Mar 05, 2020
+* Updated on May 07, 2026
 
 This API is deprecated. Use the [Settings API](/managed/dynatrace-api/environment-api/settings/schemas/builtin-networkzones-zones "View builtin:networkzones.zones settings schema table of your monitoring environment via the Dynatrace API.") instead.
 

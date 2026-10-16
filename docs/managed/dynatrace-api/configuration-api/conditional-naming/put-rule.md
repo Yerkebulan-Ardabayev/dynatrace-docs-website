@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/condi
 # Conditional naming API - PUT a naming rule
 
 * Reference
-* Published Apr 23, 2020
+* Updated on Sep 09, 2026
 
 Updates the specified conditional naming rule. If the rule with the specified ID doesn't exist—creates a new rule with this ID.
 

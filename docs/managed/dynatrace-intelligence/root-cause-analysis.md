@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-ana
 # Root cause analysis
 
 * 1-min read
-* Updated on May 15, 2026
+* Published Feb 06, 2023
 
 Davis® AI root cause analysis automatically evaluates all captured and ingested information and highlights entities within the causal topology identified as the root cause of a complex situation. It offers a context-aware approach that uses available context information, such as the code-level information topology, to determine the precise cause of the issue.
 
@@ -20,7 +20,7 @@ Davis® AI root cause analysis automatically evaluates all captured and ingested
 
 [### Root cause analysis concepts
 
-Learn about automated root cause analysis and the problem lifecycle.](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.")[### Event analysis and correlation
+Learn about automated root cause analysis and the problem lifecycle.](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Learn the core Davis AI root cause analysis concepts, including incidents, problems, fault tree analysis, impact analysis, and the problem lifecycle.")[### Event analysis and correlation
 
 Gain an understanding of the Events section on each host, process, and service overview page.](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation "Gain an understanding of the Events section on each host, process, and service overview page.")[### Detection of frequent issues
 

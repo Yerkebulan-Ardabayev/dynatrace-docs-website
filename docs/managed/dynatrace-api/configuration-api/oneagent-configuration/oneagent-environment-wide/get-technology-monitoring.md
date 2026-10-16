@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneag
 # OneAgent environment-wide configuration API - GET Technology monitoring configuration
 
 * Reference
-* Published Feb 03, 2020
+* Updated on Apr 24, 2026
 
 Gets the environment-wide technology monitoring configuration of OneAgent.
 

@@ -37,7 +37,7 @@ To access this data, your user account must have one of the following Account Ma
 | **View account** | View DPS consumption, usage, and subscription history. |
 | **View and manage account and billing information** | All of the above, plus Cost Management features. |
 
-These permissions are granted in Account Management by a license administrator with the **View and manage users and groups** permission. For more information, see [Account Management permissions](/managed/manage/identity-access-management/permission-management/account-management-permissions "Dynatrace permissions required to access Account Management").
+These permissions are granted in Account Management by a license administrator with the **View and manage users and groups** permission. For more information, see [Account Management permissions (Dynatrace Classic)](/managed/manage/identity-access-management-classic/permission-management/account-management-permissions-classic "Dynatrace permissions required to access Account Management").
 
 ### Account Management API
 
@@ -50,7 +50,5 @@ For more information, see [Dynatrace Platform Subscription API - GET usage](/man
 
 ## Related topics
 
-* [Account Management permissions](/managed/manage/identity-access-management/permission-management/account-management-permissions "Dynatrace permissions required to access Account Management")
 * [About Dynatrace licenses, accounts, environments, and users](/managed/manage/account-management/accounts-environments "Key concepts to understand your Dynatrace user, account, its associated environments, and how it consumes from a Dynatrace subscription or license.")
-* [Identity and access management (IAM)](/managed/manage/identity-access-management "Configure users, groups and permissions.")
 * [Account Management](/managed/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")

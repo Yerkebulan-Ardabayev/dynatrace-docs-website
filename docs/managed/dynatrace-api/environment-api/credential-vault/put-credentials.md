@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/credent
 # Credential vault API - PUT a set of credentials
 
 * Reference
-* Published Oct 06, 2022
+* Updated on Apr 08, 2026
 
 Updates the specified set of credentials for [synthetic monitors](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.").
 

@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/observe/application-observability/ser
 * 9-min read
 * Updated on Mar 30, 2026
 
-Dynatrace failure detection automatically detects the vast majority of error conditions in your environment, including the underlying [root causes](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts."). With this approach, Dynatrace is able to provide you with answers when problems occur or when your application performance drops.
+Dynatrace failure detection automatically detects the vast majority of error conditions in your environment, including the underlying [root causes](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Learn the core Davis AI root cause analysis concepts, including incidents, problems, fault tree analysis, impact analysis, and the problem lifecycle."). With this approach, Dynatrace is able to provide you with answers when problems occur or when your application performance drops.
 
 When Dynatrace detects a service error, it doesn't necessarily mean that you want to label a request as failed. If the default service-error detection settings don't meet your needs, you can configure failure detection settings as explained in this page.
 
@@ -620,7 +620,6 @@ Inputs starting with `primary_tags.` are matched against the primary tags on the
 ## Related topics
 
 * [Request attributes](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.")
-* [Root cause analysis concepts](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.")
 * [Failure detection API](/managed/dynatrace-api/configuration-api/service-api/failure-detection "Learn what the Dynatrace failure detection config API offers.")
 * [Settings API - Failure detection parameters schema table](/managed/dynatrace-api/environment-api/settings/schemas/builtin-failure-detection-environment-parameters "View builtin:failure-detection.environment.parameters settings schema table of your monitoring environment via the Dynatrace API.")
 * [Settings API - Failure detection rules schema table](/managed/dynatrace-api/environment-api/settings/schemas/builtin-failure-detection-environment-rules "View builtin:failure-detection.environment.rules settings schema table of your monitoring environment via the Dynatrace API.")

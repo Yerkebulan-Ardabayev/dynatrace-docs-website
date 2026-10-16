@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/applica
 # Vulnerabilities API - GET remediation item details
 
 * Reference
-* Updated on Sep 25, 2024
+* Updated on Jul 15, 2026
 
 Lists the details of a [remediation tracking](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") process group of a third-party vulnerability (or, in the case of Kubernetes vulnerabilities, the parameters of a remediation tracking Kubernetes node).
 

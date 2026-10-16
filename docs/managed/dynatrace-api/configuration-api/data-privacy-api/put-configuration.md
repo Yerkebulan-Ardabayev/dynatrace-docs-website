@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/data-
 # Data privacy API - PUT configuration
 
 * Reference
-* Published Sep 02, 2019
+* Updated on Apr 24, 2026
 
 Updates the global configuration of data privacy, affecting all your applications.
 

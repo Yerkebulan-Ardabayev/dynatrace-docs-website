@@ -250,7 +250,7 @@ To comply with regional data protection and privacy regulations, Dynatrace does 
 
 * Masks some personal data before storing a support archive in Cassandra and uploading it to an AWS S3 bucket. For example, IBANs and URI credentials are replaced with `<masked>`. However, some personal data may not be masked.
 * Writes audit log messages when support archives are created, analyzed, accessed, and deleted to ensure transparency in the use of support archives.
-* Provides access to OneAgent support archives only to users that have the **View sensitive request data** [environment permission](/managed/manage/identity-access-management/permission-management/role-based-permissions#environment "Role-based permissions").
+* Provides access to OneAgent support archives only to users that have the **View sensitive request data** [environment permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions#environment "Role-based permissions").
 * Automatically deletes all diagnostic data 30 days after its collection. This [data retention period](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#diagnostics "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.") is configurable.
 
   This applies to the data on the Dynatrace Cluster. You can also choose to delete collected diagnostic data earlier.

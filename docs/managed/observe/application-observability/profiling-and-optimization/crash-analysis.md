@@ -165,7 +165,7 @@ mapped files:
 
 ## Protect sensitive user data
 
-Crash reports might include sensitive personal information that should not be viewed by all users. For this reason, your Dynatrace administrator must enable the [**View logs** account-security option](/managed/manage/identity-access-management/permission-management/role-based-permissions#environment "Role-based permissions") and the [**View sensitive request data**](/managed/manage/identity-access-management/permission-management/role-based-permissions#environment "Role-based permissions") permissions in your user profile before you can view personal data. This option is disabled by default for all non-admin users and must be explicitly enabled before you can access log contents.
+Crash reports might include sensitive personal information that should not be viewed by all users. For this reason, your Dynatrace administrator must enable the [**View logs** account-security option](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions#environment "Role-based permissions") and the [**View sensitive request data**](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions#environment "Role-based permissions") permissions in your user profile before you can view personal data. This option is disabled by default for all non-admin users and must be explicitly enabled before you can access log contents.
 
 ## Crash handling on Windows
 

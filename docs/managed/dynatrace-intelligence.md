@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence
 # Davis® AI
 
 * 1-min read
-* Updated on Jun 11, 2026
+* Published Apr 26, 2018
 
 Davis® is an AI causation engine that detects performance anomalies in your applications, services, and infrastructure. Davis reports and alerts on abnormal situations, such as performance degradations, improper functionality, or unavailability.
 

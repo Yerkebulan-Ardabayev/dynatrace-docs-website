@@ -201,7 +201,3 @@ Disk is assigned to the first policy it matches to (based on disk name and/or me
 ### Disk Edge policies
 
 For Disk Edge, the order of policies is also evaluated from the more specific scope (more priority) to a more generic one (less priority).
-
-## Related topics
-
-* [Adjust the sensitivity of anomaly detection for infrastructure](/managed/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure "Adjust problem detection sensitivity for infrastructure.")

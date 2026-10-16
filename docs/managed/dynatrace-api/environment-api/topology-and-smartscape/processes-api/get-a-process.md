@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topolog
 # Processes API - GET a process
 
 * Reference
-* Updated on Mar 22, 2023
+* Updated on Apr 08, 2026
 * Deprecated
 
 This API is deprecated. Use the [Monitored entities API](/managed/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.") instead.

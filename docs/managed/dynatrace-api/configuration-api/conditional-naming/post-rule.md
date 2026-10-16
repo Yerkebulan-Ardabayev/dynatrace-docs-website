@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/condi
 # Conditional naming API - POST a new naming rule
 
 * Reference
-* Published Apr 23, 2020
+* Updated on Sep 09, 2026
 
 Creates a new conditional naming rule.
 

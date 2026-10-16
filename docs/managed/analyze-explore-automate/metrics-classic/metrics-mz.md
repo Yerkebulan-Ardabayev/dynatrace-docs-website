@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/metrics-clas
 * 4-min read
 * Updated on Oct 01, 2026
 
-You can filter metric data by [management zone](/managed/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") in two ways.
+You can filter metric data by [management zone](/managed/manage/identity-access-management-classic/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") in two ways.
 
 * First, you can set up [entity-based rules](#entity-based-rules) for a management zone to match metrics with an associated entity type.
 * Second, you can set up [dimensional rules](#dimensional-rules) for a management zone to match metric series by metric or dimension keys.
@@ -19,7 +19,7 @@ The following sections discuss each method and any [security considerations](#se
 
 ## Entity-based rules to filter metric data
 
-You can define [UI-based](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules#ui "Define management-zone rules to control access to monitored entities, logs, and metrics using entity conditions, dimensional data, and entity selectors.") or [text-based rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules#text "Define management-zone rules to control access to monitored entities, logs, and metrics using entity conditions, dimensional data, and entity selectors.") to provide access to entities within a management zone. Management-zone users automatically get access to the metrics whose **entity type** matches the entities scoped within the management zone. Note that the entity type of a metric is the primary entity associated with that metric. While a metric can have several **entity-based dimensions**, these are not the same thing as the entity type.
+You can define [UI-based](/managed/manage/identity-access-management-classic/permission-management/management-zones/management-zone-rules#ui "Define management-zone rules to control access to monitored entities, logs, and metrics using entity conditions, dimensional data, and entity selectors.") or [text-based rules](/managed/manage/identity-access-management-classic/permission-management/management-zones/management-zone-rules#text "Define management-zone rules to control access to monitored entities, logs, and metrics using entity conditions, dimensional data, and entity selectors.") to provide access to entities within a management zone. Management-zone users automatically get access to the metrics whose **entity type** matches the entities scoped within the management zone. Note that the entity type of a metric is the primary entity associated with that metric. While a metric can have several **entity-based dimensions**, these are not the same thing as the entity type.
 
 ### Metric entity type
 
@@ -86,4 +86,4 @@ We recommend special care in deciding which dimensions are sent as part of the d
 
 ## Related topics
 
-* [Management zones](/managed/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.")
+* [Management zones (Dynatrace Classic)](/managed/manage/identity-access-management-classic/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.")

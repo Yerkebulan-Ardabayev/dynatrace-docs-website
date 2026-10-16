@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 # Synthetic locations API v2 - PUT a location
 
 * Reference
-* Published Jul 26, 2019
+* Updated on Apr 08, 2025
 
 * Private locations Updates an existing location.
 * Public locations Changes the status of an existing location.

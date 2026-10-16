@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/whats-new/technology
 # New technology support
 
 * Reference
-* Updated on Apr 09, 2026
+* Updated on Oct 07, 2026
 
 Discover new technologies that can be monitored with Dynatrace, and how to get started. Included are OneAgent operating systems and code modules, mainframe, serverless integrations, and platform extensions.
 
@@ -39,6 +39,106 @@ Definition of the technology support version schema with examples:
 * **The minimum required version is 5+**
 
   + All major, minor, and patch versions starting from version 5 are supported, like 5, 5.1, 5.1.1, and 6
+
+## 1.347 OneAgent
+
+Rollout starts Sep 30, 2026 for OneAgent
+
+* OpenJDK 27 (Java module)
+* Azure SDK Blob Storage 12.14.3+ and 1.1.0+ (Azure SDK BOM) (Java module)
+* OpenTelemetry 1.61–1.64 (Java module)
+* OpenTelemetry agent 2.27–2.30 (Java module)
+* Amazon AWS SDK 1.42.2–1.43.6 (Go module)
+* Amazon SNS 1.41.2–1.42.6 (Go module)
+* MongoDB Go driver (mongo-go-driver) 2.8+ (Go module)
+* OpenFeature SDK 0.8.0+ (Python module)
+
+## 1.345 OneAgent
+
+Rollout starts Aug 25, 2026 for OneAgent
+
+* NLog 4.5.11+ (.NET Framework, .NET, and .NET Core). Available only in Advanced .NET Instrumentation Mode
+* GraphQL 16, 20, and 22 (Java module)
+* GraphQL 1.2 (Java module)
+* Amazon AWS SDK 1.42.1 (Go module)
+* Amazon DynamoDB 1.59.1–1.60.1 (Go module)
+* Amazon EventBridge 1.13.0–1.45.25 (Go module)
+* Amazon SNS 1.40.2–1.41.1 (Go module)
+* Amazon SQS 1.44.1–1.45.1 (Go module)
+* Confluent Kafka 2.15.0 (Go module)
+* Go toolchain with FIPS v1.25.10, v1.26.4, and v1.26.5 (openssl-fips)
+* NGINX 1.30.2, 1.30.3, 1.30.4, 1.31.1, 1.31.2, and 1.31.3 (NGINX module)
+* NGINX Kong Gateway 3.15 and 3.16 (NGINX module)
+* OpenTelemetry SDK for JavaScript 2.9+ (Node.js module)
+* azure-cosmos 4.0.0+ (Python module)
+
+## 1.343 OneAgent
+
+Rollout starts Jul 28, 2026 for OneAgent
+
+* ServiceStack.Redis 5.0.0+ (.NET Framework, .NET, and .NET Core)
+* Azure SDK EventHub 5.18.6+ and 1.2.26+ (Azure SDK BOM) (Java module)
+* Azure SDK ServiceBus 7.17.8+ and 1.2.31+ (Azure SDK BOM) (Java module)
+* MongoDB Reactive Streams driver 4.10+ and 5.0+ (Java module)
+* OpenFeature SDK 1.0.1+ (Java module)
+* Amazon AWS SDK 1.41.8–1.42.0 (Go module)
+* Amazon DynamoDB 1.57.5–1.59.0 (Go module)
+* Amazon SNS 1.39.18–1.40.1 (Go module)
+* Amazon SQS 1.42.28–1.44.0 (Go module)
+* Cassandra GoCQL Driver 2.1.2 (Go module)
+* Confluent Kafka 2.14.2 (Go module)
+* Go toolchain with FIPS v1.26.3 (openssl-fips)
+* Yii 3.0+ (PHP module)
+* Azure SDK ServiceBus 7.10+ (Python module)
+* Google Agent Development Kit 1.10.0+ (Python module)
+
+## 1.341 OneAgent
+
+Rollout starts Jun 30, 2026 for OneAgent
+
+* Azure SDK 1.2.9+ (Azure SDK BOM) (Java module)
+* Amazon AWS SDK 1.41.2–1.41.7 (Go module)
+* Amazon DynamoDB 1.55.0–1.57.4 (Go module)
+* Amazon SNS 1.38.1–1.39.17 (Go module)
+* Amazon SQS 1.16.0–1.42.27 (Go module)
+* Cassandra GoCQL Driver 2.1.1 (Go module)
+* Confluent Kafka 2.14.1 (Go module)
+* Go toolchain with FIPS v1.25.9 and v1.26.2 (openssl-fips)
+* NGINX 1.30.1 and 1.31.0 (NGINX module)
+* NGINX Kong Gateway 3.10–3.14 (NGINX module)
+* Azure SDK EventHub 5.12+ (Python module)
+* LangGraph 1.0.0+ (Python module)
+* OpenAI Agents 0.10.0+ (Python module)
+* Pydantic AI 1.1.0+ (Python module)
+
+## 1.339 OneAgent
+
+Rollout starts Jun 02, 2026 for OneAgent
+
+* Spring WebFlux WebClient 7 (Java Native Image module)
+* Amazon DynamoDB 1.13.0–1.54.0 (Go module)
+* Cassandra GoCQL Driver 2.0.0–2.1.0 (Go module)
+* Confluent Kafka 2.14.0 (Go module)
+* NGINX 1.29.8 and 1.30.0 (NGINX module)
+* NGINX OpenResty 1.29.2.3 (NGINX module)
+* Azure Functions 1.21+ (Python module)
+* Anthropic 0.43.0+ (Python module)
+* Cohere 5.0.0+ (Python module)
+* CrewAI 1.9.0+ (Python module)
+* Google GenAI 1.10.0+ (Python module)
+* Groq 0.9.0+ (Python module)
+* Haystack 2.0.0+ (Python module)
+* Mistral AI 2.0.0+ (Python module)
+* Ollama 0.1.0+ (Python module)
+
+## 1.337 OneAgent
+
+Rollout starts May 05, 2026 for OneAgent
+
+* Spring Cloud Function 3, 4, and 5 (Java module)
+* StackExchange.Redis 2.0.0+ (.NET and .NET Core)
+* Go toolchain with FIPS v1.25.7 (openssl-fips)
+* NGINX 1.28.3, 1.29.6, and 1.29.7 (NGINX module)
 
 ## 1.335 OneAgent
 

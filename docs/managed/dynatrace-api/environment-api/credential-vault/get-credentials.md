@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/credent
 # Credential vault API - GET credentials metadata
 
 * Reference
-* Published Oct 06, 2022
+* Updated on Apr 08, 2026
 
 Gets the metadata of the specified set of credentials for [synthetic monitors](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor."). The credentials set itself (username/certificate and password) is not included in the response.
 

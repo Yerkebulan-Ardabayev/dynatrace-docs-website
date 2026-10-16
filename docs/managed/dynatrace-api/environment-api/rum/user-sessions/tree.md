@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/use
 # User sessions API - GET Tree
 
 * Reference
-* Updated on May 02, 2022
+* Updated on Sep 30, 2025
 
 Executes a USQL query and returns results as a tree structure of the requested columns—a flat list containing the requested columns.
 

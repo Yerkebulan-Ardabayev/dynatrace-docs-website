@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/a
 # Applications detection rules API - PUT a rule
 
 * Reference
-* Published Aug 30, 2019
+* Updated on Apr 24, 2026
 
 Updates the specified application detection rule.
 

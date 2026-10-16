@@ -55,7 +55,9 @@ Each data center holds exactly three racks, matching the replication factor of D
 | 2 | 6 | 12 | Limited failover tolerance |
 | 3 | 9 | 18 | **Recommended for production** |
 | 4 | 12 | 24 | Scale for capacity |
-| 5 | 15 | 30 | Maximum—15 nodes per DC |
+| 5 | 15 | 30 | Scale for capacity |
+| 6 | 18 | 36 | Scale for capacity |
+| 7 | 21 | 42 | Maximum—21 nodes per DC |
 
 Six nodes meets the PHA minimum, but it leaves one node per rack, where rack awareness gains no failover tolerance. Dynatrace recommends three nodes per rack for production deployments—nine nodes per DC, eighteen total.
 

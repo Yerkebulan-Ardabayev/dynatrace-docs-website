@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/whats-new/dynatrace-operator/dto-fix-
 # Dynatrace Operator release notes version 1.9.0
 
 * Release notes
-* Updated on Sep 08, 2026
+* Updated on Oct 05, 2026
 
 **Release date:** April 13, 2026
 
@@ -76,6 +76,8 @@ On this page, you’ll find an overview of what’s new and improved in Dynatrac
 * Since Dynatrace Operator 1.9.0, a `RuntimeDefault` seccomp profile is applied to the Dynatrace init container by default. On OpenShift, this can interfere with [SecurityContextConstraints (SCCs)﻿](https://docs.redhat.com/en/documentation/openshift_container_platform/4.22/html/authentication_and_authorization/managing-pod-security-policies) — such as `anyuid`, `restricted`, or `nonroot` — that prevent seccomp profile usage, causing the system to fall back to a different SCC (for example `restricted-v2`). This may render application pods unschedulable or cause workload degradation.
 
   [Disable seccomp profile for Dynatrace init containers](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/seccomp#init-container "Overview of seccomp profile configuration for Dynatrace components.") if you are affected.
+
+* Resolved with Dynatrace Operator version 1.9.1 When a OneAgent code modules version is updated, the CSI driver's cleanup of old code modules versions could delete OneAgent binaries that running pods still depend on. Pods created after the update are not affected, but if a container in an already running pod restarts (for example, after an out-of-memory termination), the application loses its OneAgent files, which leads to the application no longer being monitored. Until you upgrade, pin `codeModulesImage` to a specific version to avoid triggering the cleanup.
 
 ## Removal and deprecation notices
 

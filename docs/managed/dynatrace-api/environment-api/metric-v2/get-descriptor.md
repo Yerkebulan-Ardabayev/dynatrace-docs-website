@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-
 # Metrics API - GET metric descriptor
 
 * Reference
-* Published Jun 14, 2019
+* Updated on Aug 25, 2026
 
 Gets the parameters of the specified metric.
 

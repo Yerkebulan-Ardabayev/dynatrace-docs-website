@@ -161,7 +161,7 @@ For a list of technologies and servers that support automatic RUM JavaScript inj
 
 ## Best practices and recommendations
 
-* Define your applications based on team ownership so that you can easily make use of [management zones](/managed/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") for access restrictions.
+* Define your applications based on team ownership so that you can easily make use of [management zones](/managed/manage/identity-access-management-classic/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") for access restrictions.
 * It may make sense to define applications based on their technology stack so that the right settings are applied and the management of specific settings is easier. For example, activating support for specific XHR frameworks is typically required only for specific parts of a large application and for specific user action naming rules. It may help separate such large applications into smaller ones based on the technologies in use or team ownership.
 * **My web application** placeholder application
 

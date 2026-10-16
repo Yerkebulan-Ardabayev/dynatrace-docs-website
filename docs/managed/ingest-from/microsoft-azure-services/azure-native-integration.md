@@ -129,14 +129,14 @@ Ensure that your Azure account has access to the Dynatrace account with the foll
 * `Install OneAgent`
 * `Manage Monitoring Settings`
 
-For more details, see [Environment permissions](/managed/manage/identity-access-management/permission-management/role-based-permissions#environment "Role-based permissions").
+For more details, see [Environment permissions](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions#environment "Role-based permissions").
 
 After deploying the first Dynatrace environment with Azure Native integration, you can:
 
 * Link additional Azure subscriptions to your newly created Dynatrace environment.
 * Link more Dynatrace environments to a single Azure subscription.
 
-  When linking multiple Azure subscriptions and creating the resource, you must have Dynatrace Account privileges `tenant-manage-settings` and `tenant-agent-install` permissions. For more information on how to configure these permissions, see [Role-based permissions](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions").
+  When linking multiple Azure subscriptions and creating the resource, you must have Dynatrace Account privileges `tenant-manage-settings` and `tenant-agent-install` permissions. For more information on how to configure these permissions, see [Role-based permissions (Dynatrace Classic)](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions").
 
 Follow the steps below, making sure to repeat the procedure for every subscription that you want to link.
 

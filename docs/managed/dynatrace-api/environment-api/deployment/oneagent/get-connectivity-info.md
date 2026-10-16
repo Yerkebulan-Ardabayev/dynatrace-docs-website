@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deploym
 # Deployment API - View connectivity information for OneAgent
 
 * Reference
-* Published Aug 28, 2019
+* Updated on Jan 31, 2025
 
 Gets the connectivity information for OneAgent.
 

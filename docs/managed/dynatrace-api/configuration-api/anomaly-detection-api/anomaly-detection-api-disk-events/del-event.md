@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anoma
 # Disk events anomaly detection API - DELETE an event
 
 * Reference
-* Published Aug 29, 2019
+* Updated on Apr 24, 2026
 
 Deletes the specified disk event rule.
 

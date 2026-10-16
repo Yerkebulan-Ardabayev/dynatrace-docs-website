@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/remote-
 # OneAgent remote configuration management API - POST a configuration job
 
 * Reference
-* Published Oct 06, 2022
+* Updated on Sep 30, 2025
 
 The request consumes an `application/json` payload.
 

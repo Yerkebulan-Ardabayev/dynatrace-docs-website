@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneag
 # OneAgent in a host group API - GET auto-update configuration
 
 * Reference
-* Published Oct 20, 2020
+* Updated on Apr 24, 2026
 
 Gets the configuration of OneAgent auto-update in the specified host group.
 

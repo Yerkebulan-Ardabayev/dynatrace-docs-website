@@ -97,7 +97,7 @@ Both examples above attach the tag `hotfix` to all monitored processes that are 
 
 Cloud Foundry tags are searchable via Dynatrace search. This allows you to easily find and inspect the monitoring results of related processes that are running in your Cloud Foundry environment.
 
-Cloud Foundry tags also integrate seamlessly with Dynatrace filters. For example, you can easily filter technologies or problems using Cloud Foundry tags. You can also leverage Cloud Foundry tags when setting up fine-grained [problem alerting profiles](/managed/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.").
+Cloud Foundry tags also integrate seamlessly with Dynatrace filters. For example, you can easily filter technologies or problems using Cloud Foundry tags. You can also leverage Cloud Foundry tags when setting up fine-grained [problem alerting profiles](/managed/analyze-explore-automate/alerting-and-notifications-classic/alerting-profiles "Learn how to create and manage alerting profiles.").
 
 ## Limitations
 

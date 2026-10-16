@@ -90,7 +90,7 @@ Select the **View method hotspots** button and check all the classes and methods
 
 Prerequisites
 
-Ensure you have the **View sensitive request data** [permission](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions") in your environment.
+Ensure you have the **View sensitive request data** [permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions") in your environment.
 
 Limitations
 

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deploym
 # Deployment API - Download OneAgent of specific version
 
 * Reference
-* Published Aug 28, 2019
+* Updated on Jun 09, 2026
 
 Downloads the OneAgent installer of the specified version. You can fetch the list of available versions with the [GET available versions of OneAgent](/managed/dynatrace-api/environment-api/deployment/oneagent/get-available-versions "List available versions of OneAgent via Dynatrace API.") call.
 

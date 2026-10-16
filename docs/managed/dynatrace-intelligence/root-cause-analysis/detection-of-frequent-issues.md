@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-ana
 
 * Explanation
 * 5-min read
-* Updated on May 04, 2026
+* Published Jul 19, 2017
 
 Within large environments, certain aspects of your system may consistently trigger alerts that are unnecessary because they relate to non-severe known issues that don't require a human response. Such alert noise may come from non-critical components or build machines that are low on resources, but aren't in a critical state.
 

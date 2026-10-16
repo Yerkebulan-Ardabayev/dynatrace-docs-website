@@ -19,12 +19,8 @@ In the UI, warnings are highlighted in yellow. They have the same severity level
 
 A warning event occurs as a single point in time, so it doesn't have `Active` and `Close` durations.
 
-This event type is supported in all event sources, including anomaly detectors, API, OneAgent event ingest, and OpenPipeline.
+This event type is supported in all event sources, including anomaly detectors, API, and OneAgent event ingest.
 
 ### Applicable Dynatrace entities
 
 All Dynatrace entities apply to this event.
-
-## Related topics
-
-* [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/servi
 # Request naming API - GET a request naming rule
 
 * Reference
-* Published Jun 25, 2019
+* Updated on May 25, 2026
 
 Gets parameters of the specified request naming rule.
 

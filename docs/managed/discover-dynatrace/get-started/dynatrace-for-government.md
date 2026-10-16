@@ -405,7 +405,7 @@ Dynatrace offers several out-of-the-box integrations that automatically push Dyn
      Placeholders
 
      The **Available placeholders** section of the configuration screen lists placeholders you can use for this integration. Placeholders are automatically replaced with actual values in the message.
-   * Select an [alerting profile](/managed/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.") to filter the problem feed.
+   * Select an [alerting profile](/managed/analyze-explore-automate/alerting-and-notifications-classic/alerting-profiles "Learn how to create and manage alerting profiles.") to filter the problem feed.
 5. Select **Send test notification** to make sure your email integration is working.
 6. **Save changes**.
 

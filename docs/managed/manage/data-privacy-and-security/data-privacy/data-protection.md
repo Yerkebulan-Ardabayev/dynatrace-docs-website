@@ -38,7 +38,7 @@ At Dynatrace, we recognize that our high data privacy and security standards dep
 
 ## Access control
 
-You control whether Dynatrace has access to your data. Only users who are members of the monitoring environment's administrative groups, which are tightly controlled by you, can grant or revoke access to the collected data. For information on what options you have for managing access control in Dynatrace, see [Role-based permissions](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions").
+You control whether Dynatrace has access to your data. Only users who are members of the monitoring environment's administrative groups, which are tightly controlled by you, can grant or revoke access to the collected data. For information on what options you have for managing access control in Dynatrace, see [Role-based permissions (Dynatrace Classic)](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions").
 
 When you need our support, authorized Dynatrace employees—specifically, second- and third-level support representatives—can be granted access to view your data. Such access is restricted by a strong "need to access" policy. Each access is logged, time-stamped, and made available to you in an automated way via our REST API. All authorized Dynatrace employees are bound by strict confidentiality agreements.
 

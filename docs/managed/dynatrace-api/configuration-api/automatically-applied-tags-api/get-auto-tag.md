@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/autom
 # Automatically applied tags API - GET an auto-tag
 
 * Reference
-* Published Aug 09, 2019
+* Updated on Sep 09, 2026
 
 Deprecated
 

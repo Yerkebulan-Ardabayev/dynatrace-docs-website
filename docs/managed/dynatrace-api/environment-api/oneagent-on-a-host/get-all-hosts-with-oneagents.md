@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/oneagen
 # OneAgent on a host - GET a list of hosts with OneAgent details
 
 * Reference
-* Published Feb 03, 2020
+* Updated on Apr 08, 2026
 
 The **OneAgent on a host** API enables you to check the configuration of OneAgent instances on your hosts.
 

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-
 # ActiveGate tokens API - GET all tokens
 
 * Reference
-* Published Dec 02, 2021
+* Updated on Apr 24, 2026
 
 Lists all ActiveGate tokens available for your environment.
 

@@ -148,7 +148,7 @@ When data is masked at display, it's stored in its original form but is accessib
 
 ### Restricted view access to personal data
 
-Dynatrace automatically considers certain data points it captures as confidential and only displays them to users who have the **View sensitive request data** [permission](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions"). All other users see that the data point exists, but the personal data is masked out with asterisks `*****`.
+Dynatrace automatically considers certain data points it captures as confidential and only displays them to users who have the **View sensitive request data** [permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions"). All other users see that the data point exists, but the personal data is masked out with asterisks `*****`.
 
 If your organization captures personal user data such as email addresses, IP addresses, or passwords in the course of monitoring, you should restrict view access to this personal data so that only authorized users can view it. Also note that only users with the **View sensitive request data** permission can override data masking settings.
 
@@ -166,7 +166,7 @@ Note that the following data types are considered confidential and are masked at
 
 [Request attributes](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") are key-value pairs of metadata that are filterable across all Dynatrace service and distributed traces views.
 
-Dynatrace allows you to decide whether a request attribute should be [marked as confidential](/managed/observe/application-observability/services/request-attributes#confidential "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."). To manage request attributes, you must have the **Manage capturing of sensitive request data** [permission](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions").
+Dynatrace allows you to decide whether a request attribute should be [marked as confidential](/managed/observe/application-observability/services/request-attributes#confidential "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."). To manage request attributes, you must have the **Manage capturing of sensitive request data** [permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions").
 
 ## Opt-in mode
 

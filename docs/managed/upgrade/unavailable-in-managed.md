@@ -18,7 +18,7 @@ Some innovations leverage the power of Grail, which is available only in Dynatra
 Grail is the Dynatrace data lakehouse designed explicitly for observability data. It's a unified storage solution for logs, metrics, traces, events, and more. All data stored in Grail is interconnected within a real-time model that reflects the topology and dependencies within a monitored environment.
 
 * Grail is architected as a Massively Parallel Processing (MPP) data lakehouse, scaling to thousands of nodes.
-* On-premises Managed Services deployments are more frequently associated with 3, 12, or up to 30-node clusters.
+* On-premises Managed Services deployments are more frequently associated with 3, 12, or up to 42-node clusters.
 
 At a massive scale, the underlying infrastructure attributes need to be consistently implemented, controlled, and balanced, which is not practical in physical data centers.
 

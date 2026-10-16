@@ -55,11 +55,11 @@ Settings history
 
 ## Permissions and access
 
-Access to settings is controlled via [IAM policies](/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies"). Policies enable you to create flexible and granular access to configurations, where users have access only to those settings where they have permissions assigned. No additional permissions are needed for policies to take effect. Policies grant access to configurations via both the Dynatrace web UI and the Settings API unless configured otherwise on the schema level.
+Access to settings is controlled via [IAM policies](/managed/manage/identity-access-management-classic/permission-management/manage-user-permissions-policies "Working with policies"). Policies enable you to create flexible and granular access to configurations, where users have access only to those settings where they have permissions assigned. No additional permissions are needed for policies to take effect. Policies grant access to configurations via both the Dynatrace web UI and the Settings API unless configured otherwise on the schema level.
 
 If you need to configure fine-grained access to certain entities, you can do so via management zones or host groups. Note that an entity might be a part of multiple management zones but only one host group, which makes the host-group-based approach more direct, while the management-zone-based approach provides more flexibility.
 
-To learn how to configure access policies for settings, see [IAM policy reference](/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#settings "Complete reference of IAM policies and corresponding conditions across all Dynatrace services."). Below you can find some sample policies.
+To learn how to configure access policies for settings, see [IAM policy reference (Dynatrace Classic)](/managed/manage/identity-access-management-classic/permission-management/manage-user-permissions-policies/advanced/iam-policystatements-classic#settings "Complete reference of IAM policies and corresponding conditions across all Dynatrace services."). Below you can find some sample policies.
 
 Grant read and write access to the service-level objective definitions settings
 

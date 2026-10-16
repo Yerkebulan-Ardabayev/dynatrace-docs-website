@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/a
 # Applications detection rules API - PUT reorder rules
 
 * Reference
-* Published Aug 30, 2019
+* Updated on Apr 24, 2026
 
 Application detection rules are evaluated from top to bottom, the first matching rule applies.
 

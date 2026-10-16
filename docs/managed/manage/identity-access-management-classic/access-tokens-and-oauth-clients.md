@@ -1,0 +1,18 @@
+---
+title: Tokens and OAuth clients (Dynatrace Classic)
+source: https://docs.dynatrace.com/managed/manage/identity-access-management-classic/access-tokens-and-oauth-clients
+---
+
+# Tokens and OAuth clients (Dynatrace Classic)
+
+# Tokens and OAuth clients (Dynatrace Classic)
+
+* Overview
+* 1-min read
+* Updated on Oct 08, 2026
+
+[## OAuth clients
+
+Create OAuth clients to manage authentication to Dynatrace for external systems or to automate account management.](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.")[## Access tokens classic
+
+Authenticate external access to Dynatrace for the Dynatrace monitoring components and API using tokens.](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.")

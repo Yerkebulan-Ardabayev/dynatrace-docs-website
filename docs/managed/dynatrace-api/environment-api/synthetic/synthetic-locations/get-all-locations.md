@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 # Synthetic locations API - GET all locations
 
 * Reference
-* Published Jul 25, 2019
+* Updated on Jun 04, 2025
 
 We have a new version of this API—[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
 

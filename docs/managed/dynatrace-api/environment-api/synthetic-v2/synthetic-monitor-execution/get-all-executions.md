@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 # Synthetic monitor executions API v2 - GET all on-demand executions
 
 * Reference
-* Published Jun 27, 2022
+* Updated on Aug 14, 2025
 
 Gets a list of all on-demand executions of synthetic monitors.
 

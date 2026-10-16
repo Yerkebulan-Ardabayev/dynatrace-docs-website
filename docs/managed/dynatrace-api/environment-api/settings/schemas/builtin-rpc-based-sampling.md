@@ -37,7 +37,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Enabled `enabled` | boolean | - | Required |
 | Disable tracing for matching RPC requests `ignore` | boolean | No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is inactive. | Required |
-| Importance of the RPC `factor` | enum | Select the scaling factor for the current sampling rate of the system. Note, that the importance is only considered when sampling is needed. The element has these enums * `0` * `1` * `2` * `3` * `4` * `5` * `6` * `8` * `9` * `10` * `11` * `12` * `13` * `14` | Required |
+| Importance of the RPC `factor` | enum | Select the scaling factor for the current sampling rate of the system. Since OneAgent version 1.331 reduction rules are always applied regardless of whether sampling is needed. The element has these enums * `0` * `1` * `2` * `3` * `4` * `5` * `6` * `8` * `9` * `10` * `11` * `12` * `13` * `14` | Required |
 | Protocol `wireProtocolType` | enum | Specify the RPC protocol that can be used for RPC matching. The element has these enums * `1` * `2` * `3` * `4` * `5` * `6` * `7` * `8` * `9` * `10` | Required |
 | Remote operation name `remoteOperationName` | text | Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must be specified that can be used for RPC matching. | Optional |
 | Remote operation name comparison condition `remoteOperationNameComparisonType` | enum | The element has these enums * `EQUALS` * `DOES_NOT_EQUAL` * `CONTAINS` * `DOES_NOT_CONTAIN` * `STARTS_WITH` * `DOES_NOT_START_WITH` * `ENDS_WITH` * `DOES_NOT_END_WITH` | Required |

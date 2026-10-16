@@ -351,7 +351,7 @@ When sizing the ActiveGates, please ensure that you have sufficient capacity for
 
 ### Review dependencies and constraints that might impact the upgrade
 
-Moving from Dynatrace Managed to a SaaS deployment might require changes to your networking setup, as well as a re-examination and reconfiguration of external systems integrated with Dynatrace (for example, for problem notifications, see [Problem notifications](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.")). Reviewing the current networking setup and the integrated systems forms the basis for further architecture considerations; review and design your Dynatrace components (ActiveGate) using network zones.
+Moving from Dynatrace Managed to a SaaS deployment might require changes to your networking setup, as well as a re-examination and reconfiguration of external systems integrated with Dynatrace (for example, for problem notifications, see [Problem notifications](/managed/analyze-explore-automate/alerting-and-notifications-classic/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.")). Reviewing the current networking setup and the integrated systems forms the basis for further architecture considerations; review and design your Dynatrace components (ActiveGate) using network zones.
 
 ### Define the target architecture
 

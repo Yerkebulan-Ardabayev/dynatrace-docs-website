@@ -423,7 +423,7 @@ Settings: custom timeframe, management zone, environment.
 
 Displays the number of problems that are currently watched and active against the number of resolved problems in your environment. When a problem is active, the problem count is red.
 
-Drilldowns: **View details** opens your [Problems](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.") feed.
+Drilldowns: **View details** opens your [Problems](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Learn the core Davis AI root cause analysis concepts, including incidents, problems, fault tree analysis, impact analysis, and the problem lifecycle.") feed.
 
 Settings: custom timeframe, management zone, environment.
 

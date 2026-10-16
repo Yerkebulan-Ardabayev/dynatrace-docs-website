@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/extensi
 # Extensions 2.0 API - GET an extension
 
 * Reference
-* Published Jan 22, 2021
+* Updated on Apr 08, 2025
 
 Lists the properties of the specified Extensions 2.0 extension or downloads the extension's ZIP file.
 

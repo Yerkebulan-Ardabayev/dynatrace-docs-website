@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anoma
 # Host anomaly detection API - GET configuration
 
 * Reference
-* Published Aug 28, 2019
+* Updated on Apr 24, 2026
 
 Gets the configuration of anomaly detection for hosts.
 

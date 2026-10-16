@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/hub/get
 # Hub capabilities API - GET an extension v1
 
 * Reference
-* Published Feb 07, 2023
+* Updated on Apr 08, 2025
 
 Gets the details about a version 1 extension.
 

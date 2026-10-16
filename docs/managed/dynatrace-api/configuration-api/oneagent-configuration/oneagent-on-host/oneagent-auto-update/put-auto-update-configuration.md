@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneag
 # OneAgent auto-update API - PUT configuration
 
 * Reference
-* Published Feb 03, 2020
+* Updated on Apr 24, 2026
 
 Updates the configuration of OneAgent auto-update on the specified host.
 

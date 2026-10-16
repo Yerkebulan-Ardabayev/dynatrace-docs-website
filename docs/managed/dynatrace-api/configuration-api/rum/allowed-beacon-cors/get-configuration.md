@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/a
 # Allowed beacon domains API - GET configuration
 
 * Reference
-* Published Sep 23, 2020
+* Updated on Apr 24, 2026
 
 Gets the configuration of the allowed beacon origins for Cross Origin Resource Sharing (CORS) requests.
 

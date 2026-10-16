@@ -35,7 +35,7 @@ At Dynatrace, we take our responsibility to safeguard your data seriously. Have 
 
 [Configure data privacy settings](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.")
 
-[Role-based permissions](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions")
+[Role-based permissions (Dynatrace Classic)](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions")
 
 [Define request attribute rules](/managed/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-web-request-data#request-attribute-rules "Create request attributes based on web request data.")
 

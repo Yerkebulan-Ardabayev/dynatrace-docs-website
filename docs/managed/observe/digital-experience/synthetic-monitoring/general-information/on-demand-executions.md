@@ -54,7 +54,7 @@ On-demand execution page
 
 Any user with the **View environment** permission at the environment or management-zone level can trigger an execution via the UI.
 
-Even if you [disable scheduled synthetic monitor execution during maintenance windows](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window#disable-synthetic "Create maintenance windows and define their scope."), you can still execute monitors on demand.
+Even if you [disable scheduled synthetic monitor execution during maintenance windows](/managed/analyze-explore-automate/alerting-and-notifications-classic/maintenance-windows/define-maintenance-window#disable-synthetic "Create maintenance windows and define their scope."), you can still execute monitors on demand.
 
 1. Select **On-demand execution** at the top of the monitor's details page.
 2. You are directed to the **On-demand execution** page. Select **All assigned locations** or any assigned or unassigned public or private location.

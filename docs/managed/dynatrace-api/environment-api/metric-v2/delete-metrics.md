@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-
 # Metrics API - DELETE ingested metrics
 
 * Reference
-* Published Jan 16, 2026
+* Updated on Feb 12, 2026
 
 Dynatrace version 1.330+
 

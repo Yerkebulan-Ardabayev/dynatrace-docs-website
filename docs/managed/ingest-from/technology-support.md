@@ -563,7 +563,7 @@ Only TIBCO workflows that are triggered by an incoming web service request, HTTP
 | Software AG WebMethods Integration Server | 9.0[8](#fn-web-framework-4-8-def), 9.5 - 9.12[8](#fn-web-framework-4-8-def), 10.0 - 10.15[8](#fn-web-framework-4-8-def), 10.7[8](#fn-web-framework-4-8-def), 10.11[8](#fn-web-framework-4-8-def), 10.15[8](#fn-web-framework-4-8-def) |
 | [Spring WebFlux﻿](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html) | 5, 6, 7 |
 | [Spring WebFlux WebClient﻿](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-client) | 5, 6, 7 |
-| [Undertow﻿](https://undertow.io/) | 1[9](#fn-web-framework-4-9-def), 2.0 - 2.2[9](#fn-web-framework-4-9-def), 2.3+ |
+| [Undertow﻿](https://undertow.io/) | 1[9](#fn-web-framework-4-9-def), 2.0 - 2.2[9](#fn-web-framework-4-9-def), 2.3+, 2.4+ |
 | [Vert.x HttpClient﻿](https://github.com/eclipse-vertx/vert.x) | 3.6+[2](#fn-web-framework-4-2-def), 4.x[2](#fn-web-framework-4-2-def), 5.x[2](#fn-web-framework-4-2-def) |
 | [Vert.x WebClient﻿](https://github.com/vert-x3/vertx-web) | 3.6+[2](#fn-web-framework-4-2-def), 4.x[2](#fn-web-framework-4-2-def), 5.x[2](#fn-web-framework-4-2-def) |
 
@@ -701,10 +701,10 @@ Tracing is only supported via JMS.
 
 | Remoting frameworks | Versions |
 | --- | --- |
-| [Akka Remoting﻿](https://doc.akka.io/docs/akka/2.5/remoting.html) | 2.4[1](#fn-remoting-frameworks-9-1-def), 2.5[1](#fn-remoting-frameworks-9-1-def), 2.3[3](#fn-remoting-frameworks-9-3-def), 2.6[3](#fn-remoting-frameworks-9-3-def), 2.7[3](#fn-remoting-frameworks-9-3-def) |
+| [Akka Remoting﻿](https://doc.akka.io/docs/akka/2.5/remoting.html) | 2.4[1](#fn-remoting-frameworks-9-1-def), 2.5[1](#fn-remoting-frameworks-9-1-def), 2.3[1](#fn-remoting-frameworks-9-1-def), 2.6[1](#fn-remoting-frameworks-9-1-def), 2.7[1](#fn-remoting-frameworks-9-1-def) |
 | [Amazon AWS Lambda SDK﻿](https://aws.amazon.com/en/sdk-for-java/) | 1[1](#fn-remoting-frameworks-9-1-def), 2[1](#fn-remoting-frameworks-9-1-def) |
 | Amazon AWS SDK | 1[2](#fn-remoting-frameworks-9-2-def), 2[2](#fn-remoting-frameworks-9-2-def) |
-| [Apache Pekko Remoting﻿](https://pekko.apache.org/docs/pekko/current/remoting.html#classic-remoting-deprecated-) | 1.0.0 - 1.2.0[6](#fn-remoting-frameworks-9-6-def) |
+| [Apache Pekko Remoting﻿](https://pekko.apache.org/docs/pekko/current/remoting.html#classic-remoting-deprecated-) | 1.0.0 - 1.7.0[1](#fn-remoting-frameworks-9-1-def) |
 | [Apache Thrift﻿](https://thrift.apache.org/) | 0.7 - 0.24 |
 | [Azure SDK﻿](https://github.com/Azure/azure-sdk-for-java) | 1.2.9+ (Azure SDK BOM) |
 | [Azure SDK Blob Storage﻿](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/storage/azure-storage-blob) | 12.14.3+, 1.1.0+ (Azure SDK BOM) |
@@ -716,10 +716,10 @@ Tracing is only supported via JMS.
 | Java IMS TM Resource Adapter | All versions supported |
 | Java RMI-JRMP | All versions supported |
 | OpenJDK/Oracle JVM RMI-IIOP | All versions supported |
-| WebLogic RMI-IIOP | All versions supported[5](#fn-remoting-frameworks-9-5-def) |
+| WebLogic RMI-IIOP | All versions supported[4](#fn-remoting-frameworks-9-4-def) |
 | WebSphere Liberty RMI-IIOP | All versions supported |
 | WebSphere RMI-IIOP | All versions supported |
-| [gRPC﻿](https://grpc.github.io/grpc-java/javadoc/index.html) | 1.18 - 1.84[4](#fn-remoting-frameworks-9-4-def) |
+| [gRPC﻿](https://grpc.github.io/grpc-java/javadoc/index.html) | 1.18 - 1.84[3](#fn-remoting-frameworks-9-3-def) |
 
 1
 
@@ -731,19 +731,11 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 3
 
-Only supported when Netty is used; not supported when using Artery. Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+gRPC client calls supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 4
 
-gRPC client calls supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
-
-5
-
 WebLogic 15.1.1 has known vendor IIOP issues. T3 is supported as a workaround for server-to-server connections only; thin client connections are not supported.
-
-6
-
-Only supported when classic-remoting is used; not supported when using Artery. Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 | Monitoring frameworks | Versions |
 | --- | --- |

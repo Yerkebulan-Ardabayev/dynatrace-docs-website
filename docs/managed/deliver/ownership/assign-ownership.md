@@ -470,9 +470,9 @@ See [Best practices for entity ownership](/managed/deliver/ownership/best-practi
 You require **all** the following permissions to add, change, or remove ownership via the Custom tags API.
 
 * The `entities.write` [token permission](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.")
-* The `settings.read` token permission or the [IAM policy](/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies") `ALLOW settings:objects:read WHERE settings:schemaId = "builtin:ownership.teams";`
+* The `settings.read` token permission or the [IAM policy](/managed/manage/identity-access-management-classic/permission-management/manage-user-permissions-policies "Working with policies") `ALLOW settings:objects:read WHERE settings:schemaId = "builtin:ownership.teams";`
 
-For adding, changing, or deleting tags via the web UI, you need the **Manage monitoring settings** [permission](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions") at the environment or management-zone level.
+For adding, changing, or deleting tags via the web UI, you need the **Manage monitoring settings** [permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions") at the environment or management-zone level.
 
 ## View ownership information in the web UI
 

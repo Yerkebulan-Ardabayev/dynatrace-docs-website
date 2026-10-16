@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/rum
 # GET JavaScript tag
 
 * Reference
-* Updated on Sep 18, 2025
+* Updated on Oct 08, 2025
 
 Returns the most recent [JavaScript tag](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes a reference to an external file that contains both the monitoring code and its configuration.
 

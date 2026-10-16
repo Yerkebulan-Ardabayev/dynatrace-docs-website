@@ -49,7 +49,7 @@ Purple markers above the availability or performance timelines indicate maintena
 
 Quick links
 
-* Whether or not you see problems and receive alert notifications during maintenance windows depends on how you [configure the maintenance windows](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window "Create maintenance windows and define their scope.").
+* Whether or not you see problems and receive alert notifications during maintenance windows depends on how you [configure the maintenance windows](/managed/analyze-explore-automate/alerting-and-notifications-classic/maintenance-windows/define-maintenance-window "Create maintenance windows and define their scope.").
 * [Maintenance windows may be excluded from availability calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring Classic metric calculations.") by applying a global setting.
 
 ### Screenshots

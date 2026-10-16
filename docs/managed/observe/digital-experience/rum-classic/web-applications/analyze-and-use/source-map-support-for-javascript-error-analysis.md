@@ -44,7 +44,7 @@ Upload source files
 
 If the source map doesn't include the original JavaScript code, select **Upload source files** to upload the original JavaScript files.
 
-You need the **Change monitoring settings** [permission](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions") at the environment level to upload source maps and symbol files.
+You need the **Change monitoring settings** [permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions") at the environment level to upload source maps and symbol files.
 
 Following the manual upload of a JavaScript file for the analysis of a specific stack frame, other related stack frames are automatically mapped to the same file. This saves time when you are navigating through stack frames. If you run into an error that doesn't have a corresponding source map, upload the required files.
 
@@ -65,7 +65,7 @@ Upload the source file if you're also interested in reading developer comments, 
 
 ## Upload source maps
 
-You need the **Change monitoring settings** [permission](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions") at the environment level to upload source maps and symbol files.
+You need the **Change monitoring settings** [permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions") at the environment level to upload source maps and symbol files.
 
 All available source files are listed at **Settings** > **Web and mobile monitoring** > **Source maps and symbol files**.
 

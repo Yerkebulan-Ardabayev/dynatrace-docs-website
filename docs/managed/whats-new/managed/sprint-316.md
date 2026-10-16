@@ -86,7 +86,7 @@ Assigning management zones from the security context is deprecated and will be r
 
 With this change, **Settings** > **Preferences** > **Management zones** > **Security context settings** will no longer be available.
 
-Use [Management zones](/managed/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") instead.
+Use [Management zones](/managed/manage/identity-access-management-classic/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") instead.
 
 ## Dynatrace API
 

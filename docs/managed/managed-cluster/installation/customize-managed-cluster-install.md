@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/installation/customiz
 
 * Reference
 * 9-min read
-* Updated on Sep 21, 2026
+* Updated on Oct 06, 2026
 
 Use command line parameters to override default settings of a Managed Cluster installation. By default, no parameters are required—the Managed installer runs in interactive mode, prompting you to confirm or override default settings. Values entered interactively always take precedence over command line parameter values.
 
@@ -183,6 +183,7 @@ Command line parameters can also help you install or update SSL/TLS certificates
 | Parameter | Description |
 | --- | --- |
 | `--hosts <on|off>` | Enable/disable altering of `/etc/hosts` file. **Default value**: `on` |
+| `--enable-ipv6-webhooks <on|off>` | Dynatrace Managed version 1.346+ Enable/disable IPv6 endpoints for [webhook problem notifications](/managed/analyze-explore-automate/alerting-and-notifications-classic/problem-notifications/webhook-integration "Learn how to integrate problem-notifications using a custom webhook."). Set `on` to enable or `off` to disable IPv6 endpoints when you install or update a Cluster node, and use the same value on every node. Each node needs outbound IPv6 connectivity to the webhook endpoint. **Default value**: `off` |
 | `--sudo-cmd "<cmd>"` | Command that should be used for executing system commands with superuser privileges. Should contain the variable `$CMD` (typed as `\$CMD`). By default the following is used: `/usr/bin/sudo \$CMD`. For example:  ```  dynatrace-managed.sh --sudo-cmd  "/usr/bin/pbrun \$CMD" ``` |
 | `--no-start` | Upgrade only. Use this parameter when you don't want Dynatrace Managed to start immediately following an upgrade. |
 | `--unregister` | Use this parameter when uninstalling a Managed Cluster to unregister the Cluster and release license from Mission Control. |

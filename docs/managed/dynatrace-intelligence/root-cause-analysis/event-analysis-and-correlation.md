@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-ana
 
 * Explanation
 * 9-min read
-* Updated on May 04, 2026
+* Published Jun 13, 2018
 
 Events represent different types of singular anomalies, such as a metric breaching a threshold, baseline degradations, or point-in-time events, such as process crashes. Dynatrace also detects and processes informational events such as new software deployments, configuration changes, and other event types.
 
@@ -44,8 +44,6 @@ As a full-stack observability platform, Dynatrace offers a wide spectrum of even
 * **Cloud platform and Kubernetes events** are automatically ingested via out-of-the-box integrations.
 * [**Event ingestion API**](/managed/dynatrace-api/environment-api/events-v2/post-event "Ingests an event via the Dynatrace API.") ingests events via REST API.
 * [**OneAgent local event ingest**](/managed/ingest-from/extend-dynatrace/extend-events#oneagent "Learn how to extend event observability in Dynatrace.") ingests events via the local OneAgent data ingestion channel directly on the host.
-* **Dynatrace app ingested events**: Dynatrace Apps built and run on top of the [Dynatrace AppEngine](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") use a TypeScript SDK to ingest events.
-* [**Log events**](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") can be extracted from ingested logs based on custom-defined log patterns.
 * [**Metric events**](/managed/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace") enable you to raise events when a metric anomaly is detected.
 
 ### Event normalization
@@ -131,7 +129,7 @@ While event correlation and deduplication are fully automatic, some use cases re
 | **dt.event.suppress\_problem** | Boolean | Problems suppression is active (`true`) or (`false`) inactive.  If suppression is active, Davis doesn't raise a problem and doesn't trigger event correlation and deduplication for the event. The event is stored and visualized in Dynatrace, but no problem is raised and analyzed based on it. |
 | **dt.event.timeout** | String | The timeout (in minutes) of the event. It defines the time period until a refresh must arrive from the event source. If no refresh is received, the event is closed with the change reason `TIMED_OUT`. |
 
-Additionally, the processing of events can be influenced by the event sender or the source using `dt.davis.events` field defined in the Semantic Dictionary. For more information, see [Semantic Dictionary](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+Additionally, the processing of events can be influenced by the event sender or the source using `dt.davis.events` field defined in the Semantic Dictionary.
 
 ## Root cause analysis
 
@@ -142,15 +140,6 @@ During the analysis, causal AI traverses the causal topology, visits each affect
 Metric change point detection not only confirms or rejects metric-based events, but also discovers additional unknowns in metrics without an active custom alert.
 
 After all related problems are identified, a ranking algorithm identifies the highest-ranking root cause candidate. The highest-ranking entity, along with its vertical stack, is presented as the root cause of the problem.
-
-Root cause analysis differences between the previous Dynatrace and the latest Dynatrace
-
-In the latest Dynatrace, a Davis problem in Grail might, in some cases, have more affected entities compared to the corresponding problem in the previous Dynatrace. This current approach provides a more detailed and accurate representation of the problem's impact.
-
-* In the previous Dynatrace, during root cause analysis, any change point findings on entities without events were not treated as an affected entity.
-* In the latest Dynatrace, all change point findings are ingested to Grail as Davis events.
-
-This difference can become apparent when, for example, comparing health tile results in Dashboards Classic to the corresponding results in the latest Dynatrace.
 
 ## Business impact
 

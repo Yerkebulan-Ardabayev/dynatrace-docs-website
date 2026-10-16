@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anoma
 # Disk events anomaly detection API - POST an event
 
 * Reference
-* Published Aug 29, 2019
+* Updated on Apr 24, 2026
 
 Creates a new disk event rule.
 

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 # Synthetic nodes API v2 - GET a node
 
 * Reference
-* Updated on Oct 17, 2022
+* Updated on Dec 30, 2025
 
 Gets all parameters of the specified synthetic node.
 

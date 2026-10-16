@@ -30,7 +30,7 @@ Every new Dynatrace SaaS environment and each Dynatrace Managed license receives
 
 ## View DDU consumption details per environment
 
-You need the **Manage monitoring settings** permission or an admin account to access this page. See [Account management permissions](/managed/manage/identity-access-management/permission-management/account-management-permissions "Dynatrace permissions required to access Account Management") for details.
+You need the **Manage monitoring settings** permission or an admin account to access this page. See [Account management permissions](/managed/manage/identity-access-management-classic/permission-management/account-management-permissions-classic "Dynatrace permissions required to access Account Management") for details.
 
 To see how many DDUs your environment has consumed, go to [**Account Management**﻿](https://myaccount.dynatrace.com/) > **License** / **Subscription** > **Overview**. There you can view your DDU consumption and identify the top contributors to DDU consumption.
 
@@ -109,11 +109,11 @@ Go to [**Account Management**﻿](https://myaccount.dynatrace.com/) > **License*
 
 Which permission is required to see the DDU consumption overview?
 
-You need the **Manage monitoring settings** permission or use an admin account to access the **DDU consumption overview** page. For more information on permissions, see [Manager user groups and permissions](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions").
+You need the **Manage monitoring settings** permission or use an admin account to access the **DDU consumption overview** page. For more information on permissions, see [Manager user groups and permissions](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions").
 
 Which permission is required to see the DDU consumption notifications?
 
-You need the **Manage monitoring settings** permission or use an admin account to receive the DDU consumption notifications. For more information on permissions, see [Manager user groups and permissions](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions").
+You need the **Manage monitoring settings** permission or use an admin account to receive the DDU consumption notifications. For more information on permissions, see [Manager user groups and permissions](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions").
 
 Can I get DDU consumption details via the API?
 

@@ -52,7 +52,7 @@ Migrating to process grouping rules poses the following risks:
   + The `environment:roles:manage-settings` role.
   + Unconditional permissions for both `settings:objects:read` and `settings:objects:write`.
 
-  For more information on roles and permissions, see [Identity and access management](/managed/manage/identity-access-management "Configure users, groups and permissions.").
+  For more information on roles and permissions, see [Identity and access management](/managed/manage/identity-access-management-classic "Configure users, groups and permissions.").
 
   Without the required permissions, the **Migrate** button is unavailable.
 * **OneAgent version**: You need OneAgent 1.329+ on all hosts.

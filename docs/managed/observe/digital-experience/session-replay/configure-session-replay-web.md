@@ -298,7 +298,7 @@ To enable and configure resource capture
 
 ### User permissions
 
-Use the **Replay sessions with masking** and **Replay sessions without masking** permissions to control who has access to session recordings. For more details, see [Manage user groups and permissions](/managed/manage/identity-access-management/permission-management/role-based-permissions#environment "Role-based permissions").
+Use the **Replay sessions with masking** and **Replay sessions without masking** permissions to control who has access to session recordings. For more details, see [Manage user groups and permissions](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions#environment "Role-based permissions").
 
 No permission
 
@@ -326,7 +326,7 @@ Session Replay - Replay session data without masking permission
 
 ### Management zones
 
-The ability to view and play back user sessions is further protected by management zones. If a user session traverses applications within different management zones, Dynatrace users with Session Replay permissions may only view those parts of the session associated with applications in the management zones that they have access to. For details, check [Management zones](/managed/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.").
+The ability to view and play back user sessions is further protected by management zones. If a user session traverses applications within different management zones, Dynatrace users with Session Replay permissions may only view those parts of the session associated with applications in the management zones that they have access to. For details, check [Management zones (Dynatrace Classic)](/managed/manage/identity-access-management-classic/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.").
 
 ![Session Replay - Management zones](https://dt-cdn.net/images/sr-management-zones-1150-f13652bc3a.png)
 

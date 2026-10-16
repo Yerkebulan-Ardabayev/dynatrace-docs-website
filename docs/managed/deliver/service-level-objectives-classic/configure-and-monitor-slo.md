@@ -177,7 +177,7 @@ Your newly created SLO or burn rate alert will appear on the **Metric events** p
 
 ## Add SLOs to management zones
 
-SLOs that don't belong to any [management zone](/managed/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") are visible to all users. If you add an SLO to a management zone, only users who have access to that management zone can see it on the **Service-level objectives** overview page.
+SLOs that don't belong to any [management zone](/managed/manage/identity-access-management-classic/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") are visible to all users. If you add an SLO to a management zone, only users who have access to that management zone can see it on the **Service-level objectives** overview page.
 
 * To add an SLO to a management zone
 

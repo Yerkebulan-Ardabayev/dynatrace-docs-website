@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 # Settings API key concepts
 
 * Explanation
-* Updated on Mar 26, 2026
+* Published Mar 26, 2026
 
 The Settings API exposes a hierarchy of configuration objects organized by schema and scope. Before you start working with it at scale, be sure you understand how the API persists objects, how values flow through the scope hierarchy, and how the API handles concurrency, pagination, and access control.
 

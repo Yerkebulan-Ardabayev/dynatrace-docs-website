@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-
 # ActiveGate tokens API - POST a token
 
 * Reference
-* Published Dec 02, 2021
+* Updated on Apr 24, 2026
 
 Creates a new ActiveGate token.
 

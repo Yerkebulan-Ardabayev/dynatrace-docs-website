@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/servi
 # Request attributes API - GET a request attribute
 
 * Reference
-* Published Sep 03, 2019
+* Updated on Aug 25, 2026
 
 Gets parameters of the specified request attribute.
 

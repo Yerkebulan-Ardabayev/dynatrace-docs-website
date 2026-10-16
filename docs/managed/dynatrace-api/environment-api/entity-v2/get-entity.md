@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/entity-
 # Monitored entities API - GET an entity
 
 * Reference
-* Published May 28, 2020
+* Updated on Sep 05, 2025
 
 Gets the full list of properties of the specified entity. The actual list depends on the entity type.
 

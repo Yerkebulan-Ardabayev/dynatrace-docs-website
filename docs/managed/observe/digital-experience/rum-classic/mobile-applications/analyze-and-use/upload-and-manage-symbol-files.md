@@ -41,7 +41,7 @@ You can upload a symbol file in any supported format (compressed or uncompressed
 
 If your file is too large, try compressing it to stay within the 100 MiB upload limit.
 
-You need the **Change monitoring settings** [permission](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions") at the environment level to upload source maps and symbol files.
+You need the **Change monitoring settings** [permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions") at the environment level to upload source maps and symbol files.
 
 ## Upload mapping files for Android
 

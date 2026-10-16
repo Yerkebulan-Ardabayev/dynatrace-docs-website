@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anoma
 # Disk events anomaly detection API - GET an event
 
 * Reference
-* Published Aug 29, 2019
+* Updated on Apr 24, 2026
 
 Gets the parameters of the specified disk event rule.
 

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/conta
 # Use a public registry
 
 * 6-min read
-* Updated on Sep 11, 2026
+* Updated on Oct 14, 2026
 
 To accommodate diverse infrastructure requirements and organizational preferences, Dynatrace images are available on selected public registries. These images adhere to best practices, ensuring immutability and signing for enhanced security and resilience against potential supply chain risks.
 
@@ -26,7 +26,6 @@ Start using these fortified images today for a safer and more efficient containe
 
 Before you begin, be sure to meet the following prerequisites:
 
-* Dynatrace Operator version 0.11+
 * Target CPU architectures are ARM64 (AArch64), x86-64, s390x, and/or ppc64le
 * Allow egress traffic to public registry
 
@@ -63,11 +62,18 @@ Dynatrace employs version-based image tagging for its container images and does 
 
 ## Automatic Image Resolution with Dynatrace Operator
 
-Dynatrace SaaS version 1.343+ Dynatrace Operator version 1.10.0+
+Dynatrace SaaS version 1.343+ Dynatrace Operator version 1.10+
 
 Dynatrace Operator can automatically resolve the latest public image URIs for managed components from your Dynatrace environment, without manual `image` field configuration.
 
 When this feature is active, Dynatrace Operator periodically syncs the image references for each component from your Dynatrace environment and applies them automatically.
+
+Prerequisites
+
+#### Prerequisites
+
+* Dynatrace SaaS version 1.343+ Dynatrace Operator version 1.10+ Dynatrace Operator automatically resolves and updates container images for ActiveGate, OneAgent, OneAgent Log Module, Code Modules, Extension Execution Controller (EEC), and SQL Extension Executor.
+* Dynatrace SaaS version 1.352+ (planned) Dynatrace Operator version 1.11+ All operator managed components listed in [supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.") are supported.
 
 ### Enable automatic image resolution
 
@@ -124,9 +130,7 @@ To request images from a specific supported public registry, set `spec.publicReg
 
 ### What changes when the feature is enabled
 
-* **Component images**: Dynatrace Operator resolves image references from your Dynatrace environment.
-
-  + Container images for Extension Execution Controller, Dynatrace Log Module and the SQL Extension Executor are supported from Dynatrace SaaS 1.350 and Dynatrace Operator 1.11. In older versions, these components always require a image specified in the respective `spec.templates` field.
+* **Component images**: Dynatrace Operator resolves image references from your Dynatrace environment and keeps them updated.
 * **Pod restarts**: All managed component pods restart when the feature is first enabled.
 * **Application injection**: The init container image injected into application pods changes on the pod's next restart, if you are not using the CSI driver or if you use [node image pull via ephemeral volume](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#ephemeral-node-image-pull "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download."). In both cases the webhook switches from ZIP-download mode to self-extracting mode using the CodeModules image.
 

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activeg
 # ActiveGate auto-update configuration API - GET an ActiveGate
 
 * Reference
-* Published Mar 15, 2021
+* Updated on Jun 18, 2026
 
 Gets the auto-update configuration of the specified Environment ActiveGate.
 

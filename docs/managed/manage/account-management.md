@@ -33,7 +33,7 @@ To access Account Management directly from your browser address line, go to [htt
 
 ### Permissions
 
-For information on the permissions needed to access Account Management, see [Account Management permissions](/managed/manage/identity-access-management/permission-management/account-management-permissions "Dynatrace permissions required to access Account Management").
+For information on the permissions needed to access Account Management, see [Account Management permissions (Dynatrace Classic)](/managed/manage/identity-access-management-classic/permission-management/account-management-permissions-classic "Dynatrace permissions required to access Account Management").
 
 ## Top-level navigation
 

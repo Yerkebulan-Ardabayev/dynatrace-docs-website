@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/servi
 # Request naming API - PUT a request naming rule
 
 * Reference
-* Published Jun 25, 2019
+* Updated on May 25, 2026
 
 Updates the specified request naming rule. If the rule with the specified ID doesn't exist—creates a new rule with this ID.
 

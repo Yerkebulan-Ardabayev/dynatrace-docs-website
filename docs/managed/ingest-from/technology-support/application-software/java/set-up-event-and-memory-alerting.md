@@ -48,8 +48,3 @@ Alternatively, you can create alerts only for specific metric events.
    | High GC suspension time | `builtin:tech.jvm.memory.gc.suspensionTime` | 25 % | 3 | 5 | 4 |
    | High GC total collection time | `builtin:tech.jvm.memory.gc.collectionTime` | 24 s | 3 | 5 | 4 |
 4. Select **Save changes**.
-
-## Related topics
-
-* [Metric events](/managed/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace")
-* [Static thresholds for infrastructure monitoring](/managed/dynatrace-intelligence/anomaly-detection/static-thresholds-infrastructure "Learn about the fixed thresholds used by Dynatrace to determine when a detected slowdown or error-rate increase justifies the generation of a new problem event.")

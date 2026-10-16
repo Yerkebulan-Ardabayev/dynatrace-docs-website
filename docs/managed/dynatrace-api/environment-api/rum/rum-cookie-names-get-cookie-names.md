@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/rum
 # RUM cookie names API - GET cookie names
 
 * Reference
-* Published Jun 25, 2024
+* Updated on Feb 26, 2026
 
 Lists RUM cookie names.
 

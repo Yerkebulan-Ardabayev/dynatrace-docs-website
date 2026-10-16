@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anoma
 # Process groups anomaly detection API - GET configuration
 
 * Reference
-* Published Jun 03, 2020
+* Updated on Apr 24, 2026
 
 Gets the configuration of anomaly detection for the specified process group.
 

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-ana
 
 * Explanation
 * 5-min read
-* Updated on Jul 27, 2026
+* Published Dec 28, 2018
 
 This page provides information about supported availability events and the logic behind raising them.
 

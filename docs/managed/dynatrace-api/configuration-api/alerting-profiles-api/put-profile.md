@@ -776,5 +776,5 @@ PUT example
 
 ## Related topics
 
-* [Problem alerting profiles](/managed/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.")
+* [Problem alerting profiles](/managed/analyze-explore-automate/alerting-and-notifications-classic/alerting-profiles "Learn how to create and manage alerting profiles.")
 * [Dynatrace API - Tokens and authentication](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.")

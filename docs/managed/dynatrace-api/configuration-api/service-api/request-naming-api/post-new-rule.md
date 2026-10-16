@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/servi
 # Request naming API - POST a new request naming rule
 
 * Reference
-* Published Jun 25, 2019
+* Updated on May 25, 2026
 
 Creates a new request naming rule. See the detailed use case in the [Request naming API - Create a new rule](/managed/dynatrace-api/configuration-api/service-api/request-naming-api/create-a-new-request-naming-rule "Learn how to create a request naming rule via the Dynatrace API.") topic.
 

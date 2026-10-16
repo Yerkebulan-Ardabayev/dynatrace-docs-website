@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calcu
 # Service metrics API - POST a metric
 
 * Reference
-* Published Dec 16, 2019
+* Updated on May 25, 2026
 
 Creates a new calculated service metric.
 

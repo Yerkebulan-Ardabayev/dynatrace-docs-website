@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 # Settings API - GET a schema
 
 * Reference
-* Published Feb 24, 2021
+* Updated on Nov 12, 2025
 
 Gets parameters of the specified settings schema.
 

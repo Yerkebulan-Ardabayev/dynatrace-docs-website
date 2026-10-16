@@ -64,7 +64,7 @@ Queue entity selector
 
 ## Add queue entities to existing management zones
 
-Follow the steps below to add queue entities to existing management zones. To learn more about management zones, see [Set up management zones](/managed/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.").
+Follow the steps below to add queue entities to existing management zones. To learn more about management zones, see [Set up management zones](/managed/manage/identity-access-management-classic/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.").
 
 1. Go to **Settings** > **Preferences** > **Management zones**.
 2. Edit an existing management zone and select **Add a new rule**.
@@ -113,4 +113,4 @@ Management zone for queues
 ## Related topics
 
 * [Define and apply tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.")
-* [Set up management zones](/managed/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.")
+* [Set up management zones (Dynatrace Classic)](/managed/manage/identity-access-management-classic/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.")

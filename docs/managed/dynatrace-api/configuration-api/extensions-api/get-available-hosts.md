@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/exten
 # Extensions API - GET available hosts
 
 * Reference
-* Published Mar 06, 2020
+* Updated on Aug 25, 2026
 
 Lists all available hosts that run the specified technology.
 

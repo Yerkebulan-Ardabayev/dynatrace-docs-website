@@ -234,7 +234,3 @@ https://mySampleEnv.live.dynatrace.com/api/v2/eventProperties/dt.event.source
 #### Response code
 
 200
-
-## Related topics
-
-* [Event analysis and correlation](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation "Gain an understanding of the Events section on each host, process, and service overview page.")

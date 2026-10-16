@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/account-management-api/
 * Reference
 * Published Jul 25, 2022
 
-Lists all environments and [management zones](/managed/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") of an account.
+Lists all environments and [management zones](/managed/manage/identity-access-management-classic/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") of an account.
 
 The request produces an `application/json` payload.
 

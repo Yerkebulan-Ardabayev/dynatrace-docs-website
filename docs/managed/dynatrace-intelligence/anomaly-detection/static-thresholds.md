@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detect
 
 * Explanation
 * 2-min read
-* Updated on Apr 05, 2024
+* Published May 04, 2020
 
 A static threshold represents a hard limit that a metric should not violate. Because static thresholds don't change over time, they are an important monitoring tool for defining critical boundaries of normal operation.
 

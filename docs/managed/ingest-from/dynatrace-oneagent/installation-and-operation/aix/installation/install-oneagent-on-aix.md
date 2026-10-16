@@ -19,7 +19,7 @@ To get started, access the [Cluster Management Console and choose the environmen
 
 ### Permissions
 
-* You need [Download/install OneAgent](/managed/manage/identity-access-management/permission-management/role-based-permissions#environment "Role-based permissions") permissions to download and install OneAgent.
+* You need [Download/install OneAgent](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions#environment "Role-based permissions") permissions to download and install OneAgent.
 * You need administrator rights for the servers where OneAgent will be installed as well as for changing firewall settings (necessary only if your internal routing policy may prevent Dynatrace software from reaching the internet).
 * You need permissions and credentials for restarting all your application services.
 

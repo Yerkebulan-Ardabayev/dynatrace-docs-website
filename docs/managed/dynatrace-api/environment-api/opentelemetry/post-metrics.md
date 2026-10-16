@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/opentel
 # OpenTelemetry metrics ingest API
 
 * Reference
-* Published Sep 12, 2022
+* Updated on Jan 15, 2025
 
 Ingests OpenTelemetry metrics into Dynatrace. Use this endpoint as a target for OpenTelemetry exporters. For more information, see [Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
 

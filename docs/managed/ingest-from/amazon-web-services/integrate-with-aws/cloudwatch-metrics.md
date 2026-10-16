@@ -45,7 +45,7 @@ To manage AWS monitoring configuration, you need permissions to read and modify 
 * They are included in the **Change monitoring settings** permissions.
 * Read-only access is not supported.
 
-See [Manage user permissions with roles](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions") for details on how to manage and set permissions.
+See [Manage user permissions with roles](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions") for details on how to manage and set permissions.
 
 2. Allow ActiveGate to access URLs
 

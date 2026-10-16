@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 # Synthetic configuration API v2 - GET configuration
 
 * Reference
-* Published Oct 07, 2021
+* Updated on Sep 09, 2026
 
 Gets the configuration of Synthetic monitoring in your environment.
 

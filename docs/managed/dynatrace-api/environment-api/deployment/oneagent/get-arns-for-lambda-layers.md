@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deploym
 # Deployment API - View ARNs for AWS Lambda layers
 
 * Reference
-* Published Jul 29, 2022
+* Updated on Mar 30, 2026
 
 This API is intended for use with the latest AWS Lambda implementation. For details, see [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 

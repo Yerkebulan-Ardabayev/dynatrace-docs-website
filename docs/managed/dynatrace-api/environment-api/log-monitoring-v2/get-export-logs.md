@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/log-mon
 # Log Monitoring API v2 - GET export logs
 
 * Reference
-* Updated on Nov 20, 2025
+* Updated on Feb 02, 2026
 
 Gets the log records matching the provided criteria. Matching log records are sorted by the criteria specified in the **sort** query parameter.
 

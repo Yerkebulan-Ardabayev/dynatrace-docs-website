@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/crede
 # Credential vault API - PUT a set of credentials
 
 * Reference
-* Published Oct 14, 2019
+* Updated on Apr 08, 2026
 
 This API is deprecated. Use the [Credential vault API](/managed/dynatrace-api/environment-api/credential-vault "Learn what the Dynatrace API for credentials offers.") from the Environment API instead.
 

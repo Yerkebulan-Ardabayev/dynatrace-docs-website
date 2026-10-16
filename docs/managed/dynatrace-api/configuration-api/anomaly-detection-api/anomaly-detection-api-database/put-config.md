@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anoma
 # Database anomaly detection API - PUT configuration
 
 * Reference
-* Published Jan 23, 2019
+* Updated on Apr 24, 2026
 
 Updates the configuration of anomaly detection for database services.
 

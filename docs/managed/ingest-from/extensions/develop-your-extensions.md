@@ -56,7 +56,7 @@ Follow these best practices to ensure your extensions are secure, reliable, and 
 * When using the API to manage extensions, use personal tokens instead of tokens that have global extension write access.
 * Set up security policies that allow editing extension settings, and assign them only to trusted user groups.
 
-  + Use the [Extensions IAM service](/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#extensions "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") to restrict who can edit settings, based on specific scopes like extensions, zones, or host groups. This helps you create detailed, secure policies.
+  + Use the [Extensions IAM service](/managed/manage/identity-access-management-classic/permission-management/manage-user-permissions-policies/advanced/iam-policystatements-classic#extensions "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") to restrict who can edit settings, based on specific scopes like extensions, zones, or host groups. This helps you create detailed, secure policies.
 
 ### Sensitive data sources
 

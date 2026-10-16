@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 # Synthetic locations API v2 - GET a location
 
 * Reference
-* Published Jul 26, 2019
+* Updated on Aug 14, 2025
 
 Gets parameters of the specified location.
 

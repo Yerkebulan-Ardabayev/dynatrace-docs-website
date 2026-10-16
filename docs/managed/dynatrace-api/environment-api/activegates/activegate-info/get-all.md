@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activeg
 # ActiveGate API - GET all ActiveGates
 
 * Reference
-* Published Jul 02, 2020
+* Updated on Jun 18, 2026
 
 Lists all ActiveGates that are currently connected to the environment or have been connected during the last 2 hours.
 

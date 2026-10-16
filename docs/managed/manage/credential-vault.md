@@ -55,7 +55,7 @@ Credential vault communication
 
 ### Access to the credential vault
 
-To view and write to the credential vault, a user requires the **View environment** [permission](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions") at the environment level.
+To view and write to the credential vault, a user requires the **View environment** [permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions") at the environment level.
 
 If you have only the **View environment** permission (and no other higher permission such as **Change monitoring settings**), you can:
 
@@ -69,7 +69,7 @@ To overwrite and delete credentials owned by other users, you require the **Chan
 
 Users with **View environment** or **Change monitoring settings** at the management-zone level can only view public credentials in the vault; they can't create credentials in the vault.
 
-To create or edit synthetic monitors, you require the **Change monitoring settings** [permission](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions") at the environment or management-zone level.
+To create or edit synthetic monitors, you require the **Change monitoring settings** [permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions") at the environment or management-zone level.
 
 See [Credential vault API](#cv-api) below for the token scope required to access the credential vault via API.
 
@@ -256,7 +256,7 @@ Users can [delete/overwrite](#overwrite-credential) credentials and change crede
 
 ### Who can use a credential in a monitor
 
-These operations require the **Change monitoring settings** [permission](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions").
+These operations require the **Change monitoring settings** [permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions").
 
 When creating a monitor or editing an existing monitor that doesn't have associated credentials, you can:
 
@@ -269,7 +269,7 @@ When creating a monitor or editing an existing monitor that doesn't have associa
 
 ### Who can edit a monitor that has an associated credential
 
-These operations require the **Change monitoring settings** [permission](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions").
+These operations require the **Change monitoring settings** [permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions").
 
 * If a monitor is associated with a public credential, anyone on your team can switch on/off, delete, or edit the monitor.
 
@@ -289,7 +289,7 @@ If you're unable to edit a monitor that has an associated credential, you can [s
 
 The contents of credentials are visible only to the synthetic monitors, apps, or ad hoc functions referencing them. You can see the ID and properties of a credential in the vault, but **the credential content can only be overwritten**.
 
-Users with the **Change monitoring settings** [permission](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions") at the environment level can overwrite another user's credential, and, thereby, take over ownership. In the course of overwriting (or anytime after), they can then also change the access level of the credential (whether shared, public, or owner only).
+Users with the **Change monitoring settings** [permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions") at the environment level can overwrite another user's credential, and, thereby, take over ownership. In the course of overwriting (or anytime after), they can then also change the access level of the credential (whether shared, public, or owner only).
 
 Users with the **View environment** permission at the environment level can only overwrite or delete credentials they own.
 

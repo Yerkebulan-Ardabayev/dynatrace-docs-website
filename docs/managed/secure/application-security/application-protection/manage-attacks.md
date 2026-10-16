@@ -259,7 +259,7 @@ If you filter by a specific management zone, only attacks from that management z
 
 Once they occur, attacks are assigned to existing management zones. They can only be part of management zones that exist at the moment of the attack. Creating a management zone for an attack that already happened will not affect it, and the attack won't be part of it.
 
-For information on how to set up and apply management zones, and about the rules that define and limit the entities that can be accessed within a management zone, see [Management zones](/managed/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.").
+For information on how to set up and apply management zones, and about the rules that define and limit the entities that can be accessed within a management zone, see [Management zones](/managed/manage/identity-access-management-classic/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.").
 
 ### Filter by attack details
 

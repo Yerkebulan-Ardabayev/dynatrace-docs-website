@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/extensi
 # Extensions 2.0 API - GET an extension schema
 
 * Reference
-* Published Jan 22, 2021
+* Updated on Nov 12, 2025
 
 Gets the schema of the specified version of an Extensions 2.0 extension.
 

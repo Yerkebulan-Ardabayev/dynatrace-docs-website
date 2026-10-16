@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anoma
 # Application anomaly detection API - GET configuration
 
 * Reference
-* Published Jan 23, 2019
+* Updated on Apr 24, 2026
 
 Gets the configuration of anomaly detection for applications.
 

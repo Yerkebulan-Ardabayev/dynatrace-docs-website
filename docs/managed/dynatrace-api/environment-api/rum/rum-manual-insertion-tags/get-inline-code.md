@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/rum
 # GET inline code
 
 * Reference
-* Updated on Sep 18, 2025
+* Updated on Oct 08, 2025
 
 Returns the most recent [inline code](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes both the configuration and the RUM monitoring code.
 

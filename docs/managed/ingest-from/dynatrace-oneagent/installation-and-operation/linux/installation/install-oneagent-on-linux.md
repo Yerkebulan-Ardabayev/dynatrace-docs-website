@@ -21,7 +21,7 @@ You can install OneAgent on any Linux system that's [supported by Dynatrace](/ma
 
 ### Permissions
 
-* You need [Download/install OneAgent](/managed/manage/identity-access-management/permission-management/role-based-permissions#environment "Role-based permissions") permissions to download and install OneAgent.
+* You need [Download/install OneAgent](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions#environment "Role-based permissions") permissions to download and install OneAgent.
 * You only need [root rights](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Find out when Dynatrace OneAgent requires root privileges on Linux.") to start OneAgent installation. This requires that your system meets [specific requirements](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged#system-req "Find out when Dynatrace OneAgent requires root privileges on Linux."). Otherwise, add the `NON_ROOT_MODE=0` parameter to the installation command to disable OneAgent non-privileged mode.
 * You need permissions and credentials for restarting all your application services.
 

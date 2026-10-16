@@ -74,7 +74,7 @@ Solid red bars above the availability graph indicate the duration of availabilit
 Availability problem in MDA
 
 * Monitor errors do not lead to [problems](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors#problems "Analyze browser monitor and clickpath results on the Synthetic details page.") if they don't violate your [availability thresholds](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors#outage-handling "Learn about configuring browser monitors and clickpaths.") or if you haven't enabled thresholds.
-* Whether or not you see problems in the Dynatrace web UI and receive alert notifications during maintenance windows depends on how you [configure the maintenance windows](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window "Create maintenance windows and define their scope.").
+* Whether or not you see problems in the Dynatrace web UI and receive alert notifications during maintenance windows depends on how you [configure the maintenance windows](/managed/analyze-explore-automate/alerting-and-notifications-classic/maintenance-windows/define-maintenance-window "Create maintenance windows and define their scope.").
 * [Maintenance windows may be excluded from availability calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring Classic metric calculations.") by applying a global setting.
 
 ## Analyze performance

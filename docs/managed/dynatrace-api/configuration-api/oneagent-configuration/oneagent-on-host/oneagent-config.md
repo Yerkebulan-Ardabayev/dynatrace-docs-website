@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneag
 # OneAgent on a host API - OneAgent configuration
 
 * Reference
-* Published Feb 03, 2020
+* Updated on Apr 24, 2026
 
 Gets OneAgent configuration on the specified host. You can later change the auto-update and monitoring configuration with one of the following requests:
 

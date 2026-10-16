@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anoma
 # Process groups anomaly detection API - DELETE configuration
 
 * Reference
-* Published Jun 03, 2020
+* Updated on Apr 24, 2026
 
 Deletes the configuration of anomaly detection for the specified process group.
 

@@ -62,7 +62,7 @@ Hyper
 
 ### Set up a management zone
 
-To import a dashboard for Azure Database for PostgreSQL, you need to [set up a management zone](/managed/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.") to limit the entities displayed on the dashboard to those relevant to this service.
+To import a dashboard for Azure Database for PostgreSQL, you need to [set up a management zone](/managed/manage/identity-access-management-classic/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.") to limit the entities displayed on the dashboard to those relevant to this service.
 
 When you create a management zone for this dashboard:
 

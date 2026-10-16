@@ -801,7 +801,7 @@ For a local extension, the scope is a host, host group, or management zone for w
   "scope": "management_zone-sampleManagementZone",
   ```
 
-  You can find the management zone on the [**Management zones settings** page](/managed/manage/identity-access-management/permission-management/management-zones/apply-and-use-management-zones "Apply management zones to organize your Dynatrace environment and control user access to specific data.").
+  You can find the management zone on the [**Management zones settings** page](/managed/manage/identity-access-management-classic/permission-management/management-zones/apply-and-use-management-zones "Apply management zones to organize your Dynatrace environment and control user access to specific data.").
 * When defining an environment as the scope, use this format:
 
   ```

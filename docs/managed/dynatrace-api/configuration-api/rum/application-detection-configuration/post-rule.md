@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/a
 # Applications detection rules API - POST a rule
 
 * Reference
-* Published Aug 30, 2019
+* Updated on Apr 24, 2026
 
 Creates a new application detection rule and adds it to the end of the rules list. To enforce a particular order, use the [PUT reorder rules](/managed/dynatrace-api/configuration-api/rum/application-detection-configuration/reorder-rules "Reorder application detection rules via the Dynatrace API.") request.
 

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/anonymi
 # Anonymization API - PUT anonymization job
 
 * Reference
-* Published Sep 10, 2019
+* Updated on Mar 03, 2025
 
 Creates a user session anonymization job. The job anonymizes all user sessions in the specified timeframe by masking the user ID (**userIds**) and IP address (**ips**).
 

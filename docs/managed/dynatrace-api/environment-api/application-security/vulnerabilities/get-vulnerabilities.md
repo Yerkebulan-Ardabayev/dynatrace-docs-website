@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/applica
 # Vulnerabilities API - GET vulnerabilities
 
 * Reference
-* Updated on Nov 09, 2023
+* Updated on Jul 15, 2026
 
 Lists the third-party and code-level vulnerabilities detected in your applications.
 

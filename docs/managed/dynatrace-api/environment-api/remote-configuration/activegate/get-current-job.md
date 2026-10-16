@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/remote-
 # ActiveGate remote configuration management API - GET current job
 
 * Reference
-* Published Oct 06, 2022
+* Updated on Sep 30, 2025
 
 Gets parameters of a currently running configuration job for ActiveGates.
 

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/log-mon
 # Log Monitoring API v2 - GET search logs
 
 * Reference
-* Updated on Nov 20, 2025
+* Updated on Feb 02, 2026
 
 Gets the log records matching the provided criteria. Matching log records are sorted by the criteria specified in the **sort** query parameter, and then the first *X* records (as specified by the **limit** query parameter) are returned. To run a query without a size limit, use the [GET export logs](/managed/dynatrace-api/environment-api/log-monitoring-v2/get-export-logs "Fetch log records via the Log Monitoring API v2.") request.
 
