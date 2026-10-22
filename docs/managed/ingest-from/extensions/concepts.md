@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extensions/concepts
 
 * Explanation
 * 2-min read
-* Updated on Aug 05, 2026
+* Updated on Jan 28, 2026
 
 Concepts
 
@@ -17,7 +17,7 @@ Data sources
 
 ### Extension Execution Controller (EEC)
 
-The Extension Execution Controller (EEC) is the Dynatrace component running your extensions. EEC queries either your local data sources when run on OneAgent, or remote data sources when run from an ActiveGate. EEC is automatically installed and managed with each OneAgent and ActiveGate configuration. EEC also translates all the ingested data for [Dynatrace Intelligence causation analysis](/managed/dynatrace-intelligence/ai-models/causal-correlation-analysis "Learn how Davis® causal correlation analysis finds related metrics across your environment."). For more information, see [Metric ingestion](/managed/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.").
+The Extension Execution Controller (EEC) is the Dynatrace component running your extensions. EEC queries either your local data sources when run on OneAgent, or remote data sources when run from an ActiveGate. EEC is automatically installed and managed with each OneAgent and ActiveGate configuration. EEC also translates all the ingested data for [Davis causation analysis](/managed/dynatrace-intelligence/ai-models/causal-correlation-analysis "Learn how Davis® causal correlation analysis finds related metrics across your environment."). For more information, see [Metric ingestion](/managed/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.").
 
 To run local extensions, make sure EEC is enabled at the environment, host, or host group level.
 

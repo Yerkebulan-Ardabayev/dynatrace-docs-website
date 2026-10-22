@@ -53,7 +53,7 @@ Dynatrace supports both automatic and manual capture and analysis of [memory dum
 #### AWS monitoring
 
 (module: [AWS](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#aws-monitoring "Learn which ActiveGate properties you can configure based on your needs and requirements."))
-[AWS service monitoring](/managed/observe/infrastructure-observability/cloud-platform-monitoring/aws-monitoring "Monitor AWS with Dynatrace") is a resource-intensive task. Therefore, to monitor more than 2,000 AWS resources, you must install an ActiveGate and configure AWS monitoring.
+[AWS service monitoring](/managed/observe/infrastructure-observability/cloud-platform-monitoring-classic/aws-monitoring-classic "Monitor AWS with Dynatrace") is a resource-intensive task. Therefore, to monitor more than 2,000 AWS resources, you must install an ActiveGate and configure AWS monitoring.
 
 #### Cloud Foundry monitoring
 

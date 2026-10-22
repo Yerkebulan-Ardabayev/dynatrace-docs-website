@@ -88,7 +88,7 @@ Each node represents a different service with a symbol that signifies the underl
 | Icon | Meaning |
 | --- | --- |
 | see example above | Commercial logos such as the MySQL dolphin, Apache feather, and Tomcat cat indicate [service technologies supported by Dynatrace](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks."). |
-|  | Services of unrecognized technologies are depicted using a generic service symbol. These are typically [opaque services](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/opaque-services "Understand what opaque services are."). |
+|  | Services of unrecognized technologies are depicted using a generic service symbol. These are typically [opaque services](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/service-types/opaque-services "Understand what opaque services are."). |
 
 **Connections**
 

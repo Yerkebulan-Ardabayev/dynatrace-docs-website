@@ -55,11 +55,11 @@ Configure masking at capture via the [**OneAgent-side masking** option](/managed
 
 3
 
-Only certain headers are captured automatically. You can capture other headers via [request attributes](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
+Only certain headers are captured automatically. You can capture other headers via [request attributes](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
 
 4
 
-Query parameters are always masked on display and can also be masked upon storage. To capture parameters explicitly, configure [request attributes](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
+Query parameters are always masked on display and can also be masked upon storage. To capture parameters explicitly, configure [request attributes](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
 
 5
 
@@ -75,7 +75,7 @@ Bind variables support is available for database monitoring. To learn how to sta
 
 8
 
-Configure via [request attributes](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
+Configure via [request attributes](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
 
 ## OpenTelemetry attributes for distributed tracing
 

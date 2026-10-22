@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry
 
 * Overview
 * 2-min read
-* Updated on Jun 16, 2026
+* Updated on Oct 08, 2026
 
 [OpenTelemetry (OTel)﻿](https://www.opentelemetry.io) provides a standardized way of collecting and exporting telemetry data.
 It allows applications and infrastructure to transmit telemetry to backends (such as Dynatrace) using vendor-agnostic formats.
@@ -20,18 +20,14 @@ Dynatrace supports this flexible approach, ensuring you experience industry-lead
 
 ## Ingest methods
 
-There are three different ways you can export your OTLP data to Dynatrace.
+There are two different ways you can export your OTLP data to Dynatrace.
 Choose the deployment option that best aligns with your observability strategy.
 
-![OTLP: Send data to Dynatrace](https://cdn.bfldr.com/B686QPH3/as/5gstm5nvpmxmg8rr5gm6cgn/OpenTelemetry_and_Dynatrace_-_Ingest_methods_-_Light_Mode?auto=webp&format=png&position=1)
+![Dynatrace supports OTLP ingest via API or an OTel Collector](https://dt-cdn.net/images/opentelemetry-ingest-methods-light-mode-2-3840-ea266b8d61.png)
 
 OTLP: Send data to Dynatrace
 
-| Method | Best when… | Good for… | Ideal for… |
-| --- | --- | --- | --- |
-| Direct export to Dynatrace API endpoints | You want minimal complexity and infrastructure overhead. | Simple deployments with straightforward telemetry requirements. | If you don't need data processing, enrichment, or transformation capabilities. |
-| Standard OTel Collector | Your organization has already standardized on OTel Collectors. | Teams with existing OpenTelemetry expertise and tooling. | Ideal if you need compatibility with existing collector configurations or custom versions. |
-| Dynatrace OTel Collector Recommended | Most Dynatrace deployments requiring data processing capabilities. | Teams who need a fully supported OTel Collector distribution with verified configurations. | When you want automated management through the Dynatrace Operator. |
+Send OTLP traces, metrics, and logs to Dynatrace directly from your applications over OTLP/HTTP, or route them through an OpenTelemetry Collector that exports to the Dynatrace OTLP API. For more information about OpenTelemetry Collectors, see [OTel Collector](/managed/ingest-from/opentelemetry/collector "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.").
 
 ## Why use OpenTelemetry with Dynatrace?
 

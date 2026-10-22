@@ -12,7 +12,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/adapti
 
 Dynatrace Full-Stack Monitoring packages a variety of features, including fully automatic distributed tracing. Each monitored application or microservice is constantly monitored and the Dynatrace code module collects distributed traces, containing code-level and business insights, that are sent to Dynatrace.
 
-Depending on the transaction volume, OneAgent captures end-to-end traces every minute up to a peak trace per minute. This is Dynatrace's intelligent sampling mechanism that ensures that your Managed cluster cannot be owerwhelmed with trace data during peak times. You can adjust this to your needs.
+Depending on the transaction volume, OneAgent captures end-to-end traces every minute up to a peak trace per minute. This is Dynatrace's intelligent sampling mechanism that ensures that your Managed cluster cannot be overwhelmed with trace data during peak times. You can adjust this to your needs.
 
 [PurePath](/managed/observe/application-observability/distributed-traces/use-cases/segment-request "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.")® distributed traces are end-to-end transactions captured by OneAgent. Each minute, a statistically relevant number of end-to-end distributed traces is captured within each monitored process. Each trace contains code-level and business insights derived from service-level calls to multiple tiers. Because each trace is captured fully and end-to-end, second- and third-level tiers often capture more total service calls than entry-point processes.
 
@@ -68,7 +68,7 @@ Adjusting adaptive capture control can help you in specific cases; for example, 
 
 To manage the quota of new distributed traces/min,
 
-1. Go to **Cluster Management Console** > **Environments** and select your environement.
+1. Go to **Cluster Management Console** > **Environments** and select your environment.
 2. Optional In the **Cluster overload prevention settings**, you can set the environment quota of **Number of newly monitored entry point traces captured per process/minute**. The default value is 1,000, however, the environment quota can be increased to 100,000.
 3. Select **Go to the environment**.
 4. Go to **Settings** > **Server-side service monitoring** > **Deep monitoring** > **Adaptive capture control**.
@@ -275,5 +275,5 @@ Why can't I see a certain request?
 
 If your Dynatrace Managed cluster is undersized or if a specific request you're interested in comes from a high-volume tier (more than 1,000 requests/min), Dynatrace might not be able to capture the request.
 
-* You can increase the volume available for important requests by reducing the amount of traffic related to unimportant requests. To exclude unimportant requests from capture use [web request attributes](/managed/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming#request-attributes-and-placeholders "Adjust request naming and define the operations your services offer.") and URL exclusion rules.
+* You can increase the volume available for important requests by reducing the amount of traffic related to unimportant requests. To exclude unimportant requests from capture use [web request attributes](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/set-up-request-naming#request-attributes-and-placeholders "Adjust request naming and define the operations your services offer.") and URL exclusion rules.
 * You can also [increase the quota](#acc) of captured distributed traces.

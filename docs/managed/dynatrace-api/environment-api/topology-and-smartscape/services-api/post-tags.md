@@ -249,4 +249,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/services/SERVICE-72503CBDD2
 
 ## Related topics
 
-* [Services](/managed/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.")
+* [Services](/managed/observe/application-observability/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.")

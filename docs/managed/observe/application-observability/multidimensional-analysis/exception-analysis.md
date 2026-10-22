@@ -54,7 +54,7 @@ The chart shows the top 15 dimensions (all other dimensions are aggregated into 
 In the **Actions** column of the table, you can select:
 
 * **Filter**  to filter the view for the specified dimension.
-* **More** (**…**) to access further analysis options from the [**Analyze** menu](/managed/observe/application-observability/services-classic/context-specific-drill-down#analyze-menu "Learn about easy navigation and filtering for services analysis.").
+* **More** (**…**) to access further analysis options from the [**Analyze** menu](/managed/observe/application-observability/services-classic/services-page/context-specific-drill-down#analyze-menu "Learn about easy navigation and filtering for services analysis.").
 * The chart uses [trace and request data](/managed/observe/application-observability/multidimensional-analysis#data-source "Configure a multidimensional analysis view and save it as a calculated metric."), which has different data retention periods. For timeframes containing data older than 10 days, you can turn on the **Show data retention** toggle to better understand which data is available for which period directly from the chart.
 
 ## Exception details
@@ -93,7 +93,7 @@ You can view the exception data as an aggregated value across all services or se
 1. Filter the view to the required exception as described above.
 2. From the **Split mode** list, select **Split by services**.
 
-The view displays data on the selected exception only split by service. From here on you can dig deeper into **Exception** details or further [analysis options](/managed/observe/application-observability/services-classic "Learn about Dynatrace's classic service monitoring") on the service you're interested in.
+The view displays data on the selected exception only split by service. From here on you can dig deeper into **Exception** details or further [analysis options](/managed/observe/application-observability/services-classic/services-page "Learn about Dynatrace's service monitoring.") on the service you're interested in.
 
 ## Related topics
 

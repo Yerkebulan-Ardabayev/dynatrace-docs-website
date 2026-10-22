@@ -37,9 +37,9 @@ At Dynatrace, we take our responsibility to safeguard your data seriously. Have 
 
 [Role-based permissions (Dynatrace Classic)](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions")
 
-[Define request attribute rules](/managed/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-web-request-data#request-attribute-rules "Create request attributes based on web request data.")
+[Define request attribute rules](/managed/observe/application-observability/services-classic/request-attributes/capture-request-attributes-based-on-web-request-data#request-attribute-rules "Create request attributes based on web request data.")
 
-[Mark request attributes as confidential](/managed/observe/application-observability/services/request-attributes#confidential "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.")
+[Mark request attributes as confidential](/managed/observe/application-observability/services-classic/request-attributes#confidential "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.")
 
 [Audit logs via API](/managed/manage/data-privacy-and-security/configuration/audit-logs-api "Learn how to manage audit logs using an API.")
 

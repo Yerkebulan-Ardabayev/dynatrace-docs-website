@@ -12,7 +12,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/entity-
 
 Lists entities observed within the specified timeframe along with their properties. When you query entities of the `SERVICE_METHOD` type, only the following requests are returned:
 
-* [Key requests](/managed/observe/application-observability/services-classic/monitor-key-requests "Discover how to closely monitor requests that are critical to your business.").
+* [Key requests](/managed/observe/application-observability/services-classic/services-page/monitor-key-requests "Discover how to closely monitor requests that are critical to your business.").
 * Top X requests that are used for [baselining](/managed/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining "Learn how Dynatrace AI automatically calculates baselines based on a multi-dimensional baselining scheme.").
 * Requests that have caused a [problem](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.").
 

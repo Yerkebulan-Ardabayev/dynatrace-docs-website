@@ -29,6 +29,7 @@ To proceed with the procedure below, you need:
 3. Add a network zone to the configuration of every OneAgent. Go zone by zone, editing the configuration of every OneAgent in one network zone before moving on to another This will assure transition without failovers.
 
    1. Specify the network zone [via command-line interface](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#nz "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent."). For instructions on cloud deployments, select the appropriate link in the expandable section.
+
       Deploy network zones in a cloud
 
       #### Kubernetes

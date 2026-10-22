@@ -705,4 +705,4 @@ Anomaly detection config - services - updated
 
 * [Adjust the sensitivity of anomaly detection for services](/managed/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services "Learn how to adapt the sensitivity of problem detection for services.")
 * [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")
-* [Services](/managed/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.")
+* [Services](/managed/observe/application-observability/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.")

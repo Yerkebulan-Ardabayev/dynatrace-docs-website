@@ -164,7 +164,7 @@ See [Span settings](/managed/ingest-from/extend-dynatrace/extend-tracing/span-se
 
 ## Limitations
 
-* [Span default service](/managed/observe/application-observability/services/service-detection/service-detection-v1#span-service "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
+* [Span default service](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1#span-service "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
 * When both OneAgent and OpenTracing instrumentation are present for the same technology (for example, incoming web requests via the Servlet API), you may experience the following limitations:
 
   + Duplicate nodes in PurePath® distributed traces

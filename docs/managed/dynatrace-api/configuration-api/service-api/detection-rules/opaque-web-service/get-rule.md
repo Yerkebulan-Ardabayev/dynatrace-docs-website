@@ -260,5 +260,5 @@ The actual set of fields depends on the type of the transformation. Find the lis
 
 ## Related topics
 
-* [Service Detection v1](/managed/observe/application-observability/services/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
-* [Opaque services](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/opaque-services "Understand what opaque services are.")
+* [Service Detection v1](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
+* [Opaque services](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/service-types/opaque-services "Understand what opaque services are.")

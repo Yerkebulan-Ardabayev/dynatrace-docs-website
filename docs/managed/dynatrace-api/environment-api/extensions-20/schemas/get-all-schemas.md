@@ -165,4 +165,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [Develop your own Extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.")
+* [Manage Dynatrace extensions for hundreds of technologies.﻿](https://www.dynatrace.com/hub/detail/extension-manager)

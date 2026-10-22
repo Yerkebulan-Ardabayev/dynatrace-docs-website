@@ -27,5 +27,5 @@ Delete calculated service metrics you don't need anymore.](/managed/dynatrace-ap
 
 ## Related topics
 
-* [Calculated metrics for Services](/managed/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests.")
+* [Calculated metrics for Services](/managed/observe/application-observability/services-classic/calculated-service-metric "Learn how to create a calculated metric based on web requests.")
 * [Multidimensional analysis](/managed/observe/application-observability/multidimensional-analysis "Configure a multidimensional analysis view and save it as a calculated metric.")

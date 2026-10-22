@@ -89,7 +89,7 @@ Resources
 
 Services
 
-Select the **Services** portion of the infographic to view the services that support your application in the **Called services** section. If you select **View service flow** at the bottom right corner of this section, you can [view the sequence of service calls that are triggered by each service](/managed/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment."). Dynatrace allows you to [access the service flow for an application as well as a user action](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/service-flows-for-applications-and-user-actions "Learn how to access service flows for applications and user actions.").
+Select the **Services** portion of the infographic to view the services that support your application in the **Called services** section. If you select **View service flow** at the bottom right corner of this section, you can [view the sequence of service calls that are triggered by each service](/managed/observe/application-observability/services-classic/services-page/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment."). Dynatrace allows you to [access the service flow for an application as well as a user action](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/service-flows-for-applications-and-user-actions "Learn how to access service flows for applications and user actions.").
 
 ![Services](https://dt-cdn.net/images/services-2255-23e1ba2133.png)
 

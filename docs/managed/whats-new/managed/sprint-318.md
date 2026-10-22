@@ -36,7 +36,7 @@ SDv2 also introduces the endpoint concept, which represents an evolution of key 
 
 Service detection v2 settings
 
-To learn more about SDv2, see [Service Detection v2](/managed/observe/application-observability/services/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.").
+To learn more about SDv2, see [Service Detection v2](/managed/observe/application-observability/services-classic/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.").
 
 Platform
 

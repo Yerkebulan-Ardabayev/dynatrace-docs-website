@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integ
 
 * How-to guide
 * 1-min read
-* Updated on Jun 08, 2026
+* Updated on Oct 02, 2026
 
 To monitor your AWS Fargate workloads, deploy Dynatrace OneAgent as described below.
 
@@ -465,6 +465,8 @@ Replace `<your-application-image>`, `<your-account-id>`, `<your-region>`, and `<
 
 Replace `<your-technology>` with your application runtime (valid values: `python`, `java`, `dotnet`, `nodejs`, `php`, `go`, `apache`, `nginx`, `all`).
 
+Don't store the OneAgent code modules on network-attached storage, such as Amazon EFS. With Amazon EFS, the OneAgent files might be missing or incomplete when the application container starts. In that case, the application container logs an `LD_PRELOAD` error for `liboneagentproc.so` that ends with `cannot be preloaded (file too short)`, and the task doesn't appear in Dynatrace. Use local storage.
+
 1. Register the task definition:
 
    ```
@@ -513,6 +515,18 @@ You can configure network zones as an environment variable:
 * `DT_NETWORK_ZONE`: equals `your.network.zone`
 
 See [network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+
+### Configure custom properties
+
+You can add [custom properties](/managed/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata "Configure your own process-related metadata based on the unique needs of your organization or environment.") as an environment variable:
+
+* `DT_CUSTOM_PROP`: for example, `AWS_ENVIRONMENT=prod SERVICE_NAME=my-service`
+
+Set `DT_CUSTOM_PROP` and `DT_NETWORK_ZONE` in the application container.
+
+## Rotate the tenant token
+
+The tenant token that your task definition references as `DT_TENANTTOKEN` stays valid until you finish the [tenant token rotation](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token#rotate-tenant-token "Learn what a tenant token is and how to change it."). Before you finish the rotation, update the secret with the new tenant token and redeploy your tasks so that they connect with the new token. After you finish the rotation, the old token is invalid, and tasks that still use it can stop reporting data.
 
 ## Monitor consumption
 

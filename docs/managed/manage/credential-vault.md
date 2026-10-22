@@ -345,8 +345,3 @@ Read more about token scopes in the [API authentication Documentation topic](/ma
 * If you [overwrite](#overwrite-credential) a credential, notify the previous owner. If you delete a credential, notify the owner.
 * If you use the [API](#cv-api) to edit or update a monitor with a credential, the API token should be owned by someone who has access to the credentials assigned to the monitor.
 * Whenever possible, use the [narrow API token scopes](#cv-api) limiting read and write access to just the credential vault.
-
-## Related topics
-
-* [Sign extensions](/managed/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension, upload certificates and custom extensions, and configure certificate permissions using the Dynatrace Extensions Framework.")
-* [WMI data source tutorial](/managed/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial "Learn about WMI extensions in the Extensions framework.")

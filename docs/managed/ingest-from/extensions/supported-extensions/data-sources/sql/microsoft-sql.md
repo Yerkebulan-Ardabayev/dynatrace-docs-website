@@ -65,7 +65,7 @@ Activate the extension](/managed/ingest-from/extensions/supported-extensions/dat
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. To learn how to use it to activate an extension using the Dynatrace API, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. To learn how to use it to activate an extension using the Dynatrace API, see [Extensions 2.0 API](/managed/dynatrace-api/environment-api/extensions-20/monitoring-configurations/post-monitoring-configuration "Create a monitoring configuration of an extension via the Dynatrace Extensions 2.0 API.").
 
 ## Related topics
 

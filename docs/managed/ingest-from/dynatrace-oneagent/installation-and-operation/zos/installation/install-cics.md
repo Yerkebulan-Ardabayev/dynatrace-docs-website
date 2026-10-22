@@ -21,7 +21,7 @@ With the CICS module, you can get observability for your CICS transactions and p
 
 Trace your CICS transactions end-to-end with Dynatrace
 
-Analyze the performance of your transactions end-to-end using the [Service flow](/managed/observe/application-observability/services-classic/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
+Analyze the performance of your transactions end-to-end using the [Service flow](/managed/observe/application-observability/services-classic/services-page/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
 
 ![CICS service flow](https://dt-cdn.net/images/cics-trace-2357-0a7717e199.png)
 

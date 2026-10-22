@@ -280,7 +280,7 @@ The ID rewrite applies only to newly started traces (not context propagation) an
 ### All languages
 
 * OneAgent captures OpenTelemetry resource attributes only if they are provided via the `OTEL_SERVICE_NAME` and `OTEL_RESOURCE_ATTRIBUTES` environment variables. When using the OpenTelemetry trace ingest API, this limitation doesn't apply.
-* You can't create [request attributes](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") (commonly used for trace searching and filtering) based on OpenTelemetry resource attributes.
+* You can't create [request attributes](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") (commonly used for trace searching and filtering) based on OpenTelemetry resource attributes.
 * OneAgent truncates attribute values exceeding 4,096 characters.
 
 ## Prevention of span duplication in Java

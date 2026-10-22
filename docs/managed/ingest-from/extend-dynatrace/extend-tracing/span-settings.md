@@ -60,7 +60,7 @@ You can then find the attribute key on the **Distributed traces** page on the [*
 
 All detected OpenTelemetry and OpenTracing spans are captured by default. This means that every detected span is added to distributed traces. This gives code-level visibility along with span attributes, even for technologies not supported by OneAgent out of the box.
 
-You can create [request attributes](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") based on spans to segment the distributed traces.
+You can create [request attributes](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") based on spans to segment the distributed traces.
 
 We recommend that you exclude spans for technologies supported out of the box by OneAgent for [Java](/managed/ingest-from/technology-support#java "Find technical details related to Dynatrace support for specific platforms and development frameworks.") and [Go](/managed/ingest-from/technology-support#go "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 

@@ -34,7 +34,7 @@ Smartscape example
 
 Smartscape example
 
-Another topological view is shown within [Service flow in Services Classic](/managed/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment."), which shows the real-time call relationships of services extracted from all incoming transactions and traces.
+Another topological view is shown within [Service flow in Services](/managed/observe/application-observability/services-classic/services-page/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment."), which shows the real-time call relationships of services extracted from all incoming transactions and traces.
 
 Service flow example
 

@@ -196,8 +196,8 @@ The SaaS Upgrade Assistant is based on the Dynatrace Configuration as Code imple
 See the [supported configuration API types](/managed/deliver/configuration-as-code/monaco/reference/supported-configuration#configs "Configuration types and access permissions for Dynatrace Configuration as Code via Monaco") of Dynatrace Configuration as Code.
 
 * [Extensions 1.0](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") and [Extensions](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.") configuration, including endpoint credentials
-* [AWS](/managed/observe/infrastructure-observability/cloud-platform-monitoring/aws-monitoring "Monitor AWS with Dynatrace") credentials
-* [Azure](/managed/observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring "Monitor Azure with Dynatrace") credentials
+* [AWS](/managed/observe/infrastructure-observability/cloud-platform-monitoring-classic/aws-monitoring-classic "Monitor AWS with Dynatrace") credentials
+* [Azure](/managed/observe/infrastructure-observability/cloud-platform-monitoring-classic/azure-monitoring-classic "Monitor Azure with Dynatrace") credentials
 * [GCP](/managed/observe/infrastructure-observability/cloud-platform-monitoring/gcp-monitoring "Monitor Google Cloud with Dynatrace") monitoring
 * [Cloud Foundry](/managed/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.") credentials
 * [Kubernetes/Openshift](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Monitor Kubernetes/OpenShift with Dynatrace.") credentials
@@ -211,8 +211,8 @@ See the [supported configuration API types](/managed/deliver/configuration-as-co
 * Web application usability analytics - [rage clicks](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#rage-event "Learn about user and error events and the types of user and error events captured by Dynatrace.")
 * [JavaScript errors](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-errors#configure-javascript-errors "Configure your application to capture or ignore request, custom, and JavaScript errors.")
 * [Mobile symbolication](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS, tvOS, and React Native) and your options for uploading and managing symbol files in Dynatrace.")
-* [Request naming](/managed/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.") order
-* [Merged services](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/merged-services "Consolidate multiple web-request services of the same process group into one service.")
+* [Request naming](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.") order
+* [Merged services](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/service-types/merged-services "Consolidate multiple web-request services of the same process group into one service.")
 * Key requests and their references
 * Server-side service deep monitoring settings: Real-time updates to Java and PHP services
 * Server-side service deep monitoring settings: Exclude noisy exceptions
@@ -220,7 +220,7 @@ See the [supported configuration API types](/managed/deliver/configuration-as-co
 * Server-side service deep monitoring settings: Capture SQL bind variables
 * [Multi-dimensional analysis](/managed/observe/application-observability/multidimensional-analysis "Configure a multidimensional analysis view and save it as a calculated metric.") saved views
 * [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") saved queries
-* [Custom service rules](/managed/observe/application-observability/services/service-detection/service-detection-v1/customize-service-detection "Use detection rules to customize and enhance the automated detection of your services.") order
+* [Custom service rules](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/customize-service-detection "Use detection rules to customize and enhance the automated detection of your services.") order
 * [Remote environments](/managed/analyze-explore-automate/dashboards/create-multi-environment-dashboards "Connect a remote Dynatrace environment with an access token and point dashboard tiles to it, so one dashboard shows data from several environments.")
 * [Account management](/managed/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.") - users, groups, permissions, and IAM policies
 * Custom devices

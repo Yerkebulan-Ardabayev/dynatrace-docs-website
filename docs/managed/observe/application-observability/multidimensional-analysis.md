@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/application-observability/mul
 
 * How-to guide
 * 4-min read
-* Updated on Oct 01, 2026
+* Updated on Oct 16, 2026
 
 The **Multidimensional analysis** view enables you to analyze web requests of your services with fine-tuned filtering, so you can focus your analysis on the dimensions that matter most. This view is easily configurable and serves as a convenient entry point for in-depth analysis of your services.
 
@@ -32,7 +32,7 @@ Understand and analyze all code-level exceptions.](/managed/observe/application-
 
 ## Data source
 
-Multidimensional analysis uses trace and request data as its data source, which includes information on [distributed traces](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#traces-grail "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.") and [requests](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#request-attributes "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.").
+Multidimensional analysis uses trace and request data as its data source, which includes information on [distributed traces](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#distributed-traces "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.") and [requests](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#request-attributes "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.").
 
 * For timeframes shorter than two hours, a higher resolution (below 1 minute) is used.
 * For larger amounts of data, especially for longer timeframes or unfiltered analysis, sampling is applied: only a fraction of trace and request data is used.
@@ -75,7 +75,7 @@ The chart shows the top 15 dimensions (all other dimensions are aggregated into 
 In the **Actions** column of the table, you can select:
 
 * **Filter**  to filter the view for the specified dimension.
-* **More** (**…**) to access further analysis options from the [**Analyze** menu](/managed/observe/application-observability/services-classic/context-specific-drill-down#analyze-menu "Learn about easy navigation and filtering for services analysis.").
+* **More** (**…**) to access further analysis options from the [**Analyze** menu](/managed/observe/application-observability/services-classic/services-page/context-specific-drill-down#analyze-menu "Learn about easy navigation and filtering for services analysis.").
 
 For timeframes containing data older than 10 days, you can turn on **Show data retention** to better understand which data is available for which period directly from the chart.
 
@@ -116,10 +116,10 @@ To create a calculated service metric from a multidimensional analysis view
 7. Optional If needed, customize the metric key.
 
    Once a metric is created, you can't change its key.
-8. Optional If you want to fine-tune your metric, select **Advanced options** to configure additional parameters of the metric. For details, see [Calculated metrics for services](/managed/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests.").
+8. Optional If you want to fine-tune your metric, select **Advanced options** to configure additional parameters of the metric. For details, see [Calculated metrics for services](/managed/observe/application-observability/services-classic/calculated-service-metric "Learn how to create a calculated metric based on web requests.").
 9. Select **Create metric**.
 
 ## Related topics
 
 * [Service metrics API](/managed/dynatrace-api/configuration-api/calculated-metrics/service-metrics "Manage calculated service metrics via the Dynatrace configuration API.")
-* [Calculated metrics for Services](/managed/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests.")
+* [Calculated metrics for Services](/managed/observe/application-observability/services-classic/calculated-service-metric "Learn how to create a calculated metric based on web requests.")

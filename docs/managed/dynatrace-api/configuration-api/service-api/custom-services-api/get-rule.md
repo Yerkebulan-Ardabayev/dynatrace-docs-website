@@ -177,4 +177,4 @@ Metadata useful for debugging
 
 ## Related topics
 
-* [Define custom services](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/custom-services "Define entry points (a method, class, or interface) for custom services that don't use standard protocols.")
+* [Define custom services](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/service-types/custom-services "Define entry points (a method, class, or interface) for custom services that don't use standard protocols.")

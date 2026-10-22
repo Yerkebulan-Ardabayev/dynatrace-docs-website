@@ -52,7 +52,7 @@ After 10 days, session data is optimized for aggregated views. Non-aggregated an
 
 ## Services: Requests and request attributes
 
-Short-term service metric data, used in [multidimensional analysis](/managed/observe/application-observability/multidimensional-analysis "Configure a multidimensional analysis view and save it as a calculated metric.") and [request charting](/managed/observe/application-observability/services-classic#charts "Learn about Dynatrace's classic service monitoring"), is available for a maximum of 365 days, depending on your configuration, with the following interval granularity levels:
+Short-term service metric data, used in [multidimensional analysis](/managed/observe/application-observability/multidimensional-analysis "Configure a multidimensional analysis view and save it as a calculated metric.") and [request charting](/managed/observe/application-observability/services-classic/services-page#charts "Learn about Dynatrace's service monitoring."), is available for a maximum of 365 days, depending on your configuration, with the following interval granularity levels:
 
 | Timeframe | Interval granularity |
 | --- | --- |

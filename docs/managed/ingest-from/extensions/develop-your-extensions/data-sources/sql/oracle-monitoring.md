@@ -15,7 +15,7 @@ After you define the scope of your configuration, you need to identify the datab
 
 Make sure that all the ActiveGates from the ActiveGate group you'll define as the scope can connect to a respective data source. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](/managed/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
 
-The monitoring configuration is a JSON payload defining the connection details, credentials, and feature sets that you want to monitor. For details, see [Start monitoring](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+The monitoring configuration is a JSON payload defining the connection details, credentials, and feature sets that you want to monitor.
 
 Example payload to activate an Oracle SQL extension:
 
@@ -143,7 +143,7 @@ Example payload to activate an Oracle SQL extension:
 ]
 ```
 
-When you have your initial extension YAML ready, package it, sign it, and upload it to your Dynatrace environment. For details, see [Manage extension lifecyle](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+When you have your initial extension YAML ready, package it, sign it, and upload it to your Dynatrace environment.
 
 The Dynatrace Hub-based extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration
 

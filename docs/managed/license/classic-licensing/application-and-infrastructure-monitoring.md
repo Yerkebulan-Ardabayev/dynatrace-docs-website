@@ -129,7 +129,7 @@ Example scenarios include, but are not limited to:
   + [AWS Elastic Beanstalk](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-beanstalk "Install OneAgent on AWS Elastic Beanstalk.")
   + [AWS Elastic Kubernetes Service](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-eks "Install OneAgent on Elastic Kubernetes Service.")
 * [AWS Fargate](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate "Install OneAgent on AWS Fargate.")
-* [Azure App Service](/managed/observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring "Monitor Azure with Dynatrace") including [Azure Functions on App-Service (Dedicated) Plan](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions/integrate-oneagent-on-azure-functions "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.")
+* [Azure App Service](/managed/observe/infrastructure-observability/cloud-platform-monitoring-classic/azure-monitoring-classic "Monitor Azure with Dynatrace") including [Azure Functions on App-Service (Dedicated) Plan](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions/integrate-oneagent-on-azure-functions "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.")
 * [Azure Container instances﻿](https://docs.microsoft.com/en-us/azure/container-instances/)
 
   + [Azure Kubernetes Service](/managed/ingest-from/microsoft-azure-services/integrations/azure-aks "Learn how to deploy, operate, and maintain OneAgent on Azure Kubernetes Service.")

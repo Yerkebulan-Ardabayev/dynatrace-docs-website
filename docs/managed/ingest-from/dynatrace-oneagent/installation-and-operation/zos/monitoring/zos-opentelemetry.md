@@ -519,7 +519,7 @@ Suppressed spans will not be visible in distributed traces.
 
 ## Define a request attribute for span attributes
 
-You can define a [request attribute](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") for any captured span attribute. To do so
+You can define a [request attribute](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") for any captured span attribute. To do so
 
 1. Go to **Settings** > **Server-side service monitoring** > **Request attributes**.
 2. Select **Define a new request attribute** and enter the name and data type of your request attribute.

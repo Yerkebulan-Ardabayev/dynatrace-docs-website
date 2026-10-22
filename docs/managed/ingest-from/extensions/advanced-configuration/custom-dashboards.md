@@ -48,7 +48,7 @@ After your extension starts sending data to Dynatrace, you can [create a custom 
    Replace:
 
    * `{env-id}` with your [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
-   * `{api-token}` with an [API token](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+   * `{api-token}` with an [API token](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") that has the required permissions.
    * `{dashboard-id}` with the dashboard identifier you determined in the previous step.
 4. The call returns the JSON payload containing the dashboard definition. Save it as a JSON file.
 

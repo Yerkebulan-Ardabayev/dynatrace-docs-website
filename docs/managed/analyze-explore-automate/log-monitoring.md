@@ -7,6 +7,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitori
 
 # Log Monitoring
 
+* Overview
 * 2-min read
 * Updated on Jun 09, 2026
 

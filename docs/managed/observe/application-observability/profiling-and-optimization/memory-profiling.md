@@ -75,7 +75,7 @@ The **Hotspot APIs** tab in the **All allocations** view lists the allocated mem
 
 You can modify the API list to be more specific to your application:
 
-* By further segmenting the API breakdown. Learn how to [add custom API](/managed/observe/application-observability/services/customize-api-definitions "Set detection rules to customize APIs in your environment.") definitions.
+* By further segmenting the API breakdown. Learn how to [add custom API](/managed/observe/application-observability/services-classic/customize-api-definitions "Set detection rules to customize APIs in your environment.") definitions.
 * By [excluding third-party libraries](#exclude-3rd-party).
 
 ### Called methods
@@ -133,7 +133,7 @@ The **Hotspot APIs** tab in the **Survivors** view lists the survived memory and
 
 You can modify the API list to be more specific to your application:
 
-* By further segmenting the API breakdown. Learn how to [add custom API](/managed/observe/application-observability/services/customize-api-definitions "Set detection rules to customize APIs in your environment.") definitions.
+* By further segmenting the API breakdown. Learn how to [add custom API](/managed/observe/application-observability/services-classic/customize-api-definitions "Set detection rules to customize APIs in your environment.") definitions.
 * By [excluding third-party libraries](#exclude-3rd-party).
 
 ### Called methods
@@ -145,7 +145,7 @@ When you select a method on the **Survivor hotspots** tab or **Flame graph** tab
 
 ## Exclude third-party libraries
 
-To focus the analysis on your code, we recommend that you define third-party library APIs. To do this, you need to mark a [user-defined API](/managed/observe/application-observability/services/customize-api-definitions "Set detection rules to customize APIs in your environment.") as a third-party library.
+To focus the analysis on your code, we recommend that you define third-party library APIs. To do this, you need to mark a [user-defined API](/managed/observe/application-observability/services-classic/customize-api-definitions "Set detection rules to customize APIs in your environment.") as a third-party library.
 
 1. Go to **Settings** > **Server-side service monitoring** > **API detection rules**.
 2. Select **Expand**  to edit the required API.
@@ -153,10 +153,10 @@ To focus the analysis on your code, we recommend that you define third-party lib
 4. Save your changes.
 
 * You can leverage a pre-filled version of the **API detection rules** page from the hotspots tables on the **Memory profiling** page. In the chosen method row, select **More** (**…**) > **API detection rules** in the **Action** column.
-* You can exclude a library without manually configuring rules from the **Built-in APIs** list. Create a user-defined rule for the library and mark it as third party. To learn how, see [Custom API definitions](/managed/observe/application-observability/services/customize-api-definitions "Set detection rules to customize APIs in your environment.").
+* You can exclude a library without manually configuring rules from the **Built-in APIs** list. Create a user-defined rule for the library and mark it as third party. To learn how, see [Custom API definitions](/managed/observe/application-observability/services-classic/customize-api-definitions "Set detection rules to customize APIs in your environment.").
 
 The **Called method** page is configured to display all methods, including third-party APIs. When you define third-party library APIs, these are not excluded from the **Called method** views.
 
 ## Related topics
 
-* [Customize API definitions for Services](/managed/observe/application-observability/services/customize-api-definitions "Set detection rules to customize APIs in your environment.")
+* [Customize API definitions for Services](/managed/observe/application-observability/services-classic/customize-api-definitions "Set detection rules to customize APIs in your environment.")

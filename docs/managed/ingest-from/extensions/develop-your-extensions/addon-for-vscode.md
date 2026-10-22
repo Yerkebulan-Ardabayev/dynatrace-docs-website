@@ -41,7 +41,6 @@ You can speed up development by automatically generating significant portions of
 
 * Generating [unified analysis pages](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend Dynatrace unified analysis pages with custom cards to surface metrics, logs, events, and metadata for any entity type in one focused view.") for your entities.
 * Code completions based on data from your environment.
-
 * Generating documentation, dashboards, and alerts.
 * Running Windows Management Instrumentation (WMI) Queries to extract metrics and dimensions automatically.
 * Connecting to Prometheus exporters to extract metrics, dimensions, and metadata automatically.
@@ -53,7 +52,6 @@ You can reduce bugs by validating your extension content early. ![Dynatrace Exte
 
 * Extension manifest validation against different schema versions
 * Custom diagnostics beyond what's included in the extension schemas
-
 * Metric and entity selector validation against environment data
 
 ## Support

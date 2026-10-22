@@ -54,7 +54,7 @@ You can export the table data in a comma-separated values (CSV) file.
 * In the **Actions** column of the table, you can select:
 
   + **Filter**  to filter the view for the specified dimension.
-  + **More** (**…**) to access further analysis options from the [**Analyze** menu](/managed/observe/application-observability/services-classic/context-specific-drill-down#analyze-menu "Learn about easy navigation and filtering for services analysis.").
+  + **More** (**…**) to access further analysis options from the [**Analyze** menu](/managed/observe/application-observability/services-classic/services-page/context-specific-drill-down#analyze-menu "Learn about easy navigation and filtering for services analysis.").
 
 ## Example use cases
 

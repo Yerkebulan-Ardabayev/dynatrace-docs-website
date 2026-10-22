@@ -73,10 +73,10 @@ If you're just monitoring a queue or topic, and not looking into the message pro
 
 Because of their properties,
 
-* Listener services aren't visible on the analytics pages available from the **Queues** page, but you can find details in the [**Service analysis**](/managed/observe/application-observability/services-classic "Learn about Dynatrace's classic service monitoring"), [**Service flow**](/managed/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment."), and [**Distributed traces**](/managed/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") pages.
+* Listener services aren't visible on the analytics pages available from the **Queues** page, but you can find details in the [**Service analysis**](/managed/observe/application-observability/services-classic/services-page "Learn about Dynatrace's service monitoring."), [**Service flow**](/managed/observe/application-observability/services-classic/services-page/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment."), and [**Distributed traces**](/managed/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") pages.
 * Listener service requests can't be renamed or pinned to a dashboard.
 
-  Note that a listener service is always followed by a messaging service on which you can perform such actions. For example, you can rename the messaging service requests via (global) [request naming rules](/managed/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.") using the message queue name as a placeholder, and then [pin the request to a dashboard](/managed/analyze-explore-automate/dashboards/available-tiles#tile-service-or-request "Look up every tile you can add to a dashboard, with what each tile displays, where it drills down to, and the settings it offers.").
+  Note that a listener service is always followed by a messaging service on which you can perform such actions. For example, you can rename the messaging service requests via (global) [request naming rules](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.") using the message queue name as a placeholder, and then [pin the request to a dashboard](/managed/analyze-explore-automate/dashboards/available-tiles#tile-service-or-request "Look up every tile you can add to a dashboard, with what each tile displays, where it drills down to, and the settings it offers.").
 
 ### Examples
 
@@ -94,5 +94,5 @@ Queue distributed traces
 
 ## Related topics
 
-* [Services](/managed/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.")
-* [Service Detection v1](/managed/observe/application-observability/services/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
+* [Services](/managed/observe/application-observability/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.")
+* [Service Detection v1](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.")

@@ -172,6 +172,6 @@ What does `[declared unavailable by agent]` mean?
 
 ## Related topics
 
-* [Services page](/managed/observe/application-observability/services-classic "Learn about Dynatrace's classic service monitoring")
-* [Service flow in Services Classic](/managed/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.")
-* [Service analysis timings in Services Classic](/managed/observe/application-observability/services-classic/service-analysis-timing "Find out what each time in service analysis means.")
+* [Services page](/managed/observe/application-observability/services-classic/services-page "Learn about Dynatrace's service monitoring.")
+* [Service flow in Services](/managed/observe/application-observability/services-classic/services-page/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.")
+* [Service analysis timings in Services](/managed/observe/application-observability/services-classic/services-page/service-analysis-timing "Find out what each time in service analysis means.")

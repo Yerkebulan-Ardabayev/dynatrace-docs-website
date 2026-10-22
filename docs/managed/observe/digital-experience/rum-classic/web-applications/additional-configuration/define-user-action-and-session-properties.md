@@ -83,7 +83,7 @@ To define a custom property
 6. Configure the property:
 
    * Select an [**Expression type**](#expression-types). If applicable, also choose a [**Data type**](#data-types) and **String length**.
-   * Enter the designation of the expression type you want to use, for example, the CSS selector attribute or meta tag name. For the **Server-side request attribute** type, select a [request attribute name](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
+   * Enter the designation of the expression type you want to use, for example, the CSS selector attribute or meta tag name. For the **Server-side request attribute** type, select a [request attribute name](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
    * Optional Define a **Display name**, which is the name of the property that is used in the Dynatrace web UI, for example, on the session details page or user action details page.
    * Specify a **Key**, which is the name of the property that is used to identify and later locate the property in [USQL](/managed/observe/digital-experience/rum-classic/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") and **User sessions** page.
 

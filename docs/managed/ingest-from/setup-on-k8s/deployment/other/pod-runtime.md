@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/o
 # Application observability with Pod runtime injection
 
 * 7-min read
-* Updated on Oct 17, 2025
+* Updated on Oct 02, 2026
 
 Inject Dynatrace code modules into a container during its deployment.
 
@@ -228,6 +228,8 @@ For Alpine Linux-based containers, you might need to update the `wget` shipped w
 Extend your deployment template as follows.
 
 This option refers to .NET applications in Windows containers.
+
+Pod runtime injection on Windows supports only .NET applications. Other workloads, such as applications hosted in IIS (for example, started via `ServiceMonitor.exe w3svc`), aren't supported. Pod runtime injection on Windows doesn't include the OneAgent process agent.
 
 OneAgent version 1.319 and earlier
 

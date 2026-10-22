@@ -41,4 +41,4 @@ To learn how to obtain and use it, see [Personal access tokens](/managed/discove
 
 ## Related topics
 
-* [Request attributes in Services](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.")
+* [Request attributes in Services](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.")

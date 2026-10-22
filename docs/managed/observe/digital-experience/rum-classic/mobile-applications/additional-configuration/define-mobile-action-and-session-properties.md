@@ -56,7 +56,7 @@ Additionally, you can add the required metadata to server-side requests, define 
 
 Request attributes are derived from web request URLs, HTTP request headers, and other request metadata. These attributes represent key-value pairs that you can filter across many Dynatrace analysis and distributed tracing views.
 
-For more details, see [Request attributes in Services](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
+For more details, see [Request attributes in Services](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
 
 ## Add action and session properties
 

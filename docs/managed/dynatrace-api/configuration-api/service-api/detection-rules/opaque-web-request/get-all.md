@@ -127,6 +127,6 @@ The short representation of a Dynatrace entity.
 
 ## Related topics
 
-* [Service Detection v1](/managed/observe/application-observability/services/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
-* [Opaque services](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/opaque-services "Understand what opaque services are.")
-* [Monitor third-party services](/managed/observe/application-observability/services/service-detection/service-detection-v1/monitor-3rd-party-services "Configure how Dynatrace should monitor third-party services.")
+* [Service Detection v1](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
+* [Opaque services](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/service-types/opaque-services "Understand what opaque services are.")
+* [Monitor third-party services in Service Detection v1](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/monitor-3rd-party-services "Configure how Dynatrace should monitor third-party services.")

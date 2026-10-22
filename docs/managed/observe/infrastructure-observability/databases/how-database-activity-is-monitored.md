@@ -26,7 +26,7 @@ Database calls and PurePath® technology
 
 The distributed trace of a database request shows a particular database statement executed by the application. Because the traces are captured within the application and not on the database itself, you will see database statements traces only if the application that makes them either sends distributed traces to the [OpenTelemetry trace ingest API](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") or is monitored via the OneAgent. If there are no distributed traces already started by the said application, you can define a custom service. See the **Method hotspots** page to choose a method that is called before the database request in the same thread.
 
-Attributes used for detection are marked with an asterisk ✱ on the [database](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/analyze-database-services-new "Analyze your database services with Dynatrace (new page).") overview page, under **Properties and tags**.
+Attributes used for detection are marked with an asterisk ✱ on the [database](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/service-types/analyze-database-services-new "Analyze your database services with Dynatrace.") overview page, under **Properties and tags**.
 
 ## How database activity is monitored
 

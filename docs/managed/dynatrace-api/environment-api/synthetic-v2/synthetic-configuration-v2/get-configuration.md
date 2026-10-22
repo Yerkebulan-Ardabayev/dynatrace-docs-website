@@ -51,6 +51,7 @@ A DTO for synthetic configuration.
 | --- | --- | --- |
 | bmMonitorTimeout | integer | bmMonitorTimeout - browser monitor execution timeout (ms) |
 | bmStepTimeout | integer | bmStepTimeout - browser monitor single step execution timeout (ms) |
+| maintenanceWindowsExcludedFromAvailability | boolean | maintenanceWindowsExcludedFromAvailability - exclude periods with maintenance windows from availability calculation |
 
 #### The `ErrorEnvelope` object
 
@@ -88,7 +89,11 @@ A list of constraint violations
 
 
 
-"bmStepTimeout": 1
+"bmStepTimeout": 1,
+
+
+
+"maintenanceWindowsExcludedFromAvailability": true
 
 
 

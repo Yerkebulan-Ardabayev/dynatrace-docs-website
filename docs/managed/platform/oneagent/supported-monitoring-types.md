@@ -22,7 +22,7 @@ OneAgent supports real user monitoring for mobile applications as well. The proc
 
 ## Server-side service monitoring
 
-Web applications consist of web pages that are served by web servers (for example, Apache Tomcat) and web containers (for example, Docker). The web requests that are sent to a specific Tomcat server are an example of a server-side service. Server-side services may be of various types like web services, web containers, database requests, and custom services. OneAgent can provide information such as which applications or services use which other services and whether or not a service makes calls to other services or databases. For details, see [Services](/managed/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.").
+Web applications consist of web pages that are served by web servers (for example, Apache Tomcat) and web containers (for example, Docker). The web requests that are sent to a specific Tomcat server are an example of a server-side service. Server-side services may be of various types like web services, web containers, database requests, and custom services. OneAgent can provide information such as which applications or services use which other services and whether or not a service makes calls to other services or databases. For details, see [Services](/managed/observe/application-observability/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.").
 
 ## Network, process, and host monitoring
 

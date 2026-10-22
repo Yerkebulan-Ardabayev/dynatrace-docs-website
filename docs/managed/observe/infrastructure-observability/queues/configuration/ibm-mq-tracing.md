@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 * 6-min read
 * Updated on Sep 11, 2026
 
-Dynatrace can automatically create a continuous [service flow](/managed/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") for IBM MQ when the producer and consumer services use the same queue or topic name. If the producer and consumer services refer to different queue or topic names, IBM MQ configuration might be required to create a continuous service flow.
+Dynatrace can automatically create a continuous [service flow](/managed/observe/application-observability/services-classic/services-page/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") for IBM MQ when the producer and consumer services use the same queue or topic name. If the producer and consumer services refer to different queue or topic names, IBM MQ configuration might be required to create a continuous service flow.
 
 Without IBM MQ configuration, Dynatrace can still trace all messages, but the service flow will be broken.
 

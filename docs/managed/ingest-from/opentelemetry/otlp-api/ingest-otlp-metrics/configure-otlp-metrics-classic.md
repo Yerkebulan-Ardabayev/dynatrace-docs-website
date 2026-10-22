@@ -34,6 +34,8 @@ Dynatrace defines a set of default attributes that we consider relevant and bene
 * Even though you can modify the default attribute list, Dynatrace does not recommend that you change or remove attributes starting with `dt.*`. Dynatrace uses these attributes to [enrich ingested metrics with Dynatrace-specific dimensions](/managed/ingest-from/extend-dynatrace/extend-data "Enrich telemetry you send directly to Dynatrace by reading host and Kubernetes resource attributes from the OneAgent and Dynatrace Operator enrichment files.").
 * Dynatrace allows a maximum of 50 dimensions per metric. For details, see [Limits](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#api-limits-and-validations "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.").
 
+The allow list applies to all ingested OTLP metrics. To drop a dimension from specific metrics only, use the [metric dimension block list](/managed/analyze-explore-automate/metrics-classic/metric-dimensions-best-practices#metric-dimension-block-list "Choose dimension tuples with care, stay within cardinality limits, avoid rejected data points, and use the metric dimension block list.").
+
 Name conflicts
 
 See [Attribute ingestion](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#attribute-ingestion "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.") for details on how Dynatrace ingests data of different attributes sharing the same name.

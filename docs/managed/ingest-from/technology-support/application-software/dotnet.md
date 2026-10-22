@@ -21,7 +21,7 @@ Dynatrace provides extensive .NET monitoring capabilities:
 
 * [OpenTelemetry support﻿](https://github.com/open-telemetry/opentelemetry-dotnet) for capturing traces and ingesting metrics.  
   For more information, see [Instrument your .NET application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/dotnet "Learn how to instrument your .NET application using OpenTelemetry and Dynatrace.")
-* End-to-end transaction tracing of requests to web services, remoting services, queues, and databases. [Learn more about services](/managed/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.")
+* End-to-end transaction tracing of requests to web services, remoting services, queues, and databases. [Learn more about services](/managed/observe/application-observability/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.")
 * [OneAgent SDK](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing
 * Garbage collection, process metrics, and much more
 * [Always-on 24x7 production grade CPU profiling﻿](https://www.dynatrace.com/news/blog/analyze-cpu-consumption-background-threads/)

@@ -11,19 +11,21 @@ source: https://docs.dynatrace.com/managed/observe/application-observability
 * 1-min read
 * Published Feb 06, 2023
 
-[#### Services
+Monitor the health and performance of your applications and services, from distributed traces to code-level analysis.
 
-Learn how to monitor and analyze your services, define and use request attributes, and more.
-
-* Overview
-
-See the overview](/managed/observe/application-observability/services)[#### Distributed Traces
+[#### Distributed Traces
 
 Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.
 
 * Overview
 
-See the overview](/managed/observe/application-observability/distributed-traces)[#### Multidimensional analysis
+See the overview](/managed/observe/application-observability/distributed-traces)[#### Services
+
+Learn how to monitor and analyze your services, define and use request attributes, and more.
+
+* Overview
+
+See the overview](/managed/observe/application-observability/services-classic)[#### Multidimensional analysis
 
 Configure a multidimensional analysis view and save it as a calculated metric.
 
@@ -35,20 +37,22 @@ Learn how to use Dynatrace diagnostic tools for crash analysis, memory dump anal
 
 * Overview
 
-See the overview](/managed/observe/application-observability/profiling-and-optimization)[#### Services page
+See the overview](/managed/observe/application-observability/profiling-and-optimization)[#### Log Monitoring
 
-Learn about Dynatrace's classic service monitoring
+Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.
 
 * Overview
 
-See the overview](/managed/observe/application-observability/services-classic)
+See the overview](/managed/analyze-explore-automate/log-monitoring)[#### Digital Experience
 
-## See also
+Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.
 
-[![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events")
+* Overview
 
-### Logs Classic
+See the overview](/managed/observe/digital-experience)[#### Metrics
 
-Manage, analyze, and monitor log data.](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")[### Digital Experience
+Learn about metrics classic that Dynatrace offers.
 
-Use RUM and Synthetic Monitoring for total Digital Experience Monitoring.](/managed/observe/digital-experience "Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.")
+* Overview
+
+See the overview](/managed/analyze-explore-automate/metrics-classic)

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/metrics-clas
 
 * Overview
 * 2-min read
-* Updated on Nov 09, 2023
+* Updated on Oct 15, 2026
 
 In Dynatrace, you have various types of metrics at your disposal:
 
@@ -37,13 +37,15 @@ Get an overview of metrics available out of the box.](/managed/analyze-explore-a
 
 Get an overview of self-monitoring metrics available out of the box.](/managed/analyze-explore-automate/metrics-classic/self-monitoring-metrics "Explore the complete list of self-monitoring Dynatrace metrics.")[### Metric browser
 
-Get an overview of all metrics available in your environment.](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics.")
+Get an overview of all metrics available in your environment.](/managed/analyze-explore-automate/metrics-browser "Find Metrics browser reference information for filters, metric details, and custom metric metadata, and configure metadata for custom metrics.")[### Metric dimensions best practices
+
+Keep cardinality under control and block metric dimensions you don't need with the metric dimension block list.](/managed/analyze-explore-automate/metrics-classic/metric-dimensions-best-practices "Choose dimension tuples with care, stay within cardinality limits, avoid rejected data points, and use the metric dimension block list.")
 
 ### Calculated metrics
 
 [Log Monitoring](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
 
-[Service](/managed/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests.")
+[Service](/managed/observe/application-observability/services-classic/calculated-service-metric "Learn how to create a calculated metric based on web requests.")
 
 [Synthetic](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors#calculated-metrics "Learn how to analyze browser-monitor data points.")
 

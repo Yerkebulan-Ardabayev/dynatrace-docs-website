@@ -171,4 +171,4 @@ bundle.zip
 |    extension.zip.sig
 ```
 
-You can now upload the extension package to your Dynatrace environment. For more information, see [Manage Extensions](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+You can now upload the extension package to your Dynatrace environment.

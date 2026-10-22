@@ -25,7 +25,7 @@ Memory dump page
 
 * To trigger memory dumps, you need the [**View sensitive request data**](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions#environment "Role-based permissions") user permission.
 * To store memory dumps, your application server must have adequate space.
-* To access persisted memory dumps via Dynatrace web UI, [configure an ActiveGate to store memory dumps in a centralized location](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate."). To learn more about memory dump retention time, see [Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#memory-dumps "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.").
+* To access persisted memory dumps via Dynatrace web UI, [configure an ActiveGate to store memory dumps in a centralized location](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate."). To learn more about memory dump retention time, see [Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.").
 
 ## Trigger memory dumps
 

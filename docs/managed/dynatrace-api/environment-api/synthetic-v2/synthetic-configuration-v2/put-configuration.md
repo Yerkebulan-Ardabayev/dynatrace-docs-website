@@ -43,6 +43,7 @@ A DTO for synthetic configuration.
 | --- | --- | --- | --- |
 | bmMonitorTimeout | integer | bmMonitorTimeout - browser monitor execution timeout (ms) | Required |
 | bmStepTimeout | integer | bmStepTimeout - browser monitor single step execution timeout (ms) | Required |
+| maintenanceWindowsExcludedFromAvailability | boolean | maintenanceWindowsExcludedFromAvailability - exclude periods with maintenance windows from availability calculation | Required |
 
 ### Request body JSON model
 
@@ -57,7 +58,11 @@ This is a model of the request body, showing the possible elements. It has to be
 
 
 
-"bmStepTimeout": 1
+"bmStepTimeout": 1,
+
+
+
+"maintenanceWindowsExcludedFromAvailability": true
 
 
 
@@ -70,7 +75,7 @@ This is a model of the request body, showing the possible elements. It has to be
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **204** | [SyntheticConfigDto](#openapi-definition-SyntheticConfigDto) | Success. The set of synthetic related parameters has been updated. Response doesn't have a body. |
+| **204** | - | Success. The set of synthetic related parameters has been updated. Response doesn't have a body. |
 | **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
 | **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Server side error. |
 

@@ -36,7 +36,7 @@ To analyze a process group, remove the filters.
 
 The color coding of the pie chart, the area chart, and the bars in the code-level stack facilitate code-level diagnostics.
 
-To access the breakdown of processes, select the **Top APIs** tab. You can [configure the list of APIs](/managed/observe/application-observability/services/customize-api-definitions "Set detection rules to customize APIs in your environment.").
+To access the breakdown of processes, select the **Top APIs** tab. You can [configure the list of APIs](/managed/observe/application-observability/services-classic/customize-api-definitions "Set detection rules to customize APIs in your environment.").
 
 ![Top APIs tab in CPU profiling](https://dt-cdn.net/images/cpu-analysis-top-apis-1861-9b7ace016f.png)
 

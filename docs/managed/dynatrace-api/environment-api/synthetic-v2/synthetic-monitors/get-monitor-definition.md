@@ -58,6 +58,7 @@ Network availability monitor.
 | description | string | Monitor description |
 | enabled | boolean | If true, the monitor is enabled. |
 | entityId | string | The entity id of the monitor. |
+| externalId | string | Stable identifier used by configuration-as-code tools (such as Monaco) to manage this monitor across environments. Unique per environment. |
 | frequencyMin | integer | The frequency of the monitor, in minutes. |
 | locations | string[] | The locations to which the monitor is assigned. |
 | modificationTimestamp | integer | The timestamp of the last modification |
@@ -168,6 +169,7 @@ Browser Monitor.
 | description | string | Monitor description |
 | enabled | boolean | If true, the monitor is enabled. |
 | entityId | string | The entity id of the monitor. |
+| externalId | string | Stable identifier used by configuration-as-code tools (such as Monaco) to manage this monitor across environments. Unique per environment. |
 | frequencyMin | integer | The frequency of the monitor, in minutes. |
 | keyPerformanceMetrics | [KeyPerformanceMetrics](#openapi-definition-KeyPerformanceMetrics) | The key performance metrics configuration. |
 | locations | string[] | The locations to which the monitor is assigned. |
@@ -199,6 +201,7 @@ Browser Monitor configuration.
 | filteredRequests | [FilteredRequestsDto](#openapi-definition-FilteredRequestsDto) | Filtered requests of a Browser Monitor. |
 | ignoredErrorCodes | [IgnoredErrorCodesDto](#openapi-definition-IgnoredErrorCodesDto) | Ignored Error Codes of a Browser Monitor. |
 | javaScriptSettings | [JavaScriptAgentSettingsDto](#openapi-definition-JavaScriptAgentSettingsDto) | JavaScript Agent Settings. |
+| monitorCrossOriginFrames | boolean | Capture performance metrics for pages loaded in cross origin frames. If not defined in request, it will fall back to monitorFrames by default. |
 | monitorFrames | boolean | Capture performance metrics for pages loaded in frames. If not defined in request, it will be set to false by default. |
 | networkThrottling | [NetworkThrottlingDto](#openapi-definition-NetworkThrottlingDto) | Network throttling of a Browser Monitor. |
 | proxy | [ProxyDto](#openapi-definition-ProxyDto) | Browser Monitor proxy. |
@@ -430,6 +433,7 @@ Http monitor.
 | description | string | Monitor description |
 | enabled | boolean | If true, the monitor is enabled. |
 | entityId | string | The entity id of the monitor. |
+| externalId | string | Stable identifier used by configuration-as-code tools (such as Monaco) to manage this monitor across environments. Unique per environment. |
 | frequencyMin | integer | The frequency of the monitor, in minutes. |
 | locations | string[] | The locations to which the monitor is assigned. |
 | manuallyAssignedEntities | string[] | Manually assigned entities. |

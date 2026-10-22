@@ -26,8 +26,15 @@ To execute this request, you need an access token with `oneAgents.write` scope.
 One of the following permissions is required for personal access tokens:
 
 * `environment:roles:viewer`
+* `fleet-management:oneagents:write`
 
 To learn how to obtain and use it, see [Personal access tokens](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+
+### Platform Token / OAuth:
+
+Required scope: `fleet-management:oneagents:write`
+
+To learn how to obtain and use it, see [Platform tokens﻿](https://docs.dynatrace.com/docs/shortlink/platform-tokens) or [OAuth clients﻿](https://docs.dynatrace.com/docs/shortlink/oauth).
 
 ## Parameters
 

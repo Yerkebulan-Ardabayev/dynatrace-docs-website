@@ -57,9 +57,9 @@ Application Observability | Services
 
 You can now define a custom service for short-lived Go processes through the web UI. Similarly to Java, the **Define entry point manually** function is now available for Go.
 
-Previously, defining a custom service for short-lived Go processes was only possible via the [Configuration API](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/custom-services#go-service-via-api "Define entry points (a method, class, or interface) for custom services that don't use standard protocols.").
+Previously, defining a custom service for short-lived Go processes was only possible via the [Configuration API](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/service-types/custom-services#go-service-via-api "Define entry points (a method, class, or interface) for custom services that don't use standard protocols.").
 
-For details, see [Service detection rules](/managed/observe/application-observability/services/service-detection/service-detection-v1/customize-service-detection "Use detection rules to customize and enhance the automated detection of your services.").
+For details, see [Service detection rules in Service Detection v1](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/customize-service-detection "Use detection rules to customize and enhance the automated detection of your services.").
 
 Digital Experience | Session Replay
 
@@ -121,7 +121,7 @@ Availability:
 
 To preview changes before opting in, use the dashboard attached to our [Dynatrace Community﻿](https://dt-url.net/lv031sg) post.
 
-For details, see [Service Detection v2](/managed/observe/application-observability/services/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.").
+For details, see [Service Detection v2](/managed/observe/application-observability/services-classic/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.").
 
 Digital Experience | RUM Web
 

@@ -65,5 +65,5 @@ As mentioned above, tags can have a key/value structure as well. Therefore, you 
 You can use metadata to
 
 * [Apply tags to entities via rules](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.").
-* Apply naming schemes to your [process groups](/managed/observe/infrastructure-observability/process-groups/configuration/pg-naming "Ways to customize process-group naming") and [services](/managed/observe/application-observability/services/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.").
+* Apply naming schemes to your [process groups](/managed/observe/infrastructure-observability/process-groups/configuration/pg-naming "Ways to customize process-group naming") and [services](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.").
 * Define [Management zones](/managed/manage/identity-access-management-classic/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.").

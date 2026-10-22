@@ -67,7 +67,7 @@ If you compare the [first regex﻿](https://regex101.com/r/EG4nNO/1) against the
 
 ### Capture groups are not allowed for simple matches
 
-Capture groups in regular expressions are used to extract information. Sometimes this concept is misused for simple find matches. As this only adds overhead and is not needed, Dynatrace doesn't allow it. In most cases, you can use [atomic groups﻿](https://www.regular-expressions.info/atomic.html) instead. To ensure high product performance, further grouping restrictions might apply in regex definitions, for example in [request naming rules](/managed/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming#limitations "Adjust request naming and define the operations your services offer.").
+Capture groups in regular expressions are used to extract information. Sometimes this concept is misused for simple find matches. As this only adds overhead and is not needed, Dynatrace doesn't allow it. In most cases, you can use [atomic groups﻿](https://www.regular-expressions.info/atomic.html) instead. To ensure high product performance, further grouping restrictions might apply in regex definitions, for example in [request naming rules](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/set-up-request-naming#limitations "Adjust request naming and define the operations your services offer.").
 
 Dynatrace allows exactly one capture group in places where you need to extract a value. The logic here is that if the regular expression contains a group, Dynatrace will use it. Otherwise, the full match is used for extraction.
 

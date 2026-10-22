@@ -28,4 +28,4 @@ Delete a request naming rule you don't need anymore.](/managed/dynatrace-api/con
 
 ## Related topics
 
-* [Set up request naming](/managed/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.")
+* [Set up request naming in Service Detection v1](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.")

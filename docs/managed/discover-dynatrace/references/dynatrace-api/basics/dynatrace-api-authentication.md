@@ -52,7 +52,9 @@ Personal access token
 To generate a platform token:
 
 1. Go to [My platform tokens﻿](https://myaccount.dynatrace.com/platformTokens).
+
 2. Create a platform token with the required scopes.
+
    See [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") for details.
 
 To generate an access token:

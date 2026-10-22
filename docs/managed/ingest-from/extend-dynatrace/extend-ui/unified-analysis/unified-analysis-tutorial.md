@@ -767,7 +767,3 @@ autoGenerate: true
   ![Smart fleet expand](https://dt-cdn.net/images/fleet-2-1417-2b62cf52f0.png)
 
   Smart fleet expand
-
-## Related topics
-
-* [About Extensions](/managed/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.")

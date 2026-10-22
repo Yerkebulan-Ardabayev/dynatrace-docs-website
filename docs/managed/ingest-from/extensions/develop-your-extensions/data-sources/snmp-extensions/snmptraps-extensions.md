@@ -130,10 +130,7 @@ Dynatrace topological properties.
 
 All variable bindings reported with the trap message and extension-defined variables are added as log event attributes (for example, `device.address` and `snmp.trap_oid`).
 
-For more information about custom log attributes and log processing rules, see:
-
-* [Create a custom log attribute](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-custom-attributes#create-a-custom-log-attribute "Learn how to create and use custom attributes during log data ingestion.")
-* [Log processing rules](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
+For more information about custom log attributes, see [Create a custom log attribute](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-custom-attributes#create-a-custom-log-attribute "Learn how to create and use custom attributes during log data ingestion.").
 
 ### Enable trap events
 
@@ -287,7 +284,7 @@ Management Information Base (MIB) files define and describe SNMP objects identif
 
 After you define the scope of your configuration, you need to identify the network devices you'd like to collect data from and identify the ActiveGates that will execute the extension and connect to your devices.
 
-The monitoring configuration is a JSON payload defining the connection details, credentials, and feature sets that you want to monitor. For details, see [Start monitoring](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+The monitoring configuration is a JSON payload defining the connection details, credentials, and feature sets that you want to monitor.
 
 Example payload to activate an SNMP extension:
 
@@ -415,7 +412,7 @@ Example payload to activate an SNMP extension:
 ]
 ```
 
-When you have your initial extension YAML ready, package it, sign it, and upload it to your Dynatrace environment. For details, see [Manage extension lifecyle](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+When you have your initial extension YAML ready, package it, sign it, and upload it to your Dynatrace environment.
 
 The Dynatrace Hub-based extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration
 

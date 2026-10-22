@@ -32,7 +32,7 @@ Dynatrace provides extensive Go monitoring capabilities:
   + Parked, out of work, and overall worker threads
   + Idle scheduling context count
 * [Incoming and outgoing web request monitoring](/managed/ingest-from/technology-support/application-software/go/configuration-and-analysis/end-to-end-request-monitoring "Find out how Dynatrace provides request-level visibility for your Go-based applications.")
-* [Custom service monitoring](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/custom-services "Define entry points (a method, class, or interface) for custom services that don't use standard protocols.")
+* [Custom service monitoring](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/service-types/custom-services "Define entry points (a method, class, or interface) for custom services that don't use standard protocols.")
 * [`database/sql`﻿](https://dt-url.net/database-sql) service tracing  
   For the list of supported drivers, see [Go technology support](/managed/ingest-from/technology-support#go "Find technical details related to Dynatrace support for specific platforms and development frameworks.")
 * [OpenTelemetry support﻿](https://github.com/open-telemetry/opentelemetry-go/) for capturing traces.  

@@ -195,4 +195,4 @@ Finally, perform the following steps to upload your extension to Dynatrace.
 2. When prompted about uploading your extension to Dynatrace, choose **Yes**.
 3. When prompted about activating this extension version, choose **Yes**.
 
-Congratulations. You created, built, uploaded, and activated your first Extension. You can view it in Dynatrace by navigating to Extensions .
+Congratulations. You created, built, uploaded, and activated your first Extension. You can view it in Dynatrace by navigating to Extensions.

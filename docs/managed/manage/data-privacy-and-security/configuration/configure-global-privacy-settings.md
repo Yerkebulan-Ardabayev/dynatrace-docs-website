@@ -164,9 +164,9 @@ Note that the following data types are considered confidential and are masked at
 
 ### Confidential request attributes
 
-[Request attributes](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") are key-value pairs of metadata that are filterable across all Dynatrace service and distributed traces views.
+[Request attributes](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") are key-value pairs of metadata that are filterable across all Dynatrace service and distributed traces views.
 
-Dynatrace allows you to decide whether a request attribute should be [marked as confidential](/managed/observe/application-observability/services/request-attributes#confidential "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."). To manage request attributes, you must have the **Manage capturing of sensitive request data** [permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions").
+Dynatrace allows you to decide whether a request attribute should be [marked as confidential](/managed/observe/application-observability/services-classic/request-attributes#confidential "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."). To manage request attributes, you must have the **Manage capturing of sensitive request data** [permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions").
 
 ## Opt-in mode
 

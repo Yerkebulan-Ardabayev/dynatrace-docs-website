@@ -13,16 +13,22 @@ source: https://docs.dynatrace.com/managed/observe/application-observability/dis
 
 Distributed tracing is an essential monitoring, debugging, and optimizing tool for distributed software architectures. By visualizing how different services are connected and how your requests travel through various tiers of an application, it helps teams to quickly understand the performance of each microservice.
 
-[### Concepts
+[#### Concepts for Distributed Traces
 
-Learn the core concepts and terminology of distributed tracing in Dynatrace.](/managed/observe/application-observability/distributed-traces/concepts "Learn more about distributed tracing core concepts and terminology.")[### Context propagation
+Learn more about distributed tracing core concepts and terminology.
 
-Understand span and trace context propagation in Dynatrace and how to set them up.](/managed/observe/application-observability/distributed-traces/context-propagation "Understand span and trace context propagation in Dynatrace and how to set them up.")[![Distributed Traces Classic](https://dt-cdn.net/images/distributed-traces-classic-7197cdacfb.svg "Distributed Traces Classic")
+* Explanation
 
-### Analyze
+Read this explanation](/managed/observe/application-observability/distributed-traces/concepts)[#### Span and trace context propagation in Distributed Traces
 
-Analyze distributed traces.](/managed/observe/application-observability/distributed-traces/analysis/get-started "Get started with distributed trace analysis in Dynatrace.")
+Understand span and trace context propagation in Dynatrace and how to set them up.
 
-## Related topics
+* Explanation
 
-* [Application Observability](/managed/observe/application-observability "Get familiar with application observability capabilities in Dynatrace.")
+Read this explanation](/managed/observe/application-observability/distributed-traces/context-propagation)[#### Get started with Distributed Traces
+
+Get started with distributed trace analysis in Dynatrace.
+
+* How-to guide
+
+Read this guide](/managed/observe/application-observability/distributed-traces/analysis/get-started)

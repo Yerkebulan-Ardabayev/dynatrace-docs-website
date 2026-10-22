@@ -18,7 +18,7 @@ Istio is a platform-independent service mesh that is very popular in the Kuberne
 * Istio metrics and topology: ActiveGate
 * Istio logs: OneAgent [log module](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
 
-Alternatively, [Unified services](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/unified-service "Define services on observability signals ingested via Trace ingest APIs.") provide agentless support for Istio service meshes.
+Alternatively, [Unified services](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/service-types/unified-service "Define services on observability signals ingested via Trace ingest APIs.") provide agentless support for Istio service meshes.
 
 ## How it works
 

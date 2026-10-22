@@ -51,6 +51,7 @@ Network availability monitor.
 | --- | --- | --- | --- |
 | description | string | Monitor description | Optional |
 | enabled | boolean | If true, the monitor is enabled. | Optional |
+| externalId | string | Stable identifier used by configuration-as-code tools (such as Monaco) to manage this monitor across environments. Unique per environment. | Optional |
 | frequencyMin | integer | The frequency of the monitor, in minutes. Default value depends on the monitor type (1 minute for MULTI\_PROTOCOL and HTTP, 15 minutes for BROWSER). | Optional |
 | locations | string[] | The locations to which the monitor is assigned. | Required |
 | name | string | The name of the monitor. | Required |
@@ -158,6 +159,7 @@ Browser monitor update.
 | configuration | [SyntheticBrowserMonitorConfigurationDto](#openapi-definition-SyntheticBrowserMonitorConfigurationDto) | Browser Monitor configuration. | Required |
 | description | string | Monitor description | Optional |
 | enabled | boolean | If true, the monitor is enabled. | Optional |
+| externalId | string | Stable identifier used by configuration-as-code tools (such as Monaco) to manage this monitor across environments. Unique per environment. | Optional |
 | frequencyMin | integer | The frequency of the monitor, in minutes. Default value depends on the monitor type (1 minute for MULTI\_PROTOCOL and HTTP, 15 minutes for BROWSER). | Optional |
 | keyPerformanceMetrics | [KeyPerformanceMetrics](#openapi-definition-KeyPerformanceMetrics) | The key performance metrics configuration. | Optional |
 | locations | string[] | The locations to which the monitor is assigned. | Required |
@@ -188,6 +190,7 @@ Browser Monitor configuration.
 | filteredRequests | [FilteredRequestsDto](#openapi-definition-FilteredRequestsDto) | Filtered requests of a Browser Monitor. | Optional |
 | ignoredErrorCodes | [IgnoredErrorCodesDto](#openapi-definition-IgnoredErrorCodesDto) | Ignored Error Codes of a Browser Monitor. | Optional |
 | javaScriptSettings | [JavaScriptAgentSettingsDto](#openapi-definition-JavaScriptAgentSettingsDto) | JavaScript Agent Settings. | Optional |
+| monitorCrossOriginFrames | boolean | Capture performance metrics for pages loaded in cross origin frames. If not defined in request, it will fall back to monitorFrames by default. | Optional |
 | monitorFrames | boolean | Capture performance metrics for pages loaded in frames. If not defined in request, it will be set to false by default. | Optional |
 | networkThrottling | [NetworkThrottlingDto](#openapi-definition-NetworkThrottlingDto) | Network throttling of a Browser Monitor. | Optional |
 | proxy | [ProxyDto](#openapi-definition-ProxyDto) | Browser Monitor proxy. | Optional |
@@ -417,6 +420,7 @@ Http monitor's settings.
 | cookies | [SyntheticMonitorCookieDto](#openapi-definition-SyntheticMonitorCookieDto)[] | The cookies of the monitor. | Optional |
 | description | string | Monitor description | Optional |
 | enabled | boolean | If true, the monitor is enabled. | Optional |
+| externalId | string | Stable identifier used by configuration-as-code tools (such as Monaco) to manage this monitor across environments. Unique per environment. | Optional |
 | frequencyMin | integer | The frequency of the monitor, in minutes. Default value depends on the monitor type (1 minute for MULTI\_PROTOCOL and HTTP, 15 minutes for BROWSER). | Optional |
 | locations | string[] | The locations to which the monitor is assigned. | Required |
 | manuallyAssignedEntities | string[] | Manually assigned entities. | Optional |
