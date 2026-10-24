@@ -18,7 +18,7 @@ Dynatrace provides native OTLP endpoints with the following services:
 * The Dynatrace Managed platform.
 * ActiveGate instances.
 
-Alternatively, you can deploy the [Dynatrace Collector](/managed/ingest-from/opentelemetry/collector "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.") as an intermediary service application to batch requests and improve network performance, or to transform requests before forwarding them to Dynatrace (for example, [mask sensitive data](/managed/ingest-from/opentelemetry/collector/use-cases/redact "Configure the OpenTelemetry Collector to mask sensitive data before forwarding to Dynatrace.")).
+Alternatively, you can deploy the [Dynatrace Collector](/managed/ingest-from/opentelemetry/collector "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.") as an intermediary service application to batch requests and improve network performance, or to transform requests before forwarding them to Dynatrace (for example, [mask sensitive data](/managed/ingest-from/opentelemetry/collector-use-cases/redact "Configure the OpenTelemetry Collector to mask sensitive data before forwarding to Dynatrace.")).
 
 ## Default ingest paths
 
@@ -85,7 +85,7 @@ Calls to Dynatrace API endpoints have the following limitations.
 
 * gRPC is not supported.
   API calls need to use HTTP.
-  You can use a Collector to transform a gRPC OTLP request to its HTTP counterpart, see [Transform OTLP gRPC to HTTP with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/grpc "Configure the OpenTelemetry Collector to transform a gRPC OTLP request to HTTP.").
+  You can use a Collector to transform a gRPC OTLP request to its HTTP counterpart, see [Transform OTLP gRPC to HTTP with the OTel Collector](/managed/ingest-from/opentelemetry/collector-use-cases/grpc "Configure the OpenTelemetry Collector to transform a gRPC OTLP request to HTTP.").
 * JSON is not supported for Protocol Buffers.
   Binary format must be used.
 
@@ -134,7 +134,7 @@ Verify that the following are true:
 
 ## Export to the OTel Collector
 
-Using the OTel Collector as an intermediate gateway allows you to streamline and optimize your telemetry data and requests centrally. See [OTel Collector use cases](/managed/ingest-from/opentelemetry/collector/use-cases "Configure your OpenTelemetry Collector instance for different use cases, including authentication, data enrichment, and format conversion.") for more information and sample configurations for popular Collector use cases.
+Using the OTel Collector as an intermediate gateway allows you to streamline and optimize your telemetry data and requests centrally. See [OTel Collector use cases](/managed/ingest-from/opentelemetry/collector-use-cases "Configure your OpenTelemetry Collector instance for different use cases, including authentication, data enrichment, and format conversion.") for more information and sample configurations for popular Collector use cases.
 
 See [OTel Collector for ingesting telemetry into Dynatrace](/managed/ingest-from/opentelemetry/collector "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.") for more details on how to configure a Collector instance.
 
@@ -142,7 +142,7 @@ gRPC conversion
 
 As Dynatrace currently requires OTLP exports with HTTP, you can use the OTel Collector to convert gRPC exports to HTTP.
 
-See [Transform OTLP gRPC to HTTP with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/grpc "Configure the OpenTelemetry Collector to transform a gRPC OTLP request to HTTP.") for more details.
+See [Transform OTLP gRPC to HTTP with the OTel Collector](/managed/ingest-from/opentelemetry/collector-use-cases/grpc "Configure the OpenTelemetry Collector to transform a gRPC OTLP request to HTTP.") for more details.
 
 ### Authentication and TLS
 

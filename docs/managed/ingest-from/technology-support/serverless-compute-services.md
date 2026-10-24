@@ -43,7 +43,7 @@ Key to columns and cells
 
 Both 64-bit ARM (AWS Graviton2 processors) and 64-bit x86 architectures are supported
 
-| Language | [Cloud platform metrics and metadata](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.") | [Logs](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lm-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.") | Distributed tracing | Automatic tracing | OpenTelemetry Extend tracing | Custom metrics | Automatic RUM | Agentless RUM |
+| Language | [Cloud platform metrics and metadata](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.") | [Logs](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/aws-logs-ingest/lm-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.") | Distributed tracing | Automatic tracing | OpenTelemetry Extend tracing | Custom metrics | Automatic RUM | Agentless RUM |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Python | GA | GA | GA | GA[1](#fn-1-1-def) | GA | GA | GA[1](#fn-1-1-def) | n/a |
 | Java | GA | GA | GA | GA[2](#fn-1-2-def) | GA | GA | GA[1](#fn-1-1-def) | n/a |
@@ -55,7 +55,7 @@ Both 64-bit ARM (AWS Graviton2 processors) and 64-bit x86 architectures are supp
 
 Both 64-bit ARM (AWS Graviton2 processors) and 64-bit x86 architectures are supported
 
-| Language | [Cloud platform metrics and metadata](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.") | [Logs](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lm-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.") | Distributed tracing | Automatic tracing | OpenTelemetry Extend tracing | Custom metrics | Automatic RUM | Agentless RUM |
+| Language | [Cloud platform metrics and metadata](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.") | [Logs](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/aws-logs-ingest/lm-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.") | Distributed tracing | Automatic tracing | OpenTelemetry Extend tracing | Custom metrics | Automatic RUM | Agentless RUM |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Python | GA | GA | GA | GA[2](#fn-1-2-def) | GA | GA | GA[2](#fn-1-2-def) | n/a |
 | Java | GA | GA | GA | GA[2](#fn-1-2-def) | GA | GA | GA[2](#fn-1-2-def) | n/a |
@@ -65,15 +65,15 @@ Both 64-bit ARM (AWS Graviton2 processors) and 64-bit x86 architectures are supp
 
 1
 
-[Requires integration of Dynatrace extension via Dynatrace Lambda Layer](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java."). To learn which runtimes are supported, see [Support lifecycle](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration#supported-versions "AWS Lambda capabilities and integration options").
+[Requires integration of Dynatrace extension via Dynatrace Lambda Layer](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java."). To learn which runtimes are supported, see [Support lifecycle](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration#supported-versions "AWS Lambda capabilities and integration options").
 
 2
 
-[Requires integration of Dynatrace extension on container image](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension/deploy-oneagent-on-lambda-container-images "Deploy Dynatrace Lambda Layers when deployed via a container image.")
+[Requires integration of Dynatrace extension on container image](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension/deploy-oneagent-on-lambda-container-images "Deploy Dynatrace Lambda Layers when deployed via a container image.")
 
 3
 
-[Trace AWS Lambda .Net Core](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration/lambda-otel-native "Learn how to use OpenTelemetry to trace AWS Lambda .NET Core functions.")
+[Trace AWS Lambda .Net Core](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration/lambda-otel-native "Learn how to use OpenTelemetry to trace AWS Lambda .NET Core functions.")
 
 ## Azure Functions
 
@@ -135,7 +135,7 @@ Output bindings are only supported for HTTP triggers.
 
 ## Google Cloud Functions
 
-| Language | [Cloud platform metrics and metadata](/managed/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.") | [Logs](/managed/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.") | [Distributed tracing](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions "Set up monitoring for Google Cloud Functions.") | Automatic tracing | OpenTelemetry Extend tracing | Custom metrics | Automatic RUM | Agentless RUM |
+| Language | [Cloud platform metrics and metadata](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") | [Logs](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") | [Distributed tracing](/managed/ingest-from/google-cloud-platform-classic/gcp-integrations/gcp-functions "Set up monitoring for Google Cloud Functions.") | Automatic tracing | OpenTelemetry Extend tracing | Custom metrics | Automatic RUM | Agentless RUM |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Python | GA | GA | GA | Future | GA | GA | Future | GA |
 | GoLang | GA | GA | GA | Future | GA | GA | Future | GA |
@@ -145,7 +145,7 @@ Output bindings are only supported for HTTP triggers.
 
 1
 
-[Trace Google Functions written in Node.js](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs "Monitor Google Cloud Functions with OpenTelemetry for Node.js and Dynatrace.")
+[Trace Google Functions written in Node.js](/managed/ingest-from/google-cloud-platform-classic/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs "Monitor Google Cloud Functions with OpenTelemetry for Node.js and Dynatrace.")
 
 ## Related topics
 

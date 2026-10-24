@@ -23,4 +23,4 @@ All metrics published to the Operations API (formerly Stackdriver) can be automa
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](/managed/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
+* [Set up Dynatrace on Google Cloud (Dynatrace Classic)](/managed/ingest-from/google-cloud-platform-classic "Monitor Google Cloud with Dynatrace.")

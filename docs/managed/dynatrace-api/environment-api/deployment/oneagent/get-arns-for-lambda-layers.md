@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deploym
 * Reference
 * Updated on Mar 30, 2026
 
-This API is intended for use with the latest AWS Lambda implementation. For details, see [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+This API is intended for use with the latest AWS Lambda implementation. For details, see [AWS Lambda](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 Get the Amazon Resource Names (ARNs) of the latest version of OneAgent for AWS Lambda layers for supported AWS Lambda runtimes.
 

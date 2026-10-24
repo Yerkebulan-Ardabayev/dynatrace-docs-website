@@ -458,7 +458,7 @@ Rollout starts Apr 22, 2024, for OneAgent
 * Amazon SQS incoming messages (Java module). OneAgent feature: Java Amazon SQS
 * Kafka Batch Listener (Java module). OneAgent feature: Java Spring Kafka Batch Listener
 * NGINX 1.25.4 (NGINX module)
-* redis-py (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java.")
+* redis-py (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java.")
 
 ## 1.287 OneAgent
 
@@ -516,8 +516,8 @@ Rollout starts Oct 31, 2023, for OneAgent
 
 Rollout starts Oct 4, 2023, for OneAgent
 
-* Amazon SNS for .NET (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration#sqs-sns-out "Trace AWS Lambda functions using a .NET runtime")
-* Amazon SQS for .NET (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration#sqs-sns-out "Trace AWS Lambda functions using a .NET runtime")
+* Amazon SNS for .NET (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration#sqs-sns-out "Trace AWS Lambda functions using a .NET runtime")
+* Amazon SQS for .NET (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration#sqs-sns-out "Trace AWS Lambda functions using a .NET runtime")
 * OpenJDK 21 LTS (Java module)
 * Rancher Kubernetes Engine 2 (OS module)
 
@@ -525,7 +525,7 @@ Rollout starts Oct 4, 2023, for OneAgent
 
 Rollout starts Sep 5, 2023, for OneAgent
 
-* .NET (GCP integration). [Get started](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet "Monitor Google Cloud Functions with OpenTelemetry for .NET and Dynatrace.")
+* .NET (GCP integration). [Get started](/managed/ingest-from/google-cloud-platform-classic/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet "Monitor Google Cloud Functions with OpenTelemetry for .NET and Dynatrace.")
 * go-redis 7, 8, 9 (Go module). OneAgent feature: Go Redis (go-redis/redis)
 * Java ForkJoin (Java module). OneAgent feature: Java/Scala ForkJoinPool
 * JBoss LogManager 1.1+, 2, 3 (Java module)
@@ -535,8 +535,8 @@ Rollout starts Sep 5, 2023, for OneAgent
 Rollout starts Aug 7, 2023, for OneAgent
 
 * AlmaLinux 9.0, 9.1, 9.2 (OS module)
-* Amazon SNS for Java (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java "Connect Dynatrace AWS Lambda extension to the OpenTelemetry Java API via OpenTelemetry interoperability.")
-* Amazon SQS for Java (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java "Connect Dynatrace AWS Lambda extension to the OpenTelemetry Java API via OpenTelemetry interoperability.")
+* Amazon SNS for Java (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java "Connect Dynatrace AWS Lambda extension to the OpenTelemetry Java API via OpenTelemetry interoperability.")
+* Amazon SQS for Java (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java "Connect Dynatrace AWS Lambda extension to the OpenTelemetry Java API via OpenTelemetry interoperability.")
 * Fedora 37, 38 (OS module)
 * NGINX 1.25.0, 1.25.1 (NGINX module)
 * NGINX Plus R30 (NGINX module)
@@ -626,10 +626,10 @@ Rollout starts Feb 20, 2023, for OneAgent
 
 Rollout starts Jan 24, 2023, for OneAgent
 
-* Amazon SNS for Python (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#python-sqs-sns "Enable and use OpenTelemetry interoperability in AWS Lambda.")
-* Amazon SNS for Node.js (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#nodejs-sqs-sns "Enable and use OpenTelemetry interoperability in AWS Lambda.")
+* Amazon SNS for Python (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#python-sqs-sns "Enable and use OpenTelemetry interoperability in AWS Lambda.")
+* Amazon SNS for Node.js (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#nodejs-sqs-sns "Enable and use OpenTelemetry interoperability in AWS Lambda.")
 * Apache HttpClient 5.2 (Java module).
-* Google Cloud Run managed execution environment generation 1, 2 (Java module). [Get started](/managed/ingest-from/google-cloud-platform/gcp-integrations/cloudrun "Monitor Java application deployed on Google Cloud Run managed.")
+* Google Cloud Run managed execution environment generation 1, 2 (Java module). [Get started](/managed/ingest-from/google-cloud-platform-classic/gcp-integrations/cloudrun "Monitor Java application deployed on Google Cloud Run managed.")
 * IBM App Connect Enterprise Callable nodes (IBM IIB/ACE module)
 * IBM CICS Transaction Server JSON requests (IBM CICS module). [Get started](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics#web-services "Install the Dynatrace CICS module.")
 * Node.js 19 (Node.js module)
@@ -647,8 +647,8 @@ Rollout starts Dec 12, 2022, for OneAgent
 
 Rollout starts Nov 14, 2022, for OneAgent
 
-* Amazon SQS for Node.js (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability "Enable and use OpenTelemetry interoperability in AWS Lambda.")
-* Amazon SQS for Python (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability "Enable and use OpenTelemetry interoperability in AWS Lambda.")
+* Amazon SQS for Node.js (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability "Enable and use OpenTelemetry interoperability in AWS Lambda.")
+* Amazon SQS for Python (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability "Enable and use OpenTelemetry interoperability in AWS Lambda.")
 * PostgreSQL (jackc/pgx) 4.7 - 4.17 (Go module). [Get started﻿](https://www.dynatrace.com/hub/detail/postgresql/#get-started)
 * SQLite3 5.1+ (Node.js module)
 
@@ -662,7 +662,7 @@ Rollout starts Oct 14, 2022, for OneAgent
 * Azul Platform Core (Zulu) 19 (Java module)
 * Bellsoft Liberica 19 (Java module)
 * Eclipse Temurin (a.k.a. 'Adoptium') 19 (Java module)
-* Go 1.16+ (GCP integration). [Get started](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go "Learn how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace.")
+* Go 1.16+ (GCP integration). [Get started](/managed/ingest-from/google-cloud-platform-classic/gcp-integrations/gcp-functions/otel-gcf-go "Learn how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace.")
 * IBM z/OS Connect EE MQ service provider (z/OS Java module). [Get started](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Set up Java monitoring on z/OS using the Java module.")
 * Jetty HTTP server 10 (Java module)
 * Oracle HotSpot VM 19 (Java module)
@@ -689,7 +689,7 @@ Rollout starts Aug 25, 2022, for OneAgent
 * IBM Semeru for z/OS 11 (z/OS Java module). [Get started](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Set up Java monitoring on z/OS using the Java module.")
 * JMX 1.0+ (z/OS Java module). [Get started](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics "Learn how to set up JMX metrics monitoring for your Java applications on z/OS.")
 * Monolog 3.0 (PHP module)
-* Python (GCP integration). [Get started](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-python "Monitor Google Cloud Functions with OpenTelemetry for Python and Dynatrace.")
+* Python (GCP integration). [Get started](/managed/ingest-from/google-cloud-platform-classic/gcp-integrations/gcp-functions/opentelemetry-on-gcf-python "Monitor Google Cloud Functions with OpenTelemetry for Python and Dynatrace.")
 * Red Hat Fuse on OpenShift 7.0+ (Java module). [Get started﻿](https://www.dynatrace.com/hub/detail/red-hat-fuse/)
 * Red Hat Fuse Standalone 7.0+ (Java module). [Get started﻿](https://www.dynatrace.com/hub/detail/red-hat-fuse/)
 
@@ -697,13 +697,13 @@ Rollout starts Aug 25, 2022, for OneAgent
 
 Rollout starts Jul 25, 2022, for SaaS and Aug 1, 2022, for Managed
 
-* DynamoDB client SDK for Node.js (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#nodejs-instrumentation "Enable and use OpenTelemetry interoperability in AWS Lambda.")
+* DynamoDB client SDK for Node.js (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#nodejs-instrumentation "Enable and use OpenTelemetry interoperability in AWS Lambda.")
 
 ## 1.245 SaaS
 
 Rollout starts Jul 6, 2022, for SaaS
 
-* DynamoDB client SDK for .NET (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration#dynamo-db "Trace AWS Lambda functions using a .NET runtime")
+* DynamoDB client SDK for .NET (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration#dynamo-db "Trace AWS Lambda functions using a .NET runtime")
 
 ## 1.245 OneAgent
 
@@ -722,7 +722,7 @@ Rollout starts Jul 19, 2022, for OneAgent
 
 Rollout starts Jun 27, 2022, for SaaS and Jul 5, 2022, for Managed
 
-* DynamoDB client SDK for Python (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#python-instrumentation "Enable and use OpenTelemetry interoperability in AWS Lambda.")
+* DynamoDB client SDK for Python (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#python-instrumentation "Enable and use OpenTelemetry interoperability in AWS Lambda.")
 
 ## 1.243 OneAgent
 
@@ -741,13 +741,13 @@ Rollout starts Jun 29, 2022, for OneAgent
 
 Rollout starts Jun 8, 2022, for OneAgent
 
-* .NET / .NET Core (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration "Trace AWS Lambda functions using a .NET runtime")
+* .NET / .NET Core (AWS Lambda integration). [Get started](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration "Trace AWS Lambda functions using a .NET runtime")
 * .NET / .NET Core consumption plan (Azure integration). [Get started](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions-classic/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet "Monitor Azure Functions with OpenTelemetry for .NET and Dynatrace.")
 * Apache HttpClient 5.x (Java module)
 * Azul Platform Core (Zulu) 18 (Java module)
 * Bellsoft Liberica 18 (Java module)
 * JMS 1.1 (z/OS Java module). [Get started](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Set up Java monitoring on z/OS using the Java module.")
-* Node.js (GCP integration). [Get started](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs "Monitor Google Cloud Functions with OpenTelemetry for Node.js and Dynatrace.")
+* Node.js (GCP integration). [Get started](/managed/ingest-from/google-cloud-platform-classic/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs "Monitor Google Cloud Functions with OpenTelemetry for Node.js and Dynatrace.")
 * OpenJDK 18 (Java module)
 * OpenTelemetry 0.0.9 (PHP module)
 * Oracle HotSpot VM 18 (Java module)

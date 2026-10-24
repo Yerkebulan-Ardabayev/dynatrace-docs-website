@@ -38,7 +38,7 @@ Python
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 To enable OpenTelemetry Java
 
@@ -54,7 +54,7 @@ Existing tracers are replaced and will no longer work after you enable OpenTelem
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 Opt-in
 
@@ -78,7 +78,7 @@ OneAgent version 1.217 and earlier The OpenTelemetry Go Sensor propagates Dynatr
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in [AWS Lambda](aws-lambda)
 
 Opt-in
 
@@ -108,7 +108,7 @@ Existing tracers are not affected by OneAgent OpenTelemetry for PHP support.
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.337+.
+Supported in [AWS Lambda](aws-lambda) with OneAgent version 1.337+.
 
 Opt-in
 

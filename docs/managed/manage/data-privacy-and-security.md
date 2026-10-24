@@ -103,7 +103,7 @@ At Dynatrace, we take our responsibility to safeguard your data seriously. Have 
 
 ### OpenTelemetry
 
-[Mask sensitive data with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/redact "Configure the OpenTelemetry Collector to mask sensitive data before forwarding to Dynatrace.")
+[Mask sensitive data with the OTel Collector](/managed/ingest-from/opentelemetry/collector-use-cases/redact "Configure the OpenTelemetry Collector to mask sensitive data before forwarding to Dynatrace.")
 
 ### Log Monitoring
 

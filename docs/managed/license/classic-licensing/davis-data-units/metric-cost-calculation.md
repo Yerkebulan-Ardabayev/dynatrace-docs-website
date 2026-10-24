@@ -40,7 +40,7 @@ Metrics that consume DDUs include:
 * Metrics provided by certain [built-in extensions](/managed/ingest-from/extensions#out-of-the-box "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.") that are not enabled by default
 
   + Dynatrace web UI switches to enable/disable these metrics are labeled to let you know if they affect DDU consumption.
-* All metrics ingested by the Public Cloud Extensions ([AWS](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics."), [Azure](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics "Monitor Azure services with Dynatrace and view available metrics.") and [Google Cloud](/managed/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")).
+* All metrics ingested by the Public Cloud Extensions ([AWS](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics."), [Azure](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics "Monitor Azure services with Dynatrace and view available metrics.") and [Google Cloud](/managed/ingest-from/google-cloud-platform-classic "Monitor Google Cloud with Dynatrace.")).
 
   + For example, metrics derived from cloud services.
 

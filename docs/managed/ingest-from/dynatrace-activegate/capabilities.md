@@ -48,7 +48,7 @@ Log ingest API endpoint is supported on containerized ActiveGate in a number of 
 
 2
 
-We recommend [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/syslog "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.") as an alternative, as it has a [Syslog receiver﻿](https://github.com/Dynatrace/dynatrace-otel-collector?tab=readme-ov-file#receivers) provided by default.
+We recommend [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector-use-cases/syslog "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.") as an alternative, as it has a [Syslog receiver﻿](https://github.com/Dynatrace/dynatrace-otel-collector?tab=readme-ov-file#receivers) provided by default.
 
 ## Functionality available for ActiveGates running synthetic monitors from a private location
 

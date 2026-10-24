@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 
 * How-to guide
 * 10-min read
-* Updated on Aug 20, 2026
+* Updated on Oct 07, 2026
 
 Dynatrace detects which processes are part of the same [process groups](/managed/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.") by means of a default set of detection rules.
 
@@ -27,6 +27,8 @@ You can change the structure of default process groups by modifying the default 
 * It's also possible to use [host groups](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to separate clusters into different process groups.
 
 ## Simple detection rules
+
+Simple detection rules are deprecated. Use [process grouping rules](/managed/observe/infrastructure-observability/process-groups/configuration/process-grouping-rules "Analyze process groups and customize process group naming, detection, and monitoring.") instead. You can [migrate](/managed/observe/infrastructure-observability/process-groups/configuration/process-grouping-rules/process-grouping-rules-migration "Learn how to migrate your process groups and process group instances to process grouping rules.") existing rules to the new format.
 
 Simple process group detection rules enable you to adapt the default process-group detection logic for deep monitored processes via [**Java system properties**](#java) or [**environment variables**](#env). You can create a simple detection rule using the Dynatrace web UI or the [Settings API](#api) - see [Example JSON payload for a simple detection rule](#eg1).
 
@@ -73,6 +75,8 @@ Suppose you have two nearly identical Apache HTTP server deployments that reside
 Any Apache HTTP process that includes the environment variable `MY_PG_NAME` within its scope will use the content of "MY\_PG\_NAME" as both its identifier and its default name. In this scenario, you can have Dynatrace separately identify and name each deployment by assigning the environment variable `MY_PG_NAME=dynatrace.com-production` to one deployment, and `MY_PG_NAME=dynatrace.com-staging` to the other deployment.
 
 ## Advanced detection rules
+
+Advanced detection rules are deprecated. Use [process grouping rules](/managed/observe/infrastructure-observability/process-groups/configuration/process-grouping-rules "Analyze process groups and customize process group naming, detection, and monitoring.") instead. You can [migrate](/managed/observe/infrastructure-observability/process-groups/configuration/process-grouping-rules/process-grouping-rules-migration "Learn how to migrate your process groups and process group instances to process grouping rules.") existing rules to the new format.
 
 Advanced process group detection rules allow you to create a process group by merging processes from different groups, and enable you to adapt the detection logic for deep monitored processes by leveraging properties that are automatically detected by OneAgent during the startup of a process. You can create an advanced detection rule using the Dynatrace web UI or the [Settings API](#api) - see [Example JSON payload for an advanced detection rule](#eg2).
 
@@ -125,6 +129,8 @@ pg-no-standalone
 * To identify nodes within a process cluster that run on the same host, use the **DT\_NODE\_ID** environment variable. This tells Dynatrace which processes should be taken as separate process group instances.
 
 ## Declarative process grouping
+
+Declarative process grouping is deprecated. Use [process grouping rules](/managed/observe/infrastructure-observability/process-groups/configuration/process-grouping-rules "Analyze process groups and customize process group naming, detection, and monitoring.") instead. You can [migrate](/managed/observe/infrastructure-observability/process-groups/configuration/process-grouping-rules/process-grouping-rules-migration "Learn how to migrate your process groups and process group instances to process grouping rules.") existing rules to the new format.
 
 Dynatrace automatically monitors process groups that are of known technology types or that consume significant resources. With declarative process grouping, you can automatically monitor additional technologies by overriding the default behavior and customizing the grouping of processes into process groups (PGs) and process group instances (PGIs). For more details, refer to [Declarative process grouping](/managed/observe/infrastructure-observability/process-groups/configuration/declarative-process-grouping "Monitor specific processes using the declarative process grouping.").
 

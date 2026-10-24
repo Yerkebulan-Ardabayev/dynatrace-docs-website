@@ -65,9 +65,9 @@ With over [600+ integrations, extensions, and technology-specific support﻿](ht
 
 With a single integration per cloud vendor, Dynatrace automatically discovers your cloud services and monitors the services to provide you with out-of-the-box service health and availability monitoring:
 
-* [Amazon CloudWatch integration](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.")
+* [Amazon CloudWatch integration](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.")
 * [Azure Monitor integration](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Set up and configure Azure monitoring in Dynatrace.")
-* [Google Cloud operations suite integration](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Monitor Google Cloud services with Dynatrace and view available metrics.")
+* [Google Cloud operations suite integration](/managed/ingest-from/google-cloud-platform-classic/gcp-integrations/gcp-supported-service-metrics-new "Monitor Google Cloud services with Dynatrace and view available metrics.")
 
 ### Step 2 Enable Dynatrace extensions on cloud services that support a native extensibility mechanism
 
@@ -81,7 +81,7 @@ For instructions on integrating Dynatrace into your container image, or using Op
 
 * [Amazon Web Services](/managed/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services.")
 * [Azure Services](/managed/ingest-from/microsoft-azure-services/integrations "Monitor Azure services with Dynatrace using OneAgent for deep code-level visibility on AKS, App Service, Arc-enabled servers, Azure Functions, and more.")
-* [Google Cloud Services](/managed/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
+* [Google Cloud Services](/managed/ingest-from/google-cloud-platform-classic/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
 
 Check the recommendations in the Dynatrace web UI to enable additional telemetry sources that improve the observability of your services. For example:
 

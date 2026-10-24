@@ -9,7 +9,9 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 
 * How-to guide
 * 5-min read
-* Updated on Jan 07, 2026
+* Updated on Oct 07, 2026
+
+Declarative process grouping is deprecated. Use [process grouping rules](/managed/observe/infrastructure-observability/process-groups/configuration/process-grouping-rules "Analyze process groups and customize process group naming, detection, and monitoring.") instead. You can [migrate](/managed/observe/infrastructure-observability/process-groups/configuration/process-grouping-rules/process-grouping-rules-migration "Learn how to migrate your process groups and process group instances to process grouping rules.") existing rules to the new format.
 
 OneAgent version 1.217+
 

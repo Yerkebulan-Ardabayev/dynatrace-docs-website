@@ -621,7 +621,7 @@ Enabling syslog log ingestion requires you to:
 
    **Note**: Do NOT modify the exporter configuration. The default configuration points to the embedded Collector.
 
-   For more information on syslog receiver configuration, see [Ingest syslog data with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/syslog "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.").
+   For more information on syslog receiver configuration, see [Ingest syslog data with the OTel Collector](/managed/ingest-from/opentelemetry/collector-use-cases/syslog "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.").
 4. **Verify the syslog ingestion is enabled**.
 
    After you enable syslog ingestion, check the following log files to verify it:

@@ -20,7 +20,7 @@ cloudNativeFullStack classicFullStack applicationMonitoring hostMonitoring
 
 No specific configuration is required for EKS.
 
-Dynatrace supports a variety of different flavors of AWS EKS. For EKS on EC2 or bare metal, you can install Dynatrace in [any available deployment option](#installation-k8s) without any additional configuration changes. For EKS on Fargate, you can [install Dynatrace for App Observability](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate "Install OneAgent on AWS Fargate.").
+Dynatrace supports a variety of different flavors of AWS EKS. For EKS on EC2 or bare metal, you can install Dynatrace in [any available deployment option](#installation-k8s) without any additional configuration changes. For EKS on Fargate, you can [install Dynatrace for App Observability](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-fargate "Install OneAgent on AWS Fargate.").
 
 ### AWS Bottlerocket OS
 

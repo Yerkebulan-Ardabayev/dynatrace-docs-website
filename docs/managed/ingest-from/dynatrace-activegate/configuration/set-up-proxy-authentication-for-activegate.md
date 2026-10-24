@@ -443,4 +443,4 @@ proxy-password=password
 
 ### ActiveGate proxy settings for AWS role-based access
 
-[AWS-specific proxy configuration](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/troubleshoot-aws-monitoring-setup#proxy "Troubleshoot your Dynatrace deployment for AWS monitoring.") is described separately.
+[AWS-specific proxy configuration](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/cloudwatch-metrics/troubleshoot-aws-monitoring-setup#proxy "Troubleshoot your Dynatrace deployment for AWS monitoring.") is described separately.

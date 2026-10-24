@@ -16,7 +16,7 @@ Rollout start: Nov 11, 2024
 
 ### AWS log forwarder EOL
 
-As announced earlier, the Dynatrace [AWS log forwarder](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/aws-log-forwarder "Use AWS log forwarding to ingest AWS logs.") is deprecated.
+As announced earlier, the Dynatrace [AWS log forwarder](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/aws-logs-ingest/aws-log-forwarder "Use AWS log forwarding to ingest AWS logs.") is deprecated.
 
 Breaking change End of support for the Dynatrace AWS log forwarder is planned for Dec 31, 2024. That time is approaching.
 

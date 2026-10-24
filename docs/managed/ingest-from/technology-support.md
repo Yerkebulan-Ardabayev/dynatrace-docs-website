@@ -288,9 +288,9 @@ Dynatrace detects the hypervisor, but no dedicated logic is applied.
 | Elastic Block Store (EBS) |
 | Elastic Compute Cloud (EC2) |
 | Elastic Load Balancing (ELB) |
-| [Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/trace-lambda-functions "Monitor AWS Lambda functions.") |
-| [Relational Database Service (RDS)](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/view-aws-monitoring-results#relational-database-service-page "Display AWS monitoring results in Dynatrace on your home dashboard, AWS account page, host page, and more.") |
-| [Simple Storage Service (S3)](/managed/ingest-from/amazon-web-services/aws-platform/set-up-cors-in-amazon-s3 "Integrate CORS in Amazon Web Services for buckets within Amazon S3.") |
+| [Lambda](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/trace-lambda-functions-classic "Monitor AWS Lambda functions.") |
+| [Relational Database Service (RDS)](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/cloudwatch-metrics/view-aws-monitoring-results#relational-database-service-page "Display AWS monitoring results in Dynatrace on your home dashboard, AWS account page, host page, and more.") |
+| [Simple Storage Service (S3)](/managed/ingest-from/amazon-web-services-classic/aws-platform/set-up-cors-in-amazon-s3 "Integrate CORS in Amazon Web Services for buckets within Amazon S3.") |
 
 ### [Microsoft Azure](/managed/ingest-from/microsoft-azure-services/integrations "Monitor Azure services with Dynatrace using OneAgent for deep code-level visibility on AKS, App Service, Arc-enabled servers, Azure Functions, and more.")
 
@@ -356,14 +356,14 @@ End-2-End tracing via [Trace Context﻿](https://www.w3.org/TR/trace-context/)
 
 End-2-End tracing using [OneAgent SDK﻿](https://github.com/Dynatrace/OneAgent-SDK)
 
-### [Google Cloud](/managed/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
+### [Google Cloud](/managed/ingest-from/google-cloud-platform-classic/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
 
 | Google Cloud services |
 | --- |
-| [Google Kubernetes Engine](/managed/ingest-from/google-cloud-platform/gcp-integrations/google-gke "Google GKE") |
+| [Google Kubernetes Engine](/managed/ingest-from/google-cloud-platform-classic/gcp-integrations/google-gke "Google GKE") |
 | [GKE Autopilot](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed#automatic "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") (only for automatic `applicationMonitoring`) |
-| [Google App Engine](/managed/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine "Install OneAgent on Google App Engine clusters for application-only monitoring.") |
-| [Google Compute Engine](/managed/ingest-from/google-cloud-platform/gcp-integrations/google-compute-engine "Install OneAgent on Google Compute Engine.") |
+| [Google App Engine](/managed/ingest-from/google-cloud-platform-classic/gcp-integrations/google-app-engine "Install OneAgent on Google App Engine clusters for application-only monitoring.") |
+| [Google Compute Engine](/managed/ingest-from/google-cloud-platform-classic/gcp-integrations/google-compute-engine "Install OneAgent on Google Compute Engine.") |
 
 ### [VMware](/managed/observe/infrastructure-observability/vmware-vsphere-monitoring "Monitor VMware vSphere with Dynatrace.")
 
@@ -524,15 +524,19 @@ WebLogic thin client jar (wlthint3client.jar) is not supported. IIOP has known v
 | [Apache Camel﻿](https://www.dynatrace.com/hub/detail/apache-camel/) | 2.21+, 3+, 4+[1](#fn-esbs-and-soa-2-1-def) |
 | Apache OpenEJB | 3.1 |
 | Mule (HTTP Listener) | 3.5, 3.6, 3.7, 3.8, 3.9, 4.1 - 4.9 |
-| [Red Hat Fuse Standalone﻿](https://www.dynatrace.com/hub/detail/red-hat-fuse/) | 7.0+[1](#fn-esbs-and-soa-2-1-def) |
-| [Red Hat Fuse on OpenShift﻿](https://www.dynatrace.com/hub/detail/red-hat-fuse/) | 7.0+[1](#fn-esbs-and-soa-2-1-def) |
-| TIBCO ActiveMatrix BusinessWorks | 5.8.2 - 5.14[2](#fn-esbs-and-soa-2-2-def), 6.4[2](#fn-esbs-and-soa-2-2-def), 6.5[2](#fn-esbs-and-soa-2-2-def), 6.6 - 6.8[2](#fn-esbs-and-soa-2-2-def) |
+| [Red Hat Fuse Standalone﻿](https://www.dynatrace.com/hub/detail/red-hat-fuse/) | 7.0+[2](#fn-esbs-and-soa-2-2-def) |
+| [Red Hat Fuse on OpenShift﻿](https://www.dynatrace.com/hub/detail/red-hat-fuse/) | 7.0+[2](#fn-esbs-and-soa-2-2-def) |
+| TIBCO ActiveMatrix BusinessWorks | 5.8.2 - 5.14[3](#fn-esbs-and-soa-2-3-def), 6.4[3](#fn-esbs-and-soa-2-3-def), 6.5[3](#fn-esbs-and-soa-2-3-def), 6.6 - 6.8[3](#fn-esbs-and-soa-2-3-def) |
 
 1
 
-Only the Apache Camel connectors Undertow, Kafka, and MongoDB are supported.
+Only the Apache Camel connectors Undertow, Kafka, and MongoDB are supported. For Apache Camel 3.0+, AWS SQS and AWS SNS (both AWS SDK v1 and v2) are also supported. For Apache Camel 3.19+, AWS EventBridge is also supported. The AWS SQS, AWS SNS, and AWS EventBridge connectors require OneAgent version 1.351+.
 
 2
+
+Only the Apache Camel connectors Undertow, Kafka, and MongoDB are supported.
+
+3
 
 Only TIBCO workflows that are triggered by an incoming web service request, HTTP request, or a JMS message are supported.
 
@@ -573,15 +577,15 @@ Java and Scala bindings are supported.
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 3
 
-Only synchronous request-handling supported. Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Only synchronous request-handling supported. Supported in [AWS Lambda](aws-lambda).
 
 4
 
-Only HTTP/1.1 request-handling supported. Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Only HTTP/1.1 request-handling supported. Supported in [AWS Lambda](aws-lambda).
 
 5
 
@@ -617,7 +621,7 @@ Java and Scala 2 bindings are supported.
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 | Web services | Versions |
 | --- | --- |
@@ -662,7 +666,7 @@ Wildfly 27 - 41.
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 | Messaging clients | Versions |
 | --- | --- |
@@ -685,7 +689,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Publishers supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Publishers supported in [AWS Lambda](aws-lambda).
 
 2
 
@@ -723,15 +727,15 @@ Tracing is only supported via JMS.
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Extended tracing support for all AWS service calls.
+Supported in [AWS Lambda](aws-lambda). Extended tracing support for all AWS service calls.
 
 3
 
-gRPC client calls supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+gRPC client calls supported in [AWS Lambda](aws-lambda).
 
 4
 
@@ -744,7 +748,7 @@ WebLogic 15.1.1 has known vendor IIOP issues. T3 is supported as a workaround fo
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 | Logging frameworks | Versions |
 | --- | --- |
@@ -764,7 +768,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Monitoring of Spring Cloud Function invocations is supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Monitoring of Spring Cloud Function invocations is supported in [AWS Lambda](aws-lambda).
 
 See also [OneAgent SDK for Java](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing capabilities.
 
@@ -825,7 +829,7 @@ Dynatrace supports .NET applications written in C#. Limited support for .NET app
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.335+.
+Supported in [AWS Lambda](aws-lambda) with OneAgent version 1.335+.
 
 | Web service | Versions |
 | --- | --- |
@@ -839,11 +843,11 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.335+.
+Supported in [AWS Lambda](aws-lambda) with OneAgent version 1.335+.
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.337+.
+Supported in [AWS Lambda](aws-lambda) with OneAgent version 1.337+.
 
 | Database framework | Versions |
 | --- | --- |
@@ -856,11 +860,11 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.335+.
+Supported in [AWS Lambda](aws-lambda) with OneAgent version 1.335+.
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.337+.
+Supported in [AWS Lambda](aws-lambda) with OneAgent version 1.337+.
 
 | Messaging client | Versions |
 | --- | --- |
@@ -876,15 +880,15 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.335+.
+Supported in [AWS Lambda](aws-lambda) with OneAgent version 1.335+.
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.337+.
+Supported in [AWS Lambda](aws-lambda) with OneAgent version 1.337+.
 
 3
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.339+.
+Supported in [AWS Lambda](aws-lambda) with OneAgent version 1.339+.
 
 | Monitoring framework | Versions |
 | --- | --- |
@@ -892,7 +896,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.337+.
+Supported in [AWS Lambda](aws-lambda) with OneAgent version 1.337+.
 
 | Logging framework | Versions |
 | --- | --- |
@@ -903,7 +907,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.335+.
+Supported in [AWS Lambda](aws-lambda) with OneAgent version 1.335+.
 
 2
 
@@ -1007,7 +1011,7 @@ This feature is only available when using Advanced .NET Instrumentation Mode.
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 | Database frameworks | Versions |
 | --- | --- |
@@ -1024,7 +1028,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 | Messaging clients | Versions |
 | --- | --- |
@@ -1037,7 +1041,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 | Remoting frameworks | Versions |
 | --- | --- |
@@ -1047,11 +1051,11 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Extended tracing support for all AWS service calls.
+Supported in [AWS Lambda](aws-lambda). Extended tracing support for all AWS service calls.
 
 | Monitoring frameworks | Versions |
 | --- | --- |
@@ -1059,7 +1063,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 | Logging frameworks | Versions |
 | --- | --- |
@@ -1069,11 +1073,11 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Versions 1.7.0 and earlier are not supported due to [a race condition problem﻿](https://github.com/sirupsen/logrus/issues/1046) in the Logrus framework. Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Versions 1.7.0 and earlier are not supported due to [a race condition problem﻿](https://github.com/sirupsen/logrus/issues/1046) in the Logrus framework. Supported in [AWS Lambda](aws-lambda).
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 * [Support limited to stable Go releases](/managed/ingest-from/technology-support/application-software/go/support/go-known-limitations#go-official-stable-releases "Learn the limitations for Go support and their workarounds.").
 * On Linux systems, application binary must be dynamically linked unless you're using [Go static monitoring](/managed/ingest-from/technology-support/application-software/go/configuration-and-analysis/enable-go-monitoring#go-static-monitoring "Learn how you can enable Go monitoring in Dynatrace.").
@@ -1101,7 +1105,7 @@ Node.js follows a Long Term Support (LTS) release schedule. The following table 
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 2
 
@@ -1115,7 +1119,7 @@ Nest is supported implicitly via underlying Express or Fastify platforms.
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 | Database frameworks | Versions |
 | --- | --- |
@@ -1133,11 +1137,11 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). The following Oracle APIs are not supported: NoSQL, advanced queuing, two-phase commit, and continuous query notification.
+Supported in [AWS Lambda](aws-lambda). The following Oracle APIs are not supported: NoSQL, advanced queuing, two-phase commit, and continuous query notification.
 
 3
 
@@ -1150,11 +1154,11 @@ Note that 5.0 versions are not supported.
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Requires Dynatrace Cluster version 1.262+. Service failure detection is not supported.
+Supported in [AWS Lambda](aws-lambda). Requires Dynatrace Cluster version 1.262+. Service failure detection is not supported.
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Requires Dynatrace Cluster version 1.334+. Service failure detection is not supported.
+Supported in [AWS Lambda](aws-lambda). Requires Dynatrace Cluster version 1.334+. Service failure detection is not supported.
 
 | Messaging clients | Versions |
 | --- | --- |
@@ -1166,11 +1170,11 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 2
 
-RabbitMQ publishers supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+RabbitMQ publishers supported in [AWS Lambda](aws-lambda).
 
 | Remoting frameworks | Versions |
 | --- | --- |
@@ -1181,15 +1185,15 @@ RabbitMQ publishers supported in [AWS Lambda](/managed/ingest-from/amazon-web-se
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Extended tracing support for all AWS service calls.
+Supported in [AWS Lambda](aws-lambda). Extended tracing support for all AWS service calls.
 
 3
 
-gRPC client calls supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+gRPC client calls supported in [AWS Lambda](aws-lambda).
 
 | Monitoring frameworks | Versions |
 | --- | --- |
@@ -1198,7 +1202,7 @@ gRPC client calls supported in [AWS Lambda](/managed/ingest-from/amazon-web-serv
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in [AWS Lambda](aws-lambda)
 
 | Cache | Versions |
 | --- | --- |
@@ -1206,7 +1210,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 | Logging frameworks | Versions |
 | --- | --- |
@@ -1217,7 +1221,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 See also [OneAgent SDK for Node.js](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing capabilities.
 
@@ -1253,7 +1257,7 @@ Including Django REST framework based on supported Django versions.
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 | Database frameworks | Versions |
 | --- | --- |
@@ -1268,7 +1272,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 | Messaging libraries | Versions |
 | --- | --- |
@@ -1285,7 +1289,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 | Remoting frameworks | Versions |
 | --- | --- |
@@ -1295,7 +1299,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Extended tracing support for all AWS service calls. Both boto3 and botocore are supported.
+Supported in [AWS Lambda](aws-lambda). Extended tracing support for all AWS service calls. Both boto3 and botocore are supported.
 
 2
 
@@ -1321,7 +1325,7 @@ Async calls supported since version 1.331.
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 | Generative AI Application frameworks | Versions |
 | --- | --- |
@@ -1354,7 +1358,7 @@ Experimental. Prompt capturing supported since OneAgent 1.345.
 Experimental.
 
 * See [OneAgent SDK for Python](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing capabilities.
-* See [Instrument your Python application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/python "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.") for OpenTelemetry support.
+* See [Automatically instrument your Python application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/python-auto "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.") for OpenTelemetry support.
 
 ### [PHP](/managed/ingest-from/technology-support/application-software/php "Read about Dynatrace support for PHP applications.")
 

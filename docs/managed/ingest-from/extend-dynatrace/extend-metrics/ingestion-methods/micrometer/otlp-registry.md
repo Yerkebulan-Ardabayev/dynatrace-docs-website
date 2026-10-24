@@ -149,7 +149,7 @@ management.otlp.metrics.export.aggregationTemporality=delta
 
 ### 1. Configure the OTLP exporter settings
 
-To send metrics directly to Dynatrace, for example from serverless deployments (such as AWS ECS) or other non-Kubernetes environments, use the [OTLP metrics ingest API](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics "Learn how Dynatrace ingests OpenTelemetry metrics."). For the endpoint URL and token format, see [URL examples](/managed/ingest-from/opentelemetry/otlp-api#url-examples "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+To send metrics directly to Dynatrace, for example from serverless deployments (such as AWS ECS) or other non-Kubernetes environments, use the [OTLP metrics ingest API](/managed/ingest-from/opentelemetry/otlp-api/about-metrics-ingest "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply."). For the endpoint URL and token format, see [URL examples](/managed/ingest-from/opentelemetry/otlp-api#url-examples "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
 
 Ensure that the URL is explicitly configured, as leaving it unset will default to the OpenTelemetry collector on `localhost:4318`.
 
@@ -555,8 +555,8 @@ Enrichment applies to the **Standalone** and **Export to the OpenTelemetry Colle
 
 If you export your metrics to an OpenTelemetry Collector, enrich them at the Collector level:
 
-* **Non-containerized environments**: Use the Resource Detection processor with the `dynatrace` detector. For the configuration, see [Enrich OTLP with OneAgent data](/managed/ingest-from/opentelemetry/collector/use-cases/enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with OneAgent host data.").
-* **Kubernetes**: Use the Kubernetes attributes processor to attach pod, namespace, and node metadata. For the configuration, see [Enrich Kubernetes data with the OpenTelemetry Collector](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.").
+* **Non-containerized environments**: Use the Resource Detection processor with the `dynatrace` detector. For the configuration, see [Enrich OTLP with OneAgent data](/managed/ingest-from/opentelemetry/collector-use-cases/enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with OneAgent host data.").
+* **Kubernetes**: Use the Kubernetes attributes processor to attach pod, namespace, and node metadata. For the configuration, see [Enrich Kubernetes data with the OpenTelemetry Collector](/managed/ingest-from/opentelemetry/collector-use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.").
 
 ### Enrich manually with OneAgent metadata
 
@@ -885,7 +885,7 @@ Micrometer instruments are mapped to OTLP metric types and then to Dynatrace met
 
 Timer, DistributionSummary, and LongTaskTimer export as Histogram by default. If you configure client-side percentiles, they export as the OTLP Summary type instead, which is not supported by Dynatrace. Avoid enabling client-side percentiles when exporting to Dynatrace.
 
-For the full OTLP to Dynatrace metric type mapping, see [About OTLP metrics ingest](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#dynatrace-specific-mapping "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.").
+For the full OTLP to Dynatrace metric type mapping, see [About OTLP metrics ingest](/managed/ingest-from/opentelemetry/otlp-api/about-metrics-ingest#dynatrace-specific-mapping "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.").
 
 ### Reference documentation
 

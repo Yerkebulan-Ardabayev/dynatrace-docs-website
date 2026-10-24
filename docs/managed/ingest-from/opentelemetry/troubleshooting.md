@@ -37,7 +37,7 @@ In case of missing data, these can be useful in further analyzing possible inges
 Rejected metrics come with a `reason` dimension, which provides additional details on why a data point was rejected.
 In Dynatrace, you can filter, sort, and split by that dimension.
 
-A typical reason is when metrics are sent with cumulative aggregation temporality (Dynatrace [requires delta temporality](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#aggregation-temporality "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")), in which case `reason` indicates `UNSUPPORTED_METRIC_TYPE_MONOTONIC_CUMULATIVE_SUM`.
+A typical reason is when metrics are sent with cumulative aggregation temporality (Dynatrace [requires delta temporality](/managed/ingest-from/opentelemetry/otlp-api/about-metrics-ingest#aggregation-temporality "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")), in which case `reason` indicates `UNSUPPORTED_METRIC_TYPE_MONOTONIC_CUMULATIVE_SUM`.
 
 ### Metrics for traces ingest
 
@@ -93,7 +93,7 @@ See also:
 Specific information about ingesting each signal type is available at
 
 * [Ingest OTLP logs](/managed/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")
-* [About OTLP metrics ingest](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
+* [About OTLP metrics ingest](/managed/ingest-from/opentelemetry/otlp-api/about-metrics-ingest "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
 * [Ingest OTLP traces](/managed/ingest-from/opentelemetry/otlp-api/ingest-traces "Understand how Dynatrace ingests OpenTelemetry traces via OTLP, which attribute value types it supports, and what ingestion limits apply.")
 
 ### Traces

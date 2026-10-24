@@ -24,7 +24,7 @@ If there's no extension covering your needs, Dynatrace currently provides three 
 
 Recommended at scale
 
-For high-volume Prometheus scraping, and for new deployments, we recommend the [OpenTelemetry Collector](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape Prometheus endpoints and ingest the data into Dynatrace."). It scales horizontally on Kubernetes through a [Target Allocator-based deployment](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus/standard "Deploy a tiered Target Allocator, Scraper, and Gateway architecture for production-grade Prometheus scraping with the OpenTelemetry Collector.") and ingests Prometheus metrics into Dynatrace over OTLP.
+For high-volume Prometheus scraping, and for new deployments, we recommend the [OpenTelemetry Collector](/managed/ingest-from/opentelemetry/collector-use-cases/prometheus "Configure the OpenTelemetry Collector to scrape Prometheus endpoints and ingest the data into Dynatrace."). It scales horizontally on Kubernetes through a [Target Allocator-based deployment](/managed/ingest-from/opentelemetry/collector-use-cases/prometheus/standard "Deploy a tiered Target Allocator, Scraper, and Gateway architecture for production-grade Prometheus scraping with the OpenTelemetry Collector.") and ingests Prometheus metrics into Dynatrace over OTLP.
 
 Dynatrace integrates gauge and counter metrics from Prometheus exporters and servers. These metrics are then available for charting, alerting, and analysis within Dynatrace. See the list of available Prometheus exporters in the [Prometheus documentation﻿](https://prometheus.io/docs/instrumenting/exporters/) or in the [list maintained by the community﻿](https://github.com/prometheus/prometheus/wiki/Default-port-allocations).
 
@@ -42,4 +42,4 @@ Dynatrace provides a scalable means to ingest Prometheus metrics directly from t
 
 ## Prometheus via OpenTelemetry Collector
 
-For environments that require greater customization, Dynatrace allows the ingestion of Prometheus metrics using the OpenTelemetry Collector. To get started, see [Scrape data from Prometheus](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape Prometheus endpoints and ingest the data into Dynatrace.").
+For environments that require greater customization, Dynatrace allows the ingestion of Prometheus metrics using the OpenTelemetry Collector. To get started, see [Scrape data from Prometheus](/managed/ingest-from/opentelemetry/collector-use-cases/prometheus "Configure the OpenTelemetry Collector to scrape Prometheus endpoints and ingest the data into Dynatrace.").

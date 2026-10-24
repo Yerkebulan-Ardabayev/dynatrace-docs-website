@@ -70,7 +70,7 @@ Collector has a lower cap on the amount of processing power and memory that can
 be given to the Collector, but is also simpler. In Kubernetes, you can do this
 by raising the CPU and memory limits on the Collector pod.
 
-For scaling Prometheus scraping, we recommend using [the standard Prometheus deployment with the Target Allocator](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus/standard "Deploy a tiered Target Allocator, Scraper, and Gateway architecture for production-grade Prometheus scraping with the OpenTelemetry Collector.") to handle large metric volumes.
+For scaling Prometheus scraping, we recommend using [the standard Prometheus deployment with the Target Allocator](/managed/ingest-from/opentelemetry/collector-use-cases/prometheus/standard "Deploy a tiered Target Allocator, Scraper, and Gateway architecture for production-grade Prometheus scraping with the OpenTelemetry Collector.") to handle large metric volumes.
 
 ### Scaling stateless Collectors
 
@@ -505,5 +505,5 @@ do as little processing as possible so it can handle as much data as possible.
 
 ## Related topics
 
-* [Batch OTLP requests with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/batch "Configure the OpenTelemetry Collector to send data in batches to the Dynatrace backend.")
-* [Apply memory limits to the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/memory "Configure the OpenTelemetry Collector to respect memory limits and not use excessive system resources.")
+* [Batch OTLP requests with the OTel Collector](/managed/ingest-from/opentelemetry/collector-use-cases/batch "Configure the OpenTelemetry Collector to send data in batches to the Dynatrace backend.")
+* [Apply memory limits to the OTel Collector](/managed/ingest-from/opentelemetry/collector-use-cases/memory "Configure the OpenTelemetry Collector to respect memory limits and not use excessive system resources.")

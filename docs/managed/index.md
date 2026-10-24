@@ -38,7 +38,7 @@ Other container platforms
 
 [![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")Kubernetes](/managed/ingest-from/setup-on-k8s)
 
-[![AWS](https://dt-cdn.net/images/aws-512-eed109b7f1.png "AWS")AWS](/managed/ingest-from/amazon-web-services) [![Azure](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure")Azure](/managed/ingest-from/microsoft-azure-services) [![Google Cloud](https://dt-cdn.net/images/gcp-512-db85a455ae.webp "Google Cloud")Google Cloud](/managed/ingest-from/google-cloud-platform)
+[![AWS](https://dt-cdn.net/images/aws-512-eed109b7f1.png "AWS")AWS](/managed/ingest-from/amazon-web-services) [![Azure](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure")Azure](/managed/ingest-from/microsoft-azure-services) [![Google Cloud](https://dt-cdn.net/images/gcp-512-db85a455ae.webp "Google Cloud")Google Cloud](/managed/ingest-from/google-cloud-platform-classic)
 
 [![Cloud Foundry](https://dt-cdn.net/images/cloud-foundry-512-d7620ed0ba.png "Cloud Foundry")Cloud Foundry](/managed/ingest-from/setup-on-container-platforms/cloud-foundry) [![Docker](https://dt-cdn.net/images/docker-512-0c0977826e.webp "Docker")Docker](/managed/ingest-from/setup-on-container-platforms/docker) [![Heroku](https://dt-cdn.net/images/heroku-512-984aa81b41.webp "Heroku")Heroku](/managed/ingest-from/setup-on-container-platforms/heroku) [![Mesos](https://dt-cdn.net/images/mesos-512-0c28279189.webp "Mesos")Mesos](/managed/ingest-from/setup-on-container-platforms/deploy-dynatrace-oneagent-on-mesos-marathon)
 

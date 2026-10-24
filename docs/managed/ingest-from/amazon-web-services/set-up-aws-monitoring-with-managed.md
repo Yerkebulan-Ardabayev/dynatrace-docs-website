@@ -51,7 +51,7 @@ Amazon will charge about $0.01 per 1,000 metrics requested from the CloudWatch A
 ## AWS monitoring policy
 
 The AWS monitoring policy defines the minimal scope of permissions you need to give to Dynatrace to monitor the services running in your AWS account. Create it once and use it any time when enabling Dynatrace access to your AWS account.
-If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for [All AWS cloud services](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.") and, for each cloud service, a list of optional permissions specific to that service.
+If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for [All AWS cloud services](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.") and, for each cloud service, a list of optional permissions specific to that service.
 
 Permissions required for AWS monitoring integration:
 
@@ -827,11 +827,11 @@ You can alter the scope and content of your monitoring depending on your prefere
 
 ### Limit monitored resources using tags
 
-We recommend that you limit the scope of your AWS monitoring and reduce the number API calls to Amazon. You can use [tagging](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/limit-api-calls-to-aws-using-tags "Add and configure AWS tags to limit AWS resources.") to limit the AWS resources (AWS service instances) that are monitored by Dynatrace.
+We recommend that you limit the scope of your AWS monitoring and reduce the number API calls to Amazon. You can use [tagging](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/cloudwatch-metrics/limit-api-calls-to-aws-using-tags "Add and configure AWS tags to limit AWS resources.") to limit the AWS resources (AWS service instances) that are monitored by Dynatrace.
 
 ## Set up metric events for alerting
 
-To configure metric events for alerting, follow this [guide](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-set-up-metric-events-for-alerting "Set up and configure metric events for alerting.").
+To configure metric events for alerting, follow this [guide](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/cloudwatch-metrics/aws-set-up-metric-events-for-alerting "Set up and configure metric events for alerting.").
 
 ### Choose Cloud services to be monitored
 
@@ -841,7 +841,7 @@ To select your preferred services
 1. Go to **Settings** > **Cloud and virtualization** > **AWS**.
 2. Find the instance where you want to perform your monitoring and select  to edit the instance.
 3. In the **Services** section, select **Manage services**.
-4. The following services are added by default: Amazon EC2, AWS Lambda, Amazon RDS, Amazon DynamoDB, Amazon ALB, Amazon ELB, Amazon S3, and Amazon EBS. You can extend this list by choosing services from the dropdown menu. The full list of services is also available at [All AWS cloud services](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.").
+4. The following services are added by default: Amazon EC2, AWS Lambda, Amazon RDS, Amazon DynamoDB, Amazon ALB, Amazon ELB, Amazon S3, and Amazon EBS. You can extend this list by choosing services from the dropdown menu. The full list of services is also available at [All AWS cloud services](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.").
 5. Select **Add service**
 6. Select the service from the list and then select **Add service**.
 7. Select **Save changes** to save your configuration.
@@ -850,4 +850,4 @@ To select your preferred services
 
 * [Set up Dynatrace on Amazon Web Services](/managed/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services.")
 * [Dynatrace OneAgent](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
-* [Limit API calls to AWS using tags](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/limit-api-calls-to-aws-using-tags "Add and configure AWS tags to limit AWS resources.")
+* [Limit API calls to AWS using tags](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/cloudwatch-metrics/limit-api-calls-to-aws-using-tags "Add and configure AWS tags to limit AWS resources.")

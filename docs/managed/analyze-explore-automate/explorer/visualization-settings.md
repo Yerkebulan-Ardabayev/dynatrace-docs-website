@@ -196,7 +196,7 @@ Shared settings that apply: Unit and format, legend, show labels, fold transform
 
 ## Histogram
 
-A histogram shows the value distribution of a histogram metric, such as response times or request sizes, so you can see value distributions, percentiles, and outliers at a glance. The visualization requires a [histogram metric](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#histograms "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply."), whose metric key ends in `.histogram`.
+A histogram shows the value distribution of a histogram metric, such as response times or request sizes, so you can see value distributions, percentiles, and outliers at a glance. The visualization requires a [histogram metric](/managed/ingest-from/opentelemetry/otlp-api/about-metrics-ingest#histograms "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply."), whose metric key ends in `.histogram`.
 
 The chart shows one bar per bucket, labeled by its value range. The first and last buckets are open-ended. Each bar shows the count of that bucket alone, not the cumulative counts that the `:histogram` transformation returns. For the transformation and for percentiles, see [Analyze an explicit histogram](/managed/analyze-explore-automate/explorer/explorer-advanced-query-editor#example-histogram "Learn how to build and edit advanced Data Explorer queries, use metric transformations and expressions, and compare metrics across timeframes.").
 

@@ -9,16 +9,9 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthrough
 
 * How-to guide
 * 7-min read
-* Updated on May 11, 2026
+* Updated on Oct 22, 2026
 
 This walkthrough shows how to add observability to your .NET application using the OpenTelemetry .NET libraries and tools.
-
-| Feature | Supported |
-| --- | --- |
-| Automatic instrumentation | Yes |
-| Traces | Yes |
-| Metrics | Yes |
-| Logs | Yes |
 
 ## Prerequisites
 
@@ -79,7 +72,7 @@ After deployment
 2. [Run (on Unix)﻿](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation#shell-scripts) or [import (on Windows)﻿](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation#powershell-module-windows) the auto installer, to install and set up all necessary auto instrumentation libraries.
 3. Run your application.
 
-In addition to the instrumentation setup above, you also need to configure the relevant export parameters with environment variables. This includes the [endpoint URL](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."), the [authentication token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."), and the [temporality preference for metrics](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#aggregation-temporality "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.").
+In addition to the instrumentation setup above, you also need to configure the relevant export parameters with environment variables. This includes the [endpoint URL](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."), the [authentication token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."), and the [temporality preference for metrics](/managed/ingest-from/opentelemetry/otlp-api/about-metrics-ingest#aggregation-temporality "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.").
 
 ```
 OTEL_EXPORTER_OTLP_ENDPOINT=[URL]

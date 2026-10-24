@@ -15,7 +15,7 @@ Each Dynatrace-supported technology offers multiple "built-in" metrics. Built-in
 
 Metrics that are based on OneAgent or ActiveGate extensions (prefix `ext:`) and calculated metrics (prefix `calc:`) are custom metrics, not built-in metrics; [DDU consumption](/managed/license/classic-licensing/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") for these metrics can vary widely depending on how you use Dynatrace.
 
-The `ext:` prefix is used by metrics from [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") and [ActiveGate extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace."), and also by [classic metrics for AWS integration](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.").
+The `ext:` prefix is used by metrics from [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") and [ActiveGate extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace."), and also by [classic metrics for AWS integration](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.").
 
 Despite the naming similarities, AWS integration metrics are **not** based on extensions.
 

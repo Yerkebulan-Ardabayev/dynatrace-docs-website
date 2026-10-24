@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitori
 # Connecting log data to traces (Logs Classic)
 
 * 9-min read
-* Updated on Jun 02, 2026
+* Updated on Oct 02, 2026
 
 Log Monitoring Classic
 
@@ -531,7 +531,10 @@ You can enrich your logs using NGINX ingress with Kubernetes in two steps:
 1. Execute the [ingress-nginx on Kubernetes](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx "Instrument ingress-nginx on Kubernetes") instrumentation instructions.
 2. Add the command below to the `configmap.yaml` file for NGINX ingress.
 
-   Adding the `main-snippet` line enables OneAgent ingestion and is optional if you have followed the manual instrumentation instructions already.
+   The `main-snippet` line loads the OneAgent NGINX module. Whether you need it depends on your setup:
+
+   * Standard NGINX: optional if you've already applied the instrumentation via `LD_PRELOAD`
+   * NGINX ingress: required, because `LD_PRELOAD` doesn't work there
 
 ```
 main-snippet: load_module /opt/dynatrace/oneagent/agent/bin/current/linux-musl-x86-64/liboneagentnginx.so;
@@ -1035,7 +1038,7 @@ log.Fatal(http.ListenAndServe(":8080", nil))
 }
 ```
 
-For details on configuration, see [AWS Lambda logs in context of traces](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment "Configure log message enrichment with OpenTelemetry on AWS Lambda.").
+For details on configuration, see [AWS Lambda logs in context of traces](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment "Configure log message enrichment with OpenTelemetry on AWS Lambda.").
 
 For instructions on how to source these attributes via OneAgent SDK:
 
@@ -1172,7 +1175,7 @@ When using OneAgent, make sure to enable the public Extension Execution Controll
 
 Go to **Settings** > **Preferences** > **Extension Execution Controller**. The toggles **Enable Extension Execution Controller** and **Enable local PIPE/HTTP metric and Log Ingest API** should be active.
 
-For details on configuration, see [Instrument your Python application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/python "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.")
+For details on configuration, see [Automatically instrument your Python application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/python-auto "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.")
 
 ## Related topics
 

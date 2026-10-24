@@ -50,7 +50,7 @@ Select **Properties and tags** on the notifications bar to display the **Propert
 
 ### SLOs
 
-* On the notifications bar, **SLOs** indicates the current number of [SLOs](/managed/deliver/service-level-objectives-classic "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.") related to the selected service.
+* On the notifications bar, **SLOs** indicates the current number of [SLOs](/managed/analyze-explore-automate/service-level-objectives-classic "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.") related to the selected service.
 * Select **SLOs** on the notifications bar to display the **Service-level objectives** panel, which lists SLOs that are directly or indirectly connected to the service.
 
 #### Directly connected SLOs
@@ -73,11 +73,11 @@ Select **Properties and tags** on the notifications bar to display the **Propert
 * Expand **Details** to view a chart of the respective SLO metrics.
 * In **Actions**, select
 
-  + **View in Data Explorer** to [see SLO metrics in Data Explorer](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#explorer "Create, configure, and monitor service-level objectives with Dynatrace.").
-  + **Pin to Dashboard** to [pin the SLO to your dashboard](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#dash "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **View in Data Explorer** to [see SLO metrics in Data Explorer](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#explorer "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **Pin to Dashboard** to [pin the SLO to your dashboard](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#dash "Create, configure, and monitor service-level objectives with Dynatrace.").
   + **SLO definition** to edit the SLO in **Service-level objective definitions**.
-  + **Clone** to [clone the SLO](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#clone "Create, configure, and monitor service-level objectives with Dynatrace.").
-  + **Create alert** to [create an alert for the SLO](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#alerts "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **Clone** to [clone the SLO](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#clone "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **Create alert** to [create an alert for the SLO](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#alerts "Create, configure, and monitor service-level objectives with Dynatrace.").
 
 #### No SLOs
 
@@ -88,7 +88,7 @@ If no SLOs are found, you can
   ![Timeframe selector: menu bar](https://dt-cdn.net/images/timeframe-selector-menu-bar-264-8193110c8c.png)
 
   Timeframe selector: menu bar
-* Select **Add SLO** to create an SLO in the [SLO wizard](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#wizard "Create, configure, and monitor service-level objectives with Dynatrace.").
+* Select **Add SLO** to create an SLO in the [SLO wizard](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#wizard "Create, configure, and monitor service-level objectives with Dynatrace.").
 
 ### Owners
 

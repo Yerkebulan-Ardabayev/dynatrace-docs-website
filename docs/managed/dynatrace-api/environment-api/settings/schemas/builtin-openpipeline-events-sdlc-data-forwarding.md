@@ -254,6 +254,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | ID components `idComponents` | [SmartscapeIdComponentsEntry](#SmartscapeIdComponentsEntry)[] | - | Required |
 | Extract node `extractNode` | boolean | - | Required |
 | Node name `nodeName` | [GenericValueAssignment](#GenericValueAssignment) | - | Required |
+| Node validity duration `nodeValidityDurationMinutes` | integer | - | Optional |
 | Fields to extract `fieldsToExtract` | [SmartscapeFieldExtractionEntry](#SmartscapeFieldExtractionEntry)[] | - | Required |
 | Static edges to extract `staticEdgesToExtract` | [SmartscapeStaticEdgeExtractionEntry](#SmartscapeStaticEdgeExtractionEntry)[] | - | Required |
 

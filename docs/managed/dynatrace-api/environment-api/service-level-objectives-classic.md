@@ -26,4 +26,4 @@ Create an alert for an SLO.](/managed/dynatrace-api/environment-api/service-leve
 
 ## Related topics
 
-* [Service-Level Objectives](/managed/deliver/service-level-objectives-classic "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.")
+* [Service-Level Objectives](/managed/analyze-explore-automate/service-level-objectives-classic "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.")

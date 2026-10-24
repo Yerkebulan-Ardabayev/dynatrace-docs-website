@@ -33,7 +33,7 @@ See [Collector Deployment](/managed/ingest-from/opentelemetry/collector/deployme
 
 ## Steps
 
-In this example, we deploy using Docker to keep the demonstration simple. For production use cases, we recommend deploying as a gateway on a Kubernetes cluster. For details, see [Configure OpenTelemetry Collector for Kubernetes monitoring](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-monitoring "Configure the OpenTelemetry Collector to monitor your Kubernetes clusters.").
+In this example, we deploy using Docker to keep the demonstration simple. For production use cases, we recommend deploying as a gateway on a Kubernetes cluster. For details, see [Configure OpenTelemetry Collector for Kubernetes monitoring](/managed/ingest-from/opentelemetry/collector-use-cases/kubernetes/k8s-monitoring "Configure the OpenTelemetry Collector to monitor your Kubernetes clusters.").
 
 1. To configure a Dynatrace Collector instance, create a file called `otel-collector-config.yaml` and add the following configuration:
 
@@ -178,4 +178,4 @@ You have successfully configured NetFlow ingestion. Your network flow data is no
 
 ## Related topics
 
-* [Ingest NetFlow with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/netflow "Configure the OpenTelemetry Collector to ingest NetFlow data.")
+* [Ingest NetFlow with the OTel Collector](/managed/ingest-from/opentelemetry/collector-use-cases/netflow "Configure the OpenTelemetry Collector to ingest NetFlow data.")

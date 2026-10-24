@@ -19,19 +19,19 @@ Learn how to integrate Dynatrace into AWS platform with OneAgent.
 
 [### Amazon EC2
 
-Distribute and automatically deploy OneAgent on your EC2 instances using the AWS Systems Manager Distributor.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-ec2/deploy-oneagent-using-aws-systems-manager-distributor "Install OneAgent on your EC2 instances using the Dynatrace AWS Systems Manager Distributor package.")[### Amazon ECS
+Distribute and automatically deploy OneAgent on your EC2 instances using the AWS Systems Manager Distributor.](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-ec2/deploy-oneagent-using-aws-systems-manager-distributor "Install OneAgent on your EC2 instances using the Dynatrace AWS Systems Manager Distributor package.")[### Amazon ECS
 
-Deploy OneAgent on Elastic Container Service.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs "Monitor Amazon Elastic Container Service (ECS) with the EC2 launch type using OneAgent as a daemon service and view metrics.")[### Amazon EKS
+Deploy OneAgent on Elastic Container Service.](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-ecs "Monitor Amazon Elastic Container Service (ECS) with the EC2 launch type using OneAgent as a daemon service and view metrics.")[### Amazon EKS
 
-Deploy OneAgent and Monitor Amazon Elastic Kubernetes Service.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-eks "Install OneAgent on Elastic Kubernetes Service.")[### AWS App Runner
+Deploy OneAgent and Monitor Amazon Elastic Kubernetes Service.](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-eks "Install OneAgent on Elastic Kubernetes Service.")[### AWS App Runner
 
-Deploy OneAgent on AWS App Runner.](/managed/ingest-from/amazon-web-services/integrate-into-aws/app-runner "Install OneAgent on AWS App Runner.")[### AWS Elastic Beanstalk
+Deploy OneAgent on AWS App Runner.](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/app-runner "Install OneAgent on AWS App Runner.")[### AWS Elastic Beanstalk
 
-Deploy OneAgent on AWS Elastic Beanstalk.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-beanstalk "Install OneAgent on AWS Elastic Beanstalk.")[### AWS Fargate
+Deploy OneAgent on AWS Elastic Beanstalk.](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-beanstalk "Install OneAgent on AWS Elastic Beanstalk.")[### AWS Fargate
 
-Deploy OneAgent on AWS Fargate.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate "Install OneAgent on AWS Fargate.")[### AWS Lambda
+Deploy OneAgent on AWS Fargate.](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-fargate "Install OneAgent on AWS Fargate.")[### AWS Lambda
 
-Integrate on AWS Lambda.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Integrate on AWS Lambda.](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
 
 ## Related topics
 

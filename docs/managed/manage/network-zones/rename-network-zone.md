@@ -40,11 +40,11 @@ Deploy network zones in a cloud
 
 #### Amazon Web Services
 
-[Deploy OneAgent on AWS Fargate](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate "Install OneAgent on AWS Fargate.")
+[Deploy OneAgent on AWS Fargate](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-fargate "Install OneAgent on AWS Fargate.")
 
-[Deploy OneAgent on Elastic Container Service](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs/deploy-oneagent-on-ecs "Monitor ECS clusters as a daemon service, with the EC2 launch type.")
+[Deploy OneAgent on Elastic Container Service](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-ecs/deploy-oneagent-on-ecs "Monitor ECS clusters as a daemon service, with the EC2 launch type.")
 
-[Deploy OneAgent on AWS Elastic Beanstalk](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-beanstalk "Install OneAgent on AWS Elastic Beanstalk.")
+[Deploy OneAgent on AWS Elastic Beanstalk](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-beanstalk "Install OneAgent on AWS Elastic Beanstalk.")
 
 [Deploy OneAgent on Elastic Kubernetes Service](/managed/ingest-from/setup-on-container-platforms/kubernetes/legacy/deploy-oneagent-operator-k8s-legacy "Install and uninstall OneAgent on Kubernetes using kubectl or Helm.")
 

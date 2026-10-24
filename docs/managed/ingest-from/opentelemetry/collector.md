@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector
 
 * Overview
 * 5-min read
-* Updated on Oct 08, 2026
+* Updated on Oct 22, 2026
 
 The OTel Collector (or just "Collector") is a network service application that you can use to batch and transform telemetry data. It acts as a proxy and can receive OTLP requests as well as data from other sources, transform these requests according to defined rules, and forward them to the backend.
 
@@ -32,6 +32,18 @@ The Collector is a relatively lightweight component, so teams can deploy their o
 
 The Collector is configured in a single YAML file. This eliminates the need to browse through multiple files and reduces maintenance. You can find more information on the configuration at [Configure the OTel Collector](/managed/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.").
 
+## Use cases
+
+You can configure the Collector for many scenarios, such as ingesting data from other sources and formats, enriching data with host or Kubernetes information, masking sensitive data, sampling traces, or exporting to multiple backends. For configuration examples of each use case, see [OTel Collector use cases](/managed/ingest-from/opentelemetry/collector-use-cases "Configure your OpenTelemetry Collector instance for different use cases, including authentication, data enrichment, and format conversion.").
+
+### Recommended configurations
+
+When using the OTel Collector, we recommend using the following features in the basic configuration, in addition to components specific to your use case.
+
+* [Batching](/managed/ingest-from/opentelemetry/collector-use-cases/batch "Configure the OpenTelemetry Collector to send data in batches to the Dynatrace backend.") to improve network performance and throughput
+* [Memory Limitation](/managed/ingest-from/opentelemetry/collector-use-cases/memory "Configure the OpenTelemetry Collector to respect memory limits and not use excessive system resources.") to avoid memory allocation related issues
+* [Kubernetes Enrichment](/managed/ingest-from/opentelemetry/collector-use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.") to include Kubernetes-specific information in your requests and support data correlation in the Dynatrace backend
+
 ## Distributions
 
 The Collector comes in different distribution flavors and with different setup and deployment options.
@@ -39,7 +51,7 @@ The Collector comes in different distribution flavors and with different setup a
 | Type | When should I use it? |
 | --- | --- |
 | Dynatrace OTel Collector | When you deploy and manage your Collectors with an OTel helm chart, OTel Operator, or Dynatrace Operator. It ships with a set of verified and production-ready Collector components that are typically used with Dynatrace setups. |
-| Core | When you primarily want to convert between OTLP protocols (such as converting between HTTP and gRPC, see [Transform OTLP gRPC to HTTP with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/grpc "Configure the OpenTelemetry Collector to transform a gRPC OTLP request to HTTP.")), enforce memory usage constraints, or apply request batching. |
+| Core | When you primarily want to convert between OTLP protocols (such as converting between HTTP and gRPC, see [Transform OTLP gRPC to HTTP with the OTel Collector](/managed/ingest-from/opentelemetry/collector-use-cases/grpc "Configure the OpenTelemetry Collector to transform a gRPC OTLP request to HTTP.")), enforce memory usage constraints, or apply request batching. |
 | Contrib | Ideal for test setups, as it contains all third-party components and doesn't require a custom build. It's generally not recommended for production systems, as it typically consumes more resources and may be less stable than an optimized Builder instance. |
 | Collector Builder | When you need to fully customize the Collector instance and only run the components required for your use case. |
 
@@ -74,7 +86,7 @@ For the full list of provided components, see [Components﻿](https://github.com
 
 #### Dynatrace OTel Collector use cases
 
-For concrete use-case and configuration examples for the individual components, see [OTel Collector use cases](/managed/ingest-from/opentelemetry/collector/use-cases "Configure your OpenTelemetry Collector instance for different use cases, including authentication, data enrichment, and format conversion.").
+For concrete use-case and configuration examples for the individual components, see [OTel Collector use cases](/managed/ingest-from/opentelemetry/collector-use-cases "Configure your OpenTelemetry Collector instance for different use cases, including authentication, data enrichment, and format conversion.").
 
 #### Deploy the Dynatrace OTel Collector
 

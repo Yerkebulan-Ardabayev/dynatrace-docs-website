@@ -44,7 +44,7 @@ The [OpenTelemetry Collector](/managed/ingest-from/opentelemetry/collector "Lear
 
 The extension displays telemetry data captured by the OpenTelemetry Collector and adds Dynatrace-specific context to all signals (metrics, logs, and spans) for analysis and correlation.
 
-For information on how to use the extension within Dynatrace, see [Monitor hosts that send OpenTelemetry data to Dynatrace](/managed/ingest-from/opentelemetry/collector/use-cases/host-monitoring "Set up a reference OpenTelemetry Collector configuration for host monitoring in Dynatrace, including Kubernetes node deployment.").
+For information on how to use the extension within Dynatrace, see [Monitor hosts that send OpenTelemetry data to Dynatrace](/managed/ingest-from/opentelemetry/collector-use-cases/host-monitoring "Set up a reference OpenTelemetry Collector configuration for host monitoring in Dynatrace, including Kubernetes node deployment.").
 
 ### Limitations
 

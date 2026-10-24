@@ -181,7 +181,7 @@ docker run -v $(pwd):$(pwd) -w $(pwd) ghcr.io/dynatrace/dynatrace-otel-collector
 
 ## Delta metrics
 
-Dynatrace requires metrics data to be [sent with delta temporality](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#aggregation-temporality "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.") and **not** cumulative temporality.
+Dynatrace requires metrics data to be [sent with delta temporality](/managed/ingest-from/opentelemetry/otlp-api/about-metrics-ingest#aggregation-temporality "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.") and **not** cumulative temporality.
 
 If your application doesn't allow you to configure delta temporality, you can use the [`cumulative_to_delta` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/cumulativetodeltaprocessor) to have your Collector instance adjust cumulative values to delta values. The [configuration example](#configuration-example) above shows how to configure and reference the processor in your Collector configuration.
 

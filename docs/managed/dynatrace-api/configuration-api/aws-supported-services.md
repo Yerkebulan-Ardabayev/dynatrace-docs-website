@@ -224,4 +224,4 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/aws/supportedServices
 
 ## Related topics
 
-* [All AWS cloud services](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.")
+* [All AWS cloud services](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.")

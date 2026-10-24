@@ -36,7 +36,7 @@ Other container platforms
 
 Operating systems
 
-[![AWS](https://dt-cdn.net/images/aws-512-eed109b7f1.png "AWS")AWS](/managed/ingest-from/amazon-web-services) [![Azure](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure")Azure](/managed/ingest-from/microsoft-azure-services) [![Google Cloud](https://dt-cdn.net/images/gcp-512-db85a455ae.webp "Google Cloud")Google Cloud](/managed/ingest-from/google-cloud-platform)
+[![AWS](https://dt-cdn.net/images/aws-512-eed109b7f1.png "AWS")AWS](/managed/ingest-from/amazon-web-services) [![Azure](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure")Azure](/managed/ingest-from/microsoft-azure-services) [![Google Cloud](https://dt-cdn.net/images/gcp-512-db85a455ae.webp "Google Cloud")Google Cloud](/managed/ingest-from/google-cloud-platform-classic)
 
 [![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")Kubernetes](/managed/ingest-from/setup-on-k8s)
 

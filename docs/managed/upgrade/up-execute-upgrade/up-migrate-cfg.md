@@ -229,7 +229,7 @@ See the [supported configuration API types](/managed/deliver/configuration-as-co
 
   Migrate process groups before upgrading
 
-  If you have simple detection rules, advanced detection rules, or declarative process grouping rules on Dynatrace Managed, you need to migrate them to [Process Grouping Rules](/managed/observe/infrastructure-observability/process-groups/configuration/unified-process-grouping/process-grouping-rules-migration "Learn how to migrate your process groups and process group instances to process grouping rules.") before upgrading to SaaS.
+  If you have simple detection rules, advanced detection rules, or declarative process grouping rules on Dynatrace Managed, you need to migrate them to [Process Grouping Rules](/managed/observe/infrastructure-observability/process-groups/configuration/process-grouping-rules/process-grouping-rules-migration "Learn how to migrate your process groups and process group instances to process grouping rules.") before upgrading to SaaS.
 
 Questions?
 

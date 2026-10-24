@@ -35,7 +35,7 @@ The quality of the OpenTracing spans captured by OneAgent depends on the quality
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](aws-lambda).
 
 ## Enable OpenTracing integration
 

@@ -24,7 +24,7 @@ Dynatrace allows for the ingestion of log files from your serverless cloud servi
 
 ## AWS Lambda tracing
 
-For [AWS Lambda tracing integration](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java."), monitoring consumption is based on Davis data units. Dynatrace counts the total number of invocations (for example, requests) of the monitored functions. For each invocation, .002 DDUs are deducted from your available quota.
+For [AWS Lambda tracing integration](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java."), monitoring consumption is based on Davis data units. Dynatrace counts the total number of invocations (for example, requests) of the monitored functions. For each invocation, .002 DDUs are deducted from your available quota.
 
 For example, if you monitor 1 function and that function is invoked 1 million times, DDU consumption will be calculated as follows: `1 function × 1 million invocations × 0.002 DDU weight = 2,000 DDUs per month per function`.
 
@@ -38,7 +38,7 @@ For example, if you monitor 1 function and that function is invoked 1 million ti
 
 ## Google Functions tracing
 
-For [Google Functions tracing](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions "Set up monitoring for Google Cloud Functions."), monitoring consumption is based on Davis data units. Dynatrace counts the total number of invocations (for example, requests) of the monitored functions. For each invocation, .002 DDUs are deducted from your available quota.
+For [Google Functions tracing](/managed/ingest-from/google-cloud-platform-classic/gcp-integrations/gcp-functions "Set up monitoring for Google Cloud Functions."), monitoring consumption is based on Davis data units. Dynatrace counts the total number of invocations (for example, requests) of the monitored functions. For each invocation, .002 DDUs are deducted from your available quota.
 
 For example, if you monitor 1 function and that function is invoked 1 million times, DDU consumption will be calculated as follows: `1 function × 1 million invocations × 0.002 DDU weight = 2,000 DDUs per month per function`.
 

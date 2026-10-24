@@ -125,10 +125,10 @@ Example scenarios include, but are not limited to:
 
 * [Amazon ECS﻿](https://docs.aws.amazon.com/whitepapers/latest/aws-overview/compute-services.html)
 
-  + [AWS ECS daemon](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs/deploy-oneagent-on-ecs "Monitor ECS clusters as a daemon service, with the EC2 launch type.")
-  + [AWS Elastic Beanstalk](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-beanstalk "Install OneAgent on AWS Elastic Beanstalk.")
-  + [AWS Elastic Kubernetes Service](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-eks "Install OneAgent on Elastic Kubernetes Service.")
-* [AWS Fargate](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate "Install OneAgent on AWS Fargate.")
+  + [AWS ECS daemon](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-ecs/deploy-oneagent-on-ecs "Monitor ECS clusters as a daemon service, with the EC2 launch type.")
+  + [AWS Elastic Beanstalk](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-beanstalk "Install OneAgent on AWS Elastic Beanstalk.")
+  + [AWS Elastic Kubernetes Service](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-eks "Install OneAgent on Elastic Kubernetes Service.")
+* [AWS Fargate](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-fargate "Install OneAgent on AWS Fargate.")
 * [Azure App Service](/managed/observe/infrastructure-observability/cloud-platform-monitoring-classic/azure-monitoring-classic "Monitor Azure with Dynatrace") including [Azure Functions on App-Service (Dedicated) Plan](/managed/ingest-from/microsoft-azure-services/integrations/azure-functions/integrate-oneagent-on-azure-functions "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.")
 * [Azure Container instances﻿](https://docs.microsoft.com/en-us/azure/container-instances/)
 

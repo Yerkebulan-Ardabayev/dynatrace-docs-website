@@ -1,0 +1,24 @@
+---
+title: Monitor Google Kubernetes Engine (GKE)
+source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform-classic/gcp-integrations/google-gke
+---
+
+# Monitor Google Kubernetes Engine (GKE)
+
+# Monitor Google Kubernetes Engine (GKE)
+
+* Overview
+* 1-min read
+* Updated on Feb 09, 2026
+
+Dynatrace OneAgent provides extensive monitoring of Google Kubernetes Engine pods, nodes, and clusters. The OneAgent deployment process is consistent with other distributions.
+
+## Integration
+
+[Kubernetes](/managed/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+
+Refer to the [Google Marketplace﻿](https://www.dynatrace.com/news/blog/60-seconds-to-self-upgrading-observability-on-google-kubernetes-engine/) for the OneAgent integration with Google Console.
+
+## Related topics
+
+* [Set up Dynatrace on Google Cloud (Dynatrace Classic)](/managed/ingest-from/google-cloud-platform-classic "Monitor Google Cloud with Dynatrace.")

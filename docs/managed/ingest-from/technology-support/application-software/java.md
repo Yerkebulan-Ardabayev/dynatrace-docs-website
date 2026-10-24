@@ -18,7 +18,7 @@ Using both the [SAP Introscope Agent﻿](https://dt-url.net/ut039c3) and Dynatra
 Dynatrace fully supports Java as well as all major JVMs and JDKs, providing extensive Java monitoring capabilities:
 
 * [OpenTelemetry support﻿](https://github.com/open-telemetry/opentelemetry-java/) for capturing traces and ingesting metrics.  
-  For more information, see [Instrument your Java application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/java "Learn how to instrument your Java application using OpenTelemetry and Dynatrace.")
+  For more information, see [Automatically instrument your Java application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/java-auto "Learn how to instrument your Java application using OpenTelemetry and Dynatrace.")
 * End-to-end [transaction tracing](/managed/observe/application-observability/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.") of requests to web services, remoting services, JMS, and RabbitMQ
 * [OneAgent SDK](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing
 * Insight into SQL databases (via JDBC) and NoSQL databases such as MongoDB, Cassandra, and Redis

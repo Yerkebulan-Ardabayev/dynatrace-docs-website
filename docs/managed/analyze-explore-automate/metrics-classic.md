@@ -16,7 +16,7 @@ In Dynatrace, you have various types of metrics at your disposal:
 * Built-in metrics provided by OneAgent. These have the `builtin:` prefix in the metric key.
 * Extension metrics provided by OneAgent or ActiveGate extensions. These have the `ext:` prefix in the metric key.
 
-  The `ext:` prefix is used by metrics from [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") and [ActiveGate extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace."), and also by [classic metrics for AWS integration](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.").
+  The `ext:` prefix is used by metrics from [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") and [ActiveGate extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace."), and also by [classic metrics for AWS integration](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.").
 
   Despite the naming similarities, AWS integration metrics are **not** based on extensions.
 * Calculated metrics you create. These have the `calc:` prefix in the metric key.
@@ -69,7 +69,7 @@ Keep cardinality under control and block metric dimensions you don't need with t
 
 [OpenTelemetry metrics](/managed/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.")
 
-[AWS service metrics](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.")
+[AWS service metrics](/managed/ingest-from/amazon-web-services-classic/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.")
 
 [Azure service metrics](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics "Monitor Azure services with Dynatrace and view available metrics.")
 

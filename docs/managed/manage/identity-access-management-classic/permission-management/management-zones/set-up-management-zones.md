@@ -35,7 +35,7 @@ You can create up to 5,000 management zones by default in your Dynatrace monitor
    Read more about:
 
    * How log data can be ingested and automatically assigned to management zones in [Management zones and ingested log data (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring "Find out how ingested log data is assigned to management zones.").
-   * How to [add a service-level objective to a management zone](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#mz "Create, configure, and monitor service-level objectives with Dynatrace.") so users with access to the management zone can view SLO status and error budget in the **Service-level objectives** page.
+   * How to [add a service-level objective to a management zone](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#mz "Create, configure, and monitor service-level objectives with Dynatrace.") so users with access to the management zone can view SLO status and error budget in the **Service-level objectives** page.
 
 ## Assign access rights to management zones
 
@@ -51,4 +51,4 @@ See [Apply and use management zones](/managed/manage/identity-access-management-
 
 ## Related topics
 
-* [Configure and monitor service-level objectives with Dynatrace](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo "Create, configure, and monitor service-level objectives with Dynatrace.")
+* [Configure and monitor service-level objectives](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo "Create, configure, and monitor service-level objectives with Dynatrace.")

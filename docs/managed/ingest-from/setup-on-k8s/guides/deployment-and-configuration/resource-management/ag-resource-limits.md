@@ -183,7 +183,7 @@ Actual required resources increase with:
 
 Dynatrace supports up to 1,000 pod exporters, with each exporter able to provide up to 1,000 metrics. If your environment approaches these limits, you'll need to increase the resources allocated to the ActiveGate to ensure reliable performance.
 
-For high-volume Prometheus scraping, and for new deployments, we recommend the [OpenTelemetry Collector](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape Prometheus endpoints and ingest the data into Dynatrace.").
+For high-volume Prometheus scraping, and for new deployments, we recommend the [OpenTelemetry Collector](/managed/ingest-from/opentelemetry/collector-use-cases/prometheus "Configure the OpenTelemetry Collector to scrape Prometheus endpoints and ingest the data into Dynatrace.").
 
 ## Example DynaKube resources
 

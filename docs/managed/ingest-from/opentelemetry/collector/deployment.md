@@ -1416,7 +1416,7 @@ name: dynatrace-otel-collector-config
 
 Service account
 
-In Kubernetes, it is common to enrich OpenTelemetry signals using the [Kubernetes Attributes processor](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data."). This requires a Kubernetes service account, which is automatically configured when using Operator or Helm.
+In Kubernetes, it is common to enrich OpenTelemetry signals using the [Kubernetes Attributes processor](/managed/ingest-from/opentelemetry/collector-use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data."). This requires a Kubernetes service account, which is automatically configured when using Operator or Helm.
 
 For raw manifests, this needs to be configured manually by adding a `spec.serviceAccountName: collector` entry to the deployment manifest.
 

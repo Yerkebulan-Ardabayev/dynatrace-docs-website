@@ -30,7 +30,7 @@ Use OneAgent for direct installation on the host with StatsD. For more details, 
 
 If OneAgent cannot be installed on the host, use ActiveGate as a remote listener to collect StatsD metrics. For more details, go to [Remote StatsD](#remote-statsd).
 
-For distributed environments or when using Kubernetes, OpenTelemetry Collector provides a solution to ingest StatsD metrics into Dynatrace. For more details, see [Ingest data from StatsD](/managed/ingest-from/opentelemetry/collector/use-cases/statsd "Configure the OpenTelemetry Collector to ingest StatsD data.").
+For distributed environments or when using Kubernetes, OpenTelemetry Collector provides a solution to ingest StatsD metrics into Dynatrace. For more details, see [Ingest data from StatsD](/managed/ingest-from/opentelemetry/collector-use-cases/statsd "Configure the OpenTelemetry Collector to ingest StatsD data.").
 
 ## Enable DynatraceStatsD
 

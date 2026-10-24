@@ -22,7 +22,7 @@ Management zone rules
 Read more about:
 
 * How log data can be ingested and automatically assigned to management zones in [Management zones and ingested log data (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring "Find out how ingested log data is assigned to management zones.").
-* How to [add a service-level objective to a management zone](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#mz "Create, configure, and monitor service-level objectives with Dynatrace.") so users with access to the management zone can view SLO status and error budget in the **Service-level objectives** page.
+* How to [add a service-level objective to a management zone](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#mz "Create, configure, and monitor service-level objectives with Dynatrace.") so users with access to the management zone can view SLO status and error budget in the **Service-level objectives** page.
 
 ## Rule types
 

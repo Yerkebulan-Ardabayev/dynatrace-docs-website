@@ -1518,7 +1518,7 @@ If you use a container orchestration tool, your orchestrator can deploy the OneA
 
 * [Run OneAgent with Mesos/Marathon](/managed/ingest-from/setup-on-container-platforms/deploy-dynatrace-oneagent-on-mesos-marathon "Learn how to deploy OneAgent on Mesos/Marathon.")
 * [Run OneAgent with Kubernetes](/managed/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
-* [Run OneAgent with Elastic Container Service](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs/deploy-oneagent-on-ecs "Monitor ECS clusters as a daemon service, with the EC2 launch type.")
+* [Run OneAgent with Elastic Container Service](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-ecs/deploy-oneagent-on-ecs "Monitor ECS clusters as a daemon service, with the EC2 launch type.")
 * [Set up Dynatrace on Cloud Foundry](/managed/ingest-from/setup-on-container-platforms/cloud-foundry "Set up and configure Dynatrace on Cloud Foundry.")
 
 ## Custom installation with command-line parameters

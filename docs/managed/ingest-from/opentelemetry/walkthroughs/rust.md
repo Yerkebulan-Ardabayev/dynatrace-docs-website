@@ -9,16 +9,9 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthrough
 
 * How-to guide
 * 5-min read
-* Updated on May 11, 2026
+* Updated on Oct 22, 2026
 
 This walkthrough shows how to add observability to your Rust application using the OpenTelemetry Rust libraries and tools.
-
-| Feature | Supported |
-| --- | --- |
-| Automatic instrumentation | No |
-| Traces | Yes |
-| Metrics | Yes |
-| Logs | Yes |
 
 ## Prerequisites
 

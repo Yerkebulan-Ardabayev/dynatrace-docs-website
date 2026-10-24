@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deploym
 * Reference
 * Updated on Aug 20, 2025
 
-This API is intended for use with the AWS Lambda Classic implementation. For details, see [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+This API is intended for use with the AWS Lambda Classic implementation. For details, see [AWS Lambda](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 Get the latest version names of OneAgent code modules for the Java, Node.js, and Python AWS Lambda runtimes, also including names for layers that are combined with the log collector, as well as for the standalone log collector layer.
 

@@ -340,7 +340,7 @@ Settings: query (required), custom timeframe, management zone, environment.
 
 ### Service-level objective
 
-Displays the title, status, error budget, and target of the selected SLO. Status and error budget are numeric values shown in green (good), yellow (warning), red (bad), or gray (no data). For details, see [Configure and monitor service-level objectives with Dynatrace](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#slodashboardtile "Create, configure, and monitor service-level objectives with Dynatrace.").
+Displays the title, status, error budget, and target of the selected SLO. Status and error budget are numeric values shown in green (good), yellow (warning), red (bad), or gray (no data). For details, see [Configure and monitor service-level objectives](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#slodashboardtile "Create, configure, and monitor service-level objectives with Dynatrace.").
 
 Drilldowns: **View details** opens the **Service-level objectives** page filtered to the selected SLO.
 

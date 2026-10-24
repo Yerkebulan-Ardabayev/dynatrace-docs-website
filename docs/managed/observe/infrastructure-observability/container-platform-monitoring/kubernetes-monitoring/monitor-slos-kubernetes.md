@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 * 2-min read
 * Published Jan 19, 2023
 
-You can keep track of current [service-level objectives](/managed/deliver/service-level-objectives-classic "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.") related to a Kubernetes/OpenShift workload on the **Kubernetes workload** details pages.
+You can keep track of current [service-level objectives](/managed/analyze-explore-automate/service-level-objectives-classic "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.") related to a Kubernetes/OpenShift workload on the **Kubernetes workload** details pages.
 
 * Select **SLOs** on the notifications bar to display the **Service-level objectives** panel, which lists SLOs that are directly or indirectly connected to the workload.
 
@@ -34,11 +34,11 @@ You can keep track of current [service-level objectives](/managed/deliver/servic
 * Select **Details** to view a chart of the respective SLO metrics.
 * In **Actions**, select
 
-  + **View in Data Explorer** to [see SLO metrics in Data Explorer](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#explorer "Create, configure, and monitor service-level objectives with Dynatrace.").
-  + **Pin to Dashboard** to [pin the SLO to your dashboard](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#dash "Create, configure, and monitor service-level objectives with Dynatrace."). For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
+  + **View in Data Explorer** to [see SLO metrics in Data Explorer](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#explorer "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **Pin to Dashboard** to [pin the SLO to your dashboard](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#dash "Create, configure, and monitor service-level objectives with Dynatrace."). For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
   + **SLO definition** to edit the SLO in **Service-level objective definitions**.
-  + **Clone** to [clone the SLO](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#clone "Create, configure, and monitor service-level objectives with Dynatrace.").
-  + **Create alert** to [create an alert for the SLO](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#alerts "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **Clone** to [clone the SLO](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#clone "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **Create alert** to [create an alert for the SLO](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#alerts "Create, configure, and monitor service-level objectives with Dynatrace.").
 
 ## No SLOs
 
@@ -49,7 +49,7 @@ If no SLOs are found, you can
   ![Timeframe selector: menu bar](https://dt-cdn.net/images/timeframe-selector-menu-bar-264-8193110c8c.png)
 
   Timeframe selector: menu bar
-* Select **Add SLO** to create an SLO in the [SLO wizard](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#wizard "Create, configure, and monitor service-level objectives with Dynatrace.").
+* Select **Add SLO** to create an SLO in the [SLO wizard](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#wizard "Create, configure, and monitor service-level objectives with Dynatrace.").
 
 ## Example SLO panel
 

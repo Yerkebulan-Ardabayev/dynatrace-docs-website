@@ -9,16 +9,9 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthrough
 
 * How-to guide
 * 5-min read
-* Updated on Sep 15, 2026
+* Updated on Oct 22, 2026
 
 This walkthrough shows how to add observability to your C++ application using the OpenTelemetry C++ libraries and tools.
-
-| Feature | Supported |
-| --- | --- |
-| Automatic instrumentation | No |
-| Traces | Yes |
-| Metrics | Yes |
-| Logs | Yes |
 
 ## Prerequisites
 

@@ -82,7 +82,7 @@ Inject OneAgent code modules into a container as it is deployed.
 
 * For Kubernetes/OpenShift, see [Get started with Application observability](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed#runtime "Deploy Dynatrace Operator in application monitoring mode to Kubernetes")
 * For Cloud Foundry, see [Deploy OneAgent on Cloud Foundry for application-only monitoring](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring "Install OneAgent on Cloud Foundry.")
-* For AWS Fargate, see [Monitor AWS Fargate](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate#runtime "Install OneAgent on AWS Fargate.")
+* For AWS Fargate, see [Monitor AWS Fargate](/managed/ingest-from/amazon-web-services-classic/integrate-into-aws/aws-fargate#runtime "Install OneAgent on AWS Fargate.")
 
 ### Build-time injection
 
