@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/credent
 * Reference
 * Updated on Apr 08, 2026
 
-Lists all credentials for [synthetic monitors](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.") stored in your environment.
+Lists all credentials for [synthetic monitors](/managed/observe/digital-experience-classic/synthetic-monitoring-classic "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.") stored in your environment.
 
 The request produces an `application/json` payload.
 
@@ -474,5 +474,5 @@ A list of constraint violations
 
 ## Related topics
 
-* [Configure browser monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")
-* [Configure HTTP monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")
+* [Configure browser monitors in Classic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")
+* [Configure HTTP monitors in Classic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")

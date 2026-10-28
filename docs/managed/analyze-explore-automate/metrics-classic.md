@@ -43,25 +43,25 @@ Keep cardinality under control and block metric dimensions you don't need with t
 
 ### Calculated metrics
 
-[Log Monitoring](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
+[Log Monitoring](/managed/analyze-explore-automate/log-monitoring-classic/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
 
-[Service](/managed/observe/application-observability/services-classic/calculated-service-metric "Learn how to create a calculated metric based on web requests.")
+[Service](/managed/observe/application-observability-classic/services-classic/calculated-service-metric "Learn how to create a calculated metric based on web requests.")
 
-[Synthetic](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors#calculated-metrics "Learn how to analyze browser-monitor data points.")
+[Synthetic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/analysis-and-alerting/multidimensional-analysis-for-browser-monitors#calculated-metrics "Learn how to analyze browser-monitor data points.")
 
-[RUM - web applications](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.")
+[RUM - web applications](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.")
 
-[RUM - mobile applications](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/rum-calculated-metrics-mobile "Create calculated metrics as well as custom charts based on calculated metrics for your mobile applications.")
+[RUM - mobile applications](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/additional-configuration/rum-calculated-metrics-mobile "Create calculated metrics as well as custom charts based on calculated metrics for your mobile applications.")
 
-[RUM - custom applications](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/rum-calculated-metrics-custom "Create calculated metrics as well as custom charts based on calculated metrics for your custom applications.")
+[RUM - custom applications](/managed/observe/digital-experience-classic/rum-classic/custom-applications/additional-configuration/rum-calculated-metrics-custom "Create calculated metrics as well as custom charts based on calculated metrics for your custom applications.")
 
 ### USQL custom metrics
 
-[RUM - web applications](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/custom-metrics-from-user-sessions "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for web applications.")
+[RUM - web applications](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/custom-metrics-from-user-sessions "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for web applications.")
 
-[RUM - mobile applications](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/custom-metrics-from-user-sessions-mobile-apps "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for mobile applications.")
+[RUM - mobile applications](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/additional-configuration/custom-metrics-from-user-sessions-mobile-apps "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for mobile applications.")
 
-[RUM - custom applications](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/custom-metrics-from-user-sessions-custom-apps "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for custom applications.")
+[RUM - custom applications](/managed/observe/digital-experience-classic/rum-classic/custom-applications/additional-configuration/custom-metrics-from-user-sessions-custom-apps "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for custom applications.")
 
 ### Metric sources
 
@@ -75,11 +75,11 @@ Keep cardinality under control and block metric dimensions you don't need with t
 
 [Metrics for Dynatrace Runtime Vulnerability Analytics](/managed/secure/application-security/vulnerability-analytics/app-sec-metrics "View available Application Security metrics for Dynatrace Runtime Vulnerability Analytics.")
 
-[Log metrics (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
+[Log metrics (Logs Classic)](/managed/analyze-explore-automate/log-monitoring-classic/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
 
 ### See also
 
-[Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.")
+[Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.")
 
 [Metrics API v2](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.")
 

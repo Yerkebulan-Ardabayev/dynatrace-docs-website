@@ -23,7 +23,7 @@ Feature update  Infrastructure Observability | Log monitoring
 * Log analytics: Enhanced log ingestion characteristics with improved support for log records containing large payload sizes.
 * All log settings: Updated log ingestion limits to reflect new thresholds and capabilities.
 
-See [Log Monitoring default limits (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/log-monitoring-limits "Default limits for the latest version of Dynatrace Log Monitoring.") for detailed information.
+See [Log Monitoring default limits (Logs Classic)](/managed/analyze-explore-automate/log-monitoring-classic/log-monitoring-limits "Default limits for the latest version of Dynatrace Log Monitoring.") for detailed information.
 
 Digital Experience | RUM Web
 
@@ -64,7 +64,7 @@ Feature update  Logs
 
 With this release, EEC, Log Analysis, and ActiveGate will start setting the `attr_key_trimmed` value in the `dt.ingest.warnings` attribute of log events having at least one attribute key exceeding the limit of `100` bytes in UTF-8 representation. This is documented in:
 
-* [Log ingestion warnings (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/lmc-troubleshooting/lmc-ingest-warnings "List of log ingestion warnings")
+* [Log ingestion warnings (Logs Classic)](/managed/analyze-explore-automate/log-monitoring-classic/lmc-troubleshooting/lmc-ingest-warnings "List of log ingestion warnings")
 
 Digital Experience | RUM Web
 
@@ -72,7 +72,7 @@ Digital Experience | RUM Web
 
 You can now leverage the subresource integrity browser feature to ensure the integrity of the RUM monitoring code that is automatically injected or manually inserted into your web application.
 
-For more information, see [Use Subresource Integrity (SRI) in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/subresource-integrity "Use the Subresource Integrity (SRI) browser feature to ensure the integrity of the RUM monitoring code.").
+For more information, see [Use Subresource Integrity (SRI) in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/subresource-integrity "Use the Subresource Integrity (SRI) browser feature to ensure the integrity of the RUM monitoring code.").
 
 Digital Experience | Synthetic
 

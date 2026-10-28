@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 
 * How-to guide
 * 5-min read
-* Updated on Oct 20, 2026
+* Published Mar 24, 2026
 
 With process grouping rules, you can merge multiple process groups into one or split a process group into separate, more granular groups.
 

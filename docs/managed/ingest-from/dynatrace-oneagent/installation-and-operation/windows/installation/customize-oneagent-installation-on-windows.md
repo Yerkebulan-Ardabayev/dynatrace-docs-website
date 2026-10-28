@@ -200,7 +200,7 @@ To change the tenant token after installation, use `--set-tenant-token` in the [
 
 **Default value**: `unset`
 
-To learn about network zone naming rules and other reference information, see [Network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.").
+To learn about network zone naming rules and other reference information, see [Network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.").
 
 Use the `--set-network-zone` parameter to instruct OneAgent to communicate via the specified network zone:
 
@@ -208,7 +208,7 @@ Use the `--set-network-zone` parameter to instruct OneAgent to communicate via t
 --set-network-zone=your.network.zone
 ```
 
-To change or clear the network zone assignment after installation, use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
+To change or clear the network zone assignment after installation, use [Remote configuration management](/managed/ingest-from/bulk-configuration-classic#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
 
 Alternatively, you can use `--set-network-zone` on the [OneAgent command-line interface](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#nz "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
@@ -241,7 +241,7 @@ Watchdog is a binary used for starting and monitoring OneAgent monitoring proces
 * `oneagentos`—operating system monitoring
 * `oneagentplugin`—monitoring using [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
 * `oneagentextensions`—monitoring using local [Extensions](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.")
-* `oneagentloganalytics`—[Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* `oneagentloganalytics`—[Log Monitoring](/managed/analyze-explore-automate/log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
 * `oneagentnetwork`—[network monitoring](/managed/observe/infrastructure-observability/networks "Learn how to monitor network communications.")
 
 Use the `--set-watchdog-portrange=<arg>` parameter to change the watchdog listening port range to `<arg>`. The `<arg>` must contain two port numbers separated by a colon (`:`). For example `50000:50100`. The maximum supported port range is from 1024 to 65535. The port range must cover at least 4 ports. The port number starting the range must be lower. For example:
@@ -266,7 +266,7 @@ After you set the parameter to `false`, you won't be able to control OneAgent au
 
 **Default value**: `unset`
 
-The name of a group you want to assign the host to. For details, see [Organize your environment using host groups](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups."). Host group string requirements:
+The name of a group you want to assign the host to. For details, see [Organize your environment using host groups](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups."). Host group string requirements:
 
 * Can contain only alphanumeric characters, hyphens, underscores, and periods
 * Must not start with `dt.`
@@ -280,7 +280,7 @@ To assign a host to the host group, pass the host group name as a parameter valu
 
 To remove the host from a group, you need to [uninstall OneAgent](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux "Learn how you can remove OneAgent from your Linux-based system.") or pass an empty value `--set-host-group=""` when running a OneAgent update. You can't remove the host from a group using the `HOST_GROUP` parameter when updating OneAgent.
 
-To change or clear the host group assignment after installation, use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host group** action).
+To change or clear the host group assignment after installation, use [Remote configuration management](/managed/ingest-from/bulk-configuration-classic#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host group** action).
 
 Alternatively, you can use `--set-host-group` in the [OneAgent command-line interface](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#host-groups "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
@@ -314,7 +314,7 @@ To change the monitoring mode after installation, use `--set-monitoring-mode` in
 
 Use the `--set-host-name` to override an automatically detected host name. The host name value must not contain the `<`, `>`, `&`, `CR` (carriage return), and `LF` (line feed) characters and the maximum length is 256 characters.
 
-This command adds a custom host name to display in the UI, but the detected host name is not changed. For details, see [Set custom host names](/managed/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name.").
+This command adds a custom host name to display in the UI, but the detected host name is not changed. For details, see [Set custom host names](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name.").
 
 To set the host name:
 
@@ -340,7 +340,7 @@ To add or change host properties:
 
 You can add or change more than one property in the same command.
 
-To change the host metadata after installation, use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select **modify host properties** action).
+To change the host metadata after installation, use [Remote configuration management](/managed/ingest-from/bulk-configuration-classic#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select **modify host properties** action).
 
 Alternatively, you can use `--set-host-property` in the [OneAgent command-line interface](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
@@ -358,7 +358,7 @@ To add or change host tags:
 
 You can add or change more than one tag in the same command. It is allowed to define tags with the same key but different values.
 
-To change the host tags after installation, use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host tags** action).
+To change the host tags after installation, use [Remote configuration management](/managed/ingest-from/bulk-configuration-classic#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host tags** action).
 
 Alternatively, you can use `--set-host-tag` in the [OneAgent command-line interface](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 

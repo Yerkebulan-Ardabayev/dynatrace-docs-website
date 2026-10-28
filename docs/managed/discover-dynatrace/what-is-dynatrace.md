@@ -32,7 +32,7 @@ Dynatrace Managed is an all-in-one platform that's purpose-built for a wide rang
 * [**Digital Experience**](/managed/observe/digital-experience "Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.")
 
   Deliver flawless digital experiences and drive business results with AI-driven, automated, front-end-to-back-end digital experience monitoring.
-* [**Log Monitoring Classic**](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* [**Log Monitoring Classic**](/managed/analyze-explore-automate/log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
 
   Make smarter, faster decisions when troubleshooting and measuring the health of your application environments—all while eliminating the costly overhead of ingestion and management.
 * [**Application Security**](/managed/secure/application-security "Access the Dynatrace Application Security functionalities.")

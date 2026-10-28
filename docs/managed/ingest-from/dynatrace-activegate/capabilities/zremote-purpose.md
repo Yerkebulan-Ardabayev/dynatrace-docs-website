@@ -1,14 +1,14 @@
 ---
-title: Install the zRemote module for z/OS monitoring
+title: Install the zRemote module for z/OS monitoring (Dynatrace Classic)
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/capabilities/zremote-purpose
 ---
 
-# Install the zRemote module for z/OS monitoring
+# Install the zRemote module for z/OS monitoring (Dynatrace Classic)
 
-# Install the zRemote module for z/OS monitoring
+# Install the zRemote module for z/OS monitoring (Dynatrace Classic)
 
 * 1-min read
-* Updated on Jul 12, 2026
+* Updated on Jul 25, 2020
 
 The zRemote module processes binary data received from the [zLocal](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos "Install, configure, and manage Dynatrace modules on z/OS.") and routes that data, compressed and encrypted, via its local ActiveGate to Dynatrace. Hence, the zRemote module offloads much of the processing work from the [CICS, IMS, and z/OS Java code modules](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos "Install, configure, and manage Dynatrace modules on z/OS.") incurred in instrumenting subsystems and applications to an open system.
 

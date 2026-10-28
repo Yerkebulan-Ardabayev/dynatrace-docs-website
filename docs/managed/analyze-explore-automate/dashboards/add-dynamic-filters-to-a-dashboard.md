@@ -47,7 +47,7 @@ The Dynamic filters tab of a dashboard
 
 ## Step 2 Add filters
 
-Custom dimension filters and generic tag filters apply only to tiles that you create in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") and pin to the dashboard. They don't apply to standard tiles that you drag to the dashboard from the **Tiles** pane in the dashboard editor, or that you pin to the dashboard from another page such as **Hosts**.
+Custom dimension filters and generic tag filters apply only to tiles that you create in [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") and pin to the dashboard. They don't apply to standard tiles that you drag to the dashboard from the **Tiles** pane in the dashboard editor, or that you pin to the dashboard from another page such as **Hosts**.
 
 1. On the **Dynamic filters** tab, select **Add filter**.
 2. Select a filter from the **Filter criteria** list.  

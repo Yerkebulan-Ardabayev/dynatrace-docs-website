@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector-u
 
 * How-to guide
 * 2-min read
-* Updated on Dec 17, 2025
+* Updated on Oct 22, 2026
 
 The following configuration example shows how you configure a Collector instance to enrich OpenTelemetry data with OneAgent host entities.
 
@@ -24,6 +24,7 @@ Enrichment is specific to non-container OneAgent environments. Configuring a con
 * One of the following Collector distributions with the [Resource Detection processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.160.0/processor/resourcedetectionprocessor):
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+  + The [Dynatrace Bindplane OTel Collector](/managed/ingest-from/bindplane-classic "Bindplane manages OpenTelemetry collector fleets at scale and controls telemetry volume at the edge before data reaches Dynatrace.")
   + OpenTelemetry [Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + A [custom Builder version](/managed/ingest-from/opentelemetry/collector#collector-builder "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
 * A OneAgent running on the same host as the OTel Collector, where the OneAgent monitors in either Full-Stack, Infrastructure, or Foundation & Discovery mode.

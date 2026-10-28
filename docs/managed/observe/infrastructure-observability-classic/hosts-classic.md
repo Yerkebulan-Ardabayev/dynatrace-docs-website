@@ -1,0 +1,68 @@
+---
+title: Hosts
+source: https://docs.dynatrace.com/managed/observe/infrastructure-observability-classic/hosts-classic
+---
+
+# Hosts
+
+# Hosts
+
+* Explanation
+* 3-min read
+* Published Sep 25, 2018
+
+Host performance is tracked across multiple Dynatrace pages, beginning with high-level health metrics on dashboard tiles and extending down to dedicated pages for each of your hosts. Full-stack infrastructure monitoring begins automatically as soon as Dynatrace OneAgent starts operation and begins capturing performance and event-related information on your hosts.
+
+## Overview
+
+### Host groups
+
+With many Dynatrace-monitored environments growing larger and more complex all the time, often spanning different data centers and multiple applications, [host groups](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") are increasingly important. Host groups enable you to configure hosts per group, roll out OneAgent versions selectively per group, and track service metrics differently depending on the platform they run on.
+
+### Virtualization performance insights
+
+Dynatrace tells you how the virtual machines in your environment affect the performance of your applications and services. Once you include virtualization in your Dynatrace performance monitoring, you gain insight into your complete infrastructure stack and its behavior.
+
+### Tags in a host-based configuration file
+
+Within dynamic or large environments, manual host tagging can be impractical. For dynamic deployments that include frequently changing host instances and names (for example, AWS or MS Azure), you can [use a dedicated configuration file to programmatically apply tags to your hosts](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/define-tags-and-metadata-for-hosts "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.").
+
+### Custom host names
+
+Dynatrace generally names the detected hosts in your environment based on their DNS names, exactly as they are detected by Dynatrace OneAgent. To improve readability, you may want to [create custom host names](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name.") to display instead of the detected host names.
+
+## Configuration
+
+[### OneAgent monitoring modes
+
+Find out what's included and how to enable Infrastructure and Discovery monitoring modes.](/managed/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.")[### Host anomaly detection
+
+Configure host anomaly detection, including problem and event thresholds.](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/anomaly-detection "Configure host anomaly detection, including problem and event thresholds.")[### Define tags and metadata for hosts
+
+Tag and set additional properties for a monitored host.](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/define-tags-and-metadata-for-hosts "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.")[### Exclude disks and network traffic from host monitoring
+
+Exclude selected disks and network traffic from host monitoring.](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/exclude-disks-and-network-traffic "Learn how to exclude selected disks and network traffic from host monitoring.")[### Organize your environment using host groups
+
+Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.")[### Set custom host names
+
+Change a monitored host name.](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name.")
+
+## Monitoring
+
+[### Monitoring modes
+
+Explore monitoring modes in Dynatrace.](/managed/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.")[### Host monitoring with Dynatrace
+
+Monitor hosts with Dynatrace.](/managed/observe/infrastructure-observability-classic/hosts-classic/monitoring/host-monitoring "Monitor hosts with Dynatrace.")[### OS services monitoring
+
+Improve the visibility of your infrastructure by monitoring the availability of operating system services.](/managed/observe/infrastructure-observability-classic/hosts-classic/monitoring/os-services "Monitor the availability of operating system services on your hosts to improve infrastructure visibility and detect failures in real time.")[### Classic Windows services monitoring
+
+Improve the visibility of your infrastructure by monitoring the availability of Windows services.](/managed/observe/infrastructure-observability-classic/hosts-classic/monitoring/windows-services "Learn how to improve the visibility of your infrastructure by monitoring the availability of Windows services.")[### Process availability
+
+Monitor availability and performance of the key processes on your hosts.](/managed/observe/infrastructure-observability-classic/hosts-classic/monitoring/process-availability "Monitor availability and performance of the key processes on your hosts.")
+
+## Diagnostics
+
+[### OneAgent diagnostics
+
+Learn how to run OneAgent diagnostics.](/managed/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Learn how to run OneAgent diagnostics")

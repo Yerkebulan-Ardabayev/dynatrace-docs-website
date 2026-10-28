@@ -36,5 +36,5 @@ Update configuration of host detection headers configuration.](/managed/dynatrac
 
 ## Related topics
 
-* [Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.")
-* [Check application detection rules in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/application-detection-rules "Easily understand the detection rules of your RUM application.")
+* [Real User Monitoring Classic](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.")
+* [Check application detection rules in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/application-detection-rules "Easily understand the detection rules of your RUM application.")

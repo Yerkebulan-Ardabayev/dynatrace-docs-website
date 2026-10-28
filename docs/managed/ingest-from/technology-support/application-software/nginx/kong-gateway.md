@@ -477,7 +477,7 @@ OpenTelemetry Collector
 
 In Kubernetes, Dynatrace supports scraping of Prometheus endpoints using special annotations.
 
-To learn how to collect Prometheus metrics in Kubernetes, see [Monitor Prometheus metrics](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
+To learn how to collect Prometheus metrics in Kubernetes, see [Monitor Prometheus metrics](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
 
 ### Scrape metrics using OpenTelemetry Collector
 

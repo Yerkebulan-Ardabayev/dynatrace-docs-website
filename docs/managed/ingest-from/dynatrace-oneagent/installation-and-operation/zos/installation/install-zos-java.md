@@ -21,19 +21,19 @@ With the z/OS Java module, you can get observability for your Java applications 
 
 Trace your Java applications end-to-end with Dynatrace and quickly detect any anomalies
 
-Analyze the performance of your transactions end-to-end using the [service flow](/managed/observe/application-observability/services-classic/services-page/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
+Analyze the performance of your transactions end-to-end using the [service flow](/managed/observe/application-observability-classic/services-classic/services-page/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
 
 ![zOS Java 1](https://dt-cdn.net/images/zos-java-1-2772-facc3b2740.png)
 
 zOS Java 1
 
-Use the [PurePath distributed traces](/managed/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") to drill down to the code level and to optimize your programs.
+Use the [PurePath distributed traces](/managed/observe/application-observability-classic/distributed-traces-classic "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") to drill down to the code level and to optimize your programs.
 
 ![zOS Java 2](https://dt-cdn.net/images/zos-java-2-2729-43a263828d.png)
 
 zOS Java 2
 
-Quickly detect anomalies with the [Service response time hotspots](/managed/observe/application-observability/services-classic/services-page/service-response-time-hotspots "Identify the activities that consume the most response time for each service.").
+Quickly detect anomalies with the [Service response time hotspots](/managed/observe/application-observability-classic/services-classic/services-page/service-response-time-hotspots "Identify the activities that consume the most response time for each service.").
 
 ![zOS Java 3](https://dt-cdn.net/images/zos-java-3-2312-97d45f24a2.png)
 

@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/license/dps-permissions
 * Reference
 * Published Jun 26, 2026
 
-Dynatrace offers several features to help you understand your Dynatrace Platform Subscription costs . To be able to use some of these features, you'll need to have a user account with specific permissions to retrieve data at the account, environment, or subscription level.
+Dynatrace offers several features to help you understand your Dynatrace Platform Subscription costs. To be able to use some of these features, you'll need to have a user account with specific permissions to retrieve data at the account, environment, or subscription level.
 
 This page describes the permissions that you need to understand your DPS consumption and costs.
 
@@ -47,3 +47,10 @@ To do this, create an OAuth client with the **Allow read access for usage and co
 
 To create an OAuth client, go to **Account Management** > **Identity & access management** > **OAuth clients**.
 For more information, see [Dynatrace Platform Subscription API - GET usage](/managed/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/usage/get-usage "Check how your Dynatrace Platform Subscription is used via the Account Management API.").
+
+## Related topics
+
+* [Account Management permissions (Dynatrace Classic)](/managed/manage/identity-access-management-classic/permission-management/account-management-permissions-classic "Dynatrace permissions required to access Account Management")
+* [About Dynatrace licenses, accounts, environments, and users](/managed/manage/account-management/accounts-environments "Key concepts to understand your Dynatrace user, account, its associated environments, and how it consumes from a Dynatrace subscription or license.")
+* [Identity and access management (IAM)](/managed/manage/identity-access-management-classic "Configure users, groups and permissions.")
+* [Account Management](/managed/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")

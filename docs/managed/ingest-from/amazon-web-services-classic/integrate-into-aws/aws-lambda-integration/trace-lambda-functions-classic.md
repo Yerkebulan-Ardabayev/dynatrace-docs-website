@@ -149,7 +149,7 @@ This is an optional step to use Real User Monitoring (RUM), which provides you w
 AWS Lambda also supports [**non-proxy integration**﻿](https://dt-url.net/8u03rh3), which—without some additional configuration—prevents Dynatrace from
 
 * Tracing calls from other monitored applications
-* [RUM](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.") detection (web and mobile)
+* [RUM](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.") detection (web and mobile)
 
 To make tracing calls from other monitored applications/RUM detection work in this scenario, create a custom mapping template in the integration requests configuration.
 

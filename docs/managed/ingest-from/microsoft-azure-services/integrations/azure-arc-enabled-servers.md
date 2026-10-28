@@ -104,7 +104,7 @@ az connectedmachine extension create
 | token | Required | The PaaS token as described in [Prerequisites](#prerequisites). |
 | server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
 | enableLogsAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
-| hostGroup | Optional | Define the [host group](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
+| hostGroup | Optional | Define the [host group](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
 
 Alternatively to the main installation methods, you can make the Dynatrace VM extension part of your ARM templates.
 

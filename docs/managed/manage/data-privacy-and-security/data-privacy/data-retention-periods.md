@@ -38,7 +38,7 @@ For active Dynatrace accounts, the following retention periods are set by defaul
 
 ## Distributed traces
 
-Dynatrace retains the complete details of every transaction for a maximum of 365 days, depending on your configuration. The complete transaction record lets you analyze individual transactions and get all the details available with your [instrumentation](/managed/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.").
+Dynatrace retains the complete details of every transaction for a maximum of 365 days, depending on your configuration. The complete transaction record lets you analyze individual transactions and get all the details available with your [instrumentation](/managed/observe/application-observability-classic/distributed-traces-classic "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.").
 
 For trial users, an additional storage-size limit applies, which can lead to shorter retention times.
 
@@ -52,7 +52,7 @@ After 10 days, session data is optimized for aggregated views. Non-aggregated an
 
 ## Services: Requests and request attributes
 
-Short-term service metric data, used in [multidimensional analysis](/managed/observe/application-observability/multidimensional-analysis "Configure a multidimensional analysis view and save it as a calculated metric.") and [request charting](/managed/observe/application-observability/services-classic/services-page#charts "Learn about Dynatrace's service monitoring."), is available for a maximum of 365 days, depending on your configuration, with the following interval granularity levels:
+Short-term service metric data, used in [multidimensional analysis](/managed/observe/application-observability-classic/multidimensional-analysis-classic "Configure a multidimensional analysis view and save it as a calculated metric.") and [request charting](/managed/observe/application-observability-classic/services-classic/services-page#charts "Learn about Dynatrace's service monitoring."), is available for a maximum of 365 days, depending on your configuration, with the following interval granularity levels:
 
 | Timeframe | Interval granularity |
 | --- | --- |
@@ -69,7 +69,7 @@ Transaction store at `DATASTORE_PATH/server/tenantData` keeps the data. Dynatrac
 
 Aggregated user action metrics, which are used in tables like **Top user actions** and **Top JavaScript errors**, are available for a maximum of 365 days, depending on your configuration. After 10 days, user actions data is optimized for aggregated views, and some individual user actions become unavailable for individual analysis. However, the sample set is large enough for statistically correct aggregations.
 
-For [key user actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions#key-user-actions "Learn what user actions are and how they help you understand what users do with your application."), raw user action data is also kept for a maximum of 365 days, depending on your configuration. The retention for timeseries data of key user actions is the same as for [timeseries metrics](#metrics-classic).
+For [key user actions](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-actions#key-user-actions "Learn what user actions are and how they help you understand what users do with your application."), raw user action data is also kept for a maximum of 365 days, depending on your configuration. The retention for timeseries data of key user actions is the same as for [timeseries metrics](#metrics-classic).
 
 Transaction store at `DATASTORE_PATH/tenantData` keeps the data. Dynatrace doesn't replicate this data across Managed Cluster nodes.
 
@@ -103,13 +103,13 @@ Session Replay data retention is configurable 1–90 days and cannot exceed the 
 
 Minimum size of required Session Replay storage volume is entirely load-dependent. A maximum size isn't required.
 
-The Session Replay data storage directory is a dedicated file store at `DATASTORE_PATH/server/replayData` and is used exclusively for Session Replay data. For more information about storage size recommendations, see [Configure the secondary disk](/managed/observe/digital-experience/session-replay/enable-session-replay-web#session-replay-disk "Learn the prerequisites and the procedure for enabling Session Replay Classic.").
+The Session Replay data storage directory is a dedicated file store at `DATASTORE_PATH/server/replayData` and is used exclusively for Session Replay data. For more information about storage size recommendations, see [Configure the secondary disk](/managed/observe/digital-experience-classic/session-replay-classic/enable-session-replay-web#session-replay-disk "Learn the prerequisites and the procedure for enabling Session Replay Classic.").
 
 ## Log Monitoring
 
 Log Monitoring allows you to store all logs centrally within external storage. Central storage makes log data available independent of log files themselves.
 
-For storing log files centrally, you already use Elasticsearch store at `DATASTORE_PATH/elasticsearch` to store log files on your Dynatrace Managed Cluster. Replication factor is set to two. To configure log storage, see [Log storage](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/log-storage "Configure storage of log files that are already known to OneAgent.").
+For storing log files centrally, you already use Elasticsearch store at `DATASTORE_PATH/elasticsearch` to store log files on your Dynatrace Managed Cluster. Replication factor is set to two. To configure log storage, see [Log storage](/managed/analyze-explore-automate/log-monitoring-classic/acquire-log-data/log-storage "Configure storage of log files that are already known to OneAgent.").
 
 Depending on the number and size of Managed Cluster nodes and the selected log retention times, only a certain number of environments can use custom log retention. The system reports when no more custom log retention settings are possible based on the predicted current usage.
 

@@ -205,4 +205,4 @@ Configuration of the HTTP error in the web application.
 
 ## Related topics
 
-* [Configure error detection for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-errors "Configure your application to capture or ignore request, custom, and JavaScript errors.")
+* [Configure error detection for web applications in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/configure-errors "Configure your application to capture or ignore request, custom, and JavaScript errors.")

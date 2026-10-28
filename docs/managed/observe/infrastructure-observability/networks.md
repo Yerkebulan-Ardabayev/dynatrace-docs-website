@@ -29,31 +29,31 @@ Learn the basics of Dynatrace network monitoring, including how to analyze netwo
 
 * How-to guide
 
-Read this guide](/managed/observe/infrastructure-observability/networks-classic/how-to-monitor-network-communication)[#### Detect network errors
+Read this guide](/managed/observe/infrastructure-observability-classic/networks-classic/how-to-monitor-network-communication)[#### Detect network errors
 
 Learn how errors such as dropped packets and retransmissions on the network level can affect the performance and connectivity of your services.
 
 * How-to guide
 
-Read this guide](/managed/observe/infrastructure-observability/networks-classic/detect-network-errors)[#### Extended network monitoring
+Read this guide](/managed/observe/infrastructure-observability-classic/networks-classic/detect-network-errors)[#### Extended network monitoring
 
 Extend network monitoring with network traffic metrics in containerized Linux hosts using NetTracer.
 
 * How-to guide
 
-Read this guide](/managed/observe/infrastructure-observability/networks-classic/network-monitoring-with-nettracer)[#### Troubleshooting network monitoring
+Read this guide](/managed/observe/infrastructure-observability-classic/networks-classic/network-monitoring-with-nettracer)[#### Troubleshooting network monitoring
 
 Learn more about troubleshooting network monitoring.
 
 * Troubleshooting
 
-Read this troubleshooting guide](/managed/observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring)[#### Ingest NetFlow records into Dynatrace
+Read this troubleshooting guide](/managed/observe/infrastructure-observability-classic/networks-classic/troubleshoot-network-monitoring)[#### Ingest NetFlow records into Dynatrace
 
 Learn how to ingest NetFlow records into Dynatrace.
 
 * How-to guide
 
-Read this guide](/managed/observe/infrastructure-observability/networks-classic/ingest-netflow-records)
+Read this guide](/managed/observe/infrastructure-observability-classic/networks-classic/ingest-netflow-records)
 
 ## Related topics
 

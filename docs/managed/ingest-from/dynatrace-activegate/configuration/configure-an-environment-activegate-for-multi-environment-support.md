@@ -1,14 +1,14 @@
 ---
-title: Multi-environment deployment of ActiveGate
+title: Multi-environment deployment of ActiveGate (Dynatrace Classic)
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/configuration/configure-an-environment-activegate-for-multi-environment-support
 ---
 
-# Multi-environment deployment of ActiveGate
+# Multi-environment deployment of ActiveGate (Dynatrace Classic)
 
-# Multi-environment deployment of ActiveGate
+# Multi-environment deployment of ActiveGate (Dynatrace Classic)
 
 * 4-min read
-* Updated on Jul 09, 2026
+* Updated on Feb 24, 2026
 
 If you've set up several monitoring environments, it might be cumbersome to install and maintain multiple ActiveGates. Therefore, Dynatrace enables you to configure a single ActiveGate in support of multiple monitoring environments. Such an ActiveGate is referred to as a **multi-environment ActiveGate**.
 
@@ -21,7 +21,7 @@ You **cannot** use an Environment ActiveGate configured for multi-environment su
 * **Connect to environments from different clusters**
 * Install the [zRemote module for z/OS monitoring](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote "Prepare and install the zRemote for z/OS monitoring.")
 * Monitor remote technologies with the [Extensions framework](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.")
-* Execute monitors from [private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")
+* Execute monitors from [private Synthetic locations](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")
 * Run Database insights
 
 All other ActiveGate features are supported.

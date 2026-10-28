@@ -670,16 +670,16 @@ You can use additional environment variables to configure, for example, troubles
 
 | Name | Description |
 | --- | --- |
-| `DT_NETWORK_ZONE` | Specifies to use a network zone. For details, see [Network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace."). |
+| `DT_NETWORK_ZONE` | Specifies to use a network zone. For details, see [Network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace."). |
 | `DT_PROXY` | When using a proxy, use this environment variable to pass proxy credentials. For details, see [Set up OneAgent on containers for application-only monitoring](/managed/ingest-from/setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring "Install, update, and uninstall OneAgent on containers for application-only monitoring.") |
 
 ### Additional metadata for process grouping and service detection
 
 | Name | Description |
 | --- | --- |
-| `DT_LOCALTOVIRTUALHOSTNAME` | Multiple containers are sometimes detected as a single instance (localhost), leading to various problems in, for example, service detection or availability alerts. Use this environment variable to define a unique name for your container instance. For details, see [Service Detection v1](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1#adjusting-service-detection "Find out how Dynatrace Service Detection v1 detects and names different types of services.") |
-| `DT_APPLICATIONID` | Some technologies don't provide unique application names. In such cases, use this environment variable to provide a unique name. For details, see [Service Detection v1](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1#web-server-naming-issues "Find out how Dynatrace Service Detection v1 detects and names different types of services.") |
-| `DT_TAGS` | Applies [custom tags](/managed/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.") to your process group |
+| `DT_LOCALTOVIRTUALHOSTNAME` | Multiple containers are sometimes detected as a single instance (localhost), leading to various problems in, for example, service detection or availability alerts. Use this environment variable to define a unique name for your container instance. For details, see [Service Detection v1](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v1#adjusting-service-detection "Find out how Dynatrace Service Detection v1 detects and names different types of services.") |
+| `DT_APPLICATIONID` | Some technologies don't provide unique application names. In such cases, use this environment variable to provide a unique name. For details, see [Service Detection v1](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v1#web-server-naming-issues "Find out how Dynatrace Service Detection v1 detects and names different types of services.") |
+| `DT_TAGS` | Applies [custom tags](/managed/manage/tags-and-metadata-classic/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.") to your process group |
 | `DT_CUSTOM_PROP` | Applies [custom metadata](/managed/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata "Configure your own process-related metadata based on the unique needs of your organization or environment.") to your process group |
 | `DT_CLUSTER_ID` | If the [process group detection rules](/managed/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") won't work for your use-case, use this environment variable to **group all processes with the same value**. |
 | `DT_NODE_ID` | If the [process group detection rules](/managed/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") won't work for your use-case, use this environment variable to **separate process group instances** |
@@ -720,7 +720,7 @@ You can filter for containers in the host overview to filter by **Monitoring Mod
   The first generation of the GCR execution environment, also referred to as Gen1, comes with intentionally increased security limitations. As a consequence, some OneAgent functionalities cannot work in this runtime and are not available. For example, metrics on the **Hosts** page such as `CPU Usage` and `Memory Usage` are not available.
 * **GCR instances detected as hosts**
 
-  GCR execution environments are currently displayed on the **Hosts** page, with proper detection of GCP properties and the memory limit of each of these runtime (container) instances, not on the [**Container groups** page](/managed/observe/infrastructure-observability/container-platform-monitoring/container-groups "Overview on container groups monitoring"). Container metrics are not available.
+  GCR execution environments are currently displayed on the **Hosts** page, with proper detection of GCP properties and the memory limit of each of these runtime (container) instances, not on the [**Container groups** page](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/container-groups "Overview on container groups monitoring"). Container metrics are not available.
 * **Possible startup overhead**
 
   Because each revision of Google Cloud Run scales automatically to the number of container instances needed to handle incoming requests, such cold starts might appear more often than on other environments, thus increasing overall startup overhead.

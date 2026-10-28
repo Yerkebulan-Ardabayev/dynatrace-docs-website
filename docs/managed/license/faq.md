@@ -36,7 +36,7 @@ This billing model is intended to be advantageous in cloud native environments w
 
 How can I manage who can access consumption information?
 
-You can manage access to consumption information through Dynatrace permissions, see [DPS permissions](/managed/license/dps-permissions "What permissions are required to view DPS consumption data in Account Management, DQL, the API, and Cost Allocation.").
+You can manage access to consumption information through Dynatrace permissions, see [DPS permissions](/managed/license/dps-permissions "What permissions are required to view DPS consumption data in Account Management and the Account Management API.").
 
 In what timezone are daily usage and cost analysis calculated?
 

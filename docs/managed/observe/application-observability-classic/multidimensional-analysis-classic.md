@@ -1,0 +1,125 @@
+---
+title: Multidimensional analysis
+source: https://docs.dynatrace.com/managed/observe/application-observability-classic/multidimensional-analysis-classic
+---
+
+# Multidimensional analysis
+
+# Multidimensional analysis
+
+* How-to guide
+* 4-min read
+* Updated on Oct 16, 2026
+
+The **Multidimensional analysis** view enables you to analyze web requests of your services with fine-tuned filtering, so you can focus your analysis on the dimensions that matter most. This view is easily configurable and serves as a convenient entry point for in-depth analysis of your services.
+
+With multidimensional analysis, you can investigate custom views: **Top web requests**, **Database statements**, and **Exception analysis**.
+
+To access the **Multidimensional analysis** page
+
+1. Go to **Multidimensional Analysis**.
+2. Choose one of the analysis options that you want to investigate, or **Create analysis view**.
+
+## Pre-defined views
+
+[### Top web requests
+
+Analyze the most frequent and most expensive web requests.](/managed/observe/application-observability-classic/multidimensional-analysis-classic/top-web-requests "Learn how to analyze all web requests across all of your services using Dynatrace.")[### Top database statements
+
+Analyze the most frequent and most expensive database statements.](/managed/observe/application-observability-classic/multidimensional-analysis-classic/top-database-statements "Understand the database activity across your environment with Dynatrace.")[### Exception analysis
+
+Understand and analyze all code-level exceptions.](/managed/observe/application-observability-classic/multidimensional-analysis-classic/exception-analysis "Learn how Dynatrace can help you see which exceptions occurred in your environment during a selected analysis timeframe.")
+
+## Data source
+
+Multidimensional analysis uses trace and request data as its data source, which includes information on [distributed traces](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#distributed-traces "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.") and [requests](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#request-attributes "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.").
+
+* For timeframes shorter than two hours, a higher resolution (below 1 minute) is used.
+* For larger amounts of data, especially for longer timeframes or unfiltered analysis, sampling is applied: only a fraction of trace and request data is used.
+* To view the information about the data used for analysis and suggestions on how to improve accuracy, hover over **Refine**.
+* To include more data to the analysis, select **Refine**.
+
+Multidimensional analysis vs charts
+
+Unlike [Data Explorer](/managed/analyze-explore-automate/explorer-classic/metric-query-components#notes-and-limitations "Look up Data Explorer query components, query editor commands, auto-extended filters, query examples, and query limits."), multidimensional analysis uses trace and request data, not metric data, so values on multidimensional analysis charts might differ from values on custom charts.
+
+## Configure view
+
+In **Configure view**, you can set up multiple filtering capabilities. The view updates automatically as you change the parameters.
+
+| Parameter | Description |
+| --- | --- |
+| Metric | The metric to be analyzed. |
+| Aggregation | How the metric values are aggregated. Available aggregations depend on the selected metric. |
+| Split mode | How dimensions specified in **Split by dimension** are treated.  * **Split by services**—each dimension is displayed separately for each service. * **Merge by services**—same dimensions from different services are merged into one. |
+| Split by dimension | A list of dimensions by which the requests are split.  You can specify several dimensions. Place your cursor in the input field to see the available options. The requests are split by dimension in the specified order. |
+| Filter requests | Filter the requests to be included to the view. Place your cursor in the input field to see the available options.  Criteria of the same type are grouped by **OR** logic. Criteria of different types are grouped by **AND** logic. |
+
+You can export the table data in a comma-separated values (CSV) file.
+
+1. Select **Export** and choose one of the following options.
+
+   | Option | Exported data | Fields | Number of entries |
+   | --- | --- | --- | --- |
+   | **Only displayed data** | The currently displayed area of the table, taking into account applied filters | Only visible data | Up to 100 top dimensions |
+   | **All available data** | All table data | All the available data related to top dimensions | Up to 100 top dimensions |
+
+## View
+
+![Top database statements page](https://dt-cdn.net/images/dva18020-dev-apps-dynatracelabs-com-ui-apps-dynatrace-classic-mda-ui-diagnostictools-mda-gtf-2h-gf-all-mdaid-topdb-metric-request-count-dimension-7brequest-3aname-7d-mergeservices-false-aggregation-count-pe-7409-d6c9e715c1.png)
+
+Top database statements page
+
+The chart shows the top 15 dimensions (all other dimensions are aggregated into a single dimension) and the table beneath contains up to 85 more dimensions, bringing the total number of chartable dimensions to 100. The view instantly adapts to the changes you make in the **Configure view** pane.
+
+In the **Actions** column of the table, you can select:
+
+* **Filter**  to filter the view for the specified dimension.
+* **More** (**…**) to access further analysis options from the [**Analyze** menu](/managed/observe/application-observability-classic/services-classic/services-page/context-specific-drill-down#analyze-menu "Learn about easy navigation and filtering for services analysis.").
+
+For timeframes containing data older than 10 days, you can turn on **Show data retention** to better understand which data is available for which period directly from the chart.
+
+### Save view
+
+Once the view is configured, you can save it for quick access in the future. Just select **Save** view and provide a name.
+
+Dynatrace provides several views out of the box:
+
+* [Exception analysis](/managed/observe/application-observability-classic/multidimensional-analysis-classic/exception-analysis "Learn how Dynatrace can help you see which exceptions occurred in your environment during a selected analysis timeframe.")
+* [Top database statements](/managed/observe/application-observability-classic/multidimensional-analysis-classic/top-database-statements "Understand the database activity across your environment with Dynatrace.")
+* [Top web requests](/managed/observe/application-observability-classic/multidimensional-analysis-classic/top-web-requests "Learn how to analyze all web requests across all of your services using Dynatrace.")
+
+## Calculated service metric
+
+You can save the configured view as a calculated service metric, which you can use just like any other Dynatrace metric, for example for [charting](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") or [data export via API](/managed/dynatrace-api/environment-api/metric-v2/get-data-points "Read data points of one or multiple metrics via Metrics v2 API.").
+
+Only new data is written to calculated metrics; retrospective data is not included.
+
+Limits
+
+* Only new data is written to calculated metrics; retrospective data is not included.
+* You can have up to 500 enabled calculated metrics per environment and up to 100 enabled calculated metrics per service.
+* Classic calculated metrics support at most 100 dimension values. This is referred to as the "top X" rule, as you can select fewer depending on your configuration. However you choose the top 100 dimension values, the remaining dimensions are aggregated into a single timeseries and the dimension value is accessible through a special `remainder` dimension. The [remainder](/managed/dynatrace-api/environment-api/metric-v2/metric-selector#remainder "Configure the metric selector for the Metric v2 API.") filter condition allowing you to filter on this `remainder` dimension.
+
+To create a calculated service metric from a multidimensional analysis view
+
+1. Go to **Multidimensional Analysis**.
+2. Select **Create analysis view**.
+3. Optional Select the management zone. The new metric will be restricted to data from this zone.
+4. Configure the view. Find the description of available options in the [**Configure view**](#configure) section above.
+5. In the **View** pane, select **Create metric**.
+
+   ![Create calculated metric](https://dt-cdn.net/images/service-calculated-metric-create-328-e5859c1ea9.png)
+
+   Create calculated metric
+6. Specify the name for the metric. The name is added to the metric key automatically.
+7. Optional If needed, customize the metric key.
+
+   Once a metric is created, you can't change its key.
+8. Optional If you want to fine-tune your metric, select **Advanced options** to configure additional parameters of the metric. For details, see [Calculated metrics for services](/managed/observe/application-observability-classic/services-classic/calculated-service-metric "Learn how to create a calculated metric based on web requests.").
+9. Select **Create metric**.
+
+## Related topics
+
+* [Service metrics API](/managed/dynatrace-api/configuration-api/calculated-metrics/service-metrics "Manage calculated service metrics via the Dynatrace configuration API.")
+* [Calculated metrics for Services](/managed/observe/application-observability-classic/services-classic/calculated-service-metric "Learn how to create a calculated metric based on web requests.")

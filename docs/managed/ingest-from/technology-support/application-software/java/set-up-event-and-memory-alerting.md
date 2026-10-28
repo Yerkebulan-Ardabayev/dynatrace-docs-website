@@ -28,7 +28,7 @@ To enable out-of-memory (OOM) and out-of-threads (OOT) detection
 
 ## Step 2 Set up high GC activity alerts
 
-If you've already set up alerts for [high GC activity](/managed/observe/infrastructure-observability/hosts/configuration/anomaly-detection#hosts "Configure host anomaly detection, including problem and event thresholds.") in your environment, alerts are automatically created for standalone/PaaS scenarios and cloud-native Full-Stack injections.
+If you've already set up alerts for [high GC activity](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/anomaly-detection#hosts "Configure host anomaly detection, including problem and event thresholds.") in your environment, alerts are automatically created for standalone/PaaS scenarios and cloud-native Full-Stack injections.
 
 To verify your setup
 

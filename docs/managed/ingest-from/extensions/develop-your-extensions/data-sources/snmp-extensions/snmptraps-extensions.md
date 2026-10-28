@@ -99,7 +99,7 @@ The SNMP traps data source supports only SNMP traps. SNMP inform requests aren't
 
 ## Events
 
-Trap events send detailed information about each trap to the [log ingest](/managed/analyze-explore-automate/log-monitoring/acquire-log-data "Learn how to acquire log data in Dynatrace Log Monitoring."). The trap message contains the following information:
+Trap events send detailed information about each trap to the [log ingest](/managed/analyze-explore-automate/log-monitoring-classic/acquire-log-data "Learn how to acquire log data in Dynatrace Log Monitoring."). The trap message contains the following information:
 
 ### Context
 
@@ -130,7 +130,7 @@ Dynatrace topological properties.
 
 All variable bindings reported with the trap message and extension-defined variables are added as log event attributes (for example, `device.address` and `snmp.trap_oid`).
 
-For more information about custom log attributes, see [Create a custom log attribute](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-custom-attributes#create-a-custom-log-attribute "Learn how to create and use custom attributes during log data ingestion.").
+For more information about custom log attributes, see [Create a custom log attribute](/managed/analyze-explore-automate/log-monitoring-classic/analyze-log-data/log-custom-attributes#create-a-custom-log-attribute "Learn how to create and use custom attributes during log data ingestion.").
 
 ### Enable trap events
 
@@ -140,7 +140,7 @@ If you use the default feature set, the extension will only report a single metr
 
 ### Log Viewer
 
-In the [Log Viewer](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data."), go to **Logs** and filter trap events by `log.source: snmptraps`.
+In the [Log Viewer](/managed/analyze-explore-automate/log-monitoring-classic/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data."), go to **Logs** and filter trap events by `log.source: snmptraps`.
 
 Trap event example
 

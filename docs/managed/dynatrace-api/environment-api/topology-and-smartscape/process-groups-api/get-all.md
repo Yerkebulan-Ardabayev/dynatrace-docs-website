@@ -13,7 +13,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topolog
 
 This API is deprecated. Use the [Monitored entities API](/managed/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.") instead.
 
-Gets the list of all [process groups](/managed/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.") in your Dynatrace environment, along with their parameters and relationships.
+Gets the list of all [process groups](/managed/observe/infrastructure-observability-classic/process-groups-classic "Analyze process groups and customize process group naming, detection, and monitoring.") in your Dynatrace environment, along with their parameters and relationships.
 
 The full list can be lengthy, so you can narrow it down by specifying filter parameters, like tags. See the **Parameters** section for more details.
 
@@ -2710,4 +2710,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/process-grou
 
 ## Related topics
 
-* [Process groups](/managed/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.")
+* [Process groups](/managed/observe/infrastructure-observability-classic/process-groups-classic "Analyze process groups and customize process group naming, detection, and monitoring.")

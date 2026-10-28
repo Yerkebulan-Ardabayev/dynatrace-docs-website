@@ -30,7 +30,7 @@ The quality of the OpenTracing spans captured by OneAgent depends on the quality
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-java/) | 1.0 - 1.3[1](#fn-monitoring-framework-1-1-def), 1.4 - 1.54[1](#fn-monitoring-framework-1-1-def), 1.55 - 1.60, 1.61 - 1.64 |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-java/) | 1.0 - 1.3[1](#fn-monitoring-framework-8-1-def), 1.4 - 1.54[1](#fn-monitoring-framework-8-1-def), 1.55 - 1.60, 1.61 - 1.64 |
 | [OpenTracing﻿](https://opentracing.io/guides/java/) | 0.33, 0.32, 0.31 |
 
 1
@@ -164,7 +164,7 @@ See [Span settings](/managed/ingest-from/extend-dynatrace/extend-tracing/span-se
 
 ## Limitations
 
-* [Span default service](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1#span-service "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
+* [Span default service](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v1#span-service "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
 * When both OneAgent and OpenTracing instrumentation are present for the same technology (for example, incoming web requests via the Servlet API), you may experience the following limitations:
 
   + Duplicate nodes in PurePath® distributed traces

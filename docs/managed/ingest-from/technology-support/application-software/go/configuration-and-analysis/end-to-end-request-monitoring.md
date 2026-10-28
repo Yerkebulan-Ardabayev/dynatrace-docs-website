@@ -16,7 +16,7 @@ With Dynatrace, you can monitor incoming and outgoing web requests of your own o
 
 Dynamic web requests
 
-[Service flow](/managed/observe/application-observability/services-classic/services-page/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") reveals more data on the transactions and allows easy access to individual requests, including their related distributed traces.
+[Service flow](/managed/observe/application-observability-classic/services-classic/services-page/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") reveals more data on the transactions and allows easy access to individual requests, including their related distributed traces.
 
 ![Service flow](https://dt-cdn.net/images/service-flow-for-influxdb-stress-test-1683-7c250d283a.png)
 

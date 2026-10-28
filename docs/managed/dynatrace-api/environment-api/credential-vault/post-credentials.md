@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/credent
 * Reference
 * Updated on Apr 08, 2026
 
-Creates a new set of credentials for [synthetic monitors](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.").
+Creates a new set of credentials for [synthetic monitors](/managed/observe/digital-experience-classic/synthetic-monitoring-classic "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.").
 
 The request consumes and produces an `application/json` payload.
 
@@ -414,5 +414,5 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/credentials/
 
 ## Related topics
 
-* [Configure browser monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")
-* [Configure HTTP monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")
+* [Configure browser monitors in Classic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")
+* [Configure HTTP monitors in Classic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")

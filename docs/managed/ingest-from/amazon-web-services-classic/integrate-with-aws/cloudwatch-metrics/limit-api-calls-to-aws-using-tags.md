@@ -152,7 +152,7 @@ Tag-based AWS monitoring offers a lot of flexibility and is particularly helpful
 
 To assign tags to a specific AWS instance
 
-1. [Set up Dynatrace for AWS monitoring](/managed/observe/infrastructure-observability/cloud-platform-monitoring-classic/aws-monitoring-classic "Monitor AWS with Dynatrace").
+1. [Set up Dynatrace for AWS monitoring](/managed/observe/infrastructure-observability-classic/cloud-platform-monitoring-classic/aws-monitoring-classic "Monitor AWS with Dynatrace").
 2. In Dynatrace, go to **Settings** > **Cloud and virtualization** > **AWS** and select the AWS instance.
 3. For **Resources to be monitored**, select **Monitor resources selected by tags**.
 4. Enter the **Key** and **Value**.

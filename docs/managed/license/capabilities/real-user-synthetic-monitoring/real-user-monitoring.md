@@ -32,25 +32,25 @@ User session
     A user session summarizes user interactions and technical events that occur during that visit.
     One user session can span multiple applications, across both web and mobile components.
 
-    For more information, see [User sessions in RUM Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/user-session "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.").
+    For more information, see [User sessions in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-session "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.").
 
 Application
 :   An application (or just "app") is a customer-defined logical entity in Dynatrace, used to monitor part or all of a customer-facing application.
     Dynatrace captures user sessions for web, mobile, and custom applications.
     It has an end-user interface and receives real user traffic.
 
-    For more information, see [Applications in RUM Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/applications "Learn about monitored applications in Real User Monitoring Classic and the different application types supported by Dynatrace.").
+    For more information, see [Applications in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/applications "Learn about monitored applications in Real User Monitoring Classic and the different application types supported by Dynatrace.").
 
 Session property
 :   A session property is metadata that provides information about your application's performance, which Dynatrace collects during a specific RUM session.
 
-    For more information, see [Define user action and user session properties for custom applications in RUM Classic](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/define-custom-action-and-session-properties "Send metadata to Dynatrace and define action and session properties for your monitored custom applications.").
+    For more information, see [Define user action and user session properties for custom applications in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/custom-applications/additional-configuration/define-custom-action-and-session-properties "Send metadata to Dynatrace and define action and session properties for your monitored custom applications.").
 
 ### Counting rules and exceptions
 
 * If a user visit spans multiple applications, Dynatrace counts one session for each application the user interacted with.
 * If a user visit lasts longer than one hour in a given application, Dynatrace counts an additional session for every starting hour.
-  For complete details on when RUM user sessions start and end, see [User session timings](/managed/observe/digital-experience/rum-classic/rum-concepts/user-session#user-session-timings "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.").
+  For complete details on when RUM user sessions start and end, see [User session timings](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-session#user-session-timings "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.").
 * A user visit related to a hybrid mobile application, which for technical reasons includes a web application and a mobile application, is considered a single user session.
 * User sessions that include only one user action (for example, a page load or a navigation that triggers web requests) are considered bounced.
   These don't count towards RUM consumption.
@@ -166,6 +166,6 @@ For example, a 2.5‑hour visit to the same application counts as three sessions
 ## Related topics
 
 * [Real User and Synthetic Monitoring overview (DPS)](/managed/license/capabilities/real-user-synthetic-monitoring "Learn how Dynatrace Real User and Synthetic Monitoring consumption is calculated using the Dynatrace Platform Subscription model.")
-* [Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.")
+* [Real User Monitoring Classic](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.")
 * [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.")
 * [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

@@ -109,7 +109,7 @@ Dynatrace Managed works with all common file systems. Use fast local storage sui
 
 ## Log Monitoring requirements
 
-Requirements for [Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more."):
+Requirements for [Log Monitoring](/managed/analyze-explore-automate/log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more."):
 
 * All Managed Cluster nodes must have at least 64 GB total RAM.
 

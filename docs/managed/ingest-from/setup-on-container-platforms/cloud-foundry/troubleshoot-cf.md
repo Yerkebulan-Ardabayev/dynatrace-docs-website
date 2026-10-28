@@ -32,4 +32,4 @@ You need root permission to access the `/var/vcap/data/dynatrace` directory.
 
 ## Related topics
 
-* [Cloud Foundry monitoring](/managed/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")
+* [Cloud Foundry monitoring](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")

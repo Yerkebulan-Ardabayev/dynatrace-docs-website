@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/applic
 
 * Reference
 * 1-min read
-* Published Jul 09, 2018
+* Updated on Oct 27, 2026
 
 PHP is a server-side scripting language particularly well-suited for web development but also popular in general-purpose programming. Originally created by Rasmus Lerdorf in 1994, new versions are now produced by The PHP Group.
 
@@ -39,7 +39,7 @@ See [the environments and versions that Dynatrace supports](/managed/ingest-from
 
 ### See also
 
-[Dynatrace Open Q&A: What is the desupport policy for PHP?﻿](https://community.dynatrace.com/t5/Dynatrace-Open-Q-A/What-is-the-desupport-policy-for-PHP/m-p/42853)
+[Dynatrace Open Q&A: What is the desupport policy for PHP?﻿](https://community.dynatrace.com/t/what-is-the-desupport-policy-for-php/9220)
 
 [Blog: Monitor PHP in Windows environments﻿](https://www.dynatrace.com/news/blog/monitor-php-in-windows-environments-beta/)
 

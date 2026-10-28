@@ -70,7 +70,7 @@ Kubernetes recommended labels mapped to release metadata:
 
 Recommended labels
 
-Dynatrace OneAgent with [viewer permissions on the namespace](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments#viewer "Organize and filter your monitored applications by importing labels and annotations from your Kubernetes/OpenShift environment.") can automatically detect labels attached to the Kubernetes pods.
+Dynatrace OneAgent with [viewer permissions on the namespace](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments#viewer "Organize and filter your monitored applications by importing labels and annotations from your Kubernetes/OpenShift environment.") can automatically detect labels attached to the Kubernetes pods.
 
 * **Version** and **Product** show up in the release inventory.
 * Kubernetes namespaces or configured Dynatrace host-group names show up as **Stages** in the release inventory.

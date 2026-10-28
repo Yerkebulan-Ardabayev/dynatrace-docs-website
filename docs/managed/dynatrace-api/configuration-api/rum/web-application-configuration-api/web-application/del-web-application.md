@@ -43,4 +43,4 @@ To learn how to obtain and use it, see [Personal access tokens](/managed/discove
 
 ## Related topics
 
-* [Delete a web application in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/delete-application-web "Delete your web applications via the Dynatrace web UI or API.")
+* [Delete a web application in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/delete-application-web "Delete your web applications via the Dynatrace web UI or API.")

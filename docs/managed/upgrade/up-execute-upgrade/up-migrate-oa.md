@@ -7,7 +7,7 @@ source: https://docs.dynatrace.com/managed/upgrade/up-execute-upgrade/up-migrate
 
 # Migrate OneAgent
 
-* Published Apr 24, 2023
+* Updated on Oct 27, 2026
 
 To start collecting data in the target SaaS environment and completing configuration migration, you need to migrate OneAgents from your Managed environment.
 
@@ -22,7 +22,7 @@ There are several different ways to do this. Choose the method that works best f
 
 Recommended
 
-You can use [remote configuration management](/managed/ingest-from/bulk-configuration#bulk-configuration-oa-communication-settings "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") to modify the communication settings of OneAgents from the same environment in bulk mode. The action is still performed on the respective hosts when using remote configuration management, but you trigger it and control it centrally from **Deployment Status** in the Dynatrace web UI.
+You can use [remote configuration management](/managed/ingest-from/bulk-configuration-classic#bulk-configuration-oa-communication-settings "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") to modify the communication settings of OneAgents from the same environment in bulk mode. The action is still performed on the respective hosts when using remote configuration management, but you trigger it and control it centrally from **Deployment Status** in the Dynatrace web UI.
 
 To start, go to your Dynatrace Managed environment and select **Deployment Status** from the Dynatrace menu.
 
@@ -77,4 +77,4 @@ In your target environment:
 
 Questions?
 
-Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/c/platform/upgrade-to-saas/92) to ask questions, get answers, and share what you've learned with others.

@@ -1419,4 +1419,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts
 
 ## Related topics
 
-* [Hosts](/managed/observe/infrastructure-observability/hosts "Learn how to get started with host monitoring, understand which measures contribute to host health, how to set up custom host names, and more.")
+* [Hosts](/managed/observe/infrastructure-observability-classic/hosts-classic "Learn how to get started with host monitoring, understand which measures contribute to host health, how to set up custom host names, and more.")

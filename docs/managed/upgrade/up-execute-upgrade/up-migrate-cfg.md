@@ -7,7 +7,7 @@ source: https://docs.dynatrace.com/managed/upgrade/up-execute-upgrade/up-migrate
 
 # Migrate configuration
 
-* Updated on May 29, 2026
+* Updated on Oct 27, 2026
 
 Dynatrace offers several tools to help you successfully migrate your configuration from a Dynatrace Managed environment to the SaaS environment. The table below will help you select the appropriate tool for your environment, your configuration experience, and the [upgrade approach](/managed/upgrade/up-plan#which-approach "A detailed overview of what you need to plan, prepare, and consider before upgrading to Dynatrace SaaS.") you intend to follow.
 
@@ -196,36 +196,36 @@ The SaaS Upgrade Assistant is based on the Dynatrace Configuration as Code imple
 See the [supported configuration API types](/managed/deliver/configuration-as-code/monaco/reference/supported-configuration#configs "Configuration types and access permissions for Dynatrace Configuration as Code via Monaco") of Dynatrace Configuration as Code.
 
 * [Extensions 1.0](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") and [Extensions](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.") configuration, including endpoint credentials
-* [AWS](/managed/observe/infrastructure-observability/cloud-platform-monitoring-classic/aws-monitoring-classic "Monitor AWS with Dynatrace") credentials
-* [Azure](/managed/observe/infrastructure-observability/cloud-platform-monitoring-classic/azure-monitoring-classic "Monitor Azure with Dynatrace") credentials
+* [AWS](/managed/observe/infrastructure-observability-classic/cloud-platform-monitoring-classic/aws-monitoring-classic "Monitor AWS with Dynatrace") credentials
+* [Azure](/managed/observe/infrastructure-observability-classic/cloud-platform-monitoring-classic/azure-monitoring-classic "Monitor Azure with Dynatrace") credentials
 * [GCP](/managed/observe/infrastructure-observability/cloud-platform-monitoring/gcp-monitoring "Monitor Google Cloud with Dynatrace") monitoring
-* [Cloud Foundry](/managed/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.") credentials
-* [Kubernetes/Openshift](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Monitor Kubernetes/OpenShift with Dynatrace.") credentials
-* [Heroku monitoring](/managed/observe/infrastructure-observability/container-platform-monitoring/heroku "Monitor Heroku with Dynatrace.")
-* [VMware platform](/managed/observe/infrastructure-observability/vmware-vsphere-monitoring "Monitor VMware vSphere with Dynatrace.") monitoring
+* [Cloud Foundry](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.") credentials
+* [Kubernetes/Openshift](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/kubernetes-monitoring "Monitor Kubernetes/OpenShift with Dynatrace.") credentials
+* [Heroku monitoring](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/heroku "Monitor Heroku with Dynatrace.")
+* [VMware platform](/managed/observe/infrastructure-observability-classic/vmware-vsphere-monitoring-classic "Monitor VMware vSphere with Dynatrace.") monitoring
 * [Credential vault](/managed/manage/credential-vault "Store and manage credentials in the credential vault.")
 * Access [tokens](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") and [personal access tokens](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token "Learn the concept of a personal access token and its scopes.")
 * [Problem notifications](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.") integration, such as Jira, OpsGenie, PagerDuty, Trello, VictorOps, and xMatters
 * [Push notifications](/managed/analyze-explore-automate/alerting-and-notifications-classic/push-notifications-via-the-dynatrace-mobile-app "Learn how you can connect your Dynatrace environments with the Dynatrace mobile app to receive problem alerts.") via the Dynatrace mobile app
 * [Metrics](/managed/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.") not linked to instances
-* Web application usability analytics - [rage clicks](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#rage-event "Learn about user and error events and the types of user and error events captured by Dynatrace.")
-* [JavaScript errors](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-errors#configure-javascript-errors "Configure your application to capture or ignore request, custom, and JavaScript errors.")
-* [Mobile symbolication](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS, tvOS, and React Native) and your options for uploading and managing symbol files in Dynatrace.")
-* [Request naming](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.") order
-* [Merged services](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/service-types/merged-services "Consolidate multiple web-request services of the same process group into one service.")
+* Web application usability analytics - [rage clicks](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-and-error-events#rage-event "Learn about user and error events and the types of user and error events captured by Dynatrace.")
+* [JavaScript errors](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/configure-errors#configure-javascript-errors "Configure your application to capture or ignore request, custom, and JavaScript errors.")
+* [Mobile symbolication](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS, tvOS, and React Native) and your options for uploading and managing symbol files in Dynatrace.")
+* [Request naming](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.") order
+* [Merged services](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v1/service-types/merged-services "Consolidate multiple web-request services of the same process group into one service.")
 * Key requests and their references
 * Server-side service deep monitoring settings: Real-time updates to Java and PHP services
 * Server-side service deep monitoring settings: Exclude noisy exceptions
 * Server-side service deep monitoring settings: Exclude incoming web request URLs
 * Server-side service deep monitoring settings: Capture SQL bind variables
-* [Multi-dimensional analysis](/managed/observe/application-observability/multidimensional-analysis "Configure a multidimensional analysis view and save it as a calculated metric.") saved views
-* [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") saved queries
-* [Custom service rules](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/customize-service-detection "Use detection rules to customize and enhance the automated detection of your services.") order
+* [Multi-dimensional analysis](/managed/observe/application-observability-classic/multidimensional-analysis-classic "Configure a multidimensional analysis view and save it as a calculated metric.") saved views
+* [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") saved queries
+* [Custom service rules](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v1/customize-service-detection "Use detection rules to customize and enhance the automated detection of your services.") order
 * [Remote environments](/managed/analyze-explore-automate/dashboards/create-multi-environment-dashboards "Connect a remote Dynatrace environment with an access token and point dashboard tiles to it, so one dashboard shows data from several environments.")
 * [Account management](/managed/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.") - users, groups, permissions, and IAM policies
 * Custom devices
 * Tags manually applied to entities
-* Custom entity names and descriptions (e.g., [process groups](/managed/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring."))
+* Custom entity names and descriptions (e.g., [process groups](/managed/observe/infrastructure-observability-classic/process-groups-classic "Analyze process groups and customize process group naming, detection, and monitoring."))
 
   Migrate process groups before upgrading
 
@@ -233,4 +233,4 @@ See the [supported configuration API types](/managed/deliver/configuration-as-co
 
 Questions?
 
-Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/c/platform/upgrade-to-saas/92) to ask questions, get answers, and share what you've learned with others.

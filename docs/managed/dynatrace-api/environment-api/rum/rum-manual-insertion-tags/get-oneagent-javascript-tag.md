@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/rum
 * Reference
 * Updated on Oct 08, 2025
 
-Returns the most recent [OneAgent JavaScript tag](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#oneagent-js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes configuration and a reference to the monitoring code.
+Returns the most recent [OneAgent JavaScript tag](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/snippet-formats#oneagent-js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes configuration and a reference to the monitoring code.
 
 |  |  |  |
 | --- | --- | --- |
@@ -38,4 +38,4 @@ To learn how to obtain and use it, see [Personal access tokens](/managed/discove
 
 ## Response
 
-The response includes a `text/plain` payload containing the most recent version of the [OneAgent JavaScript tag](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#oneagent-js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.
+The response includes a `text/plain` payload containing the most recent version of the [OneAgent JavaScript tag](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/snippet-formats#oneagent-js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.

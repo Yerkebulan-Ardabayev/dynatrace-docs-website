@@ -53,34 +53,6 @@ You need to provide a valid JSON object that contains at least the `environmenti
 
 For Dynatrace Managed, you also need to add the `apiurl` parameter specifying the [Dynatrace API](/managed/dynatrace-api "Find out what you need to use the Dynatrace API.") endpoint. For example:
 
-#### Dynatrace SaaS
-
-```
-{
-
-
-
-"environmentid": "YOUR_ENVIRONMENTID",
-
-
-
-"apitoken": "YOUR_PAAS_TOKEN",
-
-
-
-"tag:SAP BTB": "",
-
-
-
-"tag:Region": "Frankfurt"
-
-
-
-}
-```
-
-#### Dynatrace Managed
-
 ```
 {
 
@@ -185,5 +157,5 @@ After restarting your Java applications deployed to SAP Business Technology Plat
 
 ## Related topics
 
-* [Cloud Foundry monitoring](/managed/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")
+* [Cloud Foundry monitoring](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")
 * [OneAgent platform and capability support matrix](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

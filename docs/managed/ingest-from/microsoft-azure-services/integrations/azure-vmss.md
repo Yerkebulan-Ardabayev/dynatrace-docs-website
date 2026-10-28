@@ -91,7 +91,7 @@ PowerShell
    | token | Required | The PaaS token as described in [Prerequisites](#prerequisites). |
    | server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
    | enableLogAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
-   | hostGroup | Optional | Define the [host group](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
+   | hostGroup | Optional | Define the [host group](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
 2. Update the VMSS virtual machines.
 
    ```
@@ -144,7 +144,7 @@ PowerShell
    | token | Required | The PaaS token as described in [Prerequisites](#prerequisites). |
    | server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
    | enableLogAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
-   | hostGroup | Optional | Define the [host group](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
+   | hostGroup | Optional | Define the [host group](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
 2. Update the VMSS virtual machines with the new definition.
 
    ```
@@ -386,7 +386,7 @@ Alternatively to the main installation methods, you can make the Dynatrace site 
    | Extension-Version | Optional | Required version[1](#fn-1-1-def) of the extension. |
    | server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
    | enableLogAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
-   | hostGroup | Optional | Define the [host group](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
+   | hostGroup | Optional | Define the [host group](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
 
    1
 

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector-u
 
 * How-to guide
 * 4-min read
-* Updated on Apr 09, 2026
+* Updated on Oct 22, 2026
 
 The following configuration example shows how you configure a Collector instance to fetch logs from all Kubernetes pods. It also shows how to enrich the logs with Kubernetes metadata in order to automatically link OpenTelemetry services to pods and attach the logs to the Kubernetes services and pods.
 
@@ -19,6 +19,7 @@ The following configuration example shows how you configure a Collector instance
 * One of the following Collector distributions with the [Filelog﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.160.0/receiver/filelogreceiver) receiver and the [Kubernetes Attributes﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/k8sattributesprocessor) processor:
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+  + The [Dynatrace Bindplane OTel Collector](/managed/ingest-from/bindplane-classic "Bindplane manages OpenTelemetry collector fleets at scale and controls telemetry volume at the edge before data reaches Dynatrace.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + A [custom Builder version](/managed/ingest-from/opentelemetry/collector#collector-builder "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
 * the OTel Collector deployed on each node

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/manage/identity-access-management-cla
 # Upgrade role-based permissions to Dynatrace IAM policies (Dynatrace Classic)
 
 * 11-min read
-* Updated on Oct 08, 2026
+* Updated on Oct 27, 2026
 
 Dynatrace version 1.252+
 

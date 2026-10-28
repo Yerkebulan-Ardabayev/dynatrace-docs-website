@@ -173,7 +173,7 @@ View available scopes
 | Name | API value | Description |
 | --- | --- | --- |
 | Download OneAgent and ActiveGate installers | `InstallerDownload` | Allows download of installers via [Deployment API](/managed/dynatrace-api/environment-api/deployment "Download OneAgent and ActiveGate installers via Dynatrace API."). |
-| Create support alerts | `SupportAlert` | Allows creation of [support alerts](/managed/observe/application-observability/profiling-and-optimization/crash-analysis#support-alert "Learn how Dynatrace can help you gain insight into process crashes.") for crash analysis. |
+| Create support alerts | `SupportAlert` | Allows creation of [support alerts](/managed/observe/application-observability-classic/profiling-and-optimization-classic/crash-analysis#support-alert "Learn how Dynatrace can help you gain insight into process crashes.") for crash analysis. |
 
 ### Other
 

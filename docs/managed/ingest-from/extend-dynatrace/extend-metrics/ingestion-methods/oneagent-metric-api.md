@@ -53,7 +53,7 @@ Enable for a host group
 5. In the host group settings, select **Extension Execution Controller**.
 6. Turn on **Enable Extension Execution Controller**.
 
-If you want to change your limits for EEC resource consumption, see [Performance profile](/managed/ingest-from/extensions/concepts#performance-profile "Learn more about the concept of Dynatrace Extensions.").
+If you want to change your limits for EEC resource consumption, see [Performance profile](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 
 ## Topology awareness
 

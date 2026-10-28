@@ -381,7 +381,7 @@ agctl modules get
 
 Manage the network zone configuration. Network zones allow you to define routing boundaries for your monitoring infrastructure.
 
-For details on network zones, see [Network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.").
+For details on network zones, see [Network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.").
 
 #### Usage
 
@@ -859,7 +859,7 @@ agctl ssl-port clear
 
 Create a support archive for troubleshooting ActiveGate issues. The support archive contains diagnostic data, logs, and configuration information.
 
-See also: [Collect diagnostic data with agctl](/managed/ingest-from/dynatrace-activegate/activegate-diagnostics#collect-diagnostic-data-with-agctl "Learn how to run ActiveGate diagnostics").
+See also: [Collect diagnostic data with agctl](/managed/ingest-from/activegate-diagnostics-classic#collect-diagnostic-data-with-agctl "Learn how to run ActiveGate diagnostics").
 
 #### Usage
 
@@ -1150,7 +1150,7 @@ agctl support-archive create --days=7 --directory=/tmp
 
 * [Start/stop/restart ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.")
 * [Configuration properties and parameters of ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate "Learn which ActiveGate properties you can configure based on your needs and requirements.")
-* [ActiveGate diagnostics](/managed/ingest-from/dynatrace-activegate/activegate-diagnostics "Learn how to run ActiveGate diagnostics")
+* [ActiveGate diagnostics](/managed/ingest-from/activegate-diagnostics-classic "Learn how to run ActiveGate diagnostics")
 * [Customize installation for ActiveGate](/managed/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate "Learn about the command-line parameters that you can use with ActiveGate on Linux.")
 * [Configure custom SSL certificate on ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate "Learn how to configure the SSL certificate on your ActiveGate.")
 * [Configure trusted root certificates on ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate "Learn how to configure custom trusted root certificates on ActiveGate to establish secure SSL/TLS connections.")

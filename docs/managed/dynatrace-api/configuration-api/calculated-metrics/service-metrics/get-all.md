@@ -213,5 +213,5 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/calculatedMetrics/service
 
 ## Related topics
 
-* [Calculated metrics for Services](/managed/observe/application-observability/services-classic/calculated-service-metric "Learn how to create a calculated metric based on web requests.")
-* [Multidimensional analysis](/managed/observe/application-observability/multidimensional-analysis "Configure a multidimensional analysis view and save it as a calculated metric.")
+* [Calculated metrics for Services](/managed/observe/application-observability-classic/services-classic/calculated-service-metric "Learn how to create a calculated metric based on web requests.")
+* [Multidimensional analysis](/managed/observe/application-observability-classic/multidimensional-analysis-classic "Configure a multidimensional analysis view and save it as a calculated metric.")

@@ -740,7 +740,7 @@ dynatrace-oneagent-site-extension.json
 | APIToken | Required | The PaaS token as described in [Prerequisites](#prerequisites). |
 | APIUrl | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
 | SSLMode | Optional | To automatically accept all self-signed TLS certificates, set the value to `all`. |
-| networkZone | Optional | Your network zone. Set the value you want for your App Service instance. See [network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") for more information. |
+| networkZone | Optional | Your network zone. Set the value you want for your App Service instance. See [network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.") for more information. |
 | monitoredCLR | Optional | Set the value to `clr` if your application is running on .NET, or `coreclr` if your application is running on .NET Core, default value is `both` |
 
 To check the deployment status, go to **Deployment Status**.

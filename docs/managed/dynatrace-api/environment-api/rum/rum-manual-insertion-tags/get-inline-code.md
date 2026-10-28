@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/rum
 * Reference
 * Updated on Oct 08, 2025
 
-Returns the most recent [inline code](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes both the configuration and the RUM monitoring code.
+Returns the most recent [inline code](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/snippet-formats#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes both the configuration and the RUM monitoring code.
 
 |  |  |  |
 | --- | --- | --- |
@@ -37,4 +37,4 @@ To learn how to obtain and use it, see [Personal access tokens](/managed/discove
 
 ## Response
 
-The response includes a `text/plain` payload containing the most recent version of the [inline code](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.
+The response includes a `text/plain` payload containing the most recent version of the [inline code](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/snippet-formats#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.

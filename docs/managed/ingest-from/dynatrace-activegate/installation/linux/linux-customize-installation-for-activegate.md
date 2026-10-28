@@ -82,7 +82,7 @@ USER=<user>
 
 The installer creates the user if the user doesn't already exist in the system, and the user doesn't require root privileges. If the parameter isn't specified, the installer creates user `dtuserag` to run the ActiveGate service. Instead of the default `dynatrace` group, the primary group for the existing user will be specified. However, you can use `USER=root` to force the ActiveGate service to run as root.
 
-The `USER=root` parameter is not supported when installing a [synthetic-enabled ActiveGate](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.").
+The `USER=root` parameter is not supported when installing a [synthetic-enabled ActiveGate](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.").
 
 ## Constraints for directory location and mount points
 
@@ -325,9 +325,9 @@ Command example:
 --set-network-zone=<name>
 ```
 
-Defines the [network zone](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") to which the ActiveGate belongs. An ActiveGate can belong to only one network zone. The name of a network zone is a string of alphanumeric characters, hyphens (`-`), underscores (`_`), and dots (`.`). Dots are used as separators, so you must not use a dot as the first character of a network zone name. The length of the string is limited to 256 characters.
+Defines the [network zone](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.") to which the ActiveGate belongs. An ActiveGate can belong to only one network zone. The name of a network zone is a string of alphanumeric characters, hyphens (`-`), underscores (`_`), and dots (`.`). Dots are used as separators, so you must not use a dot as the first character of a network zone name. The length of the string is limited to 256 characters.
 
-To change or clear the network zone assignment after installation, use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
+To change or clear the network zone assignment after installation, use [Remote configuration management](/managed/ingest-from/bulk-configuration-classic#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
 
 Alternatively, you can specify the network zone in the [`custom.properties`](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate "Learn which ActiveGate properties you can configure based on your needs and requirements.") file.
 
@@ -339,7 +339,7 @@ Alternatively, you can specify the network zone in the [`custom.properties`](/ma
 
 Defines the ActiveGate group to which the ActiveGate belongs. An ActiveGate can belong to only one group. The name of an ActiveGate group is a string of alphanumeric characters, hyphens (`-`), underscores (`_`), and dots (`.`). Dots are used as separators, so you must not use a dot as the first character of a group name. The length of the string is limited to 256 characters. You can use ActiveGate groups to perform bulk actions on your ActiveGates, such as managing [Extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") running on ActiveGates. If you want to assign your ActiveGate to a group, see [ActiveGate group](/managed/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
 
-To change or clear the ActiveGate group assignment after installation, use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify ActiveGate group** action).
+To change or clear the ActiveGate group assignment after installation, use [Remote configuration management](/managed/ingest-from/bulk-configuration-classic#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify ActiveGate group** action).
 
 Alternatively, you can specify the ActiveGate group in the [`custom.properties`](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate "Learn which ActiveGate properties you can configure based on your needs and requirements.") file.
 

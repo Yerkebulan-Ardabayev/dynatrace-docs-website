@@ -29,8 +29,8 @@ Extending the deployment beyond the internal network allows you to receive data 
 
 The DEM services may include:
 
-* [Synthetic monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
-* [Agentless Real User Monitoring](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.")
+* [Synthetic monitoring](/managed/observe/digital-experience-classic/synthetic-monitoring-classic "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
+* [Agentless Real User Monitoring](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.")
 * [Mobile Real User Monitoring](/managed/offline-doc/how-do-i-set-up-mobile-apps-for-real-user-monitoring "Learn how to set up real user monitoring for your mobile apps and use with Dynatrace Managed.")
 
 To receive external traffic, expose the Managed Cluster to external networks and configure a public IP address. Exposing the Managed Cluster directly to external networks isn't recommended for security reasons. Instead, use one or more [Cluster ActiveGates](/managed/managed-cluster/installation/install-cluster-activegate "Install a Cluster ActiveGate on Linux or Windows to route OneAgent traffic or run Synthetic monitors, and connect it to your Managed Cluster.") as mediating proxies for pre-processing of OneAgent and DEM traffic. Cluster ActiveGates are recognized by the Managed Cluster and can be configured through the Cluster Management Console, similar to Managed Cluster nodes.
@@ -88,4 +88,4 @@ Each traffic type has different network access and certificate requirements. Alt
 | Mobile RUM (external) | required | required |
 | Synthetic | required |  |
 
-[Agentless Real User Monitoring](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications."), [mobile-app monitoring](/managed/offline-doc/how-do-i-set-up-mobile-apps-for-real-user-monitoring "Learn how to set up real user monitoring for your mobile apps and use with Dynatrace Managed."), and [synthetic monitors](/managed/offline-doc/how-do-i-enable-synthetic-monitors "Learn how to enable synthetic monitors on Dynatrace Managed.") use the same endpoint to transmit monitoring data to Dynatrace Managed.
+[Agentless Real User Monitoring](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications."), [mobile-app monitoring](/managed/offline-doc/how-do-i-set-up-mobile-apps-for-real-user-monitoring "Learn how to set up real user monitoring for your mobile apps and use with Dynatrace Managed."), and [synthetic monitors](/managed/offline-doc/how-do-i-enable-synthetic-monitors "Learn how to enable synthetic monitors on Dynatrace Managed.") use the same endpoint to transmit monitoring data to Dynatrace Managed.

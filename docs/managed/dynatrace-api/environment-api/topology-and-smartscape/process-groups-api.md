@@ -13,7 +13,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topolog
 
 This API is deprecated. Use the [Monitored entities API](/managed/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.") instead.
 
-The **Process groups** endpoints of the **Topology and Smartscape** API enable you to get details of currently monitored [process groups](/managed/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.") and assign tags to them.
+The **Process groups** endpoints of the **Topology and Smartscape** API enable you to get details of currently monitored [process groups](/managed/observe/infrastructure-observability-classic/process-groups-classic "Analyze process groups and customize process group naming, detection, and monitoring.") and assign tags to them.
 
 [### Fetch the list
 
@@ -25,4 +25,4 @@ Assign custom tags to your hosts.](/managed/dynatrace-api/environment-api/topolo
 
 ## Related topics
 
-* [Process groups](/managed/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.")
+* [Process groups](/managed/observe/infrastructure-observability-classic/process-groups-classic "Analyze process groups and customize process group naming, detection, and monitoring.")

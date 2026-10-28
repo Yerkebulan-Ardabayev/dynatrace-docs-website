@@ -206,4 +206,4 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/config
 
 ## Related topics
 
-* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
+* [Synthetic Monitoring](/managed/observe/digital-experience-classic/synthetic-monitoring-classic "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")

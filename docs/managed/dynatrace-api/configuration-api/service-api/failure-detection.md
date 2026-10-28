@@ -52,4 +52,4 @@ Delete a failure detection rule you don't need anymore.](/managed/dynatrace-api/
 
 ## Related topics
 
-* [Configure service failure detection in Service Detection v1](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/configure-service-failure-detection "Discover which service error types Dynatrace automatically detects and learn how to adjust failure detection settings to meet your specific requirements.")
+* [Configure service failure detection in Service Detection v1](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v1/configure-service-failure-detection "Discover which service error types Dynatrace automatically detects and learn how to adjust failure detection settings to meet your specific requirements.")

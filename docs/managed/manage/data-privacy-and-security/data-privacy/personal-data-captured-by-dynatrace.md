@@ -55,11 +55,11 @@ Configure masking at capture via the [**OneAgent-side masking** option](/managed
 
 3
 
-Only certain headers are captured automatically. You can capture other headers via [request attributes](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
+Only certain headers are captured automatically. You can capture other headers via [request attributes](/managed/observe/application-observability-classic/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
 
 4
 
-Query parameters are always masked on display and can also be masked upon storage. To capture parameters explicitly, configure [request attributes](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
+Query parameters are always masked on display and can also be masked upon storage. To capture parameters explicitly, configure [request attributes](/managed/observe/application-observability-classic/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
 
 5
 
@@ -75,7 +75,7 @@ Bind variables support is available for database monitoring. To learn how to sta
 
 8
 
-Configure via [request attributes](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
+Configure via [request attributes](/managed/observe/application-observability-classic/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
 
 ## OpenTelemetry attributes for distributed tracing
 
@@ -87,23 +87,23 @@ Dynatrace automatically captures all OpenTracing and OpenTelemetry [attributes](
 
 ## Real User Monitoring (RUM)
 
-With [Dynatrace Real User Monitoring](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more."), you can understand your customers better by accessing performance analysis in real time. This includes all performed user actions and how their impact on performance.
+With [Dynatrace Real User Monitoring](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more."), you can understand your customers better by accessing performance analysis in real time. This includes all performed user actions and how their impact on performance.
 
 To allow performance analysis based on geographical regions, Dynatrace captures IP addresses and GPS coordinates, which are masked by default. To mask user actions and URIs, [configure the global privacy settings](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names."). Dynatrace can also detect returning users by storing a randomly generated ID (a user tag) in each user's browser or on their device; this kind of user tagging is not enabled by default.
 
 | Data type | Default | Masking at capture | Masking at storage | Masking at display |
 | --- | --- | --- | --- | --- |
-| [User actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")[1](#fn-2-1-def) | Captured by default | Masking preferences can be configured; not masked by default | Masking is dependent on the configuration set during capture and storage | Masking is dependent on the configuration set during capture and storage |
-| [IP addresses and GPS coordinates](/managed/observe/digital-experience/rum-classic/rum-concepts/detection-of-ip-addresses-locations-and-user-agents "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")[2](#fn-2-2-def), [3](#fn-2-3-def) | Captured by default[4](#fn-2-4-def) | Masking preferences can be configured; masked by default | Masking preferences can be configured; masked by default | Masking is dependent on the configuration set during capture and storage |
+| [User actions](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")[1](#fn-2-1-def) | Captured by default | Masking preferences can be configured; not masked by default | Masking is dependent on the configuration set during capture and storage | Masking is dependent on the configuration set during capture and storage |
+| [IP addresses and GPS coordinates](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/detection-of-ip-addresses-locations-and-user-agents "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")[2](#fn-2-2-def), [3](#fn-2-3-def) | Captured by default[4](#fn-2-4-def) | Masking preferences can be configured; masked by default | Masking preferences can be configured; masked by default | Masking is dependent on the configuration set during capture and storage |
 | URIs[3](#fn-2-3-def), [5](#fn-2-5-def) | Captured by default | Not masked | Masking preferences can be configured; not masked by default | Masking is dependent on the configuration set during capture and storage |
-| [User tags](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.")[6](#fn-2-6-def) | Not captured by default | Masked | Masking is dependent on the configuration set during capture and storage | Masking is dependent on the configuration set during capture and storage |
+| [User tags](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.")[6](#fn-2-6-def) | Not captured by default | Masked | Masking is dependent on the configuration set during capture and storage | Masking is dependent on the configuration set during capture and storage |
 | Session and action properties[7](#fn-2-7-def) | Not captured by default | Masked | Masking is dependent on the configuration set during capture and storage | Masking is dependent on the configuration set during capture and storage |
 
 1
 
-User actions contain a name, a set of timings, and [metadata](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/create-custom-names-for-user-actions#add-and-use-placeholders "Customize automatically generated user action names for your web applications.").  
-Web applications Configure masking via the [**Mask user actions (web applications only)** option](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#mask-user-actions "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.") in the data privacy settings. You can also [create custom user action names](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/create-custom-names-for-user-actions "Customize automatically generated user action names for your web applications.").  
-Mobile applications Configure masking via a special [masking property](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#user-action-masking "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.") or set action naming and extraction rules (mobile application settings > **Naming rules**).
+User actions contain a name, a set of timings, and [metadata](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/create-custom-names-for-user-actions#add-and-use-placeholders "Customize automatically generated user action names for your web applications.").  
+Web applications Configure masking via the [**Mask user actions (web applications only)** option](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#mask-user-actions "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.") in the data privacy settings. You can also [create custom user action names](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/create-custom-names-for-user-actions "Customize automatically generated user action names for your web applications.").  
+Mobile applications Configure masking via a special [masking property](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#user-action-masking "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.") or set action naming and extraction rules (mobile application settings > **Naming rules**).
 
 2
 
@@ -111,11 +111,11 @@ Configure masking via the [**Mask end-user IP addresses and GPS coordinates** op
 
 3
 
-Dynatrace looks for personal data such as IP addresses, UUIDs, payment card numbers, emails, and other identifiable IDs. However, there might be other personal data or individual characters that Dynatrace isn't able to detect automatically. To mask the URL on display, use [custom names for user actions](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/create-custom-names-for-user-actions "Customize automatically generated user action names for your web applications."), resource grouping, and naming.
+Dynatrace looks for personal data such as IP addresses, UUIDs, payment card numbers, emails, and other identifiable IDs. However, there might be other personal data or individual characters that Dynatrace isn't able to detect automatically. To mask the URL on display, use [custom names for user actions](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/create-custom-names-for-user-actions "Customize automatically generated user action names for your web applications."), resource grouping, and naming.
 
 4
 
-By default, [location capturing](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#location "Explore the list of features that are available after you instrument your application with OneAgent.") is disabled for mobile applications.
+By default, [location capturing](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#location "Explore the list of features that are available after you instrument your application with OneAgent.") is disabled for mobile applications.
 
 5
 
@@ -123,12 +123,12 @@ Configure masking via the [**Mask personal data in URIs** option](/managed/manag
 
 6
 
-Web applications You can [set up user tagging](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/identify-individual-users-for-session-analysis "Tag individual users via the JavaScript API for session analysis.") using either the RUM JavaScript API or your application's page metadata.  
-Mobile applications Leverage a variant of a "user tagging" method to add a user tag to a session; check the [corresponding documentation](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") for more information.
+Web applications You can [set up user tagging](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/identify-individual-users-for-session-analysis "Tag individual users via the JavaScript API for session analysis.") using either the RUM JavaScript API or your application's page metadata.  
+Mobile applications Leverage a variant of a "user tagging" method to add a user tag to a session; check the [corresponding documentation](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") for more information.
 
 7
 
-Session and action properties for [web](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/define-user-action-and-session-properties "Define custom string, numeric, and date properties for your monitored web applications."), [mobile](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/define-mobile-action-and-session-properties "Send metadata to Dynatrace and define action and session properties for your monitored mobile applications."), and [custom applications](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/define-custom-action-and-session-properties "Send metadata to Dynatrace and define action and session properties for your monitored custom applications.") need to be explicitly defined and contain whatever the selected underlying data sources propagated them with.
+Session and action properties for [web](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/define-user-action-and-session-properties "Define custom string, numeric, and date properties for your monitored web applications."), [mobile](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/additional-configuration/define-mobile-action-and-session-properties "Send metadata to Dynatrace and define action and session properties for your monitored mobile applications."), and [custom applications](/managed/observe/digital-experience-classic/rum-classic/custom-applications/additional-configuration/define-custom-action-and-session-properties "Send metadata to Dynatrace and define action and session properties for your monitored custom applications.") need to be explicitly defined and contain whatever the selected underlying data sources propagated them with.
 
 You can also use the following settings to control how personal data is captured when RUM is enabled for your applications.
 
@@ -140,7 +140,7 @@ You can also use the following settings to control how personal data is captured
 
 Log Monitoring is an optional feature that is enabled by default. You can use it to directly access the log content of all your system's mission-critical processes, search for specific log messages, and store all logs centrally.
 
-Log files can include user names, email addresses, URL parameters, and other information that you might not want to disclose. By default, nothing is masked, but Log Monitoring offers the ability to [mask sensitive information](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") in the logs. You define the masking rules, so any data can be replaced with an SHA-1 hash or a fixed phrase, for example, `*****`, `#######`, `MASKED`, or `Last name`.
+Log files can include user names, email addresses, URL parameters, and other information that you might not want to disclose. By default, nothing is masked, but Log Monitoring offers the ability to [mask sensitive information](/managed/analyze-explore-automate/log-monitoring-classic/log-monitoring-configuration/sensitive-data-masking "Mask sensitive information in your log data using Log Monitoring Classic.") in the logs. You define the masking rules, so any data can be replaced with an SHA-1 hash or a fixed phrase, for example, `*****`, `#######`, `MASKED`, or `Last name`.
 
 | Data type | Masking at Dynatrace log processing | Masking at OneAgent configuration |
 | --- | --- | --- |
@@ -148,7 +148,7 @@ Log files can include user names, email addresses, URL parameters, and other inf
 
 ## Session Replay
 
-Session Replay is an optional feature that is turned off by default. You can enable [Session Replay](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") to capture and visually replay users' complete digital interactions with your application.
+Session Replay is an optional feature that is turned off by default. You can enable [Session Replay](/managed/observe/digital-experience-classic/session-replay-classic "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") to capture and visually replay users' complete digital interactions with your application.
 
 * For web applications, Session Replay captures all HTML source code and the mutations that are originated by user interactions. It also captures all user interactions obtained through form fields, attributes, content, and interactions such as mouse movement and scrolling.
 * For mobile applications, Session Replay is available only for those sessions that end in a crash. To visually recreate the end user's experience with your app before a crash, Session Replay captures screenshots and events from the monitored app.
@@ -161,8 +161,8 @@ Session Replay is an optional feature that is turned off by default. You can ena
 
 1
 
-Web applications Configure in the [application masking settings](/managed/observe/digital-experience/session-replay/configure-session-replay-web#mask-data-via-ui "Configure monitoring consumption and data privacy settings for Session Replay Classic.") or by adding the [`data-dtrum-mask` attribute](/managed/observe/digital-experience/session-replay/configure-session-replay-web#mask-data-via-code "Configure monitoring consumption and data privacy settings for Session Replay Classic.") to the required element in the application code. For details, see [Configure Session Replay | Masking](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-masking "Configure monitoring consumption and data privacy settings for Session Replay Classic."). User input and text are replaced with `***` or `000`. Only alphanumeric characters are replaced; format characters such as periods, commas, and colons are not masked. Attributes values are replaced with `***`. Images are replaced with a placeholder image.  
-Mobile applications Configure in the application code for [iOS](/managed/observe/digital-experience/session-replay/session-replay-ios#mask-sensitive-data "Prerequisites and the procedure for enabling Session Replay Classic for your iOS apps.") and [Android](/managed/observe/digital-experience/session-replay/session-replay-android#mask-sensitive-data "Set up Session Replay Classic for your Android apps to learn which actions your users perform."). User input and text are replaced with `*****` in the Session Replay timeline and with black boxes in the screenshots. All characters are masked. Images are replaced with a black box.
+Web applications Configure in the [application masking settings](/managed/observe/digital-experience-classic/session-replay-classic/configure-session-replay-web#mask-data-via-ui "Configure monitoring consumption and data privacy settings for Session Replay Classic.") or by adding the [`data-dtrum-mask` attribute](/managed/observe/digital-experience-classic/session-replay-classic/configure-session-replay-web#mask-data-via-code "Configure monitoring consumption and data privacy settings for Session Replay Classic.") to the required element in the application code. For details, see [Configure Session Replay | Masking](/managed/observe/digital-experience-classic/session-replay-classic/configure-session-replay-web#sr-masking "Configure monitoring consumption and data privacy settings for Session Replay Classic."). User input and text are replaced with `***` or `000`. Only alphanumeric characters are replaced; format characters such as periods, commas, and colons are not masked. Attributes values are replaced with `***`. Images are replaced with a placeholder image.  
+Mobile applications Configure in the application code for [iOS](/managed/observe/digital-experience-classic/session-replay-classic/session-replay-ios#mask-sensitive-data "Prerequisites and the procedure for enabling Session Replay Classic for your iOS apps.") and [Android](/managed/observe/digital-experience-classic/session-replay-classic/session-replay-android#mask-sensitive-data "Set up Session Replay Classic for your Android apps to learn which actions your users perform."). User input and text are replaced with `*****` in the Session Replay timeline and with black boxes in the screenshots. All characters are masked. Images are replaced with a black box.
 
 2
 
@@ -170,18 +170,18 @@ Except background images or images set by CSS.
 
 3
 
-Web applications Configure using the **Block list** option in the [application masking settings](/managed/observe/digital-experience/session-replay/configure-session-replay-web#mask-data-via-ui "Configure monitoring consumption and data privacy settings for Session Replay Classic.").  
+Web applications Configure using the **Block list** option in the [application masking settings](/managed/observe/digital-experience-classic/session-replay-classic/configure-session-replay-web#mask-data-via-ui "Configure monitoring consumption and data privacy settings for Session Replay Classic.").  
 Mobile applications Not possible to mask interactions.
 
 You can also use the following settings to control how personal data is captured when Session Replay is enabled for your web and mobile applications.
 
 | Application type | Option name | Description | Default |
 | --- | --- | --- | --- |
-| Web | [Session Replay opt-in mode](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-opt-in-mode "Configure monitoring consumption and data privacy settings for Session Replay Classic.") | Use to record a particular part of a session or to implement end-user permission for session recording. When this mode is on, Session Replay is disabled until the [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) method is called. | Disabled |
-| Mobile | [Opt-in mode](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#opt-in-mode-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region."): permission to record replays of crashes | Use to implement end-user permission for session recording. If a user allowed you to record replays of crashes via Session Replay on crashes:  iOS: Set `privacyConfig.crashReplayOptedIn` to `true`/`YES`.  Android: Set `.withCrashReplayOptedIn` to `true`. Screen requesting permission for session recording Session Replay - Session Replay opt-in mode for mobile apps  Session Replay - Session Replay opt-in mode for mobile apps | — |
-| Web | [URL exclusion](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-url-exclusion "Configure monitoring consumption and data privacy settings for Session Replay Classic.") | Use this setting to exclude particular pages from session recording. | — |
-| Web | [Do Not Track](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr#do-not-track-gdpr "Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.") | Enable this feature if you want to comply with the "Do Not Track" setting that your users can turn on in their browsers.If you select **Turn Real User Monitoring off for "Do Not Track"-enabled browsers**, Session Replay is disabled when the "Do Not Track" setting is detected in your users' browsers. | Comply with 'Do Not Track' browser settings — Capture anonymous user sessions for "Do Not Track"-enabled browsers |
-| Web  Mobile | [User permissions](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-permissions "Configure monitoring consumption and data privacy settings for Session Replay Classic.")  [Management zones](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-management-zones "Configure monitoring consumption and data privacy settings for Session Replay Classic.") | Use the **Replay sessions with masking** and **Replay sessions without masking** permissions to control who has access to session recordings with and without masking. | **Replay sessions with masking** permission is enabled for all users |
+| Web | [Session Replay opt-in mode](/managed/observe/digital-experience-classic/session-replay-classic/configure-session-replay-web#sr-opt-in-mode "Configure monitoring consumption and data privacy settings for Session Replay Classic.") | Use to record a particular part of a session or to implement end-user permission for session recording. When this mode is on, Session Replay is disabled until the [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) method is called. | Disabled |
+| Mobile | [Opt-in mode](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#opt-in-mode-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region."): permission to record replays of crashes | Use to implement end-user permission for session recording. If a user allowed you to record replays of crashes via Session Replay on crashes:  iOS: Set `privacyConfig.crashReplayOptedIn` to `true`/`YES`.  Android: Set `.withCrashReplayOptedIn` to `true`. Screen requesting permission for session recording Session Replay - Session Replay opt-in mode for mobile apps  Session Replay - Session Replay opt-in mode for mobile apps | — |
+| Web | [URL exclusion](/managed/observe/digital-experience-classic/session-replay-classic/configure-session-replay-web#sr-url-exclusion "Configure monitoring consumption and data privacy settings for Session Replay Classic.") | Use this setting to exclude particular pages from session recording. | — |
+| Web | [Do Not Track](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr#do-not-track-gdpr "Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.") | Enable this feature if you want to comply with the "Do Not Track" setting that your users can turn on in their browsers.If you select **Turn Real User Monitoring off for "Do Not Track"-enabled browsers**, Session Replay is disabled when the "Do Not Track" setting is detected in your users' browsers. | Comply with 'Do Not Track' browser settings — Capture anonymous user sessions for "Do Not Track"-enabled browsers |
+| Web  Mobile | [User permissions](/managed/observe/digital-experience-classic/session-replay-classic/configure-session-replay-web#sr-permissions "Configure monitoring consumption and data privacy settings for Session Replay Classic.")  [Management zones](/managed/observe/digital-experience-classic/session-replay-classic/configure-session-replay-web#sr-management-zones "Configure monitoring consumption and data privacy settings for Session Replay Classic.") | Use the **Replay sessions with masking** and **Replay sessions without masking** permissions to control who has access to session recordings with and without masking. | **Replay sessions with masking** permission is enabled for all users |
 
 ## OneAgent diagnostics
 
@@ -204,14 +204,8 @@ To comply with regional data protection and privacy regulations, Dynatrace does 
 
 ## Log sharing
 
-The `shareLogsFile` API allows you to share locally stored log files via an iOS sharing sheet (`UIActivityViewController`). This feature requires the [`DTXWriteLogsToFile`](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#privacy-and-security "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") flag to be set to `true`.
+The `shareLogsFile` API allows you to share locally stored log files via an iOS sharing sheet (`UIActivityViewController`). This feature requires the [`DTXWriteLogsToFile`](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#privacy-and-security "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") flag to be set to `true`.
 
 This feature allows logs to be shared directly from the device without requiring access to Xcode for log extraction. It is not intended for use in production applications.
 
 The `shareLogsFile` API is not available on tvOS.
-
-## Live Debugger
-
-Live Debugger is an optional feature. To make it available, enable [Live Debugger](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") on your OneAgents. You can use Live Debugger to debug your services and applications in any environment in real time without stopping your applications.
-
-Live Debugger collects snapshots that can include variable values that your application processes. You can [define masking rules](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."), so any data can be replaced with an SHA-1 hash or a fixed phrase, for example, `*****`, `#######`, `MASKED`, or `Last name`. Masking is performed by the agent on your server, so sensitive data will not leave your server or network.

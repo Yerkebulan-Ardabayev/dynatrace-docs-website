@@ -84,7 +84,7 @@ To change threshold settings for a specific host
 
 ## Related topics
 
-* [Host anomaly detection](/managed/observe/infrastructure-observability/hosts/configuration/anomaly-detection "Configure host anomaly detection, including problem and event thresholds.")
+* [Host anomaly detection](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/anomaly-detection "Configure host anomaly detection, including problem and event thresholds.")
 * [Anomaly detection API - Hosts](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-hosts "Learn what the Dynatrace Anomaly detection API for hosts offers.")
 * [Anomaly detection API - AWS](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-aws "Learn what the Dynatrace Anomaly detection API for AWS offers.")
 * [Anomaly detection API - VMware](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-vmware "Learn what the Dynatrace Anomaly detection API for VMware offers.")

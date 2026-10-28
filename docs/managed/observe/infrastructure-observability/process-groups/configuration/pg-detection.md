@@ -9,9 +9,9 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 
 * How-to guide
 * 10-min read
-* Updated on Oct 07, 2026
+* Updated on Aug 20, 2026
 
-Dynatrace detects which processes are part of the same [process groups](/managed/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.") by means of a default set of detection rules.
+Dynatrace detects which processes are part of the same [process groups](/managed/observe/infrastructure-observability-classic/process-groups-classic "Analyze process groups and customize process group naming, detection, and monitoring.") by means of a default set of detection rules.
 
 You can change the structure of default process groups by modifying the default process-group detection logic in:
 
@@ -24,7 +24,7 @@ You can change the structure of default process groups by modifying the default 
 
 * Process group detection settings and rules require a restart of your processes to affect how processes are identified and grouped.
 * Process group detection settings and rules only affect the composition of process groups. If you want to change how a process group is named, you have to use the [process group naming rules](/managed/observe/infrastructure-observability/process-groups/configuration/pg-naming "Ways to customize process-group naming") instead.
-* It's also possible to use [host groups](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to separate clusters into different process groups.
+* It's also possible to use [host groups](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to separate clusters into different process groups.
 
 ## Simple detection rules
 
@@ -64,7 +64,7 @@ The environment variables that you select as process group identifiers must exis
 * For WebSphere, you can do this in the WebSphere console in the JVM section.
 * For Tomcat and others, simply define the environment variable as part of the startup script.
 
-We recommend creating environment variables specific to process detection. Environment variables that serve other scopes, such as [`DT_TAGS`](/managed/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables#variables "Find out how Dynatrace enables you to define tags based on environment variables.") or [`DT_CUSTOM_PROP`](/managed/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment."), might cause incorrect or unintentional splits because all values of environment variables are evaluated for process-group detection.
+We recommend creating environment variables specific to process detection. Environment variables that serve other scopes, such as [`DT_TAGS`](/managed/manage/tags-and-metadata-classic/setup/define-tags-based-on-environment-variables#variables "Find out how Dynatrace enables you to define tags based on environment variables.") or [`DT_CUSTOM_PROP`](/managed/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment."), might cause incorrect or unintentional splits because all values of environment variables are evaluated for process-group detection.
 
 Identifiers also serve as the default name for the detected process groups. See [Define your own process group metadata](/managed/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") for details on how to define an environment variable for IIS or for Windows services.
 

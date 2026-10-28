@@ -100,7 +100,7 @@ To put a bold label above the tile, add a **Header** tile. For details, see [Ava
 2. Configure the query for the tile. You can build the query iteratively.
 
    * Select **Run query** after each query change to see its results.
-   * Select different visualization types to see what works best for your query. The available visual settings depend on the query and the visualization you choose. For details, see [Visualization settings](/managed/analyze-explore-automate/explorer/visualization-settings "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
+   * Select different visualization types to see what works best for your query. The available visual settings depend on the query and the visualization you choose. For details, see [Visualization settings](/managed/analyze-explore-automate/explorer-classic/visualization-settings "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
 3. Select **Pin to dashboard**, and then choose the destination dashboard and tile title.
 
    If you opened Data Explorer from a tile through **Configure tile**, you can instead select **Save changes to dashboard** to save your changes to the tile and dashboard you started from.

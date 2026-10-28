@@ -73,7 +73,7 @@ Defines the ActiveGate group to which the ActiveGate belongs. An ActiveGate can 
 
 ### Network zone
 
-Defines the [network zone](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") to which the ActiveGate belongs. An ActiveGate can belong to only one network zone. The name of a network zone is a string of alphanumeric characters, hyphens (`-`), underscores (`_`), and dots (`.`). Dots are used as separators, so you must not use a dot as the first character of a network zone name. The length of the string is limited to 256 characters.
+Defines the [network zone](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.") to which the ActiveGate belongs. An ActiveGate can belong to only one network zone. The name of a network zone is a string of alphanumeric characters, hyphens (`-`), underscores (`_`), and dots (`.`). Dots are used as separators, so you must not use a dot as the first character of a network zone name. The length of the string is limited to 256 characters.
 
 | Environment variable | Example |
 | --- | --- |

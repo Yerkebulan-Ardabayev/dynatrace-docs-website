@@ -996,5 +996,5 @@ PUT example
 
 ## Related topics
 
-* [Define and apply tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.")
-* [Tags and metadata](/managed/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.")
+* [Define and apply tags](/managed/manage/tags-and-metadata-classic/setup/how-to-define-tags "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.")
+* [Tags and metadata](/managed/manage/tags-and-metadata-classic "Use tags and metadata to organize data in your Dynatrace environment.")

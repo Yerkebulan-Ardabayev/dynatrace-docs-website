@@ -53,7 +53,7 @@ For complete observability of your workloads, be sure to set up generic log inge
    ./deploy-pubsub.sh --topic-name <your-topic-name> --subscription-name <your-subscription-name>
    ```
 2. Configure [log export﻿](https://dt-url.net/4743r02) to send the desired logs to the GCP Pub/Sub topic created in the previous step.
-3. If you choose to use an existing ActiveGate during deployment, [configure ActiveGate for generic log ingestion](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.").
+3. If you choose to use an existing ActiveGate during deployment, [configure ActiveGate for generic log ingestion](/managed/analyze-explore-automate/log-monitoring-classic/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.").
 
 ## Prerequisites
 

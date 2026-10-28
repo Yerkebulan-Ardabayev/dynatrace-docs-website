@@ -358,4 +358,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/userSessionQueryLanguage/table?que
 
 ## Related topics
 
-* [Custom queries, segmentation, and aggregation of session data in RUM Classic](/managed/observe/digital-experience/rum-classic/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.")
+* [Custom queries, segmentation, and aggregation of session data in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.")

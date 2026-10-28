@@ -9,14 +9,14 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/otlp-api/ab
 
 * Explanation
 * 2-min read
-* Updated on Oct 22, 2026
+* Updated on Oct 27, 2026
 
 This page provides information about how Dynatrace ingests and enriches OpenTelemetry metrics.
 
 Migrate from the Dynatrace OpenTelemetry metrics exporter
 
 If you're still using the Dynatrace OpenTelemetry metrics exporter, we recommend that you migrate to the OTLP metrics exporter.
-For more information, see [Migrating from the Dynatrace OTel metrics exporter to standard OTLP metrics exporter﻿](https://community.dynatrace.com/t5/Open-Q-A/Migrating-from-the-Dynatrace-OTel-metrics-exporter-to-standard/m-p/286986/thread-id/37689#M37690).
+For more information, see [Migrating from the Dynatrace OTel metrics exporter to standard OTLP metrics exporter﻿](https://community.dynatrace.com/t/migrating-from-the-dynatrace-otel-metrics-exporter-to-standard-otlp-metrics-exporter/53553#M37690).
 
 ## Dynatrace-specific mapping
 

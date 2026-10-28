@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector-u
 
 * How-to guide
 * 4-min read
-* Published Mar 12, 2026
+* Updated on Oct 22, 2026
 
 The journald receiver reads log entries from the [systemd journal﻿](https://wiki.archlinux.org/title/Systemd/Journal) by invoking `journalctl` as a subprocess and streaming its output into the OTel Collector pipeline.
 
@@ -27,6 +27,7 @@ Use the journald receiver when:
 * One of the following Collector distributions with the [journald receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/receiver/journaldreceiver).
 
   + [Dynatrace Collector](/managed/ingest-from/opentelemetry/collector#collector-distro "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+  + [Dynatrace Bindplane OTel Collector](/managed/ingest-from/bindplane-classic "Bindplane manages OpenTelemetry collector fleets at scale and controls telemetry volume at the edge before data reaches Dynatrace.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + A [custom Builder version](/managed/ingest-from/opentelemetry/collector#collector-builder "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
 * The [Dynatrace API endpoint URL](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported.

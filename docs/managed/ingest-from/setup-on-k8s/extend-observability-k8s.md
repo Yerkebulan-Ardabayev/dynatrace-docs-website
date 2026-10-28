@@ -20,7 +20,7 @@ Learn how to extend Kubernetes observability with OpenTelemetry.](/managed/inges
 
 ### Fluentd
 
-Extend log observability (Logs Classic) in Dynatrace with Fluentd as an alternative to OneAgent-based log collection.](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-fluentd-k8s "Integrate Fluentd with Dynatrace to stream logs.")[![Logstash](https://dt-cdn.net/images/elastic-logstash-a3afbd4913.svg "Logstash")
+Extend log observability (Logs Classic) in Dynatrace with Fluentd as an alternative to OneAgent-based log collection.](/managed/analyze-explore-automate/log-monitoring-classic/acquire-log-data/stream-logs-fluentd-k8s "Integrate Fluentd with Dynatrace to stream logs.")[![Logstash](https://dt-cdn.net/images/elastic-logstash-a3afbd4913.svg "Logstash")
 
 ### Logstash
 
@@ -28,4 +28,4 @@ Extend log observability in Dynatrace with Logstash as an alternative to OneAgen
 
 ### Fluent Bit
 
-Learn how to extend log (Logs Classic) observability in Dynatrace with Fluent Bit.](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/lm-fluent-bit-logs-k8s "Integrate Fluent Bit in Kubernetes to stream logs to Dynatrace.")
+Learn how to extend log (Logs Classic) observability in Dynatrace with Fluent Bit.](/managed/analyze-explore-automate/log-monitoring-classic/acquire-log-data/lm-fluent-bit-logs-k8s "Integrate Fluent Bit in Kubernetes to stream logs to Dynatrace.")

@@ -7,7 +7,7 @@ source: https://docs.dynatrace.com/managed/upgrade/up-post-upgrade
 
 # Run after deployment upgrade
 
-* Published Apr 24, 2023
+* Updated on Oct 27, 2026
 
 ![Actions after upgrading Managed to SaaS](https://dt-cdn.net/images/upgrade-to-saas-process-run-3454-7c363359e8.png)
 
@@ -91,4 +91,4 @@ Dynatrace Managed infrastructure decommissioning plan
 
 Questions?
 
-Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/c/platform/upgrade-to-saas/92) to ask questions, get answers, and share what you've learned with others.

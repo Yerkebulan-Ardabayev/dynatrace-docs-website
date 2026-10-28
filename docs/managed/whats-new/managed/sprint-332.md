@@ -167,7 +167,7 @@ Platform | OneAgent
 
 You can now access the resource attributes captured by the code modules in [OneAgent Health](/managed/ingest-from/dynatrace-oneagent/oneagent-health "Discover deployed OneAgent modules at scale and detect anomalies before they turn into problems."). To view them, select a code module in the data table and expand the details section.
 
-Resource attributes can be used as input for [Service detection v2](/managed/observe/application-observability/services-classic/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.") rules.
+Resource attributes can be used as input for [Service detection v2](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.") rules.
 
 ![OneAgent resource attributes](https://dt-cdn.net/images/screenshot-2026-01-16-at-15-27-54-1953-b145ce28b5.png)
 

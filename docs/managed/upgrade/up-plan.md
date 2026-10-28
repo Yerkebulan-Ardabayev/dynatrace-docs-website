@@ -7,7 +7,7 @@ source: https://docs.dynatrace.com/managed/upgrade/up-plan
 
 # Plan deployment upgrade
 
-* Published Apr 24, 2023
+* Updated on Oct 27, 2026
 
 During the Plan phase you collect requirements, adjust to differences, create a scope, and decide on the approach to upgrading to SaaS. The Plan phase should result in a detailed plan for performing the upgrade to SaaS deployment and a well-prepared architecture of the target solution within the Dynatrace platform.
 
@@ -122,7 +122,7 @@ Migrating configuration data such as dashboards, applications, and tags is impor
 
 Due to technical constraints, it's not possible to move any historical monitoring data (such as metrics, traces, problems, events, and logs) from one environment to another environment. However, data can still be accessed in your Dynatrace Managed Cluster. Dynatrace Managed Clusters can be operated in parallel if access to historical data is required. This may require running dual Dynatrace Managed and SaaS licenses.
 
-You may also find it helpful to set up [Set up cross-environment tracing in Distributed Traces](/managed/observe/application-observability/distributed-traces/analysis/connect-environments "Analyze requests across environment boundaries.") and [Create multi-environment dashboards](/managed/analyze-explore-automate/dashboards/create-multi-environment-dashboards "Connect a remote Dynatrace environment with an access token and point dashboard tiles to it, so one dashboard shows data from several environments.") to connect your Dynatrace Managed and SaaS environments for data access.
+You may also find it helpful to set up [Set up cross-environment tracing in Distributed Traces](/managed/observe/application-observability-classic/distributed-traces-classic/analysis/connect-environments "Analyze requests across environment boundaries.") and [Create multi-environment dashboards](/managed/analyze-explore-automate/dashboards/create-multi-environment-dashboards "Connect a remote Dynatrace environment with an access token and point dashboard tiles to it, so one dashboard shows data from several environments.") to connect your Dynatrace Managed and SaaS environments for data access.
 
 ### Running concurrent Dynatrace Managed and SaaS licenses
 
@@ -291,7 +291,7 @@ Adjust existing processes and workflows, including any integrations with ITOM/IT
 
 #### Firewall constraints for RUM
 
-The configuration of your firewalls, proxies, and web servers will require adjustment since cookie names have environment specific suffixes. For details, see [Infrastructure pass-through requirements for RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/infrastructure-pass-through-requirements-classic#cookies-web "Learn which requests, headers, and cookies must pass through your infrastructure for RUM Classic to work as expected.").
+The configuration of your firewalls, proxies, and web servers will require adjustment since cookie names have environment specific suffixes. For details, see [Infrastructure pass-through requirements for RUM Classic](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/infrastructure-pass-through-requirements-classic#cookies-web "Learn which requests, headers, and cookies must pass through your infrastructure for RUM Classic to work as expected.").
 
 ## Step 3 - Design
 
@@ -332,7 +332,7 @@ Dynatrace environment consolidation architecture example
 
 ### Network zones
 
-Dynatrace allows the definition of network zones that represent the architecture of your network. Network zones are used to route telemetry data from OneAgent to your Dynatrace Cluster in an optimized way and avoid unnecessary network traffic across data centers and network regions. For more information, see [Network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.").
+Dynatrace allows the definition of network zones that represent the architecture of your network. Network zones are used to route telemetry data from OneAgent to your Dynatrace Cluster in an optimized way and avoid unnecessary network traffic across data centers and network regions. For more information, see [Network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.").
 
 For information regarding ActiveGate considerations, see [Dynatrace ActiveGate](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
 
@@ -383,7 +383,7 @@ Learn more about the following aspects that should be taken care of when upgradi
 
 Questions?
 
-Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/c/platform/upgrade-to-saas/92) to ask questions, get answers, and share what you've learned with others.
 
 ## Related topics
 

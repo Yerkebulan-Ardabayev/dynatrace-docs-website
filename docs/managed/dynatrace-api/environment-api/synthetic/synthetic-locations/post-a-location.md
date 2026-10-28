@@ -12,7 +12,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 
 We have a new version of this API—[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
 
-Creates a new **private** Synthetic location. For more details about synthetic location creation, see [Create a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.").
+Creates a new **private** Synthetic location. For more details about synthetic location creation, see [Create a private Synthetic location](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.").
 
 The request consumes and produces an `application/json` payload.
 
@@ -401,5 +401,5 @@ https://mySampleEnv.live.dynatrace.com/api/v1/synthetic/locations
 
 ## Related topics
 
-* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
-* [Create a private Synthetic location in Classic](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")
+* [Synthetic Monitoring](/managed/observe/digital-experience-classic/synthetic-monitoring-classic "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
+* [Create a private Synthetic location in Classic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")

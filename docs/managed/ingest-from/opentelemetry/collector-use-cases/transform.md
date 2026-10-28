@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector-u
 
 * How-to guide
 * 4-min read
-* Updated on Jun 15, 2026
+* Updated on Oct 22, 2026
 
 The following configuration example shows how to configure a Collector instance to transform and manipulate OTLP requests, before forwarding them to Dynatrace.
 
@@ -20,6 +20,7 @@ Using the processors shown in this example (`filter` and `transform`), it is pos
 * One of the following Collector distributions with the [transform﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/transformprocessor) and [filter﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/filterprocessor) processors
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+  + The [Dynatrace Bindplane OTel Collector](/managed/ingest-from/bindplane-classic "Bindplane manages OpenTelemetry collector fleets at scale and controls telemetry volume at the edge before data reaches Dynatrace.")
   + OpenTelemetry [Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + A [custom Builder version](/managed/ingest-from/opentelemetry/collector#collector-builder "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
 * The [API URL](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") of your Dynatrace environment

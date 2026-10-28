@@ -73,7 +73,7 @@ The identification of reference values is based, as explained above, on a baseli
 * **Service method**: A service's individual service methods (for example, `getBookingPage` or `getReportPage`). In the case of database services, the service method represents the different SQL statements that are queried (for example, `call verify_location(?) select booking0_.id from Booking booking0_ where booking0_.user_name<>?`). A reference value is additionally calculated for the predefined service method groups, static requests, and [dynamic requests](/managed/discover-dynatrace/get-started/glossary#request "Get acquainted with Dynatrace terminology.").
 * **Service method group**: Static or dynamic groups for web services, and for database services, groups that correspond to database operations like insert, update, select and so forth. For database services, a reference value is calculated for the predefined service method groups `inserts`, `updates`, and `selects`.
 
-Services of the `PROCESS` type don't support automated baselining. Use [anomaly detection](/managed/observe/infrastructure-observability/hosts/configuration/anomaly-detection "Configure host anomaly detection, including problem and event thresholds.") instead.
+Services of the `PROCESS` type don't support automated baselining. Use [anomaly detection](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/anomaly-detection "Configure host anomaly detection, including problem and event thresholds.") instead.
 
 ### How automated baselining works
 

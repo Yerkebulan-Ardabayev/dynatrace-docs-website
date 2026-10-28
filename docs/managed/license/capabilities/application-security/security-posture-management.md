@@ -44,7 +44,7 @@ You can also track your usage in Account Management.
 
 ### Track your consumption and costs with Data Explorer
 
-* In [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues."), enter `DPS` in the **Search** field).
+* In [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues."), enter `DPS` in the **Search** field).
 
 ### Track your consumption and costs via API
 

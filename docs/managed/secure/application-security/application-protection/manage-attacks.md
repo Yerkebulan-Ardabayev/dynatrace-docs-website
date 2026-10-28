@@ -202,7 +202,7 @@ This option is only available if [code-level vulnerability detection](/managed/s
 
 process-related-logs-attacks
 
-Process logs that happened around the same time as the attack (+/- 5 min), and which might be related to the attack. To view this information, you need to [configure Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
+Process logs that happened around the same time as the attack (+/- 5 min), and which might be related to the attack. To view this information, you need to [configure Log Monitoring](/managed/analyze-explore-automate/log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
 
 Select **View all process-related logs** to navigate to the **Log viewer** page for a list of all process-related logs.
 

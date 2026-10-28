@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector-u
 
 * How-to guide
 * 5-min read
-* Published May 28, 2024
+* Updated on Oct 22, 2026
 
 A distributed application under heavy load may generate a massive amount of observability data. This data incurs generation, processing, transmission, and storage costs. However, it's often possible to use sampling—where you use only a relatively small portion of the observability data and drop the rest—to reduce costs and still effectively monitor your application.
 
@@ -31,6 +31,7 @@ The following configuration example shows how to configure a Collector instance 
 * One of the following Collector distributions with the [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/transformprocessor), [`filter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/filterprocessor), and [`tail_sampling`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/tailsamplingprocessor) processors, and the [`spanmetrics`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/connector/spanmetricsconnector) connector:
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+  + The [Dynatrace Bindplane OTel Collector](/managed/ingest-from/bindplane-classic "Bindplane manages OpenTelemetry collector fleets at scale and controls telemetry volume at the edge before data reaches Dynatrace.")
   + The OpenTelemetry [Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.") distribution
   + A [custom Builder version](/managed/ingest-from/opentelemetry/collector#collector-builder "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
 * The [Dynatrace API endpoint URL](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported

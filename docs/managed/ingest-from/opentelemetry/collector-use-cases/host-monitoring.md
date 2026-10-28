@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector-u
 
 * How-to guide
 * 2-min read
-* Updated on Oct 07, 2026
+* Updated on Oct 22, 2026
 
 OpenTelemetry Host Monitoring is a Dynatrace feature that transforms raw telemetry data from OTel Collectors into actionable insights.
 Rather than simply ingesting metrics, logs, and traces, Dynatrace automatically builds meaningful context around your infrastructure.
@@ -17,7 +17,7 @@ It creates host and process entities, establishes topology relationships, and pr
 
 With the extension, you can:
 
-* Explore the metrics of your OpenTelemetry-monitored hosts and processes in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues."), split by the `dt.entity.otel:host` and `dt.entity.otel:process` dimensions.
+* Explore the metrics of your OpenTelemetry-monitored hosts and processes in [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues."), split by the `dt.entity.otel:host` and `dt.entity.otel:process` dimensions.
 * Use auto-generated entities (based on extracted metadata) to correlate metrics and spans and provide unified context across your monitoring environment.
 
 This use case and its reference configuration are designed primarily for VMs and bare-metal hosts with a Linux OS.
@@ -32,6 +32,7 @@ This use case assumes that you have:
 * One of the following Collector distributions with the [`hostmetrics`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/receiver/hostmetricsreceiver), [`journald`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/receiver/journaldreceiver), and [`otlp`﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.160.0/receiver/otlpreceiver) receivers, and the [`resource_detection`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/resourcedetectionprocessor), [`filter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/filterprocessor), and [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/transformprocessor) processors.
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+  + The [Dynatrace Bindplane OTel Collector](/managed/ingest-from/bindplane-classic "Bindplane manages OpenTelemetry collector fleets at scale and controls telemetry volume at the edge before data reaches Dynatrace.")
   + [OTel Collector Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + A [custom-built OTel Collector](/managed/ingest-from/opentelemetry/collector#collector-builder "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
 * Activated the OpenTelemetry Host Monitoring extension.
@@ -176,7 +177,7 @@ Telemetry that reaches the Collector through a pipeline without `resource_detect
 
 ### Monitor your hosts
 
-Once you've set up your Collectors and the Host Monitoring extension, use [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") to analyze the ingested host and process metrics.
+Once you've set up your Collectors and the Host Monitoring extension, use [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") to analyze the ingested host and process metrics.
 Split the metrics by the `dt.entity.otel:host` or `dt.entity.otel:process` dimension to see them per entity.
 
 ### Topology

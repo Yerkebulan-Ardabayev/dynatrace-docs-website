@@ -868,7 +868,7 @@ If you export metrics to an environment ActiveGate that uses a self-signed certi
 
 ## Verify the metrics
 
-After you have sent your metrics, verify the data in [**Data Explorer**](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
+After you have sent your metrics, verify the data in [**Data Explorer**](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
 ## Additional information
 

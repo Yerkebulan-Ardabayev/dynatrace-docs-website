@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/use
 * Reference
 * Updated on May 02, 2022
 
-The **User Sessions** API enables you to obtain data about user sessions. The API uses [User Sessions Query Language (USQL)](/managed/observe/digital-experience/rum-classic/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") to query the required data. Both calls return the same data, differing only in how it's represented.
+The **User Sessions** API enables you to obtain data about user sessions. The API uses [User Sessions Query Language (USQL)](/managed/observe/digital-experience-classic/rum-classic/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") to query the required data. Both calls return the same data, differing only in how it's represented.
 
 [### GET table
 
@@ -22,4 +22,4 @@ Learn the structure of a user session that contains all possible fields.](/manag
 
 ## Related topics
 
-* [Custom queries, segmentation, and aggregation of session data in RUM Classic](/managed/observe/digital-experience/rum-classic/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.")
+* [Custom queries, segmentation, and aggregation of session data in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.")

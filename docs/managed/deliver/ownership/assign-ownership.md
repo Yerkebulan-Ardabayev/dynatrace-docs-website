@@ -399,9 +399,9 @@ We recommend defining ownership for the Deployment and all other objects for whi
 
 ## Host metadata
 
-For hosts, we recommend using [host metadata](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#host-metadata "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.") as the primary method of applying ownership.
+For hosts, we recommend using [host metadata](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/define-tags-and-metadata-for-hosts#host-metadata "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.") as the primary method of applying ownership.
 
-Read more about [defining tags and metadata for hosts](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.") and the [OneAgent `oneagentctl` command-line interface](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Read more about [defining tags and metadata for hosts](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/define-tags-and-metadata-for-hosts "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.") and the [OneAgent `oneagentctl` command-line interface](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 You can also apply ownership to hosts using [tags](#tags).
 
@@ -451,19 +451,19 @@ See [Format for applying ownership information](#format) on all existing key-val
 
 ### Tagging methods
 
-You can use tags to apply ownership in [key-value pairs](#format) to any monitored entity—read more about [tagging](/managed/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.").
+You can use tags to apply ownership in [key-value pairs](#format) to any monitored entity—read more about [tagging](/managed/manage/tags-and-metadata-classic "Use tags and metadata to organize data in your Dynatrace environment.").
 
 ![Ownership via a manual tag](https://dt-cdn.net/images/ownership-manual-tag-1004-f7c90a9b42.png)
 
 Ownership via a manual tag
 
-* [Manual tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags#manual "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.") using the defined keys or key prefixes (like `owner` and `dt.owner`) are simple to apply via the web UI.
-* You can also set up [automatic tagging rules](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.") via the web UI.
+* [Manual tags](/managed/manage/tags-and-metadata-classic/setup/how-to-define-tags#manual "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.") using the defined keys or key prefixes (like `owner` and `dt.owner`) are simple to apply via the web UI.
+* You can also set up [automatic tagging rules](/managed/manage/tags-and-metadata-classic/setup/how-to-define-tags#automatic "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.") via the web UI.
 * We recommend using the [Custom tags API](/managed/dynatrace-api/environment-api/custom-tags "Manage custom tags of the monitored entities via the Dynatrace API.") over automatic tagging rules to apply ownership to entities. The Custom tags API enables you to conveniently apply tags to a large group of entities within a single API call, executed immediately.
 
 Note that manually applied tags can be removed manually. Automatically applied tags can’t be removed manually from individual services, process groups, process group instances, applications, or hosts.
 
-See [Best practices for entity ownership](/managed/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage") for more information on the benefits and limitations of tagging for assigning owners to entities. See also [Best practices for scaling tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
+See [Best practices for entity ownership](/managed/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage") for more information on the benefits and limitations of tagging for assigning owners to entities. See also [Best practices for scaling tagging and management-zone rules](/managed/manage/tags-and-metadata-classic/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
 
 ### Permissions
 
@@ -515,11 +515,11 @@ Unknown team
 ## Related topics
 
 * [Set up Dynatrace on Kubernetes](/managed/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
-* [Define tags and metadata for hosts](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.")
+* [Define tags and metadata for hosts](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/define-tags-and-metadata-for-hosts "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.")
 * [Define your own process group metadata](/managed/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata "Configure your own process-related metadata based on the unique needs of your organization or environment.")
-* [Tags and metadata](/managed/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.")
+* [Tags and metadata](/managed/manage/tags-and-metadata-classic "Use tags and metadata to organize data in your Dynatrace environment.")
 * [Custom tags API](/managed/dynatrace-api/environment-api/custom-tags "Manage custom tags of the monitored entities via the Dynatrace API.")
-* [Best practices for scaling tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.")
+* [Best practices for scaling tagging and management-zone rules](/managed/manage/tags-and-metadata-classic/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.")
 * [Kubernetes labels﻿](https://dt-url.net/g442yn5 "Official Kubernetes documentation on labels")
 * [Kubernetes annotations﻿](https://dt-url.net/bz62yto "Official Kubernetes documentation on annotations")
 * [Unified analysis pages](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend Dynatrace unified analysis pages with custom cards to surface metrics, logs, events, and metadata for any entity type in one focused view.")

@@ -182,7 +182,7 @@ You can configure network zones as an environment variable:
 
 * `DT_NETWORK_ZONE`: equals `your.network.zone`
 
-See [network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+See [network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.") for more information.
 
 ## Monitoring Consumption
 

@@ -1,13 +1,13 @@
 ---
-title: ActiveGate FIPS compliance
+title: ActiveGate FIPS compliance (Dynatrace Classic)
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/activegate-fips-compliance
 ---
 
-# ActiveGate FIPS compliance
+# ActiveGate FIPS compliance (Dynatrace Classic)
 
-# ActiveGate FIPS compliance
+# ActiveGate FIPS compliance (Dynatrace Classic)
 
-* Updated on Jul 20, 2026
+* Updated on May 12, 2026
 
 ActiveGate version 1.315+
 
@@ -45,7 +45,7 @@ excluding [Extension Execution Controller module](/managed/ingest-from/dynatrace
 
 2
 
-refer to [Requirements and limitations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#fips-compliant-limitation "Learn how to create a private location for synthetic monitoring.") for Synthetic FIPS compliance.
+refer to [Requirements and limitations](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/create-a-private-synthetic-location#fips-compliant-limitation "Learn how to create a private location for synthetic monitoring.") for Synthetic FIPS compliance.
 
 ### Host-based ActiveGate deployment
 

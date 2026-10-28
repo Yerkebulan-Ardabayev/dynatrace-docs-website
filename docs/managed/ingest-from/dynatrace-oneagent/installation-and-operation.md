@@ -82,5 +82,5 @@ OneAgent is now set up and monitoring your host. See [Get started](/managed/disc
 
 * [OneAgent features](/managed/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.")
 * [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
-* [Host-level settings](/managed/observe/infrastructure-observability/hosts/configuration "Host-level settings")
+* [Host-level settings](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration "Host-level settings")
 * [OneAgent monitoring modes](/managed/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.")

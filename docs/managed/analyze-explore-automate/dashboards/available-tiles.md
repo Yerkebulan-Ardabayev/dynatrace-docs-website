@@ -44,11 +44,11 @@ Health tiles, such as **Host health**, **Service health**, and **Application hea
 
 ## Visualizations
 
-Use visualization tiles to create visual representations of [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") queries that you can pin to your dashboards.
+Use visualization tiles to create visual representations of [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") queries that you can pin to your dashboards.
 
 ### Visualization types
 
-Visualization tiles come in the following kinds. For how each one looks as a tile, see [Visualizations](/managed/analyze-explore-automate/dashboards/visualizations "Look up how each Data Explorer visualization looks as a dashboard tile, which tile behavior it supports, and where to find its settings."), and for its settings, see [Visualization settings](/managed/analyze-explore-automate/explorer/visualization-settings "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
+Visualization tiles come in the following kinds. For how each one looks as a tile, see [Visualizations](/managed/analyze-explore-automate/dashboards/visualizations "Look up how each Data Explorer visualization looks as a dashboard tile, which tile behavior it supports, and where to find its settings."), and for its settings, see [Visualization settings](/managed/analyze-explore-automate/explorer-classic/visualization-settings "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
 
 * Graph
 * Stacked column
@@ -72,7 +72,7 @@ Interactivity of visualization tiles varies by visualization, but most tiles sha
 * Select a legend entry to show or hide the corresponding element on the visualization.
 * Use the tile menu in the upper-right corner:
 
-  + **Configure tile in Data Explorer** opens the tile in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues."), where you can configure the query and visualization.
+  + **Configure tile in Data Explorer** opens the tile in [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues."), where you can configure the query and visualization.
   + **Edit tile**, if you have edit rights, opens the dashboard in edit mode with the current tile selected.
 
 Settings: tile title, custom timeframe, management zone, environment.
@@ -228,9 +228,9 @@ Settings, all required:
 
 * Application, or `Most active application`
 * Geolocation
-* One metric, either a performance metric based on user actions ([Apdex](/managed/observe/digital-experience/rum-classic/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance."), [user actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application."), [load actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions#load-action "Learn what user actions are and how they help you understand what users do with your application."), [XHR actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions#xhr-action "Learn what user actions are and how they help you understand what users do with your application."), [custom actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions#custom-action "Learn what user actions are and how they help you understand what users do with your application."), or errors) or a behavior metric based on sessions or users (active sessions, active users, actions per session, bounce rate, or session duration)
+* One metric, either a performance metric based on user actions ([Apdex](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance."), [user actions](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application."), [load actions](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-actions#load-action "Learn what user actions are and how they help you understand what users do with your application."), [XHR actions](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-actions#xhr-action "Learn what user actions are and how they help you understand what users do with your application."), [custom actions](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-actions#custom-action "Learn what user actions are and how they help you understand what users do with your application."), or errors) or a behavior metric based on sessions or users (active sessions, active users, actions per session, bounce rate, or session duration)
 
-If the world map shows no data, you might need to map your internal IP addresses to locations for your [web](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web "Configure Dynatrace to use local addresses to understand where the users of your web applications are."), [mobile](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile "Configure Dynatrace to use local addresses to understand where the users of your mobile applications are."), and [custom applications](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom "Configure Dynatrace to use local addresses to understand where the users of your custom applications are.").
+If the world map shows no data, you might need to map your internal IP addresses to locations for your [web](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web "Configure Dynatrace to use local addresses to understand where the users of your web applications are."), [mobile](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile "Configure Dynatrace to use local addresses to understand where the users of your mobile applications are."), and [custom applications](/managed/observe/digital-experience-classic/rum-classic/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom "Configure Dynatrace to use local addresses to understand where the users of your custom applications are.").
 
 ### Key user action overview
 
@@ -314,7 +314,7 @@ Settings: custom timeframe, management zone, environment.
 
 ### Web application
 
-Displays key performance indicators of the selected application: [Apdex rating](/managed/observe/digital-experience/rum-classic/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance."), [user actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.") per minute, and number of JavaScript errors per minute.
+Displays key performance indicators of the selected application: [Apdex rating](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance."), [user actions](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.") per minute, and number of JavaScript errors per minute.
 
 Drilldowns: **View details** opens the selected application page.
 
@@ -322,7 +322,7 @@ Settings: application (required), custom timeframe, environment.
 
 ### Key user action
 
-Displays key performance indicators of the selected application and key [user action](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application."): user action duration, user actions per minute, and number of errors per minute.
+Displays key performance indicators of the selected application and key [user action](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application."): user action duration, user actions per minute, and number of errors per minute.
 
 Drilldowns: **View details** opens the page of the selected key user action.
 
@@ -330,7 +330,7 @@ Settings: application and key user action (required), custom timeframe, environm
 
 ### User sessions query
 
-Displays the result of an advanced query on completed user sessions, written in the [user sessions query language](/managed/observe/digital-experience/rum-classic/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.").
+Displays the result of an advanced query on completed user sessions, written in the [user sessions query language](/managed/observe/digital-experience-classic/rum-classic/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.").
 
 Drilldowns: **View details** opens the user sessions query page for the query.
 

@@ -57,7 +57,7 @@ With PHP-CLI monitoring, you get:
   + `pthreads` support for PHP-CLI thread-safe
   + Method hotspots using ambient sampling
   + Request attributes support
-  + Deep monitoring (after enabling [custom service detection](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/service-types/custom-services "Define entry points (a method, class, or interface) for custom services that don't use standard protocols."))
+  + Deep monitoring (after enabling [custom service detection](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v1/service-types/custom-services "Define entry points (a method, class, or interface) for custom services that don't use standard protocols."))
 
 ### Requirements for PHP-CLI monitoring
 
@@ -100,7 +100,7 @@ To enable deep monitoring of your PHP-CLI applications
 
 Gain full PHP insights into database connections and more
 
-On enabling [custom service detection](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/service-types/custom-services "Define entry points (a method, class, or interface) for custom services that don't use standard protocols."), you get deep monitoring, including full PHP insights into database connections, external calls, and `pthreads`.
+On enabling [custom service detection](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v1/service-types/custom-services "Define entry points (a method, class, or interface) for custom services that don't use standard protocols."), you get deep monitoring, including full PHP insights into database connections, external calls, and `pthreads`.
 
 ![PHP insights: database connections, external calls, and pthreads](https://dt-cdn.net/images/2-cli-service2-996-1c3334385a.png)
 

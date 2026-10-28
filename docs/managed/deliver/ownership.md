@@ -44,7 +44,7 @@ You can [create ownership](/managed/deliver/ownership/ownership-teams "Define te
 
 ### Additional
 
-[Define tags and metadata for hosts](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.")
+[Define tags and metadata for hosts](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/define-tags-and-metadata-for-hosts "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.")
 
 [Define your own process group metadata](/managed/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata "Configure your own process-related metadata based on the unique needs of your organization or environment.")
 

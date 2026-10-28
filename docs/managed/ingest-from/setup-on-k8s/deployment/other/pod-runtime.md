@@ -28,7 +28,7 @@ Pod runtime injection and cgroup v2
 
 If Pod runtime injection is used with [cgroup v2﻿](https://kubernetes.io/docs/concepts/architecture/cgroups/), the `builtin:containers.*` metrics are reported to Dynatrace only if all the following conditions are respected:
 
-* The **Kubernetes API** is accessible (see [Grant viewer role to service accounts](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments#viewer "Organize and filter your monitored applications by importing labels and annotations from your Kubernetes/OpenShift environment."))
+* The **Kubernetes API** is accessible (see [Grant viewer role to service accounts](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments#viewer "Organize and filter your monitored applications by importing labels and annotations from your Kubernetes/OpenShift environment."))
 * The pod runs a **single container**
 
 ## Deploy
@@ -217,7 +217,7 @@ env:
 value: <your_network_zone>
 ```
 
-See [network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+See [network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.") for more information.
 
 * Optional Configure a proxy address.
 

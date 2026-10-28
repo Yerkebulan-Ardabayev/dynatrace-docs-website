@@ -177,7 +177,7 @@ Depending on the pool, these are the potential sources of consumption booked on 
 | Pool | Entity-less sources |
 | --- | --- |
 | Metrics | See [Metrics section](/managed/license/classic-licensing/davis-data-units/metric-cost-calculation#no-monitored-entity "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") |
-| Log | [Generic log ingestion](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") |
+| Log | [Generic log ingestion](/managed/analyze-explore-automate/log-monitoring-classic/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") |
 | Serverless | None |
 | Events | [Event API v2](/managed/dynatrace-api/environment-api/events-v2/post-event "Ingests an event via the Dynatrace API.") |
 | Traces | Traces where `span:service` is missing in the generic entity config or span data doesn't have a `service.name` resource attribute. |

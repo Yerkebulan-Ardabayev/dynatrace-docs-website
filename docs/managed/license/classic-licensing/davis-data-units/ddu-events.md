@@ -19,7 +19,7 @@ While there are no additional costs or licensing involved in the default monitor
 Custom created/ingested or subscribed events that you might configure for your environment and thereby consume DDUs include:
 
 * Any custom event sent to Dynatrace using the [Events API v2](/managed/dynatrace-api/environment-api/events-v2 "Find out what you can do with the Dynatrace Events API v2.") or the [OneAgent API](/managed/ingest-from/extend-dynatrace/extend-events#oneagent "Learn how to extend event observability in Dynatrace.")
-* Any custom event (such as a Kubernetes event) created from log messages by a [log event](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-events "Learn how to create and use Dynatrace log events to analyze log data.") extraction rule
+* Any custom event (such as a Kubernetes event) created from log messages by a [log event](/managed/analyze-explore-automate/log-monitoring-classic/analyze-log-data/log-events "Learn how to create and use Dynatrace log events to analyze log data.") extraction rule
 
 ## How DDU consumption is calculated for custom Davis events
 

@@ -59,7 +59,7 @@ We recommend [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/colle
 
 1
 
-See [Containerized, auto-scalable private Synthetic locations on Kubernetes in Classic](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations "Deploy and manage containerized, auto-scalable private Synthetic locations on Kubernetes/RedHat OpenShift.").
+See [Containerized, auto-scalable private Synthetic locations on Kubernetes in Classic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/containerized-locations "Deploy and manage containerized, auto-scalable private Synthetic locations on Kubernetes/RedHat OpenShift.").
 
 ## Functionality available for ActiveGates with the zRemote module
 

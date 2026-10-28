@@ -26,7 +26,7 @@ Custom metrics are metrics that you define or install. They extend the value of 
 Following is a non-exhaustive list of custom metric types:
 
 * All [API-ingested metrics](/managed/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.")
-* Calculated service metrics, custom DEM metrics, and [log metrics](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
+* Calculated service metrics, custom DEM metrics, and [log metrics](/managed/analyze-explore-automate/log-monitoring-classic/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
 
   + For example, calculated service metrics created upon request attributes
 * All metrics provided by manually installed [Dynatrace Monitoring Extensions](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.")
@@ -196,7 +196,7 @@ Included metrics are bound to individual hosts.
 
 Reported DDUs are defined as all DDUs before any host-included considerations are performed. Consumed DDUs reflect the total "billable" DDUs that get subtracted from your DDU balance.
 
-You can compare the reported DDUs for a specific host with the number of [host-included metrics](#metrics-per-host-unit) by creating a chart with [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") using the following metrics. This allows you to gain insights into the number of available vs. consumed DDUs for a specific host.
+You can compare the reported DDUs for a specific host with the number of [host-included metrics](#metrics-per-host-unit) by creating a chart with [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") using the following metrics. This allows you to gain insights into the number of available vs. consumed DDUs for a specific host.
 
 * `builtin:billing.ddu.includedMetricDduPerHost`
   This metric is split by host ID. It shows you the host-included DDUs. For example, if a host has 1,000 [included metrics](#metrics-per-host-unit), this metric will have a value of 1 (in other words, 1,000 × 0.001)
@@ -275,8 +275,8 @@ More information can also be found in the section [Reported DDUs vs. consumed DD
 The source of this consumption is one of the following:
 
 * [Metric ingestion](/managed/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.") for data without a `dt.entity.host` dimension
-* Calculated metrics from user sessions for [web](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications."), [mobile](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/rum-calculated-metrics-mobile "Create calculated metrics as well as custom charts based on calculated metrics for your mobile applications."), and [custom applications](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/rum-calculated-metrics-custom "Create calculated metrics as well as custom charts based on calculated metrics for your custom applications.")
-* [Calculated log metrics v2](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")—In the metric-key breakdown, these have a `log.` prefix
+* Calculated metrics from user sessions for [web](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications."), [mobile](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/additional-configuration/rum-calculated-metrics-mobile "Create calculated metrics as well as custom charts based on calculated metrics for your mobile applications."), and [custom applications](/managed/observe/digital-experience-classic/rum-classic/custom-applications/additional-configuration/rum-calculated-metrics-custom "Create calculated metrics as well as custom charts based on calculated metrics for your custom applications.")
+* [Calculated log metrics v2](/managed/analyze-explore-automate/log-monitoring-classic/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")—In the metric-key breakdown, these have a `log.` prefix
 
 ## Consumption generated by undefined host
 
@@ -393,4 +393,3 @@ Kubernetes nodes are automatically monitored when OneAgent is installed; these m
 ## Related topics
 
 * [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)
-* [Extend metric observability](/managed/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.")

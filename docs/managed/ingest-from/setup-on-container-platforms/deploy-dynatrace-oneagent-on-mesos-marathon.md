@@ -12,7 +12,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platfo
 
 Mesos is a generic cluster resource manager which can be used together with the Marathon framework to run containers in distributed environments.
 
-To monitor applications running in [Mesos clusters﻿](https://www.dynatrace.com/technologies/mesos-monitoring/), we recommend that you deploy OneAgent on all Mesos agent nodes by means of a Marathon application deployment. Following this, install OneAgent on the Mesos master nodes, as explained on this page.
+To monitor applications running in [Mesos clusters﻿](https://www.dynatrace.com/technologies/mesos-monitoring/), we recommend that you deploy OneAgent on all Mesos agent nodes by means of a Marathon application deployment. Following this, install OneAgent on the Mesos primary nodes, as explained on this page.
 
 ## Locate your OneAgent installer URL
 
@@ -22,7 +22,6 @@ To get your `ONEAGENT_INSTALLER_SCRIPT_URL`
 
 1. Go to **Deploy Dynatrace**.
 2. Select **Start installation** > **Linux**.
-
 3. Determine the installer script URL and token from the UI-provided `wget` command:
 
 OneAgent container image version 1.39.1000+
@@ -204,14 +203,14 @@ This is your `ONEAGENT_INSTALLER_SCRIPT_URL`.
    EOF
    ```
 
-   * After you created the `dynatrace-oneagent.json` file, send an HTTP POST request to the Mesos master leader to deploy the Marathon application with OneAgent.
+   After you created the `dynatrace-oneagent.json` file, send an HTTP POST request to the Mesos primary leader to deploy the Marathon application with OneAgent.
 
    ```
    curl -X POST -H "Content-Type: application/json" http://your-mesos-master:8080/v2/apps -d@dynatrace-oneagent.json
    ```
-2. Deploy OneAgent on Mesos master nodes.
+2. Deploy OneAgent on Mesos primary nodes.
 
-   Marathon doesn't allow you to deploy applications to master nodes (except for nodes that are tagged as both master and agent). This is why you must manually install OneAgent on all Mesos master nodes that aren't additionally configured as Mesos agents. For this, use the default [Linux installer](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.").
+   Marathon doesn't allow you to deploy applications to primary nodes (except for nodes that are tagged as both primary and agent). This is why you must manually install OneAgent on all Mesos primary nodes that aren't additionally configured as Mesos agents. For this, use the default [Linux installer](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.").
 
 ## Related topics
 

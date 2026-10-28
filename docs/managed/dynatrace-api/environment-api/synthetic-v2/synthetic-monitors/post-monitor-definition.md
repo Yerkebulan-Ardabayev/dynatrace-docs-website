@@ -12,7 +12,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 
 Creates a new Synthetic monitor.
 
-For details about how to create a browser, HTTP, or NAM monitor in the UI, see [Browser monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors "Learn about browser monitors."), [Create an HTTP monitor in Classic](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor to check the performance and availability of your site."), and [Configure a NAM monitor](/managed/observe/digital-experience/synthetic-monitoring/network-availability-monitors/configure-nam-managed "Learn how to set up and manage a NAM monitor to check the performance and availability of your site.").
+For details about how to create a browser, HTTP, or NAM monitor in the UI, see [Browser monitors in Classic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/browser-monitors "Learn about browser monitors."), [Create an HTTP monitor in Classic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor to check the performance and availability of your site."), and [Configure a NAM monitor](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/network-availability-monitors/configure-nam-managed "Learn how to set up and manage a NAM monitor to check the performance and availability of your site.").
 
 The request consumes and produces an `application/json` payload.
 
@@ -960,4 +960,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
+* [Synthetic Monitoring](/managed/observe/digital-experience-classic/synthetic-monitoring-classic "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")

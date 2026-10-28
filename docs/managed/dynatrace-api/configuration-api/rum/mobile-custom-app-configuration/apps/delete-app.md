@@ -42,5 +42,5 @@ To learn how to obtain and use it, see [Personal access tokens](/managed/discove
 
 ## Related topics
 
-* [Delete a mobile application in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/delete-application-mobile "Delete your mobile applications via the Dynatrace web UI or API.")
-* [Delete a custom application in RUM Classic](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/delete-application-custom "Delete your custom applications via the Dynatrace web UI or API.")
+* [Delete a mobile application in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/additional-configuration/delete-application-mobile "Delete your mobile applications via the Dynatrace web UI or API.")
+* [Delete a custom application in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/custom-applications/additional-configuration/delete-application-custom "Delete your custom applications via the Dynatrace web UI or API.")

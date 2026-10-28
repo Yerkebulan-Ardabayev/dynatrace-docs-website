@@ -46,26 +46,26 @@ Memory dumps come from OneAgents and thus can be considered a part of the routin
 #### Memory dumps
 
 (module: [Memory dumps](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#mem_dump_mod "Learn which ActiveGate properties you can configure based on your needs and requirements."))
-Dynatrace supports both automatic and manual capture and analysis of [memory dumps](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis "Learn how Dynatrace enables you to trigger, download and analyze memory dumps for Java and Node.js.") on monitored hosts. Memory dumps need to be stored in a centralized location for download and analysis. Since such dumps are often large and can contain sensitive data, Dynatrace doesn't allow you to upload dumps to the Dynatrace cluster in the cloud. Instead you should set up an ActiveGate and configure it to serve as a host for memory dumps. The Dynatrace UI provides you with download URLs for the ActiveGate REST API that serves the dumps.
+Dynatrace supports both automatic and manual capture and analysis of [memory dumps](/managed/observe/application-observability-classic/profiling-and-optimization-classic/memory-dump-analysis "Learn how Dynatrace enables you to trigger, download and analyze memory dumps for Java and Node.js.") on monitored hosts. Memory dumps need to be stored in a centralized location for download and analysis. Since such dumps are often large and can contain sensitive data, Dynatrace doesn't allow you to upload dumps to the Dynatrace cluster in the cloud. Instead you should set up an ActiveGate and configure it to serve as a host for memory dumps. The Dynatrace UI provides you with download URLs for the ActiveGate REST API that serves the dumps.
 
 ## Monitor cloud environments and remote technologies
 
 #### AWS monitoring
 
 (module: [AWS](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#aws-monitoring "Learn which ActiveGate properties you can configure based on your needs and requirements."))
-[AWS service monitoring](/managed/observe/infrastructure-observability/cloud-platform-monitoring-classic/aws-monitoring-classic "Monitor AWS with Dynatrace") is a resource-intensive task. Therefore, to monitor more than 2,000 AWS resources, you must install an ActiveGate and configure AWS monitoring.
+[AWS service monitoring](/managed/observe/infrastructure-observability-classic/cloud-platform-monitoring-classic/aws-monitoring-classic "Monitor AWS with Dynatrace") is a resource-intensive task. Therefore, to monitor more than 2,000 AWS resources, you must install an ActiveGate and configure AWS monitoring.
 
 #### Cloud Foundry monitoring
 
 (module: [Cloud Foundry](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#cf_mod "Learn which ActiveGate properties you can configure based on your needs and requirements."))
-To connect your Cloud Foundry foundations to Dynatrace, you're required to install an ActiveGate instance to complement Cloud Foundry process- and host-level metrics collected by Dynatrace OneAgent with additional metadata and metrics pulled from the Cloud Foundry API. This integration allows you to use the [Cloud Foundry overview page](/managed/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring/cloud-foundry-metrics "Available metrics for monitoring your Cloud Foundry clusters with Dynatrace") as well as the automatic detection of your Cloud Foundry organizations in addition to other Cloud Foundry process properties like `space`, `space ID`, `application`, `application ID`, and `instance index`.
+To connect your Cloud Foundry foundations to Dynatrace, you're required to install an ActiveGate instance to complement Cloud Foundry process- and host-level metrics collected by Dynatrace OneAgent with additional metadata and metrics pulled from the Cloud Foundry API. This integration allows you to use the [Cloud Foundry overview page](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/cloud-foundry-monitoring/cloud-foundry-metrics "Available metrics for monitoring your Cloud Foundry clusters with Dynatrace") as well as the automatic detection of your Cloud Foundry organizations in addition to other Cloud Foundry process properties like `space`, `space ID`, `application`, `application ID`, and `instance index`.
 
 #### Kubernetes/OpenShift monitoring
 
 Environment ActiveGates only
 
 (module: [Kubernetes](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#k8s_mod "Learn which ActiveGate properties you can configure based on your needs and requirements."))
-To connect your Kubernetes/OpenShift clusters to Dynatrace to take advantage of the dedicated [Kubernetes/OpenShift overview page](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-cluster-utilization-kubernetes "Monitor the health and utilization of your Kubernetes/OpenShift cluster resources."), you need to run an ActiveGate in your environment.
+To connect your Kubernetes/OpenShift clusters to Dynatrace to take advantage of the dedicated [Kubernetes/OpenShift overview page](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/kubernetes-monitoring/monitor-cluster-utilization-kubernetes "Monitor the health and utilization of your Kubernetes/OpenShift cluster resources."), you need to run an ActiveGate in your environment.
 
 #### Azure monitoring
 
@@ -87,7 +87,7 @@ Database insights adds an infrastructure perspective to your database monitoring
 #### Monitoring virtualized infrastructure
 
 (module: [VMware](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#vmware "Learn which ActiveGate properties you can configure based on your needs and requirements."))
-An ActiveGate can poll your [vCenter or standalone ESXi hosts](/managed/observe/infrastructure-observability/vmware-vsphere-monitoring "Monitor VMware vSphere with Dynatrace.") to obtain information about all important resources that ESXi servers provision to your virtual machines (for example, CPU usage, memory consumption, and data-store related activity on your VMware platform). To acquire this information, Dynatrace needs a component installed in your environment that has access to the vCenter API.
+An ActiveGate can poll your [vCenter or standalone ESXi hosts](/managed/observe/infrastructure-observability-classic/vmware-vsphere-monitoring-classic "Monitor VMware vSphere with Dynatrace.") to obtain information about all important resources that ESXi servers provision to your virtual machines (for example, CPU usage, memory consumption, and data-store related activity on your VMware platform). To acquire this information, Dynatrace needs a component installed in your environment that has access to the vCenter API.
 
 ## Dynatrace API
 
@@ -97,7 +97,7 @@ ActiveGate supports calls to all the endpoints of the v1 as well as v2 versions 
 #### Log Monitoring
 
 (module: [Log Monitoring](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#logdiskbuffer "Learn which ActiveGate properties you can configure based on your needs and requirements."))
-With [Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") as a part of the Dynatrace platform, you gain direct access to the log content of all your mission-critical processes. You can create custom log metrics for smarter and faster troubleshooting. You will be able to understand log data in the context of your full stack, including real user impacts.
+With [Log Monitoring](/managed/analyze-explore-automate/log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") as a part of the Dynatrace platform, you gain direct access to the log content of all your mission-critical processes. You can create custom log metrics for smarter and faster troubleshooting. You will be able to understand log data in the context of your full stack, including real user impacts.
 
 #### Metric ingestion
 
@@ -122,4 +122,4 @@ You can send [OpenTelemetry log data](/managed/ingest-from/opentelemetry/otlp-ap
 #### Real User Monitoring
 
 (module: [Beacon forwarder](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#bf_mod "Learn which ActiveGate properties you can configure based on your needs and requirements."))
-Dynatrace infrastructure can be used as the default [beacon endpoint for the agentless monitoring of your applications](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server."). Auto-injected applications send the beacon back to the customer's web server, bypassing the need for a third-party domain. However, when required, such applications can also use the Dynatrace infrastructure as an endpoint for RUM monitoring signals.
+Dynatrace infrastructure can be used as the default [beacon endpoint for the agentless monitoring of your applications](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server."). Auto-injected applications send the beacon back to the customer's web server, bypassing the need for a third-party domain. However, when required, such applications can also use the Dynatrace infrastructure as an endpoint for RUM monitoring signals.

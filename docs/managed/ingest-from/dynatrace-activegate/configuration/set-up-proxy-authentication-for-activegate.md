@@ -439,7 +439,7 @@ proxy-user=username
 proxy-password=password
 ```
 
-**See also:** [How to set up an ActiveGate proxy for private Synthetic monitoring](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.")
+**See also:** [How to set up an ActiveGate proxy for private Synthetic monitoring](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/setting-up-proxy-for-private-synthetic "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.")
 
 ### ActiveGate proxy settings for AWS role-based access
 

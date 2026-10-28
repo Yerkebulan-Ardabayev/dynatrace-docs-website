@@ -129,8 +129,8 @@ You can also download and update your ActiveGate manually. You don't need to uni
 
 During an update, your ActiveGate configuration is preserved in the `custom.properties` and `launcheruserconfig.conf` files. These two files will not be overwritten during an update, but it's good practice to back them up before updating the ActiveGate.
 
-* See [Configure ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate "Learn which ActiveGate properties you can configure based on your needs and requirements.") for `custom.properties` file properties.
-* See [Configure ActiveGate launcher](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate "Learn which ActiveGate properties you can configure based on your needs and requirements.") for `launcheruserconfig.conf` properties.
+* See [Configure ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#basic-rules "Learn which ActiveGate properties you can configure based on your needs and requirements.") for `custom.properties` file properties.
+* See [Configure ActiveGate launcher](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#launcheruserconfig-conf "Learn which ActiveGate properties you can configure based on your needs and requirements.") for `launcheruserconfig.conf` properties.
 
 ## Update status
 

@@ -25,9 +25,9 @@ Traditional rich client applications, smart IoT applications, and even Alexa ski
 
 Slice, dice, and combine user sessions into meaningful segments based on shared characteristics.](/managed/observe/digital-experience/session-segmentation "Learn how to use Real User Monitoring to analyze user sessions across your applications.")[### Session Replay
 
-Capture and visually replay the complete digital experience of your application's users.](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")[### Synthetic Monitoring
+Capture and visually replay the complete digital experience of your application's users.](/managed/observe/digital-experience-classic/session-replay-classic "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")[### Synthetic Monitoring
 
-Monitor your application availability and performance as experienced by your customers around the world and around the clock.](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")[![Use cases](https://dt-cdn.net/images/icon-use-cases-9ac91e0c53.svg "Use cases")
+Monitor your application availability and performance as experienced by your customers around the world and around the clock.](/managed/observe/digital-experience-classic/synthetic-monitoring-classic "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")[![Use cases](https://dt-cdn.net/images/icon-use-cases-9ac91e0c53.svg "Use cases")
 
 ### Use cases
 

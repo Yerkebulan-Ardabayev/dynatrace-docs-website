@@ -15,7 +15,7 @@ Dynatrace allows automatic detection of cloud applications and workloads in your
 
 Cloud application and workload detection provides
 
-* Insights into your [Kubernetes namespaces, workloads, and pods](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-workloads-kubernetes "Enable Kubernetes/OpenShift workloads integration for Dynatrace monitoring.")
+* Insights into your [Kubernetes namespaces, workloads, and pods](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/kubernetes-monitoring/monitor-workloads-kubernetes "Enable Kubernetes/OpenShift workloads integration for Dynatrace monitoring.")
 * Container resource metrics for Kubernetes and Cloud Foundry containers
 * Version detection for services that run in Kubernetes workloads
 

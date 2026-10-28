@@ -19,9 +19,8 @@ Immutable release
 Lightweight release
 
 1. [Create a PaaS Token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
-2. [Deploy an Environment ActiveGate](/managed/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") (SaaS customers only).
-3. Locate the download URLs—check documentation for the [Deployment API](/managed/dynatrace-api/environment-api/deployment "Download OneAgent and ActiveGate installers via Dynatrace API."), which is part of the Environment API v1.
-4. Get the latest versions of the BOSH release.
+2. Locate the download URLs—check documentation for the [Deployment API](/managed/dynatrace-api/environment-api/deployment "Download OneAgent and ActiveGate installers via Dynatrace API."), which is part of the Environment API v1.
+3. Get the latest versions of the BOSH release.
 
    ```
    curl -X GET https://{api-url}/api/v1/deployment/boshrelease/versions/unix -H /
@@ -30,9 +29,7 @@ Lightweight release
 
    'Authorization: Api-Token {paas-token}'
    ```
-5. Download the BOSH release.
-
-   For Dynatrace SaaS, replace `{api-url}` with the address of the environment ActiveGate.
+4. Download the BOSH release.
 
    ```
    wget  -O dynatrace-release.tgz --header="Authorization: Api-Token {paas-token}" /
@@ -51,9 +48,7 @@ Lightweight release
 
    https://{api-url}/api/v1/deployment/boshrelease/agent/windows/version/{version}?skipMetadata=true
    ```
-6. Confirm the checksum of the release.
-
-   For Dynatrace SaaS, replace `{api-url}` with the address of the environment ActiveGate.
+5. Confirm the checksum of the release.
 
    ```
    curl -H "Authorization: Api-Token {paas-token}"  /
@@ -98,25 +93,15 @@ Lightweight release
 
    # sha256sum: WARNING: 1 computed checksum did NOT match
    ```
-7. Ensure that your BOSH CLI is successfully connected to the BOSH Director. For details, see the Cloud Foundry or VMware Tanzu documentation.
-8. Upload the BOSH release of OneAgent to the BOSH Director.
+6. Ensure that your BOSH CLI is successfully connected to the BOSH Director. For details, see the Cloud Foundry or VMware Tanzu documentation.
+7. Upload the BOSH release of OneAgent to the BOSH Director.
 
    ```
    bosh -e my-env upload-release PATH-TO-BINARY/dynatrace-release.tgz
    ```
-9. Create a runtime configuration named `runtime-config-dynatrace.yml` and adapt the settings according to your environment:
+8. Create a runtime configuration named `runtime-config-dynatrace.yml` and adapt the settings according to your environment:
 
    * The `apiurl` key:
-
-   For Dynatrace SaaS, where OneAgent can connect to the internet
-
-   Replace the Dynatrace `ENVIRONMENTID` in `https://ENVIRONMENTID.live.dynatrace.com/api` with your own environment ID.
-
-   For Dynatrace SaaS, where OneAgent can't connect to the internet
-
-   Use `https://YourActiveGateIP` or `FQDN:9999/e/<ENVIRONMENTID>/api` to download the OneAgent, as well as to communicate OneAgent traffic through the ActiveGate.
-
-   We recommend that you use an ActiveGate as a connection endpoint. By default, ActiveGates have a self-signed certificate. However, if you prefer to use a trusted CA rather than the self-signed certificate, or if you're getting SSL errors during install after switching to the ActiveGate endpoint, follow the [instructions on how to properly set up your ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate "Learn how to configure the SSL certificate on your ActiveGate.").
 
    For Dynatrace Managed
 
@@ -127,7 +112,7 @@ Lightweight release
 
    * Optional Configure network zones:  
      To configure network zones, use the following installer argument: `--set-network-zone=<your.network.zone>`.  
-     See [network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+     See [network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.") for more information.
 
    ```
    releases:
@@ -320,18 +305,18 @@ Lightweight release
 
    lifecycle: errand
    ```
-10. Update the BOSH Director runtime configuration.
+9. Update the BOSH Director runtime configuration.
 
-    Replace `PATH` with the path to the `runtime-config-dynatrace.yml` file.
+   Replace `PATH` with the path to the `runtime-config-dynatrace.yml` file.
 
-    ```
-    bosh -e my-env update-runtime-config PATH/runtime-config-dynatrace.yml
-    ```
+   ```
+   bosh -e my-env update-runtime-config PATH/runtime-config-dynatrace.yml
+   ```
 
-    This runtime configuration applies to all new BOSH deployments going forward.
+   This runtime configuration applies to all new BOSH deployments going forward.
 
-    If you have multiple BOSH runtime configurations with different OneAgent versions, you must delete the older ones using `bosh delete-config`.
-11. Deploy your changes.
+   If you have multiple BOSH runtime configurations with different OneAgent versions, you must delete the older ones using `bosh delete-config`.
+10. Deploy your changes.
 
     Since existing BOSH deployments won’t be automatically updated with the jobs specified in the runtime configuration, you need to redeploy them so that BOSH rolls out the OneAgent.
 
@@ -354,16 +339,6 @@ The latest OneAgent release can be controlled in the [OneAgent updates](/managed
 
    * The `apiurl` key:
 
-   For Dynatrace SaaS, where OneAgent can connect to the internet
-
-   Replace the Dynatrace `ENVIRONMENTID` in `https://ENVIRONMENTID.live.dynatrace.com/api` with your own environment ID.
-
-   For Dynatrace SaaS, where OneAgent can't connect to the internet
-
-   Use `https://YourActiveGateIP` or `FQDN:9999/e/<ENVIRONMENTID>/api` to download the OneAgent, as well as to communicate OneAgent traffic through the ActiveGate.
-
-   We recommend that you use an ActiveGate as a connection endpoint. By default, ActiveGates have a self-signed certificate. However, if you prefer to use a trusted CA rather than the self-signed certificate, or if you're getting SSL errors during install after switching to the ActiveGate endpoint, follow the [instructions on how to properly set up your ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate "Learn how to configure the SSL certificate on your ActiveGate.").
-
    For Dynatrace Managed
 
    Use `https://YourActiveGateIP`, or `FQDN/e/<ENVIRONMENTID>/api`, or the server IP address of your ActiveGate to connect to your server directly.  
@@ -373,7 +348,7 @@ The latest OneAgent release can be controlled in the [OneAgent updates](/managed
 
    * Optional Configure network zones:  
      To configure network zones, use the following installer argument: `--set-network-zone=<your.network.zone>`.  
-     See [network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+     See [network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.") for more information.
 
    ```
    releases:
@@ -667,5 +642,5 @@ The latest OneAgent release can be controlled in the [OneAgent updates](/managed
 
 ## Related topics
 
-* [Cloud Foundry monitoring](/managed/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")
+* [Cloud Foundry monitoring](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")
 * [OneAgent platform and capability support matrix](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

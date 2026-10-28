@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/rum
 * Reference
 * Updated on Oct 08, 2025
 
-Returns the most recent [JavaScript tag](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes a reference to an external file that contains both the monitoring code and its configuration.
+Returns the most recent [JavaScript tag](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/snippet-formats#js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes a reference to an external file that contains both the monitoring code and its configuration.
 
 |  |  |  |
 | --- | --- | --- |
@@ -39,4 +39,4 @@ To learn how to obtain and use it, see [Personal access tokens](/managed/discove
 
 ## Response
 
-The response includes a `text/plain` payload containing the most recent version of the [JavaScript tag](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.
+The response includes a `text/plain` payload containing the most recent version of the [JavaScript tag](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/snippet-formats#js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.

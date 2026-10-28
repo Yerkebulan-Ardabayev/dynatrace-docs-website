@@ -49,7 +49,7 @@ Dynamic filters narrow the dashboard further from its filter bar. A filter can o
 
 Individual filters on a dashboard are combined with AND. Tag filters and custom dimension filters for the same dimension key or entity are combined with OR. Several filters, whether predefined or for another custom dimension, are also combined with AND.
 
-Custom dimension filters and generic tag filters apply only to tiles that you create in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") and pin to the dashboard. They don't apply to standard tiles that you drag to the dashboard from the **Tiles** pane in the dashboard editor, or that you pin from another page such as **Hosts**.
+Custom dimension filters and generic tag filters apply only to tiles that you create in [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") and pin to the dashboard. They don't apply to standard tiles that you drag to the dashboard from the **Tiles** pane in the dashboard editor, or that you pin from another page such as **Hosts**.
 
 Explicit filters and dynamic filters behave differently:
 

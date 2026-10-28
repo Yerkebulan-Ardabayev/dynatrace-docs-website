@@ -46,7 +46,7 @@ NAM has been improved by adding support for a custom device and more in `targetF
 * `extensionName`
 * `tags`
 
-For more examples, see [Target filter](/managed/observe/digital-experience/synthetic-monitoring/network-availability-monitors/configure-nam-managed#target-filter "Learn how to set up and manage a NAM monitor to check the performance and availability of your site.").
+For more examples, see [Target filter](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/network-availability-monitors/configure-nam-managed#target-filter "Learn how to set up and manage a NAM monitor to check the performance and availability of your site.").
 
 ### Kubernetes deployment: additional scopes
 
@@ -69,7 +69,7 @@ The tagging worker process is responsible for assigning tags, management zones, 
 * Check the runtimes of this worker split for tagging, management zones, and naming rules.
 * See the slowest applied rules during the worker run, which is important for scaling rules.
 
-For more about tagging, see [Best practices for scaling tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
+For more about tagging, see [Best practices for scaling tagging and management-zone rules](/managed/manage/tags-and-metadata-classic/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
 
 ### Improved Cassandra CPU in some deployments
 

@@ -140,4 +140,5 @@ This contains all relevant Managed and/or SaaS capabilities.
 
 ## Related topics
 
+* [Overview (DPS for Hybrid)](/managed/manage/account-management/license-subscription/subscription-overview-dps-hybrid "View your DPS for Hybrid budget summary and cost analysis.")
 * [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.")

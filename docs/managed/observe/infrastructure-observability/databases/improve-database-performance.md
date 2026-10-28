@@ -144,4 +144,4 @@ Most often, over-stressed processes start dropping packets when resources are de
 
 ## Related topics
 
-* [Host monitoring with Dynatrace](/managed/observe/infrastructure-observability/hosts/monitoring/host-monitoring "Monitor hosts with Dynatrace.")
+* [Host monitoring with Dynatrace](/managed/observe/infrastructure-observability-classic/hosts-classic/monitoring/host-monitoring "Monitor hosts with Dynatrace.")

@@ -292,7 +292,7 @@ To install OneAgent, you need two configuration files:
 
 ## Configure network zones Optional
 
-To configure network zones, use the following argument: `--set-network-zone=<your.network.zone>`. See [network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+To configure network zones, use the following argument: `--set-network-zone=<your.network.zone>`. See [network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.") for more information.
 
 ## Monitoring consumption
 

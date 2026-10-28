@@ -1,0 +1,174 @@
+---
+title: Service analysis in Services
+source: https://docs.dynatrace.com/managed/observe/application-observability-classic/services-classic/services-page/service-analysis-new
+---
+
+# Service analysis in Services
+
+# Service analysis in Services
+
+* How-to guide
+* 6-min read
+* Updated on Jul 17, 2023
+
+All services detected by Dynatrace in your environment are displayed on the **Services** page. You can analyze each service and drill down to code-level information.
+
+![Services list](https://dt-cdn.net/images/services-page-1504-133c9f1b72.png)
+
+Services list
+
+To get there
+
+1. Go to **Services**.
+2. Select a service name in the list to go to that service's overview page.
+
+![Service overview with Unified Analysis new design](https://dt-cdn.net/images/service-overview-new-design-1768-fe1ab99c85.png)
+
+Service overview with Unified Analysis new design
+
+Each **Service** page lists the most important information for that service. All relevant service metrics are shown on a single page, which is divided into several logical sections. Other panes of the service overview page show service performance and serve as entry points to deeper analysis.
+
+## Notifications bar
+
+The service notifications bar gives you a quick overview of the service state. Select a notification item to display more information.
+
+### Properties and tags
+
+Select **Properties and tags** on the notifications bar to display the **Properties and tags** panel, which displays metadata about the selected service:
+
+* **Tags** lists tags currently applied to the service.  
+  Select **Add Tag** to add a tag to the service metadata.
+* **Properties** lists various service properties, such as application name, service type, technologies, and management zones.
+
+### Problems
+
+* On the notifications bar, **Problems** indicates active and closed problems related to the selected service.
+* Select **Problems** on the notifications bar to display the **Problems** panel, which lists the problems.
+
+  + Select a problem to display details.
+  + Select **Go to problems** to go to the [Problems](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.") page filtered by the selected service.
+
+### SLOs
+
+* On the notifications bar, **SLOs** indicates the current number of [SLOs](/managed/analyze-explore-automate/service-level-objectives-classic "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.") related to the selected service.
+* Select **SLOs** on the notifications bar to display the **Service-level objectives** panel, which lists SLOs that are directly or indirectly connected to the service.
+
+#### Directly connected SLOs
+
+* An SLO is directly connected to a service when the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") of an SLO meets the following criteria:
+
+  + The entity type is set to `"SERVICE"`.
+  + The entity ID is set to the service ID.
+* To see only SLOs that are directly connected to the service, make sure that **Show only directly connected SLOs** is turned on.
+
+#### Indirectly connected SLOs
+
+* An SLO isn't directly connected to a service when, in the [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Learn the Environment API v2 entity selector syntax for filtering monitored entities by type, name, tag, management zone, and health state.") of an SLO, no entity ID is provided.
+
+  Example: When generic values, such as `type("SERVICE"),tag("slo")` are provided, the query results in all SLOs for all services, including the current service.
+* To see SLOs that are not directly connected to the service, turn off **Show only directly connected SLOs**.
+
+#### Options
+
+* Expand **Details** to view a chart of the respective SLO metrics.
+* In **Actions**, select
+
+  + **View in Data Explorer** to [see SLO metrics in Data Explorer](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#explorer "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **Pin to Dashboard** to [pin the SLO to your dashboard](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#dash "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **SLO definition** to edit the SLO in **Service-level objective definitions**.
+  + **Clone** to [clone the SLO](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#clone "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **Create alert** to [create an alert for the SLO](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#alerts "Create, configure, and monitor service-level objectives with Dynatrace.").
+
+#### No SLOs
+
+If no SLOs are found, you can
+
+* Select a different timeframe in the upper-right corner.
+
+  ![Timeframe selector: menu bar](https://dt-cdn.net/images/timeframe-selector-menu-bar-264-8193110c8c.png)
+
+  Timeframe selector: menu bar
+* Select **Add SLO** to create an SLO in the [SLO wizard](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#wizard "Create, configure, and monitor service-level objectives with Dynatrace.").
+
+### Owners
+
+Select **Owners** on the notifications bar to display the **Ownership** panel, which lists [owners](/managed/deliver/ownership "Map team ownership to monitored entities for better collaboration, task assignment, incident and vulnerability response, and service-level management.") of the selected service.
+
+* Select  to learn more about a current ownership.
+* To add an ownership, select **Add a new Ownership tag**.
+
+## Performance
+
+### Service overview
+
+You can configure the **Service overview** card to focus on various metrics of the service performance.
+
+* In the **Service overview**, you can
+
+  + See the service in Smartscape by selecting **Smartscape view** .
+  + Analyze **Response time hotspots**, **Details of failures**, and method hotspots.
+  + Compare service request performance indicators, such us response time, failures, CPU, and load, based on different timeframes.
+* For each metric, you can select **More** (**…**) and
+
+  + Analyze the metric in Data Explorer.
+  + Create a metric event.
+  + Pin the metric to a dashboard. For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
+
+### Endpoints
+
+Unified service
+
+The **Endpoints** card offers an overview of the monitored service endpoints.
+
+* To analyze an endpoint metrics, in the **Details** column select .
+* To analyze an endpoint distributed traces, in the **Actions** column select **More** (**…**) > **View distributed traces**.
+
+Data availability depends on endpoint metrics, which consume DDUs. To get started on endpoint monitoring, see [Manage endpoint monitoring](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v1/service-types/unified-service#endpoint-monitoring "Define services on observability signals ingested via Trace ingest APIs.").
+
+### Service mesh metrics
+
+Unified service
+
+If a service mesh is detected in your application, service mesh metrics are displayed for the related service. [ISTIO logs and metrics](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/kubernetes-monitoring/monitor-istio-metrics "Istio metric ingestion and topology detection") are enriched with service mesh ID, putting data into context. Note that service mesh metrics are created from ingested service mesh traces.
+
+### Key requests
+
+The **Key requests** card offers an overview of the key requests found for the service in the selected timeframe. You can quickly access analysis for other requests related to the services such as:
+
+* [**View all requests**](/managed/observe/application-observability-classic/services-classic/services-page#charts "Learn about Dynatrace's service monitoring.")
+* [**Top web requests**](/managed/observe/application-observability-classic/multidimensional-analysis-classic/top-web-requests "Learn how to analyze all web requests across all of your services using Dynatrace.")
+* [**View outliers**](/managed/observe/application-observability-classic/services-classic/services-page/response-time-distribution-and-outlier-analysis#outlier-analysis "Gain insights into the distribution of response times across all requests, including those that are either unusually high or unusually low.")
+
+### Topology
+
+In the **Topology** card, you can learn
+
+* Which services are calling and which are called by the service.  
+  Select **Related services** to understand the service relation. Expand **Details** to view a chart of the respective service metrics. You can quickly access further analysis options such as [**View backtrace**](/managed/observe/application-observability-classic/services-classic/services-page/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.") and [**Service flow**](/managed/observe/application-observability-classic/services-classic/services-page/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.").
+* On which processes and hosts the service is running on.  
+  Expand **Details** to view a chart of the respective process metrics. Select the name of the process to analyze it deeper.
+* Which HTTP monitors and (mobile) applications are calling the service.  
+  Select the name of a calling entity to analyze it deeper.
+
+![Topology - Service overview](https://dt-cdn.net/images/topology-services-2886-fc9dda7f82.png)
+
+Topology - Service overview
+
+### Distributed traces
+
+The **Distributed traces** card provides an overview of the most recent traces, depending on the selected timeframe. Select **Full search** to directly access the [distributed traces overview for the service](/managed/observe/application-observability-classic/distributed-traces-classic/analysis/get-started "Get started with distributed trace analysis in Dynatrace.").
+
+### Events
+
+Contains a list of [events](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation "Gain an understanding of the Events section on each host, process, and service overview page.") that affect the service in the current timeframe.
+
+### Related logs
+
+Contains a list of [logs](/managed/analyze-explore-automate/log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") related to the service in the current timeframe.
+
+* To analyze all the logs for the related service, select **Go to logs** .
+* To analyze a specific log, expand **Details**. If a trace or a user session is found for the log line, you can directly access it from this view.
+
+## Related topics
+
+* [Unified analysis pages](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend Dynatrace unified analysis pages with custom cards to surface metrics, logs, events, and metadata for any entity type in one focused view.")

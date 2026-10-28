@@ -7,7 +7,7 @@ source: https://docs.dynatrace.com/managed/upgrade/up-get-started
 
 # Overview
 
-* Published Apr 24, 2023
+* Updated on Oct 27, 2026
 
 The purpose of this guide is to enable a self-service approach to upgrading from a Dynatrace Managed deployment to a Dynatrace SaaS deployment. We provide a proven upgrade process, along with all the instructions, tools and support resources you need to successfully run your upgrade.
 
@@ -79,7 +79,7 @@ Review and optimize for your use cases and internal processes. Finally, it's tim
 
 Questions?
 
-Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/c/platform/upgrade-to-saas/92) to ask questions, get answers, and share what you've learned with others.
 
 ## Related topics
 

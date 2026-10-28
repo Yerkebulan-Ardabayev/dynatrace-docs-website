@@ -16,7 +16,7 @@ With Dynatrace, you can monitor the VSAM and BDAM file access calls from your CI
 
 File access on the Database page
 
-The [Distributed traces](/managed/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") page lists the file operations and logical file names that are being accessed on the [PurePath method-level](/managed/observe/application-observability/distributed-traces/use-cases/segment-request "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces."). The file operations are aggregated per logical file name (for example, in the image below, the `READNEXT` operation was executed 21 times on the file `EXMPCAT`).
+The [Distributed traces](/managed/observe/application-observability-classic/distributed-traces-classic "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") page lists the file operations and logical file names that are being accessed on the [PurePath method-level](/managed/observe/application-observability-classic/distributed-traces-classic/use-cases/segment-request "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces."). The file operations are aggregated per logical file name (for example, in the image below, the `READNEXT` operation was executed 21 times on the file `EXMPCAT`).
 
 ![File access calls in the Distributed traces page](https://dt-cdn.net/images/file-sensor-pp-3142-684de155b6.png)
 

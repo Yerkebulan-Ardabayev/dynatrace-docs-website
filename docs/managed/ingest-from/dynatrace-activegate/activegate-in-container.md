@@ -1680,4 +1680,4 @@ To achieve better performance, we highly recommend applying the steps above.
 
 ActiveGate version 1.315+
 
-There is a dedicated, FIPS-compliant ActiveGate image available. See [ActiveGate FIPS compliance](/managed/ingest-from/dynatrace-activegate/activegate-fips-compliance "Learn about ActiveGate FIPS compliance") for information on requirements, limitations, where to get the image, and how to verify the deployment.
+There is a dedicated, FIPS-compliant ActiveGate image available. See [ActiveGate FIPS compliance (Dynatrace Classic)](/managed/ingest-from/dynatrace-activegate/activegate-fips-compliance "Learn about ActiveGate FIPS compliance") for information on requirements, limitations, where to get the image, and how to verify the deployment.

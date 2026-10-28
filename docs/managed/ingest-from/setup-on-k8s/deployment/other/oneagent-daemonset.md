@@ -226,7 +226,7 @@ This is your `ONEAGENT_INSTALLER_SCRIPT_URL`.
 
    * `ONEAGENT_INSTALLER_DOWNLOAD_TOKEN` is only needed for OneAgent container image versions 1.39+ and is ignored for earlier versions.
    * The `--set-app-log-content-access` parameter is passed to the OneAgent installer and, when set to `true` (or `1`), allows OneAgent to access log files for the purpose of log monitoring. For more about this and other parameters, see [Customize OneAgent installation on Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").
-   * You can configure network zones by setting the `--set-network-zone=<your.network.zone>` parameter. See [network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+   * You can configure network zones by setting the `--set-network-zone=<your.network.zone>` parameter. See [network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.") for more information.
 2. Deploy Dynatrace OneAgent using the created file `dynatrace-oneagent.yml`.
 
    Kubernetes
@@ -356,7 +356,7 @@ This is your `ONEAGENT_INSTALLER_SCRIPT_URL`.
 
 ## Limitations
 
-* When you set up Kubernetes/OpenShift monitoring with DaemonSet, the shutdown state of the host is not detected. For details, see [Host availability states](/managed/observe/infrastructure-observability/hosts/monitoring/host-monitoring/host-availability#states "Check host availability, interpret host availability states, and see how maintenance windows are reflected in host availability charts.").
+* When you set up Kubernetes/OpenShift monitoring with DaemonSet, the shutdown state of the host is not detected. For details, see [Host availability states](/managed/observe/infrastructure-observability-classic/hosts-classic/monitoring/host-monitoring/host-availability#states "Check host availability, interpret host availability states, and see how maintenance windows are reflected in host availability charts.").
 * See [Docker limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container.").
 
 ## Connect your Kubernetes clusters to Dynatrace

@@ -38,13 +38,13 @@ Effective customer support with session segmentation
 
 ## Find the problematic session
 
-After receiving customer feedback, the first important step is to check the problematic [user session](/managed/observe/digital-experience/rum-classic/rum-concepts/user-session "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.") to understand what went wrong. If you've leveraged [user tagging](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace."), it's very easy to find the session of the person who submitted a support ticket. With user tags, which are comprised of a username, nickname, or email, you can analyze a specific user's behavior and experience via [user session analysis](/managed/observe/digital-experience/rum-classic/session-segmentation/user-sessions "Learn about user session segmentation and filtering attributes.").
+After receiving customer feedback, the first important step is to check the problematic [user session](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-session "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.") to understand what went wrong. If you've leveraged [user tagging](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace."), it's very easy to find the session of the person who submitted a support ticket. With user tags, which are comprised of a username, nickname, or email, you can analyze a specific user's behavior and experience via [user session analysis](/managed/observe/digital-experience-classic/rum-classic/session-segmentation/user-sessions "Learn about user session segmentation and filtering attributes.").
 
 To view problematic user sessions of a particular user
 
 1. In Dynatrace, go to **Session Segmentation**.
 2. Use the [timeframe selector](/managed/analyze-explore-automate/dashboards/how-dashboards-scope-and-refresh-data "Learn how timeframe, management zone, and dynamic filter settings decide which data dashboard tiles show, and how often each tile refreshes.") in the upper-right corner of the page to set the analysis timeframe to the date and time when the issue occurred.
-3. Select the **Filter by** box at the top of the page, and set the following [filtering attributes](/managed/observe/digital-experience/rum-classic/session-segmentation/user-sessions#session-segmentation-filters "Learn about user session segmentation and filtering attributes."). Once you select an attribute, the possible values for that attribute are displayed.
+3. Select the **Filter by** box at the top of the page, and set the following [filtering attributes](/managed/observe/digital-experience-classic/rum-classic/session-segmentation/user-sessions#session-segmentation-filters "Learn about user session segmentation and filtering attributes."). Once you select an attribute, the possible values for that attribute are displayed.
 
    * **Application**: **<your application name>**
    * **User tag**: **<tag of the user who reported the issue>**
@@ -62,7 +62,7 @@ Session list with a filtered out session
 
 ## Explore the session details
 
-The session details page provides valuable information on the user session, for example, the session start time, duration, and [user experience score](/managed/observe/digital-experience/rum-classic/rum-concepts/scores-and-ratings/user-experience-score "User experience score is a metric used to categorize user sessions as Frustrating, Tolerable, or Satisfying."). On this page, you can also find important device-related information such as the screen resolution, browser, operating system, IP address, and more.
+The session details page provides valuable information on the user session, for example, the session start time, duration, and [user experience score](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/scores-and-ratings/user-experience-score "User experience score is a metric used to categorize user sessions as Frustrating, Tolerable, or Satisfying."). On this page, you can also find important device-related information such as the screen resolution, browser, operating system, IP address, and more.
 
 ![Session details - overview](https://dt-cdn.net/images/session-details-overview-2572-a75b75baba.png)
 
@@ -73,19 +73,19 @@ Session details - overview
   ![Session details - timeline](https://dt-cdn.net/images/session-details-timeline-2572-cb5979cee6.png)
 
   Session details - timeline
-* Scroll down to the **Events and actions** section to see what [actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.") the user performed and what [user and error events](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events "Learn about user and error events and the types of user and error events captured by Dynatrace.") happened during the session.
+* Scroll down to the **Events and actions** section to see what [actions](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.") the user performed and what [user and error events](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-and-error-events "Learn about user and error events and the types of user and error events captured by Dynatrace.") happened during the session.
 
   ![Session details - events and actions](https://dt-cdn.net/images/session-details-events-and-actions-2572-53614392e0.png)
 
   Session details - events and actions
-* Filter actions and events by action type, [Apdex rating](/managed/observe/digital-experience/rum-classic/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance."), [error type](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#error "Learn about user and error events and the types of user and error events captured by Dynatrace."), or even [conversion goal](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/define-conversion-goals "Learn how to analyze conversion goals for specific user actions to understand how successfully you're meeting your conversion milestones.").
+* Filter actions and events by action type, [Apdex rating](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance."), [error type](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-and-error-events#error "Learn about user and error events and the types of user and error events captured by Dynatrace."), or even [conversion goal](/managed/observe/digital-experience-classic/rum-classic/web-applications/analyze-and-use/define-conversion-goals "Learn how to analyze conversion goals for specific user actions to understand how successfully you're meeting your conversion milestones.").
 
   ![Session details - filter by different parameters](https://dt-cdn.net/images/session-details-filter-by-2572-c48481918a.png)
 
   Session details - filter by different parameters
 * **Expand**  the required action or event to view more details.
 
-  In our example, you can see that a request error happened during the `loading of page /cart/checkout` [load action](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions#load-action "Learn what user actions are and how they help you understand what users do with your application."), and the Apdex rating for this action is **Frustrating**.
+  In our example, you can see that a request error happened during the `loading of page /cart/checkout` [load action](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-actions#load-action "Learn what user actions are and how they help you understand what users do with your application."), and the Apdex rating for this action is **Frustrating**.
 
   ![Session details - action details](https://dt-cdn.net/images/session-details-action-details-separated-2572-e1bd2d75c9.png)
 
@@ -93,7 +93,7 @@ Session details - overview
 
 ## Watch the session recording
 
-A [Session Replay](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") recording, if available for a user session, offers an enhanced level of insight into your user's journey. Session Replay can capture and visually replay each click or tap made within your application, creating an immersive movie-like experience. This feature helps to resolve customer complaints, reproduce production issues, improve overall usability, or fix application bugs.
+A [Session Replay](/managed/observe/digital-experience-classic/session-replay-classic "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") recording, if available for a user session, offers an enhanced level of insight into your user's journey. Session Replay can capture and visually replay each click or tap made within your application, creating an immersive movie-like experience. This feature helps to resolve customer complaints, reproduce production issues, improve overall usability, or fix application bugs.
 
 To watch a session recording
 
@@ -109,7 +109,7 @@ Session details - session replay
 
 After watching the session recording, let's investigate the issue further using waterfall analysis and identify a specific request to blame.
 
-[Waterfall analysis](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/waterfall-analysis "Learn how to analyze all user action monitoring data through waterfall analysis.") proves to be invaluable in analyzing the performance of a user action and getting detailed information about various requests that comprise a user action. Waterfall graphs come in handy when you want to find a specific request that is responsible for failures or performance violations, while [top findings](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/waterfall-analysis#top-findings "Learn how to analyze all user action monitoring data through waterfall analysis.") streamline the captured data into easily understandable and actionable information, simplifying the troubleshooting process.
+[Waterfall analysis](/managed/observe/digital-experience-classic/rum-classic/web-applications/analyze-and-use/waterfall-analysis "Learn how to analyze all user action monitoring data through waterfall analysis.") proves to be invaluable in analyzing the performance of a user action and getting detailed information about various requests that comprise a user action. Waterfall graphs come in handy when you want to find a specific request that is responsible for failures or performance violations, while [top findings](/managed/observe/digital-experience-classic/rum-classic/web-applications/analyze-and-use/waterfall-analysis#top-findings "Learn how to analyze all user action monitoring data through waterfall analysis.") streamline the captured data into easily understandable and actionable information, simplifying the troubleshooting process.
 
 To view waterfall graphs for a user action
 
@@ -121,7 +121,7 @@ To view waterfall graphs for a user action
 
    Waterfall analysis
 
-   * Hover over the requests that happened during the action and check various [user action metrics](/managed/observe/digital-experience/rum-classic/rum-concepts/user-action-metrics "Learn what metrics Dynatrace calculates for user actions and find out what each metric indicates.").
+   * Hover over the requests that happened during the action and check various [user action metrics](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-action-metrics "Learn what metrics Dynatrace calculates for user actions and find out what each metric indicates.").
    * Select **Show all findings** to view and analyze all of them at once.
    * Select each finding to get additional information on it. When you select a finding, the associated requests and resources are highlighted in the waterfall.
 4. Select the **# Error** finding. The associated erroneous requests and resources are highlighted in the waterfall.
@@ -136,19 +136,19 @@ Waterfall analysis - failed request
 
 After you've grasped the summary of the situation from the **Waterfall analysis** view, it's time to drill down to code-level information. Let's view the distributed traces of the failed request to investigate the timing, code-level context, and downstream call details.
 
-[PurePath® technology](/managed/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") traces each web request through your application infrastructure, offering valuable insights into performance factors at the application level. For instance, if you see that one or two requests are consuming most of the action time, you can drill into the distributed trace to discern whether the issue stems from an abundance of database requests or a single slow one. With this data, you can enhance the application performance or conduct in-depth error analysis to optimize your system.
+[PurePath® technology](/managed/observe/application-observability-classic/distributed-traces-classic "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") traces each web request through your application infrastructure, offering valuable insights into performance factors at the application level. For instance, if you see that one or two requests are consuming most of the action time, you can drill into the distributed trace to discern whether the issue stems from an abundance of database requests or a single slow one. With this data, you can enhance the application performance or conduct in-depth error analysis to optimize your system.
 
 To view distributed traces of a request
 
 1. On the action waterfall analysis page, select the failed request, which is in red, and check the available details.
 2. Select **View trace** to navigate to the distributed traces page for that request.
-3. In the distributed traces list view, select a resource or request and drill down to the [available details](/managed/observe/application-observability/distributed-traces/use-cases/segment-request#pp-analysis "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.").
+3. In the distributed traces list view, select a resource or request and drill down to the [available details](/managed/observe/application-observability-classic/distributed-traces-classic/use-cases/segment-request#pp-analysis "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.").
 
 ![Distributed traces for the checkout request](https://dt-cdn.net/images/distributed-traces-3468-4f297a5b46.png)
 
 Distributed traces for the checkout request
 
-On the distributed traces page, you can check the response time, processing time, execution breakdown, and [request attributes](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."). When required, you can study the trace logs, view the failure details, or navigate to the [**Service flow**](/managed/observe/application-observability/services-classic/services-page/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") or [**Service backtrace**](/managed/observe/application-observability/services-classic/services-page/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.") view.
+On the distributed traces page, you can check the response time, processing time, execution breakdown, and [request attributes](/managed/observe/application-observability-classic/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."). When required, you can study the trace logs, view the failure details, or navigate to the [**Service flow**](/managed/observe/application-observability-classic/services-classic/services-page/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") or [**Service backtrace**](/managed/observe/application-observability-classic/services-classic/services-page/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.") view.
 
 By checking the **Logs** and **Errors** tabs on the distributed traces page, we've finally found out that there was an issue with Daniel Adams's credit card: its details were invalid.
 
@@ -166,7 +166,7 @@ Now that you know the whole story—what, when, and where—it's time to elimina
 
 ## Related topics
 
-* [User session analysis in RUM Classic](/managed/observe/digital-experience/rum-classic/session-segmentation/user-sessions "Learn about user session segmentation and filtering attributes.")
-* [Session Replay](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")
-* [Waterfall analysis in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/waterfall-analysis "Learn how to analyze all user action monitoring data through waterfall analysis.")
-* [Distributed Traces](/managed/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.")
+* [User session analysis in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/session-segmentation/user-sessions "Learn about user session segmentation and filtering attributes.")
+* [Session Replay](/managed/observe/digital-experience-classic/session-replay-classic "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")
+* [Waterfall analysis in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/web-applications/analyze-and-use/waterfall-analysis "Learn how to analyze all user action monitoring data through waterfall analysis.")
+* [Distributed Traces](/managed/observe/application-observability-classic/distributed-traces-classic "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.")

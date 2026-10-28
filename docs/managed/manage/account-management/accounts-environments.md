@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/account-management/accounts-en
 
 * Explanation
 * 2-min read
-* Published Mar 16, 2026
+* Updated on Oct 06, 2026
 
 This page describes how Dynatrace handles various administrative concepts, which are organized in hierarchical levels.
 These are, from the most general to the most specific:
@@ -62,16 +62,17 @@ For more information about how an environment works technically, see [What's a m
 You log into a Dynatrace environment as a Dynatrace user.
 
 Permissions are granted to Dynatrace users.
-Permissions let users, for example, administer Dynatrace accounts, configure Dynatrace deployments, or query Grail data.
+Permissions let users, for example, administer Dynatrace accounts or configure Dynatrace deployments.
 
 Permissions are granted at either the account level or the environment level.
 Account-level permissions apply to all environments in that account, while environment-level permissions apply only to that environment.
 
-For more about permissions, see [Identity and access management (IAM) (Dynatrace Classic)](/managed/manage/identity-access-management-classic "Configure users, groups and permissions.").
+For more about permissions, see [Identity and access management (IAM)](/managed/manage/identity-access-management-classic "Configure users, groups and permissions.").
 
 ## Related topics
 
 * [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.")
 * [Account Management](/managed/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
 * [Your license lifecycle](/managed/manage/account-management/accounts-environments/license-lifecycle "Understand your Dynatrace DPS or Classic license lifecycle, and how it affects your consumption of Dynatrace services.")
+* [Access management (Dynatrace Classic)](/managed/manage/identity-access-management-classic/permission-management "Permission management")
 * [User and group management](/managed/manage/identity-access-management/user-and-group-management "User and group management")

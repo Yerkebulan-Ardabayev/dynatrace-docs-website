@@ -784,7 +784,7 @@ For a local extension, the scope is a host, host group, or management zone for w
   "scope": "HOST_GROUP-AB123C4D567E890",
   ```
 
-  You can find the host group ID on the [host group settings page](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") URL. For example:
+  You can find the host group ID on the [host group settings page](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") URL. For example:
 
   ```
   https://{your-environment-id}.live.dynatrace.com/#settings/hostgroupconfiguration;id=HOST_GROUP-AB123C4D567E890;hostGroupName=my-host-group

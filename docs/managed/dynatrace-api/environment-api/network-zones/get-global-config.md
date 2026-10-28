@@ -143,4 +143,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [Network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.")
+* [Network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.")

@@ -120,11 +120,11 @@ Oracle database insights provide you with additional Oracle metrics related to m
 
 ### Data Explorer
 
-All the Oracle metrics fetched by Oracle database insights are available for [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
+All the Oracle metrics fetched by Oracle database insights are available for [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
 ### Wait and tablespace metrics
 
-You can also refer to the wait and tablespace metrics, which are available to be used in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
+You can also refer to the wait and tablespace metrics, which are available to be used in [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
 ### Oracle process groups
 

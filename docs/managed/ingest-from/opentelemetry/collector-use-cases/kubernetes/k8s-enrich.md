@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector-u
 
 * How-to guide
 * 3-min read
-* Updated on Sep 24, 2025
+* Updated on Oct 22, 2026
 
 The following configuration example shows how to configure a Collector instance to enrich OTLP telemetry data with additional Kubernetes metadata. This includes, for example, pod, deployment, and cluster details and allows Dynatrace to correctly map the provided telemetry data to the appropriate entities within Dynatrace.
 
@@ -22,6 +22,7 @@ Deploying ActiveGate enables Dynatrace to visualize Kubernetes and OpenTelemetry
 * One of the following Collector distributions with the [Kubernetes Attributes﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/k8sattributesprocessor) and [Transform﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/transformprocessor) processors:
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+  + The [Dynatrace Bindplane OTel Collector](/managed/ingest-from/bindplane-classic "Bindplane manages OpenTelemetry collector fleets at scale and controls telemetry volume at the edge before data reaches Dynatrace.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + A [custom Builder version](/managed/ingest-from/opentelemetry/collector#collector-builder "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
 * the OTel Collector deployed in [agent mode](/managed/ingest-from/opentelemetry/collector/deployment#dynatrace-docs--agent "How to deploy the Dynatrace OpenTelemetry Collector.")

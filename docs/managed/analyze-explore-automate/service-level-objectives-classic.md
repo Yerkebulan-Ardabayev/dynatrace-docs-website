@@ -28,7 +28,7 @@ You can
 
 * [Pin SLO tiles to your dashboard](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#dash "Create, configure, and monitor service-level objectives with Dynatrace.") to visualize their current state along with the remaining error budgets.
 * [Query and chart metrics in Data Explorer](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#explorer "Create, configure, and monitor service-level objectives with Dynatrace.").
-* Review a list of current SLOs on the [**Hosts**](/managed/observe/infrastructure-observability/hosts/monitoring/host-monitoring#slo "Monitor hosts with Dynatrace."), **Services**, and [**Kubernetes workload**](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-slos-kubernetes "Keep track of SLOs for Kubernetes/OpenShift.") details pages.
+* Review a list of current SLOs on the [**Hosts**](/managed/observe/infrastructure-observability-classic/hosts-classic/monitoring/host-monitoring#slo "Monitor hosts with Dynatrace."), **Services**, and [**Kubernetes workload**](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/kubernetes-monitoring/monitor-slos-kubernetes "Keep track of SLOs for Kubernetes/OpenShift.") details pages.
 
 ## Alerting
 

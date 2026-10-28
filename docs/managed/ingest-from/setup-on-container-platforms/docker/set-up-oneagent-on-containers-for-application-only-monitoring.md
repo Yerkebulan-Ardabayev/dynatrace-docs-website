@@ -87,7 +87,7 @@ Valid options here are `all`, `dotnet`, `php`, `java`, `apache`, `nginx`, `nodej
 
    * `DT_NETWORK_ZONE`: equals `your.network.zone`
 
-   See [network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+   See [network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.") for more information.
 4. Optional Configure a proxy address
 
    In case you run an environment with proxy, you need to set the `DT_PROXY` environment variable in the application container to pass the proxy credentials to OneAgent.

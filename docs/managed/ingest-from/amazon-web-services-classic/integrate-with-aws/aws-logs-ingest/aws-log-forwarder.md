@@ -59,7 +59,7 @@ If you're using an earlier version of Dynatrace, see [Alternative deployments](#
 
 ### Dynatrace
 
-* [Enable generic log ingestion](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
+* [Enable generic log ingestion](/managed/analyze-explore-automate/log-monitoring-classic/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
 * [Create an API token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") with **Ingest logs** (API v2) permission
 
 ### CLI

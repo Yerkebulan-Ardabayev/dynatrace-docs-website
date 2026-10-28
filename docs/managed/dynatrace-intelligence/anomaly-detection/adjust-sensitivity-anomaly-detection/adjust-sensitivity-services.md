@@ -128,7 +128,7 @@ There are, however, use cases for which parameterization of automatic baselining
 * To set a fixed threshold rather than a relative threshold for requests that have a defined timeout point.
 * To disable alerting for specific, non-business critical requests.
 
-Each of these use cases can now also be achieved by setting request-level thresholds for a [key web request](/managed/observe/application-observability/services-classic/services-page/monitor-key-requests "Discover how to closely monitor requests that are critical to your business."). To configure threshold for a key request
+Each of these use cases can now also be achieved by setting request-level thresholds for a [key web request](/managed/observe/application-observability-classic/services-classic/services-page/monitor-key-requests "Discover how to closely monitor requests that are critical to your business."). To configure threshold for a key request
 
 1. Go to **Services**.
 2. Select the service you want to configure.

@@ -56,7 +56,7 @@ Familiarize yourself with Dynatrace components that are deployed in your Kuberne
 
 Learn how you can configure Dynatrace Operator to support specific use cases.](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases")[### Get actionable answers
 
-Start to analyze your Kubernetes clusters and containerized Apps with Dynatrace and benefit from actionable answers.](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Monitor Kubernetes/OpenShift with Dynatrace.")
+Start to analyze your Kubernetes clusters and containerized Apps with Dynatrace and benefit from actionable answers.](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/kubernetes-monitoring "Monitor Kubernetes/OpenShift with Dynatrace.")
 
 ## Related topics
 

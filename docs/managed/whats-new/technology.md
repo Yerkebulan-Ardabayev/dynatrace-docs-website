@@ -8,13 +8,13 @@ source: https://docs.dynatrace.com/managed/whats-new/technology
 # New technology support
 
 * Reference
-* Updated on Oct 07, 2026
+* Updated on Oct 27, 2026
 
 Discover new technologies that can be monitored with Dynatrace, and how to get started. Included are OneAgent operating systems and code modules, mainframe, serverless integrations, and platform extensions.
 
 New technology support may require an opt-in via [OneAgent features](/managed/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.").
 
-You can find the [Technology support roadmap﻿](https://community.dynatrace.com/t5/Feedback-channel/Dynatrace-technology-support-roadmap/td-p/183451) in the Dynatrace Community.
+You can find the [Technology support roadmap﻿](https://community.dynatrace.com/t/dynatrace-technology-support-roadmap/34637) in the Dynatrace Community.
 
 Technology support version schema
 

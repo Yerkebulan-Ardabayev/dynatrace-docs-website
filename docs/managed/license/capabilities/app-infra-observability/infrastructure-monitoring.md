@@ -79,7 +79,7 @@ Originating hosts include:
   + OpenTelemetry metrics
   + Spring Micrometer
   + JMX
-  + [Prometheus metrics via ActiveGate](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.")
+  + [Prometheus metrics via ActiveGate](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.")
   + This doesn't include Metrics sent via the Dynatrace Collector or OpenTelemetry Collector.
 
 ##### Included metric data point calculation

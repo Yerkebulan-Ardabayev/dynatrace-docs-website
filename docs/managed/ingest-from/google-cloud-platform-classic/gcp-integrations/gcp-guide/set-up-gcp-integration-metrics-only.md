@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform-cla
 
 * How-to guide
 * 15-min read
-* Updated on Oct 08, 2024
+* Updated on Oct 27, 2026
 
 Dynatrace version 1.230+
 
@@ -650,4 +650,4 @@ All cloud services consume DDUs. The amount of DDU consumption per service insta
 ## Related topics
 
 * [Set up Dynatrace on Google Cloud (Dynatrace Classic)](/managed/ingest-from/google-cloud-platform-classic "Monitor Google Cloud with Dynatrace.")
-* [Google Cloud Monitor Troubleshooting﻿](https://community.dynatrace.com/t5/Troubleshooting/Google-Cloud-Monitor-Troubleshooting/ta-p/243796)
+* [Google Cloud Monitor Troubleshooting﻿](https://community.dynatrace.com/t/google-cloud-monitor-troubleshooting/45273)

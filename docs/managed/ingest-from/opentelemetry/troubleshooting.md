@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/troubleshoo
 
 * Troubleshooting
 * 1-min read
-* Updated on Jun 16, 2026
+* Updated on Oct 27, 2026
 
 Successfully implementing OpenTelemetry requires both reliable data export and proper visualization in Dynatrace.
 This page offers guidance for properly configuring and troubleshooting your OpenTelemetry implementation with Dynatrace.
@@ -52,7 +52,7 @@ A typical reason is when metrics are sent with cumulative aggregation temporalit
 ### Setup issues
 
 * [I'm having setup issues with OpenTelemetry. What should I check?﻿](https://dt-url.net/dm038xt)
-* [Fixing SSL Errors in OpenTelemetry SDKs when exporting to Dynatrace ActiveGate﻿](https://community.dynatrace.com/t5/Troubleshooting/Fixing-SSL-Errors-in-OpenTelemetry-SDKs-when-exporting-to/ta-p/269404)
+* [Fixing SSL Errors in OpenTelemetry SDKs when exporting to Dynatrace ActiveGate﻿](https://community.dynatrace.com/t/fixing-ssl-errors-in-opentelemetry-sdks-when-exporting-to-dynatrace-activegate/50131)
 
 ### Connection issues
 
@@ -103,13 +103,13 @@ Specific information about ingesting each signal type is available at
 
 ### Metrics
 
-* [Why are my metrics not ingested?﻿](https://community.dynatrace.com/t5/Troubleshooting/Why-are-my-OpenTelemetry-metrics-not-ingested/ta-p/269428)
+* [Why are my metrics not ingested?﻿](https://community.dynatrace.com/t/why-are-my-opentelemetry-metrics-not-ingested/50138)
 * [Why are my cumulative metrics not ingested?﻿](https://dt-url.net/s60382e)
 * [Why do I receive a "Partial Success" response?﻿](https://dt-url.net/0u238ec)
 * [Why are my metric attributes missing?﻿](https://dt-url.net/jj03800)
-* [How to set up OpenTelemetry metrics with delta temporality﻿](https://community.dynatrace.com/t5/Troubleshooting/How-to-set-up-OpenTelemetry-metrics-with-delta-temporality/ta-p/269292)
-* [Delay in displaying OpenTelemetry metric dimensions in Dynatrace﻿](https://community.dynatrace.com/t5/Troubleshooting/Delay-in-displaying-OpenTelemetry-metric-dimensions-in-Dynatrace/ta-p/269732)
-* [Why are my OpenTelemetry metrics not ingested﻿](https://community.dynatrace.com/t5/Troubleshooting/Why-are-my-OpenTelemetry-metrics-not-ingested/ta-p/269428)
+* [How to set up OpenTelemetry metrics with delta temporality﻿](https://community.dynatrace.com/t/how-to-set-up-opentelemetry-metrics-with-delta-temporality/50106)
+* [Delay in displaying OpenTelemetry metric dimensions in Dynatrace﻿](https://community.dynatrace.com/t/delay-in-displaying-opentelemetry-metric-dimensions-in-dynatrace/50199)
+* [Why are my OpenTelemetry metrics not ingested﻿](https://community.dynatrace.com/t/why-are-my-opentelemetry-metrics-not-ingested/50138)
 
 ## Best practices
 

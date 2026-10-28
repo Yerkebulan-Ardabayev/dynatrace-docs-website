@@ -7,7 +7,7 @@ source: https://docs.dynatrace.com/managed/whats-new/technology/end-of-support-n
 
 # End-of-support announcements
 
-* Updated on Oct 07, 2026
+* Updated on Oct 27, 2026
 
 Dynatrace OneAgent
 
@@ -188,7 +188,7 @@ Definition of the end of support version schema with examples:
 
   + Vendor end of support: 2026-11-10
   + Last supported OneAgent version: 1.351
-  + For more details, see [Deprecation Notice: .NET In-Process Model Azure Functions Monitoring﻿](https://community.dynatrace.com/t5/Product-news/Deprecation-Notice-Azure-Functions-NET-In-Process-Model/ba-p/302232)
+  + For more details, see [Deprecation Notice: .NET In-Process Model Azure Functions Monitoring﻿](https://community.dynatrace.com/t/deprecation-notice-azure-functions-net-in-process-model-monitoring/56527)
 * Fedora 42 (OS module)
 
   + Vendor end of support: 2026-05-13
@@ -360,7 +360,7 @@ Definition of the end of support version schema with examples:
 
   + Vendor end of support: 2025-01-16
 
-For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability (Envoy >=1.30, Istio >= 1.22)﻿](https://community.dynatrace.com/t5/Product-news/Heads-Up-Upcoming-changes-in-Istio-Envoy-observability-Envoy-gt/ba-p/232535)
+For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability (Envoy >=1.30, Istio >= 1.22)﻿](https://community.dynatrace.com/t/heads-up-upcoming-changes-in-istio-envoy-observability-envoy-1-30-istio-1-22/43322)
 
 ### 2025-12-31 End of Support
 
@@ -585,7 +585,7 @@ Note that JMX and PMI Extensions Framework 1.0 are supported past March 2025 but
 * [OneAgent SDK for Python﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) 1.4
 
   + Any version of the [OneAgent SDK for Python﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) on Python 3.4, 3.5, 3.6
-* Microsoft Internet Explorer 11 (RUM JavaScript). [Announcement﻿](https://community.dynatrace.com/t5/Product-news/Dynatrace-support-for-MS-Internet-Explorer-11-ends-in-May-2024/ba-p/239270)
+* Microsoft Internet Explorer 11 (RUM JavaScript). [Announcement﻿](https://community.dynatrace.com/t/dynatrace-support-for-ms-internet-explorer-11-ends-in-may-2024/44497)
 
   + Vendor end of support: 2022-06-15
 
@@ -628,7 +628,7 @@ Note that JMX and PMI Extensions Framework 1.0 are supported past March 2025 but
 * SUSE Linux Enterprise Server 12.4 on x86-64, PPCLE (OS module)
 
   + Vendor end of support: 2023-06-30
-* Envoy (envoyproxy) 1.29+ (Envoy module). [Announcement﻿](https://community.dynatrace.com/t5/Container-platforms/Heads-Up-Upcoming-changes-in-Istio-Envoy-observability-Envoy-gt/m-p/232535#M2120)
+* Envoy (envoyproxy) 1.29+ (Envoy module). [Announcement﻿](https://community.dynatrace.com/t/heads-up-upcoming-changes-in-istio-envoy-observability-envoy-1-30-istio-1-22/43322)
 
   + Vendor end of support: 2024-01-16 (expected Envoy 1.29 release date)
 
@@ -730,7 +730,7 @@ Note that JMX and PMI Extensions Framework 1.0 are supported past March 2025 but
 * Ext JS 3.4, 4, 5, 6 (RUM JavaScript)
 * ICEfaces 1.8, 2, 3 (RUM JavaScript)
 * jQuery 1.3 - 1.12, 2.0 - 2.2, 3.0 - 3.6 (RUM JavaScript)
-* Microsoft Internet Explorer 10 (RUM JavaScript). [Announcement﻿](https://community.dynatrace.com/t5/Real-User-Monitoring/Support-ending-for-MS-Internet-Explorer-versions-7-10-and-older/td-p/208226)
+* Microsoft Internet Explorer 10 (RUM JavaScript). [Announcement﻿](https://community.dynatrace.com/t/support-ending-for-ms-internet-explorer-versions-7-10-and-older-javascript-frameworks-on-may-9th-2023/39042)
 
   + Vendor end of support: 2020-01-31
 * MooTools 1.4.5 - 1.6.0 (RUM JavaScript)

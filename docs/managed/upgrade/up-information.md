@@ -7,7 +7,7 @@ source: https://docs.dynatrace.com/managed/upgrade/up-information
 
 # Pre-upgrade information
 
-* Published Apr 24, 2023
+* Updated on Oct 27, 2026
 
 This pre-upgrade information helps you understand what changes to expect while upgrading from Dynatrace Managed to SaaS deployment and to plan accordingly. This page helps you to understand the most important differences that you need to consider before you start the upgrade.
 
@@ -57,7 +57,7 @@ This page provides an overview of the differences between Dynatrace Managed and 
 | Topic | Managed | SaaS | Considerations for Upgrade |
 | --- | --- | --- | --- |
 | Access to Grail, AppEngine, and AutomationEngine | No | Yes | Only available in selected AWS/Azure regions. Some of the platform features may still be available in the preview. To get preview features enabled, contact a Dynatrace product expert via live chat within your environment. Learn more about [Upgrade to Dynatrace SaaS﻿](https://docs.dynatrace.com/docs/shortlink/up-upgrade). |
-| Logs monitoring capabilities | [Log Monitoring Classic](/managed/analyze-explore-automate/log-monitoring#log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") | [Log Management and Analytics powered by Grail﻿](https://docs.dynatrace.com/docs/shortlink/log-management-and-analytics) | Only available in selected AWS Regions. Some of the platform features might still be available in the preview. To get preview features enabled, contact a Dynatrace product expert via live chat within your environment. |
+| Logs monitoring capabilities | [Log Monitoring Classic](/managed/analyze-explore-automate/log-monitoring-classic#log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") | [Log Management and Analytics powered by Grail﻿](https://docs.dynatrace.com/docs/shortlink/log-management-and-analytics) | Only available in selected AWS Regions. Some of the platform features might still be available in the preview. To get preview features enabled, contact a Dynatrace product expert via live chat within your environment. |
 | Dynatrace Hub | Yes (except Managed Offline) | Yes |  |
 | [Application Security](/managed/secure/application-security "Access the Dynatrace Application Security functionalities.") | Yes | Yes |  |
 | Multi-environment private synthetic location | Yes, via Cluster ActiveGate | Not supported |  |
@@ -89,4 +89,4 @@ This page provides an overview of the differences between Dynatrace Managed and 
 
 Questions?
 
-Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/c/platform/upgrade-to-saas/92) to ask questions, get answers, and share what you've learned with others.

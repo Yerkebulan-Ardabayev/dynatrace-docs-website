@@ -19,4 +19,4 @@ Extend the Dynatrace web UI using entity-tailored unified analysis pages.](/mana
 
 Extend the built-in unified analysis page with additional data ingested by your extension.](/managed/ingest-from/extend-dynatrace/extend-ui/extend-unified-analysis-pages "Extend the built-in unified analysis page with additional data ingested by your extension.")[### Distribute custom dashboards
 
-Extend the Dynatrace web UI using your data-tailored dashboards.](/managed/ingest-from/extensions/advanced-configuration/custom-dashboards "Extend the Dynatrace web UI using your data-tailored dashboards.")
+Extend the Dynatrace web UI using your data-tailored dashboards.](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")

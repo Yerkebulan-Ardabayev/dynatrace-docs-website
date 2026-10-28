@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support
 # Technology support
 
 * 17-min read
-* Updated on Sep 25, 2026
+* Updated on Oct 21, 2026
 
 Dynatrace supports monitoring of the technologies and versions listed on this page. For serverless monitoring, see [Serverless compute support matrix](/managed/ingest-from/technology-support/serverless-compute-services "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS)."). For mainframe, see [Mainframe technology support](/managed/ingest-from/technology-support/mainframe-technology-support "Learn which technologies Dynatrace supports for Mainframe monitoring.").
 
@@ -230,7 +230,7 @@ Starting with OneAgent version 1.331+. Only space statistics are supported. Opt-
 
 1
 
-Please see [known limitations of Docker container monitoring](/managed/observe/infrastructure-observability/container-platform-monitoring/container-groups#limitations "Overview on container groups monitoring").
+Please see [known limitations of Docker container monitoring](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/container-groups#limitations "Overview on container groups monitoring").
 
 2
 
@@ -254,7 +254,7 @@ Podman containers started with `read-only=true` or a non-default user namespace 
 | Nutanix AHV[1](#fn-3-1-def) |
 | QEMU |
 | Xen |
-| [VMware](/managed/observe/infrastructure-observability/vmware-vsphere-monitoring "Monitor VMware vSphere with Dynatrace.") |
+| [VMware](/managed/observe/infrastructure-observability-classic/vmware-vsphere-monitoring-classic "Monitor VMware vSphere with Dynatrace.") |
 | AWS Nitro[1](#fn-3-1-def) |
 | OpenShift Virtualization |
 
@@ -365,7 +365,7 @@ End-2-End tracing using [OneAgent SDK﻿](https://github.com/Dynatrace/OneAgent-
 | [Google App Engine](/managed/ingest-from/google-cloud-platform-classic/gcp-integrations/google-app-engine "Install OneAgent on Google App Engine clusters for application-only monitoring.") |
 | [Google Compute Engine](/managed/ingest-from/google-cloud-platform-classic/gcp-integrations/google-compute-engine "Install OneAgent on Google Compute Engine.") |
 
-### [VMware](/managed/observe/infrastructure-observability/vmware-vsphere-monitoring "Monitor VMware vSphere with Dynatrace.")
+### [VMware](/managed/observe/infrastructure-observability-classic/vmware-vsphere-monitoring-classic "Monitor VMware vSphere with Dynatrace.")
 
 | VMware | Versions |
 | --- | --- |
@@ -523,7 +523,7 @@ WebLogic thin client jar (wlthint3client.jar) is not supported. IIOP has known v
 | --- | --- |
 | [Apache Camel﻿](https://www.dynatrace.com/hub/detail/apache-camel/) | 2.21+, 3+, 4+[1](#fn-esbs-and-soa-2-1-def) |
 | Apache OpenEJB | 3.1 |
-| Mule (HTTP Listener) | 3.5, 3.6, 3.7, 3.8, 3.9, 4.1 - 4.9 |
+| Mule (HTTP Listener) | 3.5, 3.6, 3.7, 3.8, 3.9, 4.1 - 4.12 |
 | [Red Hat Fuse Standalone﻿](https://www.dynatrace.com/hub/detail/red-hat-fuse/) | 7.0+[2](#fn-esbs-and-soa-2-2-def) |
 | [Red Hat Fuse on OpenShift﻿](https://www.dynatrace.com/hub/detail/red-hat-fuse/) | 7.0+[2](#fn-esbs-and-soa-2-2-def) |
 | TIBCO ActiveMatrix BusinessWorks | 5.8.2 - 5.14[3](#fn-esbs-and-soa-2-3-def), 6.4[3](#fn-esbs-and-soa-2-3-def), 6.5[3](#fn-esbs-and-soa-2-3-def), 6.6 - 6.8[3](#fn-esbs-and-soa-2-3-def) |
@@ -548,7 +548,7 @@ Only TIBCO workflows that are triggered by an incoming web service request, HTTP
 | [Apache HttpClient﻿](https://hc.apache.org/httpcomponents-client-ga/) | 3.1[2](#fn-web-framework-3-2-def), 4[2](#fn-web-framework-3-2-def), 5.0[2](#fn-web-framework-3-2-def), 5.1[2](#fn-web-framework-3-2-def), 5.2[2](#fn-web-framework-3-2-def), 5.3[2](#fn-web-framework-3-2-def) |
 | [Apache HttpCore﻿](https://hc.apache.org/httpcomponents-core-ga/) | 4[3](#fn-web-framework-3-3-def), 5[4](#fn-web-framework-3-4-def) |
 | [Apache Pekko HTTP client﻿](https://pekko.apache.org/docs/pekko-http/current/client-side/index.html) | 1.0.0 - 1.2.0[2](#fn-web-framework-3-2-def) |
-| [Apache Pekko HTTP server﻿](https://pekko.apache.org/docs/pekko-http/current/server-side/index.html) | 1.0.0 - 1.6.0[10](#fn-web-framework-3-10-def) |
+| [Apache Pekko HTTP server﻿](https://pekko.apache.org/docs/pekko-http/current/server-side/index.html) | 1.0.0 - 1.7.0[10](#fn-web-framework-3-10-def) |
 | Elasticsearch | 1.7[5](#fn-web-framework-3-5-def), 2.0-2.4[5](#fn-web-framework-3-5-def), 5.0-5.3[5](#fn-web-framework-3-5-def), 5.5-5.6[5](#fn-web-framework-3-5-def), 6.2[5](#fn-web-framework-3-5-def), 6.8[5](#fn-web-framework-3-5-def), 7.1[5](#fn-web-framework-3-5-def), 7.8-7.10[5](#fn-web-framework-3-5-def), 7.17[5](#fn-web-framework-3-5-def), 8.9-8.16[5](#fn-web-framework-3-5-def), 8.18-8.19[5](#fn-web-framework-3-5-def), 9.0-9.5[5](#fn-web-framework-3-5-def) |
 | Grails | 3[6](#fn-web-framework-3-6-def) |
 | Jakarta Servlet | 2.5, 3.0, 3.1, 4, 5, 6 |
@@ -609,7 +609,7 @@ Currently, Dynatrace can capture the incoming HTTP requests only when Undertow i
 
 10
 
-Java and Scala 2 bindings are supported.
+Java and Scala 2/3 bindings are supported.
 
 | Threading | Versions |
 | --- | --- |
@@ -656,7 +656,7 @@ Wildfly 27 - 41.
 | DataStax client for Apache Cassandra | 2.1[1](#fn-database-frameworks-6-1-def), 3[1](#fn-database-frameworks-6-1-def), 4[1](#fn-database-frameworks-6-1-def) |
 | JDBC | 4+[1](#fn-database-frameworks-6-1-def) |
 | [Jedis Redis﻿](https://github.com/xetorthio/jedis) | 2, 3[1](#fn-database-frameworks-6-1-def), 4[1](#fn-database-frameworks-6-1-def), 5[1](#fn-database-frameworks-6-1-def), 6 - 8[1](#fn-database-frameworks-6-1-def) |
-| [Lettuce﻿](https://lettuce.io/) | 5.1 - 5.3[1](#fn-database-frameworks-6-1-def), 6.0.3 - 6.1.6[1](#fn-database-frameworks-6-1-def), 6.1.8 - 6.8[1](#fn-database-frameworks-6-1-def), 7.0 - 7.5[1](#fn-database-frameworks-6-1-def) |
+| [Lettuce﻿](https://lettuce.io/) | 5.1 - 5.3[1](#fn-database-frameworks-6-1-def), 6.0.3 - 6.1.6[1](#fn-database-frameworks-6-1-def), 6.1.8 - 6.8[1](#fn-database-frameworks-6-1-def), 7.0 - 7.9[1](#fn-database-frameworks-6-1-def) |
 | [MongoDB Reactive Streams driver﻿](https://www.mongodb.com/docs/languages/java/reactive-streams-driver/current/) | 4.10+[1](#fn-database-frameworks-6-1-def), 5.0+[1](#fn-database-frameworks-6-1-def) |
 | [MongoDB asynchronous driver﻿](https://mongodb.github.io/mongo-java-driver/3.0/driver-async/) | 3.0 - 3.6.4[1](#fn-database-frameworks-6-1-def) |
 | [MongoDB synchronous driver ﻿](https://docs.mongodb.com/ecosystem/drivers/java/) | 2[1](#fn-database-frameworks-6-1-def), 3.0 - 3.6[1](#fn-database-frameworks-6-1-def), 3.7 - 3.11[1](#fn-database-frameworks-6-1-def), 3.12 - 4.11[1](#fn-database-frameworks-6-1-def), 5.0[1](#fn-database-frameworks-6-1-def) |
@@ -1581,7 +1581,7 @@ All modern browsers with JavaScript and cookies enabled are supported, but only 
 
 1
 
-If you don't want the RUM JavaScript to be injected into officially unsupported versions, [define appropriate browser exclusion rules](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/exclude-browsers-robots-and-spiders-from-monitoring#exclude-browsers "Disable Real User Monitoring Classic for certain IP addresses, browsers, bots, and spiders.") in your application settings.
+If you don't want the RUM JavaScript to be injected into officially unsupported versions, [define appropriate browser exclusion rules](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/exclude-browsers-robots-and-spiders-from-monitoring#exclude-browsers "Disable Real User Monitoring Classic for certain IP addresses, browsers, bots, and spiders.") in your application settings.
 
 ##### Browsers for session recording
 
@@ -1610,13 +1610,13 @@ Dynatrace offers generic support for every application via XHR or Fetch() API bu
 
 1
 
-Alternative configuration is required when Angular 17+ is used for your application. See [Activate support for Angular 17+](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/configure-dynatrace-real-user-monitoring-to-capture-xhr-actions#enable-angular-17-support "Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring Classic for XHR actions.").
+Alternative configuration is required when Angular 17+ is used for your application. See [Activate support for Angular 17+](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/configure-dynatrace-real-user-monitoring-to-capture-xhr-actions#enable-angular-17-support "Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring Classic for XHR actions.").
 
-We stopped offering special support for certain JavaScript frameworks starting with RUM JavaScript version 1.265 and Dynatrace version 1.266. For details, see [End of special support for certain JavaScript frameworks](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/configure-dynatrace-real-user-monitoring-to-capture-xhr-actions#desupported-frameworks-js-265 "Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring Classic for XHR actions.").
+We stopped offering special support for certain JavaScript frameworks starting with RUM JavaScript version 1.265 and Dynatrace version 1.266. For details, see [End of special support for certain JavaScript frameworks](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/configure-dynatrace-real-user-monitoring-to-capture-xhr-actions#desupported-frameworks-js-265 "Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring Classic for XHR actions.").
 
 #### Web servers and applications
 
-On the following web servers and applications, Dynatrace supports [RUM auto-injection](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications"), [RUM JavaScript delivery](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source "Configure the monitoring code source in RUM Classic to meet your specific requirements."), [RUM beacon forwarding](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server."), and [user action to distributed trace correlation](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/link-cross-origin-xhrs "Enable the correlation between cross-origin XHR actions and distributed traces.").
+On the following web servers and applications, Dynatrace supports [RUM auto-injection](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications"), [RUM JavaScript delivery](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source "Configure the monitoring code source in RUM Classic to meet your specific requirements."), [RUM beacon forwarding](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server."), and [user action to distributed trace correlation](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/link-cross-origin-xhrs "Enable the correlation between cross-origin XHR actions and distributed traces.").
 
 | Web servers and applications |
 | --- |
@@ -1641,7 +1641,7 @@ Minimum required versions: .Net Core 3.1, .Net Standard 2.1, Microsoft.AspNetCor
 
 To enable this as a OneAgent feature, go to **Settings** > **Preferences** > **OneAgent features** and turn on **Enable Real User Monitoring (RUM) for ASP.NET Core**.
 
-On the following web servers and applications, Dynatrace supports [user action to distributed trace correlation](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/link-cross-origin-xhrs "Enable the correlation between cross-origin XHR actions and distributed traces.") for XHR requests.
+On the following web servers and applications, Dynatrace supports [user action to distributed trace correlation](/managed/observe/digital-experience-classic/rum-classic/web-applications/initial-setup/link-cross-origin-xhrs "Enable the correlation between cross-origin XHR actions and distributed traces.") for XHR requests.
 
 | Web servers and applications |
 | --- |
@@ -1661,9 +1661,9 @@ To enable this as a OneAgent feature, go to **Settings** > **Preferences** > **O
 
 | Operating systems | Versions |
 | --- | --- |
-| [Android](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-android-app "Learn how to instrument mobile application monitoring on Android, how to customize instrumentation and more.") | 6.0+ (API 23+) |
-| [iOS](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app "Instrument mobile application monitoring for iOS apps, customize the auto-instrumentation, and capture additional data via manual instrumentation.") | 15+ |
-| [tvOS](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app "Instrument mobile application monitoring for iOS apps, customize the auto-instrumentation, and capture additional data via manual instrumentation.") | 15+ |
+| [Android](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/instrument-android-app "Learn how to instrument mobile application monitoring on Android, how to customize instrumentation and more.") | 6.0+ (API 23+) |
+| [iOS](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/instrument-ios-app "Instrument mobile application monitoring for iOS apps, customize the auto-instrumentation, and capture additional data via manual instrumentation.") | 15+ |
+| [tvOS](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/instrument-ios-app "Instrument mobile application monitoring for iOS apps, customize the auto-instrumentation, and capture additional data via manual instrumentation.") | 15+ |
 
 #### Frameworks
 
@@ -1671,15 +1671,15 @@ To enable this as a OneAgent feature, go to **Settings** > **Preferences** > **O
 | --- | --- |
 | AFNetworking | 3.3 |
 | Alamofire | 5+ |
-| [Apache Cordova](/managed/observe/digital-experience/rum-classic/mobile-applications/cross-platform-frameworks/apache-cordova "Set up Dynatrace to monitor hybrid mobile apps with the Cordova plugin.") | 9+ |
+| [Apache Cordova](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/cross-platform-frameworks/apache-cordova "Set up Dynatrace to monitor hybrid mobile apps with the Cordova plugin.") | 9+ |
 | OkHttp | 3+[1](#fn-11-1-def), 4+[1](#fn-11-1-def), 5+[1](#fn-11-1-def) |
-| [Xamarin](/managed/observe/digital-experience/rum-classic/mobile-applications/cross-platform-frameworks/xamarin-nuget "Monitor Xamarin apps with Dynatrace OneAgent.")[2](#fn-11-2-def) | Xamarin.iOS, Xamarin.Android, Xamarin.Forms (.NET Standard 2.0+) |
-| [.NET MAUI](/managed/observe/digital-experience/rum-classic/mobile-applications/cross-platform-frameworks/maui "Monitor .NET MAUI applications with Dynatrace OneAgent.") | .NET 6.0+ |
-| [React Native](/managed/observe/digital-experience/rum-classic/mobile-applications/cross-platform-frameworks/react-native "Auto-instrument your React Native applications with OneAgent.") | 0.59+ |
-| [Flutter](/managed/observe/digital-experience/rum-classic/mobile-applications/cross-platform-frameworks/flutter "Learn how to auto-instrument your Flutter applications with OneAgent.") | 1.12+ |
+| [Xamarin](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/cross-platform-frameworks/xamarin-nuget "Monitor Xamarin apps with Dynatrace OneAgent.")[2](#fn-11-2-def) | Xamarin.iOS, Xamarin.Android, Xamarin.Forms (.NET Standard 2.0+) |
+| [.NET MAUI](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/cross-platform-frameworks/maui "Monitor .NET MAUI applications with Dynatrace OneAgent.") | .NET 6.0+ |
+| [React Native](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/cross-platform-frameworks/react-native "Auto-instrument your React Native applications with OneAgent.") | 0.59+ |
+| [Flutter](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/cross-platform-frameworks/flutter "Learn how to auto-instrument your Flutter applications with OneAgent.") | 1.12+ |
 | UIKit | Supported |
-| [SwiftUI](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/instrumentation/instrument-swiftui-controls "Use the Dynatrace SwiftUI instrumentor to monitor your SwiftUI apps.") | 2+ |
-| [Jetpack Compose](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities#compose-instrumentation "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.") | 1.4 - 1.10 |
+| [SwiftUI](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/instrument-ios-app/instrumentation/instrument-swiftui-controls "Use the Dynatrace SwiftUI instrumentor to monitor your SwiftUI apps.") | 2+ |
+| [Jetpack Compose](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities#compose-instrumentation "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.") | 1.4 - 1.10 |
 
 1
 
@@ -1687,7 +1687,7 @@ Including OkHttp-based libraries like Retrofit 2.
 
 2
 
-Dynatrace will deprecate the Dynatrace Xamarin NuGet package in May 2024 and desupport it in May 2025. For details, see [Deprecation and end of support for Dynatrace Xamarin NuGet package](/managed/observe/digital-experience/rum-classic/mobile-applications/cross-platform-frameworks/xamarin-nuget#deprecation-announcement "Monitor Xamarin apps with Dynatrace OneAgent.").
+Dynatrace will deprecate the Dynatrace Xamarin NuGet package in May 2024 and desupport it in May 2025. For details, see [Deprecation and end of support for Dynatrace Xamarin NuGet package](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/cross-platform-frameworks/xamarin-nuget#deprecation-announcement "Monitor Xamarin apps with Dynatrace OneAgent.").
 
 #### OneAgent for iOS
 
@@ -1708,7 +1708,7 @@ In April 2027, the SDK will switch to Xcode 27. This removes x86\_64 (Intel) sup
 * Gradle version 8.0+
 * Android Gradle plugin version 8.1.1+
 
-For more details, check [Dynatrace Android Gradle plugin in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-android-app/instrumentation-via-plugin "Learn how the Dynatrace Android Gradle plugin can auto-instrument your Android application project.").
+For more details, check [Dynatrace Android Gradle plugin in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/instrument-android-app/instrumentation-via-plugin "Learn how the Dynatrace Android Gradle plugin can auto-instrument your Android application project.").
 
 ### Dynatrace OpenKit
 
@@ -1748,7 +1748,7 @@ Requires OneAgent EEC. Supported on Windows and Linux and the x64 CPU architectu
 
 ## Private Synthetic locations
 
-See [Requirements for private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations").
+See [Requirements for private Synthetic locations](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations").
 
 ## Support Levels for 3rd Party Technologies
 

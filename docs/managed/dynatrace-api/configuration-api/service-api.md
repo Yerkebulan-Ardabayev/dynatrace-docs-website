@@ -100,4 +100,4 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/servi
 
 ## Related topics
 
-* [Service monitoring settings in Service Detection v1](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/service-monitoring-settings "Learn about service monitoring tuning options in Dynatrace.")
+* [Service monitoring settings in Service Detection v1](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v1/service-monitoring-settings "Learn about service monitoring tuning options in Dynatrace.")

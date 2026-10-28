@@ -7,7 +7,7 @@ source: https://docs.dynatrace.com/managed/upgrade
 
 # Upgrade from Managed to SaaS deployment
 
-* Published Apr 24, 2023
+* Updated on Oct 27, 2026
 
 This documentation is for Dynatrace platform owners, architects, and program managers who plan to upgrade from Dynatrace Managed to Dynatrace SaaS.
 
@@ -29,4 +29,4 @@ Find out what to do after your upgrade to Dynatrace SaaS is complete.](/managed/
 
 Questions?
 
-Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/c/platform/upgrade-to-saas/92) to ask questions, get answers, and share what you've learned with others.

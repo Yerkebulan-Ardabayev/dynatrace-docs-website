@@ -51,6 +51,7 @@ The Collector comes in different distribution flavors and with different setup a
 | Type | When should I use it? |
 | --- | --- |
 | Dynatrace OTel Collector | When you deploy and manage your Collectors with an OTel helm chart, OTel Operator, or Dynatrace Operator. It ships with a set of verified and production-ready Collector components that are typically used with Dynatrace setups. |
+| [Dynatrace Bindplane OTel Collector](/managed/ingest-from/bindplane-classic "Bindplane manages OpenTelemetry collector fleets at scale and controls telemetry volume at the edge before data reaches Dynatrace.") | When you need advanced telemetry pipeline capabilities, such as centralized fleet management. |
 | Core | When you primarily want to convert between OTLP protocols (such as converting between HTTP and gRPC, see [Transform OTLP gRPC to HTTP with the OTel Collector](/managed/ingest-from/opentelemetry/collector-use-cases/grpc "Configure the OpenTelemetry Collector to transform a gRPC OTLP request to HTTP.")), enforce memory usage constraints, or apply request batching. |
 | Contrib | Ideal for test setups, as it contains all third-party components and doesn't require a custom build. It's generally not recommended for production systems, as it typically consumes more resources and may be less stable than an optimized Builder instance. |
 | Collector Builder | When you need to fully customize the Collector instance and only run the components required for your use case. |

@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards/v
 * 3-min read
 * Updated on Oct 06, 2026
 
-A visualization you create in Data Explorer becomes a dashboard tile when you [pin it](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards."), and you configure it in [Visualization settings](/managed/analyze-explore-automate/explorer/visualization-settings "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.") in the Data Explorer section.
+A visualization you create in Data Explorer becomes a dashboard tile when you [pin it](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards."), and you configure it in [Visualization settings](/managed/analyze-explore-automate/explorer-classic/visualization-settings "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.") in the Data Explorer section.
 
 ## Visualization types
 
@@ -45,13 +45,13 @@ A graph tile shows metric values over time as lines, columns, or areas, with up 
 
 Graph with two metrics pinned to a dashboard as a tile
 
-For settings, see [Graph settings](/managed/analyze-explore-automate/explorer/visualization-settings#graph "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
+For settings, see [Graph settings](/managed/analyze-explore-automate/explorer-classic/visualization-settings#graph "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
 
 ## Stacked column
 
 A stacked column tile shows metric values over time as stacked columns. You can stack only metrics with the same unit.
 
-For settings, see [Stacked column settings](/managed/analyze-explore-automate/explorer/visualization-settings#stacked-column "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
+For settings, see [Stacked column settings](/managed/analyze-explore-automate/explorer-classic/visualization-settings#stacked-column "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
 
 ## Stacked area
 
@@ -61,7 +61,7 @@ A stacked area tile shows metric values over time as stacked areas. You can stac
 
 Stacked area chart pinned to a dashboard as a tile
 
-For settings, see [Stacked area settings](/managed/analyze-explore-automate/explorer/visualization-settings#stacked-area "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
+For settings, see [Stacked area settings](/managed/analyze-explore-automate/explorer-classic/visualization-settings#stacked-area "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
 
 ## Pie
 
@@ -71,7 +71,7 @@ A pie tile shows query results as a pie or doughnut chart. By default, it shows 
 
 Pie chart pinned to a dashboard as a tile
 
-For settings, see [Pie settings](/managed/analyze-explore-automate/explorer/visualization-settings#pie "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
+For settings, see [Pie settings](/managed/analyze-explore-automate/explorer-classic/visualization-settings#pie "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
 
 ## Single value
 
@@ -83,12 +83,12 @@ Single value pinned to a dashboard as a tile
 
 The tile can also show a trend, a sparkline, and a threshold background:
 
-* [Trend](/managed/analyze-explore-automate/explorer/visualization-settings#trend "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles."), based on the first and last data points of the timeframe:
+* [Trend](/managed/analyze-explore-automate/explorer-classic/visualization-settings#trend "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles."), based on the first and last data points of the timeframe:
 
   ![Two identical single value tiles, with the trend turned off on the left and turned on on the right](https://dt-cdn.net/images/single-value-trend-off-on-609-98c831bf73.png)
 
   Two identical single value tiles, with the trend turned off on the left and turned on on the right
-* [Sparkline](/managed/analyze-explore-automate/explorer/visualization-settings#show-sparkline "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles."):
+* [Sparkline](/managed/analyze-explore-automate/explorer-classic/visualization-settings#show-sparkline "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles."):
 
   ![Two identical single value tiles, with the sparkline turned off on the left and turned on on the right](https://dt-cdn.net/images/single-value-sparkline-off-on-608-c9f1a6cb61.png)
 
@@ -99,7 +99,7 @@ The tile can also show a trend, a sparkline, and a threshold background:
 
   Two identical single value tiles, with the threshold background turned off on the left and turned on on the right
 
-For settings, see [Single value settings](/managed/analyze-explore-automate/explorer/visualization-settings#single-value "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
+For settings, see [Single value settings](/managed/analyze-explore-automate/explorer-classic/visualization-settings#single-value "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
 
 ## Table
 
@@ -114,7 +114,7 @@ Table pinned to a dashboard as a tile
 * The page size adjusts to the tile size.
 * Columns you turn off in the Data Explorer **Columns** section are also hidden on the table tile.
 
-For settings, see [Table settings](/managed/analyze-explore-automate/explorer/visualization-settings#table "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
+For settings, see [Table settings](/managed/analyze-explore-automate/explorer-classic/visualization-settings#table "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
 
 ## Top list
 
@@ -124,13 +124,13 @@ A top list tile shows a ranked list of results for one metric. By default, it sh
 
 Top list pinned to a dashboard as a tile
 
-For settings, see [Top list settings](/managed/analyze-explore-automate/explorer/visualization-settings#top-list "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
+For settings, see [Top list settings](/managed/analyze-explore-automate/explorer-classic/visualization-settings#top-list "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
 
 ## Heatmap
 
 A heatmap tile shows the value distribution of one metric in buckets. By default, it shows the first metric of a multi-metric query.
 
-For settings, see [Heatmap settings](/managed/analyze-explore-automate/explorer/visualization-settings#heatmap "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
+For settings, see [Heatmap settings](/managed/analyze-explore-automate/explorer-classic/visualization-settings#heatmap "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
 
 ## Honeycomb
 
@@ -140,7 +140,7 @@ A honeycomb tile shows one cell per result, colored by threshold, for example gr
 
 Honeycomb pinned to a dashboard as a tile
 
-For settings, see [Honeycomb settings](/managed/analyze-explore-automate/explorer/visualization-settings#honeycomb "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
+For settings, see [Honeycomb settings](/managed/analyze-explore-automate/explorer-classic/visualization-settings#honeycomb "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
 
 ## Histogram
 
@@ -150,7 +150,7 @@ A histogram tile shows the value distribution of a histogram metric, with one ba
 
 Histogram pinned to a dashboard as a tile
 
-For settings, see [Histogram settings](/managed/analyze-explore-automate/explorer/visualization-settings#histogram "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
+For settings, see [Histogram settings](/managed/analyze-explore-automate/explorer-classic/visualization-settings#histogram "Look up each Data Explorer visualization, what it shows, its limits, its own settings, and the shared settings that carry over to dashboard tiles.").
 
 ## Tile behavior
 

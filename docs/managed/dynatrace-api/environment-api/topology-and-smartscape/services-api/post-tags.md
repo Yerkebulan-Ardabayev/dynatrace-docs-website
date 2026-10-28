@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topolog
 * Updated on Mar 22, 2023
 * Deprecated
 
-Assigns [custom tags](/managed/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") to the specified service. You need to provide only a tag value. The `CONTEXTLESS` context will be assigned automatically.
+Assigns [custom tags](/managed/manage/tags-and-metadata-classic "Use tags and metadata to organize data in your Dynatrace environment.") to the specified service. You need to provide only a tag value. The `CONTEXTLESS` context will be assigned automatically.
 
 The usage of this API is limited to value-only tags. To assign key:value tags, use the [Custom tags API](/managed/dynatrace-api/environment-api/custom-tags/post-tags "Assign custom tags to monitored entities via Dynatrace API.").
 
@@ -249,4 +249,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/services/SERVICE-72503CBDD2
 
 ## Related topics
 
-* [Services](/managed/observe/application-observability/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.")
+* [Services](/managed/observe/application-observability-classic/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.")

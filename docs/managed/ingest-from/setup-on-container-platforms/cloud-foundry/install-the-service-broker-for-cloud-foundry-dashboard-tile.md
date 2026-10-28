@@ -24,7 +24,7 @@ Install the Dynatrace Service Broker tile through your **Ops Manager Installatio
 
 ## Configure the Dynatrace Service Broker tile
 
-Multiple Dynatrace SaaS/Managed environments can be supported simultaneously.
+Multiple Dynatrace environments can be supported simultaneously.
 
 To configure the Dynatrace Service Broker tile, perform the following steps:
 
@@ -52,14 +52,6 @@ To configure the Dynatrace Service Broker tile, perform the following steps:
    * Select **Save**.
 
    Adapt the `apiurl` setting according to your environment:
-
-   For Dynatrace SaaS, where OneAgent can connect to the internet
-
-   Replace the Dynatrace `ENVIRONMENTID` in `https://ENVIRONMENTID.live.dynatrace.com/api` with your own environment ID.
-
-   For Dynatrace SaaS, where OneAgent can't connect to the internet
-
-   Use `https://YourActiveGateIP:Port/api` or `FQDN:9999/e/<ENVIRONMENTID>/api` to download the OneAgent, as well as to communicate OneAgent traffic through the ActiveGate.
 
    For Dynatrace Managed
 
@@ -89,8 +81,8 @@ To set up application monitoring with the Dynatrace SaaS/Managed Service, bind t
    * **APP\_NAME**: the name of your App.
    * **SERVICE\_INSTANCE**: the name of the Service Instance you have created with the command above.
 
-After binding the service to an application, [start using Dynatrace SaaS/Managed﻿](https://dt-url.net/6q03pwu).
+After binding the service to an application, [start using Dynatrace﻿](https://dt-url.net/6q03pwu).
 
 ## Related topics
 
-* [Cloud Foundry monitoring](/managed/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")
+* [Cloud Foundry monitoring](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")

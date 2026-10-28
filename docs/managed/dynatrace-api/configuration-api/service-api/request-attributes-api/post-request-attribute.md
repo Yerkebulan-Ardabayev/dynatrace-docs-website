@@ -473,4 +473,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [Request attributes in Services](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.")
+* [Request attributes in Services](/managed/observe/application-observability-classic/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.")

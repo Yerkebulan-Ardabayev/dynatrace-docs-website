@@ -7,7 +7,7 @@ source: https://docs.dynatrace.com/managed/upgrade/up-plan/feasibility-checklist
 
 # Pre-upgrade assessment
 
-* Published Apr 24, 2023
+* Updated on Oct 27, 2026
 
 Before executing the upgrade of your Dynatrace Managed environments to SaaS, use the following section to collect and assess the necessary information to plan your upgrade. Go through all of the questions, taking into consideration all the environments that you plan to upgrade. In the end, solve all the issues by following recommended actions.
 
@@ -146,4 +146,4 @@ Before executing the upgrade of your Dynatrace Managed environments to SaaS, use
 
 Questions?
 
-Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/c/platform/upgrade-to-saas/92) to ask questions, get answers, and share what you've learned with others.

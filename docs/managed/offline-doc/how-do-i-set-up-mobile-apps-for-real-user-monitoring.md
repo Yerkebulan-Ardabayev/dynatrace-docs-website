@@ -24,8 +24,8 @@ Your existing publicly available ActiveGate URLs are available for viewing withi
 
 Based on your platform, follow the instructions below to enable your mobile app to send session information directly to your Dynatrace Managed cluster.
 
-* [Android](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-android-app "Learn how to instrument mobile application monitoring on Android, how to customize instrumentation and more.")
-* [iOS](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios "Set up user experience monitoring for iOS apps within Dynatrace.")
+* [Android](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/instrument-android-app "Learn how to instrument mobile application monitoring on Android, how to customize instrumentation and more.")
+* [iOS](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios "Set up user experience monitoring for iOS apps within Dynatrace.")
 
 ## Troubleshooting
 

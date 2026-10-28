@@ -13,7 +13,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-u
 
 Dynatrace unified analysis pages bring all observability data and relevant analytical tools for effective analysis and troubleshooting into context. When exploring metrics, events, logs, and metadata for a problematic, domain-specific entity, you can find every observability signal related to this entity on one page.
 
-The [host overview page](/managed/observe/infrastructure-observability/hosts/monitoring/host-monitoring "Monitor hosts with Dynatrace.") is an example of a unified analysis page available in most environments.
+The [host overview page](/managed/observe/infrastructure-observability-classic/hosts-classic/monitoring/host-monitoring "Monitor hosts with Dynatrace.") is an example of a unified analysis page available in most environments.
 
 ## Page types
 
@@ -62,7 +62,7 @@ Metric table card
 
 ### Properties
 
-Use the properties card to show attributes and tags. By default, it displays all attributes coming from the [Monitored entities API](/managed/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API."). For more information, see [Notifications bar](/managed/observe/infrastructure-observability/hosts/monitoring/host-monitoring#notifications-bar "Monitor hosts with Dynatrace.").
+Use the properties card to show attributes and tags. By default, it displays all attributes coming from the [Monitored entities API](/managed/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API."). For more information, see [Notifications bar](/managed/observe/infrastructure-observability-classic/hosts-classic/monitoring/host-monitoring#notifications-bar "Monitor hosts with Dynatrace.").
 
 For configuration details, see [Properties cards](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#properties-cards "Learn about unified analysis syntax").
 
@@ -72,7 +72,7 @@ Properties card example
 
 ### Logs
 
-Use the logs card (which has the same functionality as the [Log viewer](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.")) to display a bar chart representing different log occurrences within the selected timeframe and a detailed table where each log is an entry with additional properties such as timestamp, status, and content.
+Use the logs card (which has the same functionality as the [Log viewer](/managed/analyze-explore-automate/log-monitoring-classic/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.")) to display a bar chart representing different log occurrences within the selected timeframe and a detailed table where each log is an entry with additional properties such as timestamp, status, and content.
 
 For configuration details, see [Logs cards](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#logs-cards "Learn about unified analysis syntax").
 

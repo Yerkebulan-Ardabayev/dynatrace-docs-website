@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector-u
 
 * How-to guide
 * 3-min read
-* Published Nov 26, 2025
+* Updated on Oct 22, 2026
 
 The following configuration example shows how to configure an OTel Collector instance to scrape Kafka metrics via the `kafka_metrics` receiver component and ingest them as OTLP requests into Dynatrace.
 
@@ -20,6 +20,7 @@ To set up this configuration, ensure you have the following:
 * One of the following Collector distributions with the [kafka\_metrics receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/receiver/kafkametricsreceiver) and [cumulative\_to\_delta processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/cumulativetodeltaprocessor)
 
   + [Dynatrace Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+  + [Dynatrace Bindplane OTel Collector](/managed/ingest-from/bindplane-classic "Bindplane manages OpenTelemetry collector fleets at scale and controls telemetry volume at the edge before data reaches Dynatrace.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [Custom Builder version](/managed/ingest-from/opentelemetry/collector#collector-builder "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
 * A Kafka server deployed with a reachable `BROKER_ADDRESS`.

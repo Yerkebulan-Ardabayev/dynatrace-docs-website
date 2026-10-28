@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 
 * How-to guide
 * 3-min read
-* Updated on Oct 20, 2026
+* Published Nov 10, 2025
 
 This update combines the following into integrated process grouping rules:
 

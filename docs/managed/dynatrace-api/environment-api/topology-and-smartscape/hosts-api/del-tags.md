@@ -13,7 +13,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topolog
 
 This API is deprecated. Use the [Monitored entities API](/managed/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.") instead.
 
-Deletes the specified [custom tag](/managed/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") from the specified host. Deletion cannot be undone.
+Deletes the specified [custom tag](/managed/manage/tags-and-metadata-classic "Use tags and metadata to organize data in your Dynatrace environment.") from the specified host. Deletion cannot be undone.
 
 |  |  |  |
 | --- | --- | --- |
@@ -164,4 +164,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts/HOST-B
 
 ## Related topics
 
-* [Hosts](/managed/observe/infrastructure-observability/hosts "Learn how to get started with host monitoring, understand which measures contribute to host health, how to set up custom host names, and more.")
+* [Hosts](/managed/observe/infrastructure-observability-classic/hosts-classic "Learn how to get started with host monitoring, understand which measures contribute to host health, how to set up custom host names, and more.")

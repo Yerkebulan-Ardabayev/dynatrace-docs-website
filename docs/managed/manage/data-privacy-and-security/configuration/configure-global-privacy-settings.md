@@ -39,7 +39,7 @@ With masking at capture, data is masked at first contact with Dynatrace. The ori
 OneAgent version 1.277+ for URLs  
 OneAgent version 1.285+ for exception messages
 
-To access this setting, go to **Settings** > **Preferences** > **Data privacy** > **OneAgent-side masking**.
+To access this setting, go to **Settings** > **Preferences** > **Data privacy** > **OneAgent Side Masking**.
 
 🔴 Disabled by default
 
@@ -62,19 +62,19 @@ OneAgent can mask sensitive data points at first contact. The configuration is e
 You can apply these settings to specific monitored process groups or globally to your whole environment.
 
 * Process group-specific Go to **Technologies & Processes** > process group category > process group > **Settings** > **OneAgent-side masking**.
-* Environment-wide Go to **Settings** > **Preferences** > **Data privacy** > **OneAgent-side masking**.
+* Environment-wide Go to **Settings** > **Preferences** > **Data privacy** > **OneAgent Side Masking**.
 
-OneAgent-side masking settings do not affect the [Dynatrace RUM JavaScript](/managed/observe/digital-experience/rum-classic/rum-concepts/applications#web "Learn about monitored applications in Real User Monitoring Classic and the different application types supported by Dynatrace."). For web applications, use the [**Mask personal data in URIs** option](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr#mask-uris "Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.") to control sensitive data point masking for URLs.
+OneAgent-side masking settings do not affect the [Dynatrace RUM JavaScript](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/applications#web "Learn about monitored applications in Real User Monitoring Classic and the different application types supported by Dynatrace."). For web applications, use the [**Mask personal data in URIs** option](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr#mask-uris "Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.") to control sensitive data point masking for URLs.
 
 To enable the benefit of multiple layers of protection, configure the masking at capture settings independently from the masking at storage and masking at display settings. Note that data points masked at capture are no longer available. Additionally applying the masking at storage settings creates a second protection layer that might be beneficial for various compliance frameworks.
 
 ### Log masking
 
-In Log Management and Analytics, you can benefit from [fully configurable masking rules](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") for logs captured by OneAgent.
+In Log Monitoring, you can [mask sensitive data](/managed/analyze-explore-automate/log-monitoring-classic/log-monitoring-configuration/sensitive-data-masking "Mask sensitive information in your log data using Log Monitoring Classic.") in logs captured by OneAgent.
 
 ### End-user IP address masking
 
-To access this setting, go to **Settings** > **Preferences** > **Data privacy** > **IP masking**.
+To access this setting, go to **Settings** > **Preferences** > **Data privacy** > **IP Masking**.
 
 🟢 Enabled by default
 
@@ -113,7 +113,7 @@ With user action name masking enabled, the user action names listed above appear
 * `keypress on TEXTAREA on page /contact.html`
 * `touch on DIV of page /list.jsf`
 
-To avoid capturing personal information for user actions in your mobile applications, check the information on [mobile user action masking](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#user-action-masking "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.").
+To avoid capturing personal information for user actions in your mobile applications, check the information on [mobile user action masking](/managed/observe/digital-experience-classic/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#user-action-masking "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.").
 
 ## Masking at storage
 
@@ -164,9 +164,9 @@ Note that the following data types are considered confidential and are masked at
 
 ### Confidential request attributes
 
-[Request attributes](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") are key-value pairs of metadata that are filterable across all Dynatrace service and distributed traces views.
+[Request attributes](/managed/observe/application-observability-classic/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") are key-value pairs of metadata that are filterable across all Dynatrace service and distributed traces views.
 
-Dynatrace allows you to decide whether a request attribute should be [marked as confidential](/managed/observe/application-observability/services-classic/request-attributes#confidential "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."). To manage request attributes, you must have the **Manage capturing of sensitive request data** [permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions").
+Dynatrace allows you to decide whether a request attribute should be [marked as confidential](/managed/observe/application-observability-classic/services-classic/request-attributes#confidential "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."). To manage request attributes, you must have the **Manage capturing of sensitive request data** [permission](/managed/manage/identity-access-management-classic/permission-management/role-based-permissions "Role-based permissions").
 
 ## Opt-in mode
 
@@ -196,7 +196,7 @@ Another technique for protecting end-user privacy is the "Do Not Track" feature.
 
 After you turn on **Comply with "Do Not Track" browser settings**, you can select between two options:
 
-* **Capture anonymous user sessions for "Do Not Track"-enabled browsers**: When the `DNT` header is detected, Dynatrace captures RUM data but excludes all personal information that could lead to the identification of the user. The IP address is masked, and no [user tag](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") information is sent.
+* **Capture anonymous user sessions for "Do Not Track"-enabled browsers**: When the `DNT` header is detected, Dynatrace captures RUM data but excludes all personal information that could lead to the identification of the user. The IP address is masked, and no [user tag](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") information is sent.
 
   With the [**User tracking** setting](#user-tracking) enabled, Dynatrace still sets a persistent cookie to detect returning users.
 * **Turn Real User Monitoring off for "Do Not Track"-enabled browsers**: When the `DNT` header is detected, Dynatrace doesn't capture any data from browsers that have the "Do Not Track" setting enabled.

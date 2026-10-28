@@ -1,14 +1,14 @@
 ---
-title: Reverse proxy or load balancer for OneAgent
+title: Reverse proxy or load balancer for OneAgent (Dynatrace Classic)
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/configuration/set-up-reverse-proxy-for-oneagent
 ---
 
-# Reverse proxy or load balancer for OneAgent
+# Reverse proxy or load balancer for OneAgent (Dynatrace Classic)
 
-# Reverse proxy or load balancer for OneAgent
+# Reverse proxy or load balancer for OneAgent (Dynatrace Classic)
 
 * 1-min read
-* Updated on Jul 09, 2026
+* Updated on Feb 24, 2026
 
 A reverse proxy/load balancer can be placed on the path from OneAgent to ActiveGate. You need to configure the URL of the load balancer on the ActiveGate so OneAgents can use that endpoint to connect to the ActiveGate.
 

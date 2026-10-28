@@ -28,7 +28,7 @@ To install a new ActiveGate in parallel on new hardware
 1. Provision new hardware for the ActiveGate from the new SaaS environment.
 2. Backup custom configuration files: `custom.properties`, `launcheruserconfig.conf`, and keystore/truststore.
 
-   To learn more about these files, see [Configuration properties and parameters of ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate "Learn which ActiveGate properties you can configure based on your needs and requirements.").
+   To learn more about these files, see [Configuration properties and parameters of ActiveGate (Dynatrace Classic)](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate "Learn which ActiveGate properties you can configure based on your needs and requirements.").
 3. Follow the selected [ActiveGate installation](/managed/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") procedure. Customize the installation command to apply keystore and truststore files.
 4. [Stop the ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").
 5. Add or replace original configuration files: `custom.properties`, `launcheruserconfig.conf` to the new ActiveGate installation path.
@@ -46,7 +46,7 @@ To reconfigure an existing ActiveGate to point OneAgent traffic to the new SaaS 
 1. [Stop the ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").
 2. Backup configuration files: `connectivity.history`, `config.properties`, `cluster.properties`, `custom.properties`, `launcheruserconfig.conf`, and keystore/truststore.
 
-   To learn more about these files, see [Configuration properties and parameters of ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate "Learn which ActiveGate properties you can configure based on your needs and requirements.").
+   To learn more about these files, see [Configuration properties and parameters of ActiveGate (Dynatrace Classic)](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate "Learn which ActiveGate properties you can configure based on your needs and requirements.").
 3. Update `config.properties` with the **seedServerUrl** and **configured=false** to your SaaS environment URL.
 4. If you use a load balancer between the ActiveGate and the Dynatrace Managed cluster, and if the `--ignore-cluster-runtime` parameter was used, remove it from the `custom.properties` file.
 
@@ -72,7 +72,7 @@ To reconfigure an existing ActiveGate to point OneAgent traffic to the new SaaS 
 To reinstall an ActiveGate on the same hardware to point OneAgent traffic to the new SaaS environment
 
 1. Make a backup of any custom configuration, including `custom.properties` and `launcheruserconfig.conf`.
-   To learn more about these files, see [Configuration properties and parameters of ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate "Learn which ActiveGate properties you can configure based on your needs and requirements.").
+   To learn more about these files, see [Configuration properties and parameters of ActiveGate (Dynatrace Classic)](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate "Learn which ActiveGate properties you can configure based on your needs and requirements.").
 2. [Uninstall ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/uninstall-activegate "Learn how to remove ActiveGate from Windows or Linux-based systems.").
 3. Follow the selected [ActiveGate installation](/managed/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") procedure. Customize the installation command to apply keystore and truststore files.
 4. [Stop the ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").

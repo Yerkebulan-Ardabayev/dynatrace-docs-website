@@ -1,11 +1,11 @@
 ---
-title: Configuration properties and parameters of ActiveGate
+title: Configuration properties and parameters of ActiveGate (Dynatrace Classic)
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate
 ---
 
-# Configuration properties and parameters of ActiveGate
+# Configuration properties and parameters of ActiveGate (Dynatrace Classic)
 
-# Configuration properties and parameters of ActiveGate
+# Configuration properties and parameters of ActiveGate (Dynatrace Classic)
 
 * 17-min read
 * Updated on Jul 29, 2026
@@ -322,7 +322,7 @@ ActiveGate version 1.247 and earlier If you have a `[kubernetes_monitoring]` sec
 
 | Property | Description |
 | --- | --- |
-| `log_analytics_collector_enabled` | Enables [Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") module. Possible values: `true` or `false`. |
+| `log_analytics_collector_enabled` | Enables [Log Monitoring](/managed/analyze-explore-automate/log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") module. Possible values: `true` or `false`. |
 
 **Section: [generic\_ingest]**
 
@@ -340,7 +340,7 @@ VMware monitoring
 
 | Property | Description |
 | --- | --- |
-| `vmware_monitoring_enabled` | Enables [VMware monitoring](/managed/observe/infrastructure-observability/vmware-vsphere-monitoring "Monitor VMware vSphere with Dynatrace.") module. Possible values: `true` or `false`. |
+| `vmware_monitoring_enabled` | Enables [VMware monitoring](/managed/observe/infrastructure-observability-classic/vmware-vsphere-monitoring-classic "Monitor VMware vSphere with Dynatrace.") module. Possible values: `true` or `false`. |
 
 ## Module: Database insights
 
@@ -379,9 +379,9 @@ If you have a `[synthetic]` section in your `custom.properties` file, you can ha
 
 ActiveGate version 1.247 and earlier However, if you do create the `[http.client.external]` section, you have to specify all of the communication parameters there. Otherwise, the communication parameters for monitored environments (Cloud Foundry, Kubernetes, or Synthetic Monitoring) will revert to their factory defaults.
 
-To learn more about the proxy-related properties for a Synthetic-enabled ActiveGate, see [Set up a proxy for private synthetic monitoring](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.").
+To learn more about the proxy-related properties for a Synthetic-enabled ActiveGate, see [Set up a proxy for private synthetic monitoring](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/setting-up-proxy-for-private-synthetic "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.").
 
-Note that changing the `synthetic_enabled` property only works if you installed the ActiveGate to [run Synthetic monitors from a private location](/managed/ingest-from/dynatrace-activegate#synthetic "Understand the basic concepts related to ActiveGate."). If you installed the ActiveGate to [route traffic, monitor cloud environments, or monitor remote technologies with extensions](/managed/ingest-from/dynatrace-activegate#route "Understand the basic concepts related to ActiveGate.") or [monitor mainframe](/managed/ingest-from/dynatrace-activegate#mainframe "Understand the basic concepts related to ActiveGate."), you have to reinstall the ActiveGate to use it for Synthetic Monitoring. For more information, see [Create a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.").
+Note that changing the `synthetic_enabled` property only works if you installed the ActiveGate to [run Synthetic monitors from a private location](/managed/ingest-from/dynatrace-activegate#synthetic "Understand the basic concepts related to ActiveGate."). If you installed the ActiveGate to [route traffic, monitor cloud environments, or monitor remote technologies with extensions](/managed/ingest-from/dynatrace-activegate#route "Understand the basic concepts related to ActiveGate.") or [monitor mainframe](/managed/ingest-from/dynatrace-activegate#mainframe "Understand the basic concepts related to ActiveGate."), you have to reinstall the ActiveGate to use it for Synthetic Monitoring. For more information, see [Create a private Synthetic location](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.").
 
 If a comma (`,`) is part of a value, you need to add an escape backslash (`\`) before the comma.
 
@@ -397,11 +397,11 @@ Example: `proxy-password = foo\,bar`
 | `proxy-password` | unset | Proxy password (optional)  The password provided in the `proxy-password` property  is obfuscated following ActiveGate restart and the obfuscated password  is stored in the `proxy-password-encr` property. **Note**: A comma character, when intended to be a part of a value, should be escaped with a single backslash. For example, `proxy-password = foo\,bar`. |
 | `proxy-off` | unset | Disable proxy communication between ActiveGate and tested resource. |
 | `proxy-non-proxy-hosts` | unset | Do not use proxy when communicating with these hosts. |
-| `chromium_repo` | unset  Specify the custom browser package repository on the HTTP server. Example: `https://172.18.0.100/chromium-repo` Only works if both `synthetic_autoinstall` and `synthetic_autoupgrade_chromium` are `true`. | Enables autoupdate of the browser from the [custom repository](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#custom-repo "Learn how to create a private location for synthetic monitoring."). |
+| `chromium_repo` | unset  Specify the custom browser package repository on the HTTP server. Example: `https://172.18.0.100/chromium-repo` Only works if both `synthetic_autoinstall` and `synthetic_autoupgrade_chromium` are `true`. | Enables autoupdate of the browser from the [custom repository](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/create-a-private-synthetic-location#custom-repo "Learn how to create a private location for synthetic monitoring."). |
 
 We recommend that you not edit the value of the `synthetic_autoupgrade_chromium` property in `custom.properties` because your changes might be overwritten.
 
-`synthetic_autoupgrade_chromium` for autoupdating the browser can be defined at the location level (for locations with Environment ActiveGates) either [via the web UI](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#browser "Analyze and manage capacity usage at your private Synthetic locations.") or by using the [PUT a location](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/put-a-location "Update a private synthetic location via the Synthetic v2 API.") API call of the Synthetic locations API v2. For Cluster ActiveGates, you can configure this property via the [PUT a location (Dynatrace Managed)](/managed/dynatrace-api/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/put-a-location "Update a private Synthetic location via the Synthetic API v2 in Dynatrace Managed.") API call of the Cluster API v2. This property is not defined for ActiveGates that haven't been assigned to a location. For Activates assigned to a location, the default value is `true`.
+`synthetic_autoupgrade_chromium` for autoupdating the browser can be defined at the location level (for locations with Environment ActiveGates) either [via the web UI](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/manage-private-synthetic-locations#browser "Analyze and manage capacity usage at your private Synthetic locations.") or by using the [PUT a location](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/put-a-location "Update a private synthetic location via the Synthetic v2 API.") API call of the Synthetic locations API v2. For Cluster ActiveGates, you can configure this property via the [PUT a location (Dynatrace Managed)](/managed/dynatrace-api/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/put-a-location "Update a private Synthetic location via the Synthetic API v2 in Dynatrace Managed.") API call of the Cluster API v2. This property is not defined for ActiveGates that haven't been assigned to a location. For Activates assigned to a location, the default value is `true`.
 
 ## Module: Beacon forwarder
 
@@ -410,7 +410,7 @@ Using ActiveGate for Real User Monitoring
 
 | Property | Description |
 | --- | --- |
-| `beacon_forwarder_enabled` | Enables the [Beacon forwarder module](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server."). Possible values: `true` or `false`. |
+| `beacon_forwarder_enabled` | Enables the [Beacon forwarder module](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server."). Possible values: `true` or `false`. |
 
 ## Module: HTTP Metric API
 
@@ -430,7 +430,7 @@ Triggering and downloading of memory dumps
 
 | Property | Description |
 | --- | --- |
-| `memory_dumps_enabled` | Enables the [memory dumps module](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate."). Possible values: `true` or `false`. |
+| `memory_dumps_enabled` | Enables the [memory dumps module](/managed/observe/application-observability-classic/profiling-and-optimization-classic/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate."). Possible values: `true` or `false`. |
 
 ### Manage memory dumps using `agctl`
 
@@ -459,7 +459,7 @@ DumpSupported = true
 The corresponding deprecated `agctl` command is `agctl modules enable DumpSupported`. Both the deprecated configuration and the deprecated command are still supported. Both commands write configuration to the `[memory_dumps]` section.
 
 When your application experiences memory leaks or high object churn, it’s important that you get memory dumps so you can analyze these issues. In production environments, this is often a challenge when you can’t log into the environment and you have no other means of triggering memory dumps. Dynatrace enables you to both trigger and securely download memory dumps to the analysis tool of your choice.  
-See [Configure ActiveGate for memory dump storage](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate.").
+See [Configure ActiveGate for memory dump storage](/managed/observe/application-observability-classic/profiling-and-optimization-classic/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate.").
 
 ## Module: OneAgent routing
 
@@ -505,7 +505,7 @@ You can use an ActiveGate to access the code-level data that you need to trouble
 
 | Property | Default value | Description |
 | --- | --- | --- |
-| `networkZone` | unset | Defines the [network zone](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") to which the ActiveGate belongs. An ActiveGate can belong to only one network zone. The name of a network zone is a string of alphanumeric characters, hyphens (`-`), underscores (`_`), and dots (`.`). Dots are used as separators, so you must not use a dot as the first character of a network zone name. The length of the string is limited to 256 characters. ActiveGate restart is required after adding or changing this parameter. After restart, a network zone is automatically created in Dynatrace. |
+| `networkZone` | unset | Defines the [network zone](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.") to which the ActiveGate belongs. An ActiveGate can belong to only one network zone. The name of a network zone is a string of alphanumeric characters, hyphens (`-`), underscores (`_`), and dots (`.`). Dots are used as separators, so you must not use a dot as the first character of a network zone name. The length of the string is limited to 256 characters. ActiveGate restart is required after adding or changing this parameter. After restart, a network zone is automatically created in Dynatrace. |
 | `bindToNetworkInterface` | unset | By default, ActiveGate listens on all available interfaces. If you want ActiveGate to listen only to a selected interface, you need to configure this property with the IP address assigned to the network interface. |
 
 ### Manage network zone using `agctl`
@@ -523,7 +523,7 @@ After configuring the network zone with `agctl`, you must restart ActiveGate for
 Alternatively, you can manage network zones centrally through:
 
 * Go to **Deployment Status** > **Network zones** to view, edit, or create network zones.
-* **Remote configuration management** — use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
+* **Remote configuration management** — use [Remote configuration management](/managed/ingest-from/bulk-configuration-classic#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
 
 ## Group
 
@@ -545,7 +545,7 @@ agctl group set my.group
 
 After configuring the ActiveGate group with `agctl`, you must restart ActiveGate for the changes to take effect. See [Start/stop/restart ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").
 
-Alternatively, to modify ActiveGate group assignment centrally from the Dynatrace Cluster, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify ActiveGate group** action).
+Alternatively, to modify ActiveGate group assignment centrally from the Dynatrace Cluster, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration-classic#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify ActiveGate group** action).
 
 ## ActiveGate file cache
 

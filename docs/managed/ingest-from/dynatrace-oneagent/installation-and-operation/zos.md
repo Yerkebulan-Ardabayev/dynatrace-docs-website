@@ -30,7 +30,7 @@ z/OS use case
 
 Who is calling the mainframe and how often?
 
-Backtrace transactions using the [Service backtrace](/managed/observe/application-observability/services-classic/services-page/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.") to understand your mainframe workloads and benefit from potential IBM discounts (see for example the IBM [mobile﻿](https://www.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/877/ENUSZP14-0280/index.html&lang=en&request_locale=en) and [public cloud﻿](https://www.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=897/ENUS216-319&infotype=AN&subtype=CA) workload discounts to lower your monthly peak rolling 4-hour average MSU value).
+Backtrace transactions using the [Service backtrace](/managed/observe/application-observability-classic/services-classic/services-page/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.") to understand your mainframe workloads and benefit from potential IBM discounts (see for example the IBM [mobile﻿](https://www.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/877/ENUSZP14-0280/index.html&lang=en&request_locale=en) and [public cloud﻿](https://www.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=897/ENUS216-319&infotype=AN&subtype=CA) workload discounts to lower your monthly peak rolling 4-hour average MSU value).
 
 The Service backtrace below shows how a CICS transaction interactions with both a mobile application and a web application. You can clearly see how often these applications call the CICS transaction, and also which of their requests failed.
 
@@ -40,13 +40,13 @@ z/OS use case
 
 What transactions are expensive or slow?
 
-Analyze the performance of your transactions using via the [service flow](/managed/observe/application-observability/services-classic/services-page/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") to verify if they fulfill the defined SLOs with service-level metrics. The request count for example can indicate when a transaction is called too often from an open-system, which could result in additional costs.
+Analyze the performance of your transactions using via the [service flow](/managed/observe/application-observability-classic/services-classic/services-page/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") to verify if they fulfill the defined SLOs with service-level metrics. The request count for example can indicate when a transaction is called too often from an open-system, which could result in additional costs.
 
 ![z/OS use case](https://dt-cdn.net/images/zos-usecase-1-2558-21736786aa.png)
 
 z/OS use case
 
-Use the [PurePath distributed traces](/managed/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") code-level insights to optimize your programs.
+Use the [PurePath distributed traces](/managed/observe/application-observability-classic/distributed-traces-classic "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") code-level insights to optimize your programs.
 
 ![z/OS use case](https://dt-cdn.net/images/zos-usecase-6-2072-233541ed1b.png)
 
@@ -166,11 +166,11 @@ Can I merge process groups created by the z/OS Java module into a single process
 
 No, process groups created by the z/OS Java module can't be modified or merged.
 
-As an alternative you can organize your process groups by [defining metadata](/managed/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") or [defining tags](/managed/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.") based on environmental variables. Both concepts apply to z/OS Java as well. Note that you can define environment variables only on the process level, not on the host level.
+As an alternative you can organize your process groups by [defining metadata](/managed/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") or [defining tags](/managed/manage/tags-and-metadata-classic/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.") based on environmental variables. Both concepts apply to z/OS Java as well. Note that you can define environment variables only on the process level, not on the host level.
 
 Can I tag processes created by the z/OS Java module?
 
-Yes. You can tag processes created by the z/OS Java module by [defining metadata](/managed/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") or [defining tags](/managed/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.") based on environmental variables. Note that you can define environment variables only on the process level, not on the host level.
+Yes. You can tag processes created by the z/OS Java module by [defining metadata](/managed/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") or [defining tags](/managed/manage/tags-and-metadata-classic/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.") based on environmental variables. Note that you can define environment variables only on the process level, not on the host level.
 
 Can I define custom services using the z/OS Java module?
 

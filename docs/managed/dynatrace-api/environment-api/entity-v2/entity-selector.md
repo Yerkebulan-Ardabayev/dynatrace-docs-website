@@ -252,7 +252,7 @@ Include or exclude entities marked as deleted. Those are limited to the followin
 | Operator | * `include`: include deleted entities * `exclude`: exclude deleted entities |
 | Values | Not applicable |
 | Example | `type(HTTP_CHECK), deletedEntities.include()`: Select all entities of type `HTTP_CHECK` and include the ones marked as deleted. |
-| Note | * By default, deleted entities are excluded from all results. * This is not supported in [management zone rules](/managed/manage/identity-access-management-classic/permission-management/management-zones/management-zone-rules#text "Define management-zone rules to control access to monitored entities, logs, and metrics using entity conditions, dimensional data, and entity selectors.") and [automatic tagging](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions."). |
+| Note | * By default, deleted entities are excluded from all results. * This is not supported in [management zone rules](/managed/manage/identity-access-management-classic/permission-management/management-zones/management-zone-rules#text "Define management-zone rules to control access to monitored entities, logs, and metrics using entity conditions, dimensional data, and entity selectors.") and [automatic tagging](/managed/manage/tags-and-metadata-classic/setup/how-to-define-tags#automatic "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions."). |
 
 ## Relationships
 

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector-u
 
 * How-to guide
 * 5-min read
-* Updated on Jan 12, 2026
+* Updated on Oct 22, 2026
 
 Telemetry data can often include sensitive data (such as [PII﻿](https://en.wikipedia.org/wiki/Personal_data)), which may need to be redacted due to security and regulatory reasons. While this can be implemented on the application side, it typically is best to handle this centrally using gateways such as the OTel Collector. This enables the single-point management of redaction rules across all your applications and services, without the need to update your code each time a new redaction rule is required.
 
@@ -20,6 +20,7 @@ This page shows sample Collector configurations for the redaction of specific se
 * One of the following Collector distributions with the [transform﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/transformprocessor) and/or [redaction﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/processor/redactionprocessor) processors:
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+  + The [Dynatrace Bindplane OTel Collector](/managed/ingest-from/bindplane-classic "Bindplane manages OpenTelemetry collector fleets at scale and controls telemetry volume at the edge before data reaches Dynatrace.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + A [custom Builder version](/managed/ingest-from/opentelemetry/collector#collector-builder "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
 * The [Dynatrace API endpoint URL](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported

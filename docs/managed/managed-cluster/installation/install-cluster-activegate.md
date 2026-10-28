@@ -28,7 +28,7 @@ To install a Cluster ActiveGate on Linux or Windows, follow the steps below.
 Before you install, decide on the purpose of the ActiveGate and review the corresponding requirements:
 
 * **Route OneAgent traffic**—see [routing/monitoring requirements](/managed/ingest-from/dynatrace-activegate/installation/linux/linux-activegate-hardware-and-system-requirements "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Linux for routing and monitoring purposes.").
-* **Run Synthetic monitors from a private location**—Synthetic-enabled ActiveGates support a subset of operating systems and have higher [hardware and system requirements](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") than routing ActiveGates.
+* **Run Synthetic monitors from a private location**—Synthetic-enabled ActiveGates support a subset of operating systems and have higher [hardware and system requirements](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") than routing ActiveGates.
 
 In most cases, you can install an ActiveGate at any time following OneAgent installation. In some cases, however, the installation order matters, because the OneAgent installer needs to know about your ActiveGate installation before the OneAgent can be installed.
 

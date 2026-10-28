@@ -51,5 +51,5 @@ Integrate on AWS Lambda.](/managed/ingest-from/amazon-web-services-classic/integ
 
 ## Related topics
 
-* [Amazon Web Services monitoring (Dynatrace Classic)](/managed/observe/infrastructure-observability/cloud-platform-monitoring-classic/aws-monitoring-classic "Monitor AWS with Dynatrace")
+* [Amazon Web Services monitoring (Dynatrace Classic)](/managed/observe/infrastructure-observability-classic/cloud-platform-monitoring-classic/aws-monitoring-classic "Monitor AWS with Dynatrace")
 * [Serverless monitoring](/managed/discover-dynatrace/get-started/serverless-monitoring "Monitor serverless cloud services across AWS, Azure, and Google Cloud with Dynatrace for end-to-end visibility and AI-powered analysis.")

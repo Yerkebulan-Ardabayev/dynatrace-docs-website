@@ -519,7 +519,7 @@ Suppressed spans will not be visible in distributed traces.
 
 ## Define a request attribute for span attributes
 
-You can define a [request attribute](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") for any captured span attribute. To do so
+You can define a [request attribute](/managed/observe/application-observability-classic/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") for any captured span attribute. To do so
 
 1. Go to **Settings** > **Server-side service monitoring** > **Request attributes**.
 2. Select **Define a new request attribute** and enter the name and data type of your request attribute.
@@ -533,7 +533,7 @@ To learn more details about span attributes and how to capture them, see [Span s
 
 Use Span attribute as a request attribute
 
-You can find the **Attribute key** of your spans on the [Distributed traces](/managed/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") page in the **Code level** tab under **Span attributes**.
+You can find the **Attribute key** of your spans on the [Distributed traces](/managed/observe/application-observability-classic/distributed-traces-classic "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") page in the **Code level** tab under **Span attributes**.
 
 ![Span attributes](https://dt-cdn.net/images/span-attributes-1916-1967c4e21e.png)
 

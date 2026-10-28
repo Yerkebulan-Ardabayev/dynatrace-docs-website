@@ -75,7 +75,7 @@ Example of dashboard page with self-monitoring metrics.
 
 ## Log and event monitoring insights
 
-In this example, we use self-monitoring metrics to get insights into the operation of [Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") over time.
+In this example, we use self-monitoring metrics to get insights into the operation of [Log Monitoring](/managed/analyze-explore-automate/log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") over time.
 
 1. Go to **Data Explorer**.
 2. Check the metrics listed below.

@@ -12,7 +12,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platfo
 
 Connecting your Cloud Foundry foundations to Dynatrace enables
 
-* full access to the dedicated [Cloud Foundry overview page](/managed/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring/cloud-foundry-metrics "Available metrics for monitoring your Cloud Foundry clusters with Dynatrace")
+* full access to the dedicated [Cloud Foundry overview page](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/cloud-foundry-monitoring/cloud-foundry-metrics "Available metrics for monitoring your Cloud Foundry clusters with Dynatrace")
 * automatic detection of your Cloud Foundry organizations
 * access to other Cloud Foundry process properties, like **space**, **space ID**, **application**, **application ID**, and **instance index**.
 
@@ -38,7 +38,6 @@ To connect your foundation with Dynatrace, follow the instructions below.
 ## Step 1 Start installation
 
 1. Sign in to Dynatrace.
-
 2. Go to **Deploy Dynatrace**.
 3. Select **Install ActiveGate**.
 
@@ -181,7 +180,7 @@ Alternatively, you can add the truststore file containing the Kubernetes CA cert
 
 Disabling certificate validation isn't recommended because it imposes security risks. However, if you still want to disable certificate validation for test environments, you need to do the following:
 
-1. Go to [Kubernetes overview page](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-cluster-utilization-kubernetes#kubernetes-page "Monitor the health and utilization of your Kubernetes/OpenShift cluster resources."), look for your cluster and select **…** > **Settings** in the cluster row to edit its settings.
+1. Go to [Kubernetes overview page](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/kubernetes-monitoring/monitor-cluster-utilization-kubernetes#kubernetes-page "Monitor the health and utilization of your Kubernetes/OpenShift cluster resources."), look for your cluster and select **…** > **Settings** in the cluster row to edit its settings.
 2. Disable **Require valid certificates for communication with API server**.
 3. Disable **Verify hostname in certificate against Kubernetes API URL**.
 4. Select **Save** to save your changes.
@@ -224,5 +223,5 @@ The schemaID for Cloud Foundry is `builtin:cloud.cloudfoundry`.
 
 ## Related topics
 
-* [Cloud Foundry monitoring](/managed/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")
+* [Cloud Foundry monitoring](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")
 * [Set up Dynatrace on Cloud Foundry](/managed/ingest-from/setup-on-container-platforms/cloud-foundry "Set up and configure Dynatrace on Cloud Foundry.")

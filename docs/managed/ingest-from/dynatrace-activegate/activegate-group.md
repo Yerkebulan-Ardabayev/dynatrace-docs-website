@@ -40,7 +40,7 @@ Dynatrace-ActiveGate-Windows-x86-<version>.exe --set-group=my-group
 
 ### Assign to a group after installation
 
-To assign ActiveGates to a group, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify ActiveGate group** action).
+To assign ActiveGates to a group, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration-classic#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify ActiveGate group** action).
 
 Alternatively, you can assign an ActiveGate to a group using [agctl](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#group "Learn how to use agctl to configure and manage ActiveGate from the command line") or by editing the `custom.properties` file:
 

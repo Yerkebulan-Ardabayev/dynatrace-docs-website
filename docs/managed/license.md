@@ -23,7 +23,7 @@ Use the pages in this section to learn more about how DPS works.
 
 See how consumption for each rate-card capability is calculated and billed.](/managed/license/capabilities "Understand how Dynatrace calculates and bills consumption for each capability under the Dynatrace Platform Subscription (DPS) model.")[### DPS permissions
 
-Look up permissions for cost and subscription data.](/managed/license/dps-permissions "What permissions are required to view DPS consumption data in Account Management, DQL, the API, and Cost Allocation.")[### DPS for Hybrid
+Look up permissions for cost and subscription data.](/managed/license/dps-permissions "What permissions are required to view DPS consumption data in Account Management and the Account Management API.")[### DPS for Hybrid
 
 License a hybrid setup with multiple SaaS and/or Managed deployments.](/managed/license/dps-for-hybrid "DPS for Hybrid lets you share one subscription across multiple accounts.")[### Key concepts
 

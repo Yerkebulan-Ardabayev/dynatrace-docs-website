@@ -89,7 +89,7 @@ When you first deploy the Azure Native Dynatrace resource in your Azure subscrip
 
   + You can [install OneAgent](#oa) to enable monitoring for various Azure compute resources.
   + You can monitor [metrics](/managed/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.") from your Azure resources. You can also set up metrics for the [default services](/managed/ingest-from/microsoft-azure-services/azure-native-integration#default "Set and configure your Dynatrace SaaS environment using Azure Marketplace.").
-  + You can collect [logs](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") from your Azure resources.
+  + You can collect [logs](/managed/analyze-explore-automate/log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") from your Azure resources.
 
 To set up the integration
 
@@ -170,7 +170,7 @@ After you set up the integration, you can access your Dynatrace environment dire
 In the Azure portal, go to your Dynatrace resource and select **Overview**. All details of your Dynatrace environment will appear there, including direct links to the following web UI pages:
 
 * **Dashboards** - For details, see [Dashboards](/managed/analyze-explore-automate/dashboards "Learn how to build, share, and organize Dynatrace dashboards, and how dashboards scope data, which settings apply, and which tiles are available.").
-* **Log Viewer** - For details, see [Log viewer (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.").
+* **Log Viewer** - For details, see [Log viewer (Logs Classic)](/managed/analyze-explore-automate/log-monitoring-classic/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.").
 * **Smartscape topology** - For details, see [Visualize your environment through Smartscape](/managed/analyze-explore-automate/smartscape-classic "Learn how Smartscape visualizes all the entities and dependencies in your environment.").
 
 ## Configure metrics and logs
@@ -231,7 +231,7 @@ After you select the cloud services and save your changes, monitoring of the new
 
 ### Logs
 
-* You can activate [logs](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") either [during the Azure integration deployment](#setup) or [after deployment](#how-to-logs).
+* You can activate [logs](/managed/analyze-explore-automate/log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") either [during the Azure integration deployment](#setup) or [after deployment](#how-to-logs).
 * You can set up two types of Azure logs to Dynatrace: [Subscription activity logs](#activity) and [Azure resource logs](#resource).
 * You can send logs from your Azure Entra ID domain by doing the following:
 
@@ -300,7 +300,7 @@ Azure Native Dynatrace Service uses a Dynatrace access token called `azure-nativ
 
 ## Create tags
 
-* You can create [tags](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.") either [during the Azure integration deployment](#setup) or [after deployment](#how-to-tags).
+* You can create [tags](/managed/manage/tags-and-metadata-classic/setup/how-to-define-tags "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.") either [during the Azure integration deployment](#setup) or [after deployment](#how-to-tags).
 
 You can apply tags to your Azure resources, resource groups, and subscriptions to logically organize them into a taxonomy. You can specify tags for the new Dynatrace resource in Azure by adding custom key/value pairs:
 
@@ -335,7 +335,7 @@ Install OneAgent on Azure Kubernetes Services
 2. Select a Virtual Machine from the list, on which you want to install the OneAgent extension.
 3. Select **Install extension**.
 4. Optional Select whether to enable log analytics.
-5. Optional Provide a [host group](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") for OneAgent.
+5. Optional Provide a [host group](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") for OneAgent.
 6. Select **OK** to start the installation process.
 7. When the installation is complete, the **OneAgent status** for the selected Virtual Machine displays **Installed**.
 
@@ -346,7 +346,7 @@ Install OneAgent on Azure Kubernetes Services
 2. From the list, select the App Service on which you want to install the OneAgent extension.
 3. Select **Install extension**.
 4. Optional Select whether to enable log analytics.
-5. Optional Provide a [host group](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") for OneAgent.
+5. Optional Provide a [host group](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") for OneAgent.
 6. Select **OK** to start the installation process.
 7. When the installation is complete, the **OneAgent status** for the selected Virtual Machine displays **Installed**.
 

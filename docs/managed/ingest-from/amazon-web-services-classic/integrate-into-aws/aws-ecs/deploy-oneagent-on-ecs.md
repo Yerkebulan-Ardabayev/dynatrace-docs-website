@@ -56,7 +56,7 @@ This approach describes the installation of OneAgent as a daemon service in its 
 
    While still in **Environment variables**, you can [customize your OneAgent installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.") by adding several OneAgent installer parameters in the command text box. Make sure to separate each parameter by a space. For example, `--set-app-log-content-access=false --set-network-zone=<your.network.zone>`.
 
-   Set the `--set-network-zone=<your.network.zone>` parameter if you want to configure network zones. See [network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+   Set the `--set-network-zone=<your.network.zone>` parameter if you want to configure network zones. See [network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.") for more information.
 7. Go to **Storage and logging** and enter the following values in **Mount point**:
 
    * **Source volume**: `oneagent`

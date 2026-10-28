@@ -1,14 +1,14 @@
 ---
-title: ActiveGate security
+title: ActiveGate security (Dynatrace Classic)
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/activegate-security
 ---
 
-# ActiveGate security
+# ActiveGate security (Dynatrace Classic)
 
-# ActiveGate security
+# ActiveGate security (Dynatrace Classic)
 
 * 8-min read
-* Updated on Jul 20, 2026
+* Updated on Dec 09, 2025
 
 ## Custom certificate for ActiveGate
 
@@ -88,7 +88,7 @@ All your ActiveGates have already been gradually migrated to use ActiveGate toke
 
 To check which of your ActiveGates have ActiveGate tokens enabled:
 
-1. In Dynatrace, go to **Deployment Status** and select **ActiveGates**.
+1. Go to **Deployment Status** and select **ActiveGates**.
 2. You can filter your ActiveGates by the following ActiveGate token statuses, see [ActiveGate token status](#statuses) for more information.
 
    * Absent
@@ -122,8 +122,6 @@ During that period, if any attempt to connect without an ActiveGate token is det
 * The transitional period is reset to 30 days—ActiveGate token enforcement will be switched on automatically no sooner than 30 days from that point.
 
 ### ActiveGate token status
-
-Dynatrace Classic
 
 If your ActiveGates don't use valid ActiveGate tokens, you can check to learn why the tokens are invalid.
 
@@ -270,8 +268,6 @@ The ActiveGate is version 1.223 or earlier; ActiveGate token-based network secur
 Besides setting up your internal mechanism for rotating ActiveGate tokens before their expiration date, you can set up notifications about expiring ActiveGate tokens. To do so, create a problem notification integration (for example, [Email](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration "Get email whenever Dynatrace detects a problem in your environment that affects real users.")) using the built-in **Default for ActiveGate Token Expiry** alerting profile.
 
 For Dynatrace Managed, [emergency contacts](/managed/managed-cluster/configuration/configure-cluster-event-notifications "Configure Dynatrace Managed Cluster event notification recipients, emergency contacts, and which Managed Cluster events trigger email notifications.") also receive token expiry notifications.
-
-Dynatrace Classic
 
 To stop notifications
 

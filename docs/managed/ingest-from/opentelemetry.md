@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry
 
 * Overview
 * 2-min read
-* Updated on Oct 08, 2026
+* Updated on Oct 22, 2026
 
 [OpenTelemetry (OTel)﻿](https://www.opentelemetry.io) provides a standardized way of collecting and exporting telemetry data.
 It allows applications and infrastructure to transmit telemetry to backends (such as Dynatrace) using vendor-agnostic formats.
@@ -62,6 +62,7 @@ Dynatrace meets customers where they are in their observability journey, offerin
 * OTLP API
 * OTel Collector
 * Dynatrace OTel Collector
+* [Dynatrace Bindplane OTel Collector](/managed/ingest-from/bindplane-classic "Bindplane manages OpenTelemetry collector fleets at scale and controls telemetry volume at the edge before data reaches Dynatrace.")
 
 ## Licensing
 

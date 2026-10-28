@@ -119,7 +119,7 @@ When deployed in application-only mode, OneAgent monitors the memory, disk, CPU,
    cf set-env <application> DT_NETWORK_ZONE <your_network_zone>
    ```
 
-   See [network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+   See [network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.") for more information.
 6. Optional Configure additional code modules
 
    You can configure additional code modules via `UserProvidedService`:
@@ -174,5 +174,5 @@ When deployed in application-only mode, OneAgent monitors the memory, disk, CPU,
 
 ## Related topics
 
-* [Cloud Foundry monitoring](/managed/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")
+* [Cloud Foundry monitoring](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")
 * [OneAgent platform and capability support matrix](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

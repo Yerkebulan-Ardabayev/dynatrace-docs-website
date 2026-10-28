@@ -63,7 +63,7 @@ PowerShell
 6. Select **Create** to add the extension.
 7. On the **Install extension** page, enter your **environment ID**, your **API token**, and your **server URL**. See [Prerequisites](#prerequisites) for details.
 8. Select whether you want to enable Log Monitoring.
-9. Optional Define the [host group](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs.
+9. Optional Define the [host group](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs.
 10. Select **OK**.
 11. To check the deployment status, go to **Deployment Status**.
 
@@ -76,7 +76,7 @@ After installation is complete, restart your applications on the VM. Immediately
 3. Select **Create**.
 4. On the **Install extension** page, enter your **environment ID**, your **API token**, and your **server URL**. See [Prerequisites](#prerequisites) for details.
 5. Select whether you want to enable Log Monitoring.
-6. Optional Define the [host group](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs.
+6. Optional Define the [host group](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs.
 7. Select **OK**.
 8. Continue VM configuration in the deployment wizard.
 9. Select **Review and create**.
@@ -125,7 +125,7 @@ When using the Azure CLI within PowerShell, the settings have to be formatted as
 | token | Required | The PaaS token as described in [Prerequisites](#prerequisites). |
 | server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
 | enableLogsAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
-| hostGroup | Optional | Define the [host group](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
+| hostGroup | Optional | Define the [host group](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
 | overrideDefaults [1](#fn-1-1-def) | Optional | Override the default value of the timeout—120 seconds. For example, if you want to set the timeout to 600 seconds, add `\"overrideDefaults\": {\"downloadInstallerRequestTimeoutInSeconds\": 600}` to the `-Settings` string, you can also leave it empty `\"overrideDefaults\": {}`, or `null`. In such cases, the 120 seconds default value will apply. |
 
 1
@@ -185,7 +185,7 @@ Set-AzureRmVmExtension
 | Extension-Version | Optional | Required version of the extension. |
 | server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
 | enableLogsAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
-| hostGroup | Optional | Define the [host group](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
+| hostGroup | Optional | Define the [host group](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
 | overrideDefaults [1](#fn-2-1-def) | Optional | Override the default value of the timeout—120 seconds. For example, if you want to set the timeout to 600 seconds, add `\"overrideDefaults\": {\"downloadInstallerRequestTimeoutInSeconds\": 600}` to the `-Settings` string, you can also leave it empty `\"overrideDefaults\": {}`, or `null`. In such cases, the 120 seconds default value will apply. |
 
 1
@@ -398,7 +398,7 @@ The JSON file for a virtual machine extension can be nested inside the virtual m
 | Extension-Version | Optional | Required version of the extension. |
 | server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
 | enableLogsAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
-| hostGroup | Optional | Define the [host group](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
+| hostGroup | Optional | Define the [host group](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
 | overrideDefaults [1](#fn-3-1-def) | Optional | Override the default value of the timeout—120 seconds. For example, if you want to set the timeout to 600 seconds, add `\"overrideDefaults\": {\"downloadInstallerRequestTimeoutInSeconds\": 600}` to the ARM template in the `settings` object, you can also leave it empty `\"overrideDefaults\": {}`, or `null`. In such cases, the 120 seconds default value will apply. |
 
 1
@@ -437,7 +437,7 @@ az vm extension set
 --settings "{\"tenantId\":\"myawesometenant\",\"token\":\"nope123\", \"installerArguments\":\"--set-host-group=example_hostgroup --set-monitoring-mode=fullstack --set-network-zone=<your.network.zone>\"}"
 ```
 
-See [network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+See [network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.") for more information.
 
 ## Related topics
 

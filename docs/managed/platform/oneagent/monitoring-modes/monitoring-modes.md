@@ -127,7 +127,7 @@ Network
 
 ## Virtualization monitoring
 
-Dynatrace supports [virtualization monitoring](/managed/observe/infrastructure-observability/vmware-vsphere-monitoring "Monitor VMware vSphere with Dynatrace."). To monitor the virtual components in your environment, you need to complete an extra step beyond the initial setup. For full details, see [Set up virtualization monitoring](/managed/observe/infrastructure-observability/vmware-vsphere-monitoring "Monitor VMware vSphere with Dynatrace.").
+Dynatrace supports [virtualization monitoring](/managed/observe/infrastructure-observability-classic/vmware-vsphere-monitoring-classic "Monitor VMware vSphere with Dynatrace."). To monitor the virtual components in your environment, you need to complete an extra step beyond the initial setup. For full details, see [Set up virtualization monitoring](/managed/observe/infrastructure-observability-classic/vmware-vsphere-monitoring-classic "Monitor VMware vSphere with Dynatrace.").
 
 ## FAQ
 

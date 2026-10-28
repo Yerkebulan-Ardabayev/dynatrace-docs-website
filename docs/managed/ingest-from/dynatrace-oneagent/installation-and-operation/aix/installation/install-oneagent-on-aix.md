@@ -33,7 +33,7 @@ To get started, access the [Cluster Management Console and choose the environmen
 ### Limitations
 
 * OneAgent installation isn't supported on networked storage mount points that are managed by standards such as NFS or iSCSI.
-* The support for [Log management and Analytics﻿](https://docs.dynatrace.com/docs/shortlink/log-management-and-analytics) and [Log Monitoring Classic](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") on AIX hosts is limited:
+* The support for [Log management and Analytics﻿](https://docs.dynatrace.com/docs/shortlink/log-management-and-analytics) and [Log Monitoring Classic](/managed/analyze-explore-automate/log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") on AIX hosts is limited:
 
   + log detection in log module is limited only to custom log sources.
 
@@ -59,11 +59,11 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 7. Optional **Set customized options**
 
    * Enable monitoring of [Virtual I/O Server](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix#vios-installation "Learn how to download and install Dynatrace OneAgent on AIX.") logical partition.
-   * Set a [network zone](/managed/manage/network-zones#deploy-network-zones "Find out how network zones work in Dynatrace.") for this host.
-   * If your environment is segmented (for example, into development and production), consider [organizing your hosts into host groups](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
-   * Override the automatically detected [host name](/managed/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name."). This is useful in large and dynamic environments, where defined host names can be unintuitive or can change frequently.
-   * Apply [tags](/managed/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") to the host to organize your monitored environments in a meaningful way.
-   * Define [Properties](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#host-metadata "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.") to the host to automatically add metadata.
+   * Set a [network zone](/managed/manage/network-zones-classic#deploy-network-zones "Find out how network zones work in Dynatrace.") for this host.
+   * If your environment is segmented (for example, into development and production), consider [organizing your hosts into host groups](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
+   * Override the automatically detected [host name](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name."). This is useful in large and dynamic environments, where defined host names can be unintuitive or can change frequently.
+   * Apply [tags](/managed/manage/tags-and-metadata-classic "Use tags and metadata to organize data in your Dynatrace environment.") to the host to organize your monitored environments in a meaningful way.
+   * Define [Properties](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/define-tags-and-metadata-for-hosts#host-metadata "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.") to the host to automatically add metadata.
    * Change the OneAgent mode to Infrastructure Monitoring or Discovery in place of Full-Stack Monitoring. For more information, see [OneAgent monitoring modes](/managed/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
 
      It is not available if the Virtual I/O Server monitoring option is enabled.

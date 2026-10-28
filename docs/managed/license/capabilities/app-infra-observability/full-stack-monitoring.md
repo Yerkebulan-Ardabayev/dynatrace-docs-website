@@ -109,7 +109,7 @@ Every contributing GiB of host or application memory adds 900 custom metric data
 Included metric data points that are not consumed within the 15-minute interval in which they are granted do not roll over to subsequent intervals.
 Your environment's included metric data points are applied automatically to metrics that originate at hosts and containers that are monitored by OneAgent in Full-Stack Monitoring mode.
 
-All metric keys starting with `dt.service.*` are for [service monitoring](/managed/observe/application-observability/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.") and consume included Full-Stack metric data points if the span data itself originate at hosts and containers that are monitored by OneAgent in Full-Stack Monitoring mode.
+All metric keys starting with `dt.service.*` are for [service monitoring](/managed/observe/application-observability-classic/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.") and consume included Full-Stack metric data points if the span data itself originate at hosts and containers that are monitored by OneAgent in Full-Stack Monitoring mode.
 If the span data originates at any other source, these metrics are charged as [Custom Metrics Classic](/managed/license/capabilities/platform-extensions/custom-metrics-classic "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
 Such metric keys include, for example:
 
@@ -134,7 +134,7 @@ This applies to custom metrics as described in the table below.
 | A Full-Stack monitored host sending metrics via the [OneAgent metric API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.") | * OpenTelemetry metrics * Spring Micrometer * StatsD * JMX * Extensions run locally on the host by OneAgent * a host-local Telegraf |
 | An application monitored with Container-based application-only Full-Stack Monitoring via the OneAgent code module | * OpenTelemetry metrics * Spring Micrometer * JMX |
 | A Full-Stack monitored Kubernetes node, either via Cloud Native Full-Stack or Classic Full-Stack | * OpenTelemetry metrics * Spring Micrometer * JMX * Prometheus (via ActiveGate). * This does not include Metrics scraped via an OpenTelemetry collector. |
-| [Service monitoring](/managed/observe/application-observability/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.") | * `dt.service.request.count` * `dt.service.request.failure_count` * `dt.service.request.response_time` * `dt.service.request.service_mesh.count` * `dt.service.request.service_mesh.failure_count` * `dt.service.request.service_mesh.response_time` |
+| [Service monitoring](/managed/observe/application-observability-classic/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.") | * `dt.service.request.count` * `dt.service.request.failure_count` * `dt.service.request.response_time` * `dt.service.request.service_mesh.count` * `dt.service.request.service_mesh.failure_count` * `dt.service.request.service_mesh.response_time` |
 
 ### Included metric data point calculation example
 
@@ -156,7 +156,7 @@ An equal number of data points can be consumed:
 
 ### CPU, memory, and thread profiling
 
-Full-Stack Monitoring includes [CPU](/managed/observe/application-observability/profiling-and-optimization/cpu-profiling "Learn how you can use Dynatrace to perform enhanced code analysis."), [memory](/managed/observe/application-observability/profiling-and-optimization/memory-profiling "Analyze memory allocation with Dynatrace."), and thread profiling for technologies like Java, .NET, Go, Node.js, and PHP.
+Full-Stack Monitoring includes [CPU](/managed/observe/application-observability-classic/profiling-and-optimization-classic/cpu-profiling "Learn how you can use Dynatrace to perform enhanced code analysis."), [memory](/managed/observe/application-observability-classic/profiling-and-optimization-classic/memory-profiling "Analyze memory allocation with Dynatrace."), and thread profiling for technologies like Java, .NET, Go, Node.js, and PHP.
 OneAgent uses an intelligent patented mechanism to manage the volume of profiling data.
 Dynatrace [retains the total amount of ingested profiling data](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#purepath "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.") from your environment for 10 days.
 

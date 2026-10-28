@@ -92,4 +92,4 @@ A key user action.
 
 ## Related topics
 
-* [User actions in RUM Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")
+* [User actions in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")

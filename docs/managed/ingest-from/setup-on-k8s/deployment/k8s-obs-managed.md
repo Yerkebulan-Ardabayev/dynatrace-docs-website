@@ -484,4 +484,4 @@ Size Dynatrace ActiveGates in Kubernetes](/managed/ingest-from/setup-on-k8s/guid
 
 ## Related topics
 
-* [Kubernetes](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Monitor Kubernetes/OpenShift with Dynatrace.")
+* [Kubernetes](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/kubernetes-monitoring "Monitor Kubernetes/OpenShift with Dynatrace.")

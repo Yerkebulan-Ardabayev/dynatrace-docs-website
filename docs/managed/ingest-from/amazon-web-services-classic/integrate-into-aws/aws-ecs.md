@@ -87,7 +87,7 @@ Privileged mode and volume parameters are prerequisites for this deployment meth
 
    While still in **Environment variables**, you can [customize your OneAgent installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.") by adding several OneAgent installer parameters in the command text box. Make sure to separate each parameter by a space. For example, `--set-monitoring-mode=infra-only --set-app-log-content-access=false --set-network-zone=<your.network.zone>`.
 
-   Set the `--set-network-zone=<your.network.zone>` parameter if you want to configure network zones. See [network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+   Set the `--set-network-zone=<your.network.zone>` parameter if you want to configure network zones. See [network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.") for more information.
 9. Scroll down to **Storage** > **Volume - 1** and set **Source path** to `/`
 10. Go to **Container mount points**, select **Add mount point** and enter the following values:
 

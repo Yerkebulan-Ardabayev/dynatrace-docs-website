@@ -26,7 +26,7 @@ Leverage open source components to ingest additional observability signals into 
 
 API reference and configuration options for all Dynatrace components within your Kubernetes cluster.](/managed/ingest-from/setup-on-k8s/reference "Contains a reference page with configuration options for each Dynatrace component")[### Stream Kubernetes logs
 
-Collect logs from Kubernetes container orchestration systems.](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/log-monitoring-kubernetes "Learn how to monitor logs in Kubernetes.")[### Dynatrace Operator release notes
+Collect logs from Kubernetes container orchestration systems.](/managed/analyze-explore-automate/log-monitoring-classic/acquire-log-data/log-monitoring-kubernetes "Learn how to monitor logs in Kubernetes.")[### Dynatrace Operator release notes
 
 See release notes for Dynatrace Operator.](/managed/whats-new/dynatrace-operator "Release notes for Dynatrace Operator")
 

@@ -22,9 +22,9 @@ The main advantages of OpenKit are:
 
 With Dynatrace OpenKit, you can:
 
-* Track [user sessions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-session "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.") and [user actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")
+* Track [user sessions](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-session "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.") and [user actions](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")
 * Report events, errors, and crashes
-* Trace web requests to [server-side distributed traces](/managed/observe/application-observability/distributed-traces/use-cases/segment-request "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.")
+* Trace web requests to [server-side distributed traces](/managed/observe/application-observability-classic/distributed-traces-classic/use-cases/segment-request "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.")
 * Tag user sessions with user tags
 * Maintain compatibility with Dynatrace
 

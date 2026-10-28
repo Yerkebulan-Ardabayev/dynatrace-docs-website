@@ -119,7 +119,7 @@ Metric key: `builtin:tech.generic.handles.fileDescriptorsPercentUsed`
 
 ### Resolved issues in this release
 
-* In the case of [classic K8s log monitoring](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/log-monitoring-kubernetes "Learn how to monitor logs in Kubernetes."), the log monitoring modules are not included in the host Units license and are also not billed. However, they were incorrectly included in the host unit quota check, potentially leading to misleading information about quota usage. Therefore, we excluded the log monitoring modules from the host unit quota check (MGD-8983)
+* In the case of [classic K8s log monitoring](/managed/analyze-explore-automate/log-monitoring-classic/acquire-log-data/log-monitoring-kubernetes "Learn how to monitor logs in Kubernetes."), the log monitoring modules are not included in the host Units license and are also not billed. However, they were incorrectly included in the host unit quota check, potentially leading to misleading information about quota usage. Therefore, we excluded the log monitoring modules from the host unit quota check (MGD-8983)
 * Fixed installer packages that weren't synchronized correctly between nodes if a script file without a semantic version in the filename was present in the Dynatrace Managed server installer folder. (MGD-8354)
 * Resolved an issue with application-only deployments when multiple code modules could overwrite each other's OneAgent version on the same host. (MGD-6868)
 * Reliable browser monitor auto-login: Fixed a bug in the JavaScript step of the auto-login browser monitor, preventing crashes when the monitor fails, for a smoother monitoring experience. (DEM-18430)

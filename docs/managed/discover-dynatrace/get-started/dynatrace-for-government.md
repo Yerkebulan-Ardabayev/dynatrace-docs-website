@@ -171,7 +171,7 @@ If you're missing the [security permissions](/managed/secure/application-securit
 
   Host page detail - online availability
 
-For details, see [Host availability](/managed/observe/infrastructure-observability/hosts/monitoring/host-monitoring/host-availability "Check host availability, interpret host availability states, and see how maintenance windows are reflected in host availability charts.").
+For details, see [Host availability](/managed/observe/infrastructure-observability-classic/hosts-classic/monitoring/host-monitoring/host-availability "Check host availability, interpret host availability states, and see how maintenance windows are reflected in host availability charts.").
 
 ### Host performance
 
@@ -183,7 +183,7 @@ Leverage these charts
 
 Select  in the upper-right corner of a chart to:
 
-* **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
+* **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
 * **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
 
 ![Host overview: host performance](https://dt-cdn.net/images/host-performance-1597-05b7f2365c.png)
@@ -198,7 +198,7 @@ Leverage these charts
 
 Select  in the upper-right corner of a chart to:
 
-* **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
+* **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
 * **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
 
 ![Host overview: process analysis](https://dt-cdn.net/images/process-analysis-1599-d637b524c6.png)
@@ -209,7 +209,7 @@ Host overview: process analysis
 
 OneAgent version 1.237+
 
-The **Process instance snapshots** section offers additional insights into the most resource-consuming processes running on your host and the processes defined for [Process availability](/managed/observe/infrastructure-observability/hosts/monitoring/process-availability "Monitor availability and performance of the key processes on your hosts.") monitoring.
+The **Process instance snapshots** section offers additional insights into the most resource-consuming processes running on your host and the processes defined for [Process availability](/managed/observe/infrastructure-observability-classic/hosts-classic/monitoring/process-availability "Monitor availability and performance of the key processes on your hosts.") monitoring.
 
 ![Process instance snapshot](https://dt-cdn.net/images/process-instance-snapshot-1404-c1bcee55de.png)
 
@@ -219,7 +219,7 @@ A single process instance snapshot is a set of monitoring data for processes. It
 
 A process instance snapshot is triggered by high CPU, memory, or network usage on your host. You can also request a process snapshot manually. Select  in the upper-right corner of the section and select **Request process snapshot now**. Wait for a message confirming a successful snapshot trigger. Process snapshot data should appear after you reload the page within 90 seconds.
 
-Additionally, for processes defined for [Process availability](/managed/observe/infrastructure-observability/hosts/monitoring/process-availability "Monitor availability and performance of the key processes on your hosts.") monitoring, the snapshot shows how the processes behaved before they disappeared and if they reappeared within 10 minutes.
+Additionally, for processes defined for [Process availability](/managed/observe/infrastructure-observability-classic/hosts-classic/monitoring/process-availability "Monitor availability and performance of the key processes on your hosts.") monitoring, the snapshot shows how the processes behaved before they disappeared and if they reappeared within 10 minutes.
 
 #### Enable process instance snapshots
 
@@ -244,7 +244,7 @@ Leverage these charts
 
 Select  in the upper-right corner of a chart to:
 
-* **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
+* **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
 * **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
 
 ![Host overview: disk analysis](https://dt-cdn.net/images/disk-analysis-1599-236d782165.png)
@@ -257,9 +257,9 @@ Disk monitoring is a scheduled task that collects disk metrics from the agent. I
 
 The available settings for disks are:
 
-* **Disk options**: You can create exception rules to remove certain disks from the monitoring list and detect duplicate disks. For more details, see below or refer to [Disk options](/managed/observe/infrastructure-observability/hosts/configuration#disk-options "Host-level settings").
-* **Disk anomaly detection rules**: You can configure host anomaly detection, including problem and event thresholds, to meet your specific needs. For more details, refer to [Host anomaly detection](/managed/observe/infrastructure-observability/hosts/configuration/anomaly-detection "Configure host anomaly detection, including problem and event thresholds.").
-* **Anomaly detection for infrastructure: Disk**: You can use these settings to configure detection sensitivity, set alert thresholds, or disable alerting for disks. For more details, refer to [Anomaly detection](/managed/observe/infrastructure-observability/hosts/configuration#anomaly-detection "Host-level settings").
+* **Disk options**: You can create exception rules to remove certain disks from the monitoring list and detect duplicate disks. For more details, see below or refer to [Disk options](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration#disk-options "Host-level settings").
+* **Disk anomaly detection rules**: You can configure host anomaly detection, including problem and event thresholds, to meet your specific needs. For more details, refer to [Host anomaly detection](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/anomaly-detection "Configure host anomaly detection, including problem and event thresholds.").
+* **Anomaly detection for infrastructure: Disk**: You can use these settings to configure detection sensitivity, set alert thresholds, or disable alerting for disks. For more details, refer to [Anomaly detection](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration#anomaly-detection "Host-level settings").
 
 #### Limitations
 
@@ -340,7 +340,7 @@ Leverage these charts
 
 Select  in the upper-right corner of a chart to:
 
-* **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
+* **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
 * **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
 
 ![Host overview: network analysis](https://dt-cdn.net/images/network-analysis-1597-a3306f3237.png)
@@ -359,7 +359,7 @@ Leverage these charts
 
 Select  in the upper-right corner of a chart to:
 
-* **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
+* **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
 * **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to a dashboard](/managed/analyze-explore-automate/dashboards/pin-tiles-to-a-dashboard "Pin a filtered Dynatrace page or a Data Explorer chart to a dashboard as a tile, then update, copy, or clone that tile to other dashboards.").
 
 ### Events

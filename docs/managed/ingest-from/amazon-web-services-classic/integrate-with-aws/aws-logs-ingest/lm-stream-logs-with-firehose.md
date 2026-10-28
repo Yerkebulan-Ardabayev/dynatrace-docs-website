@@ -17,7 +17,7 @@ Dynatrace Cluster version 1.288
 
 Dynatrace integration with Amazon Data Firehose provides a simple and safe way to ingest AWS logs. To enable AWS log forwarding, you need to create Amazon Data Firehose instance and configure it with your Dynatrace environment as a destination. Then you can connect your CloudWatch log groups by creating a subscription filter or send logs directly to Data Firehose from services that support it (e.g. Amazon Managed Streaming for Apache Kafka). Data Firehose and other created cloud resources incur AWS costs according to standard AWS billing policy.
 See the
-[Cloud log forwarding page](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/cloud-provider-log-forwarding#aws-log-forwarding "Learn how to configure AWS, Azure and Google Cloud log forwarding to ingest logs.") to learn about all the options for AWS log ingestion.
+[Cloud log forwarding page](/managed/analyze-explore-automate/log-monitoring-classic/acquire-log-data/cloud-provider-log-forwarding#aws-log-forwarding "Learn how to configure AWS, Azure and Google Cloud log forwarding to ingest logs.") to learn about all the options for AWS log ingestion.
 
 ## Prerequisites
 

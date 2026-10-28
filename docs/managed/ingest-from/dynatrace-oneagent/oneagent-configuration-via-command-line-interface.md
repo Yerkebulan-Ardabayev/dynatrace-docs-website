@@ -218,7 +218,7 @@ Watchdog is a binary used for starting and monitoring OneAgent monitoring proces
 * `oneagentos`—operating system monitoring
 * `oneagentplugin`—monitoring using [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
 * `oneagentextensions`—monitoring using local [Extensions](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.")
-* `oneagentloganalytics`—[Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* `oneagentloganalytics`—[Log Monitoring](/managed/analyze-explore-automate/log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
 * `oneagentnetwork`—[network monitoring](/managed/observe/infrastructure-observability/networks "Learn how to monitor network communications.")
 
 Use the `--set-watchdog-portrange=arg` parameter to change the watchdog listening port range to `<arg>`. The `<arg>` must contain two port numbers separated by a colon (`:`). For example `50000:50100`. The maximum supported port range is from 1024 to 65535. The port range must cover at least 4 ports. The port number starting the range must be lower.
@@ -401,9 +401,9 @@ ip-addresses;namespace=test
 
 ## Host groups
 
-For an overview of how to use host groups, see [Organize your environment using host groups](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
+For an overview of how to use host groups, see [Organize your environment using host groups](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
 
-Alternatively, to modify host group assignment centrally from the Dynatrace Cluster, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host group** action).
+Alternatively, to modify host group assignment centrally from the Dynatrace Cluster, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration-classic#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host group** action).
 
 ### Change host group assignment
 
@@ -424,7 +424,7 @@ Host group string requirements:
 
 Using `--set-host-group` requires restart of OneAgent, as well as restart of all the monitored services. Add [`--restart-service`](#oneagent-restart) to the command to restart OneAgent automatically (version 1.189+) or stop and start OneAgent process manually. For OS-specific instructions, see [Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux "Learn how to stop and restart OneAgent on Linux."), [Windows](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows "Learn how to stop and restart OneAgent on Windows."), or [AIX](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix "Learn how to stop and restart OneAgent on AIX.").
 
-Changing the host group assignments results in recalculation of process group IDs, which impacts data aggregation. To read more about the impact of host group changes on process group detection, see [Organize your environment using host groups](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups#how-host-groups-affect-your-monitoring-environment "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
+Changing the host group assignments results in recalculation of process group IDs, which impacts data aggregation. To read more about the impact of host group changes on process group detection, see [Organize your environment using host groups](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups#how-host-groups-affect-your-monitoring-environment "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
 
 ### Clear host group assignment
 
@@ -458,7 +458,7 @@ By default, the `oneagentos` process automatically detects cloud environments su
 
 Use the `oneagentctl` command-line tool with the `--set-host-name` parameter to override an automatically detected host name. A host name must not contain the `<`, `>`, `&`, `CR` (carriage return), or `LF` (line feed) characters. The maximum length is 256 characters.
 
-This command adds a custom host name to display in the UI, but the detected host name is not changed. For details, see [Set custom host names](/managed/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name.").
+This command adds a custom host name to display in the UI, but the detected host name is not changed. For details, see [Set custom host names](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name.").
 
 To change the host name:
 
@@ -491,9 +491,9 @@ Once configured, custom metadata is displayed as a set of properties at the bott
 
 When custom host metadata is used to enrich metrics and other telemetry, the keys and values might be adjusted to meet normalization requirements: keys are converted to lowercase, unsupported characters are replaced with an underscore (`_`), and keys or values that exceed the maximum length are truncated. As a result, an enriched value can differ from what you set here.
 
-Alternatively, to modify host metadata centrally from the Dynatrace Cluster, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host properties** action).
+Alternatively, to modify host metadata centrally from the Dynatrace Cluster, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration-classic#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host properties** action).
 
-For versions earlier than 1.189, use a [host metadata configuration file](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#edit-the-host-metadata-configuration-file "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.").
+For versions earlier than 1.189, use a [host metadata configuration file](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/define-tags-and-metadata-for-hosts#edit-the-host-metadata-configuration-file "Automate host tags and metadata with oneagentctl or configuration files, and use the resulting properties in auto-tagging and management-zone rules.").
 
 To **add or change host properties**, run the following command:
 
@@ -524,7 +524,7 @@ To **show all properties** configured for the host, run the following command:
 
 After you configure custom host tags, they are displayed at the top of the **Properties and tags** section of the host overview page. A property value must not contain `=` (unless used as a key-value delimiter) or whitespace characters. The maximum length is 256 characters, including the key-value delimiter. A key name must not start with `#`.
 
-Alternatively, to modify host tags centrally from the Dynatrace Cluster, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host tags** action).
+Alternatively, to modify host tags centrally from the Dynatrace Cluster, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration-classic#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host tags** action).
 
 To **add or change host tags**, run the following command:
 
@@ -704,13 +704,13 @@ StatsdPort=18126
 
 ## Network zones
 
-To learn about network zone naming rules and other reference information, see [Network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.").
+To learn about network zone naming rules and other reference information, see [Network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.").
 
-Alternatively, to modify network zone assignment centrally from the Dynatrace Cluster, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
+Alternatively, to modify network zone assignment centrally from the Dynatrace Cluster, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration-classic#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
 
 ### Set a network zone
 
-Use the `--set-network-zone` parameter to instruct OneAgent to communicate via the specified network zone. The name of a network zone is a string of alphanumeric characters. You can also use hyphens (`-`), underscores (`_`), and a dot (`.`) as a seperator. The network zone name must not start with a dot. The length of the string is limited to 256 characters. Network zone names are not case-sensitive. Dynatrace stores these names in lowercase. For more information, see the section on [network zone naming](/managed/manage/network-zones/network-zones-basic-info#naming "Learn how to get started with network zones.")
+Use the `--set-network-zone` parameter to instruct OneAgent to communicate via the specified network zone. The name of a network zone is a string of alphanumeric characters. You can also use hyphens (`-`), underscores (`_`), and a dot (`.`) as a seperator. The network zone name must not start with a dot. The length of the string is limited to 256 characters. Network zone names are not case-sensitive. Dynatrace stores these names in lowercase. For more information, see the section on [network zone naming](/managed/manage/network-zones-classic/network-zones-basic-info#naming "Learn how to get started with network zones.")
 
 * On **Linux** or **AIX**:  
   `./oneagentctl --set-network-zone=<your.network.zone>`

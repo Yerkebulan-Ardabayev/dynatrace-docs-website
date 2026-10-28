@@ -166,8 +166,6 @@ You can reduce consumption and optimize cost by adjusting when and how synthetic
   This reduces consumption, but hides the underlying issues.
   Address failures promptly to ensure accurate monitoring.
 
-–>
-
 ## FAQs
 
 Are synthetic actions consumed when I run tests on demand?
@@ -193,7 +191,7 @@ Disabled monitors stop all executions and do not generate any consumption.
 
 ## Related topics
 
-* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
+* [Synthetic Monitoring](/managed/observe/digital-experience-classic/synthetic-monitoring-classic "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
 * [Real User and Synthetic Monitoring overview (DPS)](/managed/license/capabilities/real-user-synthetic-monitoring "Learn how Dynatrace Real User and Synthetic Monitoring consumption is calculated using the Dynatrace Platform Subscription model.")
 * [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.")
 * [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

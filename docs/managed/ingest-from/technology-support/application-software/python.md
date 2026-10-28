@@ -21,7 +21,7 @@ You can send data from your [Python﻿](https://python.org) application to Dynat
 * Provides runtime metrics, including garbage collection (GC) activity, thread metrics, and loaded library versions.
 * Provides remote configuration updates that allow monitoring settings to be adjusted remotely via OneAgent. Changes are applied at runtime (without requiring a process restart when possible).
 * Generates diagnostic data for troubleshooting, including support archives accessible via the [OneAgent Diagnostics](/managed/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Learn how to run OneAgent diagnostics") UI.
-* Comprehensive end-to-end transaction tracing for requests to web services, remote services, message queues, databases, and others. For more information, see [Services](/managed/observe/application-observability/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.").
+* Comprehensive end-to-end transaction tracing for requests to web services, remote services, message queues, databases, and others. For more information, see [Services](/managed/observe/application-observability-classic/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.").
 * Third-party vulnerability detection. For more information, see [Runtime Vulnerability Analytics](/managed/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.").
 * [OpenTelemetry support﻿](https://github.com/open-telemetry/opentelemetry-python/) for capturing traces. For more information, see [Automatically instrument your Python application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/python-auto "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.").
 * [OneAgent SDK](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing.
@@ -62,7 +62,7 @@ When the Python code module is installed, it replaces Dynatrace OneAgent SDK for
 
 ## Method hotspots
 
-The Python code module can capture Python stack traces in the background for the [method hotspots feature](/managed/observe/application-observability/profiling-and-optimization/cpu-profiling "Learn how you can use Dynatrace to perform enhanced code analysis.").
+The Python code module can capture Python stack traces in the background for the [method hotspots feature](/managed/observe/application-observability-classic/profiling-and-optimization-classic/cpu-profiling "Learn how you can use Dynatrace to perform enhanced code analysis.").
 
 ### Prerequisites for method hotspots
 

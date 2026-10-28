@@ -15,7 +15,7 @@ To view the most important processes running on a specific host, go to **Hosts**
 
 Within the **Process analysis** section, you can also see various process group instances categorized by technology type.
 
-For more details, refer to [Process analysis](/managed/observe/infrastructure-observability/hosts/monitoring/host-monitoring#process-analysis "Monitor hosts with Dynatrace.").
+For more details, refer to [Process analysis](/managed/observe/infrastructure-observability-classic/hosts-classic/monitoring/host-monitoring#process-analysis "Monitor hosts with Dynatrace.").
 
 For processes to be visible in this section, they have to meet at least one of the following criteria:
 

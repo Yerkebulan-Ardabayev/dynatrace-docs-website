@@ -55,7 +55,7 @@ Each log record from the ingested batch is mapped to a single Dynatrace log reco
 * The `TraceID` and `SpanID` attributes are mapped to the `trace_id` and `span_id` fields, and their values are converted to hexadecimal representation (e.g., `0xCAFEBABE`).
 * Automatic attribute. The `dt.auth.origin` attribute is automatically added to every log record ingested via API. This attribute is the public part of the API key that the log source authorizes to connect to the generic log ingest API.
 
-All attributes should preferably map to **semantic attributes** for Dynatrace to interpret them correctly.Refer to the [Semantic attributes (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api/log-classic-semantic-attributes "Supported semantic attributes that are indexed in Log Monitoring Classic.") for more details.
+All attributes should preferably map to **semantic attributes** for Dynatrace to interpret them correctly.Refer to the [Semantic attributes (Logs Classic)](/managed/analyze-explore-automate/log-monitoring-classic/acquire-log-data/logs-classic-ingestion-api/log-classic-semantic-attributes "Supported semantic attributes that are indexed in Log Monitoring Classic.") for more details.
 
 ## Data types
 
@@ -90,7 +90,7 @@ Maps are ingested by extracting their keys recursively and storing the values as
 
 ## Ingestion limits
 
-See [Log Monitoring default limits (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/log-monitoring-limits "Default limits for the latest version of Dynatrace Log Monitoring.") for the limits applied to ingested log requests, their attributes, and their attribute values.
+See [Log Monitoring default limits (Logs Classic)](/managed/analyze-explore-automate/log-monitoring-classic/log-monitoring-limits "Default limits for the latest version of Dynatrace Log Monitoring.") for the limits applied to ingested log requests, their attributes, and their attribute values.
 
 For ActiveGate sizing recommendations for OTLP log ingestion, see:
 

@@ -371,4 +371,4 @@ PUT anomaly detection config - process group
 ## Related topics
 
 * [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")
-* [Process groups](/managed/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.")
+* [Process groups](/managed/observe/infrastructure-observability-classic/process-groups-classic "Analyze process groups and customize process group naming, detection, and monitoring.")

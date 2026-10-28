@@ -56,4 +56,4 @@ If you don't have access to BOSH, Dynatrace provides two different approaches fo
 ## Related topics
 
 * [Cloud Foundry monitoring﻿](https://www.dynatrace.com/technologies/cloud-foundry-monitoring/)
-* [Cloud Foundry monitoring](/managed/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")
+* [Cloud Foundry monitoring](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")

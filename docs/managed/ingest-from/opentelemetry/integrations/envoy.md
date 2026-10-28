@@ -296,4 +296,4 @@ To also trace Istio-managed traffic, see [Configure OpenTelemetry tracing with I
 ## Related topics
 
 * [Prometheus](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus "Learn how to extend observability in Dynatrace with Prometheus metrics.")
-* [Istio/Envoy proxy metrics](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-istio-metrics "Istio metric ingestion and topology detection")
+* [Istio/Envoy proxy metrics](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/kubernetes-monitoring/monitor-istio-metrics "Istio metric ingestion and topology detection")

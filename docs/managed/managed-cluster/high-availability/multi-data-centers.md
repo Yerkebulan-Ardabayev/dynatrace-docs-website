@@ -56,7 +56,7 @@ Dynatrace Managed distributes the entire configuration of the Managed Cluster an
 
 The loss of two or more nodes might affect Managed Cluster performance and availability. The impact depends on data distribution and the consistency level required for the data.
 
-[Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") event data replicates in the Elasticsearch store to achieve high availability and optimize storage cost. As a result, if a node goes down, another node has a copy. However, the failure of two nodes makes some log events unavailable. If the nodes go back up, the data becomes available again. Otherwise, Dynatrace Managed loses the data.
+[Log Monitoring](/managed/analyze-explore-automate/log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") event data replicates in the Elasticsearch store to achieve high availability and optimize storage cost. As a result, if a node goes down, another node has a copy. However, the failure of two nodes makes some log events unavailable. If the nodes go back up, the data becomes available again. Otherwise, Dynatrace Managed loses the data.
 
 Dynatrace Managed doesn't replicate raw transaction data, such as call stacks, database statements, and code-level visibility, across nodes. Dynatrace Managed evenly distributes this data across all nodes.
 

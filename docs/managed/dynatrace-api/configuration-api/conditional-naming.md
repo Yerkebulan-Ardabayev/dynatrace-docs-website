@@ -29,4 +29,4 @@ Delete a conditional naming rule you don't need anymore.](/managed/dynatrace-api
 ## Related topics
 
 * [Process group naming](/managed/observe/infrastructure-observability/process-groups/configuration/pg-naming "Ways to customize process-group naming")
-* [Service naming rules in Service Detection v1](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/customize-service-naming "Use naming rules to customize and enhance the automated naming of your services.")
+* [Service naming rules in Service Detection v1](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v1/customize-service-naming "Use naming rules to customize and enhance the automated naming of your services.")

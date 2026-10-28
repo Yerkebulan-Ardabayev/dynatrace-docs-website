@@ -29,7 +29,7 @@ Starting with Cluster version 1.324, Dynatrace introduces native support for Ope
 * Existing histogram metrics will no longer be updated, but they will remain available for historical visualization on dashboards, ensuring continuity and data retention. The new native histogram metrics will be exposed under distinct metric keys, each suffixed with `.histogram`.
 * If an existing metric already ends with `.histogram` or `_histogram`, it will no longer receive new data points. To use the new histogram functionality under the same metric key, you must delete the existing metric using the [Metrics API - DELETE a custom metric](/managed/dynatrace-api/environment-api/metric-v2/delete-metric "Delete a metric ingested via Metrics v2 API."). After deletion, a new histogram metric will be automatically created under the same key.
 
-In Dynatrace, in your [**Local-Self-Monitoring** environment](/managed/managed-cluster/self-monitoring/local-self-monitoring "Learn about the local self-monitoring environment that collects internal Dynatrace Managed Cluster health metrics and stores all data exclusively on-premises."), you can use the following query in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") to see which histogram metrics have been ingested:
+In Dynatrace, in your [**Local-Self-Monitoring** environment](/managed/managed-cluster/self-monitoring/local-self-monitoring "Learn about the local self-monitoring environment that collects internal Dynatrace Managed Cluster health metrics and stores all data exclusively on-premises."), you can use the following query in [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") to see which histogram metrics have been ingested:
 
 ```
 isfm:active_gate.metrics.ingest.explicit_bucket_histogram.layout.series
@@ -57,9 +57,9 @@ Application Observability | Services
 
 You can now define a custom service for short-lived Go processes through the web UI. Similarly to Java, the **Define entry point manually** function is now available for Go.
 
-Previously, defining a custom service for short-lived Go processes was only possible via the [Configuration API](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/service-types/custom-services#go-service-via-api "Define entry points (a method, class, or interface) for custom services that don't use standard protocols.").
+Previously, defining a custom service for short-lived Go processes was only possible via the [Configuration API](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v1/service-types/custom-services#go-service-via-api "Define entry points (a method, class, or interface) for custom services that don't use standard protocols.").
 
-For details, see [Service detection rules in Service Detection v1](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/customize-service-detection "Use detection rules to customize and enhance the automated detection of your services.").
+For details, see [Service detection rules in Service Detection v1](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v1/customize-service-detection "Use detection rules to customize and enhance the automated detection of your services.").
 
 Digital Experience | Session Replay
 
@@ -121,7 +121,7 @@ Availability:
 
 To preview changes before opting in, use the dashboard attached to our [Dynatrace Community﻿](https://dt-url.net/lv031sg) post.
 
-For details, see [Service Detection v2](/managed/observe/application-observability/services-classic/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.").
+For details, see [Service Detection v2](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.").
 
 Digital Experience | RUM Web
 

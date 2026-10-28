@@ -43,7 +43,7 @@ When a maintenance window is created, it is enabled by default. You can disable 
 
 Maintenance windows page
 
-[Maintenance windows may be excluded from Synthetic Monitoring availability calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring Classic metric calculations.") by applying a global setting.
+[Maintenance windows may be excluded from Synthetic Monitoring availability calculations](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring Classic metric calculations.") by applying a global setting.
 
 ## Disable synthetic monitor execution
 

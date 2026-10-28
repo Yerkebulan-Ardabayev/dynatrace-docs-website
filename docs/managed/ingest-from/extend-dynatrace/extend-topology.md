@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-t
 # Custom topology model
 
 * 4-min read
-* Updated on Jan 28, 2026
+* Published Apr 09, 2021
 
 The Dynatrace software intelligence platform and its Davis AI engine depend on context-rich, high-quality data that is provided by OneAgent, cloud integrations, or technology monitoring extensions.
 
@@ -34,7 +34,7 @@ Smartscape example
 
 Smartscape example
 
-Another topological view is shown within [Service flow in Services](/managed/observe/application-observability/services-classic/services-page/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment."), which shows the real-time call relationships of services extracted from all incoming transactions and traces.
+Another topological view is shown within [Service flow in Services](/managed/observe/application-observability-classic/services-classic/services-page/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment."), which shows the real-time call relationships of services extracted from all incoming transactions and traces.
 
 Service flow example
 

@@ -68,4 +68,4 @@ Delete a service detection rule you don't need anymore.
 
 ## Related topics
 
-* [Service Detection v1](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
+* [Service Detection v1](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.")

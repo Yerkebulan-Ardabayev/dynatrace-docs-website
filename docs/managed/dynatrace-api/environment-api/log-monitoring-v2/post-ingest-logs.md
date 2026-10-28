@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/log-mon
 # Log Monitoring API v2 - POST ingest logs
 
 * Reference
-* Updated on Sep 28, 2026
+* Updated on Oct 27, 2026
 
 Pushes custom logs to Dynatrace.
 
@@ -500,7 +500,7 @@ API clients must retry log ingestion requests that fail on retryable errors. Eac
 
 ## Log data queue
 
-You can customize the log data queue properties by editing the `custom.properties` file (see [Configuration properties and parameters of ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#generic-ingest "Learn which ActiveGate properties you can configure based on your needs and requirements.")) on your ActiveGate:
+You can customize the log data queue properties by editing the `custom.properties` file (see [Configuration properties and parameters of ActiveGate (Dynatrace Classic)](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#generic-ingest "Learn which ActiveGate properties you can configure based on your needs and requirements.")) on your ActiveGate:
 
 ```
 [generic_ingest]
@@ -522,7 +522,7 @@ The log data ingestion API returns a `503 Usable space limit reached` error when
 
 Visit Dynatrace Community for troubleshooting guides.
 
-* [Troubleshooting log Ingestion via API - POST ingest logs﻿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
+* [Troubleshooting log Ingestion via API - POST ingest logs﻿](https://community.dynatrace.com/t/troubleshooting-log-ingestion-via-api-post-ingest-logs/53456)
 
 ## Related sizing guides
 
@@ -535,4 +535,4 @@ For detailed ActiveGate sizing recommendations based on workload profiles, see:
 ## Related topics
 
 * [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
-* [Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* [Log Monitoring](/managed/analyze-explore-automate/log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")

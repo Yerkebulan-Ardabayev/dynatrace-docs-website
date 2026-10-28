@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-u
 * 2-min read
 * Published May 19, 2022
 
-If your extension supplies additional data for a default entity with its own unified analysis page, you can extend the page using card injections. Examples of built-in unified analysis pages are the [host overview page](/managed/observe/infrastructure-observability/hosts/monitoring/host-monitoring "Monitor hosts with Dynatrace.") or any unified analysis Kubernetes page. Card injections are available since Dynatrace version 1.233.
+If your extension supplies additional data for a default entity with its own unified analysis page, you can extend the page using card injections. Examples of built-in unified analysis pages are the [host overview page](/managed/observe/infrastructure-observability-classic/hosts-classic/monitoring/host-monitoring "Monitor hosts with Dynatrace.") or any unified analysis Kubernetes page. Card injections are available since Dynatrace version 1.233.
 
 ## Define card injection
 

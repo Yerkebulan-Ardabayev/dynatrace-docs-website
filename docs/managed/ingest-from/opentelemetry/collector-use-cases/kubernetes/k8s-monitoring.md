@@ -9,23 +9,24 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector-u
 
 * How-to guide
 * 5-min read
-* Updated on Nov 20, 2025
+* Updated on Oct 22, 2026
 
 The OTel Collector provides extensive support for Kubernetes cluster and workload monitoring. It supports various receivers to collect critical metrics about the Kubernetes cluster, nodes, and objects.
 
-This use case explains how to set up your Collector to get full visibility into your Kubernetes clusters through [**Data Explorer**](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") or custom dashboards in Dashboards Classic.
+This use case explains how to set up your Collector to get full visibility into your Kubernetes clusters through [**Data Explorer**](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") or custom dashboards in Dashboards Classic.
 
 Dynatrace Operator
 
 Dynatrace recommends using the [Dynatrace Operator for Kubernetes monitoring](/managed/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes").
 However, this use case is designed specifically for OpenTelemetry users who choose not to deploy the Dynatrace Operator.
-Setting up the Collector as described below will make Kubernetes monitoring data available to be used in [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") and [Dashboards](/managed/analyze-explore-automate/dashboards "Learn how to build, share, and organize Dynatrace dashboards, and how dashboards scope data, which settings apply, and which tiles are available.").
+Setting up the Collector as described below will make Kubernetes monitoring data available to be used in [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") and [Dashboards](/managed/analyze-explore-automate/dashboards "Learn how to build, share, and organize Dynatrace dashboards, and how dashboards scope data, which settings apply, and which tiles are available.").
 
 ## Prerequisites
 
 * One of the following Collector distributions with the [Kubernetes Cluster﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/receiver/k8sclusterreceiver), [Kubernetes Events﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/receiver/k8seventsreceiver), and [Kubelet Stats﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.160.0/receiver/kubeletstatsreceiver) receivers:
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+  + The [Dynatrace Bindplane OTel Collector](/managed/ingest-from/bindplane-classic "Bindplane manages OpenTelemetry collector fleets at scale and controls telemetry volume at the edge before data reaches Dynatrace.")
   + [OTel Collector Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + A [custom-built OTel Collector](/managed/ingest-from/opentelemetry/collector#collector-builder "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
 * Collector deployment in [agent mode](/managed/ingest-from/opentelemetry/collector/deployment#dynatrace-docs--agent "How to deploy the Dynatrace OpenTelemetry Collector.") for node and cluster level telemetry
@@ -1167,7 +1168,7 @@ Under `service`, we assemble our receiver, processor, and exporter objects into 
 ## Use Data Explorer
 
 Data Explorer greatly enhances your abilities to query and visualize metrics.
-For more information, see [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
+For more information, see [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
 ## Use custom dashboards
 

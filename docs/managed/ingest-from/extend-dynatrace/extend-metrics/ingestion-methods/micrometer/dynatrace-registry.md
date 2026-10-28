@@ -526,7 +526,7 @@ DynatraceMeterRegistry registry = DynatraceMeterRegistry.builder(dynatraceConfig
 
 ## Verify the metrics
 
-After you have sent your metrics, verify the data in the [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.") or [query them in Grail](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+After you have sent your metrics, verify the data in the [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
 ## Configuration properties
 

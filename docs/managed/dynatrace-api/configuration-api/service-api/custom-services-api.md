@@ -30,4 +30,4 @@ Delete a rule you don't need anymore.](/managed/dynatrace-api/configuration-api/
 
 ## Related topics
 
-* [Define custom services](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/service-types/custom-services "Define entry points (a method, class, or interface) for custom services that don't use standard protocols.")
+* [Define custom services](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v1/service-types/custom-services "Define entry points (a method, class, or interface) for custom services that don't use standard protocols.")

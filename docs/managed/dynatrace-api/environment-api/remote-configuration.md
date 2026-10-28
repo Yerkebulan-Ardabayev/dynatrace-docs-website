@@ -40,4 +40,4 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/remote-
 
 ## Related topics
 
-* [Remote configuration management of OneAgents and ActiveGates](/managed/ingest-from/bulk-configuration "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.")
+* [Remote configuration management of OneAgents and ActiveGates](/managed/ingest-from/bulk-configuration-classic "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.")

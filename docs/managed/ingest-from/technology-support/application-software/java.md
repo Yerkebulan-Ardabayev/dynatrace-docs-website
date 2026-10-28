@@ -19,13 +19,13 @@ Dynatrace fully supports Java as well as all major JVMs and JDKs, providing exte
 
 * [OpenTelemetry support﻿](https://github.com/open-telemetry/opentelemetry-java/) for capturing traces and ingesting metrics.  
   For more information, see [Automatically instrument your Java application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/java-auto "Learn how to instrument your Java application using OpenTelemetry and Dynatrace.")
-* End-to-end [transaction tracing](/managed/observe/application-observability/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.") of requests to web services, remoting services, JMS, and RabbitMQ
+* End-to-end [transaction tracing](/managed/observe/application-observability-classic/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.") of requests to web services, remoting services, JMS, and RabbitMQ
 * [OneAgent SDK](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing
 * Insight into SQL databases (via JDBC) and NoSQL databases such as MongoDB, Cassandra, and Redis
 * Heap, garbage collection, thread, JMX, process metrics, and much more
-* Memory dump analysis—Dynatrace supports [memory dumps](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis "Learn how Dynatrace enables you to trigger, download and analyze memory dumps for Java and Node.js.") for the Oracle JVM, OpenJDK, and IBM JVM
+* Memory dump analysis—Dynatrace supports [memory dumps](/managed/observe/application-observability-classic/profiling-and-optimization-classic/memory-dump-analysis "Learn how Dynatrace enables you to trigger, download and analyze memory dumps for Java and Node.js.") for the Oracle JVM, OpenJDK, and IBM JVM
 * Always-on, 24/7, production-grade CPU profiling (including support for virtual threads)
-* [Continuous thread analysis](/managed/observe/application-observability/profiling-and-optimization/continuous-thread-analysis "Continuously analyze the state of your threads and their development to quickly identify and solve performance issues in Java and Node.js processes.") for application, JVM, and agent threads (JVM thread analysis limited to Java 8 and Java 17+)
+* [Continuous thread analysis](/managed/observe/application-observability-classic/profiling-and-optimization-classic/continuous-thread-analysis "Continuously analyze the state of your threads and their development to quickly identify and solve performance issues in Java and Node.js processes.") for application, JVM, and agent threads (JVM thread analysis limited to Java 8 and Java 17+)
 
 Dynatrace also supports GraalVM Native Images, providing extensive Java monitoring capabilities:
 

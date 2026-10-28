@@ -178,7 +178,7 @@ To configure attribute storage and masking settings for your environment
    3. Enter a stored value key and select an option from the **Masking** dropdown list. To learn more about masking options, see [OpenTelemetry traces](/managed/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace#otel-traces "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.").
    4. Select **Save changes**.
 
-You can then find the attribute key on the **Distributed traces** page on the [**Summary** tab](/managed/observe/application-observability/distributed-traces/use-cases/segment-request#summary-tab "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.").
+You can then find the attribute key on the **Distributed traces** page on the [**Summary** tab](/managed/observe/application-observability-classic/distributed-traces-classic/use-cases/segment-request#summary-tab "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.").
 
 ## Trace search limitations
 
@@ -280,7 +280,7 @@ The ID rewrite applies only to newly started traces (not context propagation) an
 ### All languages
 
 * OneAgent captures OpenTelemetry resource attributes only if they are provided via the `OTEL_SERVICE_NAME` and `OTEL_RESOURCE_ATTRIBUTES` environment variables. When using the OpenTelemetry trace ingest API, this limitation doesn't apply.
-* You can't create [request attributes](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") (commonly used for trace searching and filtering) based on OpenTelemetry resource attributes.
+* You can't create [request attributes](/managed/observe/application-observability-classic/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") (commonly used for trace searching and filtering) based on OpenTelemetry resource attributes.
 * OneAgent truncates attribute values exceeding 4,096 characters.
 
 ## Prevention of span duplication in Java

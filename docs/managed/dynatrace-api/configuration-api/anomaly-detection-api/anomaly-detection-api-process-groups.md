@@ -22,4 +22,4 @@ Delete configuration of anomaly detection for a process group.](/managed/dynatra
 
 ## Related topics
 
-* [Process groups](/managed/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.")
+* [Process groups](/managed/observe/infrastructure-observability-classic/process-groups-classic "Analyze process groups and customize process group naming, detection, and monitoring.")

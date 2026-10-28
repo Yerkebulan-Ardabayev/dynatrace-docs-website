@@ -88,7 +88,7 @@ Each node represents a different service with a symbol that signifies the underl
 | Icon | Meaning |
 | --- | --- |
 | see example above | Commercial logos such as the MySQL dolphin, Apache feather, and Tomcat cat indicate [service technologies supported by Dynatrace](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks."). |
-|  | Services of unrecognized technologies are depicted using a generic service symbol. These are typically [opaque services](/managed/observe/application-observability/services-classic/service-detection/service-detection-v1/service-types/opaque-services "Understand what opaque services are."). |
+|  | Services of unrecognized technologies are depicted using a generic service symbol. These are typically [opaque services](/managed/observe/application-observability-classic/services-classic/service-detection/service-detection-v1/service-types/opaque-services "Understand what opaque services are."). |
 
 **Connections**
 
@@ -183,6 +183,6 @@ For more information on managing third-party vulnerabilities, see [Third-party v
 
 * [What's a monitoring environment?](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.")
 * [Topology and Smartscape API](/managed/dynatrace-api/environment-api/topology-and-smartscape "Learn about the Dynatrace Topology and Smartscape API.")
-* [Performance analysis in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/performance-analysis "Understand the available types of performance analysis that are provided by Dynatrace.")
+* [Performance analysis in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/web-applications/analyze-and-use/performance-analysis "Understand the available types of performance analysis that are provided by Dynatrace.")
 * [Root cause analysis concepts](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Learn the core Davis AI root cause analysis concepts, including incidents, problems, fault tree analysis, impact analysis, and the problem lifecycle.")
 * [Third-party vulnerabilities (Dynatrace Classic)](/managed/secure/application-security-classic/vulnerability-analytics/third-party-vulnerabilities "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.")

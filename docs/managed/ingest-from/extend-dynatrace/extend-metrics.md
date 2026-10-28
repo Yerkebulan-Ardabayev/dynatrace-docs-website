@@ -34,19 +34,19 @@ Send StatsD metrics to Dynatrace](/managed/ingest-from/extend-dynatrace/extend-m
 
 Send Telegraf metrics to Dynatrace](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf "Ingest Telegraf metrics into Dynatrace.")[### Oracle Database
 
-Extend your application observability into data acquired directly from your Oracle Database layer.](/managed/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Microsoft SQL Server](https://dt-cdn.net/images/techn-icon-microsoft-sqlserver-60740bd3fa.svg "Microsoft SQL Server")
+Extend your application observability into data acquired directly from your Oracle Database layer.](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")[![Microsoft SQL Server](https://dt-cdn.net/images/techn-icon-microsoft-sqlserver-60740bd3fa.svg "Microsoft SQL Server")
 
 ### Microsoft SQL Server Database
 
-Extend your application observability into data acquired directly from your Microsoft SQL Server layer.](/managed/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql "Extend observability in Dynatrace with declarative metrics ingested from Microsoft SQL Server.")[![SNMP](https://dt-cdn.net/images/techn-icon-snmp-43de4f1139.svg "SNMP")
+Extend your application observability into data acquired directly from your Microsoft SQL Server layer.](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")[![SNMP](https://dt-cdn.net/images/techn-icon-snmp-43de4f1139.svg "SNMP")
 
 ### SNMP
 
-Learn how to monitor your network devices using SNMP.](/managed/ingest-from/extensions/supported-extensions/data-sources/snmp "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")[![WMI](https://dt-cdn.net/images/techn-icon-microsoft-e15d516aaf.svg "WMI")
+Learn how to monitor your network devices using SNMP.](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")[![WMI](https://dt-cdn.net/images/techn-icon-microsoft-e15d516aaf.svg "WMI")
 
 ### WMI
 
-Learn how to monitor your devices exposing Windows Management Instrumentation using WMI.](/managed/ingest-from/extensions/supported-extensions/data-sources/wmi "Learn how to extend observability in Dynatrace with declarative WMI metrics ingestion.")[![JMX](https://dt-cdn.net/images/techn-icon-java-3016283f6a.svg "JMX")
+Learn how to monitor your devices exposing Windows Management Instrumentation using WMI.](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")[![JMX](https://dt-cdn.net/images/techn-icon-java-3016283f6a.svg "JMX")
 
 ### JMX
 
@@ -66,7 +66,7 @@ Use the [GET metric data points](/managed/dynatrace-api/environment-api/metric-v
 
 ### Data Explorer
 
-Select **Create custom chart** and then select **Try it out** in the top banner. For more information, see [Data Explorer](/managed/analyze-explore-automate/explorer "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
+Select **Create custom chart** and then select **Try it out** in the top banner. For more information, see [Data Explorer](/managed/analyze-explore-automate/explorer-classic "Explore Data Explorer topics, from creating and editing metric queries to learning advanced query syntax and resolving common issues.").
 
 You can search the metric keys of all available metrics, select the metrics you want to chart, define how you’d like to analyze and chart them, and then pin your charts to a dashboard.
 

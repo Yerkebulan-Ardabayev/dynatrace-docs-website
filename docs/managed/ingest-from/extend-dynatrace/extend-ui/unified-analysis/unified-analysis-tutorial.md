@@ -26,7 +26,7 @@ You can then define your unified analysis pages to analyze data from multiple so
     pip install dt-cli
     ```
 
-    For more information, see [Sign extensions](/managed/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension, upload certificates and custom extensions, and configure certificate permissions using the Dynatrace Extensions Framework.").
+    For more information, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 * Token with the following permissions:
 
   + **Read credential vault entries** (`credentialVault.read`)
@@ -86,8 +86,8 @@ The simulation ingests metrics, logs, and events to your Dynatrace environment.
    ```
    python download_schemas.py
    ```
-6. Go to the `extension` folder and create the `extension.yaml` file. For more information about extension scope, see [Extension YAML file](/managed/ingest-from/extensions/develop-your-extensions/extension-yaml#start-extension-yaml-file "Learn how to create an extension YAML file using the Extensions framework.").
-7. Use the following extension example of the defined topology. For more information about topology scope, see [WMI tutorial - custom topology](/managed/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial/wmi-tutorial-04 "Learn about WMI extensions in the Extensions framework.").
+6. Go to the `extension` folder and create the `extension.yaml` file. For more information about extension scope, see [Extension YAML file](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+7. Use the following extension example of the defined topology. For more information about topology scope, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 
    ```
    name: custom:ua.example
@@ -767,3 +767,7 @@ autoGenerate: true
   ![Smart fleet expand](https://dt-cdn.net/images/fleet-2-1417-2b62cf52f0.png)
 
   Smart fleet expand
+
+## Related topics
+
+* [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")

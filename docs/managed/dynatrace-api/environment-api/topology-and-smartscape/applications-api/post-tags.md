@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topolog
 * Updated on Mar 22, 2023
 * Deprecated
 
-Assigns [custom tags](/managed/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") to the specified application. You only need to provide a tag value. The `CONTEXTLESS` context will be assigned automatically.
+Assigns [custom tags](/managed/manage/tags-and-metadata-classic "Use tags and metadata to organize data in your Dynatrace environment.") to the specified application. You only need to provide a tag value. The `CONTEXTLESS` context will be assigned automatically.
 
 The usage of this API is limited to value-only tags. To assign key:value tags, use the [Custom tags API](/managed/dynatrace-api/environment-api/custom-tags/post-tags "Assign custom tags to monitored entities via Dynatrace API.").
 
@@ -257,4 +257,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications/MOBILE_APPLICA
 
 ## Related topics
 
-* [Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.")
+* [Real User Monitoring Classic](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.")

@@ -415,7 +415,7 @@ When using Istio configured to `REGISTRY_ONLY` mode with the `codeModulesImage` 
 
 ## Metric scraping using Istio metric merging
 
-[Dynatrace metric scraping](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.") is done via the ActiveGate and configured via annotations. This results in the ActiveGate connecting directly to the pods on the configured endpoint to scrape the metrics. As stated earlier, this direct connection does not work with strict mTLS.
+[Dynatrace metric scraping](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.") is done via the ActiveGate and configured via annotations. This results in the ActiveGate connecting directly to the pods on the configured endpoint to scrape the metrics. As stated earlier, this direct connection does not work with strict mTLS.
 
 Istio ambient mode does not support metric merging as it requires a sidecar proxy. However, in ambient mode it's possible for the ActiveGate to directly connect to the pod IPs and scrape the configured targets. Depending on your mTLS policy, this might only be possible for pods inside the mesh if the ActiveGate is also part of the mesh.
 

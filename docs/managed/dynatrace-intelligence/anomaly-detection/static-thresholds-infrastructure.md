@@ -14,7 +14,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detect
 
 Deprecation notice
 
-This page is deprecated. Refer to the [Host anomaly detection](/managed/observe/infrastructure-observability/hosts/configuration/anomaly-detection "Configure host anomaly detection, including problem and event thresholds.") page. All updates and new information will be added there.
+This page is deprecated. Refer to the [Host anomaly detection](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/anomaly-detection "Configure host anomaly detection, including problem and event thresholds.") page. All updates and new information will be added there.
 
 Dynatrace infrastructure monitoring is based on numerous built-in, predefined static thresholds. These thresholds relate to resource contentions like CPU spikes, memory, and disk usage. You can change these default thresholds in **Settings** > **Anomaly Detection** > **Infrastructure**.
 

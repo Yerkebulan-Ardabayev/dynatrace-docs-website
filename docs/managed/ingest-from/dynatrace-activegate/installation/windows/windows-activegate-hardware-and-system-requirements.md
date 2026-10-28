@@ -14,7 +14,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/inst
 
 For hardware and system requirements for other ActiveGate purposes, see:
 
-* [Hardware and system requirements for Synthetic-enabled ActiveGates](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations"), which support a subset of operating systems and are more demanding in terms of hardware and system requirements than are ActiveGates that are used for routing and monitoring.
+* [Hardware and system requirements for Synthetic-enabled ActiveGates](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations"), which support a subset of operating systems and are more demanding in terms of hardware and system requirements than are ActiveGates that are used for routing and monitoring.
 * [Hardware and system requirements for the zRemote module for z/OS monitoring](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote#sizing "Prepare and install the zRemote for z/OS monitoring."). ActiveGates running the zRemote module are more demanding in terms of hardware and system requirements than are ActiveGates that are used for routing and monitoring.
 
 Run ActiveGate on dedicated system
@@ -22,7 +22,7 @@ Run ActiveGate on dedicated system
 For optimal performance and enhanced security, we recommend installing and running ActiveGate on a dedicated system.
 Utilizing ActiveGate on a dedicated system not only minimizes the risk of compromising ActiveGate authentication data but also reduces the potential for malicious configuration manipulation.
 
-Refer to the [Log Monitoring default limits (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/log-monitoring-limits "Default limits for the latest version of Dynatrace Log Monitoring.") doc page for detailed log throughput characteristics on Environmental Active Gate for logs ingest API.
+Refer to the [Log Monitoring default limits (Logs Classic)](/managed/analyze-explore-automate/log-monitoring-classic/log-monitoring-limits "Default limits for the latest version of Dynatrace Log Monitoring.") doc page for detailed log throughput characteristics on Environmental Active Gate for logs ingest API.
 
 ## Hardware requirements
 
@@ -30,7 +30,7 @@ You need a machine dedicated to ActiveGate that has:
 
 * 4 GB free disk space for ActiveGate and Extensions installation, configuration, and logs for auto update purposes.
 * 4 GB for ActiveGate and OneAgent cached installers and container images—if such will need to be stored.
-* Space for dump files—if such will need to be stored. This functionality is turned off by default, but can be turned on in ActiveGate configuration. The maximum size of the storage space is [configurable](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate.")—100 GB by default.
+* Space for dump files—if such will need to be stored. This functionality is turned off by default, but can be turned on in ActiveGate configuration. The maximum size of the storage space is [configurable](/managed/observe/application-observability-classic/profiling-and-optimization-classic/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate.")—100 GB by default.
 * 600 MB + 1.5 GB (buffer) of free disk space for Extension Execution Controller logs retransmission persistence file.
 * Space for extension uploads—depending on extensions used.
 * 2 GB RAM (4 GB recommended).

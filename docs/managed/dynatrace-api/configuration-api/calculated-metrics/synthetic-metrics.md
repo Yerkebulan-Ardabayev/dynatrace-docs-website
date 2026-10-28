@@ -26,4 +26,4 @@ Delete a metric that you no longer need.](/managed/dynatrace-api/configuration-a
 
 ## Related topics
 
-* [Multidimensional analysis for browser monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors "Learn how to analyze browser-monitor data points.")
+* [Multidimensional analysis for browser monitors in Classic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/analysis-and-alerting/multidimensional-analysis-for-browser-monitors "Learn how to analyze browser-monitor data points.")

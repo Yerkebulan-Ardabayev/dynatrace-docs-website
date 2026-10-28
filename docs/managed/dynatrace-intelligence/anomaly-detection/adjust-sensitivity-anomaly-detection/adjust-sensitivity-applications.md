@@ -20,7 +20,7 @@ To adjust global configuration of anomaly detection for applications
 
 ## Key performance metric degradation
 
-This type of anomaly detection observes [key performance metrics](/managed/observe/digital-experience/rum-classic/rum-concepts/user-action-metrics#kpm "Learn what metrics Dynatrace calculates for user actions and find out what each metric indicates.") and triggers an alert if a metric violates the specified threshold. Dynatrace can detect degradation based on automatic baselining or fixed thresholds.
+This type of anomaly detection observes [key performance metrics](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-action-metrics#kpm "Learn what metrics Dynatrace calculates for user actions and find out what each metric indicates.") and triggers an alert if a metric violates the specified threshold. Dynatrace can detect degradation based on automatic baselining or fixed thresholds.
 
 Dynatrace evaluates degradation for two categories—all actions and the slowest 10%—and triggers an alert if **any** metric violates the threshold.
 
@@ -114,4 +114,4 @@ To change threshold settings for a specific application
 ## Related topics
 
 * [Anomaly detection API - Applications](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-applications "Learn what the Dynatrace Anomaly detection API for applications offers.")
-* [Work with key performance metrics in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/work-with-key-performance-metrics "Learn how to use the right key performance metrics to optimize user experience data for each of your applications.")
+* [Work with key performance metrics in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/web-applications/analyze-and-use/work-with-key-performance-metrics "Learn how to use the right key performance metrics to optimize user experience data for each of your applications.")

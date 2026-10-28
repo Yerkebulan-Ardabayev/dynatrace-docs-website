@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneage
 
 * Troubleshooting
 * 13-min read
-* Updated on Jul 22, 2026
+* Updated on Oct 27, 2026
 
 Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows.
 
@@ -293,7 +293,7 @@ Any one of the below options is sufficient:
   ```
   unshare -m -- sh -c 'mount --bind /dev/null /etc/ld.so.preload && [PATH-TO-DATABASE-EXECUTABLE]'
   ```
-* Set the `LD_AUDIT` environment variable so it applies to the Oracle Database at start up. For more information including specific steps, see [Preventing loading of the process module on Linux﻿](https://community.dynatrace.com/t5/Troubleshooting/Preventing-loading-of-the-process-module-on-Linux/ta-p/213303).
+* Set the `LD_AUDIT` environment variable so it applies to the Oracle Database at start up. For more information including specific steps, see [Preventing loading of the process module on Linux﻿](https://community.dynatrace.com/t/preventing-loading-of-the-process-module-on-linux/39943).
 * Disable Process Agent injection via `builtin:host.monitoring.advanced` schema / UI.  Warning This will disable all code modules on that host, including manually enabled code modules.
 
 If there are any processes on the hosts which require Code Module injection, they can be manually enabled via LD\_PRELOAD=/lib{64}/liboneagentproc.so environment variable.

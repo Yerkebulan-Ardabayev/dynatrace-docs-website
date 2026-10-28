@@ -23,4 +23,4 @@ In a typical scenario, container orchestration and management tools such as Kube
 
 ## Related topics
 
-* [Monitor container groups](/managed/observe/infrastructure-observability/container-platform-monitoring/container-groups "Overview on container groups monitoring")
+* [Monitor container groups](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic/container-groups "Overview on container groups monitoring")

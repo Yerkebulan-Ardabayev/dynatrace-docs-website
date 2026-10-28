@@ -844,4 +844,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/services?relativeTime=5mins
 
 ## Related topics
 
-* [Services](/managed/observe/application-observability/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.")
+* [Services](/managed/observe/application-observability-classic/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.")

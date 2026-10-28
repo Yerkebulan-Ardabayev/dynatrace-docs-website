@@ -223,4 +223,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [Services](/managed/observe/application-observability/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.")
+* [Services](/managed/observe/application-observability-classic/services-classic "Learn how to monitor and analyze your services, define and use request attributes, and more.")

@@ -197,7 +197,7 @@ Copy the configuration snippets into your deployment and use your deployment met
 AWS Lambda also supports [**non-proxy integration**﻿](https://dt-url.net/8u03rh3), which—without some additional configuration—prevents Dynatrace from
 
 * Tracing calls from other monitored applications
-* [RUM](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.") detection (web and mobile)
+* [RUM](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.") detection (web and mobile)
 
 Node.jsPython To make tracing calls from other monitored applications/RUM detection work in this scenario, create a custom mapping template in the integration requests configuration.
 
@@ -349,7 +349,7 @@ AWS Lambda metrics Invocations
 
 ## Known limitations
 
-* The Dynatrace AWS Lambda extension does not support the capture of [method-level request attributes](/managed/observe/application-observability/services-classic/request-attributes/capture-request-attributes-based-on-method-arguments "Learn how to create request attributes based on Java, .NET, or PHP method arguments and how to use them on the service’s overview page. Also find out how you can aggregate the captured values of request attributes as well as how you can access objects, in case the value to be captured is a complex object.").
+* The Dynatrace AWS Lambda extension does not support the capture of [method-level request attributes](/managed/observe/application-observability-classic/services-classic/request-attributes/capture-request-attributes-based-on-method-arguments "Learn how to create request attributes based on Java, .NET, or PHP method arguments and how to use them on the service’s overview page. Also find out how you can aggregate the captured values of request attributes as well as how you can access objects, in case the value to be captured is a complex object.").
 * Most Dynatrace AWS Lambda extensions don't capture IP addresses of outgoing HTTP requests. This results in **unmonitored hosts** if the called service isn't monitored with Dynatrace.
 * Getting auth token from AWS Secrets Manager is not supported if [Lambda SnapStart﻿](https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html) is enabled.
 * **Outgoing requests to another AWS Lambda function:** In a monitored AWS Lambda function, the following libraries are supported for outgoing requests to another AWS Lambda function:

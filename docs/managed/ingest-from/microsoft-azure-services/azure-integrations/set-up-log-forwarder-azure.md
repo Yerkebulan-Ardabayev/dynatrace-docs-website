@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/
 
 * How-to guide
 * 17-min read
-* Updated on Jun 30, 2026
+* Updated on Oct 27, 2026
 
 DDU consumption for Log Monitoring
 
@@ -47,7 +47,7 @@ See below the list of requirements for setting up Azure log forwarding. Some are
 If you're using an earlier version of Dynatrace, see [Alternative deployments](#alternative) for instructions.
 
 * Dynatrace version 1.217+
-* [Enable generic log ingestion](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
+* [Enable generic log ingestion](/managed/analyze-explore-automate/log-monitoring-classic/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
 * [Create an API token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") and enable the **Ingest logs** permission. The API token applies to both versions.
 
 ### Azure
@@ -557,4 +557,4 @@ To uninstall the Dynatrace Azure log forwarder
 
 ## Related topics
 
-* [Azure Log Forwarder Troubleshooting﻿](https://community.dynatrace.com/t5/Troubleshooting/Azure-Log-Forwarder-Troubleshooting/ta-p/243797)
+* [Azure Log Forwarder Troubleshooting﻿](https://community.dynatrace.com/t/azure-log-forwarder-troubleshooting/45274)

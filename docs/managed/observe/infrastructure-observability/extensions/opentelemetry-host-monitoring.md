@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 # OpenTelemetry Host Monitoring extension
 
 * Extension
-* Updated on Sep 10, 2026
+* Updated on Jul 29, 2026
 
 Monitor OpenTelemetry-instrumented hosts with auto-generated entity topology, metric visualizations, and alerts for faster infrastructure analysis.
 
@@ -50,11 +50,10 @@ For information on how to use the extension within Dynatrace, see [Monitor hosts
 
 * The metric `system.processes.created` is currently available only on Linux and BSD operating systems.
 * The metric `process.disk.io` requires running the Collector with privileged access. Not doing so will prevent the metric from being captured.
-* The `dt.openpipeline.source` can't be used for entity extraction from spans.
 
 ### Licensing and costs
 
-All ingested OpenTelemetry data (logs, metrics, and spans) is charged according to your rate card, see [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.") or [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace classic monitoring consumption is calculated, including host units, DDUs, DEM units, and Application Security units.").
+All ingested OpenTelemetry data (logs, metrics, and spans) is charged according to your rate card, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") or [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace classic monitoring consumption is calculated, including host units, DDUs, DEM units, and Application Security units.").
 
 The use of this extension does not itself incur any additional costs.
 

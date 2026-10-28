@@ -7,7 +7,7 @@ source: https://docs.dynatrace.com/managed/upgrade/up-execute-upgrade
 
 # Upgrade your deployment
 
-* Updated on Aug 03, 2023
+* Updated on Oct 27, 2026
 
 ![Executing Managed to SaaS upgrade](https://dt-cdn.net/images/upgrade-to-saas-upgrade-3454-35eeb82133.png)
 
@@ -126,4 +126,4 @@ Any API access should be updated to use the new environment. This requires the g
 
 Questions?
 
-Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/c/platform/upgrade-to-saas/92) to ask questions, get answers, and share what you've learned with others.

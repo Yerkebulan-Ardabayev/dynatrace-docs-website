@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/metad
 # Metadata and tagging
 
 * 1-min read
-* Published Jul 28, 2023
+* Updated on Oct 16, 2026
 
 Explore the various ways you can automate and manage metadata in your system.
 

@@ -59,7 +59,7 @@ The log events pushed to Dynatrace using the OneAgent log ingest API are subject
 
 ## Example
 
-With this `curl` command, you'll ingest the `Exception: Custom error log sent via OneAgent log ingest` event, with the severity set to `error` and a custom attribute set to `attribute value`. As the timestamp isn't provided, the event is automatically timestamped with the event reading time. You'll be able to access the event in [Log viewer (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.").
+With this `curl` command, you'll ingest the `Exception: Custom error log sent via OneAgent log ingest` event, with the severity set to `error` and a custom attribute set to `attribute value`. As the timestamp isn't provided, the event is automatically timestamped with the event reading time. You'll be able to access the event in [Log viewer (Logs Classic)](/managed/analyze-explore-automate/log-monitoring-classic/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.").
 
 ```
 curl -i -X POST "http://127.0.0.1:14499/v2/logs/ingest" -H "Content-Type: application/json; charset=utf-8" -d "{\"content\":\"Exception: Custom error log sent via Generic Log Ingest\",\"custom.attribute\":\"attribute value\",\"severity\": \"error\"}"

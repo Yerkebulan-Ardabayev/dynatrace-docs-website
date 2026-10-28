@@ -71,8 +71,6 @@ You can specify a payload in two formats: gauge (`gauge`) or count value (`count
 
 A metric key can only refer to one payload type with Classic metrics. Thus, your provided metric key is automatically suffixed with `.count` for the payload type `count` unless the key already ends with `.count`. Vice versa, if the key of a metric with type gauge ends with `.count`, it is suffixed with `.gauge`.
 
-Grail metrics do not apply the `.count` and `.gauge` suffixes.
-
 gauge
 
 count

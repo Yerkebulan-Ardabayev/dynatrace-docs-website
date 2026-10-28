@@ -7,7 +7,7 @@ source: https://docs.dynatrace.com/managed/upgrade/unavailable-in-managed
 
 # Unavailable in Dynatrace Managed
 
-* Published Nov 28, 2023
+* Updated on Oct 27, 2026
 
 The documentation you selected refers to Dynatrace functionality delivered only as a SaaS (software as a service). To learn more about Dynatrace, see [What's Dynatrace Managed](/managed/discover-dynatrace/what-is-dynatrace "Dynatrace Managed is an on-premises observability platform powered by AI. Learn how it helps you analyze, automate, and deliver more secure software faster.").
 
@@ -49,4 +49,4 @@ If you aren't sure whether you're ready to upgrade to SaaS, the [Dynatrace Manag
 
 Questions?
 
-Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/c/platform/upgrade-to-saas/92) to ask questions, get answers, and share what you've learned with others.

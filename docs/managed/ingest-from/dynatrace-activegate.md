@@ -58,7 +58,7 @@ An ActiveGate packaged in a container is referred to as **containerized ActiveGa
 
 [Routing/monitoring ActiveGate, on Windows](/managed/ingest-from/dynatrace-activegate/installation/windows/windows-activegate-hardware-and-system-requirements "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Windows for routing and monitoring.")
 
-[Synthetic-enabled ActiveGate](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations")
+[Synthetic-enabled ActiveGate](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations")
 
 [ActiveGate for routing z/OS traffic to Dynatrace](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote "Prepare and install the zRemote for z/OS monitoring.")
 

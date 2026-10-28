@@ -14,7 +14,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-l
 
 Learn how Dynatrace ingests log data with OneAgent built-in log acquisition.](https://docs.dynatrace.com/docs/shortlink/log-management-and-analytics)[### Log ingestion API
 
-Extend log observability via Dynatrace open Log APIs.](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")[![Syslog](https://dt-cdn.net/images/syslog-c85e9ae419.svg "Syslog")
+Extend log observability via Dynatrace open Log APIs.](/managed/analyze-explore-automate/log-monitoring-classic/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")[![Syslog](https://dt-cdn.net/images/syslog-c85e9ae419.svg "Syslog")
 
 ### Syslog ingestion with ActiveGate
 
@@ -32,7 +32,7 @@ Extend log observability right on the host via the local OneAgent Log API.](/man
 
 ### SNMP traps
 
-Create log events based on SNMP trap messages and use them in problem detection.](/managed/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions/snmptraps-extensions "Create an SNMP traps extension using the Dynatrace Extensions framework.")[![FluentBit](https://dt-cdn.net/images/fluent-bit-image1-800-0fcc32bf46.png "FluentBit")
+Create log events based on SNMP trap messages and use them in problem detection.](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")[![FluentBit](https://dt-cdn.net/images/fluent-bit-image1-800-0fcc32bf46.png "FluentBit")
 
 ### Fluent Bit
 

@@ -23,7 +23,7 @@ To list the processes that contributed to the selected health metric, select **C
 
 Processes table
 
-Once you display the contributing processes list, select any process to explore its details on the dedicated **Process** page. Each process page contains process-specific statistics related to CPU consumption, memory consumption, network utilization (see image below), and other [infrastructure measurements](/managed/observe/infrastructure-observability/hosts/monitoring/host-monitoring "Monitor hosts with Dynatrace."), as well as details regarding related events, problems, and dependencies.
+Once you display the contributing processes list, select any process to explore its details on the dedicated **Process** page. Each process page contains process-specific statistics related to CPU consumption, memory consumption, network utilization (see image below), and other [infrastructure measurements](/managed/observe/infrastructure-observability-classic/hosts-classic/monitoring/host-monitoring "Monitor hosts with Dynatrace."), as well as details regarding related events, problems, and dependencies.
 
 ![Host detail - process details](https://dt-cdn.net/images/hostprocesses2-1225-b7b9608767.png)
 
@@ -54,7 +54,7 @@ Process overview: CLV
 
 ## Process availability
 
-Apart from recording [event-types](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them."), like process shutdowns and restarts, Dynatrace also shows [process crashes](/managed/observe/application-observability/profiling-and-optimization/crash-analysis "Learn how Dynatrace can help you gain insight into process crashes."). This is especially important for service availability monitoring. Services inherit their availability from the processes they run on. Dynatrace considers a service to be offline when the entire process group it runs on is unavailable. This can occur when a process is shutdown or crashes (see image below).
+Apart from recording [event-types](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them."), like process shutdowns and restarts, Dynatrace also shows [process crashes](/managed/observe/application-observability-classic/profiling-and-optimization-classic/crash-analysis "Learn how Dynatrace can help you gain insight into process crashes."). This is especially important for service availability monitoring. Services inherit their availability from the processes they run on. Dynatrace considers a service to be offline when the entire process group it runs on is unavailable. This can occur when a process is shutdown or crashes (see image below).
 
 ![Process crashed](https://dt-cdn.net/images/process-crashed-877-1cbf72dbbc.png)
 

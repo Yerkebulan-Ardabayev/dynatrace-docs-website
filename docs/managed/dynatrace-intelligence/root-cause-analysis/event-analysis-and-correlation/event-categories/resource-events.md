@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-ana
 
 * Explanation
 * 6-min read
-* Published Dec 28, 2018
+* Updated on Oct 21, 2026
 
 This page provides information about supported resource events and the logic behind raising them.
 
@@ -63,12 +63,8 @@ The following Dynatrace entities apply to this event:
 
 `MEMORY_SATURATED`
 
-AIX exception
-
-Dynatrace does not support memory saturation events on AIX.
-
 * **Windows**: By default, Dynatrace alerts if memory usage is higher than 90% and the memory page fault rate is higher than 100 faults/s within 18 of 30 10-second intervals.
-* **Linux**: By default, Dynatrace alerts if memory usage is higher than 80% and the memory page fault rate is higher than 20 faults/s within 18 of 30 10-second intervals.
+* **Linux and AIX**: By default, Dynatrace alerts if memory usage is higher than 80% and the memory page fault rate is higher than 20 faults/s within 18 of 30 10-second intervals.
 
 See example below:
 

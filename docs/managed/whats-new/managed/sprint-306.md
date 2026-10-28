@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-306
 # Dynatrace Managed release notes version 1.306
 
 * Release notes
-* Updated on Apr 30, 2025
+* Updated on Oct 27, 2026
 
 Rollout start: Jan 20, 2025
 
@@ -67,7 +67,7 @@ Kubernetes monitoring restart has been minimized on Kubernetes settings update w
 
 Infrastructure Observability | Kubernetes
 
-The toggle **Monitor persistent volume claims** has been removed, as the persistent volume claim metrics are now ingested as built-in metrics by default. For details, see [Introducing built-in Persistent Volume Claim Monitoring for Kubernetes﻿](https://community.dynatrace.com/t5/Dynatrace-tips/Introducing-built-in-Persistent-Volume-Claim-Monitoring-for/td-p/244902).
+The toggle **Monitor persistent volume claims** has been removed, as the persistent volume claim metrics are now ingested as built-in metrics by default. For details, see [Introducing built-in Persistent Volume Claim Monitoring for Kubernetes﻿](https://community.dynatrace.com/t/introducing-built-in-persistent-volume-claim-monitoring-for-kubernetes/45442).
 
 ### New attributes in Windows event logs
 

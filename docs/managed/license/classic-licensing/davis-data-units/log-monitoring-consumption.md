@@ -337,4 +337,4 @@ Log ingestion always consumes DDUs, which are deducted from your available quota
 ## Related topics
 
 * [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)
-* [Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* [Log Monitoring](/managed/analyze-explore-automate/log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")

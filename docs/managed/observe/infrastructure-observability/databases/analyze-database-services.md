@@ -136,7 +136,7 @@ View of the statement with the highest failure rate from current hotspots.png
 
 ## Service flow for SQL analysis
 
-[**Service flow**](/managed/observe/application-observability/services-classic/services-page/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") visualizes the sequence of service calls that are triggered by each service request in your environment. With the service flow, you see the flow of service calls, including database-service calls, from the perspective of a single service, request, or their filtered subset. While SQL analysis is available at multiple locations in the service-analysis workflow, it's the primary analysis view for databases in the **Service flow** view.
+[**Service flow**](/managed/observe/application-observability-classic/services-classic/services-page/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") visualizes the sequence of service calls that are triggered by each service request in your environment. With the service flow, you see the flow of service calls, including database-service calls, from the perspective of a single service, request, or their filtered subset. While SQL analysis is available at multiple locations in the service-analysis workflow, it's the primary analysis view for databases in the **Service flow** view.
 
 To view the service flow triggered by a specific database service
 
@@ -168,5 +168,5 @@ As you can see, Dynatrace database-statement analysis views provide powerful dat
 
 ## Related topics
 
-* [Top database statements in Multidimensional analysis](/managed/observe/application-observability/multidimensional-analysis/top-database-statements "Understand the database activity across your environment with Dynatrace.")
-* [Service backtrace in Services](/managed/observe/application-observability/services-classic/services-page/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.")
+* [Top database statements in Multidimensional analysis](/managed/observe/application-observability-classic/multidimensional-analysis-classic/top-database-statements "Understand the database activity across your environment with Dynatrace.")
+* [Service backtrace in Services](/managed/observe/application-observability-classic/services-classic/services-page/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.")

@@ -156,7 +156,7 @@ Out-of-the-box infrastructure alerting capabilities are not supported for applic
 
 1
 
-This is supported via the [FluentD integration](/managed/analyze-explore-automate/log-monitoring/acquire-log-data "Learn how to acquire log data in Dynatrace Log Monitoring.") available in Dynatrace
+This is supported via the [FluentD integration](/managed/analyze-explore-automate/log-monitoring-classic/acquire-log-data "Learn how to acquire log data in Dynatrace Log Monitoring.") available in Dynatrace
 
 ### Features
 

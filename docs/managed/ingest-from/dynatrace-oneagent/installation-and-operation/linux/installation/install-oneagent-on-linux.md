@@ -60,12 +60,12 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
    After the download is complete, select  **Copy** in the **Verify signature** box to copy the `wget` command to the clipboard, then paste the provided command into your terminal window and run it. Make sure your system is up to date, especially SSL and related certificate libraries.
 7. Optional **Set customized options**
 
-   * Set a [network zone](/managed/manage/network-zones#deploy-network-zones "Find out how network zones work in Dynatrace.") for this host.
-   * If your environment is segmented (for example, into development and production), consider [organizing your hosts into host groups](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
-   * Override automatically detected [host name](/managed/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name."). This is useful in large and dynamic environments, where defined host names can be unintuitive or can change frequently.
-   * Apply [tags](/managed/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") to the host to organize your monitored environments in a meaningful way.
+   * Set a [network zone](/managed/manage/network-zones-classic#deploy-network-zones "Find out how network zones work in Dynatrace.") for this host.
+   * If your environment is segmented (for example, into development and production), consider [organizing your hosts into host groups](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
+   * Override automatically detected [host name](/managed/observe/infrastructure-observability-classic/hosts-classic/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name."). This is useful in large and dynamic environments, where defined host names can be unintuitive or can change frequently.
+   * Apply [tags](/managed/manage/tags-and-metadata-classic "Use tags and metadata to organize data in your Dynatrace environment.") to the host to organize your monitored environments in a meaningful way.
    * Change the OneAgent mode to Infrastructure Monitoring or Discovery in place of Full-Stack Monitoring. For more information, see [OneAgent monitoring modes](/managed/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
-   * Disable [Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
+   * Disable [Log Monitoring](/managed/analyze-explore-automate/log-monitoring-classic "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
 
    OneAgent command-line installer provides more options to [customize your installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").
 8. **Run the installer**  

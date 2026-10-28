@@ -10,9 +10,9 @@ source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace
 * 3-min read
 * Updated on Nov 25, 2025
 
-Dynatrace is an open and extensible platform. You can extend the observability data collected out of the box with data provided by observability standards and frameworks such as OpenTelemetry and Prometheus. And you can also extend Dynatrace analytics capabilities by [extending its Smartscape topology](/managed/ingest-from/extend-dynatrace/extend-topology "Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to.") and its [domain workflows and entity screens](/managed/ingest-from/extend-dynatrace/extend-ui "Extend the Dynatrace web UI using entity-tailored unified analysis pages.") via [extensions](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources."). You can also export data to third-party systems via the [APIs](/managed/dynatrace-api "Find out what you need to use the Dynatrace API.") and [integrations with problem notification systems](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.").
+Dynatrace is an open and extensible platform. You can extend the observability data collected out of the box with data provided by observability standards and frameworks such as OpenTelemetry and Prometheus. And you can also extend Dynatrace analytics capabilities by [extending its Smartscape topology](/managed/ingest-from/extend-dynatrace/extend-topology "Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to.") and its [domain workflows and entity screens](/managed/ingest-from/extend-dynatrace/extend-ui "Extend the Dynatrace web UI using entity-tailored unified analysis pages.") via [extensions](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."). You can also export data to third-party systems via the [APIs](/managed/dynatrace-api "Find out what you need to use the Dynatrace API.") and [integrations with problem notification systems](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.").
 
-This section focuses on extending telemetry data and creating [extensions](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.") to centralize and automate the configuration of the data you collect.
+This section focuses on extending telemetry data and creating [extensions](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") to centralize and automate the configuration of the data you collect.
 
 [![Dynatrace Developer](https://dt-cdn.net/images/developer-logo-1288bebd8d.svg "Dynatrace Developer")
 
@@ -44,19 +44,19 @@ Send StatsD metrics to Dynatrace](/managed/ingest-from/extend-dynatrace/extend-m
 
 Send Telegraf metrics to Dynatrace](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf "Ingest Telegraf metrics into Dynatrace.")[### Oracle Database
 
-Extend your application observability into data acquired directly from your Oracle Database layer.](/managed/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Microsoft SQL Server](https://dt-cdn.net/images/techn-icon-microsoft-sqlserver-60740bd3fa.svg "Microsoft SQL Server")
+Extend your application observability into data acquired directly from your Oracle Database layer.](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")[![Microsoft SQL Server](https://dt-cdn.net/images/techn-icon-microsoft-sqlserver-60740bd3fa.svg "Microsoft SQL Server")
 
 ### Microsoft SQL Server Database
 
-Extend your application observability into data acquired directly from your Microsoft SQL Server layer.](/managed/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql "Extend observability in Dynatrace with declarative metrics ingested from Microsoft SQL Server.")[![SNMP](https://dt-cdn.net/images/techn-icon-snmp-43de4f1139.svg "SNMP")
+Extend your application observability into data acquired directly from your Microsoft SQL Server layer.](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")[![SNMP](https://dt-cdn.net/images/techn-icon-snmp-43de4f1139.svg "SNMP")
 
 ### SNMP
 
-Learn how to monitor your network devices using SNMP.](/managed/ingest-from/extensions/supported-extensions/data-sources/snmp "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")[![WMI](https://dt-cdn.net/images/techn-icon-microsoft-e15d516aaf.svg "WMI")
+Learn how to monitor your network devices using SNMP.](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")[![WMI](https://dt-cdn.net/images/techn-icon-microsoft-e15d516aaf.svg "WMI")
 
 ### WMI
 
-Learn how to monitor your devices exposing Windows Management Instrumentation using WMI.](/managed/ingest-from/extensions/supported-extensions/data-sources/wmi "Learn how to extend observability in Dynatrace with declarative WMI metrics ingestion.")[![JMX](https://dt-cdn.net/images/techn-icon-java-3016283f6a.svg "JMX")
+Learn how to monitor your devices exposing Windows Management Instrumentation using WMI.](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")[![JMX](https://dt-cdn.net/images/techn-icon-java-3016283f6a.svg "JMX")
 
 ### JMX
 
@@ -78,7 +78,7 @@ Learn how to extend log observability in Dynatrace with Fluentd as an alternativ
 
 Learn how to extend log observability in Dynatrace with Logstash as an alternative to OneAgent-based log collection.](https://github.com/dynatrace-oss/logstash-output-dynatrace)[### Log ingestion API
 
-Extend log observability via Dynatrace open Log APIs.](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
+Extend log observability via Dynatrace open Log APIs.](/managed/analyze-explore-automate/log-monitoring-classic/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
 
 ## Distributed traces
 
@@ -98,11 +98,11 @@ Learn how to extend observability in Dynatrace with the OneAgent SDK.](/managed/
 
 By leveraging the observability standards and frameworks listed below, you can send metrics, traces, logs, and user experience data to Dynatrace.
 
-Thanks to the declarative manner and the centralized and automated deployment and distribution of the [extensions](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources."), you can now ingest this data more easily at scale and derive the topological context along with the topology definition. You can use [extensions](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.") to start monitoring a new technology that is not yet covered by Dynatrace or introduce a new configuration in your environment (for example, organize data into dashboards, create new alerts, and introduce complex metrics).
+Thanks to the declarative manner and the centralized and automated deployment and distribution of the [extensions](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."), you can now ingest this data more easily at scale and derive the topological context along with the topology definition. You can use [extensions](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") to start monitoring a new technology that is not yet covered by Dynatrace or introduce a new configuration in your environment (for example, organize data into dashboards, create new alerts, and introduce complex metrics).
 
 [### Extensions 2.0
 
-Learn how to extend observability using a declarative Extensions 2.0 framework.](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources.")
+Learn how to extend observability using a declarative Extensions 2.0 framework.](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
 
 ## User experience and behavior
 

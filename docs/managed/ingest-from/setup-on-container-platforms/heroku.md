@@ -78,14 +78,14 @@ The Dynatrace Heroku buildpack supports the following configurations:
 | --- | --- |
 | DT\_TENANT | Your Dynatrace environment ID**Note:** For details on how to determine your environment ID, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments."). |
 | DT\_API\_TOKEN | The PaaS token for integrating your Dynatrace environment with Heroku. |
-| DT\_API\_URL | - For Dynatrace SaaS, where OneAgent can connect to the internet: `https://<your-environment-ID>.live.dynatrace.com/api`- For Dynatrace Managed: `https://<your-managed-cluster-domain>/e/<your-environment-ID>/api`- For environment ActiveGates (SaaS or Managed), use the following to download the OneAgent, as well as to communicate OneAgent traffic through the ActiveGate: `https://<your-ActiveGate-IP-or-FQDN>:9999/e/<your-environment-ID>/api`**Note:** For details on how to determine your environment ID, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments."). |
+| DT\_API\_URL | - For Dynatrace Managed: `https://<your-managed-cluster-domain>/e/<your-environment-ID>/api`- For environment ActiveGates, use the following to download the OneAgent, as well as to communicate OneAgent traffic through the ActiveGate: `https://<your-ActiveGate-IP-or-FQDN>:9999/e/<your-environment-ID>/api`**Note:** For details on how to determine your environment ID, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments."). |
 | DT\_DOWNLOAD\_URL | Optional A direct download URL for Dynatrace OneAgent. If this environment variable is set, the buildpack will download OneAgent from this location |
 | SSL\_MODE | Optional Set to `all` if you want to accept all self-signed SSL. certificates |
 | DT\_TAGS | not recommended The tags you want to add to the monitored. applications |
 | DT\_CUSTOM\_PROP | not recommended Apply if you want to split by the component and/or environment. |
 | SKIP\_ERRORS | Optional If set to `1`, application deployment won't fail on OneAgent installer download errors |
 
-We recommend creating environment variables specific to process detection. Environment variables that serve other scopes, such as [`DT_TAGS`](/managed/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables#variables "Find out how Dynatrace enables you to define tags based on environment variables.") or [`DT_CUSTOM_PROP`](/managed/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment."), might cause incorrect or unintentional splits because all values of environment variables are evaluated for process-group detection.
+We recommend creating environment variables specific to process detection. Environment variables that serve other scopes, such as [`DT_TAGS`](/managed/manage/tags-and-metadata-classic/setup/define-tags-based-on-environment-variables#variables "Find out how Dynatrace enables you to define tags based on environment variables.") or [`DT_CUSTOM_PROP`](/managed/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment."), might cause incorrect or unintentional splits because all values of environment variables are evaluated for process-group detection.
 
 How to use the Heroku buildpack for Dynatrace OneAgent in place of the Dynatrace NPM module for PaaS
 
@@ -150,7 +150,7 @@ You can configure network zones via an environment variable:
 heroku config:set DT_NETWORK_ZONE=<your.network.zone>
 ```
 
-See [network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+See [network zones](/managed/manage/network-zones-classic "Find out how network zones work in Dynatrace.") for more information.
 
 ## Update OneAgent
 

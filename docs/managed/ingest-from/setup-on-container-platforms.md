@@ -44,7 +44,7 @@ This assumes full access to the underlying host.
 
 For most OneAgent deployments and Container runtimes, injection will be performed by the `oneagenthelper` process that runs as part of the OneAgent service on the host or within the OA container. However some runtimes will start the OneAgentHelper process directly or need assistance from the OneAgent’s process auto injection logic.
 
-If you continue to see the `oneagenthelper` processes active on your hosts even after stopping the OneAgent Service, you may need to disable Automatic injection as outlined within our documentation here before stopping the oneagent service / container: [Infrastructure and Discovery monitoring modes](/managed/platform/oneagent/monitoring-modes/monitoring-modes#disable-auto-injection "Find out more about the available monitoring modes when using OneAgent.") or ensure that you using OneAgent version 1.281+ within your Classic Full Stack deployment.
+If you continue to see the `oneagenthelper` processes active on your hosts even after stopping the OneAgent Service, you may need to disable Automatic injection as outlined within our documentation here before stopping the oneagent service / container: [Infrastructure and Discovery monitoring modes](/managed/platform/oneagent/monitoring-modes/enable-monitoring-modes#disable-auto-injection "Learn how to enable monitoring modes when using OneAgent.") or ensure that you using OneAgent version 1.281+ within your Classic Full Stack deployment.
 
 ### Cloud Foundry
 
@@ -93,4 +93,4 @@ Inject OneAgent code modules into a container as it builds.
 
 ## Related topics
 
-* [Container platform monitoring](/managed/observe/infrastructure-observability/container-platform-monitoring "The container platforms Dynatrace can monitor")
+* [Container platform monitoring](/managed/observe/infrastructure-observability-classic/container-platform-monitoring-classic "The container platforms Dynatrace can monitor")

@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/manage/identity-access-management-cla
 * 2-min read
 * Updated on Jan 29, 2023
 
-Management zones are comprised of rules that define which entities and dimensional data (such as logs and metrics) can be accessed within each management zone. Management-zone rules (as well as [automatic tagging rules](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.")) are based on the same powerful Dynatrace conditional decision engine. In combination with [user and group permissions](/managed/manage/identity-access-management/user-and-group-management "User and group management"), you can set up management zones to create multiple overlapping partitions in your environment to promote observability, collaboration, and security.
+Management zones are comprised of rules that define which entities and dimensional data (such as logs and metrics) can be accessed within each management zone. Management-zone rules (as well as [automatic tagging rules](/managed/manage/tags-and-metadata-classic/setup/how-to-define-tags "Define and apply tags manually or automatically to organize Dynatrace entities, using rule conditions based on entity properties and regular expressions.")) are based on the same powerful Dynatrace conditional decision engine. In combination with [user and group permissions](/managed/manage/identity-access-management/user-and-group-management "User and group management"), you can set up management zones to create multiple overlapping partitions in your environment to promote observability, collaboration, and security.
 
 ## Create a management zone
 
@@ -34,7 +34,7 @@ You can create up to 5,000 management zones by default in your Dynatrace monitor
 
    Read more about:
 
-   * How log data can be ingested and automatically assigned to management zones in [Management zones and ingested log data (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring "Find out how ingested log data is assigned to management zones.").
+   * How log data can be ingested and automatically assigned to management zones in [Management zones and ingested log data (Logs Classic)](/managed/analyze-explore-automate/log-monitoring-classic/analyze-log-data/management-zones-and-log-monitoring "Find out how ingested log data is assigned to management zones.").
    * How to [add a service-level objective to a management zone](/managed/analyze-explore-automate/service-level-objectives-classic/configure-and-monitor-slo#mz "Create, configure, and monitor service-level objectives with Dynatrace.") so users with access to the management zone can view SLO status and error budget in the **Service-level objectives** page.
 
 ## Assign access rights to management zones

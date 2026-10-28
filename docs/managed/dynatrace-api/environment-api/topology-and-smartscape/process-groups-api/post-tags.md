@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topolog
 * Updated on Mar 22, 2023
 * Deprecated
 
-Assigns [custom tags](/managed/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") to the specified [process group](/managed/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring."). You need only provide a tag value. The `CONTEXTLESS` context will be assigned automatically.
+Assigns [custom tags](/managed/manage/tags-and-metadata-classic "Use tags and metadata to organize data in your Dynatrace environment.") to the specified [process group](/managed/observe/infrastructure-observability-classic/process-groups-classic "Analyze process groups and customize process group naming, detection, and monitoring."). You need only provide a tag value. The `CONTEXTLESS` context will be assigned automatically.
 
 The usage of this API is limited to value-only tags. To assign key:value tags, use the [Custom tags API](/managed/dynatrace-api/environment-api/custom-tags/post-tags "Assign custom tags to monitored entities via Dynatrace API.").
 
@@ -249,4 +249,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/process-grou
 
 ## Related topics
 
-* [Process groups](/managed/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.")
+* [Process groups](/managed/observe/infrastructure-observability-classic/process-groups-classic "Analyze process groups and customize process group naming, detection, and monitoring.")

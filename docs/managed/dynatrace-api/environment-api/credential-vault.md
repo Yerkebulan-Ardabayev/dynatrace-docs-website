@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/credent
 * Reference
 * Updated on Oct 13, 2026
 
-The **Credential vault API** empowers you to manage credentials for synthetic [browser](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.") and [HTTP](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.") monitors.
+The **Credential vault API** empowers you to manage credentials for synthetic [browser](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.") and [HTTP](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.") monitors.
 
 [### List all credentials
 
@@ -28,5 +28,5 @@ Delete the configuration of credentials you no longer need.](/managed/dynatrace-
 
 ## Related topics
 
-* [Configure browser monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")
-* [Configure HTTP monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")
+* [Configure browser monitors in Classic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")
+* [Configure HTTP monitors in Classic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")

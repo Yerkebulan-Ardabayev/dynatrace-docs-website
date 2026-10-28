@@ -48,13 +48,13 @@ Long string data types are counted as 1 property per 100 characters.
 
 ## Real User Monitoring
 
-A single [Real User Monitoring](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.") session (otherwise known as a "user session") is defined as a sequence of interactions between a user with a browser-based web application or a native iOS or Android mobile app within an interval and with at least two user actions.
+A single [Real User Monitoring](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.") session (otherwise known as a "user session") is defined as a sequence of interactions between a user with a browser-based web application or a native iOS or Android mobile app within an interval and with at least two user actions.
 A user action is a mouse-button click, finger tap, or app start that triggers a web request (for example, a page load or a page-view navigation).
 Interactions that include only one user action are considered “bounced” and aren't counted.
 A user who interacts with more than one web application or app at the same time consumes one session for each of those web applications or apps, except when the interaction is considered “bounced”.
 Interactions with hybrid mobile apps, that for technical reasons include a web application and a mobile app will only be considered as a single session.
 
-A billed session ends when the [user session ends](/managed/observe/digital-experience/rum-classic/rum-concepts/user-session#user-session-end "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more."), or after 60 minutes of continuous interaction with the web application or mobile app.
+A billed session ends when the [user session ends](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/user-session#user-session-end "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more."), or after 60 minutes of continuous interaction with the web application or mobile app.
 
 If you've set up an annual RUM sessions quota, your usage will reset annually.
 
@@ -98,7 +98,7 @@ If such a synthetic monitor runs every 15 minutes from two locations for one day
 
 `3 (synthetic actions) × 4 (monitor executions per hour) × 2 (locations) × 24 (hours per day) = 576 (synthetic actions)`
 
-For more details, see [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.").
+For more details, see [Synthetic Monitoring](/managed/observe/digital-experience-classic/synthetic-monitoring-classic "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.").
 
 ## How consumption of Synthetic NAM Monitoring affects billing
 
@@ -137,5 +137,5 @@ The total DEM unit cost in this case is 30 DEM units.
 ## Related topics
 
 * [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)
-* [Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.")
-* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
+* [Real User Monitoring Classic](/managed/observe/digital-experience-classic/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.")
+* [Synthetic Monitoring](/managed/observe/digital-experience-classic/synthetic-monitoring-classic "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")

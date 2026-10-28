@@ -19,31 +19,31 @@ Gain observability into highly distributed, cloud-native architectures to effect
 
 * Overview
 
-See the overview](/managed/observe/application-observability/distributed-traces)[#### Services
+See the overview](/managed/observe/application-observability-classic/distributed-traces-classic)[#### Services
 
 Learn how to monitor and analyze your services, define and use request attributes, and more.
 
 * Overview
 
-See the overview](/managed/observe/application-observability/services-classic)[#### Multidimensional analysis
+See the overview](/managed/observe/application-observability-classic/services-classic)[#### Multidimensional analysis
 
 Configure a multidimensional analysis view and save it as a calculated metric.
 
 * How-to guide
 
-Read this guide](/managed/observe/application-observability/multidimensional-analysis)[#### Profiling & Optimization
+Read this guide](/managed/observe/application-observability-classic/multidimensional-analysis-classic)[#### Profiling & Optimization
 
 Learn how to use Dynatrace diagnostic tools for crash analysis, memory dump analysis, and more.
 
 * Overview
 
-See the overview](/managed/observe/application-observability/profiling-and-optimization)[#### Log Monitoring
+See the overview](/managed/observe/application-observability-classic/profiling-and-optimization-classic)[#### Log Monitoring
 
 Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.
 
 * Overview
 
-See the overview](/managed/analyze-explore-automate/log-monitoring)[#### Digital Experience
+See the overview](/managed/analyze-explore-automate/log-monitoring-classic)[#### Digital Experience
 
 Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.
 

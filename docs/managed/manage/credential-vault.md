@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/manage/credential-vault
 * 21-min read
 * Updated on Apr 22, 2026
 
-The credential vault is a centralized repository where you securely store and manage credentials (username-password pairs, certificates, or tokens) used by synthetic monitors ([browser](/managed/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors "Learn about Dynatrace synthetic monitor types.") and [HTTP](/managed/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors#http-monitor "Learn about Dynatrace synthetic monitor types.")), [Extensions](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources."), and AppEngine apps.
+The credential vault is a centralized repository where you securely store and manage credentials (username-password pairs, certificates, or tokens) used by synthetic monitors ([browser](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/general-information/types-of-synthetic-monitors "Learn about Dynatrace synthetic monitor types.") and [HTTP](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/general-information/types-of-synthetic-monitors#http-monitor "Learn about Dynatrace synthetic monitor types.")), [Extensions](/managed/ingest-from/extensions "Learn how Dynatrace Extensions work, where they run, and how to create, deploy, and manage extensions to collect data from custom sources."), and AppEngine apps.
 
 To access the credential vault, go to **Credential Vault**.
 
@@ -36,7 +36,7 @@ Credential vault communication
   **Communication**: All communication among key components is encrypted. If a monitor needs to be executed from a private Synthetic location, the cluster resolves and sends credentials as part of the monitor configuration to the Synthetic engine on creation and update (when monitors or referenced credentials are created or updated), not before every execution. In the same way, if a monitor needs to be executed from a public Synthetic location, the cluster resolves and sends credentials as part of the monitor configuration to the public Synthetic infrastructure on creation or update.
 * **Synthetic engine**
 
-  **Function**: The Synthetic engine executes synthetic monitors on both [private](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.") and [public Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring Classic locations.") and has access to monitor configurations and any resolved credentials in order to do so.
+  **Function**: The Synthetic engine executes synthetic monitors on both [private](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.") and [public Synthetic locations](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring Classic locations.") and has access to monitor configurations and any resolved credentials in order to do so.
 
   **Communication**: The Synthetic engine does not communicate directly with the credential vault or see its contents. On private Synthetic locations, the Synthetic engine requests and retrieves the schedule of monitors to be executed and their configurations (with resolved credentials) from the Dynatrace Cluster on creation or update, that is, when monitors or referenced credentials are created or updated. On public Synthetic locations, this same communication takes place with the public Synthetic infrastructure. All communication among key components is encrypted.
 
@@ -61,7 +61,7 @@ If you have only the **View environment** permission (and no other higher permis
 
 * View the credential vault.
 * View all "public" and any "owner only" credentials that you own.
-* Create credentials within the credential vault. However, you are not allowed to use [external vault synchronization](/managed/observe/digital-experience/synthetic-monitoring/general-information/external-vault-integration "Synchronize Synthetic Monitoring Classic credentials with external vaults.").
+* Create credentials within the credential vault. However, you are not allowed to use [external vault synchronization](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/general-information/external-vault-integration "Synchronize Synthetic Monitoring Classic credentials with external vaults.").
 * Overwrite any credentials (public or owner only) that you own; you are not allowed to overwrite credentials owned by another user.
 * Delete any credentials (public or owner only) that you own; you are not allowed to delete credentials owned by another user.
 
@@ -133,7 +133,7 @@ Go to **Credential Vault** to see all the credentials in your environment.
 
 Users with the **View environment** permission at the environment level can only view public credentials and credentials they own.
 
-The available credential types for synthetic monitoring are [username-password pairs](#uid-password), [certificates](#certificate), and [tokens](#token). Username-password pairs can be synchronized with external vault systems—read more in [External vault integration in Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/external-vault-integration "Synchronize Synthetic Monitoring Classic credentials with external vaults.").
+The available credential types for synthetic monitoring are [username-password pairs](#uid-password), [certificates](#certificate), and [tokens](#token). Username-password pairs can be synchronized with external vault systems—read more in [External vault integration in Classic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/general-information/external-vault-integration "Synchronize Synthetic Monitoring Classic credentials with external vaults.").
 
 Each credential is listed with an icon identifying the **Type**, **Name**, the monitors it's **Used by**, **Owner**, **Access** level, **Scope**, and controls to edit and **Delete** it.
 
@@ -171,9 +171,9 @@ You can create the following types of credentials for synthetic monitoring.
 
 ### Username and password pairs
 
-Username and password pairs can be used for basic as well as web-form authentication, in [single-URL browser monitors](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor "Learn how to set up a single-URL browser monitor to check the availability of your site."), [browser clickpaths](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath "Learn how to record a browser clickpath to monitor the availability and performance of your application."), and [HTTP monitors](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor to check the performance and availability of your site.").
+Username and password pairs can be used for basic as well as web-form authentication, in [single-URL browser monitors](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/browser-monitors/create-a-single-url-browser-monitor "Learn how to set up a single-URL browser monitor to check the availability of your site."), [browser clickpaths](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/browser-monitors/record-a-browser-clickpath "Learn how to record a browser clickpath to monitor the availability and performance of your application."), and [HTTP monitors](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor to check the performance and availability of your site.").
 
-Username-password pairs in the Dynatrace credential vault can be synchronized with an external vault (Azure Key Vault, HashiCorp Vault, or CyberArk Vault). Synthetic monitors containing these credentials use the synchronized values obtained from the external vaults—read more in [External vault integration in Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/external-vault-integration "Synchronize Synthetic Monitoring Classic credentials with external vaults.").
+Username-password pairs in the Dynatrace credential vault can be synchronized with an external vault (Azure Key Vault, HashiCorp Vault, or CyberArk Vault). Synthetic monitors containing these credentials use the synchronized values obtained from the external vaults—read more in [External vault integration in Classic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/general-information/external-vault-integration "Synchronize Synthetic Monitoring Classic credentials with external vaults.").
 
 To create login credentials in the vault
 
@@ -181,8 +181,8 @@ To create login credentials in the vault
 2. Select **User and password** as the **Credential type**.
 3. Select **Synthetic** for **Credential scope**. Read more about other [Credential scopes](#credential-scopes), including the [AppEngine scope](#appengine-scope).
 4. Edit the default **Credential name** to identify your new credential properly.
-5. If synchronizing this username-password pair with an external vault (**Synchronization with external vault**), follow the instructions in [External vault integration in Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/external-vault-integration "Synchronize Synthetic Monitoring Classic credentials with external vaults.").
-6. Enter the **Username** and **Password**. The password is automatically masked as you type. Note that these fields don't appear for [synchronized credentials](/managed/observe/digital-experience/synthetic-monitoring/general-information/external-vault-integration "Synchronize Synthetic Monitoring Classic credentials with external vaults.").
+5. If synchronizing this username-password pair with an external vault (**Synchronization with external vault**), follow the instructions in [External vault integration in Classic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/general-information/external-vault-integration "Synchronize Synthetic Monitoring Classic credentials with external vaults.").
+6. Enter the **Username** and **Password**. The password is automatically masked as you type. Note that these fields don't appear for [synchronized credentials](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/general-information/external-vault-integration "Synchronize Synthetic Monitoring Classic credentials with external vaults.").
 
    Supported username formats
 
@@ -199,7 +199,7 @@ Create a username-password pair in the vault
 
 ### Certificate credentials
 
-Certificate credentials are used in HTTP monitors—[you can add a client certificate to an HTTP request](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#http-additional-options "Learn about configuring HTTP monitors.").
+Certificate credentials are used in HTTP monitors—[you can add a client certificate to an HTTP request](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/http-monitors-classic/configure-http-monitors-classic#http-additional-options "Learn about configuring HTTP monitors.").
 
 To create a certificate credential in the vault
 
@@ -226,16 +226,16 @@ openssl pkcs12 -export -in /path/to/certificate.pem -out /path/to/certificate.p1
 
 ### Token credentials
 
-A token is a generic credential type with a single value. You can create tokens in the credential vault and insert references to them from [HTTP monitors](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor to check the performance and availability of your site.")—in request URLs, HTTP header values, and in the request body. In [clickpaths](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor "Learn how to set up a single-URL browser monitor to check the availability of your site."), you can insert a token ID in the [Keystroke event](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events#keystroke "Learn about the event types created when recording a browser clickpath.").
+A token is a generic credential type with a single value. You can create tokens in the credential vault and insert references to them from [HTTP monitors](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor to check the performance and availability of your site.")—in request URLs, HTTP header values, and in the request body. In [clickpaths](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/browser-monitors/create-a-single-url-browser-monitor "Learn how to set up a single-URL browser monitor to check the availability of your site."), you can insert a token ID in the [Keystroke event](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/browser-monitors/browser-clickpath-events#keystroke "Learn about the event types created when recording a browser clickpath.").
 
-Token credentials in the Dynatrace credential vault can be synchronized with an external vault (Azure Key Vault or HashiCorp Vault). Synthetic monitors containing these credentials use the synchronized values obtained from the external vaults—read more in [External vault integration in Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/external-vault-integration "Synchronize Synthetic Monitoring Classic credentials with external vaults.").
+Token credentials in the Dynatrace credential vault can be synchronized with an external vault (Azure Key Vault or HashiCorp Vault). Synthetic monitors containing these credentials use the synchronized values obtained from the external vaults—read more in [External vault integration in Classic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/general-information/external-vault-integration "Synchronize Synthetic Monitoring Classic credentials with external vaults.").
 
 To create a token credential in the credential vault
 
 1. Select **Add new credential** in the upper-right corner.
 2. Select **Token** as the **Credential type**.
 3. Select **Synthetic** for **Credential scope**. Read more about other [Credential scopes](#credential-scopes), including the [AppEngine scope](#appengine-scope).
-4. If synchronizing this token with an external vault (**Synchronization with external vault**), follow the instructions in [External vault integration in Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/external-vault-integration "Synchronize Synthetic Monitoring Classic credentials with external vaults.").
+4. If synchronizing this token with an external vault (**Synchronization with external vault**), follow the instructions in [External vault integration in Classic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/general-information/external-vault-integration "Synchronize Synthetic Monitoring Classic credentials with external vaults.").
 5. Enter a **Token** value.
 6. Provide a **Credential name** and optional **Description**.
 7. Credentials are set to **Owner access only** by default. Turn off this toggle to make the credential accessible to other users. Optionally, limit access to the credential to specified users by providing a comma-separated list of usernames in **Users with access**. Read more in [Owner-only, shared, and public credentials](#owner-shared-public) and [Work with credentials](#work-with-credentials).
@@ -263,7 +263,7 @@ When creating a monitor or editing an existing monitor that doesn't have associa
 * Use an existing credential stored in the vault in the monitor—you can select public credentials or credentials that you own or are shared with you.
 * Create a new credential as part of the monitor creation/editing workflow. The credential is automatically designated as owner only and stored in the vault. After you create a credential, note that another user may change a credential's access level by becoming the new owner and overwriting it with new authentication details.
 
-* You can store passwords captured in recorded clickpaths to the vault (with a companion username or as a single-value token). These are stored as owner only. See how to use the [Keystroke event](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events#keystroke "Learn about the event types created when recording a browser clickpath.").
+* You can store passwords captured in recorded clickpaths to the vault (with a companion username or as a single-value token). These are stored as owner only. See how to use the [Keystroke event](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/browser-monitors/browser-clickpath-events#keystroke "Learn about the event types created when recording a browser clickpath.").
 
   Alternatively, you can edit the recorded event to use an existing credential from the vault or create one of your own from within the clickpath.
 

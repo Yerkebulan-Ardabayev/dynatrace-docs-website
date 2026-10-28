@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api
 
 * Published Mar 13, 2019
 
-This API call creates a new **private** synthetic location. For more details about synthetic location creation, see [Create a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring."). The request consumes and produces an `application/json` payload.
+This API call creates a new **private** synthetic location. For more details about synthetic location creation, see [Create a private Synthetic location](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring."). The request consumes and produces an `application/json` payload.
 
 ## Authentication
 
@@ -475,5 +475,5 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations
 
 ## Related topics
 
-* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
-* [Create a private Synthetic location in Classic](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")
+* [Synthetic Monitoring](/managed/observe/digital-experience-classic/synthetic-monitoring-classic "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
+* [Create a private Synthetic location in Classic](/managed/observe/digital-experience-classic/synthetic-monitoring-classic/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")

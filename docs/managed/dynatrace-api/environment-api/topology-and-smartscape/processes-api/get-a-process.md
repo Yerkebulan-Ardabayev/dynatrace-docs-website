@@ -13,7 +13,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topolog
 
 This API is deprecated. Use the [Monitored entities API](/managed/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.") instead.
 
-Gets the parameters of the specified [process](/managed/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.").
+Gets the parameters of the specified [process](/managed/observe/infrastructure-observability-classic/process-groups-classic "Analyze process groups and customize process group naming, detection, and monitoring.").
 
 The request produces an `application/json` payload.
 
@@ -2709,4 +2709,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/processes/PR
 
 ## Related topics
 
-* [Process groups](/managed/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.")
+* [Process groups](/managed/observe/infrastructure-observability-classic/process-groups-classic "Analyze process groups and customize process group naming, detection, and monitoring.")

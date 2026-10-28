@@ -22,4 +22,4 @@ Update configuration of allowed beacon origins.](/managed/dynatrace-api/configur
 
 ## Related topics
 
-* [Configure beacon origin allowlist for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-beacon-domain-allowlist "Specify the origins from which cross-origin RUM beacons should be accepted.")
+* [Configure beacon origin allowlist for web applications in RUM Classic](/managed/observe/digital-experience-classic/rum-classic/web-applications/additional-configuration/configure-beacon-domain-allowlist "Specify the origins from which cross-origin RUM beacons should be accepted.")

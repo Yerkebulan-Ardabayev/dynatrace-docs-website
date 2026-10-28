@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/servi
 * Reference
 * Published Dec 05, 2018
 
-The **Request attributes** API enables you to manage the configuration of [request attributes](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
+The **Request attributes** API enables you to manage the configuration of [request attributes](/managed/observe/application-observability-classic/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
 
 [### List all
 
@@ -28,4 +28,4 @@ Delete a request attribute you don't need anymore.](/managed/dynatrace-api/confi
 
 ## Related topics
 
-* [Request attributes in Services](/managed/observe/application-observability/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.")
+* [Request attributes in Services](/managed/observe/application-observability-classic/services-classic/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.")
